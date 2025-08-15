@@ -16,13 +16,13 @@ export const base = style({
 
 export const toggle = style([
 	{
-		cursor: 'pointer',
 		backgroundColor: colorMid,
-		height: height,
-		width: `calc(2 * ${height} - 2px)`,
 		borderRadius: vars.border.radius.pill,
+		cursor: 'pointer',
+		height: height,
 		padding: '3px 4px',
 		transition: 'background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s',
+		width: `calc(2 * ${height} - 2px)`,
 		selectors: {
 			'&:not([data-disabled]):hover': {
 				backgroundColor: colorAccent,
@@ -45,19 +45,6 @@ const handleScale = 'scale(0.95)';
 const handleTranslate = `translateX(calc(${handleSize} - 4px))`;
 
 export const handle = styleVariants({
-	default: {
-		aspectRatio: '1',
-		height: '100%',
-		borderRadius: vars.border.radius.full,
-		backgroundColor: colorContrast,
-		transition: 'transform 0.2s cubic-bezier(0, 0, 0.2, 1) 0s',
-		willChange: 'transform',
-		selectors: {
-			[`${toggle}:not([data-disabled]):hover &`]: {
-				transform: handleScale,
-			},
-		},
-	},
 	active: {
 		selectors: {
 			[`${toggleOn} &`]: {
@@ -65,6 +52,19 @@ export const handle = styleVariants({
 			},
 			[`${toggle}:not([data-disabled]):hover &`]: {
 				transform: `${handleScale} ${handleTranslate}`,
+			},
+		},
+	},
+	default: {
+		aspectRatio: '1',
+		backgroundColor: colorContrast,
+		borderRadius: vars.border.radius.full,
+		height: '100%',
+		transition: 'transform 0.2s cubic-bezier(0, 0, 0.2, 1) 0s',
+		willChange: 'transform',
+		selectors: {
+			[`${toggle}:not([data-disabled]):hover &`]: {
+				transform: handleScale,
 			},
 		},
 	},

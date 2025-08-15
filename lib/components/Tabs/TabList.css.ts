@@ -16,8 +16,8 @@ export const styledTabList = recipe({
 		scroll: {
 			true: {
 				display: 'grid',
-				gridTemplateColumns: 'auto 1fr auto',
 				gridGap: vars.space['2'],
+				gridTemplateColumns: 'auto 1fr auto',
 			},
 		},
 	},
@@ -27,8 +27,8 @@ export const listWrapperScroll = style({
 	overflowX: 'auto',
 	overflowY: 'hidden',
 	overscrollBehavior: 'contain',
-	scrollBehavior: 'smooth',
 	scrollbarWidth: 'none',
+	scrollBehavior: 'smooth',
 	selectors: {
 		'&::-webkit-scrollbar': {
 			display: 'none',

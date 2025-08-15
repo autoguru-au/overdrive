@@ -10,7 +10,7 @@ import {
 } from 'react-aria';
 import { useSearchFieldState } from 'react-stately';
 
-import type { TestId } from '../../types';
+import type { TestIdProp } from '../../types';
 import { mergeRefs } from '../../utils';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Icon } from '../Icon';
@@ -29,7 +29,7 @@ const defaultEnglish = {
 
 type TextContent = keyof typeof defaultEnglish;
 
-interface SearchBarProps extends AriaSearchFieldProps, TestId {
+interface SearchBarProps extends AriaSearchFieldProps, TestIdProp {
 	onChange?: AriaSearchFieldProps['onChange'];
 	isDisabled?: AriaSearchFieldProps['isDisabled'];
 	maxLength?: AriaSearchFieldProps['maxLength'];

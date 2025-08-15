@@ -17,8 +17,8 @@ import {
 import { isBrowser } from '../../utils';
 import { Alert } from '../Alert/Alert';
 import { Box } from '../Box/Box';
+import { stack } from '../Flex/flex';
 import { Portal } from '../Portal/Portal';
-import { Stack } from '../Stack/Stack';
 
 import * as styles from './Toast.css';
 
@@ -101,7 +101,7 @@ const InternalToastProvider = ({ children }) => {
 					justifyContent="center"
 					className={styles.root}
 				>
-					<Stack space="2">
+					<div className={stack({ gap: '2' })}>
 						{toasts.map((item) => (
 							<Toast
 								key={item.id}
@@ -109,7 +109,7 @@ const InternalToastProvider = ({ children }) => {
 								remove={removeToast}
 							/>
 						))}
-					</Stack>
+					</div>
 				</Box>
 			</Portal>
 		</ToastControllerContext.Provider>
@@ -133,64 +133,32 @@ export const useToast = (): ToastFn => {
 
 	return useMemo(() => {
 		const fn: ToastFn = (message, duration = DEFAULT_DURATION) =>
-			void addToast({
+			addToast({
 				message,
 				duration,
 				intent: 'information',
 			});
 
-		// @ts-ignore
-		fn.primary = (message, duration = DEFAULT_DURATION) =>
-			void addToast({
-				message,
-				duration,
-				// @ts-ignore
-				intent: 'primary',
-			});
-		// @ts-ignore
-		fn.secondary = (message, duration = DEFAULT_DURATION) =>
-			void addToast({
-				message,
-				duration,
-				// @ts-ignore
-				intent: 'secondary',
-			});
-		// @ts-ignore
-		fn.shine = (message, duration = DEFAULT_DURATION) =>
-			void addToast({
-				message,
-				duration,
-				// @ts-ignore
-				intent: 'shine',
-			});
 		fn.success = (message, duration = DEFAULT_DURATION) =>
-			void addToast({
+			addToast({
 				message,
 				duration,
 				intent: 'success',
 			});
-		// @ts-ignore
-		fn.neutral = (message, duration = DEFAULT_DURATION) =>
-			void addToast({
-				message,
-				duration,
-				// @ts-ignore
-				intent: 'neutral',
-			});
 		fn.danger = (message, duration = DEFAULT_DURATION) =>
-			void addToast({
+			addToast({
 				message,
 				duration,
 				intent: 'danger',
 			});
 		fn.information = (message, duration = DEFAULT_DURATION) =>
-			void addToast({
+			addToast({
 				message,
 				duration,
 				intent: 'information',
 			});
 		fn.warning = (message, duration = DEFAULT_DURATION) =>
-			void addToast({
+			addToast({
 				message,
 				duration,
 				intent: 'warning',

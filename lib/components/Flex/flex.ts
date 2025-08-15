@@ -5,7 +5,7 @@ import type { SimpleAsProp } from '../../types';
 
 export type FlexComponentProps<T> = Omit<
 	ComponentPropsWithoutRef<'div'>,
-	keyof Sprinkles | keyof T | 'style'
+	keyof Sprinkles | keyof T | 'className' | 'style'
 > &
 	SimpleAsProp &
 	T;
@@ -26,6 +26,7 @@ export interface FlexInlineProps {
 	fullWidth?: boolean;
 	/** Item horizontal spacing (_responsive_)*/
 	gap?: Sprinkles['gap'];
+	height?: Sprinkles['height'];
 	/** Prevent items from wrapping to the next row */
 	noWrap?: boolean;
 	/** Cross-axis vertical alignment of items (_responsive_) */
@@ -44,6 +45,7 @@ export const inlinePropMapping = ({
 	end,
 	fullWidth,
 	gap,
+	height,
 	noWrap,
 	justify,
 	reverse,
@@ -56,6 +58,7 @@ export const inlinePropMapping = ({
 		flexDirection: (reverse && 'row-reverse') || 'row',
 		flexWrap: noWrap === true ? 'nowrap' : 'wrap',
 		gap,
+		height,
 		justifyContent:
 			align ??
 			((start && 'start') ||
@@ -97,10 +100,12 @@ export interface FlexStackProps {
 	gap?: Sprinkles['gap'];
 	/** Main-axis vertical alignment of items (_responsive_) */
 	justify?: Sprinkles['justifyContent'];
+	minWidth?: Sprinkles['minWidth'];
 	/** Reverse item order */
 	reverse?: boolean;
 	/** Shortcut start/left alignment */
 	start?: boolean;
+	width?: Sprinkles['width'];
 }
 
 export const stackPropMapping = ({
@@ -109,8 +114,10 @@ export const stackPropMapping = ({
 	end,
 	gap,
 	justify,
+	minWidth,
 	reverse,
 	start,
+	width,
 }: FlexStackProps = {}) =>
 	({
 		alignItems:
@@ -123,6 +130,8 @@ export const stackPropMapping = ({
 		flexDirection: (reverse && 'column-reverse') || 'column',
 		gap,
 		justifyContent: justify,
+		minWidth,
+		width,
 	}) satisfies Sprinkles;
 
 /**

@@ -6,14 +6,14 @@ import React, {
 	type ReactNode,
 } from 'react';
 
-import type { TestId } from '../../types';
+import type { TestIdProp } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { EAlignment } from '../Positioner/alignment';
 
 import * as styles from './Tooltip.css';
 import { useTooltip, type ToolTipSize } from './useTooltip/useTooltip';
 
-export interface TooltipProps extends TestId {
+export interface TooltipProps extends TestIdProp {
 	/** Size of the tooltip text */
 	size?: ToolTipSize;
 	/** Whether the tooltip is open. When provided, the tooltip becomes controlled */

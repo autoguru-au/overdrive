@@ -2,6 +2,7 @@ import { style } from '@vanilla-extract/css';
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
 import { overdriveTokens } from '../../themes';
+import { breakpoints } from '../../themes/makeTheme';
 
 export const titles = style({
 	marginTop: '11px',
@@ -24,8 +25,16 @@ export const small = style({
 
 export const gridSwatches = style({
 	display: 'grid',
-	gridTemplateColumns: 'repeat(5, 1fr)',
-	gap: '2em',
+	gap: '1.3em',
+	gridTemplateColumns: 'repeat(2, 1fr)',
+	'@media': {
+		[`screen and (min-width: ${breakpoints.tablet})`]: {
+			gridTemplateColumns: 'repeat(4, 1fr)',
+		},
+		[`screen and (min-width: ${breakpoints.desktop})`]: {
+			gridTemplateColumns: 'repeat(5, 1fr)',
+		},
+	},
 });
 
 export const hexPill = style({
@@ -39,18 +48,44 @@ export const hexPill = style({
 	top: '5px',
 });
 
-export const transitionColours = style({
-	transitionProperty: 'background,color',
-	transitionDuration: '600ms',
+export const icon = style({
+	alignItems: 'center',
+	backgroundColor: overdriveTokens.color.surface.page,
+
+	borderColor: overdriveTokens.color.interactive.border,
+	borderRadius: overdriveTokens.border.radius.md,
+
+	borderStyle: 'solid',
+	borderWidth: overdriveTokens.border.width[2],
+	color: overdriveTokens.color.content.normal,
+	display: 'flex',
+	flexDirection: 'column',
+
+	height: '120px',
+	justifyContent: 'center',
+	listStyle: 'none',
+	padding: overdriveTokens.space[2],
+	textAlign: 'center',
 	transitionBehavior: 'ease-in-out',
+
+	transitionDuration: '600ms',
+	transitionProperty: 'background,color',
+	width: '140px',
+
+	selectors: {
+		'&:hover': {
+			backgroundColor: overdriveTokens.colours.gamut.gray800,
+			color: overdriveTokens.color.content.inverse,
+		},
+	},
 });
 
 export const variantColourSwatch = recipe({
 	base: {
-		position: 'relative',
 		borderColor: overdriveTokens.color.gamut.gray[200],
 		borderStyle: 'solid',
 		borderWidth: overdriveTokens.border.width[1],
+		position: 'relative',
 	},
 	variants: {
 		size: {
@@ -71,7 +106,9 @@ export const variantColourSwatch = recipe({
 			circle: { borderRadius: '100%' },
 			rectangle: {
 				borderRadius: overdriveTokens.border.radius['md'],
-				width: '140px',
+				maxWidth: 160,
+				minWidth: 120,
+				width: 'auto',
 			},
 		},
 	},

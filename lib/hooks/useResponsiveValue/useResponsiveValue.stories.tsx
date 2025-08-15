@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Stack } from '../../components';
+import { FlexStack } from '../../components/Flex/FlexStack';
 import { Text } from '../../components/Text/Text';
 
 import { useResponsiveValue } from './';
@@ -18,7 +18,7 @@ export const Standard = () => {
 		const value = useResponsiveValue(allValues);
 
 		return (
-			<Stack>
+			<FlexStack>
 				<Text as="p">
 					All values:{' '}
 					<Text strong>{JSON.stringify(allValues)}</Text>{' '}
@@ -26,7 +26,7 @@ export const Standard = () => {
 				<Text as="p">
 					Responsive value: <Text strong>{value as string}</Text>{' '}
 				</Text>
-			</Stack>
+			</FlexStack>
 		);
 	};
 

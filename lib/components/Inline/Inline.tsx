@@ -8,12 +8,12 @@ import React, {
 } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 
-import { Sprinkles } from '../../styles/sprinkles.css';
-import { Box, type BoxProps } from '../Box/Box';
-import { LIST_MAP } from '../Stack/Stack';
+import type { Sprinkles } from '../../styles/sprinkles.css';
+import { calcChildElement } from '../../utils/elements';
+import { useBox, type UseBoxProps } from '../Box/useBox/useBox';
 import { Text } from '../Text/Text';
 
-export interface InlineProps extends Pick<BoxProps, 'as' | 'width'> {
+export interface InlineProps extends Pick<UseBoxProps, 'as' | 'width'> {
 	/**
 	 * Sets the horizontal alignment
 	 */
@@ -28,6 +28,7 @@ export interface InlineProps extends Pick<BoxProps, 'as' | 'width'> {
 	 * @default false (items wrap)
 	 */
 	children: ReactNode;
+	className?: string;
 	/**
 	 * A divider element to render between each child. Accepts `true`/`false` for default separator or custom JSX
 	 */
@@ -73,56 +74,60 @@ const Divider = ({ children }: PropsWithChildren) => {
  */
 export const Inline: FunctionComponent<InlineProps> = ({
 	as = 'div',
+	children,
+	className,
+
 	alignX,
 	alignY = 'center',
-	children,
 	dividers,
 	noWrap,
-	space = '2',
+	space: gap = '2',
 	width,
 }) => {
+	const { Component, componentProps } = useBox({
+		as,
+		className,
+		odComponent: 'inline',
+
+		alignItems: alignY,
+		display: 'flex',
+		flexDirection: 'row',
+		flexWrap: noWrap ? 'nowrap' : 'wrap',
+		gap,
+		justifyContent: alignX,
+		width,
+	});
+
 	const items = useMemo(() => flattenChildren(children), [children]);
+	const childEl = calcChildElement(as);
 
-	if (items.length === 0) {
-		return null;
-	}
+	const { Component: ChildComponent, componentProps: childComponentProps } =
+		useBox({
+			as: childEl,
 
-	const childEl =
-		typeof as === 'string' && as in LIST_MAP
-			? LIST_MAP[as as keyof typeof LIST_MAP]
-			: 'div';
+			alignItems: alignY,
+			display: 'flex',
+			flexWrap: 'nowrap',
+			// inherit a gap value from a css variable
+			useVar: 'gap',
+		});
+
+	if (items.length === 0) return null;
 
 	return (
-		<Box
-			alignItems={alignY}
-			as={as}
-			display="flex"
-			flexDirection="row"
-			flexWrap={noWrap ? 'nowrap' : 'wrap'}
-			gap={space}
-			justifyContent={alignX}
-			odComponent="inline"
-			width={width}
-		>
+		<Component {...componentProps}>
 			{Children.map(
 				items,
 				(child, idx) =>
 					child && (
-						<Box
-							alignItems={alignY}
-							as={childEl}
-							display="flex"
-							flexWrap="nowrap"
-							// inherit a gap value from a css variable
-							useVar="gap"
-						>
+						<ChildComponent {...childComponentProps}>
 							{dividers && idx > 0 && (
 								<Divider>{dividers}</Divider>
 							)}
 							{child}
-						</Box>
+						</ChildComponent>
 					),
 			)}
-		</Box>
+		</Component>
 	);
 };

@@ -11,8 +11,8 @@ import {
 import { textStyles } from '../../styles/typography';
 import { noop } from '../../utils';
 import { Box } from '../Box/Box';
+import { inline } from '../Flex/flex';
 import { Icon } from '../Icon/Icon';
-import { Inline } from '../Inline/Inline';
 
 import { Bubble } from './Bubble';
 import * as styles from './Pagination.css';
@@ -76,7 +76,7 @@ interface LoadingComponentProps {
 const Loading: FunctionComponent<LoadingComponentProps> = ({
 	placeholderBubblesNum = 3,
 }) => (
-	<Inline as="span" space="3">
+	<span className={inline({ gap: '3' })}>
 		<NavButton disabled icon={ChevronLeftIcon} />
 		{Array.from({ length: placeholderBubblesNum })
 			.fill('')
@@ -85,7 +85,7 @@ const Loading: FunctionComponent<LoadingComponentProps> = ({
 			))}
 
 		<NavButton disabled icon={ChevronRightIcon} />
-	</Inline>
+	</span>
 );
 
 export const Pagination: FunctionComponent<PaginationProps> = ({
@@ -114,7 +114,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
 	);
 
 	return !loading && total && pageSize && activePage && numPagesDisplayed ? (
-		<Inline as="nav" space="3" aria-label="pagination">
+		<span className={inline({ gap: '3' })} aria-label="pagination">
 			<NavButton
 				disabled={activePage <= 1}
 				label="navigate back"
@@ -144,7 +144,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
 				icon={ChevronRightIcon}
 				onClick={handleClick(allowedActive + 1)}
 			/>
-		</Inline>
+		</span>
 	) : (
 		<Loading placeholderBubblesNum={3} />
 	);

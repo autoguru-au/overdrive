@@ -25,8 +25,8 @@ export const common = style({
 		[cssLayerTypography]: {
 			selectors: {
 				'&::selection': {
-					color: tokens.color.content.inverse,
 					background: tokens.color.surface.accent,
+					color: tokens.color.content.inverse,
 				},
 			},
 		},

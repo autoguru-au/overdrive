@@ -8,11 +8,11 @@ const spinAnim = keyframes({
 	},
 });
 export const circular = style({
-	animationName: spinAnim,
-	transformOrigin: 'center center',
 	animationDuration: '2s',
-	animationTimingFunction: 'linear',
 	animationIterationCount: 'infinite',
+	animationName: spinAnim,
+	animationTimingFunction: 'linear',
+	transformOrigin: 'center center',
 });
 
 const stokeAnim = keyframes({
@@ -21,27 +21,30 @@ const stokeAnim = keyframes({
 		strokeDashoffset: 0,
 	},
 
-	'50%': {
-		strokeDasharray: '89, 200',
-		strokeDashoffset: '-35px',
-	},
-
 	'100%': {
 		strokeDasharray: '89, 200',
 		strokeDashoffset: '-124px',
 	},
+
+	'50%': {
+		strokeDasharray: '89, 200',
+		strokeDashoffset: '-35px',
+	},
 });
 export const path = style({
+	animationDuration: '1.5s',
+	animationIterationCount: 'infinite',
+	animationName: stokeAnim,
+	animationTimingFunction: vars.animation.easing.standard,
 	strokeDasharray: '1, 200',
 	strokeDashoffset: 0,
 	strokeLinecap: 'round',
-	animationDuration: '1.5s',
-	animationTimingFunction: vars.animation.easing.standard,
-	animationIterationCount: 'infinite',
-	animationName: stokeAnim,
 });
 
 export const colours = styleVariants({
+	danger: {
+		stroke: vars.typography.colour.danger,
+	},
 	default: {
 		stroke: vars.colours.foreground.body,
 	},
@@ -57,16 +60,13 @@ export const colours = styleVariants({
 	warning: {
 		stroke: vars.typography.colour.warning,
 	},
-	danger: {
-		stroke: vars.typography.colour.danger,
-	},
 });
 
 export const size = {
 	small: styleVariants({
 		circular: {
-			width: vars.space['3'],
 			height: vars.space['3'],
+			width: vars.space['3'],
 		},
 
 		path: {
@@ -75,8 +75,8 @@ export const size = {
 	}),
 	medium: styleVariants({
 		circular: {
-			width: vars.space['4'],
 			height: vars.space['4'],
+			width: vars.space['4'],
 		},
 
 		path: {
@@ -85,8 +85,8 @@ export const size = {
 	}),
 	large: styleVariants({
 		circular: {
-			width: vars.space['6'],
 			height: vars.space['6'],
+			width: vars.space['6'],
 		},
 
 		path: {

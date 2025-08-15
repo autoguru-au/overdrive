@@ -3,7 +3,7 @@ import React, { type ComponentProps } from 'react';
 import { userEvent, within, expect, waitFor } from 'storybook/test';
 
 import { Button } from '../Button';
-import { Inline } from '../Inline/Inline';
+import { FlexInline } from '../Flex/FlexInline';
 import { EAlignment } from '../Positioner/alignment';
 import { Text } from '../Text/Text';
 import { TextInput } from '../TextInput';
@@ -130,10 +130,10 @@ export const WithMultipleChildren: Story = {
 		testId: 'trigger',
 		children: (
 			<>
-				<Inline>
+				<FlexInline>
 					<Text>Inline child</Text>
 					<Text>Inline child</Text>
-				</Inline>
+				</FlexInline>
 				<Text>Second child element</Text>
 			</>
 		),

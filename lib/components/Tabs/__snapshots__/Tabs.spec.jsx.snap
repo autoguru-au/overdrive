@@ -23,18 +23,13 @@ exports[`<Tabs /> > should allow id overriding 1`] = `
           role="tab"
         >
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_nowrap_mobile__onxwjuqx sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_center_mobile__onxwjuoh"
-            data-od-component="inline"
+            class="sprinkles_alignItems_center_mobile__onxwjumt sprinkles_display_flex_mobile__onxwju6l sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_nowrap_mobile__onxwjuqx sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_center_mobile__onxwjuoh"
           >
-            <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_useVar_gap__onxwju68 sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexWrap_nowrap_mobile__onxwjuqx"
+            <span
+              class="Tab_item__11wt3mu8"
             >
-              <span
-                class="Tab_item__11wt3mu8"
-              >
-                tab 1 title
-              </span>
-            </div>
+              tab 1 title
+            </span>
           </div>
         </button>
         <button
@@ -45,18 +40,13 @@ exports[`<Tabs /> > should allow id overriding 1`] = `
           tabindex="-1"
         >
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_nowrap_mobile__onxwjuqx sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_center_mobile__onxwjuoh"
-            data-od-component="inline"
+            class="sprinkles_alignItems_center_mobile__onxwjumt sprinkles_display_flex_mobile__onxwju6l sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_nowrap_mobile__onxwjuqx sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_center_mobile__onxwjuoh"
           >
-            <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_useVar_gap__onxwju68 sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexWrap_nowrap_mobile__onxwjuqx"
+            <span
+              class="Tab_item__11wt3mu8"
             >
-              <span
-                class="Tab_item__11wt3mu8"
-              >
-                tab 2 title
-              </span>
-            </div>
+              tab 2 title
+            </span>
           </div>
         </button>
         <button
@@ -67,18 +57,13 @@ exports[`<Tabs /> > should allow id overriding 1`] = `
           tabindex="-1"
         >
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_nowrap_mobile__onxwjuqx sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_center_mobile__onxwjuoh"
-            data-od-component="inline"
+            class="sprinkles_alignItems_center_mobile__onxwjumt sprinkles_display_flex_mobile__onxwju6l sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_nowrap_mobile__onxwjuqx sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_center_mobile__onxwjuoh"
           >
-            <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_useVar_gap__onxwju68 sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexWrap_nowrap_mobile__onxwjuqx"
+            <span
+              class="Tab_item__11wt3mu8"
             >
-              <span
-                class="Tab_item__11wt3mu8"
-              >
-                tab 3 title
-              </span>
-            </div>
+              tab 3 title
+            </span>
           </div>
         </button>
       </div>
@@ -140,27 +125,18 @@ exports[`<Tabs /> > should allow rendering indications 1`] = `
           role="tab"
         >
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_nowrap_mobile__onxwjuqx sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_center_mobile__onxwjuoh"
-            data-od-component="inline"
+            class="sprinkles_alignItems_center_mobile__onxwjumt sprinkles_display_flex_mobile__onxwju6l sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_nowrap_mobile__onxwjuqx sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_center_mobile__onxwjuoh"
           >
-            <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_useVar_gap__onxwju68 sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexWrap_nowrap_mobile__onxwjuqx"
+            <span
+              class="Tab_item__11wt3mu8"
             >
-              <span
-                class="Tab_item__11wt3mu8"
-              >
-                tab 1 title
-              </span>
-            </div>
-            <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_useVar_gap__onxwju68 sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexWrap_nowrap_mobile__onxwjuqx"
+              tab 1 title
+            </span>
+            <span
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2_mobile__onxwjua1 sprinkles_lineHeight_2_mobile__onxwju91 sprinkles_fontWeight_bold__onxwju5m sprinkles_textAlign_center_mobile__onxwjub1 typography_color_white__yhjp336 sprinkles_display_block_mobile__onxwju6d Tab_indication__11wt3mu9 Tab_indication_appearance_underlined__11wt3mua Tab_indication_active_true__11wt3mud Tab_indication_compound_0__11wt3mue"
             >
-              <span
-                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6d elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2_mobile__onxwjua1 sprinkles_lineHeight_2_mobile__onxwju91 sprinkles_fontWeight_bold__onxwju5m sprinkles_textAlign_center_mobile__onxwjub1 typography_color_white__yhjp336 Tab_indication__11wt3mu9 Tab_indication_appearance_underlined__11wt3mua Tab_indication_active_true__11wt3mud Tab_indication_compound_0__11wt3mue"
-              >
-                5
-              </span>
-            </div>
+              5
+            </span>
           </div>
         </button>
         <button
@@ -171,27 +147,18 @@ exports[`<Tabs /> > should allow rendering indications 1`] = `
           tabindex="-1"
         >
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_nowrap_mobile__onxwjuqx sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_center_mobile__onxwjuoh"
-            data-od-component="inline"
+            class="sprinkles_alignItems_center_mobile__onxwjumt sprinkles_display_flex_mobile__onxwju6l sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_nowrap_mobile__onxwjuqx sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_center_mobile__onxwjuoh"
           >
-            <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_useVar_gap__onxwju68 sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexWrap_nowrap_mobile__onxwjuqx"
+            <span
+              class="Tab_item__11wt3mu8"
             >
-              <span
-                class="Tab_item__11wt3mu8"
-              >
-                tab 2 title
-              </span>
-            </div>
-            <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_useVar_gap__onxwju68 sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexWrap_nowrap_mobile__onxwjuqx"
+              tab 2 title
+            </span>
+            <span
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2_mobile__onxwjua1 sprinkles_lineHeight_2_mobile__onxwju91 sprinkles_fontWeight_bold__onxwju5m sprinkles_textAlign_center_mobile__onxwjub1 typography_color_dark__yhjp335 sprinkles_display_block_mobile__onxwju6d Tab_indication__11wt3mu9 Tab_indication_appearance_underlined__11wt3mua"
             >
-              <span
-                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6d elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2_mobile__onxwjua1 sprinkles_lineHeight_2_mobile__onxwju91 sprinkles_fontWeight_bold__onxwju5m sprinkles_textAlign_center_mobile__onxwjub1 typography_color_dark__yhjp335 Tab_indication__11wt3mu9 Tab_indication_appearance_underlined__11wt3mua"
-              >
-                5
-              </span>
-            </div>
+              5
+            </span>
           </div>
         </button>
         <button
@@ -202,27 +169,18 @@ exports[`<Tabs /> > should allow rendering indications 1`] = `
           tabindex="-1"
         >
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_nowrap_mobile__onxwjuqx sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_center_mobile__onxwjuoh"
-            data-od-component="inline"
+            class="sprinkles_alignItems_center_mobile__onxwjumt sprinkles_display_flex_mobile__onxwju6l sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_nowrap_mobile__onxwjuqx sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_center_mobile__onxwjuoh"
           >
-            <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_useVar_gap__onxwju68 sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexWrap_nowrap_mobile__onxwjuqx"
+            <span
+              class="Tab_item__11wt3mu8"
             >
-              <span
-                class="Tab_item__11wt3mu8"
-              >
-                tab 3 title
-              </span>
-            </div>
-            <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_useVar_gap__onxwju68 sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexWrap_nowrap_mobile__onxwjuqx"
+              tab 3 title
+            </span>
+            <span
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2_mobile__onxwjua1 sprinkles_lineHeight_2_mobile__onxwju91 sprinkles_fontWeight_bold__onxwju5m sprinkles_textAlign_center_mobile__onxwjub1 typography_color_dark__yhjp335 sprinkles_display_block_mobile__onxwju6d Tab_indication__11wt3mu9 Tab_indication_appearance_underlined__11wt3mua"
             >
-              <span
-                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6d elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2_mobile__onxwjua1 sprinkles_lineHeight_2_mobile__onxwju91 sprinkles_fontWeight_bold__onxwju5m sprinkles_textAlign_center_mobile__onxwjub1 typography_color_dark__yhjp335 Tab_indication__11wt3mu9 Tab_indication_appearance_underlined__11wt3mua"
-              >
-                5
-              </span>
-            </div>
+              5
+            </span>
           </div>
         </button>
       </div>
@@ -284,18 +242,13 @@ exports[`<Tabs /> > should match snapshot (high level) 1`] = `
           role="tab"
         >
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_nowrap_mobile__onxwjuqx sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_center_mobile__onxwjuoh"
-            data-od-component="inline"
+            class="sprinkles_alignItems_center_mobile__onxwjumt sprinkles_display_flex_mobile__onxwju6l sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_nowrap_mobile__onxwjuqx sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_center_mobile__onxwjuoh"
           >
-            <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_useVar_gap__onxwju68 sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexWrap_nowrap_mobile__onxwjuqx"
+            <span
+              class="Tab_item__11wt3mu8"
             >
-              <span
-                class="Tab_item__11wt3mu8"
-              >
-                tab 1 title
-              </span>
-            </div>
+              tab 1 title
+            </span>
           </div>
         </button>
         <button
@@ -306,18 +259,13 @@ exports[`<Tabs /> > should match snapshot (high level) 1`] = `
           tabindex="-1"
         >
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_nowrap_mobile__onxwjuqx sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_center_mobile__onxwjuoh"
-            data-od-component="inline"
+            class="sprinkles_alignItems_center_mobile__onxwjumt sprinkles_display_flex_mobile__onxwju6l sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_nowrap_mobile__onxwjuqx sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_center_mobile__onxwjuoh"
           >
-            <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_useVar_gap__onxwju68 sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexWrap_nowrap_mobile__onxwjuqx"
+            <span
+              class="Tab_item__11wt3mu8"
             >
-              <span
-                class="Tab_item__11wt3mu8"
-              >
-                tab 2 title
-              </span>
-            </div>
+              tab 2 title
+            </span>
           </div>
         </button>
         <button
@@ -328,18 +276,13 @@ exports[`<Tabs /> > should match snapshot (high level) 1`] = `
           tabindex="-1"
         >
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_nowrap_mobile__onxwjuqx sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_center_mobile__onxwjuoh"
-            data-od-component="inline"
+            class="sprinkles_alignItems_center_mobile__onxwjumt sprinkles_display_flex_mobile__onxwju6l sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_nowrap_mobile__onxwjuqx sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_center_mobile__onxwjuoh"
           >
-            <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_useVar_gap__onxwju68 sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexWrap_nowrap_mobile__onxwjuqx"
+            <span
+              class="Tab_item__11wt3mu8"
             >
-              <span
-                class="Tab_item__11wt3mu8"
-              >
-                tab 3 title
-              </span>
-            </div>
+              tab 3 title
+            </span>
           </div>
         </button>
       </div>

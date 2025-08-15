@@ -10,7 +10,7 @@ import { useNullCheck } from '../../hooks/useNullCheck';
 import { elementStyles } from '../../styles';
 import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
 import type { ResponsiveProp } from '../../utils/responsiveProps.css';
-import { Box, type BoxProps } from '../Box/Box';
+import { useBox, type UseBoxProps } from '../Box/useBox/useBox';
 
 import * as styles from './Icon.css';
 
@@ -21,7 +21,7 @@ export type IconEl =
 
 export interface IconProps {
 	display?: Extract<
-		BoxProps['display'],
+		UseBoxProps['display'],
 		'block' | 'inlineBlock' | 'inline-block'
 	>;
 	className?: string;
@@ -37,16 +37,16 @@ export const Icon: FunctionComponent<IconProps> = ({
 }) => {
 	useNullCheck(icon, 'Icon component received an empty icon prop.');
 
-	const boxProps: BoxProps = {
+	const { Component: Wrapper, componentProps: wrapperProps } = useBox({
 		as: 'span',
-		display,
 		className: [resolveResponsiveStyle(size, styles.size), className],
+		display,
 		odComponent: 'icon',
-	};
+	});
 
 	// Handle null/undefined icons by showing fallback without trying to clone
 	if (!icon) {
-		return <Box {...boxProps}>⬤</Box>;
+		return <Wrapper {...wrapperProps}>⬤</Wrapper>;
 	}
 
 	const iconElement = cloneElement(icon, {
@@ -60,5 +60,5 @@ export const Icon: FunctionComponent<IconProps> = ({
 		'aria-hidden': icon.props['aria-label'] ? undefined : true,
 	});
 
-	return <Box {...boxProps}>{iconElement}</Box>;
+	return <Wrapper {...wrapperProps}>{iconElement}</Wrapper>;
 };

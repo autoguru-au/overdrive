@@ -6,72 +6,56 @@ exports[`<SimplePagination /> > should match snapshot for hasNext 1`] = `
   data-od-component="provider"
 >
   <nav
-    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_nav__18vhvlix elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_wrap_mobile__onxwjur1 sprinkles_gap_6_mobile__onxwjuip sprinkles_justifyContent_center_mobile__onxwjuoh"
-    data-od-component="inline"
+    aria-label="pagination"
+    class="sprinkles_display_flex_mobile__onxwju6l sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_wrap_mobile__onxwjur1 sprinkles_gap_6_mobile__onxwjuip sprinkles_justifyContent_center_mobile__onxwjuoh"
   >
-    <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_useVar_gap__onxwju68 sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexWrap_nowrap_mobile__onxwjuqx"
+    <button
+      aria-label="previous page"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjumt sprinkles_borderRadius_md_mobile__onxwjubt sprinkles_fontWeight_semiBold__onxwju5l sprinkles_gap_1_mobile__onxwjui5 sprinkles_justifyContent_center_mobile__onxwjuoh sprinkles_position_relative_mobile__onxwju8h sprinkles_width_fit-content_mobile__onxwjugt focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon57 Button_button_shape_iconOnly__p2yon5c Button_button_intent_secondary__p2yon5f Button_button_minimal_false__p2yon5l Button_button_rounded_true__p2yon5m Button__p2yon54 sprinkles_borderRadius_pill_mobile__onxwjuc9 Button_button_compound_2__p2yon5r"
+      disabled=""
+      type="button"
     >
-      <button
-        aria-label="previous page"
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 elementReset_resetVariants_hasBorder_true__18vhvli1f elementReset_borderReset__18vhvli1 sprinkles_borderBottomWidth_none_mobile__onxwjud9 sprinkles_borderLeftWidth_none_mobile__onxwjuct sprinkles_borderRightWidth_none_mobile__onxwjudp sprinkles_borderTopWidth_none_mobile__onxwjue5 sprinkles_paddingLeft_3_mobile__onxwjuul sprinkles_paddingRight_3_mobile__onxwjuvp sprinkles_paddingTop_none_mobile__onxwjuxl sprinkles_paddingBottom_none_mobile__onxwjuu9 sprinkles_display_inline-block_mobile__onxwju71 sprinkles_overflow_hidden_mobile__onxwju7h sprinkles_borderRadius_pill_mobile__onxwjuc9 sprinkles_textAlign_center_mobile__onxwjub1 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjua5 sprinkles_lineHeight_3_mobile__onxwju95 sprinkles_fontWeight_semiBold__onxwju5l typography_color_white__yhjp336 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon54 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_2__p2yon5l"
-        disabled=""
-        type="button"
+      <span
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6d Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+        data-od-component="icon"
       >
-        <div
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_height_full_mobile__onxwjufl sprinkles_alignItems_center_mobile__onxwjumt sprinkles_justifyContent_center_mobile__onxwjuoh Button_body__p2yon50"
+        <svg
+          aria-hidden="true"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <span
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6d Icon_makeResponsiveStyle_key_bp__1gy3ire4"
-            data-od-component="icon"
-          >
-            <svg
-              aria-hidden="true"
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M15.414 16.584l-4.586-4.586 4.586-4.586-1.415-1.414-6 6 6 6 1.415-1.414z"
-              />
-            </svg>
-          </span>
-        </div>
-      </button>
-    </div>
-    <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_useVar_gap__onxwju68 sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexWrap_nowrap_mobile__onxwjuqx"
+          <path
+            d="M15.414 16.584l-4.586-4.586 4.586-4.586-1.415-1.414-6 6 6 6 1.415-1.414z"
+          />
+        </svg>
+      </span>
+    </button>
+    <button
+      aria-label="next page"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjumt sprinkles_borderRadius_md_mobile__onxwjubt sprinkles_fontWeight_semiBold__onxwju5l sprinkles_gap_1_mobile__onxwjui5 sprinkles_justifyContent_center_mobile__onxwjuoh sprinkles_position_relative_mobile__onxwju8h sprinkles_width_fit-content_mobile__onxwjugt focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon57 Button_button_shape_iconOnly__p2yon5c Button_button_intent_secondary__p2yon5f Button_button_minimal_false__p2yon5l Button_button_rounded_true__p2yon5m Button__p2yon54 sprinkles_borderRadius_pill_mobile__onxwjuc9 Button_button_compound_2__p2yon5r"
+      type="button"
     >
-      <button
-        aria-label="next page"
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 elementReset_resetVariants_hasBorder_true__18vhvli1f elementReset_borderReset__18vhvli1 sprinkles_borderBottomWidth_none_mobile__onxwjud9 sprinkles_borderLeftWidth_none_mobile__onxwjuct sprinkles_borderRightWidth_none_mobile__onxwjudp sprinkles_borderTopWidth_none_mobile__onxwjue5 sprinkles_paddingLeft_3_mobile__onxwjuul sprinkles_paddingRight_3_mobile__onxwjuvp sprinkles_paddingTop_none_mobile__onxwjuxl sprinkles_paddingBottom_none_mobile__onxwjuu9 sprinkles_display_inline-block_mobile__onxwju71 sprinkles_overflow_hidden_mobile__onxwju7h sprinkles_borderRadius_pill_mobile__onxwjuc9 sprinkles_textAlign_center_mobile__onxwjub1 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjua5 sprinkles_lineHeight_3_mobile__onxwju95 sprinkles_fontWeight_semiBold__onxwju5l typography_color_white__yhjp336 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon54 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_2__p2yon5l"
-        type="button"
+      <span
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6d Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+        data-od-component="icon"
       >
-        <div
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_height_full_mobile__onxwjufl sprinkles_alignItems_center_mobile__onxwjumt sprinkles_justifyContent_center_mobile__onxwjuoh Button_body__p2yon50"
+        <svg
+          aria-hidden="true"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <span
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6d Icon_makeResponsiveStyle_key_bp__1gy3ire4"
-            data-od-component="icon"
-          >
-            <svg
-              aria-hidden="true"
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8.585 16.584l4.586-4.586-4.586-4.586L10 5.998l6 6-6 6-1.414-1.414z"
-              />
-            </svg>
-          </span>
-        </div>
-      </button>
-    </div>
+          <path
+            d="M8.585 16.584l4.586-4.586-4.586-4.586L10 5.998l6 6-6 6-1.414-1.414z"
+          />
+        </svg>
+      </span>
+    </button>
   </nav>
 </div>
 `;
@@ -82,71 +66,55 @@ exports[`<SimplePagination /> > should match snapshot for hasNext and hasPreviou
   data-od-component="provider"
 >
   <nav
-    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_nav__18vhvlix elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_wrap_mobile__onxwjur1 sprinkles_gap_6_mobile__onxwjuip sprinkles_justifyContent_center_mobile__onxwjuoh"
-    data-od-component="inline"
+    aria-label="pagination"
+    class="sprinkles_display_flex_mobile__onxwju6l sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_wrap_mobile__onxwjur1 sprinkles_gap_6_mobile__onxwjuip sprinkles_justifyContent_center_mobile__onxwjuoh"
   >
-    <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_useVar_gap__onxwju68 sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexWrap_nowrap_mobile__onxwjuqx"
+    <button
+      aria-label="previous page"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjumt sprinkles_borderRadius_md_mobile__onxwjubt sprinkles_fontWeight_semiBold__onxwju5l sprinkles_gap_1_mobile__onxwjui5 sprinkles_justifyContent_center_mobile__onxwjuoh sprinkles_position_relative_mobile__onxwju8h sprinkles_width_fit-content_mobile__onxwjugt focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon57 Button_button_shape_iconOnly__p2yon5c Button_button_intent_secondary__p2yon5f Button_button_minimal_false__p2yon5l Button_button_rounded_true__p2yon5m Button__p2yon54 sprinkles_borderRadius_pill_mobile__onxwjuc9 Button_button_compound_2__p2yon5r"
+      type="button"
     >
-      <button
-        aria-label="previous page"
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 elementReset_resetVariants_hasBorder_true__18vhvli1f elementReset_borderReset__18vhvli1 sprinkles_borderBottomWidth_none_mobile__onxwjud9 sprinkles_borderLeftWidth_none_mobile__onxwjuct sprinkles_borderRightWidth_none_mobile__onxwjudp sprinkles_borderTopWidth_none_mobile__onxwjue5 sprinkles_paddingLeft_3_mobile__onxwjuul sprinkles_paddingRight_3_mobile__onxwjuvp sprinkles_paddingTop_none_mobile__onxwjuxl sprinkles_paddingBottom_none_mobile__onxwjuu9 sprinkles_display_inline-block_mobile__onxwju71 sprinkles_overflow_hidden_mobile__onxwju7h sprinkles_borderRadius_pill_mobile__onxwjuc9 sprinkles_textAlign_center_mobile__onxwjub1 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjua5 sprinkles_lineHeight_3_mobile__onxwju95 sprinkles_fontWeight_semiBold__onxwju5l typography_color_white__yhjp336 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon54 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_2__p2yon5l"
-        type="button"
+      <span
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6d Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+        data-od-component="icon"
       >
-        <div
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_height_full_mobile__onxwjufl sprinkles_alignItems_center_mobile__onxwjumt sprinkles_justifyContent_center_mobile__onxwjuoh Button_body__p2yon50"
+        <svg
+          aria-hidden="true"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <span
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6d Icon_makeResponsiveStyle_key_bp__1gy3ire4"
-            data-od-component="icon"
-          >
-            <svg
-              aria-hidden="true"
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M15.414 16.584l-4.586-4.586 4.586-4.586-1.415-1.414-6 6 6 6 1.415-1.414z"
-              />
-            </svg>
-          </span>
-        </div>
-      </button>
-    </div>
-    <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_useVar_gap__onxwju68 sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexWrap_nowrap_mobile__onxwjuqx"
+          <path
+            d="M15.414 16.584l-4.586-4.586 4.586-4.586-1.415-1.414-6 6 6 6 1.415-1.414z"
+          />
+        </svg>
+      </span>
+    </button>
+    <button
+      aria-label="next page"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjumt sprinkles_borderRadius_md_mobile__onxwjubt sprinkles_fontWeight_semiBold__onxwju5l sprinkles_gap_1_mobile__onxwjui5 sprinkles_justifyContent_center_mobile__onxwjuoh sprinkles_position_relative_mobile__onxwju8h sprinkles_width_fit-content_mobile__onxwjugt focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon57 Button_button_shape_iconOnly__p2yon5c Button_button_intent_secondary__p2yon5f Button_button_minimal_false__p2yon5l Button_button_rounded_true__p2yon5m Button__p2yon54 sprinkles_borderRadius_pill_mobile__onxwjuc9 Button_button_compound_2__p2yon5r"
+      type="button"
     >
-      <button
-        aria-label="next page"
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 elementReset_resetVariants_hasBorder_true__18vhvli1f elementReset_borderReset__18vhvli1 sprinkles_borderBottomWidth_none_mobile__onxwjud9 sprinkles_borderLeftWidth_none_mobile__onxwjuct sprinkles_borderRightWidth_none_mobile__onxwjudp sprinkles_borderTopWidth_none_mobile__onxwjue5 sprinkles_paddingLeft_3_mobile__onxwjuul sprinkles_paddingRight_3_mobile__onxwjuvp sprinkles_paddingTop_none_mobile__onxwjuxl sprinkles_paddingBottom_none_mobile__onxwjuu9 sprinkles_display_inline-block_mobile__onxwju71 sprinkles_overflow_hidden_mobile__onxwju7h sprinkles_borderRadius_pill_mobile__onxwjuc9 sprinkles_textAlign_center_mobile__onxwjub1 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjua5 sprinkles_lineHeight_3_mobile__onxwju95 sprinkles_fontWeight_semiBold__onxwju5l typography_color_white__yhjp336 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon54 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_2__p2yon5l"
-        type="button"
+      <span
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6d Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+        data-od-component="icon"
       >
-        <div
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_height_full_mobile__onxwjufl sprinkles_alignItems_center_mobile__onxwjumt sprinkles_justifyContent_center_mobile__onxwjuoh Button_body__p2yon50"
+        <svg
+          aria-hidden="true"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <span
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6d Icon_makeResponsiveStyle_key_bp__1gy3ire4"
-            data-od-component="icon"
-          >
-            <svg
-              aria-hidden="true"
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8.585 16.584l4.586-4.586-4.586-4.586L10 5.998l6 6-6 6-1.414-1.414z"
-              />
-            </svg>
-          </span>
-        </div>
-      </button>
-    </div>
+          <path
+            d="M8.585 16.584l4.586-4.586-4.586-4.586L10 5.998l6 6-6 6-1.414-1.414z"
+          />
+        </svg>
+      </span>
+    </button>
   </nav>
 </div>
 `;
@@ -157,72 +125,56 @@ exports[`<SimplePagination /> > should match snapshot for hasPrevious 1`] = `
   data-od-component="provider"
 >
   <nav
-    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_nav__18vhvlix elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_wrap_mobile__onxwjur1 sprinkles_gap_6_mobile__onxwjuip sprinkles_justifyContent_center_mobile__onxwjuoh"
-    data-od-component="inline"
+    aria-label="pagination"
+    class="sprinkles_display_flex_mobile__onxwju6l sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_wrap_mobile__onxwjur1 sprinkles_gap_6_mobile__onxwjuip sprinkles_justifyContent_center_mobile__onxwjuoh"
   >
-    <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_useVar_gap__onxwju68 sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexWrap_nowrap_mobile__onxwjuqx"
+    <button
+      aria-label="previous page"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjumt sprinkles_borderRadius_md_mobile__onxwjubt sprinkles_fontWeight_semiBold__onxwju5l sprinkles_gap_1_mobile__onxwjui5 sprinkles_justifyContent_center_mobile__onxwjuoh sprinkles_position_relative_mobile__onxwju8h sprinkles_width_fit-content_mobile__onxwjugt focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon57 Button_button_shape_iconOnly__p2yon5c Button_button_intent_secondary__p2yon5f Button_button_minimal_false__p2yon5l Button_button_rounded_true__p2yon5m Button__p2yon54 sprinkles_borderRadius_pill_mobile__onxwjuc9 Button_button_compound_2__p2yon5r"
+      type="button"
     >
-      <button
-        aria-label="previous page"
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 elementReset_resetVariants_hasBorder_true__18vhvli1f elementReset_borderReset__18vhvli1 sprinkles_borderBottomWidth_none_mobile__onxwjud9 sprinkles_borderLeftWidth_none_mobile__onxwjuct sprinkles_borderRightWidth_none_mobile__onxwjudp sprinkles_borderTopWidth_none_mobile__onxwjue5 sprinkles_paddingLeft_3_mobile__onxwjuul sprinkles_paddingRight_3_mobile__onxwjuvp sprinkles_paddingTop_none_mobile__onxwjuxl sprinkles_paddingBottom_none_mobile__onxwjuu9 sprinkles_display_inline-block_mobile__onxwju71 sprinkles_overflow_hidden_mobile__onxwju7h sprinkles_borderRadius_pill_mobile__onxwjuc9 sprinkles_textAlign_center_mobile__onxwjub1 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjua5 sprinkles_lineHeight_3_mobile__onxwju95 sprinkles_fontWeight_semiBold__onxwju5l typography_color_white__yhjp336 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon54 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_2__p2yon5l"
-        type="button"
+      <span
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6d Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+        data-od-component="icon"
       >
-        <div
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_height_full_mobile__onxwjufl sprinkles_alignItems_center_mobile__onxwjumt sprinkles_justifyContent_center_mobile__onxwjuoh Button_body__p2yon50"
+        <svg
+          aria-hidden="true"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <span
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6d Icon_makeResponsiveStyle_key_bp__1gy3ire4"
-            data-od-component="icon"
-          >
-            <svg
-              aria-hidden="true"
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M15.414 16.584l-4.586-4.586 4.586-4.586-1.415-1.414-6 6 6 6 1.415-1.414z"
-              />
-            </svg>
-          </span>
-        </div>
-      </button>
-    </div>
-    <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_useVar_gap__onxwju68 sprinkles_alignItems_center_mobile__onxwjumt sprinkles_flexWrap_nowrap_mobile__onxwjuqx"
+          <path
+            d="M15.414 16.584l-4.586-4.586 4.586-4.586-1.415-1.414-6 6 6 6 1.415-1.414z"
+          />
+        </svg>
+      </span>
+    </button>
+    <button
+      aria-label="next page"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjumt sprinkles_borderRadius_md_mobile__onxwjubt sprinkles_fontWeight_semiBold__onxwju5l sprinkles_gap_1_mobile__onxwjui5 sprinkles_justifyContent_center_mobile__onxwjuoh sprinkles_position_relative_mobile__onxwju8h sprinkles_width_fit-content_mobile__onxwjugt focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon57 Button_button_shape_iconOnly__p2yon5c Button_button_intent_secondary__p2yon5f Button_button_minimal_false__p2yon5l Button_button_rounded_true__p2yon5m Button__p2yon54 sprinkles_borderRadius_pill_mobile__onxwjuc9 Button_button_compound_2__p2yon5r"
+      disabled=""
+      type="button"
     >
-      <button
-        aria-label="next page"
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 elementReset_resetVariants_hasBorder_true__18vhvli1f elementReset_borderReset__18vhvli1 sprinkles_borderBottomWidth_none_mobile__onxwjud9 sprinkles_borderLeftWidth_none_mobile__onxwjuct sprinkles_borderRightWidth_none_mobile__onxwjudp sprinkles_borderTopWidth_none_mobile__onxwjue5 sprinkles_paddingLeft_3_mobile__onxwjuul sprinkles_paddingRight_3_mobile__onxwjuvp sprinkles_paddingTop_none_mobile__onxwjuxl sprinkles_paddingBottom_none_mobile__onxwjuu9 sprinkles_display_inline-block_mobile__onxwju71 sprinkles_overflow_hidden_mobile__onxwju7h sprinkles_borderRadius_pill_mobile__onxwjuc9 sprinkles_textAlign_center_mobile__onxwjub1 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjua5 sprinkles_lineHeight_3_mobile__onxwju95 sprinkles_fontWeight_semiBold__onxwju5l typography_color_white__yhjp336 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon54 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_2__p2yon5l"
-        disabled=""
-        type="button"
+      <span
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6d Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+        data-od-component="icon"
       >
-        <div
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_height_full_mobile__onxwjufl sprinkles_alignItems_center_mobile__onxwjumt sprinkles_justifyContent_center_mobile__onxwjuoh Button_body__p2yon50"
+        <svg
+          aria-hidden="true"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <span
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6d Icon_makeResponsiveStyle_key_bp__1gy3ire4"
-            data-od-component="icon"
-          >
-            <svg
-              aria-hidden="true"
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8.585 16.584l4.586-4.586-4.586-4.586L10 5.998l6 6-6 6-1.414-1.414z"
-              />
-            </svg>
-          </span>
-        </div>
-      </button>
-    </div>
+          <path
+            d="M8.585 16.584l4.586-4.586-4.586-4.586L10 5.998l6 6-6 6-1.414-1.414z"
+          />
+        </svg>
+      </span>
+    </button>
   </nav>
 </div>
 `;
