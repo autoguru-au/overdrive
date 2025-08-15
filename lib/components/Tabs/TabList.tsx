@@ -64,7 +64,7 @@ export const TabList: FunctionComponent<TabListProps> = ({
 		tabsContext !== null,
 		'This tablist isnt nested beneath <Tabs />',
 	);
-	const { appearance } = tabsContext;
+	const { appearance, activeIndex, onChange } = tabsContext;
 
 	const [displayScroll, setDisplayScroll] = useState({
 		start: false,
@@ -105,6 +105,67 @@ export const TabList: FunctionComponent<TabListProps> = ({
 		scrollToItem(-wrapperRef.current!.clientWidth!);
 	const handleEndButton = () =>
 		scrollToItem(wrapperRef.current!.clientWidth!);
+
+	const handleKeyDown = useCallback(
+		(event: React.KeyboardEvent) => {
+			// Only handle when focus is within the tablist
+			const tabsRoot = innerRef.current;
+			if (!tabsRoot) return;
+
+			const key = event.key;
+			if (
+				key !== 'ArrowRight' &&
+				key !== 'ArrowLeft' &&
+				key !== 'Home' &&
+				key !== 'End'
+			) {
+				return;
+			}
+
+			event.preventDefault();
+
+			const tabNodes =
+				tabsRoot.querySelectorAll<HTMLElement>('[role="tab"]');
+			if (tabNodes.length === 0) return;
+
+			let nextIndex = activeIndex ?? 0;
+			const lastIndex = tabNodes.length - 1;
+
+			switch (key) {
+				case 'ArrowRight': {
+					nextIndex = (activeIndex + 1) % tabNodes.length;
+					break;
+				}
+				case 'ArrowLeft': {
+					nextIndex =
+						(activeIndex - 1 + tabNodes.length) % tabNodes.length;
+					break;
+				}
+				case 'Home': {
+					nextIndex = 0;
+					break;
+				}
+				case 'End': {
+					nextIndex = lastIndex;
+					break;
+				}
+			}
+
+			if (nextIndex !== activeIndex) {
+				// Update active tab
+				onChange?.(nextIndex);
+				// Ensure the newly active tab is visible and receives focus
+				// Focus will automatically move due to roving tabindex on Tab
+				// but we also scroll it into view if needed (especially when scrollable)
+				queueMicrotask(() => {
+					const el = tabNodes.item(nextIndex);
+					el?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+					el?.focus?.();
+				});
+			}
+		},
+		[activeIndex, onChange],
+	);
 
 	useEffect(() => {
 		const win = ownerWindow(wrapperRef.current!);
@@ -159,6 +220,7 @@ export const TabList: FunctionComponent<TabListProps> = ({
 					width="full"
 					role="tablist"
 					aria-orientation="horizontal"
+					onKeyDown={handleKeyDown}
 					className={textStyles({ noWrap: true })}
 				>
 					{tabs}
