@@ -60,7 +60,7 @@ export const Stack = ({
 }: StackProps) => {
 	const { Component, componentProps } = useBox({
 		as,
-		className: { [styles.stackWithDividers]: dividers, className },
+		className: [dividers && styles.stackWithDividers, className],
 		odComponent: 'stack',
 
 		display: 'flex',

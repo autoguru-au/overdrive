@@ -1,5 +1,17 @@
 # @autoguru/overdrive
 
+## 4.44.10
+
+### Patch Changes
+
+- 4590663: **Stack**: fix for className value render
+
+## 4.44.9
+
+### Patch Changes
+
+- a0c0b3d: **Icon**: handles null and undefined icon prop edgecase
+
 ## 4.44.8
 
 ### Patch Changes
@@ -43,7 +55,7 @@
 
 (147aeb0)
 
-- **EditableText:** fixes width during edit mode
+- **EditableText:** fixes incorrect width during edit mode from v4.44.2
 
 **Flex Layout**
 

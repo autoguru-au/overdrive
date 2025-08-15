@@ -1,17 +1,23 @@
 import type { IconType } from '@autoguru/icons';
-import type { FunctionComponent, ReactElement, SVGAttributes } from 'react';
-import * as React from 'react';
-import { cloneElement } from 'react';
+import React, {
+	cloneElement,
+	type FunctionComponent,
+	type ReactElement,
+	type SVGAttributes,
+} from 'react';
 
 import { useNullCheck } from '../../hooks/useNullCheck';
 import { elementStyles } from '../../styles';
 import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
-import { ResponsiveProp } from '../../utils/responsiveProps.css';
+import type { ResponsiveProp } from '../../utils/responsiveProps.css';
 import { useBox, type UseBoxProps } from '../Box/useBox/useBox';
 
 import * as styles from './Icon.css';
 
-export type IconEl = IconType | ReactElement<SVGAttributes<SVGElement>, 'svg'>;
+export type IconEl =
+	| IconType
+	| ReactElement<SVGAttributes<SVGElement>, 'svg'>
+	| null;
 
 export interface IconProps {
 	display?: Extract<
@@ -20,7 +26,7 @@ export interface IconProps {
 	>;
 	className?: string;
 	size?: ResponsiveProp<keyof typeof styles.size | string>;
-	icon: IconEl;
+	icon?: IconEl;
 }
 
 export const Icon: FunctionComponent<IconProps> = ({
@@ -34,9 +40,14 @@ export const Icon: FunctionComponent<IconProps> = ({
 	const { Component: Wrapper, componentProps: wrapperProps } = useBox({
 		as: 'span',
 		className: [resolveResponsiveStyle(size, styles.size), className],
-		odComponent: 'icon',
 		display,
+		odComponent: 'icon',
 	});
+
+	// Handle null/undefined icons by showing fallback without trying to clone
+	if (!icon) {
+		return <Wrapper {...wrapperProps}>⬤</Wrapper>;
+	}
 
 	const iconElement = cloneElement(icon, {
 		className: elementStyles({
@@ -49,5 +60,5 @@ export const Icon: FunctionComponent<IconProps> = ({
 		'aria-hidden': icon.props['aria-label'] ? undefined : true,
 	});
 
-	return <Wrapper {...wrapperProps}>{icon ? iconElement : '⬤'}</Wrapper>;
+	return <Wrapper {...wrapperProps}>{iconElement}</Wrapper>;
 };
