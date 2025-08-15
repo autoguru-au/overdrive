@@ -194,7 +194,7 @@ __metadata:
     postcss: "npm:8.5.6"
     prettier: "npm:3.6.2"
     prop-types: "npm:15.8.1"
-    rand-seed: "npm:2.1.7"
+    rand-seed: "npm:3.0.0"
     react: "npm:19.1.1"
     react-aria: "npm:3.41.1"
     react-aria-components: "npm:1.10.1"
@@ -11323,10 +11323,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rand-seed@npm:2.1.7":
-  version: 2.1.7
-  resolution: "rand-seed@npm:2.1.7"
-  checksum: 10/7e2aa1511b6653fd2ccaea9a85b1e01d8f1f4e1dfa9289c89529b94d949781035e7de5af3d44dc35360c55d4feba758b31b97d9256a0e1a52d99f50e050aaec0
+"rand-seed@npm:3.0.0":
+  version: 3.0.0
+  resolution: "rand-seed@npm:3.0.0"
+  checksum: 10/1edc55bd8092d1d583972937058b321083e93035f62c57ede650030133d480f28b8da95f1a49e4792af1359729f5c9c5a5dc2d8b670a47c8f4f1115cc989a1b8
   languageName: node
   linkType: hard
 

@@ -137,7 +137,7 @@
 		"postcss": "8.5.6",
 		"prettier": "3.6.2",
 		"prop-types": "15.8.1",
-		"rand-seed": "2.1.7",
+		"rand-seed": "3.0.0",
 		"react": "19.1.1",
 		"react-aria": "3.41.1",
 		"react-aria-components": "1.10.1",
