@@ -35,6 +35,7 @@ const meta = {
 		),
 	},
 	argTypes: {
+		children: { control: false },
 		alignment: {
 			options: Object.values(EAlignment),
 			defaultValue: EAlignment.RIGHT,

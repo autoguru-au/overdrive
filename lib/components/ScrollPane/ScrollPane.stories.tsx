@@ -11,6 +11,9 @@ import { ScrollPane } from './ScrollPane';
 export default {
 	title: 'Layout/Scroll Pane',
 	component: ScrollPane,
+	argTypes: {
+		children: { control: false },
+	},
 } satisfies Meta<typeof ScrollPane>;
 
 type Story = StoryObj<typeof ScrollPane>;

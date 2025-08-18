@@ -11,6 +11,9 @@ const meta = {
 	title: 'Components/Modal: Standard with Title',
 	tags: ['skip-themes'],
 	component: StandardModal,
+	argTypes: {
+		children: { control: false },
+	},
 } satisfies Meta<typeof StandardModal>;
 
 export default meta;
