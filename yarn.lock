@@ -163,7 +163,7 @@ __metadata:
     "@vanilla-extract/dynamic": "npm:2.1.5"
     "@vanilla-extract/recipes": "npm:0.5.7"
     "@vanilla-extract/sprinkles": "npm:1.6.5"
-    "@vanilla-extract/vite-plugin": "npm:5.1.0"
+    "@vanilla-extract/vite-plugin": "npm:5.1.1"
     "@vanilla-extract/webpack-plugin": "npm:2.3.22"
     "@vitest/browser": "npm:3.2.4"
     "@vitest/coverage-v8": "npm:3.2.4"
@@ -5533,15 +5533,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vanilla-extract/compiler@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "@vanilla-extract/compiler@npm:0.3.0"
+"@vanilla-extract/compiler@npm:^0.3.1":
+  version: 0.3.1
+  resolution: "@vanilla-extract/compiler@npm:0.3.1"
   dependencies:
     "@vanilla-extract/css": "npm:^1.17.4"
     "@vanilla-extract/integration": "npm:^8.0.4"
-    vite: "npm:^5.0.0 || ^6.0.0"
+    vite: "npm:^5.0.0 || ^6.0.0 || ^7.0.0"
     vite-node: "npm:^3.2.2"
-  checksum: 10/882c03923f979fa78c4693e266151d82dc50563fe9567b08f62ce042da6f6c080e96b38ef6f0520f6c27926202fecdf9a578d18198cadb6c4b5515418bd0553a
+  checksum: 10/afb7eb4cde2e7b861e475146e628448f9b757f7709b33fae3c8eecf28ddcac7c462dad5a052473352699f3b606af35a245e3ecc69f19b231bf9cb6051730d6a8
   languageName: node
   linkType: hard
 
@@ -5632,15 +5632,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vanilla-extract/vite-plugin@npm:5.1.0":
-  version: 5.1.0
-  resolution: "@vanilla-extract/vite-plugin@npm:5.1.0"
+"@vanilla-extract/vite-plugin@npm:5.1.1":
+  version: 5.1.1
+  resolution: "@vanilla-extract/vite-plugin@npm:5.1.1"
   dependencies:
-    "@vanilla-extract/compiler": "npm:^0.3.0"
+    "@vanilla-extract/compiler": "npm:^0.3.1"
     "@vanilla-extract/integration": "npm:^8.0.4"
   peerDependencies:
-    vite: ^5.0.0 || ^6.0.0
-  checksum: 10/3e3c04e0710c5812d56a938625fad74520ac38663d1e5cef62d4d809fa600f62471cd1e96de90990079db27c5f4d4dd36c9463f786d9942d2f0ccc6957f8ea94
+    vite: ^5.0.0 || ^6.0.0 || ^7.0.0
+  checksum: 10/b2a8d4bea8e2fb8b55f754a93efb096b26aafb60b09f87fc870e8cb435728dfdf1fdbe43f70cf26a7d0a113909c188e7cd5714dd59c1d3a5328a661ecec04a7a
   languageName: node
   linkType: hard
 
@@ -11217,7 +11217,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:8.5.6, postcss@npm:^8.5.3, postcss@npm:^8.5.6":
+"postcss@npm:8.5.6, postcss@npm:^8.5.6":
   version: 8.5.6
   resolution: "postcss@npm:8.5.6"
   dependencies:
@@ -11982,7 +11982,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:^4.34.9, rollup@npm:^4.43.0":
+"rollup@npm:^4.43.0":
   version: 4.46.2
   resolution: "rollup@npm:4.46.2"
   dependencies:
@@ -13581,7 +13581,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:7.1.2, vite@npm:^5.0.0 || ^6.0.0 || ^7.0.0-0":
+"vite@npm:7.1.2, vite@npm:^5.0.0 || ^6.0.0 || ^7.0.0, vite@npm:^5.0.0 || ^6.0.0 || ^7.0.0-0":
   version: 7.1.2
   resolution: "vite@npm:7.1.2"
   dependencies:
@@ -13633,61 +13633,6 @@ __metadata:
   bin:
     vite: bin/vite.js
   checksum: 10/942188896db181bd5f95c576303eb617cd08580eb129d0223bc87a8ed9b8dc0d60d8487c077fd9a01087c55600af132c5fc677e51b4b48a4a54a376056969edb
-  languageName: node
-  linkType: hard
-
-"vite@npm:^5.0.0 || ^6.0.0":
-  version: 6.3.5
-  resolution: "vite@npm:6.3.5"
-  dependencies:
-    esbuild: "npm:^0.25.0"
-    fdir: "npm:^6.4.4"
-    fsevents: "npm:~2.3.3"
-    picomatch: "npm:^4.0.2"
-    postcss: "npm:^8.5.3"
-    rollup: "npm:^4.34.9"
-    tinyglobby: "npm:^0.2.13"
-  peerDependencies:
-    "@types/node": ^18.0.0 || ^20.0.0 || >=22.0.0
-    jiti: ">=1.21.0"
-    less: "*"
-    lightningcss: ^1.21.0
-    sass: "*"
-    sass-embedded: "*"
-    stylus: "*"
-    sugarss: "*"
-    terser: ^5.16.0
-    tsx: ^4.8.1
-    yaml: ^2.4.2
-  dependenciesMeta:
-    fsevents:
-      optional: true
-  peerDependenciesMeta:
-    "@types/node":
-      optional: true
-    jiti:
-      optional: true
-    less:
-      optional: true
-    lightningcss:
-      optional: true
-    sass:
-      optional: true
-    sass-embedded:
-      optional: true
-    stylus:
-      optional: true
-    sugarss:
-      optional: true
-    terser:
-      optional: true
-    tsx:
-      optional: true
-    yaml:
-      optional: true
-  bin:
-    vite: bin/vite.js
-  checksum: 10/7bc3a1c5ef79413ad70daeeaf69b76cd1218d16aa18ed8ee08d74648ef17284f4a17c11f5cf42b573b6dc5e3d5f115110b67b1d23c2c699cfe404757764a634a
   languageName: node
   linkType: hard
 
