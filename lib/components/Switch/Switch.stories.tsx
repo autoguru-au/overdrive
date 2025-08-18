@@ -8,7 +8,7 @@ import { Text } from '../Text/Text';
 import { Switch } from './Switch';
 import { storyLabel } from './Switch.css';
 
-const meta: Meta<typeof Switch> = {
+const meta = {
 	title: 'Forms & Input Fields/Switch',
 	component: Switch,
 	tags: [],
@@ -20,6 +20,7 @@ const meta: Meta<typeof Switch> = {
 		onChange: fn(),
 	},
 	argTypes: {
+		children: { control: false },
 		isSelected: {
 			control: 'boolean',
 		},
@@ -30,7 +31,7 @@ const meta: Meta<typeof Switch> = {
 			control: false,
 		},
 	},
-};
+} satisfies Meta<typeof Switch>;
 
 export default meta;
 

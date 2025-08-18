@@ -11,6 +11,7 @@ export default {
 	tags: ['review'],
 	component: Section,
 	argTypes: {
+		children: { control: false },
 		paddingX: boxArgTypes.paddingX,
 	},
 } satisfies Meta<typeof Section>;

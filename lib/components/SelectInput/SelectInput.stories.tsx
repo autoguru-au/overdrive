@@ -59,6 +59,9 @@ const meta: Meta<typeof SelectInput> = {
 		),
 	},
 	argTypes: {
+		children: {
+			control: false,
+		},
 		value: {
 			options: valueOptions,
 			control: {

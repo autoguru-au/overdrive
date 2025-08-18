@@ -16,6 +16,7 @@ const meta = {
 		intent: 'success',
 	},
 	argTypes: {
+		children: { control: false },
 		intent: {
 			options: [
 				'information',
