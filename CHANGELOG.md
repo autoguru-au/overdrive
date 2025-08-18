@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.45.1
+
+### Patch Changes
+
+- 8c6c6af: Switch: hover state style precedence fixed
+
 ## 4.45.0
 
 ### Minor Changes
