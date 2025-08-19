@@ -60,6 +60,12 @@ const meta: Meta<typeof Tabs> = {
 export default meta;
 type Story = StoryObj<typeof Tabs>;
 
+// Helper: a stateful wrapper so stories can switch tabs interactively
+const StatefulTabs = (props: React.ComponentProps<typeof Tabs>) => {
+	const [active, setActive] = useState(props.active ?? 0);
+	return <Tabs {...props} active={active} onChange={setActive} />;
+};
+
 export const Standard: Story = {
 	args: {
 		children: (
@@ -88,6 +94,7 @@ export const Standard: Story = {
 			</>
 		),
 	},
+	render: (args) => <StatefulTabs {...args} />,
 };
 
 export const Pill: Story = {
@@ -95,6 +102,7 @@ export const Pill: Story = {
 		...Standard.args,
 		appearance: 'pill',
 	},
+	render: (args) => <StatefulTabs {...args} />,
 };
 
 export const WithIndication: Story = {
@@ -113,6 +121,7 @@ export const WithIndication: Story = {
 			</>
 		),
 	},
+	render: (args) => <StatefulTabs {...args} />,
 };
 
 export const WithComplexTab: Story = {
@@ -155,6 +164,7 @@ export const WithComplexTab: Story = {
 			</>
 		),
 	},
+	render: (args) => <StatefulTabs {...args} />,
 };
 
 export const WithStretch: Story = {
@@ -181,6 +191,7 @@ export const WithStretch: Story = {
 			</>
 		),
 	},
+	render: (args) => <StatefulTabs {...args} />,
 };
 
 export const Scrollable: Story = {
@@ -205,4 +216,5 @@ export const Scrollable: Story = {
 			</TabList>
 		),
 	},
+	render: (args) => <StatefulTabs {...args} />,
 };
