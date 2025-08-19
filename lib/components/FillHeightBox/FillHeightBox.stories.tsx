@@ -9,6 +9,9 @@ import { FillHeightBox } from './FillHeightBox';
 export default {
 	title: 'Layout/Fill Height Box',
 	component: FillHeightBox,
+	argTypes: {
+		children: { control: false },
+	},
 } satisfies Meta<typeof FillHeightBox>;
 
 type Story = StoryObj<typeof FillHeightBox>;

@@ -13,6 +13,9 @@ const meta = {
 	parameters: {
 		chromatic: { disable: true },
 	},
+	argTypes: {
+		children: { control: false },
+	},
 } satisfies Meta<typeof Modal>;
 
 export default meta;

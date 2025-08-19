@@ -39,6 +39,7 @@ const meta = {
 		variant: 'primary',
 	},
 	argTypes: {
+		children: { control: false },
 		size: {
 			options: ['small', 'medium'],
 			control: {

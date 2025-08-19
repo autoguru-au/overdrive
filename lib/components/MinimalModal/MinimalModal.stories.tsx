@@ -15,6 +15,7 @@ const argTypes: ArgTypes = {
 			type: 'select',
 		},
 	},
+	children: { control: false },
 };
 
 export default {
