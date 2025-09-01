@@ -1,7 +1,9 @@
 import { invariant } from '@autoguru/utilities';
-import type { FunctionComponent } from 'react';
-import * as React from 'react';
-import { ReactNode, useContext } from 'react';
+import React, {
+	type FunctionComponent,
+	type ReactNode,
+	useContext,
+} from 'react';
 
 import { Box } from '../Box/Box';
 

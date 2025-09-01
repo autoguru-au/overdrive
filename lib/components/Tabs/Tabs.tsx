@@ -1,6 +1,11 @@
-import type { FunctionComponent } from 'react';
-import * as React from 'react';
-import { createContext, ReactNode, useMemo } from 'react';
+import React, {
+	createContext,
+	type FunctionComponent,
+	type ReactNode,
+	useCallback,
+	useMemo,
+	useRef,
+} from 'react';
 
 import { useId, useUncontrolledState } from '../../utils';
 
@@ -11,6 +16,9 @@ interface TabsContextValue {
 	activeIndex: number;
 	appearance: TabAppearance;
 	onChange?: (index: number) => void;
+	registerTab: (index: number, el: HTMLElement | null) => void;
+	getTab: (index: number) => HTMLElement | undefined;
+	getTabCount: () => number;
 }
 
 export const TabsContext = createContext<TabsContextValue | null>(null);
@@ -37,6 +45,21 @@ export const Tabs: FunctionComponent<TabsProps> = ({
 
 	const id = useId(incomingId ?? undefined)!;
 
+	// Registry for tab DOM elements
+	const tabRefs = useRef<Map<number, HTMLElement>>(new Map());
+
+	const registerTab = useCallback((index: number, el: HTMLElement | null) => {
+		if (el) tabRefs.current.set(index, el);
+		else tabRefs.current.delete(index);
+	}, []);
+
+	const getTab = useCallback(
+		(index: number) => tabRefs.current.get(index),
+		[],
+	);
+
+	const getTabCount = useCallback(() => tabRefs.current.size, []);
+
 	return (
 		<TabsContext.Provider
 			value={useMemo(
@@ -45,8 +68,19 @@ export const Tabs: FunctionComponent<TabsProps> = ({
 					activeIndex: activeState,
 					appearance,
 					onChange: setActiveState,
+					registerTab,
+					getTab,
+					getTabCount,
 				}),
-				[id, activeState, appearance, setActiveState],
+				[
+					id,
+					activeState,
+					appearance,
+					setActiveState,
+					registerTab,
+					getTab,
+					getTabCount,
+				],
 			)}
 		>
 			{children}
