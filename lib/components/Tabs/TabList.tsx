@@ -33,6 +33,8 @@ const defaultEnglish = {
 	next: 'scroll tabs right',
 	prev: 'scroll tabs left',
 };
+const handledKeys = new Set(['ArrowRight', 'ArrowLeft', 'Home', 'End']);
+const keyMovement = { ArrowRight: 1, ArrowLeft: -1 } as const;
 
 export const TabListContext = createContext<number | null>(null);
 
@@ -108,57 +110,34 @@ export const TabList: FunctionComponent<TabListProps> = ({
 
 	const handleKeyDown = useCallback(
 		(event: React.KeyboardEvent) => {
-			// Only handle when focus is within the tablist
-			const tabsRoot = innerRef.current;
-			if (!tabsRoot) return;
-
 			const key = event.key;
-			if (
-				key !== 'ArrowRight' &&
-				key !== 'ArrowLeft' &&
-				key !== 'Home' &&
-				key !== 'End'
-			) {
-				return;
-			}
+			const tabListRef = innerRef.current;
 
+			if (!tabListRef || !handledKeys.has(key)) return;
 			event.preventDefault();
 
-			const tabNodes =
-				tabsRoot.querySelectorAll<HTMLElement>('[role="tab"]');
-			if (tabNodes.length === 0) return;
+			const tabElements =
+				tabListRef.querySelectorAll<HTMLElement>('[role="tab"]');
+			const length = tabElements.length;
+
+			if (length === 0) return;
 
 			let nextIndex = activeIndex ?? 0;
-			const lastIndex = tabNodes.length - 1;
 
-			switch (key) {
-				case 'ArrowRight': {
-					nextIndex = (activeIndex + 1) % tabNodes.length;
-					break;
-				}
-				case 'ArrowLeft': {
-					nextIndex =
-						(activeIndex - 1 + tabNodes.length) % tabNodes.length;
-					break;
-				}
-				case 'Home': {
-					nextIndex = 0;
-					break;
-				}
-				case 'End': {
-					nextIndex = lastIndex;
-					break;
-				}
+			if (key in keyMovement) {
+				nextIndex =
+					((activeIndex ?? 0) + keyMovement[key] + length) % length;
+			} else if (key === 'Home') {
+				nextIndex = 0;
+			} else if (key === 'End') {
+				nextIndex = length - 1;
 			}
 
 			if (nextIndex !== activeIndex) {
-				// Update active tab
 				onChange?.(nextIndex);
-				// Ensure the newly active tab is visible and receives focus
-				// Focus will automatically move due to roving tabindex on Tab
-				// but we also scroll it into view if needed (especially when scrollable)
+				// focus, and scroll tab into view if needed (especially when scrollable)
 				queueMicrotask(() => {
-					const el = tabNodes.item(nextIndex);
+					const el = tabElements.item(nextIndex);
 					el?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
 					el?.focus?.();
 				});
