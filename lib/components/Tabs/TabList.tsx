@@ -116,19 +116,20 @@ export const TabList: FunctionComponent<TabListProps> = ({
 			if (!tabListRef || !handledKeys.has(key)) return;
 			event.preventDefault();
 
-			const length = tabsContext.getTabCount() ?? 0;
+			const tabCount = tabsContext.getTabCount();
 
-			if (length === 0) return;
+			if (tabCount === 0) return;
 
 			let nextIndex = activeIndex ?? 0;
 
 			if (key in keyMovement) {
 				nextIndex =
-					((activeIndex ?? 0) + keyMovement[key] + length) % length;
+					((activeIndex ?? 0) + keyMovement[key] + tabCount) %
+					tabCount;
 			} else if (key === 'Home') {
 				nextIndex = 0;
 			} else if (key === 'End') {
-				nextIndex = length - 1;
+				nextIndex = tabCount - 1;
 			}
 
 			if (nextIndex !== activeIndex) {
@@ -137,7 +138,7 @@ export const TabList: FunctionComponent<TabListProps> = ({
 				requestAnimationFrame(() => {
 					const el = tabsContext.getTab(nextIndex);
 					el?.focus();
-					el?.scrollIntoView?.({
+					el?.scrollIntoView({
 						block: 'nearest',
 						inline: 'nearest',
 					});

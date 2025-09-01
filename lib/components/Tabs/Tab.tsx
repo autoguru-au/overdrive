@@ -61,7 +61,7 @@ export const Tab = forwardRef<HTMLDivElement, TabProps>(
 					// Register or unregister this tab element in the TabsContext registry
 					tabsContext.registerTab(
 						tabListContext,
-						(el as unknown as HTMLElement) ?? null,
+						(el as HTMLElement) ?? null,
 					);
 				}
 				// Forward the ref to consumers
