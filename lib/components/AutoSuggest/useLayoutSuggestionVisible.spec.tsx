@@ -26,8 +26,12 @@ describe('useLayoutSuggestionVisible', () => {
 		});
 		Object.defineProperty(HTMLElement.prototype, 'scrollTop', {
 			configurable: true,
-			get: function() { return this._scrollTop || 0; },
-			set: function(val) { this._scrollTop = val; },
+			get: function () {
+				return this._scrollTop || 0;
+			},
+			set: function (val) {
+				this._scrollTop = val;
+			},
 		});
 	});
 
@@ -36,19 +40,19 @@ describe('useLayoutSuggestionVisible', () => {
 	});
 
 	it('does nothing when highlightIndex is -1', () => {
-		const TestComponent = () => {
-			const highlightRef = useRef<HTMLElement>(null);
-			const suggestionListRef = useRef<HTMLElement>(null);
-			
-			useLayoutSuggestionVisible(-1, highlightRef, suggestionListRef);
-			
-			return null;
-		};
+		// const TestComponent = () => {
+		// 	const highlightRef = useRef<HTMLElement>(null);
+		// 	const suggestionListRef = useRef<HTMLElement>(null);
+
+		// 	useLayoutSuggestionVisible(-1, highlightRef, suggestionListRef);
+
+		// 	return null;
+		// };
 
 		renderHook(() => {
 			const highlightRef = useRef<HTMLElement>(null);
 			const suggestionListRef = useRef<HTMLElement>(null);
-			
+
 			useLayoutSuggestionVisible(-1, highlightRef, suggestionListRef);
 		});
 
@@ -60,7 +64,7 @@ describe('useLayoutSuggestionVisible', () => {
 		renderHook(() => {
 			const highlightRef = useRef<HTMLElement>(null);
 			const suggestionListRef = useRef<HTMLElement>(null);
-			
+
 			useLayoutSuggestionVisible(0, highlightRef, suggestionListRef);
 		});
 
@@ -72,23 +76,29 @@ describe('useLayoutSuggestionVisible', () => {
 		// Create mock elements
 		const highlightElement = document.createElement('div');
 		const suggestionListElement = document.createElement('div');
-		
+
 		// Set up initial state where item is above visible area
 		Object.defineProperty(highlightElement, 'offsetTop', { value: 50 });
 		Object.defineProperty(highlightElement, 'offsetHeight', { value: 30 });
-		Object.defineProperty(highlightElement, 'offsetParent', { value: suggestionListElement });
-		
+		Object.defineProperty(highlightElement, 'offsetParent', {
+			value: suggestionListElement,
+		});
+
 		Object.defineProperty(suggestionListElement, 'offsetTop', { value: 0 });
-		Object.defineProperty(suggestionListElement, 'offsetHeight', { value: 200 });
-		Object.defineProperty(suggestionListElement, 'scrollTop', { 
+		Object.defineProperty(suggestionListElement, 'offsetHeight', {
+			value: 200,
+		});
+		Object.defineProperty(suggestionListElement, 'scrollTop', {
 			value: 100, // Item is above visible area
-			writable: true
+			writable: true,
 		});
 
 		renderHook(() => {
 			const highlightRef = useRef<HTMLElement>(highlightElement);
-			const suggestionListRef = useRef<HTMLElement>(suggestionListElement);
-			
+			const suggestionListRef = useRef<HTMLElement>(
+				suggestionListElement,
+			);
+
 			useLayoutSuggestionVisible(0, highlightRef, suggestionListRef);
 		});
 
@@ -100,23 +110,29 @@ describe('useLayoutSuggestionVisible', () => {
 		// Create mock elements
 		const highlightElement = document.createElement('div');
 		const suggestionListElement = document.createElement('div');
-		
+
 		// Set up initial state where item is below visible area
 		Object.defineProperty(highlightElement, 'offsetTop', { value: 250 });
 		Object.defineProperty(highlightElement, 'offsetHeight', { value: 30 });
-		Object.defineProperty(highlightElement, 'offsetParent', { value: suggestionListElement });
-		
+		Object.defineProperty(highlightElement, 'offsetParent', {
+			value: suggestionListElement,
+		});
+
 		Object.defineProperty(suggestionListElement, 'offsetTop', { value: 0 });
-		Object.defineProperty(suggestionListElement, 'offsetHeight', { value: 200 });
-		Object.defineProperty(suggestionListElement, 'scrollTop', { 
+		Object.defineProperty(suggestionListElement, 'offsetHeight', {
+			value: 200,
+		});
+		Object.defineProperty(suggestionListElement, 'scrollTop', {
 			value: 0, // Item is below visible area
-			writable: true
+			writable: true,
 		});
 
 		renderHook(() => {
 			const highlightRef = useRef<HTMLElement>(highlightElement);
-			const suggestionListRef = useRef<HTMLElement>(suggestionListElement);
-			
+			const suggestionListRef = useRef<HTMLElement>(
+				suggestionListElement,
+			);
+
 			useLayoutSuggestionVisible(0, highlightRef, suggestionListRef);
 		});
 
@@ -128,25 +144,31 @@ describe('useLayoutSuggestionVisible', () => {
 		// Create mock elements
 		const highlightElement = document.createElement('div');
 		const suggestionListElement = document.createElement('div');
-		
+
 		// Set up initial state where item is visible
 		Object.defineProperty(highlightElement, 'offsetTop', { value: 100 });
 		Object.defineProperty(highlightElement, 'offsetHeight', { value: 30 });
-		Object.defineProperty(highlightElement, 'offsetParent', { value: suggestionListElement });
-		
+		Object.defineProperty(highlightElement, 'offsetParent', {
+			value: suggestionListElement,
+		});
+
 		Object.defineProperty(suggestionListElement, 'offsetTop', { value: 0 });
-		Object.defineProperty(suggestionListElement, 'offsetHeight', { value: 200 });
-		
+		Object.defineProperty(suggestionListElement, 'offsetHeight', {
+			value: 200,
+		});
+
 		const initialScrollTop = 50;
-		Object.defineProperty(suggestionListElement, 'scrollTop', { 
+		Object.defineProperty(suggestionListElement, 'scrollTop', {
 			value: initialScrollTop,
-			writable: true
+			writable: true,
 		});
 
 		renderHook(() => {
 			const highlightRef = useRef<HTMLElement>(highlightElement);
-			const suggestionListRef = useRef<HTMLElement>(suggestionListElement);
-			
+			const suggestionListRef = useRef<HTMLElement>(
+				suggestionListElement,
+			);
+
 			useLayoutSuggestionVisible(0, highlightRef, suggestionListRef);
 		});
 
@@ -159,23 +181,31 @@ describe('useLayoutSuggestionVisible', () => {
 		const highlightElement = document.createElement('div');
 		const suggestionListElement = document.createElement('div');
 		const otherParent = document.createElement('div');
-		
+
 		// Set up case where offset parent is different
 		Object.defineProperty(highlightElement, 'offsetTop', { value: 150 });
 		Object.defineProperty(highlightElement, 'offsetHeight', { value: 30 });
-		Object.defineProperty(highlightElement, 'offsetParent', { value: otherParent });
-		
-		Object.defineProperty(suggestionListElement, 'offsetTop', { value: 50 });
-		Object.defineProperty(suggestionListElement, 'offsetHeight', { value: 200 });
-		Object.defineProperty(suggestionListElement, 'scrollTop', { 
+		Object.defineProperty(highlightElement, 'offsetParent', {
+			value: otherParent,
+		});
+
+		Object.defineProperty(suggestionListElement, 'offsetTop', {
+			value: 50,
+		});
+		Object.defineProperty(suggestionListElement, 'offsetHeight', {
+			value: 200,
+		});
+		Object.defineProperty(suggestionListElement, 'scrollTop', {
 			value: 0,
-			writable: true
+			writable: true,
 		});
 
 		renderHook(() => {
 			const highlightRef = useRef<HTMLElement>(highlightElement);
-			const suggestionListRef = useRef<HTMLElement>(suggestionListElement);
-			
+			const suggestionListRef = useRef<HTMLElement>(
+				suggestionListElement,
+			);
+
 			useLayoutSuggestionVisible(0, highlightRef, suggestionListRef);
 		});
 
@@ -188,26 +218,34 @@ describe('useLayoutSuggestionVisible', () => {
 		// Create mock elements
 		const highlightElement = document.createElement('div');
 		const suggestionListElement = document.createElement('div');
-		
+
 		Object.defineProperty(highlightElement, 'offsetTop', { value: 100 });
 		Object.defineProperty(highlightElement, 'offsetHeight', { value: 30 });
-		Object.defineProperty(highlightElement, 'offsetParent', { value: suggestionListElement });
-		
+		Object.defineProperty(highlightElement, 'offsetParent', {
+			value: suggestionListElement,
+		});
+
 		Object.defineProperty(suggestionListElement, 'offsetTop', { value: 0 });
-		Object.defineProperty(suggestionListElement, 'offsetHeight', { value: 200 });
-		
+		Object.defineProperty(suggestionListElement, 'offsetHeight', {
+			value: 200,
+		});
+
 		// Mock a scenario that might produce NaN
-		let scrollTopValue = NaN;
-		Object.defineProperty(suggestionListElement, 'scrollTop', { 
+		let scrollTopValue = Number.NaN;
+		Object.defineProperty(suggestionListElement, 'scrollTop', {
 			get: () => scrollTopValue,
-			set: (val) => { scrollTopValue = val; },
-			configurable: true
+			set: (val) => {
+				scrollTopValue = val;
+			},
+			configurable: true,
 		});
 
 		renderHook(() => {
 			const highlightRef = useRef<HTMLElement>(highlightElement);
-			const suggestionListRef = useRef<HTMLElement>(suggestionListElement);
-			
+			const suggestionListRef = useRef<HTMLElement>(
+				suggestionListElement,
+			);
+
 			useLayoutSuggestionVisible(0, highlightRef, suggestionListRef);
 		});
 

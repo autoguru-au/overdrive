@@ -9,7 +9,7 @@ describe('<TextContainer />', () => {
 		render(
 			<TextContainer>
 				<p>Test content</p>
-			</TextContainer>
+			</TextContainer>,
 		);
 
 		expect(screen.getByText('Test content')).toBeInTheDocument();
@@ -19,7 +19,7 @@ describe('<TextContainer />', () => {
 		render(
 			<TextContainer heading={<h1>Test Heading</h1>}>
 				<p>Content</p>
-			</TextContainer>
+			</TextContainer>,
 		);
 
 		expect(screen.getByText('Test Heading')).toBeInTheDocument();
@@ -30,7 +30,7 @@ describe('<TextContainer />', () => {
 		render(
 			<TextContainer action={<button>Action Button</button>}>
 				<p>Content</p>
-			</TextContainer>
+			</TextContainer>,
 		);
 
 		expect(screen.getByText('Action Button')).toBeInTheDocument();
@@ -39,12 +39,12 @@ describe('<TextContainer />', () => {
 
 	it('renders with heading and action', () => {
 		render(
-			<TextContainer 
-				heading={<h2>Section Title</h2>} 
+			<TextContainer
+				heading={<h2>Section Title</h2>}
 				action={<button>Edit</button>}
 			>
 				<p>Section content</p>
-			</TextContainer>
+			</TextContainer>,
 		);
 
 		expect(screen.getByText('Section Title')).toBeInTheDocument();
@@ -56,7 +56,7 @@ describe('<TextContainer />', () => {
 		const { container } = render(
 			<TextContainer className="custom-class">
 				<p>Content</p>
-			</TextContainer>
+			</TextContainer>,
 		);
 
 		const article = container.querySelector('article');
@@ -69,7 +69,7 @@ describe('<TextContainer />', () => {
 				<p>First paragraph</p>
 				<p>Second paragraph</p>
 				<div>Third element</div>
-			</TextContainer>
+			</TextContainer>,
 		);
 
 		expect(screen.getByText('First paragraph')).toBeInTheDocument();
@@ -81,7 +81,7 @@ describe('<TextContainer />', () => {
 		const { container } = render(
 			<TextContainer>
 				<p>Content</p>
-			</TextContainer>
+			</TextContainer>,
 		);
 
 		const article = container.querySelector('article');
@@ -92,7 +92,7 @@ describe('<TextContainer />', () => {
 		render(
 			<TextContainer heading={<h1>Title</h1>}>
 				<p>Content</p>
-			</TextContainer>
+			</TextContainer>,
 		);
 
 		// Should have heading but no action
@@ -117,12 +117,12 @@ describe('<TextContainer />', () => {
 		);
 
 		render(
-			<TextContainer 
-				heading={<ComplexHeading />} 
+			<TextContainer
+				heading={<ComplexHeading />}
 				action={<ComplexAction />}
 			>
 				<p>Content goes here</p>
-			</TextContainer>
+			</TextContainer>,
 		);
 
 		expect(screen.getByText('Main Title')).toBeInTheDocument();

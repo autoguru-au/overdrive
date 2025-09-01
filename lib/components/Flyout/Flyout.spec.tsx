@@ -5,9 +5,15 @@ import { describe, expect, it } from 'vitest';
 import { Flyout } from './Flyout';
 
 describe('<Flyout />', () => {
-	const TestWrapper = ({ isOpen = true, children }: { isOpen?: boolean; children: React.ReactNode }) => {
+	const TestWrapper = ({
+		isOpen = true,
+		children,
+	}: {
+		isOpen?: boolean;
+		children: React.ReactNode;
+	}) => {
 		const triggerRef = useRef<HTMLDivElement>(null);
-		
+
 		return (
 			<div>
 				<div ref={triggerRef} data-testid="trigger">
@@ -28,7 +34,7 @@ describe('<Flyout />', () => {
 		render(
 			<TestWrapper>
 				<div>Flyout content</div>
-			</TestWrapper>
+			</TestWrapper>,
 		);
 
 		expect(screen.getByText('Flyout content')).toBeInTheDocument();
@@ -38,7 +44,7 @@ describe('<Flyout />', () => {
 		render(
 			<TestWrapper isOpen={false}>
 				<div>Flyout content</div>
-			</TestWrapper>
+			</TestWrapper>,
 		);
 
 		expect(screen.queryByText('Flyout content')).not.toBeInTheDocument();
@@ -48,7 +54,7 @@ describe('<Flyout />', () => {
 		render(
 			<TestWrapper>
 				<div>Flyout content</div>
-			</TestWrapper>
+			</TestWrapper>,
 		);
 
 		expect(screen.getByTestId('trigger')).toBeInTheDocument();
@@ -59,7 +65,7 @@ describe('<Flyout />', () => {
 		render(
 			<TestWrapper>
 				<div data-testid="flyout-content">Content with test id</div>
-			</TestWrapper>
+			</TestWrapper>,
 		);
 
 		// If the flyout renders the content, Positioner is working
@@ -70,7 +76,7 @@ describe('<Flyout />', () => {
 		render(
 			<TestWrapper>
 				<div>Styled content</div>
-			</TestWrapper>
+			</TestWrapper>,
 		);
 
 		// Check that the content is rendered (indicating the styled box is working)
@@ -80,7 +86,7 @@ describe('<Flyout />', () => {
 	it('handles different alignment props', () => {
 		const TestWithAlignment = () => {
 			const triggerRef = useRef<HTMLDivElement>(null);
-			
+
 			return (
 				<div>
 					<div ref={triggerRef}>Trigger</div>
@@ -103,7 +109,7 @@ describe('<Flyout />', () => {
 	it('handles triggerOffset prop', () => {
 		const TestWithOffset = () => {
 			const triggerRef = useRef<HTMLDivElement>(null);
-			
+
 			return (
 				<div>
 					<div ref={triggerRef}>Trigger</div>
@@ -126,7 +132,7 @@ describe('<Flyout />', () => {
 	it('handles additional props passed through', () => {
 		const TestWithExtraProps = () => {
 			const triggerRef = useRef<HTMLDivElement>(null);
-			
+
 			return (
 				<div>
 					<div ref={triggerRef}>Trigger</div>

@@ -6,13 +6,16 @@ import { describe, expect, it, vi, beforeEach, afterEach } from 'vitest';
 import { ToastProvider, useToast } from './Toast';
 
 // Mock utils module
-vi.mock('../../utils', async (importOriginal) => {
-	const actual = await importOriginal();
-	return {
-		...actual,
-		isBrowser: true,
-	};
-});
+vi.mock(
+	'../../utils',
+	async (importOriginal: () => Promise<typeof import('../../utils')>) => {
+		const actual = await importOriginal();
+		return {
+			...actual,
+			isBrowser: true,
+		};
+	},
+);
 
 // Test component that uses the toast hook
 const TestComponent = ({ onToastCreated }: { onToastCreated?: () => void }) => {
@@ -20,7 +23,7 @@ const TestComponent = ({ onToastCreated }: { onToastCreated?: () => void }) => {
 
 	return (
 		<div>
-			<button 
+			<button
 				onClick={() => {
 					toast('Test message');
 					onToastCreated?.();
@@ -29,7 +32,7 @@ const TestComponent = ({ onToastCreated }: { onToastCreated?: () => void }) => {
 			>
 				Default Toast
 			</button>
-			<button 
+			<button
 				onClick={() => {
 					toast.success('Success message');
 					onToastCreated?.();
@@ -38,7 +41,7 @@ const TestComponent = ({ onToastCreated }: { onToastCreated?: () => void }) => {
 			>
 				Success Toast
 			</button>
-			<button 
+			<button
 				onClick={() => {
 					toast.danger('Error message');
 					onToastCreated?.();
@@ -47,7 +50,7 @@ const TestComponent = ({ onToastCreated }: { onToastCreated?: () => void }) => {
 			>
 				Danger Toast
 			</button>
-			<button 
+			<button
 				onClick={() => {
 					toast.warning('Warning message');
 					onToastCreated?.();
@@ -56,7 +59,7 @@ const TestComponent = ({ onToastCreated }: { onToastCreated?: () => void }) => {
 			>
 				Warning Toast
 			</button>
-			<button 
+			<button
 				onClick={() => {
 					toast('Custom duration', 1000);
 					onToastCreated?.();
@@ -83,7 +86,7 @@ describe('Toast', () => {
 		render(
 			<ToastProvider>
 				<div>Test content</div>
-			</ToastProvider>
+			</ToastProvider>,
 		);
 
 		expect(screen.getByText('Test content')).toBeInTheDocument();
@@ -95,7 +98,7 @@ describe('Toast', () => {
 		render(
 			<ToastProvider>
 				<TestComponent />
-			</ToastProvider>
+			</ToastProvider>,
 		);
 
 		const button = screen.getByTestId('default-toast');
@@ -111,7 +114,7 @@ describe('Toast', () => {
 		render(
 			<ToastProvider>
 				<TestComponent />
-			</ToastProvider>
+			</ToastProvider>,
 		);
 
 		const button = screen.getByTestId('success-toast');
@@ -122,12 +125,12 @@ describe('Toast', () => {
 	});
 
 	it('creates and displays a danger toast', async () => {
-		const user = userEvent.setup({ advanceTimers: vi.advanceTimers });
+		const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
 
 		render(
 			<ToastProvider>
 				<TestComponent />
-			</ToastProvider>
+			</ToastProvider>,
 		);
 
 		const button = screen.getByTestId('danger-toast');
@@ -138,12 +141,12 @@ describe('Toast', () => {
 	});
 
 	it('creates and displays a warning toast', async () => {
-		const user = userEvent.setup({ advanceTimers: vi.advanceTimers });
+		const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
 
 		render(
 			<ToastProvider>
 				<TestComponent />
-			</ToastProvider>
+			</ToastProvider>,
 		);
 
 		const button = screen.getByTestId('warning-toast');
@@ -154,12 +157,12 @@ describe('Toast', () => {
 	});
 
 	it('handles custom duration', async () => {
-		const user = userEvent.setup({ advanceTimers: vi.advanceTimers });
+		const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
 
 		render(
 			<ToastProvider>
 				<TestComponent />
-			</ToastProvider>
+			</ToastProvider>,
 		);
 
 		const button = screen.getByTestId('custom-duration-toast');
@@ -170,12 +173,12 @@ describe('Toast', () => {
 	});
 
 	it('removes toast after default duration', async () => {
-		const user = userEvent.setup({ advanceTimers: vi.advanceTimers });
+		const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
 
 		render(
 			<ToastProvider>
 				<TestComponent />
-			</ToastProvider>
+			</ToastProvider>,
 		);
 
 		const button = screen.getByTestId('default-toast');
@@ -196,12 +199,12 @@ describe('Toast', () => {
 	});
 
 	it('removes toast after custom duration', async () => {
-		const user = userEvent.setup({ advanceTimers: vi.advanceTimers });
+		const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
 
 		render(
 			<ToastProvider>
 				<TestComponent />
-			</ToastProvider>
+			</ToastProvider>,
 		);
 
 		const button = screen.getByTestId('custom-duration-toast');
@@ -217,17 +220,19 @@ describe('Toast', () => {
 
 		// Toast should be removed
 		await waitFor(() => {
-			expect(screen.queryByText('Custom duration')).not.toBeInTheDocument();
+			expect(
+				screen.queryByText('Custom duration'),
+			).not.toBeInTheDocument();
 		});
 	});
 
 	it('handles multiple toasts', async () => {
-		const user = userEvent.setup({ advanceTimers: vi.advanceTimers });
+		const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
 
 		render(
 			<ToastProvider>
 				<TestComponent />
-			</ToastProvider>
+			</ToastProvider>,
 		);
 
 		// Create multiple toasts
@@ -242,12 +247,12 @@ describe('Toast', () => {
 	});
 
 	it('allows toast dismissal via close button', async () => {
-		const user = userEvent.setup({ advanceTimers: vi.advanceTimers });
+		const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
 
 		render(
 			<ToastProvider>
 				<TestComponent />
-			</ToastProvider>
+			</ToastProvider>,
 		);
 
 		const button = screen.getByTestId('default-toast');
@@ -272,7 +277,7 @@ describe('Toast', () => {
 				<ToastProvider>
 					<TestComponent />
 				</ToastProvider>
-			</ToastProvider>
+			</ToastProvider>,
 		);
 
 		// Should render without errors
@@ -281,7 +286,9 @@ describe('Toast', () => {
 
 	it('throws error when useToast is used without ToastProvider', () => {
 		// Mock console.error to prevent test output noise
-		const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+		const consoleSpy = vi
+			.spyOn(console, 'error')
+			.mockImplementation(() => {});
 
 		expect(() => {
 			render(<TestComponent />);
@@ -291,14 +298,20 @@ describe('Toast', () => {
 	});
 
 	it('renders toast with JSX content', async () => {
-		const user = userEvent.setup({ advanceTimers: vi.advanceTimers });
+		const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
 
 		const ComponentWithJSXToast = () => {
 			const toast = useToast();
 
 			return (
-				<button 
-					onClick={() => toast(<span>JSX <strong>content</strong></span>)}
+				<button
+					onClick={() =>
+						toast(
+							<span>
+								JSX <strong>content</strong>
+							</span>,
+						)
+					}
 					data-testid="jsx-toast"
 				>
 					JSX Toast
@@ -309,7 +322,7 @@ describe('Toast', () => {
 		render(
 			<ToastProvider>
 				<ComponentWithJSXToast />
-			</ToastProvider>
+			</ToastProvider>,
 		);
 
 		const button = screen.getByTestId('jsx-toast');

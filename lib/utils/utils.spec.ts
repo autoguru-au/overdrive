@@ -1,5 +1,5 @@
 import { renderHook, act } from '@testing-library/react';
-import React, { useRef } from 'react';
+import React from 'react';
 import { describe, expect, it, vi, beforeEach, afterEach } from 'vitest';
 
 import {
@@ -54,16 +54,16 @@ describe('Utils', () => {
 
 		it('generates consistent ID for same hook instance', () => {
 			const { result, rerender } = renderHook(() => useId());
-			
+
 			const firstId = result.current;
 			rerender();
-			
+
 			expect(result.current).toBe(firstId);
 		});
 
 		it('uses provided prefix', () => {
 			const { result } = renderHook(() => useId('test-prefix'));
-			
+
 			expect(result.current).toContain('test-prefix');
 		});
 	});
@@ -102,8 +102,8 @@ describe('Utils', () => {
 
 	describe('mergeRefs', () => {
 		it('merges ref objects', () => {
-			const ref1 = { current: null };
-			const ref2 = { current: null };
+			const ref1 = React.createRef<HTMLDivElement>();
+			const ref2 = React.createRef<HTMLDivElement>();
 			const value = document.createElement('div');
 
 			const mergedRef = mergeRefs([ref1, ref2]);
@@ -126,7 +126,7 @@ describe('Utils', () => {
 		});
 
 		it('handles mixed ref types', () => {
-			const refObject = { current: null };
+			const refObject = React.createRef<HTMLDivElement>();
 			const refFunction = vi.fn();
 			const value = document.createElement('div');
 
@@ -138,11 +138,11 @@ describe('Utils', () => {
 		});
 
 		it('handles null and undefined refs', () => {
-			const ref = { current: null };
+			const ref = React.createRef<HTMLDivElement>();
 			const value = document.createElement('div');
 
 			const mergedRef = mergeRefs([ref, null, undefined]);
-			
+
 			expect(() => mergedRef(value)).not.toThrow();
 			expect(ref.current).toBe(value);
 		});
@@ -163,7 +163,7 @@ describe('Utils', () => {
 			expect(isHtmlElement('string')).toBe(false);
 			expect(isHtmlElement(123)).toBe(false);
 			expect(isHtmlElement(null)).toBe(false);
-			expect(isHtmlElement(undefined)).toBe(false);
+			expect(isHtmlElement()).toBe(false);
 		});
 	});
 
@@ -229,9 +229,12 @@ describe('Utils', () => {
 
 		it('calls the latest version of the function', () => {
 			let fn = vi.fn();
-			const { result, rerender } = renderHook(({ fn }) => useEventCallback(fn), {
-				initialProps: { fn },
-			});
+			const { result, rerender } = renderHook(
+				({ fn }) => useEventCallback(fn),
+				{
+					initialProps: { fn },
+				},
+			);
 
 			// Call initial version
 			result.current('test1');
@@ -250,7 +253,9 @@ describe('Utils', () => {
 	describe('useUncontrolledState', () => {
 		it('returns controlled state when onChange is provided', () => {
 			const onChange = vi.fn();
-			const { result } = renderHook(() => useUncontrolledState('test', onChange));
+			const { result } = renderHook(() =>
+				useUncontrolledState('test', onChange),
+			);
 
 			const [value, setter] = result.current;
 
@@ -269,7 +274,9 @@ describe('Utils', () => {
 		});
 
 		it('updates uncontrolled state when setter is called', () => {
-			const { result } = renderHook(() => useUncontrolledState('initial'));
+			const { result } = renderHook(() =>
+				useUncontrolledState('initial'),
+			);
 
 			const [, setter] = result.current;
 
@@ -285,7 +292,9 @@ describe('Utils', () => {
 	describe('useInputControlledState', () => {
 		it('returns controlled state when onChange is provided', () => {
 			const onChange = vi.fn();
-			const { result } = renderHook(() => useInputControlledState('test', onChange));
+			const { result } = renderHook(() =>
+				useInputControlledState('test', onChange),
+			);
 
 			const [value, handler] = result.current;
 
@@ -294,7 +303,9 @@ describe('Utils', () => {
 		});
 
 		it('returns uncontrolled state when onChange is not provided', () => {
-			const { result } = renderHook(() => useInputControlledState('test'));
+			const { result } = renderHook(() =>
+				useInputControlledState('test'),
+			);
 
 			const [value, handler] = result.current;
 
@@ -303,7 +314,9 @@ describe('Utils', () => {
 		});
 
 		it('handles input events in uncontrolled mode', () => {
-			const { result } = renderHook(() => useInputControlledState('initial'));
+			const { result } = renderHook(() =>
+				useInputControlledState('initial'),
+			);
 
 			const [, handler] = result.current;
 
@@ -326,35 +339,35 @@ describe('Utils', () => {
 
 		it('returns cancellation function', () => {
 			const element = { scrollTop: 0 } as any;
-			
+
 			const cancel = animate(element, 'scrollTop', 100);
-			
+
 			expect(typeof cancel).toBe('function');
 		});
 
 		it('starts animation with requestAnimationFrame', () => {
 			const element = { scrollTop: 0 } as any;
-			
+
 			animate(element, 'scrollTop', 100);
-			
+
 			expect(mockRequestAnimationFrame).toHaveBeenCalled();
 		});
 
 		it('returns early if target equals current value', () => {
 			const element = { scrollTop: 100 } as any;
-			
+
 			const result = animate(element, 'scrollTop', 100);
-			
+
 			expect(result).toBeUndefined();
 			expect(mockRequestAnimationFrame).not.toHaveBeenCalled();
 		});
 
 		it('calls cancelAnimationFrame when cancellation function is called', () => {
 			const element = { scrollTop: 0 } as any;
-			
+
 			const cancel = animate(element, 'scrollTop', 100);
-			cancel();
-			
+			cancel?.();
+
 			expect(mockCancelAnimationFrame).toHaveBeenCalled();
 		});
 	});
@@ -364,13 +377,13 @@ describe('Utils', () => {
 
 		it('returns function that looks up array values', () => {
 			const lookup = arrayRingLookup(array);
-			
+
 			expect(typeof lookup).toBe('function');
 		});
 
 		it('handles positive indices', () => {
 			const lookup = arrayRingLookup(array);
-			
+
 			expect(lookup(0)).toBe('a');
 			expect(lookup(1)).toBe('b');
 			expect(lookup(2)).toBe('c');
@@ -378,7 +391,7 @@ describe('Utils', () => {
 
 		it('wraps around for indices beyond array length', () => {
 			const lookup = arrayRingLookup(array);
-			
+
 			expect(lookup(3)).toBe('a');
 			expect(lookup(4)).toBe('b');
 			expect(lookup(5)).toBe('c');
@@ -386,7 +399,7 @@ describe('Utils', () => {
 
 		it('handles negative indices', () => {
 			const lookup = arrayRingLookup(array);
-			
+
 			expect(lookup(-1)).toBe('c');
 			expect(lookup(-2)).toBe('b');
 			expect(lookup(-3)).toBe('a');
@@ -394,14 +407,14 @@ describe('Utils', () => {
 
 		it('handles large negative indices', () => {
 			const lookup = arrayRingLookup(array);
-			
+
 			expect(lookup(-4)).toBe('c');
 			expect(lookup(-5)).toBe('b');
 		});
 
 		it('handles empty arrays', () => {
 			const lookup = arrayRingLookup([]);
-			
+
 			expect(lookup(0)).toBeUndefined();
 			expect(lookup(1)).toBeUndefined();
 			expect(lookup(-1)).toBeUndefined();
@@ -409,7 +422,7 @@ describe('Utils', () => {
 
 		it('handles single element arrays', () => {
 			const lookup = arrayRingLookup(['only']);
-			
+
 			expect(lookup(0)).toBe('only');
 			expect(lookup(1)).toBe('only');
 			expect(lookup(-1)).toBe('only');

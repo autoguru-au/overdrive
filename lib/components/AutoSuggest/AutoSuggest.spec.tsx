@@ -30,14 +30,15 @@ const mockSuggestions: AutoSuggestValue<string>[] = [
 describe('<AutoSuggest />', () => {
 	it('renders with basic props', () => {
 		const mockOnChange = vi.fn();
-		
+
 		render(
 			<AutoSuggest
 				value={null}
 				suggestions={mockSuggestions}
 				onChange={mockOnChange}
 				placeholder="Search fruits"
-			/>
+				name="fruits"
+			/>,
 		);
 
 		const combobox = screen.getByRole('combobox');
@@ -48,14 +49,15 @@ describe('<AutoSuggest />', () => {
 	it('renders with initial value', () => {
 		const mockOnChange = vi.fn();
 		const initialValue = mockSuggestions[0];
-		
+
 		render(
 			<AutoSuggest
 				value={initialValue}
 				suggestions={mockSuggestions}
 				onChange={mockOnChange}
 				placeholder="Search fruits"
-			/>
+				name="fruits"
+			/>,
 		);
 
 		const input = screen.getByDisplayValue('Apple');
@@ -64,14 +66,15 @@ describe('<AutoSuggest />', () => {
 
 	it('renders with empty suggestions array', () => {
 		const mockOnChange = vi.fn();
-		
+
 		render(
 			<AutoSuggest
 				value={null}
 				suggestions={[]}
 				onChange={mockOnChange}
 				placeholder="Search fruits"
-			/>
+				name="fruits"
+			/>,
 		);
 
 		const combobox = screen.getByRole('combobox');
@@ -80,7 +83,7 @@ describe('<AutoSuggest />', () => {
 
 	it('renders with inline options prop', () => {
 		const mockOnChange = vi.fn();
-		
+
 		render(
 			<AutoSuggest
 				value={null}
@@ -88,7 +91,8 @@ describe('<AutoSuggest />', () => {
 				onChange={mockOnChange}
 				placeholder="Search fruits"
 				inlineOptions
-			/>
+				name="fruits"
+			/>,
 		);
 
 		const combobox = screen.getByRole('combobox');
@@ -97,7 +101,7 @@ describe('<AutoSuggest />', () => {
 
 	it('renders with autoWidth prop', () => {
 		const mockOnChange = vi.fn();
-		
+
 		render(
 			<AutoSuggest
 				value={null}
@@ -105,7 +109,8 @@ describe('<AutoSuggest />', () => {
 				onChange={mockOnChange}
 				placeholder="Search fruits"
 				autoWidth
-			/>
+				name="fruits"
+			/>,
 		);
 
 		const combobox = screen.getByRole('combobox');
@@ -114,7 +119,7 @@ describe('<AutoSuggest />', () => {
 
 	it('renders with autoFocus prop', () => {
 		const mockOnChange = vi.fn();
-		
+
 		render(
 			<AutoSuggest
 				value={null}
@@ -122,7 +127,8 @@ describe('<AutoSuggest />', () => {
 				onChange={mockOnChange}
 				placeholder="Search fruits"
 				autoFocus
-			/>
+				name="fruits"
+			/>,
 		);
 
 		const combobox = screen.getByRole('combobox');
@@ -131,13 +137,16 @@ describe('<AutoSuggest />', () => {
 
 	it('renders with custom item renderer', () => {
 		const mockOnChange = vi.fn();
-		
+
 		const customRenderer = ({ value, highlight }) => (
-			<div data-testid="custom-item" className={highlight ? 'highlighted' : ''}>
+			<div
+				data-testid="custom-item"
+				className={highlight ? 'highlighted' : ''}
+			>
 				Custom: {value.text}
 			</div>
 		);
-		
+
 		render(
 			<AutoSuggest
 				value={null}
@@ -145,7 +154,8 @@ describe('<AutoSuggest />', () => {
 				onChange={mockOnChange}
 				placeholder="Search fruits"
 				itemRenderer={customRenderer}
-			/>
+				name="fruits"
+			/>,
 		);
 
 		const combobox = screen.getByRole('combobox');
@@ -159,14 +169,15 @@ describe('<AutoSuggest />', () => {
 			{ text: 'Banana', payload: 'banana', skip: true },
 			{ text: 'Cherry', payload: 'cherry' },
 		];
-		
+
 		render(
 			<AutoSuggest
 				value={null}
 				suggestions={suggestionsWithSkip}
 				onChange={mockOnChange}
 				placeholder="Search fruits"
-			/>
+				name="fruits"
+			/>,
 		);
 
 		const combobox = screen.getByRole('combobox');
@@ -175,7 +186,7 @@ describe('<AutoSuggest />', () => {
 
 	it('renders with disabled state', () => {
 		const mockOnChange = vi.fn();
-		
+
 		render(
 			<AutoSuggest
 				value={null}
@@ -183,7 +194,8 @@ describe('<AutoSuggest />', () => {
 				onChange={mockOnChange}
 				placeholder="Search fruits"
 				disabled
-			/>
+				name="fruits"
+			/>,
 		);
 
 		const combobox = screen.getByRole('combobox');
@@ -192,7 +204,7 @@ describe('<AutoSuggest />', () => {
 
 	it('renders with loading state', () => {
 		const mockOnChange = vi.fn();
-		
+
 		render(
 			<AutoSuggest
 				value={null}
@@ -200,7 +212,8 @@ describe('<AutoSuggest />', () => {
 				onChange={mockOnChange}
 				placeholder="Search fruits"
 				isLoading
-			/>
+				name="fruits"
+			/>,
 		);
 
 		const combobox = screen.getByRole('combobox');
@@ -209,7 +222,7 @@ describe('<AutoSuggest />', () => {
 
 	it('renders with different sizes', () => {
 		const mockOnChange = vi.fn();
-		
+
 		// Test small size
 		const { rerender } = render(
 			<AutoSuggest
@@ -218,7 +231,8 @@ describe('<AutoSuggest />', () => {
 				onChange={mockOnChange}
 				placeholder="Search fruits"
 				size="small"
-			/>
+				name="fruits"
+			/>,
 		);
 
 		expect(screen.getByRole('combobox')).toBeInTheDocument();
@@ -231,7 +245,8 @@ describe('<AutoSuggest />', () => {
 				onChange={mockOnChange}
 				placeholder="Search fruits"
 				size="large"
-			/>
+				name="fruits"
+			/>,
 		);
 
 		expect(screen.getByRole('combobox')).toBeInTheDocument();

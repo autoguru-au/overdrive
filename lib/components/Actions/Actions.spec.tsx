@@ -10,7 +10,7 @@ describe('<Actions />', () => {
 			<Actions>
 				<button>Action 1</button>
 				<button>Action 2</button>
-			</Actions>
+			</Actions>,
 		);
 
 		expect(screen.getByText('Action 1')).toBeInTheDocument();
@@ -21,7 +21,7 @@ describe('<Actions />', () => {
 		render(
 			<Actions>
 				<button>Single Action</button>
-			</Actions>
+			</Actions>,
 		);
 
 		expect(screen.getByText('Single Action')).toBeInTheDocument();
@@ -33,7 +33,7 @@ describe('<Actions />', () => {
 				<button>Action 1</button>
 				<button>Action 2</button>
 				<button>Action 3</button>
-			</Actions>
+			</Actions>,
 		);
 
 		expect(screen.getByText('Action 1')).toBeInTheDocument();
@@ -46,7 +46,7 @@ describe('<Actions />', () => {
 			<Actions wrappingDirection="reverse">
 				<button>First</button>
 				<button>Second</button>
-			</Actions>
+			</Actions>,
 		);
 
 		expect(screen.getByText('First')).toBeInTheDocument();
@@ -59,7 +59,7 @@ describe('<Actions />', () => {
 				<button>Button</button>
 				<a href="#link">Link</a>
 				<span>Span</span>
-			</Actions>
+			</Actions>,
 		);
 
 		expect(screen.getByText('Button')).toBeInTheDocument();
@@ -74,7 +74,7 @@ describe('<Actions />', () => {
 					<button>Nested Button</button>
 				</div>
 				<button>Direct Button</button>
-			</Actions>
+			</Actions>,
 		);
 
 		expect(screen.getByText('Nested Button')).toBeInTheDocument();
@@ -87,7 +87,7 @@ describe('<Actions />', () => {
 				{null}
 				{undefined}
 				<button>Valid Button</button>
-			</Actions>
+			</Actions>,
 		);
 
 		expect(screen.getByText('Valid Button')).toBeInTheDocument();
@@ -99,10 +99,12 @@ describe('<Actions />', () => {
 			<Actions>
 				<button>Action 1</button>
 				<button>Action 2</button>
-			</Actions>
+			</Actions>,
 		);
 
 		// Check that columns are being used (via data attribute or class)
-		expect(container.querySelector('[data-od-component="columns"]')).toBeInTheDocument();
+		expect(
+			container.querySelector('[data-od-component="columns"]'),
+		).toBeInTheDocument();
 	});
 });
