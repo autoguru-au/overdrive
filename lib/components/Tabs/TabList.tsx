@@ -33,6 +33,8 @@ const defaultEnglish = {
 	next: 'scroll tabs right',
 	prev: 'scroll tabs left',
 };
+const handledKeys = new Set(['ArrowRight', 'ArrowLeft', 'Home', 'End']);
+const keyMovement = { ArrowRight: 1, ArrowLeft: -1 } as const;
 
 export const TabListContext = createContext<number | null>(null);
 
@@ -64,7 +66,7 @@ export const TabList: FunctionComponent<TabListProps> = ({
 		tabsContext !== null,
 		'This tablist isnt nested beneath <Tabs />',
 	);
-	const { appearance } = tabsContext;
+	const { appearance, activeIndex, onChange } = tabsContext;
 
 	const [displayScroll, setDisplayScroll] = useState({
 		start: false,
@@ -105,6 +107,46 @@ export const TabList: FunctionComponent<TabListProps> = ({
 		scrollToItem(-wrapperRef.current!.clientWidth!);
 	const handleEndButton = () =>
 		scrollToItem(wrapperRef.current!.clientWidth!);
+
+	const handleKeyDown = useCallback(
+		(event: React.KeyboardEvent) => {
+			const key = event.key;
+			const tabListRef = innerRef.current;
+
+			if (!tabListRef || !handledKeys.has(key)) return;
+			event.preventDefault();
+
+			const tabCount = tabsContext.getTabCount();
+
+			if (tabCount === 0) return;
+
+			let nextIndex = activeIndex ?? 0;
+
+			if (key in keyMovement) {
+				nextIndex =
+					((activeIndex ?? 0) + keyMovement[key] + tabCount) %
+					tabCount;
+			} else if (key === 'Home') {
+				nextIndex = 0;
+			} else if (key === 'End') {
+				nextIndex = tabCount - 1;
+			}
+
+			if (nextIndex !== activeIndex) {
+				onChange?.(nextIndex);
+				// Focus and scroll after the frame to allow DOM updates to flush
+				requestAnimationFrame(() => {
+					const el = tabsContext.getTab(nextIndex);
+					el?.focus();
+					el?.scrollIntoView({
+						block: 'nearest',
+						inline: 'nearest',
+					});
+				});
+			}
+		},
+		[activeIndex, onChange, tabsContext],
+	);
 
 	useEffect(() => {
 		const win = ownerWindow(wrapperRef.current!);
@@ -159,6 +201,7 @@ export const TabList: FunctionComponent<TabListProps> = ({
 					width="full"
 					role="tablist"
 					aria-orientation="horizontal"
+					onKeyDown={handleKeyDown}
 					className={textStyles({ noWrap: true })}
 				>
 					{tabs}
