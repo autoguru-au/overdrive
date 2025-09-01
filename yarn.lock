@@ -171,7 +171,7 @@ __metadata:
     babel-plugin-add-import-extension: "npm:1.6.0"
     babel-plugin-dev-expression: "npm:0.2.3"
     babel-plugin-macros: "npm:3.1.0"
-    browserslist-config-autoguru: "npm:2.5.0"
+    browserslist-config-autoguru: "npm:2.5.1"
     chromatic: "npm:13.1.4"
     clsx: "npm:2.1.1"
     colord: "npm:2.9.3"
@@ -6585,12 +6585,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"browserslist-config-autoguru@npm:2.5.0":
-  version: 2.5.0
-  resolution: "browserslist-config-autoguru@npm:2.5.0"
+"browserslist-config-autoguru@npm:2.5.1":
+  version: 2.5.1
+  resolution: "browserslist-config-autoguru@npm:2.5.1"
   dependencies:
     browserslist: "npm:^4.25.1"
-  checksum: 10/653444f56119d94349df834cd0c290a3704edba81b9345a0607d8f616d25069e78fa8d97c961ff1062a17e91af3d2f2aa4d0765245d8e420266576152674f0ea
+  checksum: 10/bc6d9802495754ecd6be581639373a03ca0cf8e2e3053c1eff64bb0809be63f73d9da5ddf6639f9d92c93babb17e883bddccd259d22021ad626aec75cf221fcd
   languageName: node
   linkType: hard
 
