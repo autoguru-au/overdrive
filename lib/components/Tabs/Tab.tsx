@@ -1,14 +1,13 @@
 import { invariant } from '@autoguru/utilities';
 import clsx from 'clsx';
-import * as React from 'react';
-import {
+import React, {
 	cloneElement,
 	createElement,
-	ElementType,
+	type ElementType,
 	forwardRef,
 	isValidElement,
-	ReactElement,
-	ReactNode,
+	type ReactElement,
+	type ReactNode,
 	useContext,
 	useCallback,
 } from 'react';
@@ -67,8 +66,8 @@ export const Tab = forwardRef<HTMLDivElement, TabProps>(
 				// Forward the ref to consumers
 				if (typeof ref === 'function') {
 					ref(el);
-				} else if (ref && typeof ref === 'object' && 'current' in ref) {
-					(ref as { current: HTMLDivElement | null }).current = el;
+				} else if (ref && 'current' in ref) {
+					ref.current = el;
 				}
 			},
 			[tabsContext, tabListContext, ref],

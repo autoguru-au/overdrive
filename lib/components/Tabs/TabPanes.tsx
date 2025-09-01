@@ -1,6 +1,10 @@
-import type { ComponentProps, FunctionComponent } from 'react';
-import * as React from 'react';
-import { Children, createContext, ReactNode } from 'react';
+import React, {
+	Children,
+	type ComponentProps,
+	createContext,
+	type FunctionComponent,
+	type ReactNode,
+} from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 
 import { Box } from '../Box/Box';

@@ -1,6 +1,11 @@
-import type { FunctionComponent } from 'react';
-import * as React from 'react';
-import { createContext, ReactNode, useCallback, useMemo, useRef } from 'react';
+import React, {
+	createContext,
+	type FunctionComponent,
+	type ReactNode,
+	useCallback,
+	useMemo,
+	useRef,
+} from 'react';
 
 import { useId, useUncontrolledState } from '../../utils';
 
