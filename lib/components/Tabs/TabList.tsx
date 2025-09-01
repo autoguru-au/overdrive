@@ -116,9 +116,7 @@ export const TabList: FunctionComponent<TabListProps> = ({
 			if (!tabListRef || !handledKeys.has(key)) return;
 			event.preventDefault();
 
-			const tabElements =
-				tabListRef.querySelectorAll<HTMLElement>('[role="tab"]');
-			const length = tabElements.length;
+			const length = tabsContext.getTabCount() ?? 0;
 
 			if (length === 0) return;
 
@@ -137,13 +135,16 @@ export const TabList: FunctionComponent<TabListProps> = ({
 				onChange?.(nextIndex);
 				// Focus and scroll after the frame to allow DOM updates to flush
 				requestAnimationFrame(() => {
-					const el = tabElements.item(nextIndex);
+					const el = tabsContext.getTab(nextIndex);
 					el?.focus();
-					el?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+					el?.scrollIntoView?.({
+						block: 'nearest',
+						inline: 'nearest',
+					});
 				});
 			}
 		},
-		[activeIndex, onChange],
+		[activeIndex, onChange, tabsContext],
 	);
 
 	useEffect(() => {

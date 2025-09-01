@@ -10,6 +10,7 @@ import {
 	ReactElement,
 	ReactNode,
 	useContext,
+	useCallback,
 } from 'react';
 
 import { elementStyles } from '../../styles';
@@ -54,6 +55,24 @@ export const Tab = forwardRef<HTMLDivElement, TabProps>(
 				? incomingId
 				: `${tabsContext!.id}-${tabListContext}-tab`;
 
+		const setRef = useCallback(
+			(el: HTMLDivElement | null) => {
+				if (tabListContext != null) {
+					// Register or unregister this tab element in the TabsContext registry
+					tabsContext.registerTab(
+						tabListContext,
+						(el as unknown as HTMLElement) ?? null,
+					);
+				}
+				// Forward the ref to consumers
+				if (typeof ref === 'function') ref(el);
+				else if (ref)
+					(ref as React.RefObject<HTMLDivElement | null>).current =
+						el;
+			},
+			[tabsContext, tabListContext, ref],
+		);
+
 		const props = {
 			className: clsx(
 				elementStyles({
@@ -78,7 +97,7 @@ export const Tab = forwardRef<HTMLDivElement, TabProps>(
 			'data-controls': controlsId,
 			tabIndex: isActive ? undefined : -1,
 			onClick: () => tabsContext.onChange?.(tabListContext),
-			ref,
+			ref: setRef,
 		};
 
 		const child = (
