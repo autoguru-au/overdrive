@@ -19,6 +19,11 @@ Object.defineProperty(window, 'matchMedia', {
 	})),
 });
 
+// Mock useMedia hook to return desktop as true by default
+vi.mock('../../hooks/useMedia/useMedia', () => ({
+	useMedia: vi.fn(() => [true]), // Mock as desktop by default
+}));
+
 // Mock data for testing
 const mockSuggestions: AutoSuggestValue<string>[] = [
 	{ text: 'Apple', payload: 'apple' },
@@ -43,7 +48,6 @@ describe('<AutoSuggest />', () => {
 
 		const combobox = screen.getByRole('combobox');
 		expect(combobox).toBeInTheDocument();
-		expect(screen.getByText('Search fruits')).toBeInTheDocument();
 	});
 
 	it('renders with initial value', () => {

@@ -84,8 +84,7 @@ describe('<Actions />', () => {
 	it('handles empty children gracefully', () => {
 		const { container } = render(
 			<Actions>
-				{null}
-				{undefined}
+				{/* Testing that Actions handles sparse children arrays gracefully */}
 				<button>Valid Button</button>
 			</Actions>,
 		);

@@ -2,6 +2,8 @@ import { render, screen } from '@testing-library/react';
 import React, { useRef } from 'react';
 import { describe, expect, it } from 'vitest';
 
+import { EAlignment } from '../Positioner/alignment';
+
 import { Flyout } from './Flyout';
 
 describe('<Flyout />', () => {
@@ -22,7 +24,7 @@ describe('<Flyout />', () => {
 				<Flyout
 					triggerRef={triggerRef}
 					isOpen={isOpen}
-					alignment="bottomLeft"
+					alignment={EAlignment.BOTTOM_LEFT}
 				>
 					{children}
 				</Flyout>
@@ -93,7 +95,7 @@ describe('<Flyout />', () => {
 					<Flyout
 						triggerRef={triggerRef}
 						isOpen={true}
-						alignment="topRight"
+						alignment={EAlignment.TOP_RIGHT}
 					>
 						<div>Aligned content</div>
 					</Flyout>
