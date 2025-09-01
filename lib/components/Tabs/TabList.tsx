@@ -135,11 +135,11 @@ export const TabList: FunctionComponent<TabListProps> = ({
 
 			if (nextIndex !== activeIndex) {
 				onChange?.(nextIndex);
-				// focus, and scroll tab into view if needed (especially when scrollable)
-				queueMicrotask(() => {
+				// Focus and scroll after the frame to allow DOM updates to flush
+				requestAnimationFrame(() => {
 					const el = tabElements.item(nextIndex);
+					el?.focus();
 					el?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
-					el?.focus?.();
 				});
 			}
 		},
