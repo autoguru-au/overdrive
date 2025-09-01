@@ -65,10 +65,11 @@ export const Tab = forwardRef<HTMLDivElement, TabProps>(
 					);
 				}
 				// Forward the ref to consumers
-				if (typeof ref === 'function') ref(el);
-				else if (ref)
-					(ref as React.RefObject<HTMLDivElement | null>).current =
-						el;
+				if (typeof ref === 'function') {
+					ref(el);
+				} else if (ref && typeof ref === 'object' && 'current' in ref) {
+					(ref as { current: HTMLDivElement | null }).current = el;
+				}
 			},
 			[tabsContext, tabListContext, ref],
 		);
