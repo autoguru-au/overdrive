@@ -10,9 +10,9 @@ describe('<Columns />', () => {
 			<Columns testId="columns-container">
 				<div>Column 1</div>
 				<div>Column 2</div>
-			</Columns>
+			</Columns>,
 		);
-		
+
 		const container = screen.getByTestId('columns-container');
 		expect(container).toBeInTheDocument();
 		expect(screen.getByText('Column 1')).toBeInTheDocument();
@@ -25,9 +25,9 @@ describe('<Columns />', () => {
 				<div>A</div>
 				<div>B</div>
 				<div>C</div>
-			</Columns>
+			</Columns>,
 		);
-		
+
 		const container = screen.getByTestId('three-columns');
 		expect(container).toBeInTheDocument();
 		expect(screen.getByText('A')).toBeInTheDocument();
@@ -40,9 +40,9 @@ describe('<Columns />', () => {
 			<Columns space="4" testId="spaced-columns">
 				<div>First</div>
 				<div>Second</div>
-			</Columns>
+			</Columns>,
 		);
-		
+
 		const container = screen.getByTestId('spaced-columns');
 		expect(container).toBeInTheDocument();
 		expect(screen.getByText('First')).toBeInTheDocument();
@@ -54,9 +54,9 @@ describe('<Columns />', () => {
 			<Columns space={['2', '4']} testId="responsive-columns">
 				<div>Item 1</div>
 				<div>Item 2</div>
-			</Columns>
+			</Columns>,
 		);
-		
+
 		const container = screen.getByTestId('responsive-columns');
 		expect(container).toBeInTheDocument();
 		expect(screen.getByText('Item 1')).toBeInTheDocument();

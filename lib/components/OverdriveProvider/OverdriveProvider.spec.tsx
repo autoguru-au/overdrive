@@ -15,9 +15,9 @@ describe('<OverdriveProvider />', () => {
 		render(
 			<OverdriveProvider>
 				<TestComponent />
-			</OverdriveProvider>
+			</OverdriveProvider>,
 		);
-		
+
 		const component = screen.getByTestId('themed-component');
 		expect(component).toBeInTheDocument();
 		expect(component).toHaveTextContent('Theme:');
@@ -27,9 +27,9 @@ describe('<OverdriveProvider />', () => {
 		render(
 			<OverdriveProvider>
 				<div data-testid="child-element">Child content</div>
-			</OverdriveProvider>
+			</OverdriveProvider>,
 		);
-		
+
 		const child = screen.getByTestId('child-element');
 		expect(child).toBeInTheDocument();
 		expect(child).toHaveTextContent('Child content');
@@ -40,22 +40,22 @@ describe('<OverdriveProvider />', () => {
 		render(
 			<OverdriveProvider theme={undefined}>
 				<div data-testid="themed-content">Themed content</div>
-			</OverdriveProvider>
+			</OverdriveProvider>,
 		);
-		
+
 		const content = screen.getByTestId('themed-content');
 		expect(content).toBeInTheDocument();
 	});
 
 	it('should handle portal mount point prop', () => {
 		const portalRef = { current: null };
-		
+
 		render(
 			<OverdriveProvider portalMountPoint={portalRef}>
 				<div data-testid="portal-test">Portal test</div>
-			</OverdriveProvider>
+			</OverdriveProvider>,
 		);
-		
+
 		const element = screen.getByTestId('portal-test');
 		expect(element).toBeInTheDocument();
 	});
@@ -64,9 +64,9 @@ describe('<OverdriveProvider />', () => {
 		render(
 			<OverdriveProvider noBodyLevelTheming>
 				<div data-testid="no-body-theming">No body theming</div>
-			</OverdriveProvider>
+			</OverdriveProvider>,
 		);
-		
+
 		const element = screen.getByTestId('no-body-theming');
 		expect(element).toBeInTheDocument();
 	});

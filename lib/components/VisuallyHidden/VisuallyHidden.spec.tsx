@@ -9,9 +9,9 @@ describe('<VisuallyHidden />', () => {
 		render(
 			<VisuallyHidden>
 				<span>Hidden but accessible text</span>
-			</VisuallyHidden>
+			</VisuallyHidden>,
 		);
-		
+
 		const hiddenText = screen.getByText('Hidden but accessible text');
 		expect(hiddenText).toBeInTheDocument();
 	});
@@ -20,10 +20,12 @@ describe('<VisuallyHidden />', () => {
 		const { container } = render(
 			<VisuallyHidden>
 				<span>Hidden content</span>
-			</VisuallyHidden>
+			</VisuallyHidden>,
 		);
-		
-		const hiddenElement = container.querySelector('[data-od-component="visually-hidden"]');
+
+		const hiddenElement = container.querySelector(
+			'[data-od-component="visually-hidden"]',
+		);
 		expect(hiddenElement).toBeInTheDocument();
 		// Should have some CSS class applied for visual hiding
 		expect(hiddenElement?.className).toBeTruthy();
@@ -33,9 +35,9 @@ describe('<VisuallyHidden />', () => {
 		render(
 			<VisuallyHidden as="span">
 				<span>Hidden span content</span>
-			</VisuallyHidden>
+			</VisuallyHidden>,
 		);
-		
+
 		const hiddenText = screen.getByText('Hidden span content');
 		expect(hiddenText).toBeInTheDocument();
 		expect(hiddenText.parentElement?.tagName).toBe('SPAN');
@@ -46,9 +48,9 @@ describe('<VisuallyHidden />', () => {
 			<VisuallyHidden>
 				<span>First hidden text</span>
 				<span>Second hidden text</span>
-			</VisuallyHidden>
+			</VisuallyHidden>,
 		);
-		
+
 		expect(screen.getByText('First hidden text')).toBeInTheDocument();
 		expect(screen.getByText('Second hidden text')).toBeInTheDocument();
 	});
@@ -57,9 +59,9 @@ describe('<VisuallyHidden />', () => {
 		render(
 			<VisuallyHidden>
 				<label htmlFor="test-input">Accessible label</label>
-			</VisuallyHidden>
+			</VisuallyHidden>,
 		);
-		
+
 		const label = screen.getByText('Accessible label');
 		expect(label).toBeInTheDocument();
 		expect(label.tagName).toBe('LABEL');
