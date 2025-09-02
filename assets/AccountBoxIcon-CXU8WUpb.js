@@ -1,1 +1,0 @@
-import{e}from"./iframe-C_ToDWZR.js";const o=e.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24",fill:"currentColor",focusable:"false"},e.createElement("path",{d:"M6 17c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6m9-9a3 3 0 11-6 0 3 3 0 016 0zM3 5v14a2 2 0 002 2h14c1.103 0 2-.896 2-2V5c0-1.104-.897-2-2-2H5a2 2 0 00-2 2z"}));export{o as I};
