@@ -37,6 +37,10 @@ UI components.
 Use Vitest's pattern matching: `yarn test ComponentName` or
 `yarn test path/to/test.spec.tsx`
 
+Note: The Vitest configuration uses the modern `test.projects` field in
+`vite.config.ts` for workspace configuration, replacing the deprecated
+`vitest.workspace.ts` file.
+
 ## Architecture and Code Structure
 
 ### Directory Structure
