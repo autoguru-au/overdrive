@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.45.2
+
+### Patch Changes
+
+- 659e22e: **Tabs**: Adds keyboard handling
+
 ## 4.45.1
 
 ### Patch Changes
