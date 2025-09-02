@@ -7,7 +7,7 @@ import { TextLink } from './TextLink';
 describe('<TextLink />', () => {
 	it('should render as anchor by default', () => {
 		render(<TextLink href="/test">Link text</TextLink>);
-		
+
 		const link = screen.getByRole('link');
 		expect(link.tagName).toBe('A');
 		expect(link).toHaveAttribute('href', '/test');
@@ -18,9 +18,9 @@ describe('<TextLink />', () => {
 		render(
 			<TextLink as="button" data-testid="link-button">
 				Button link
-			</TextLink>
+			</TextLink>,
 		);
-		
+
 		const button = screen.getByTestId('link-button');
 		expect(button.tagName).toBe('BUTTON');
 		expect(button).toHaveTextContent('Button link');

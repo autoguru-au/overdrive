@@ -14,7 +14,7 @@ describe('useAttachedBoxes', () => {
 			useAttachedBoxes({
 				count: 4,
 				columnCount: 2,
-			})
+			}),
 		);
 
 		const [boxes, className, style] = result.current;
@@ -28,7 +28,7 @@ describe('useAttachedBoxes', () => {
 			useAttachedBoxes({
 				count: 2,
 				columnCount: 3,
-			})
+			}),
 		);
 
 		const style = result.current[2];

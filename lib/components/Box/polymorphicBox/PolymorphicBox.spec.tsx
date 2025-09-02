@@ -7,7 +7,7 @@ import { PolymorphicBox } from './PolymorphicBox';
 describe('<PolymorphicBox />', () => {
 	it('should render as div by default', () => {
 		render(<PolymorphicBox data-testid="box">Content</PolymorphicBox>);
-		
+
 		const element = screen.getByTestId('box');
 		expect(element.tagName).toBe('DIV');
 		expect(element).toHaveTextContent('Content');
@@ -17,9 +17,9 @@ describe('<PolymorphicBox />', () => {
 		render(
 			<PolymorphicBox as="section" data-testid="box">
 				Section content
-			</PolymorphicBox>
+			</PolymorphicBox>,
 		);
-		
+
 		const element = screen.getByTestId('box');
 		expect(element.tagName).toBe('SECTION');
 		expect(element).toHaveTextContent('Section content');
