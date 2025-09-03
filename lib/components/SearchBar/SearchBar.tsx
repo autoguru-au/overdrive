@@ -1,5 +1,4 @@
 import { MagnifyIcon, CloseIcon } from '@autoguru/icons';
-import clsx from 'clsx';
 import React from 'react';
 import {
 	mergeProps,
@@ -11,6 +10,7 @@ import {
 } from 'react-aria';
 import { useSearchFieldState } from 'react-stately';
 
+import { sprinkles } from '../../styles';
 import type { TestIdProp } from '../../types';
 import { mergeRefs } from '../../utils';
 import { dataAttrs } from '../../utils/dataAttrs';
@@ -18,8 +18,7 @@ import { Icon } from '../Icon';
 
 import {
 	fieldWrapper,
-	clearButtonStyle,
-	clearButtonHidden,
+	clearButtonVariants,
 	inputStyle,
 	searchBarStyle,
 } from './SearchBar.css';
@@ -94,14 +93,15 @@ export const SearchBar = (componentProps: SearchBarProps) => {
 	};
 
 	const ClearButton = () => {
-		const shouldShow = state.value !== '' && isFocused;
+		const hasValue = state.value !== '';
 
 		return (
 			<ReactAriaButton
-				className={clsx(
-					clearButtonStyle,
-					!shouldShow && clearButtonHidden,
-				)}
+				className={clearButtonVariants({
+					hasValue,
+					isFocused,
+				})}
+				aria-label={componentProps.lang?.clear ?? defaultEnglish.clear}
 				{...clearButtonProps}
 			>
 				<Icon icon={CloseIcon} size="100%" />
@@ -122,7 +122,11 @@ export const SearchBar = (componentProps: SearchBarProps) => {
 				testid: props.testId,
 			})}
 		>
-			<Icon icon={MagnifyIcon} size="large" />
+			<Icon
+				className={sprinkles({ flexShrink: '0' })}
+				icon={MagnifyIcon}
+				size="large"
+			/>
 			<div className={fieldWrapper}>
 				<input
 					{...mergeProps(inputProps, focusProps)}

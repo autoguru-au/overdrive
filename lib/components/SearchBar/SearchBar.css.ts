@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+import { recipe } from '@vanilla-extract/recipes';
 
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
 import { cssLayerComponent } from '../../styles/layers.css';
@@ -92,35 +93,49 @@ export const inputStyle = style([
 	placeholder,
 ]);
 
-export const clearButtonStyle = style([
-	{
-		'@layer': {
-			[cssLayerComponent]: {
-				alignItems: 'center',
-				background: 'transparent',
-				borderStyle: 'none',
-				cursor: 'pointer',
-				display: 'flex',
-				justifyContent: 'center',
-				opacity: 1,
-				padding: 0,
-				pointerEvents: 'auto',
-				position: 'relative',
+export const clearButtonVariants = recipe({
+	base: [
+		sprinkles({
+			alignItems: 'center',
+			borderStyle: 'none',
+			justifyContent: 'center',
+			opacity: '1',
+			p: 'none',
+			pointerEvents: 'auto',
+			position: 'relative',
+			size: '6',
+		}),
+		{
+			'@layer': {
+				[cssLayerComponent]: {
+					background: 'transparent',
+					cursor: 'pointer',
+				},
 			},
 		},
-	},
-	sprinkles({
-		size: '6',
-	}),
-]);
-
-export const clearButtonHidden = style({
-	'@layer': {
-		[cssLayerComponent]: {
-			opacity: 0,
-			pointerEvents: 'none',
+	],
+	variants: {
+		hasValue: {
+			false: {},
+		},
+		isFocused: {
+			false: {},
 		},
 	},
+	compoundVariants: [
+		{
+			variants: { hasValue: false },
+			style: sprinkles({ display: 'none' }),
+		},
+		{
+			variants: { hasValue: true, isFocused: false },
+			style: sprinkles({ opacity: '0', pointerEvents: 'none' }),
+		},
+		{
+			variants: { hasValue: true, isFocused: true },
+			style: sprinkles({ display: 'flex' }),
+		},
+	],
 });
 
 export const fieldWrapper = style({
