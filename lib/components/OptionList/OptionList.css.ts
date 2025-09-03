@@ -2,15 +2,14 @@ import { style } from '@vanilla-extract/css';
 
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
 import { cssLayerComponent } from '../../styles/layers.css';
+import {
+	checked,
+	disabled,
+	focusVisible,
+	hoverNotDisabled,
+} from '../../styles/selectors';
 import { sprinkles } from '../../styles/sprinkles.css';
 import { overdriveTokens as tokens } from '../../themes/theme.css';
-
-// === Common selector patterns
-const checked = '&:checked, &[data-checked], &[data-selected]';
-const disabled = '&:disabled, &[data-disabled]';
-const focusVisible = '&:focus-visible, &[data-focus-visible]';
-const hoverNotDisabled =
-	'&:hover:not(:disabled,[data-disabled]), &[data-hover]:not(:disabled,[data-disabled])';
 
 // === Group styles
 export const groupStyle = sprinkles({

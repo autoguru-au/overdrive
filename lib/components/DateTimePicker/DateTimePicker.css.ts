@@ -2,12 +2,19 @@ import { createContainer, style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
+import { cssLayerComponent } from '../../styles/layers.css';
+import {
+	disabled,
+	focusVisible,
+	hoverNotDisabled,
+	hoverNotSelected,
+	selected,
+} from '../../styles/selectors';
 import { sprinkles } from '../../styles/sprinkles.css';
-import { overdriveTokens as tokens } from '../../themes';
 import { breakpoints } from '../../themes/makeTheme';
-import { interactionStyle } from '../../utils/css';
+import { overdriveTokens as tokens } from '../../themes/theme.css';
 
-// --- Container styles
+// === Container styles
 
 export const queryContainer = createContainer();
 export const queryContainerStyle = style({
@@ -33,95 +40,114 @@ export const calendarGridStyle = style({
 	},
 });
 
-export const calendarStyle = style({
-	alignItems: 'center',
-	display: 'flex',
-	justifyContent: 'space-between',
-	marginBottom: tokens.space[2],
-	padding: `0 ${tokens.space[1]}`,
-});
+export const calendarStyle = style([
+	sprinkles({
+		alignItems: 'center',
+		display: 'flex',
+		justifyContent: 'spaceBetween',
+		mb: '2',
+		px: '1',
+	}),
+]);
 
-// -- Cell styles
+// === Cell styles
 
 export const styledCell = recipe({
 	base: [
-		{
-			alignItems: 'center',
-			backgroundColor: tokens.colours.background.body,
-			borderRadius: tokens.border.radius['md'],
-			color: tokens.colours.foreground.body,
-			cursor: 'pointer',
-			display: 'inline-flex',
-			fontSize: 'md',
-			justifyContent: 'center',
-		},
-		interactionStyle({
-			hoverNotSelected: {
-				backgroundColor: tokens.colours.gamut.gray200,
-			},
-			selected: {
-				backgroundColor: tokens.colours.foreground.body,
-				color: tokens.colours.background.body,
-			},
-			disabled: {
-				backgroundColor: tokens.colours.background.body,
-				color: tokens.colours.gamut.gray400,
-				cursor: 'default',
-			},
-		}),
 		sprinkles({
+			alignItems: 'center',
+			display: 'flex',
+			justifyContent: 'center',
 			size: '7',
+			borderRadius: 'md',
 		}),
+		{
+			'@layer': {
+				[cssLayerComponent]: {
+					background: tokens.colours.background.body,
+					color: tokens.colours.foreground.body,
+					cursor: 'pointer',
+					selectors: {
+						[focusVisible]: {
+							background: tokens.colours.gamut.gray200,
+						},
+						[selected]: {
+							background: tokens.colours.foreground.body,
+							color: tokens.colours.background.body,
+						},
+						[hoverNotSelected]: {
+							background: tokens.colours.gamut.gray200,
+						},
+						[disabled]: {
+							background: tokens.colours.background.body,
+							color: tokens.colours.gamut.gray400,
+							cursor: 'default',
+						},
+					},
+				},
+			},
+		},
 		focusOutlineStyle,
 	],
 });
 
-// -- Button styles
+// === Button styles
 
 export const styledButton = recipe({
 	base: [
-		{
+		sprinkles({
 			alignItems: 'center',
-			backgroundColor: tokens.colours.background.body,
-			borderColor: tokens.border.colours.gray,
-			borderRadius: tokens.border.radius['md'],
+			borderColour: 'gray',
+			borderRadius: 'md',
 			borderStyle: 'solid',
-			borderWidth: tokens.border.width[1],
-			color: tokens.colours.gamut.gray600,
-			cursor: 'pointer',
+			borderWidth: '1',
 			display: 'flex',
 			justifyContent: 'center',
-			padding: 0,
-		},
-		interactionStyle({
-			hover: {
-				backgroundColor: tokens.colours.gamut.gray200,
-			},
-			disabled: {
-				backgroundColor: tokens.colours.background.body,
-				borderColor: tokens.border.colours.light,
-				color: tokens.colours.gamut.gray300,
-				cursor: 'not-allowed',
-			},
-		}),
-		sprinkles({
+			padding: 'none',
 			size: '7',
 		}),
+		{
+			'@layer': {
+				[cssLayerComponent]: {
+					background: tokens.colours.background.body,
+					color: tokens.colours.gamut.gray600,
+					cursor: 'pointer',
+					selectors: {
+						[hoverNotDisabled]: {
+							background: tokens.colours.gamut.gray200,
+						},
+						[focusVisible]: {
+							background: tokens.colours.gamut.gray200,
+						},
+						[disabled]: {
+							background: tokens.colours.background.body,
+							borderColor: tokens.border.colours.light,
+							color: tokens.colours.gamut.gray300,
+							cursor: 'not-allowed',
+						},
+					},
+				},
+			},
+		},
 		focusOutlineStyle,
 	],
 });
 
 export const thStyle = style({
-	color: tokens.colours.gamut.gray600,
+	'@layer': {
+		[cssLayerComponent]: {
+			color: tokens.colours.gamut.gray600,
+		},
+	},
 });
 
-export const tdStyle = style({
-	padding: tokens.space[1],
+export const tdStyle = sprinkles({
+	padding: '1',
 	textAlign: 'center',
 });
 
-// -- Heading styles
-export const titleStyle = style({
-	fontWeight: tokens.typography.fontWeight.bold,
-	margin: 0,
+// === Heading styles
+export const titleStyle = sprinkles({
+	fontWeight: 'bold',
+	margin: 'none',
 });
