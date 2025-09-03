@@ -22,5 +22,3 @@ export const selectors = {
 		return `&:focus-visible:not(${this.disabled}, ${this.selected}), &[data-focus-visible]:not(${this.disabled}, ${this.selected})`;
 	},
 } as const;
-
-// 		hoverNotFocus: `&:hover${notFocused}${notDisabled}, &[data-hover]${notFocused}${notDisabled}`,
