@@ -1,4 +1,5 @@
 import { MagnifyIcon, CloseIcon } from '@autoguru/icons';
+import clsx from 'clsx';
 import React from 'react';
 import {
 	mergeProps,
@@ -17,9 +18,10 @@ import { Icon } from '../Icon';
 
 import {
 	fieldWrapper,
-	styledClearButton,
-	styledInput,
-	styledSearchBar,
+	clearButtonStyle,
+	clearButtonHidden,
+	inputStyle,
+	searchBarStyle,
 } from './SearchBar.css';
 
 const defaultEnglish = {
@@ -92,11 +94,14 @@ export const SearchBar = (componentProps: SearchBarProps) => {
 	};
 
 	const ClearButton = () => {
-		if (state.value === '') return null;
+		const shouldShow = state.value !== '' && isFocused;
 
 		return (
 			<ReactAriaButton
-				className={styledClearButton({})}
+				className={clsx(
+					clearButtonStyle,
+					!shouldShow && clearButtonHidden,
+				)}
 				{...clearButtonProps}
 			>
 				<Icon icon={CloseIcon} size="100%" />
@@ -107,7 +112,7 @@ export const SearchBar = (componentProps: SearchBarProps) => {
 	return (
 		// this is a pass-through for mouse/touch interaction, the interactive element is keyboard focusable
 		<div
-			className={styledSearchBar({})}
+			className={searchBarStyle}
 			onClick={handleWrapperClick}
 			ref={refWrapper}
 			{...dataAttrs({
@@ -117,13 +122,11 @@ export const SearchBar = (componentProps: SearchBarProps) => {
 				testid: props.testId,
 			})}
 		>
-			<div>
-				<Icon icon={MagnifyIcon} size="large" />
-			</div>
+			<Icon icon={MagnifyIcon} size="large" />
 			<div className={fieldWrapper}>
 				<input
 					{...mergeProps(inputProps, focusProps)}
-					className={styledInput({})}
+					className={inputStyle}
 					ref={mergeRefs([refInput, refForwarded])}
 				/>
 				<ClearButton />
