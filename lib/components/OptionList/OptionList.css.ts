@@ -31,7 +31,7 @@ export const descriptionStyle = style([
 ]);
 
 // === Option item styles
-export const styledOptionItem = style([
+export const optionItemStyle = style([
 	sprinkles({
 		borderColour: 'gray',
 		borderStyle: 'solid',
@@ -110,7 +110,7 @@ export const checkbox = style([
 						borderColor: tokens.border.colours.dark,
 						color: tokens.colours.background.body,
 					},
-					[`${styledOptionItem}:hover &:not([data-checked],[data-disabled])`]:
+					[`${optionItemStyle}:hover &:not([data-checked],[data-disabled])`]:
 						{
 							background: tokens.colours.gamut.gray300,
 							color: tokens.colours.background.body,

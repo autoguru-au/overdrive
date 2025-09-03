@@ -13,7 +13,7 @@ import { dataAttrs } from '../../utils/dataAttrs';
 
 import {
 	calendarGridStyle,
-	styledCell,
+	cellStyle,
 	tdStyle,
 	thStyle,
 } from './DateTimePicker.css';
@@ -40,7 +40,7 @@ const CalendarCell = ({ state, date }: CalendarCellProps) => {
 				{...buttonProps}
 				ref={ref}
 				hidden={isOutsideVisibleRange}
-				className={styledCell()}
+				className={cellStyle}
 				{...dataAttrs({
 					selected: isSelected,
 					disabled: isDisabled,
