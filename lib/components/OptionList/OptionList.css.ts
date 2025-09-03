@@ -1,123 +1,128 @@
 import { style } from '@vanilla-extract/css';
-import { recipe } from '@vanilla-extract/recipes';
 
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
+import { cssLayerComponent } from '../../styles/layers.css';
 import { sprinkles } from '../../styles/sprinkles.css';
 import { overdriveTokens as tokens } from '../../themes/theme.css';
-import { interactionStyle } from '../../utils/css';
+
+// === Common selector patterns
+const checked = '&:checked, &[data-checked], &[data-selected]';
+const disabled = '&:disabled, &[data-disabled]';
+const focusVisible = '&:focus-visible, &[data-focus-visible]';
+const hoverNotDisabled =
+	'&:hover:not(:disabled,[data-disabled]), &[data-hover]:not(:disabled,[data-disabled])';
 
 // === Group styles
-export const groupStyle = style({ marginTop: tokens.space['6'] });
-
-export const groupLabelStyle = style({
-	fontSize: tokens.typography.size['7'].fontSize,
-	fontWeight: tokens.typography.fontWeight.bold,
-	lineHeight: tokens.typography.size['7'].lineHeight,
-	marginBottom: tokens.space['3'],
+export const groupStyle = sprinkles({
+	mt: '6',
 });
 
-export const descriptionStyle = style({
-	color: tokens.colours.gamut.gray400,
-	fontSize: tokens.typography.size[4].fontSize,
-	lineHeight: tokens.typography.size[4].lineHeight,
+export const groupLabelStyle = sprinkles({
+	text: '7',
+	fontWeight: 'bold',
+	mb: '3',
 });
+
+export const descriptionStyle = style([
+	sprinkles({
+		text: '4',
+	}),
+	{
+		'@layer': {
+			[cssLayerComponent]: {
+				color: tokens.colours.gamut.gray400,
+			},
+		},
+	},
+]);
 
 // === Option item styles
-const buttonBorderRadius = tokens.border.radius['md'];
-export const styledOptionItem = recipe({
-	base: [
-		{
-			background: tokens.colours.background.body,
-			borderColor: tokens.border.colours.gray,
-			borderStyle: 'solid',
-			borderWidth: tokens.border.width['1'],
-			display: 'flex',
-			gap: tokens.space['2'],
-			padding: `${tokens.space['3']} ${tokens.space['4']}`,
-			width: '100%',
-			userSelect: 'none',
-		},
-		interactionStyle({
-			disabled: {
+export const styledOptionItem = style([
+	sprinkles({
+		borderColour: 'gray',
+		borderStyle: 'solid',
+		borderWidth: '1',
+		display: 'flex',
+		gap: '2',
+		paddingY: '3',
+		paddingX: '4',
+		userSelect: 'none',
+		width: 'full',
+	}),
+	{
+		'@layer': {
+			[cssLayerComponent]: {
 				background: tokens.colours.background.body,
-				cursor: 'default',
-			},
-			hover: {
-				background: tokens.colours.gamut.gray200,
-				cursor: 'pointer',
-			},
-			focusVisible: {
-				background: tokens.colours.gamut.gray200,
-			},
-		}),
-		{
-			selectors: {
-				['&+&']: {
-					borderTopStyle: 'none',
-				},
-				['&:first-child']: {
-					borderTopLeftRadius: buttonBorderRadius,
-					borderTopRightRadius: buttonBorderRadius,
-				},
-				['&:last-child']: {
-					borderBottomLeftRadius: buttonBorderRadius,
-					borderBottomRightRadius: buttonBorderRadius,
+				selectors: {
+					['&+&']: {
+						borderTopStyle: 'none',
+					},
+					['&:first-child']: {
+						borderTopLeftRadius: tokens.border.radius.md,
+						borderTopRightRadius: tokens.border.radius.md,
+					},
+					['&:last-child']: {
+						borderBottomLeftRadius: tokens.border.radius.md,
+						borderBottomRightRadius: tokens.border.radius.md,
+					},
+					[hoverNotDisabled]: {
+						background: tokens.colours.gamut.gray200,
+						cursor: 'pointer',
+					},
+					[focusVisible]: {
+						background: tokens.colours.gamut.gray200,
+					},
+					[disabled]: {
+						background: tokens.colours.background.body,
+						cursor: 'default',
+					},
 				},
 			},
 		},
-		focusOutlineStyle,
-	],
-});
+	},
+	focusOutlineStyle,
+]);
 
-export const itemLabelStyle = style({
+export const itemLabelStyle = sprinkles({
 	alignSelf: 'center',
-	fontSize: tokens.typography.size['3'].fontSize,
-	lineHeight: tokens.typography.size['3'].lineHeight,
-	width: '100%',
+	text: '3',
+	width: 'full',
 });
 
 // === Checkbox styles
-const checkboxTransition = style({
-	transitionDuration: '100ms',
-	transitionProperty: 'background',
-	transitionTimingFunction: 'ease-in',
-});
-
-const checkboxHovered = style({
-	selectors: {
-		[`${styledOptionItem.classNames.base}:hover &:not([data-checked],[data-disabled])`]:
-			{
-				background: tokens.colours.gamut.gray300,
-				color: tokens.colours.background.body,
+export const checkbox = style([
+	sprinkles({
+		alignItems: 'center',
+		display: 'flex',
+		flexShrink: '0',
+		justifyContent: 'center',
+		size: '6',
+		borderRadius: 'sm',
+		borderStyle: 'solid',
+		borderWidth: '1',
+	}),
+	{
+		'@layer': {
+			[cssLayerComponent]: {
+				background: tokens.colours.background.body,
+				borderColor: tokens.border.colours.gray,
+				color: 'transparent',
+				transitionDuration: '100ms',
+				transitionProperty: 'background',
+				transitionTimingFunction: 'ease-in',
+				selectors: {
+					[checked]: {
+						background: tokens.colours.gamut.gray900,
+						borderColor: tokens.border.colours.dark,
+						color: tokens.colours.background.body,
+					},
+					[`${styledOptionItem}:hover &:not([data-checked],[data-disabled])`]:
+						{
+							background: tokens.colours.gamut.gray300,
+							color: tokens.colours.background.body,
+						},
+				},
 			},
-	},
-});
-
-export const checkbox = recipe({
-	base: [
-		{
-			background: tokens.colours.background.body,
-			borderColor: tokens.border.colours.gray,
-			borderStyle: 'solid',
-			borderRadius: tokens.border.radius['sm'],
-			borderWidth: tokens.border.width['1'],
-			color: 'transparent',
 		},
-		interactionStyle({
-			selected: {
-				background: tokens.colours.gamut.gray900,
-				borderColor: tokens.border.colours.dark,
-				color: tokens.colours.background.body,
-			},
-		}),
-		sprinkles({
-			alignItems: 'center',
-			display: 'flex',
-			flexShrink: '0',
-			justifyContent: 'center',
-			size: '6',
-		}),
-		checkboxHovered,
-		checkboxTransition,
-	],
-});
+	},
+]);
