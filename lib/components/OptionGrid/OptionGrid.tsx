@@ -14,15 +14,15 @@ import { dataAttrs } from '../../utils/dataAttrs';
 import { Icon, type IconEl } from '../Icon';
 
 import {
+	checkboxStyle,
 	descriptionStyle,
 	gridContainerStyle,
+	gridItemStyle,
+	gridVariants,
+	indicatorStyle,
 	labelStyle,
-	styledCheckbox,
-	styledGrid,
-	styledGridItem,
-	styledRadioButton,
-	styleIndicator,
-	type StyledGridProps,
+	radioButtonStyle,
+	type GridVariants,
 } from './OptionGrid.css';
 
 export interface OptionItem {
@@ -57,7 +57,7 @@ export interface OptionGridProps<T>
 	/**
 	 * Number of columns to display the options in
 	 */
-	columns?: StyledGridProps['columns'];
+	columns?: GridVariants['columns'];
 }
 
 /**
@@ -91,13 +91,13 @@ export const OptionGrid = ({
 				aria-label={label}
 				layout={layout}
 				selectionMode={selectionMode}
-				className={clsx([styledGrid({ columns }), className])}
+				className={clsx([gridVariants({ columns }), className])}
 				{...dataAttrs({ testid: testId })}
 				{...props}
 			>
 				{({ description, icon, label, name }) => (
 					<ListBoxItem
-						className={styledGridItem()}
+						className={gridItemStyle}
 						id={name}
 						textValue={label}
 					>
@@ -111,12 +111,12 @@ export const OptionGrid = ({
 
 								const styledIndicator =
 									indicator === 'radio'
-										? styledRadioButton
-										: styledCheckbox;
+										? radioButtonStyle
+										: checkboxStyle;
 
 								return (
 									<div
-										className={styledIndicator()}
+										className={styledIndicator}
 										{...dataAttrs({
 											'focus-visible': isFocusVisible,
 											hover: isHovered,
@@ -133,7 +133,7 @@ export const OptionGrid = ({
 							return (
 								<>
 									{hasIndicator && (
-										<div className={styleIndicator}>
+										<div className={indicatorStyle}>
 											<IndicatorIcon />
 										</div>
 									)}
