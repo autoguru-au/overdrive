@@ -3,13 +3,7 @@ import { recipe } from '@vanilla-extract/recipes';
 
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
 import { cssLayerComponent } from '../../styles/layers.css';
-import {
-	disabled,
-	focusVisible,
-	hoverNotDisabled,
-	hoverNotSelected,
-	selected,
-} from '../../styles/selectors';
+import { selectors } from '../../styles/selectors';
 import { sprinkles } from '../../styles/sprinkles.css';
 import { breakpoints } from '../../themes/makeTheme';
 import { overdriveTokens as tokens } from '../../themes/theme.css';
@@ -68,17 +62,17 @@ export const styledCell = recipe({
 					color: tokens.colours.foreground.body,
 					cursor: 'pointer',
 					selectors: {
-						[focusVisible]: {
+						[selectors.focusVisible]: {
 							background: tokens.colours.gamut.gray200,
 						},
-						[selected]: {
+						[selectors.selected]: {
 							background: tokens.colours.foreground.body,
 							color: tokens.colours.background.body,
 						},
-						[hoverNotSelected]: {
+						[selectors.hoverNotSelected]: {
 							background: tokens.colours.gamut.gray200,
 						},
-						[disabled]: {
+						[selectors.disabled]: {
 							background: tokens.colours.background.body,
 							color: tokens.colours.gamut.gray400,
 							cursor: 'default',
@@ -113,13 +107,13 @@ export const styledButton = recipe({
 					color: tokens.colours.gamut.gray600,
 					cursor: 'pointer',
 					selectors: {
-						[hoverNotDisabled]: {
+						[selectors.hoverNotDisabled]: {
 							background: tokens.colours.gamut.gray200,
 						},
-						[focusVisible]: {
+						[selectors.focusVisible]: {
 							background: tokens.colours.gamut.gray200,
 						},
-						[disabled]: {
+						[selectors.disabled]: {
 							background: tokens.colours.background.body,
 							borderColor: tokens.border.colours.light,
 							color: tokens.colours.gamut.gray300,

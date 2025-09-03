@@ -2,12 +2,7 @@ import { style } from '@vanilla-extract/css';
 
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
 import { cssLayerComponent } from '../../styles/layers.css';
-import {
-	checked,
-	disabled,
-	focusVisible,
-	hoverNotDisabled,
-} from '../../styles/selectors';
+import { selectors } from '../../styles/selectors';
 import { sprinkles } from '../../styles/sprinkles.css';
 import { overdriveTokens as tokens } from '../../themes/theme.css';
 
@@ -64,14 +59,14 @@ export const styledOptionItem = style([
 						borderBottomLeftRadius: tokens.border.radius.md,
 						borderBottomRightRadius: tokens.border.radius.md,
 					},
-					[hoverNotDisabled]: {
+					[selectors.hoverNotDisabled]: {
 						background: tokens.colours.gamut.gray200,
 						cursor: 'pointer',
 					},
-					[focusVisible]: {
+					[selectors.focusVisible]: {
 						background: tokens.colours.gamut.gray200,
 					},
-					[disabled]: {
+					[selectors.disabled]: {
 						background: tokens.colours.background.body,
 						cursor: 'default',
 					},
@@ -110,7 +105,7 @@ export const checkbox = style([
 				transitionProperty: 'background',
 				transitionTimingFunction: 'ease-in',
 				selectors: {
-					[checked]: {
+					[selectors.checked]: {
 						background: tokens.colours.gamut.gray900,
 						borderColor: tokens.border.colours.dark,
 						color: tokens.colours.background.body,
