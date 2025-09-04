@@ -126,7 +126,8 @@ still needed for:
   Cases, Accessibility
 - Use story categories: `Primitives/`, `Layout/`, `Forms/`, `Navigation/`,
   `Feedback/`, `Overlays/`, `Data Display/`
-- Include play functions for interactive components
+- Include play functions for interactive components, and always query with
+  `getAllbyRole` and take first item in array instead of `getByRole`
 - Use `composeStories` in spec files instead of testing components directly
 - Use `sprinkles` function for styling in stories, never `style` prop
 - Use `valueArrays` to populate argTypes, don't add custom `control` or
@@ -138,7 +139,7 @@ still needed for:
 - Screen reader compatibility (proper ARIA attributes)
 - Focus management and visual focus indicators
 - Color contrast requirements
-- Test using semantic queries (`getByRole`, `getByLabelText`) over test IDs
+- Test using semantic queries (`getAllByRole`, `getByLabelText`) over test IDs
 
 ### Testing Patterns
 

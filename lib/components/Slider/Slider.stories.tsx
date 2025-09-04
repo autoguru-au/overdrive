@@ -109,7 +109,7 @@ export const Interactions: Story = {
 	),
 	play: async ({ canvasElement, step }) => {
 		const canvas = within(canvasElement);
-		const slider = canvas.getByRole('slider', { name: /distance/i });
+		const slider = canvas.getAllByRole('slider', { name: /distance/i })[0];
 
 		await step('Verify initial state', async () => {
 			await expect(slider).toBeInTheDocument();
@@ -119,7 +119,7 @@ export const Interactions: Story = {
 		});
 
 		await step('Focus slider and test keyboard accessibility', async () => {
-			await userEvent.click(slider);
+			await userEvent.click(slider!);
 			await expect(slider).toHaveFocus();
 		});
 
