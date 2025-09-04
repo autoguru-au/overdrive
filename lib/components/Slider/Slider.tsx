@@ -49,7 +49,7 @@ interface SliderThumbProps extends AriaSliderThumbProps {
 
 const SliderThumb = ({ state, trackRef, index, name }: SliderThumbProps) => {
 	const inputRef = React.useRef<HTMLInputElement>(null);
-	const { thumbProps, inputProps } = useSliderThumb(
+	const { thumbProps, inputProps, isDisabled, isDragging } = useSliderThumb(
 		{
 			index,
 			trackRef,
@@ -64,7 +64,11 @@ const SliderThumb = ({ state, trackRef, index, name }: SliderThumbProps) => {
 		<div
 			{...thumbProps}
 			className={styles.thumb}
-			{...dataAttrs({ 'focus-visible': isFocusVisible })}
+			{...dataAttrs({
+				'focus-visible': isFocusVisible,
+				dragging: isDragging,
+				disabled: isDisabled,
+			})}
 		>
 			<VisuallyHidden>
 				<input {...mergeProps(inputProps, focusProps)} ref={inputRef} />
@@ -74,8 +78,24 @@ const SliderThumb = ({ state, trackRef, index, name }: SliderThumbProps) => {
 };
 
 /**
- * A slider component that allows users to select a value from a range.
- * Built with React Aria for accessibility and supports configurable steps, value display, and increment/decrement buttons.
+ * A slider component that allows users to select a value from a range,
+ * supports configurable step values and value unit post-fix. Use the `onChange` handler
+ * in most instances for retrieving the current value.
+ *
+ * @example
+ * const handleOnChange = (value) => {
+ *   console.log('Distance changed to:', value);
+ * };
+ *
+ * <Slider
+ *   label="Distance"
+ *   value={distance}
+ *   onChange={handleOnChange}
+ *   minValue={0}
+ *   maxValue={100}
+ *   step={5}
+ *   unitText="kms"
+ * />;
  */
 export const Slider = ({
 	testId,
@@ -99,18 +119,6 @@ export const Slider = ({
 		state,
 		trackRef,
 	);
-
-	// const handleDecrement = () => {
-	// 	if (state.isDisabled) return;
-	// 	const newValue = Math.max(props.minValue ?? 0, currentValue - step);
-	// 	state.setThumbValue(0, newValue);
-	// };
-
-	// const handleIncrement = () => {
-	// 	if (state.isDisabled) return;
-	// 	const newValue = Math.min(props.maxValue ?? 100, currentValue + step);
-	// 	state.setThumbValue(0, newValue);
-	// };
 
 	return (
 		<Box
@@ -139,6 +147,7 @@ export const Slider = ({
 						{...trackProps}
 						ref={trackRef}
 						className={styles.track}
+						{...dataAttrs({ disabled: props.isDisabled })}
 					>
 						<SliderThumb
 							index={0}
