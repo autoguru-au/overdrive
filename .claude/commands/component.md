@@ -1,3 +1,9 @@
+---
+allowed-tools: Bash(yarn plop *), Bash(yarn test *), Bash(yarn lint*), Read, Glob, Grep
+argument-hint: [ComponentName]
+description: Generate a new Overdrive component
+---
+
 # Generate New Component for Overdrive
 
 Generate a new React component using Overdrive's plop scaffolding templates, following AutoGuru's design system standards.

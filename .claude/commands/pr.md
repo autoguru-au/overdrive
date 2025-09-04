@@ -1,8 +1,7 @@
 ---
-allowed-tools: Bash(git *), Bash(gh *)
+allowed-tools: Bash(yarn test *), Bash(yarn lint*), Bash(git *), Bash(gh *), Read, Glob, Grep
 argument-hint: [brief description of changes]
 description: Create or update PR following Overdrive practices
-model: claude-sonnet-4-20250514
 ---
 
 # Create/Update Pull Request for Overdrive
