@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 
-import { Slider } from './Slider';
+import { Slider } from '../Slider';
+import { Stack } from '../Stack';
 
 const meta = {
 	title: 'Forms & Input Fields/Slider',
@@ -30,27 +31,6 @@ const meta = {
 		defaultValue: 30,
 		unitText: 'kms',
 	},
-	argTypes: {
-		orientation: {
-			options: ['horizontal', 'vertical'],
-			control: { type: 'radio' },
-		},
-		minValue: {
-			control: { type: 'number' },
-		},
-		maxValue: {
-			control: { type: 'number' },
-		},
-		step: {
-			control: { type: 'number' },
-		},
-		defaultValue: {
-			control: { type: 'number' },
-		},
-		unitText: {
-			control: { type: 'text' },
-		},
-	},
 } satisfies Meta<typeof Slider>;
 
 export default meta;
@@ -58,101 +38,63 @@ export default meta;
 type Story = StoryObj<typeof Slider>;
 
 /**
- * The basic slider allows users to select a single value from a range.
- * Matches the Figma design with value display above the track and step buttons.
+ * The basic slider allows users to select a single value from a range
  */
 export const Standard: Story = {
 	args: {
-		label: 'Distance from location',
+		label: 'Distance',
 		defaultValue: 30,
 		unitText: 'kms',
 	},
 };
 
 /**
- * Different slider variants and configurations with various unit types.
+ * Slider with various unit post-fix examples and disabled state
  */
 export const Variants: Story = {
 	render: () => (
-		<div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+		<Stack space="8">
 			<Slider
-				label="Distance from location"
-				minValue={0}
-				maxValue={100}
+				label="Value with units"
+				minValue={5}
+				maxValue={50}
 				defaultValue={30}
 				unitText="kms"
-				step={5}
 			/>
 			<Slider
-				label="Budget range"
-				minValue={0}
-				maxValue={5000}
-				defaultValue={1500}
-				unitText="$"
-				step={100}
+				label="Decimal value"
+				minValue={1}
+				maxValue={10}
+				defaultValue={5.5}
+				step={0.5}
 			/>
 			<Slider
-				label="Volume level"
+				label="Percentage"
 				minValue={0}
 				maxValue={100}
-				defaultValue={75}
+				defaultValue={25}
 				unitText="%"
 				step={1}
 			/>
 			<Slider
-				label="Temperature setting"
-				minValue={16}
-				maxValue={30}
-				defaultValue={22}
-				unitText="°C"
-				step={0.5}
-			/>
-		</div>
-	),
-};
-
-/**
- * Interactive states and configuration options.
- */
-export const InteractiveStates: Story = {
-	render: () => (
-		<div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-			<Slider
-				label="Normal state"
-				minValue={0}
+				label="Disabled"
+				minValue={5}
 				maxValue={50}
-				defaultValue={25}
-				unitText="kms"
-			/>
-			<Slider
-				label="Disabled state"
-				minValue={0}
-				maxValue={50}
-				defaultValue={15}
+				defaultValue={5}
 				unitText="kms"
 				isDisabled
 			/>
-		</div>
+		</Stack>
 	),
 };
 
 /**
- * Accessibility features including keyboard navigation, screen reader support, and button interaction.
+ * Keyboard and mouse interaction tests
  */
-export const Accessibility: Story = {
+export const Interactions: Story = {
 	render: () => (
-		<div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-			<div>
-				<p
-					style={{
-						marginBottom: '8px',
-						fontSize: '14px',
-						color: '#666',
-					}}
-				>
-					Keyboard navigation: Use Tab to focus, Arrow keys or +/-
-					buttons to adjust value, Home/End for min/max
-				</p>
+		<Stack space="8">
+			<Stack space="3">
 				<Slider
 					label="Distance from location"
 					minValue={0}
@@ -162,41 +104,44 @@ export const Accessibility: Story = {
 					step={5}
 					aria-describedby="distance-description"
 				/>
-				<p
-					id="distance-description"
-					style={{
-						fontSize: '12px',
-						color: '#888',
-						marginTop: '4px',
-					}}
-				>
-					Set your preferred search radius from your location
-				</p>
-			</div>
-		</div>
+			</Stack>
+		</Stack>
 	),
-	play: async ({ canvasElement }) => {
+	play: async ({ canvasElement, step }) => {
 		const canvas = within(canvasElement);
 		const slider = canvas.getByRole('slider', { name: /distance/i });
-		const decrementButton = canvas.getByLabelText(/decrease/i);
-		const incrementButton = canvas.getByLabelText(/increase/i);
 
-		// Test keyboard navigation on slider
-		await userEvent.click(slider);
-		await expect(slider).toHaveFocus();
+		await step('Verify initial state', async () => {
+			await expect(slider).toBeInTheDocument();
+			await expect(canvas.getByText('15kms')).toBeInTheDocument();
+			// Test that slider is accessible and focusable
+			await expect(slider).toHaveAttribute('type', 'range');
+		});
 
-		// Test arrow key navigation
-		await userEvent.keyboard('{ArrowRight}');
-		await userEvent.keyboard('{ArrowLeft}');
+		await step('Focus slider and test keyboard accessibility', async () => {
+			await userEvent.click(slider);
+			await expect(slider).toHaveFocus();
+		});
 
-		// Test increment/decrement buttons
-		await userEvent.click(incrementButton);
-		await userEvent.click(decrementButton);
+		await step('Test arrow key navigation (step increments)', async () => {
+			// Test right arrow - should increment by step (5)
+			await userEvent.keyboard('{ArrowRight}');
+			await expect(canvas.getByText('20kms')).toBeInTheDocument();
 
-		// Test Home/End keys
-		await userEvent.click(slider);
-		await userEvent.keyboard('{End}');
-		await userEvent.keyboard('{Home}');
+			// Test left arrow - should decrement by step (5)
+			await userEvent.keyboard('{ArrowLeft}');
+			await expect(canvas.getByText('15kms')).toBeInTheDocument();
+		});
+
+		await step('Test boundary keys', async () => {
+			// Test Home key - should jump to minimum (0)
+			await userEvent.keyboard('{Home}');
+			await expect(canvas.getByText('0kms')).toBeInTheDocument();
+
+			// Test End key - should jump to maximum (50)
+			await userEvent.keyboard('{End}');
+			await expect(canvas.getByText('50kms')).toBeInTheDocument();
+		});
 	},
 };
 
