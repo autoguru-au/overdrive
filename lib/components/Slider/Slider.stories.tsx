@@ -113,7 +113,7 @@ export const Interactions: Story = {
 
 		await step('Verify initial state', async () => {
 			await expect(slider).toBeInTheDocument();
-			await expect(canvas.getByText('15kms')).toBeInTheDocument();
+			await expect(canvas.getAllByText('15kms')[0]).toBeInTheDocument();
 			// Test that slider is accessible and focusable
 			await expect(slider).toHaveAttribute('type', 'range');
 		});
@@ -126,21 +126,21 @@ export const Interactions: Story = {
 		await step('Test arrow key navigation (step increments)', async () => {
 			// Test right arrow - should increment by step (5)
 			await userEvent.keyboard('{ArrowRight}');
-			await expect(canvas.getByText('20kms')).toBeInTheDocument();
+			await expect(canvas.getAllByText('20kms')[0]).toBeInTheDocument();
 
 			// Test left arrow - should decrement by step (5)
 			await userEvent.keyboard('{ArrowLeft}');
-			await expect(canvas.getByText('15kms')).toBeInTheDocument();
+			await expect(canvas.getAllByText('15kms')[0]).toBeInTheDocument();
 		});
 
 		await step('Test boundary keys', async () => {
 			// Test Home key - should jump to minimum (0)
 			await userEvent.keyboard('{Home}');
-			await expect(canvas.getByText('0kms')).toBeInTheDocument();
+			await expect(canvas.getAllByText('0kms')[0]).toBeInTheDocument();
 
 			// Test End key - should jump to maximum (50)
 			await userEvent.keyboard('{End}');
-			await expect(canvas.getByText('50kms')).toBeInTheDocument();
+			await expect(canvas.getAllByText('50kms')[0]).toBeInTheDocument();
 		});
 	},
 };
