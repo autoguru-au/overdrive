@@ -4,12 +4,10 @@
 
 ### Minor Changes
 
-- 3073325: Improvements for components in `beta`: **DateTimePicker**,
-  **OptionGrid**, **OptionList**, **SearchBar** styles have been refactored
-
-### Patch Changes
-
-- 3f5eedf: **OptionGrid**: style for disabled option items, loading state
+- 3f5eedf: **OptionGrid**: style for disabled option items and loading state,
+  OptionGrid is no longer in `beta`
+- 3073325: Improves components: **DateTimePicker**, **OptionGrid**,
+  **OptionList**, **SearchBar** styles have been refactored
 
 ## 4.45.2
 
