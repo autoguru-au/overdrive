@@ -1,5 +1,14 @@
 # @autoguru/overdrive
 
+## 4.46.0
+
+### Minor Changes
+
+- 3f5eedf: **OptionGrid**: style for disabled option items and loading state,
+  OptionGrid is no longer in `beta`
+- 3073325: Improves components: **DateTimePicker**, **OptionGrid**,
+  **OptionList**, **SearchBar** styles have been refactored
+
 ## 4.45.2
 
 ### Patch Changes
