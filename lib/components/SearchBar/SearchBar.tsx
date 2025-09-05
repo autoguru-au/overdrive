@@ -10,6 +10,7 @@ import {
 } from 'react-aria';
 import { useSearchFieldState } from 'react-stately';
 
+import { sprinkles } from '../../styles';
 import type { TestIdProp } from '../../types';
 import { mergeRefs } from '../../utils';
 import { dataAttrs } from '../../utils/dataAttrs';
@@ -17,9 +18,9 @@ import { Icon } from '../Icon';
 
 import {
 	fieldWrapper,
-	styledClearButton,
-	styledInput,
-	styledSearchBar,
+	clearButtonVariants,
+	inputStyle,
+	searchBarStyle,
 } from './SearchBar.css';
 
 const defaultEnglish = {
@@ -92,11 +93,15 @@ export const SearchBar = (componentProps: SearchBarProps) => {
 	};
 
 	const ClearButton = () => {
-		if (state.value === '') return null;
+		const hasValue = state.value !== '';
 
 		return (
 			<ReactAriaButton
-				className={styledClearButton({})}
+				className={clearButtonVariants({
+					hasValue,
+					isFocused,
+				})}
+				aria-label={componentProps.lang?.clear ?? defaultEnglish.clear}
 				{...clearButtonProps}
 			>
 				<Icon icon={CloseIcon} size="100%" />
@@ -107,7 +112,7 @@ export const SearchBar = (componentProps: SearchBarProps) => {
 	return (
 		// this is a pass-through for mouse/touch interaction, the interactive element is keyboard focusable
 		<div
-			className={styledSearchBar({})}
+			className={searchBarStyle}
 			onClick={handleWrapperClick}
 			ref={refWrapper}
 			{...dataAttrs({
@@ -117,13 +122,15 @@ export const SearchBar = (componentProps: SearchBarProps) => {
 				testid: props.testId,
 			})}
 		>
-			<div>
-				<Icon icon={MagnifyIcon} size="large" />
-			</div>
+			<Icon
+				className={sprinkles({ flexShrink: '0' })}
+				icon={MagnifyIcon}
+				size="large"
+			/>
 			<div className={fieldWrapper}>
 				<input
 					{...mergeProps(inputProps, focusProps)}
-					className={styledInput({})}
+					className={inputStyle}
 					ref={mergeRefs([refInput, refForwarded])}
 				/>
 				<ClearButton />
