@@ -118,7 +118,7 @@ const optionTransition = style({
 	},
 });
 
-export const gridItemStyle = style([
+export const gridItemContainerStyle = style([
 	sprinkles({
 		alignItems: 'center',
 		borderRadius: 'md',
@@ -131,6 +131,19 @@ export const gridItemStyle = style([
 		position: 'relative',
 		userSelect: 'none',
 	}),
+	{
+		'@layer': {
+			[cssLayerComponent]: {
+				backgroundColor: tokens.colours.background.body,
+				borderColor: tokens.border.colours.gray,
+				minHeight: '80px',
+			},
+		},
+	},
+]);
+
+export const gridItemStyle = style([
+	gridItemContainerStyle,
 	{
 		'@layer': {
 			[cssLayerComponent]: {
@@ -162,6 +175,12 @@ export const gridItemStyle = style([
 						position: 'absolute',
 						top: 0,
 						width: '100%',
+					},
+					'&[data-disabled]': {
+						backgroundColor: tokens.colours.gamut.gray100,
+						borderColor: tokens.colours.gamut.gray200,
+						color: tokens.colours.gamut.gray400,
+						cursor: 'not-allowed',
 					},
 				},
 			},
@@ -208,6 +227,11 @@ export const checkboxStyle = style([
 							backgroundColor: tokens.colours.gamut.gray300,
 							color: tokens.colours.background.body,
 						},
+					'&[data-disabled]': {
+						backgroundColor: tokens.colours.gamut.gray100,
+						borderColor: tokens.colours.gamut.gray200,
+						color: tokens.colours.gamut.gray300,
+					},
 				},
 			},
 		},
@@ -265,6 +289,10 @@ export const radioButtonStyle = style([
 							backgroundColor: tokens.colours.gamut.gray300,
 							borderColor: tokens.colours.gamut.gray300,
 						},
+					'&[data-disabled]': {
+						backgroundColor: tokens.colours.gamut.gray100,
+						borderColor: tokens.colours.gamut.gray200,
+					},
 				},
 			},
 		},
