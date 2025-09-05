@@ -12,17 +12,19 @@ import { type SelectionMode } from 'react-stately';
 import type { TestIdProp } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Icon, type IconEl } from '../Icon';
+import { LoadingBox } from '../LoadingBox/LoadingBox';
 
 import {
+	checkboxStyle,
 	descriptionStyle,
 	gridContainerStyle,
+	gridItemContainerStyle,
+	gridItemStyle,
+	gridVariants,
+	indicatorStyle,
 	labelStyle,
-	styledCheckbox,
-	styledGrid,
-	styledGridItem,
-	styledRadioButton,
-	styleIndicator,
-	type StyledGridProps,
+	radioButtonStyle,
+	type GridVariants,
 } from './OptionGrid.css';
 
 export interface OptionItem {
@@ -34,6 +36,10 @@ export interface OptionItem {
 	 */
 	icon?: IconEl;
 	description?: string;
+	/**
+	 * Whether this option should be disabled
+	 */
+	disabled?: boolean;
 }
 export interface OptionGridProps<T>
 	extends Omit<ListBoxProps<T>, 'items'>,
@@ -57,7 +63,11 @@ export interface OptionGridProps<T>
 	/**
 	 * Number of columns to display the options in
 	 */
-	columns?: StyledGridProps['columns'];
+	columns?: GridVariants['columns'];
+	/**
+	 * Loading state
+	 */
+	isLoading?: boolean;
 }
 
 /**
@@ -66,9 +76,9 @@ export interface OptionGridProps<T>
  * and implements a listbox behaviour without wrapping an input element. It supports controlled and uncontrolled usage.
  * Following ARIA guidelines, the arrow keys can be used to navigate withing the group of options.
  *
+ * The ListBox implementation provides a Set of selected keys to the `onSelectionChange` handler. To preselect options
+ * in uncontrolled usage, simply provide a default selection using the `defaultSelectedKeys` prop.
  * See more details on react-aria [ListBox props](https://react-spectrum.adobe.com/react-aria/ListBox.html#listbox-1).
- *
- * Not yet implemented: disabled appearance, empty state, loading state, error state.
  *
  * Accessibility note: The ARIA spec prohibits listbox items from including interactive content such as buttons,
  * tooltips, etc. For these cases a completely different implementation is required (e.g. react-aria [GridList](
@@ -78,6 +88,7 @@ export const OptionGrid = ({
 	className,
 	columns,
 	indicator = 'checkbox',
+	isLoading = false,
 	label,
 	layout = 'grid',
 	selectionMode = 'multiple',
@@ -85,21 +96,37 @@ export const OptionGrid = ({
 
 	...props
 }: OptionGridProps<OptionItem>) => {
+	if (isLoading) {
+		return (
+			<div className={gridContainerStyle}>
+				<div className={gridVariants({ columns })}>
+					{Array.from({ length: Number(columns) || 1 }, (_, idx) => (
+						<div key={idx} className={gridItemContainerStyle}>
+							<LoadingBox />
+						</div>
+					))}
+				</div>
+			</div>
+		);
+	}
+
 	return (
 		<div className={gridContainerStyle}>
 			<ListBox
 				aria-label={label}
 				layout={layout}
 				selectionMode={selectionMode}
-				className={clsx([styledGrid({ columns }), className])}
+				className={clsx([gridVariants({ columns }), className])}
 				{...dataAttrs({ testid: testId })}
 				{...props}
 			>
-				{({ description, icon, label, name }) => (
+				{({ description, disabled, icon, label, name }) => (
 					<ListBoxItem
-						className={styledGridItem()}
+						className={gridItemStyle}
 						id={name}
+						isDisabled={disabled}
 						textValue={label}
+						{...dataAttrs({ disabled })}
 					>
 						{({ isFocusVisible, isHovered, isSelected }) => {
 							const hasIndicator = indicator !== 'none';
@@ -111,13 +138,14 @@ export const OptionGrid = ({
 
 								const styledIndicator =
 									indicator === 'radio'
-										? styledRadioButton
-										: styledCheckbox;
+										? radioButtonStyle
+										: checkboxStyle;
 
 								return (
 									<div
-										className={styledIndicator()}
+										className={styledIndicator}
 										{...dataAttrs({
+											disabled,
 											'focus-visible': isFocusVisible,
 											hover: isHovered,
 											selected: isSelected,
@@ -133,7 +161,7 @@ export const OptionGrid = ({
 							return (
 								<>
 									{hasIndicator && (
-										<div className={styleIndicator}>
+										<div className={indicatorStyle}>
 											<IndicatorIcon />
 										</div>
 									)}
@@ -164,3 +192,5 @@ export const OptionGrid = ({
 		</div>
 	);
 };
+
+OptionGrid.displayName = 'OptionGrid';

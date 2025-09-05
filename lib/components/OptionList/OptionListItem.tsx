@@ -13,7 +13,7 @@ import { Icon } from '../Icon';
 import { VisuallyHidden } from '../VisuallyHidden';
 
 import { OptionListContext } from './OptionList';
-import { checkbox, itemLabelStyle, styledOptionItem } from './OptionList.css';
+import { checkbox, itemLabelStyle, optionItemStyle } from './OptionList.css';
 
 type FilteredCheckboxProps = Omit<
 	AriaCheckboxGroupItemProps,
@@ -32,7 +32,7 @@ export const OptionListItem = (props: FilteredCheckboxProps) => {
 
 	return (
 		<label
-			className={styledOptionItem()}
+			className={optionItemStyle}
 			{...dataAttrs({ 'focus-visible': isFocusVisible })}
 		>
 			<VisuallyHidden>
@@ -46,7 +46,7 @@ export const OptionListItem = (props: FilteredCheckboxProps) => {
 				})}
 			>
 				<div
-					className={checkbox()}
+					className={checkbox}
 					{...dataAttrs({ checked: isSelected })}
 				>
 					<Icon icon={CheckIcon} />
