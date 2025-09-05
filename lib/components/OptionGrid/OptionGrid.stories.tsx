@@ -27,6 +27,7 @@ const serviceSchedule: OptionItem[] = [
 	{
 		label: '130,000km / 78 months',
 		name: '130km/78',
+		disabled: true,
 	},
 	{
 		label: '140,000km / 84 months',
@@ -43,10 +44,12 @@ const serviceSchedule: OptionItem[] = [
 	{
 		label: '170,000km / 104 months',
 		name: '170km/102',
+		disabled: true,
 	},
 	{
 		label: '180,000km / 110 months',
 		name: '180km/110',
+		disabled: true,
 	},
 	{
 		label: '190,000km / 116 months',
@@ -81,22 +84,23 @@ const alphaOptions: OptionItem[] = [
 	{
 		label: 'Option A',
 		name: 'a',
-		description: 'This is a description',
+		description: 'This is description A',
 	},
 	{
 		label: 'Option B',
 		name: 'b',
-		description: 'This is a description',
+		description: 'This is description B',
 	},
 	{
 		label: 'Option C',
 		name: 'c',
-		description: 'This is a description',
+		description: 'This is description C',
 	},
 ];
 
 const meta: Meta<typeof OptionGrid> = {
 	title: 'Forms & Input Fields/Option Grid',
+	tags: [],
 	component: OptionGrid,
 	args: {
 		label: 'Select car servicing options',
@@ -104,10 +108,10 @@ const meta: Meta<typeof OptionGrid> = {
 		columns: '2',
 		indicator: 'checkbox',
 		selectionMode: 'multiple',
-		testId: 'demo-option-grid',
 		onSelectionChange: fn(),
+		isLoading: false,
+		testId: 'demo-option-grid',
 	},
-	tags: ['beta'],
 };
 
 export default meta;
@@ -122,6 +126,7 @@ export const Simple: Story = {
 	play: async ({ args, canvasElement, step }) => {
 		const contentOptions = args.items;
 		const canvas = within(canvasElement);
+		const ARIA_SELECTED = 'aria-selected';
 
 		// add a small pause, because react-aria init :(
 		await new Promise((resolve) => setTimeout(resolve, 25));
@@ -143,16 +148,15 @@ export const Simple: Story = {
 				await expect(option).toHaveAttribute('data-key', content.name);
 			}
 		});
-
 		await step('Selected states and onChange event', async () => {
 			for (const idx of [0, 2]) {
 				const option = options[idx];
 				await userEvent.click(option);
 				await expect(args.onSelectionChange).toHaveBeenCalled();
-				await expect(option).toHaveAttribute('aria-selected', 'true');
+				await expect(option).toHaveAttribute(ARIA_SELECTED, 'true');
 			}
 
-			await expect(options[1]).toHaveAttribute('aria-selected', 'false');
+			await expect(options[1]).toHaveAttribute(ARIA_SELECTED, 'false');
 		});
 
 		await step('Keyboard interaction', async () => {
@@ -160,8 +164,8 @@ export const Simple: Story = {
 				'[ArrowLeft][ArrowLeft][Enter][ArrowRight][ArrowRight][Enter]',
 			);
 			await expect(args.onSelectionChange).toHaveBeenCalled();
-			await expect(options[0]).toHaveAttribute('aria-selected', 'false');
-			await expect(options[2]).toHaveAttribute('aria-selected', 'false');
+			await expect(options[0]).toHaveAttribute(ARIA_SELECTED, 'false');
+			await expect(options[2]).toHaveAttribute(ARIA_SELECTED, 'false');
 		});
 	},
 };
@@ -175,6 +179,7 @@ export const UncontrolledWithIcons: Story = {
 
 /**
  * Example of a controlled instance using an empty Set, logs selection to console. Indicator set to `radio`.
+ * This example also demostrates disabling of options.
  *
  * ```jsx
  * import type { Selection } from 'react-aria-components';
