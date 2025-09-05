@@ -163,7 +163,7 @@ export const gridItemStyle = style([
 							backgroundColor: tokens.border.colours.light,
 							borderColor: tokens.border.colours.light,
 						},
-					'&[data-selected]:after': {
+					[`&[data-selected]:after`]: {
 						borderRadius: 'inherit',
 						content: '',
 						display: 'block',
@@ -176,10 +176,10 @@ export const gridItemStyle = style([
 						top: 0,
 						width: '100%',
 					},
-					'&[data-disabled]': {
+					[selectors.disabled]: {
 						backgroundColor: tokens.colours.gamut.gray100,
-						borderColor: tokens.colours.gamut.gray200,
-						color: tokens.colours.gamut.gray400,
+						borderColor: 'transparent',
+						color: tokens.colours.gamut.black500,
 						cursor: 'not-allowed',
 					},
 				},
@@ -227,10 +227,8 @@ export const checkboxStyle = style([
 							backgroundColor: tokens.colours.gamut.gray300,
 							color: tokens.colours.background.body,
 						},
-					'&[data-disabled]': {
-						backgroundColor: tokens.colours.gamut.gray100,
+					[selectors.disabled]: {
 						borderColor: tokens.colours.gamut.gray200,
-						color: tokens.colours.gamut.gray300,
 					},
 				},
 			},
@@ -289,7 +287,7 @@ export const radioButtonStyle = style([
 							backgroundColor: tokens.colours.gamut.gray300,
 							borderColor: tokens.colours.gamut.gray300,
 						},
-					'&[data-disabled]': {
+					[selectors.disabled]: {
 						backgroundColor: tokens.colours.gamut.gray100,
 						borderColor: tokens.colours.gamut.gray200,
 					},

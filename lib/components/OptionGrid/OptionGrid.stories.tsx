@@ -179,7 +179,7 @@ export const UncontrolledWithIcons: Story = {
 
 /**
  * Example of a controlled instance using an empty Set, logs selection to console. Indicator set to `radio`.
- * This example also shows disabling of options.
+ * This example also demostrates disabling of options.
  *
  * ```jsx
  * import type { Selection } from 'react-aria-components';
