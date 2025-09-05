@@ -44,6 +44,7 @@ export * from './ScrollPane';
 export * from './Section';
 export * from './SelectInput';
 export * from './SimplePagination';
+export * from './Slider';
 export * from './SliderProgress';
 export * from './Stack';
 export * from './StandardModal';
