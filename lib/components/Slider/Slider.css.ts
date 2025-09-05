@@ -2,6 +2,7 @@ import { style } from '@vanilla-extract/css';
 
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
 import { cssLayerComponent } from '../../styles/layers.css';
+import { selectors } from '../../styles/selectors';
 import { sprinkles } from '../../styles/sprinkles.css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
@@ -55,7 +56,7 @@ export const track = style([
 			[cssLayerComponent]: {
 				backgroundColor: vars.colours.gamut.gray300,
 				selectors: {
-					'&[data-disabled]': {
+					[selectors.disabled]: {
 						backgroundColor: vars.colours.gamut.gray200,
 						cursor: 'not-allowed',
 					},
@@ -81,16 +82,16 @@ export const thumb = style([
 				transform: 'translate(-50%, -50%)',
 				transition: `box-shadow 0.2s ${vars.animation.easing.standard}`,
 				selectors: {
-					'&:hover:not([data-disabled])': {
+					[selectors.hover]: {
 						boxShadow: `0 0 0 4px rgba(0, 0, 0, 0.1)`,
 					},
-					'&:focus, &:focus-visible': {
+					[selectors.focusVisible]: {
 						boxShadow: `0 0 0 4px rgba(0, 0, 0, 0.2)`,
 					},
 					'&[data-dragging]': {
 						boxShadow: `0 0 0 4px rgba(0, 0, 0, 0.2)`,
 					},
-					'&[data-disabled]': {
+					[selectors.disabled]: {
 						backgroundColor: vars.colours.gamut.gray500,
 						cursor: 'not-allowed',
 					},
