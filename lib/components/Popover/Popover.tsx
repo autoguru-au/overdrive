@@ -1,142 +1,75 @@
 import React, { useRef } from 'react';
 import {
-	useOverlay,
-	useOverlayTrigger,
-	useButton,
+	usePopover,
+	useDialog,
 	DismissButton,
-	FocusScope,
-	type AriaOverlayProps,
+	Overlay,
+	type AriaPopoverProps,
+	type AriaDialogProps,
 } from 'react-aria';
-import {
-	useOverlayTriggerState,
-	type OverlayTriggerState,
-} from 'react-stately';
+import { type OverlayTriggerState } from 'react-stately';
 
-import type { TestIdProp } from '../../types';
-import { dataAttrs } from '../../utils/dataAttrs';
+import { overlayStyle } from './Popover.css';
 
-import { overlayStyle, triggerStyle } from './Popover.css';
-
-export interface PopoverTriggerProps extends TestIdProp {
-	children: [React.ReactElement, React.ReactElement];
-	placement?: 'top' | 'bottom' | 'left' | 'right';
-	offset?: number;
-	shouldCloseOnBlur?: boolean;
-	isDisabled?: boolean;
-}
-
-interface PopoverProps extends AriaOverlayProps {
+/**
+ * Internal props for the Popover component.
+ */
+export interface PopoverProps extends Omit<AriaPopoverProps, 'popoverRef'> {
+	/** Content to display inside the popover */
 	children: React.ReactNode;
+	/** State object that controls the popover's open/close state */
 	state: OverlayTriggerState;
+	/** Reference to the trigger element for positioning */
 	triggerRef: React.RefObject<HTMLElement | null>;
-	placement?: 'top' | 'bottom' | 'left' | 'right';
-	offset?: number;
 }
 
-const Popover = ({
+/**
+ * Internal props for the Dialog wrapper component.
+ */
+interface DialogProps extends AriaDialogProps {
+	children: React.ReactNode;
+}
+
+const Dialog = ({ children, ...props }: DialogProps) => {
+	const ref = useRef<HTMLDivElement>(null);
+	const { dialogProps } = useDialog(props, ref);
+
+	return (
+		<div {...dialogProps} ref={ref} /* style={{ outline: 'none' }} */>
+			{children}
+		</div>
+	);
+};
+
+export const Popover = ({
 	children,
+	offset = 8,
 	state,
 	triggerRef,
-	placement = 'bottom',
-	offset = 8,
-	...ariaOverlayProps
+	...props
 }: PopoverProps) => {
-	const overlayRef = useRef<HTMLDivElement>(null);
+	const popoverRef = useRef<HTMLDivElement>(null);
 
-	const { overlayProps } = useOverlay(
+	const { popoverProps, underlayProps } = usePopover(
 		{
-			onClose: state.close,
-			shouldCloseOnBlur: true,
-			isOpen: state.isOpen,
-			isDismissable: true,
-			...ariaOverlayProps,
+			...props,
+			offset,
+			triggerRef,
+			popoverRef,
 		},
-		overlayRef,
-	);
-
-	return (
-		<div
-			{...overlayProps}
-			ref={overlayRef}
-			className={overlayStyle}
-			style={{
-				position: 'absolute',
-				zIndex: 100,
-				...(placement === 'bottom' && {
-					top: '100%',
-					marginTop: offset,
-				}),
-				...(placement === 'top' && {
-					bottom: '100%',
-					marginBottom: offset,
-				}),
-				...(placement === 'left' && {
-					right: '100%',
-					marginRight: offset,
-				}),
-				...(placement === 'right' && {
-					left: '100%',
-					marginLeft: offset,
-				}),
-			}}
-		>
-			<DismissButton onDismiss={state.close} />
-			<FocusScope restoreFocus>{children}</FocusScope>
-			<DismissButton onDismiss={state.close} />
-		</div>
-	);
-};
-
-export const PopoverTrigger = ({
-	children,
-	placement = 'bottom',
-	offset = 8,
-	shouldCloseOnBlur = true,
-	isDisabled = false,
-	testId,
-}: PopoverTriggerProps) => {
-	const [trigger, content] = children;
-	const state = useOverlayTriggerState({});
-	const triggerRef = useRef<HTMLElement>(null);
-
-	const { triggerProps, overlayProps } = useOverlayTrigger(
-		{ type: 'dialog' },
 		state,
-		triggerRef,
-	);
-
-	const { buttonProps } = useButton(
-		{
-			...triggerProps,
-			isDisabled,
-		},
-		triggerRef,
 	);
 
 	return (
-		<div
-			style={{ position: 'relative' }}
-			{...dataAttrs({ testid: testId })}
-		>
-			{React.cloneElement(trigger as React.ReactElement<any>, {
-				...buttonProps,
-				ref: triggerRef,
-				className: triggerStyle,
-			})}
-			{state.isOpen && (
-				<Popover
-					{...overlayProps}
-					state={state}
-					triggerRef={triggerRef}
-					placement={placement}
-					offset={offset}
-					shouldCloseOnBlur={shouldCloseOnBlur}
-				>
-					{content}
-				</Popover>
-			)}
-		</div>
+		<Overlay>
+			<div {...underlayProps} style={{ position: 'fixed', inset: 0 }} />
+			<div {...popoverProps} ref={popoverRef} className={overlayStyle}>
+				<DismissButton onDismiss={state.close} />
+				<Dialog>{children}</Dialog>
+				<DismissButton onDismiss={state.close} />
+			</div>
+		</Overlay>
 	);
 };
 
-PopoverTrigger.displayName = 'PopoverTrigger';
+Popover.displayName = 'Popover';
