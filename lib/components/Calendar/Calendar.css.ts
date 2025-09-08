@@ -51,7 +51,7 @@ export const cellStyle = style([
 					[selectors.hoverNotSelected]: {
 						background: tokens.colours.gamut.gray200,
 					},
-					[selectors.disabled]: {
+					[`${selectors.disabled}, ${selectors.unavailable}`]: {
 						background: tokens.colours.background.body,
 						color: tokens.colours.gamut.gray400,
 						cursor: 'default',
