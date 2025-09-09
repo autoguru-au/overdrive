@@ -138,6 +138,29 @@ still needed for:
 - Use `valueArrays` to populate argTypes, don't add custom `control` or
   `description`
 
+### Story Enhancement Patterns
+
+```typescript
+// Stories with play functions
+import { expect, userEvent, within } from 'storybook/test';
+
+export const Interactive: Story = {
+  args: {
+    /* story args */
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const user = userEvent.setup();
+
+    // Test interaction
+    await user.click(canvas.getByRole('button'));
+
+    // Verify result
+    expect(canvas.getByRole('button')).toHaveAttribute('aria-pressed', 'true');
+  },
+};
+```
+
 ### Accessibility Testing Requirements
 
 - Keyboard navigation (Tab, Enter, Space, Escape, Arrow keys)
