@@ -57,7 +57,7 @@ const Dialog = ({ children, ...props }: DialogProps) => {
 	const { dialogProps } = useDialog(props, ref);
 
 	return (
-		<div {...dialogProps} ref={ref} /* style={{ outline: 'none' }} */>
+		<div {...dialogProps} ref={ref}>
 			{children}
 		</div>
 	);
