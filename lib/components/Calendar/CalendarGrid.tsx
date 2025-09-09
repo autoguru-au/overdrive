@@ -39,7 +39,7 @@ const CalendarCell = ({ state, date }: CalendarCellProps) => {
 				{...dataAttrs({
 					selected: isSelected,
 					disabled: isDisabled,
-					unvailable: isUnavailable,
+					unavailable: isUnavailable,
 				})}
 			>
 				{formattedDate}
@@ -81,7 +81,7 @@ export const CalendarGrid = ({ state, ...props }: CalendarGridProps) => {
 								.map((date, idx) =>
 									date ? (
 										<CalendarCell
-											key={date.toString()}
+											key={`${date.year}-${date.month}-${date.day}`}
 											state={state}
 											date={date}
 										/>

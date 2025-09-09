@@ -163,11 +163,7 @@ export const DatePicker = ({
 	// Use native picker only if explicitly requested
 	if (useNativePicker) {
 		return (
-			<div
-				className={elementStyles({
-					className: [containerClassName, styles.inputContainer],
-				})}
-			>
+			<div className={clsx(containerClassName, styles.inputContainer)}>
 				<input
 					className={elementStyles({
 						className: [

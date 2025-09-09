@@ -145,13 +145,6 @@ export const KeyboardTest: Story = {
 			expect(popoverContent).toBeInTheDocument();
 		});
 
-		// Debug: Let's see what inputs are actually in the DOM
-		console.log('All inputs in DOM:', screen.queryAllByRole('textbox'));
-		console.log(
-			'All elements with First field text:',
-			screen.queryAllByText(/First field/i),
-		);
-
 		// Wait for inputs to be available - try different selectors
 		await waitFor(() => {
 			// Try different ways to find the input
@@ -161,10 +154,6 @@ export const KeyboardTest: Story = {
 				name: /first field/i,
 			});
 			const allTextboxes = screen.queryAllByRole('textbox');
-
-			console.log('Input by placeholder:', inputByPlaceholder);
-			console.log('Input by role:', inputByRole);
-			console.log('All textboxes:', allTextboxes);
 
 			if (
 				!inputByPlaceholder &&
