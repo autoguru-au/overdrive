@@ -76,5 +76,3 @@ Please analyze the current branch changes and either:
 ## Breaking Changes [only output if any present]
 - [describe any breaking changes]
 ```
-
-🤖 Generated with [Claude Code](https://claude.ai/code)

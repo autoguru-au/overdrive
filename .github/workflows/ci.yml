@@ -44,7 +44,6 @@ jobs:
     test:
         name: Lint & Test
         needs: setup
-        if: github.ref_name != 'main'
         runs-on: ubuntu-latest
         env:
             TZ: Australia/Brisbane
