@@ -1,16 +1,15 @@
+import { invariant } from '@autoguru/utilities';
 import React, { useRef } from 'react';
 import {
 	useOverlayTrigger,
 	useButton,
 	type AriaPopoverProps,
 } from 'react-aria';
-import {
-	useOverlayTriggerState,
-	// type OverlayTriggerState,
-} from 'react-stately';
+import { useOverlayTriggerState } from 'react-stately';
 
 import type { TestIdProp } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
+import { Button } from '../Button/Button';
 
 import { Popover } from './Popover';
 import { triggerStyle } from './Popover.css';
@@ -29,9 +28,8 @@ export interface PopoverTriggerProps
 		TestIdProp {
 	/** The content to display in the popover */
 	content: React.ReactNode;
+	/** The element that triggers the popover when interacted with */
 	children: React.ReactNode;
-	// /** Array containing the trigger element and popover content: [trigger, content] */
-	// children: [React.ReactElement, React.ReactElement];
 	/** Whether the trigger is disabled and non-interactive. */
 	isDisabled?: boolean;
 }
@@ -40,20 +38,11 @@ export interface PopoverTriggerProps
  * A popover component that displays content in an overlay positioned relative to a trigger element.
  * The popover automatically handles positioning, accessibility, and focus management.
  *
+ * Note: Button components are not supported as children due to React Aria compatibility issues,
+ * use button tag, plain text, or other elements instead.
+ *
  * @example
  * ```tsx
- * import { PopoverTrigger } from '@autoguru/overdrive';
- *
- * <PopoverTrigger placement="bottom" offset={12}>
- *   <Button>Open Menu</Button>
- *   <div>
- *     <h3>Menu Options</h3>
- *     <ul>
- *       <li><Button variant="secondary">Edit</Button></li>
- *       <li><Button variant="danger">Delete</Button></li>
- *     </ul>
- *   </div>
- * </PopoverTrigger>
  * ```
  */
 export const PopoverTrigger = ({
@@ -83,22 +72,37 @@ export const PopoverTrigger = ({
 		triggerRef,
 	);
 
+	// Validate that Button components are not used as children
+	if (React.isValidElement(children) && children.type === Button) {
+		invariant(
+			false,
+			'PopoverTrigger: The Button component is presently incompatible with ReactAria. Please use a native button or other element for the trigger.',
+		);
+	}
+
+	const isNativeButton =
+		React.isValidElement(children) && children.type === 'button';
+
+	const combinedProps = {
+		...buttonProps,
+		...dataAttrs({ testid: testId }),
+		ref: triggerRef,
+	};
+
+	const triggerElement = isNativeButton ? (
+		React.cloneElement(
+			children as React.ReactElement<React.ComponentProps<'button'>>,
+			combinedProps,
+		)
+	) : (
+		<button {...combinedProps} className={triggerStyle}>
+			{children}
+		</button>
+	);
+
 	return (
 		<>
-			<button
-				{...buttonProps}
-				ref={triggerRef}
-				className={triggerStyle}
-				// style={{ position: 'relative' }}
-				{...dataAttrs({ testid: testId })}
-			>
-				{children}
-			</button>
-			{/* {React.cloneElement(trigger as React.ReactElement<any>, {
-				...buttonProps,
-				ref: triggerRef,
-				className: triggerStyle,
-			})} */}
+			{triggerElement}
 			{state.isOpen && (
 				<Popover
 					{...overlayProps}
