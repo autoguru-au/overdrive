@@ -57,11 +57,11 @@ Create or update a pull request following AutoGuru Overdrive development practic
 
 ### PR Management Strategy
 - **If PR exists**: Update the existing PR with new commits and enhanced description
-- **If no PR exists**: Create new PR with comprehensive summary following the practices above
+- **If no PR exists**: Create new PR in DRAFT MODE with comprehensive summary following the practices above
 
 Please analyze the current branch changes and either:
 1. **Update existing PR** (if PR #1247 exists for current branch) with additional commits and enhanced description
-2. **Create new PR** with detailed summary covering:
+2. **Create new PR in DRAFT MODE** with detailed summary covering:
    - Component changes and styling improvements
    - Architecture adherence (Vanilla Extract + Sprinkles)
    - Testing coverage (Storybook stories + accessibility)
