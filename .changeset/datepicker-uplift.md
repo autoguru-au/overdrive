@@ -1,8 +1,8 @@
 ---
-'@autoguru/overdrive': patch
+'@autoguru/overdrive': minor
 ---
 
-DatePicker component uplift with enhanced Calendar and Popover integration
+DatePicker component uplift, introducing Calendar and Popover components
 
 - **Calendar**: New component available as standalone localisable calendar
 - **Popover**: New component available for creating flyout menus
