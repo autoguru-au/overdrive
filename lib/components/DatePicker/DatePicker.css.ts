@@ -2,27 +2,35 @@ import { style, styleVariants } from '@vanilla-extract/css';
 
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
+export const inputContainer = style({
+	display: 'grid',
+	position: 'relative',
+});
+
 export const input = style({
-	bottom: 0,
 	cursor: 'pointer',
-	left: 0,
+	gridArea: '1 / 1',
 	opacity: 0,
-	right: 0,
-	top: 0,
+	position: 'relative',
+	zIndex: 1,
 	selectors: {
 		'&::-webkit-calendar-picker-indicator': {
 			background: 'transparent',
-			bottom: 0,
 			color: 'transparent',
 			cursor: 'pointer',
-			height: 'auto',
+			height: '100%',
 			left: 0,
 			position: 'absolute',
-			right: 0,
 			top: 0,
-			width: 'auto',
+			width: '100%',
 		},
 	},
+});
+
+export const inputOverlay = style({
+	gridArea: '1 / 1',
+	pointerEvents: 'none',
+	zIndex: 0,
 });
 
 export const contents = styleVariants({
@@ -37,6 +45,7 @@ export const contents = styleVariants({
 		gridTemplateColumns: 'auto auto',
 	},
 });
+
 export const disabled = styleVariants({
 	default: {
 		cursor: 'not-allowed',
@@ -44,10 +53,4 @@ export const disabled = styleVariants({
 	root: {
 		opacity: '0.3',
 	},
-});
-
-export const spinner = style({
-	left: '50%',
-	top: '50%',
-	transform: 'translate(-50%, -50%)',
 });
