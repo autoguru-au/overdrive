@@ -9,7 +9,6 @@ import clsx from 'clsx';
 import React, { type ChangeEvent, useMemo, useState } from 'react';
 import { useDateFormatter } from 'react-aria';
 
-import { useMedia } from '../../hooks/useMedia/useMedia';
 import { elementStyles } from '../../styles/elementStyles';
 import { Calendar, type CalendarProps } from '../Calendar';
 import { Icon } from '../Icon/Icon';
@@ -75,18 +74,16 @@ export const DatePicker = ({
 	testId,
 	...inputProps
 }: DatePickerProps) => {
-	// Check if we're on a mobile device (below tablet breakpoint)
-	// const [isMobile] = useMedia(['mobile']);
-	const [isTablet] = useMedia(['tablet']);
-
-	// Use native picker on mobile or when explicitly requested
-	const shouldUseNativePicker = useNativePicker || !isTablet;
 	const [selectedDate, setSelectedDate] = useState<DateValue | null>(() => {
 		if (inputProps.value) {
 			return parseDateString(inputProps.value);
 		}
 		return null;
 	});
+
+	const [popoverState, setPopoverState] = useState<{
+		close: () => void;
+	} | null>(null);
 
 	const formatter = useDateFormatter({ dateStyle: 'medium' });
 
@@ -122,7 +119,7 @@ export const DatePicker = ({
 		<div
 			className={clsx(styles.contents.default, {
 				[styles.contents.withLabel]: Boolean(displayValue),
-				[styles.disabled.default]: disabled && !shouldUseNativePicker,
+				[styles.disabled.default]: disabled && !useNativePicker,
 			})}
 		>
 			{isLoading ? (
@@ -148,10 +145,14 @@ export const DatePicker = ({
 				if (typeof onChange === 'function') {
 					onChange(formatDateToString(date));
 				}
+				// Close the popover after date selection
+				if (popoverState) {
+					popoverState.close();
+				}
 			},
 			lang,
 		}),
-		[allowPastDate, selectedDate, calendar, lang, onChange],
+		[allowPastDate, selectedDate, calendar, lang, onChange, popoverState],
 	);
 
 	const contentCalendar = useMemo(
@@ -159,8 +160,8 @@ export const DatePicker = ({
 		[calendarProps],
 	);
 
-	// Use native picker if explicitly requested or on mobile breakpoints
-	if (shouldUseNativePicker) {
+	// Use native picker only if explicitly requested
+	if (useNativePicker) {
 		return (
 			<div
 				className={elementStyles({
@@ -192,6 +193,7 @@ export const DatePicker = ({
 			placement="bottom left"
 			testId={testId}
 			isDisabled={disabled}
+			onStateReady={setPopoverState}
 		>
 			<div className={containerClassName}>{contentDisplay}</div>
 		</PopoverTrigger>

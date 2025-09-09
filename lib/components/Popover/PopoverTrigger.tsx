@@ -11,7 +11,7 @@ import type { TestIdProp } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Button } from '../Button/Button';
 
-import { Popover } from './Popover';
+import { type Language, Popover } from './Popover';
 import { triggerStyle } from './Popover.css';
 
 /**
@@ -26,12 +26,26 @@ export interface PopoverTriggerProps
 			| 'shouldFlip'
 		>,
 		TestIdProp {
-	/** The content to display in the popover */
+	/**
+	 * The content to display in the popover
+	 */
 	content: React.ReactNode;
-	/** The element that triggers the popover when interacted with */
+	/**
+	 * The element that triggers the popover when interacted with
+	 */
 	children: React.ReactNode;
-	/** Whether the trigger is disabled and non-interactive. */
+	/**
+	 * Whether the trigger is disabled and non-interactive
+	 */
 	isDisabled?: boolean;
+	/**
+	 * Language content override
+	 */
+	lang?: Language;
+	/**
+	 * Callback that receives the overlay trigger state for external control
+	 */
+	onStateReady?: (state: { close: () => void }) => void;
 }
 
 /**
@@ -43,6 +57,9 @@ export interface PopoverTriggerProps
  *
  * @example
  * ```tsx
+ * <PopoverTrigger content={<Calendar />}>
+ *   Choose Date
+ * </PopoverTrigger>
  * ```
  */
 export const PopoverTrigger = ({
@@ -54,9 +71,18 @@ export const PopoverTrigger = ({
 	shouldCloseOnInteractOutside,
 	shouldFlip,
 	testId,
+	lang,
+	onStateReady,
 }: PopoverTriggerProps) => {
 	const state = useOverlayTriggerState({});
 	const triggerRef = useRef<HTMLButtonElement>(null);
+
+	// Provide state access to parent component
+	React.useEffect(() => {
+		if (onStateReady) {
+			onStateReady({ close: state.close });
+		}
+	}, [onStateReady, state.close]);
 
 	const { triggerProps, overlayProps } = useOverlayTrigger(
 		{ type: 'dialog' },
@@ -112,6 +138,7 @@ export const PopoverTrigger = ({
 					offset={offset}
 					shouldCloseOnInteractOutside={shouldCloseOnInteractOutside}
 					shouldFlip={shouldFlip}
+					lang={lang}
 				>
 					{content}
 				</Popover>

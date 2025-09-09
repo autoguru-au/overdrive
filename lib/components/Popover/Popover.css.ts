@@ -33,3 +33,16 @@ export const triggerStyle = style({
 		},
 	},
 });
+
+export const fullScreenStyle = style({
+	'@layer': {
+		[cssLayerComponent]: {
+			backgroundColor: tokens.colours.background.body,
+			bottom: 0,
+			left: 0,
+			position: 'fixed',
+			right: 0,
+			top: 0,
+		},
+	},
+});
