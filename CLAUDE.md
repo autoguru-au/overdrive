@@ -97,6 +97,8 @@ lib/components/ComponentName/
 6. **Set displayName** on all components
 7. **Use React Aria** for interactive elements to ensure accessibility
 8. **State affects UI via data attributes** managed by `dataAttrs` helper
+9. **Storybook play functions** for interaction testings are always organised
+   using `step` annotations
 
 ## Performance Considerations
 

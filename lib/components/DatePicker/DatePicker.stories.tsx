@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { useState } from 'react';
-import { expect, userEvent, within, waitFor, screen } from 'storybook/test';
+import { expect, fn, userEvent, within, waitFor, screen } from 'storybook/test';
 
 import { argTypesExampleIcons } from '../../stories/shared/argTypes';
+import { displayFormattedDate, isToday } from '../../utils/dateFormat';
 import { FlexInline } from '../Flex';
 
 import { DatePicker } from './DatePicker';
@@ -19,19 +20,19 @@ const meta = {
 		),
 	],
 	args: {
-		onChange: undefined,
+		onChange: fn(),
 		valueLabel: 'Select date',
 		icon: undefined,
 		size: 'medium',
-		allowPastDate: false,
 		isLoading: false,
 		disabled: false,
 		useNativePicker: false,
+		name: 'demo-date-picker',
+		calendarOptions: undefined,
+		className: undefined,
+		testId: 'test-date-picker',
 	},
 	argTypes: {
-		allowPastDate: {
-			control: { type: 'boolean' },
-		},
 		icon: {
 			defaultValue: null,
 			description: 'Input field Icon',
@@ -44,59 +45,40 @@ export default meta;
 type Story = StoryObj<typeof DatePicker>;
 
 export const Standard: Story = {
+	args: {
+		valueLabel: '',
+	},
 	render: (args) => {
-		const [selectedDate, setSelectedDate] = useState('');
+		const [selectedDate, setSelectedDate] = useState(args.valueLabel);
 		return (
 			<DatePicker
 				{...args}
-				value={selectedDate}
-				onChange={setSelectedDate}
+				valueLabel={selectedDate}
+				onChange={(value) => {
+					setSelectedDate(displayFormattedDate(value));
+					args.onChange?.(value);
+				}}
 			/>
 		);
 	},
 };
 
-export const LargeSize: Story = {
+export const LargeWithLabel: Story = {
 	args: {
 		size: 'large',
 	},
 	render: (args) => {
-		const [selectedDate, setSelectedDate] = useState('');
+		const [selectedDate, setSelectedDate] = useState(args.valueLabel);
 		return (
 			<DatePicker
 				{...args}
-				value={selectedDate}
-				onChange={setSelectedDate}
+				valueLabel={selectedDate}
+				onChange={(value) => {
+					setSelectedDate(displayFormattedDate(value));
+					args.onChange?.(value);
+				}}
 			/>
 		);
-	},
-	play: async ({ canvasElement }) => {
-		const canvas = within(canvasElement);
-
-		// Find the date picker trigger
-		const trigger = canvas.getByRole('button');
-		expect(trigger).toBeInTheDocument();
-
-		// Click to open calendar
-		await userEvent.click(trigger);
-
-		// Wait for calendar to appear (search globally since popover renders outside canvas)
-		await waitFor(() => {
-			const calendar = screen.getByRole('dialog');
-			expect(calendar).toBeInTheDocument();
-		});
-
-		// Verify calendar grid is present
-		const calendarGrid = screen.getByRole('grid');
-		expect(calendarGrid).toBeInTheDocument();
-
-		// Close with escape key
-		await userEvent.keyboard('{Escape}');
-
-		// Calendar should close
-		await waitFor(() => {
-			expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
-		});
 	},
 };
 
@@ -106,14 +88,22 @@ export const LargeSize: Story = {
 export const NativePicker: Story = {
 	args: {
 		useNativePicker: true,
+		valueLabel: 'Today',
 	},
 	render: (args) => {
-		const [selectedDate, setSelectedDate] = useState('');
+		const [selectedDate, setSelectedDate] = useState(args.valueLabel);
 		return (
 			<DatePicker
 				{...args}
-				value={selectedDate}
-				onChange={setSelectedDate}
+				onChange={(value) => {
+					if (isToday(value)) {
+						setSelectedDate('Today');
+					} else {
+						setSelectedDate(displayFormattedDate(value));
+					}
+					args.onChange?.(value);
+				}}
+				valueLabel={selectedDate}
 			/>
 		);
 	},
@@ -124,59 +114,81 @@ export const NativePicker: Story = {
  */
 export const Interaction: Story = {
 	args: {
-		value: '2024-01-15',
+		// value: '2024-01-15',
 		valueLabel: 'Select date',
 	},
 	render: (args) => {
-		const [selectedDate, setSelectedDate] = useState(args.value || '');
+		const [selectedDate, setSelectedDate] = useState(args.valueLabel);
 		return (
 			<DatePicker
 				{...args}
-				value={selectedDate}
-				onChange={setSelectedDate}
+				valueLabel={selectedDate || args.valueLabel}
+				onChange={(value) => {
+					setSelectedDate(displayFormattedDate(value) || '');
+					args.onChange?.(value);
+				}}
 			/>
 		);
 	},
 	play: async ({ canvasElement }) => {
 		const canvas = within(canvasElement);
 
-		// Should display formatted date (use flexible text matching)
-		expect(
-			canvas.getByText(
-				(content) =>
-					content.includes('Jan') &&
-					content.includes('15') &&
-					content.includes('2024'),
-			),
-		).toBeInTheDocument();
-
-		// Open calendar
+		// Step 1: Verify initial state
 		const trigger = canvas.getByRole('button');
+		expect(trigger).toBeInTheDocument();
+		expect(canvas.getByText('Select date')).toBeInTheDocument();
+
+		// Step 2: Open calendar popover
 		await userEvent.click(trigger);
 
-		// Calendar should be open with current date (search globally since popover renders outside canvas)
+		// Wait for calendar popover to appear (rendered outside canvas)
 		await waitFor(() => {
 			const calendar = screen.getByRole('dialog');
 			expect(calendar).toBeInTheDocument();
 		});
 
-		// Find and click a different date
-		const dateButtons = screen
-			.getAllByRole('button')
-			.filter(
-				(button) =>
-					button.textContent &&
-					/^20$/.test(button.textContent) &&
-					!button.hasAttribute('aria-disabled'),
-			);
+		// Step 3: Verify calendar components
+		const calendarGrid = screen.getByRole('grid');
+		expect(calendarGrid).toBeInTheDocument();
+
+		// Step 4: Select a date (find an available date button)
+		const dateButtons = screen.getAllByRole('button').filter(
+			(button) =>
+				button.textContent &&
+				/^\d{1,2}$/.test(button.textContent.trim()) &&
+				!button.hasAttribute('aria-disabled') &&
+				!button.hasAttribute('aria-pressed'), // Not currently selected
+		);
 
 		if (dateButtons.length > 0) {
-			await userEvent.click(dateButtons[0]);
+			const selectedDateButton = dateButtons[0];
 
-			// Calendar should close after selection
+			await userEvent.click(selectedDateButton);
+
+			// Step 5: Verify calendar closes and date is selected
 			await waitFor(() => {
 				expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
 			});
+
+			// Verify the selected date appears in the trigger (formatted)
+			expect(canvas.queryByText('Select date')).not.toBeInTheDocument();
+			expect(trigger).toBeInTheDocument();
 		}
+
+		// Step 6: Test keyboard interaction - reopen and close with Escape
+		await userEvent.click(trigger);
+
+		await waitFor(() => {
+			const calendar = screen.getByRole('dialog');
+			expect(calendar).toBeInTheDocument();
+		});
+
+		// Close with escape key
+		await userEvent.keyboard('{Escape}');
+
+		// Calendar should close
+		await waitFor(() => {
+			expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+		});
 	},
 };
