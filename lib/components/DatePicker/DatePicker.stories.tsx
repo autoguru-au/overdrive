@@ -136,7 +136,7 @@ export const Interaction: Story = {
 		await step('Verify initial state', async () => {
 			const trigger = canvas.getAllByRole('button')[0];
 			expect(trigger).toBeInTheDocument();
-			expect(canvas.getByText('Select date')).toBeInTheDocument();
+			expect(canvas.getAllByText('Select date')[0]).toBeInTheDocument();
 		});
 
 		await step('Open calendar popover', async () => {
