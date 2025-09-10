@@ -16,7 +16,7 @@ const meta = {
 			control: 'boolean',
 			description: 'Allow selecting dates in the past',
 		},
-		calendar: {
+		calendarOptions: {
 			control: false,
 			description: 'React-aria calendar configuration object',
 		},
@@ -74,7 +74,7 @@ export const Standard: Story = {
  */
 export const DisabledWeekends: Story = {
 	args: {
-		calendar: {
+		calendarOptions: {
 			isDateUnavailable: (date: DateValue) => isWeekend(date, 'en-AU'),
 		},
 	},

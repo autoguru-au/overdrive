@@ -42,7 +42,7 @@ export interface DateTimePickerProps<D extends DateValue> extends TestIdProp {
 	 * - `defaultValue`: Today's date
 	 * - `firstDayOfWeek`: Monday
 	 */
-	calendar?: Exclude<AriaCalendarProps<D>, 'onChange'>;
+	calendarOptions?: Exclude<AriaCalendarProps<D>, 'onChange'>;
 	/**
 	 * `OptionGrid` props used to generate the time picker items. Ensure to include a descriptive `label` value (for
 	 * assistive technology). Currently time options are not tied to the day selection.
@@ -85,7 +85,7 @@ export interface DateTimePickerProps<D extends DateValue> extends TestIdProp {
  */
 export const DateTimePicker = <D extends DateValue>({
 	allowPastDate = false,
-	calendar,
+	calendarOptions,
 	lang,
 	onChange,
 	timeOptions,
@@ -155,7 +155,7 @@ export const DateTimePicker = <D extends DateValue>({
 					</Heading>
 					<Calendar
 						allowPastDate={allowPastDate}
-						calendar={calendar}
+						calendarOptions={calendarOptions}
 						lang={calendarLang}
 						onChange={handleDateChange}
 					/>

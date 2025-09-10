@@ -45,7 +45,7 @@ const meta: Meta<typeof DateTimePicker> = {
 			items: times,
 			label: 'Select a drop-off time of day',
 		},
-		calendar: {
+		calendarOptions: {
 			firstDayOfWeek: 'mon',
 		},
 		allowPastDate: false,

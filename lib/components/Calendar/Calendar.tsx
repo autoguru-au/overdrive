@@ -22,12 +22,13 @@ import { calendarStyle, titleStyle } from './Calendar.css';
 import { CalendarButton } from './CalendarButton';
 import { CalendarGrid } from './CalendarGrid';
 
+const FIRST_DAY_OF_WEEK = 'mon';
 const defaultEnglish = {
 	nextLabel: 'Next month',
 	prevLabel: 'Previous month',
 } as const;
 
-type LangContent = keyof typeof defaultEnglish;
+type LanguageEntries = Partial<Record<keyof typeof defaultEnglish, string>>;
 
 export interface CalendarProps extends TestIdProp {
 	/**
@@ -38,7 +39,7 @@ export interface CalendarProps extends TestIdProp {
 	 * - `defaultValue`: Today's date
 	 * - `firstDayOfWeek`: Sunday
 	 */
-	calendar?: Exclude<AriaCalendarProps<DateValue>, 'onChange'>;
+	calendarOptions?: Exclude<AriaCalendarProps<DateValue>, 'onChange'>;
 	/**
 	 * Allow date in the past
 	 */
@@ -50,7 +51,7 @@ export interface CalendarProps extends TestIdProp {
 	/**
 	 * Language content override
 	 */
-	lang?: Partial<Record<LangContent, string>>;
+	lang?: LanguageEntries;
 }
 
 function createCalendar(identifier: string) {
@@ -90,7 +91,7 @@ function createCalendar(identifier: string) {
  */
 export const Calendar = ({
 	allowPastDate = false,
-	calendar,
+	calendarOptions,
 	lang,
 	onChange,
 	testId,
@@ -99,13 +100,13 @@ export const Calendar = ({
 
 	const calendarComponentProps: AriaCalendarProps<DateValue> = {
 		defaultValue: today(getLocalTimeZone()),
-		firstDayOfWeek: 'sun',
+		firstDayOfWeek: FIRST_DAY_OF_WEEK,
 		minValue: allowPastDate ? undefined : today(getLocalTimeZone()),
 		onChange: (value) => {
 			selectedDate.current = value;
 			onChange?.(value);
 		},
-		...calendar,
+		...calendarOptions,
 	};
 
 	const { locale } = useLocale();
