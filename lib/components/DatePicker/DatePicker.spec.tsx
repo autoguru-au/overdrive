@@ -7,7 +7,7 @@ import { describe, it, expect, beforeAll, afterAll, vi } from 'vitest';
 import { DatePicker } from './DatePicker';
 import * as stories from './DatePicker.stories';
 
-const { Standard, LargeSize, NativePicker } = composeStories(stories);
+const { Standard, LargeWithLabel, NativePicker } = composeStories(stories);
 
 // Mock window.matchMedia for useMedia hook
 const mockMatchMedia = (query: string) => ({
@@ -51,7 +51,13 @@ describe('DatePicker', () => {
 		const user = userEvent.setup();
 		const mockOnChange = vi.fn();
 
-		render(<DatePicker onChange={mockOnChange} />);
+		render(
+			<DatePicker
+				name="test-picker"
+				id="test-picker"
+				onChange={mockOnChange}
+			/>,
+		);
 
 		const trigger = screen.getByRole('button');
 
@@ -68,15 +74,18 @@ describe('DatePicker', () => {
 			.filter(
 				(button) =>
 					button.textContent &&
-					/^\d+$/.test(button.textContent) &&
-					!button.hasAttribute('aria-disabled'),
+					/^\d{1,2}$/.test(button.textContent.trim()) &&
+					!button.hasAttribute('aria-disabled') &&
+					!button.hasAttribute('aria-pressed'),
 			);
 
 		if (dateButtons.length > 0) {
 			await user.click(dateButtons[0]);
 
-			// onChange should be called with date string
-			expect(mockOnChange).toHaveBeenCalled();
+			// onChange should be called with ISO date string
+			expect(mockOnChange).toHaveBeenCalledWith(
+				expect.stringMatching(/^\d{4}-\d{2}-\d{2}$/),
+			);
 
 			// Popover should close after selection
 			expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
@@ -112,60 +121,94 @@ describe('DatePicker', () => {
 		expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
 	});
 
-	it('handles disabled state correctly', () => {
-		render(<DatePicker disabled onChange={vi.fn()} />);
+	it('handles disabled state and prevents interactions', async () => {
+		const user = userEvent.setup();
+		const mockOnChange = vi.fn();
+
+		render(
+			<DatePicker
+				name="test-picker"
+				id="test-picker"
+				disabled
+				valueLabel="Select date"
+				onChange={mockOnChange}
+			/>,
+		);
 
 		const trigger = screen.getByRole('button');
 
-		// Trigger should be disabled
-		expect(trigger).toBeDisabled();
+		// Trigger should have disabled styling and attributes
+		expect(trigger).toHaveAttribute('disabled');
+
+		// Attempting to click should not open popover
+		await user.click(trigger);
+		expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+		expect(mockOnChange).not.toHaveBeenCalled();
 	});
 
-	it('displays loading state with spinner', () => {
+	it('displays loading state with progress spinner', () => {
 		const { container } = render(
-			<DatePicker isLoading onChange={vi.fn()} />,
+			<DatePicker
+				name="test-picker"
+				id="test-picker"
+				isLoading
+				valueLabel="Loading..."
+				onChange={vi.fn()}
+			/>,
 		);
 
-		// Should show progress spinner instead of icon
+		// Should show progress spinner instead of calendar icon
 		const spinner = container.querySelector(
 			'[data-od-component="progress-spinner"]',
 		);
 		expect(spinner).toBeInTheDocument();
+
+		// Trigger should still be present
+		const trigger = screen.getByRole('button');
+		expect(trigger).toBeInTheDocument();
 	});
 
-	it('supports native date picker mode', () => {
-		render(<NativePicker />);
+	it('supports native date picker mode with proper overlay', () => {
+		const { container } = render(<NativePicker />);
 
-		// Should render native date input (hidden input overlaid with styled content)
+		// Should render native date input with proper overlay structure
 		const nativeInput = screen.getByDisplayValue('');
 		expect(nativeInput).toBeInTheDocument();
 		expect(nativeInput).toHaveAttribute('type', 'date');
+
+		// Should show overlay content with icon and text
+		expect(screen.getByText('Today')).toBeInTheDocument();
+
+		// Should have calendar icon in overlay
+		const icon = container.querySelector('[data-od-component="icon"]');
+		expect(icon).toBeInTheDocument();
 	});
 
-	it('handles value changes and formatting', async () => {
-		const user = userEvent.setup();
-		const mockOnChange = vi.fn();
+	it('includes hidden form input for accessibility', () => {
+		render(
+			<DatePicker
+				name="test-date"
+				id="test-id"
+				valueLabel="Select date"
+				onChange={vi.fn()}
+			/>,
+		);
 
-		render(<DatePicker value="2024-01-15" onChange={mockOnChange} />);
-
-		// Should display formatted date
-		expect(screen.getByText(/Jan 15, 2024/i)).toBeInTheDocument();
-
-		// Open calendar and select different date
-		const trigger = screen.getByRole('button');
-		await user.click(trigger);
-
-		const calendar = screen.getByRole('dialog');
-		expect(calendar).toBeInTheDocument();
+		// Should include hidden input for form submission
+		const hiddenInput = screen.getByDisplayValue('');
+		expect(hiddenInput).toBeInTheDocument();
+		expect(hiddenInput).toHaveAttribute('type', 'hidden');
+		expect(hiddenInput).toHaveAttribute('name', 'test-date');
+		expect(hiddenInput).toHaveAttribute('id', 'test-id');
 	});
 
-	it('supports custom sizing and icons', () => {
-		render(<LargeSize />);
+	it('supports custom sizing and language options', () => {
+		render(<LargeWithLabel />);
 
 		const trigger = screen.getByRole('button');
 		expect(trigger).toBeInTheDocument();
 
-		// Large size should be applied (verified by presence of element)
+		// Component should render with custom size
 		expect(trigger).toBeVisible();
 	});
 });

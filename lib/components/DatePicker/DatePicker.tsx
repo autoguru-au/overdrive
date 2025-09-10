@@ -101,21 +101,9 @@ const parseDateString = (dateString: string): DateValue | null => {
  * - Setting `useNativePicker={true}` preserves the original browser-specific experience.
  *
  * ## Internationalization
- *
- * import { useDateFormatter } from 'react-aria';
- * 	const formatter = useDateFormatter({ dateStyle: 'medium' });
-	const isToday = selectedDate?.compare(today(getLocalTimeZone())) === 0;
-
-	const displayValue = (() => {
-		if (!selectedDate) return valueLabel;
-		if (isToday) return lang?.today ?? defaultEnglish.today;
-		return formatter.format(selectedDate.toDate(getLocalTimeZone()));
-	})();
- *
  * - Override text values via `lang={{ openCalendar: 'open calendar' }}`
  * - Calendar options including `lang`can be passed via `calendarOptions` prop
- * - Date display formatting leverages `useDateFormatter` with `dateStyle: 'medium'`
- * - Date parsing and formatting uses `@internationalized/date` utilities
+ * - Date formatting helper available in `...utils/dateFormat.ts` or use `@internationalized/date` utils
  * - Advanced i18n and localization handled by [React Aria I18Provider](https://react-spectrum.adobe.com/react-aria/I18nProvider.html)
  * - Read more about [International calendars](https://react-spectrum.adobe.com/react-aria/useDatePicker.html#international-calendars)
  *
