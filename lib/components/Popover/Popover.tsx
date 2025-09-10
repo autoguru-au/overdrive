@@ -18,7 +18,7 @@ import { Icon } from '../Icon/Icon';
 import { fullScreenStyle, overlayStyle } from './Popover.css';
 
 const defaultEnglish = {
-	close: 'Close',
+	close: 'close',
 } as const;
 
 export type Language = Partial<Record<keyof typeof defaultEnglish, string>>;
@@ -65,7 +65,7 @@ const Dialog = ({ children, ...props }: DialogProps) => {
 
 export const Popover = ({
 	children,
-	offset = 8,
+	offset = 4,
 	state,
 	triggerRef,
 	lang,

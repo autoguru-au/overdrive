@@ -31,7 +31,8 @@ export interface PopoverTriggerProps
 	 */
 	content: React.ReactNode;
 	/**
-	 * The element that triggers the popover when interacted with
+	 * The element that triggers the popover when interacted with. For accessibility,
+	 * this must contain the aria visible content (e.g. "open calender")
 	 */
 	children: React.ReactNode;
 	/**
