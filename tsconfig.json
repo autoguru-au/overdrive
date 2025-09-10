@@ -16,7 +16,7 @@
 		"allowJs": true,
 		"target": "esnext",
 		"module": "esnext",
-		"moduleResolution": "node",
+		"moduleResolution": "bundler",
 		"jsx": "react",
 		"lib": ["dom", "ESNext"],
 		"noFallthroughCasesInSwitch": true,
