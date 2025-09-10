@@ -130,65 +130,76 @@ export const Interaction: Story = {
 			/>
 		);
 	},
-	play: async ({ canvasElement }) => {
+	play: async ({ canvasElement, step }) => {
 		const canvas = within(canvasElement);
 
-		// Step 1: Verify initial state
-		const trigger = canvas.getByRole('button');
-		expect(trigger).toBeInTheDocument();
-		expect(canvas.getByText('Select date')).toBeInTheDocument();
-
-		// Step 2: Open calendar popover
-		await userEvent.click(trigger);
-
-		// Wait for calendar popover to appear (rendered outside canvas)
-		await waitFor(() => {
-			const calendar = screen.getByRole('dialog');
-			expect(calendar).toBeInTheDocument();
+		await step('Verify initial state', async () => {
+			const trigger = canvas.getAllByRole('button')[0];
+			expect(trigger).toBeInTheDocument();
+			expect(canvas.getByText('Select date')).toBeInTheDocument();
 		});
 
-		// Step 3: Verify calendar components
-		const calendarGrid = screen.getByRole('grid');
-		expect(calendarGrid).toBeInTheDocument();
+		await step('Open calendar popover', async () => {
+			const trigger = canvas.getAllByRole('button')[0];
+			await userEvent.click(trigger);
 
-		// Step 4: Select a date (find an available date button)
-		const dateButtons = screen.getAllByRole('button').filter(
-			(button) =>
-				button.textContent &&
-				/^\d{1,2}$/.test(button.textContent.trim()) &&
-				!button.hasAttribute('aria-disabled') &&
-				!button.hasAttribute('aria-pressed'), // Not currently selected
-		);
+			// Wait for calendar popover to appear (rendered outside canvas)
+			await waitFor(() => {
+				const calendar = screen.getAllByRole('dialog')[0];
+				expect(calendar).toBeInTheDocument();
+			});
+		});
 
-		if (dateButtons.length > 0) {
-			const selectedDateButton = dateButtons[0];
+		await step('Verify calendar components', async () => {
+			const calendarGrid = screen.getAllByRole('grid')[0];
+			expect(calendarGrid).toBeInTheDocument();
+		});
 
-			await userEvent.click(selectedDateButton);
+		await step('Select a date', async () => {
+			const dateButtons = screen.getAllByRole('button').filter(
+				(button) =>
+					button.textContent &&
+					/^\d{1,2}$/.test(button.textContent.trim()) &&
+					!button.hasAttribute('aria-disabled') &&
+					!button.hasAttribute('aria-pressed'), // Not currently selected
+			);
 
-			// Step 5: Verify calendar closes and date is selected
+			if (dateButtons.length > 0) {
+				const selectedDateButton = dateButtons[0];
+				await userEvent.click(selectedDateButton);
+
+				// Verify calendar closes and date is selected
+				await waitFor(() => {
+					expect(
+						screen.queryByRole('dialog'),
+					).not.toBeInTheDocument();
+				});
+
+				// Verify the selected date appears in the trigger (formatted)
+				const trigger = canvas.getAllByRole('button')[0];
+				expect(
+					canvas.queryByText('Select date'),
+				).not.toBeInTheDocument();
+				expect(trigger).toBeInTheDocument();
+			}
+		});
+
+		await step('Test keyboard interaction', async () => {
+			const trigger = canvas.getAllByRole('button')[0];
+			await userEvent.click(trigger);
+
+			await waitFor(() => {
+				const calendar = screen.getAllByRole('dialog')[0];
+				expect(calendar).toBeInTheDocument();
+			});
+
+			// Close with escape key
+			await userEvent.keyboard('{Escape}');
+
+			// Calendar should close
 			await waitFor(() => {
 				expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
 			});
-
-			// Verify the selected date appears in the trigger (formatted)
-			expect(canvas.queryByText('Select date')).not.toBeInTheDocument();
-			expect(trigger).toBeInTheDocument();
-		}
-
-		// Step 6: Test keyboard interaction - reopen and close with Escape
-		await userEvent.click(trigger);
-
-		await waitFor(() => {
-			const calendar = screen.getByRole('dialog');
-			expect(calendar).toBeInTheDocument();
-		});
-
-		// Close with escape key
-		await userEvent.keyboard('{Escape}');
-
-		// Calendar should close
-		await waitFor(() => {
-			expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
 		});
 	},
 };
