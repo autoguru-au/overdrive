@@ -171,14 +171,14 @@ export const Interaction: Story = {
 				// Verify calendar closes and date is selected
 				await waitFor(() => {
 					expect(
-						screen.queryByRole('dialog'),
+						screen.queryAllByRole('dialog')[0],
 					).not.toBeInTheDocument();
 				});
 
 				// Verify the selected date appears in the trigger (formatted)
 				const trigger = canvas.getAllByRole('button')[0];
 				expect(
-					canvas.queryByText('Select date'),
+					canvas.queryAllByText('Select date')[0],
 				).not.toBeInTheDocument();
 				expect(trigger).toBeInTheDocument();
 			}
@@ -198,7 +198,9 @@ export const Interaction: Story = {
 
 			// Calendar should close
 			await waitFor(() => {
-				expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+				expect(
+					screen.queryAllByRole('dialog')[0],
+				).not.toBeInTheDocument();
 			});
 		});
 	},
