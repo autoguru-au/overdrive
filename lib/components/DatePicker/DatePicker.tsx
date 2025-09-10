@@ -7,38 +7,64 @@ import {
 } from '@internationalized/date';
 import clsx from 'clsx';
 import React, { type ChangeEvent, useMemo, useState } from 'react';
-import { useDateFormatter } from 'react-aria';
 
 import { elementStyles } from '../../styles/elementStyles';
+import { sprinkles } from '../../styles/sprinkles.css';
+import type { TestIdProp } from '../../types';
 import { Calendar, type CalendarProps } from '../Calendar';
 import { Icon } from '../Icon/Icon';
 import { PopoverTrigger } from '../Popover';
 import { ProgressSpinner } from '../ProgressSpinner/ProgressSpinner';
-import { Text, TextProps } from '../Text/Text';
+import { Text, type TextProps } from '../Text/Text';
+import { VisuallyHidden } from '../VisuallyHidden/VisuallyHidden';
 
 import * as styles from './DatePicker.css';
 
 type SizeScale = 'small' | 'medium' | 'large';
 
+const defaultEnglish = {
+	openCalendar: 'open calendar',
+} as const;
+
+type LanguageEntries = Partial<Record<keyof typeof defaultEnglish, string>>;
+
 export interface DatePickerProps
-	extends Partial<Pick<HTMLInputElement, 'min' | 'max' | 'value'>>,
-		Omit<CalendarProps, 'onChange'> {
+	extends Pick<HTMLInputElement, 'id' | 'name'>,
+		TestIdProp {
+	/**
+	 * Options to customise the calendar: `allowPastDate`, `lang`, etc.
+	 */
+	calendarOptions?: Omit<CalendarProps, 'onChange'>;
 	className?: string;
-	/** Whether the picker is disabled and non-interactive. */
+	/**
+	 * Whether the picker is disabled and non-interactive
+	 */
 	disabled?: boolean;
-	/** Icon to render inside the picker (defaults to calendar icon). */
+	/**
+	 * Icon to render inside the picker (defaults to calendar icon)
+	 */
 	icon?: IconType;
-	/** Show a loading state spinner instead of the icon. */
+	/**
+	 * Show a loading state spinner instead of the icon
+	 */
 	isLoading?: boolean;
 	onChange(date: string): void;
-	/** Visual size of the picker control (small, medium, large). */
+	/**
+	 * Visual size of the picker control (small, medium, large)
+	 */
 	size?: SizeScale;
-	/** Fallback label to display when no date value is selected. */
+	/**
+	 * Fallback label to display when no date value is selected.
+	 */
 	valueLabel?: string;
 	/**
 	 * Use native browser date picker instead of Calendar popover
 	 */
 	useNativePicker?: boolean;
+	/**
+	 * Language content override for DatePicker
+	 */
+	lang?: LanguageEntries;
 }
 
 const textSizeMap: Record<SizeScale, TextProps['size']> = {
@@ -47,8 +73,9 @@ const textSizeMap: Record<SizeScale, TextProps['size']> = {
 	large: '5',
 };
 
-const formatDateToString = (date: DateValue): string => {
-	return date.toString(); // ISO format: YYYY-MM-DD
+const formatDateToString = (date: DateValue | null): string => {
+	if (!date) return '';
+	return date.toString(); // ISO format: YYYY-MM-DD to match native input
 };
 
 const parseDateString = (dateString: string): DateValue | null => {
@@ -59,33 +86,79 @@ const parseDateString = (dateString: string): DateValue | null => {
 	}
 };
 
+/**
+ * The DatePicker has been updated to render the Calendar component with a Popover while
+ * maintaining backwards compatability.
+ *
+ * ## Props
+ * - Visual size controlled by `size` (small | medium | large)
+ * - Icon can be customized via the `icon` prop
+ *
+ * ## Event handling
+ * - `onChange` is always invoked with the raw ISO date string (or empty string when cleared)
+ *
+ * ## Compatibility mode
+ * - Setting `useNativePicker={true}` preserves the original browser-specific experience.
+ *
+ * ## Internationalization
+ *
+ * import { useDateFormatter } from 'react-aria';
+ * 	const formatter = useDateFormatter({ dateStyle: 'medium' });
+	const isToday = selectedDate?.compare(today(getLocalTimeZone())) === 0;
+
+	const displayValue = (() => {
+		if (!selectedDate) return valueLabel;
+		if (isToday) return lang?.today ?? defaultEnglish.today;
+		return formatter.format(selectedDate.toDate(getLocalTimeZone()));
+	})();
+ *
+ * - Override text values via `lang={{ openCalendar: 'open calendar' }}`
+ * - Calendar options including `lang`can be passed via `calendarOptions` prop
+ * - Date display formatting leverages `useDateFormatter` with `dateStyle: 'medium'`
+ * - Date parsing and formatting uses `@internationalized/date` utilities
+ * - Advanced i18n and localization handled by [React Aria I18Provider](https://react-spectrum.adobe.com/react-aria/I18nProvider.html)
+ * - Read more about [International calendars](https://react-spectrum.adobe.com/react-aria/useDatePicker.html#international-calendars)
+ *
+ *
+ * @example
+ * <DatePicker
+ *   name="bookingDate"
+ *   valueLabel="Select a date"
+ *   onChange={(isoDate) => console.log('Selected date:', isoDate)}
+ *   calendarOptions={{
+ *     allowPastDate: false,
+ *     weekdayFormat: 'short',
+ *   }}
+ * />
+ *
+ * @example
+ * // Native date picker usage
+ * <DatePicker
+ *   name="startDate"
+ *   useNativePicker
+ *   value={initialDateISO} // e.g., "2025-03-12"
+ *   onChange={(isoDate) => console.log('Native picked date:', isoDate)}
+ * />
+ */
 export const DatePicker = ({
-	className = '',
-	icon = CalendarIcon,
-	size = 'medium',
+	calendarOptions,
+	className,
 	disabled = false,
+	icon = CalendarIcon,
 	isLoading = false,
-	valueLabel,
-	useNativePicker = false,
-	calendar,
-	allowPastDate = false,
 	lang,
 	onChange,
+	size = 'medium',
 	testId,
+	useNativePicker = false,
+	valueLabel,
+
 	...inputProps
 }: DatePickerProps) => {
-	const [selectedDate, setSelectedDate] = useState<DateValue | null>(() => {
-		if (inputProps.value) {
-			return parseDateString(inputProps.value);
-		}
-		return null;
-	});
-
+	const [selectedDate, setSelectedDate] = useState<DateValue | null>(null);
 	const [popoverState, setPopoverState] = useState<{
 		close: () => void;
 	} | null>(null);
-
-	const formatter = useDateFormatter({ dateStyle: 'medium' });
 
 	const onChangeEvent = (event: ChangeEvent<HTMLInputElement>) => {
 		const dateString = event.currentTarget.value;
@@ -100,12 +173,7 @@ export const DatePicker = ({
 		}
 	};
 
-	const displayValue = selectedDate
-		? formatter.format(selectedDate.toDate(getLocalTimeZone()))
-		: valueLabel;
-
-	// Common container styles
-	const containerClassName = elementStyles({
+	const containerStyle = elementStyles({
 		className: [
 			className,
 			{
@@ -115,30 +183,21 @@ export const DatePicker = ({
 		],
 	});
 
-	const contentDisplay = (
-		<div
-			className={clsx(styles.contents.default, {
-				[styles.contents.withLabel]: Boolean(displayValue),
-				[styles.disabled.default]: disabled && !useNativePicker,
-			})}
-		>
-			{isLoading ? (
-				<ProgressSpinner size={size} />
-			) : (
-				<Icon icon={icon} size={size} />
-			)}
-			{displayValue && (
-				<Text size={textSizeMap[size]}>{displayValue}</Text>
-			)}
-		</div>
+	const indicator = isLoading ? (
+		<ProgressSpinner size={size} />
+	) : (
+		<Icon icon={icon} size={size} />
 	);
+
+	const label = valueLabel ? (
+		<Text size={textSizeMap[size]}>{valueLabel}</Text>
+	) : null;
 
 	const calendarProps: CalendarProps = useMemo(
 		() => ({
-			allowPastDate,
 			calendar: {
 				defaultValue: selectedDate || today(getLocalTimeZone()),
-				...calendar,
+				...calendarOptions,
 			},
 			onChange: (date: DateValue) => {
 				setSelectedDate(date);
@@ -150,9 +209,8 @@ export const DatePicker = ({
 					popoverState.close();
 				}
 			},
-			lang,
 		}),
-		[allowPastDate, selectedDate, calendar, lang, onChange, popoverState],
+		[selectedDate, calendarOptions, onChange, popoverState],
 	);
 
 	const contentCalendar = useMemo(
@@ -163,8 +221,9 @@ export const DatePicker = ({
 	// Use native picker only if explicitly requested
 	if (useNativePicker) {
 		return (
-			<div className={clsx(containerClassName, styles.inputContainer)}>
+			<div className={clsx(containerStyle, styles.inputContainer)}>
 				<input
+					{...inputProps}
 					className={elementStyles({
 						className: [
 							styles.input,
@@ -176,23 +235,47 @@ export const DatePicker = ({
 					type="date"
 					disabled={disabled}
 					onChange={onChangeEvent}
-					{...inputProps}
 				/>
-				<div className={styles.inputOverlay}>{contentDisplay}</div>
+				<div className={styles.inputOverlay}>
+					<div
+						className={clsx(styles.contents.default, {
+							[styles.contents.withLabel]: Boolean(valueLabel),
+						})}
+					>
+						{indicator}
+						{label}
+					</div>
+				</div>
 			</div>
 		);
 	}
 
 	return (
-		<PopoverTrigger
-			content={contentCalendar}
-			placement="bottom left"
-			testId={testId}
-			isDisabled={disabled}
-			onStateReady={setPopoverState}
+		<div
+			className={clsx(
+				containerStyle,
+				sprinkles({ display: 'flex', alignItems: 'center', gap: '1' }),
+			)}
 		>
-			<div className={containerClassName}>{contentDisplay}</div>
-		</PopoverTrigger>
+			<PopoverTrigger
+				content={contentCalendar}
+				placement="bottom left"
+				testId={testId}
+				isDisabled={disabled}
+				onStateReady={setPopoverState}
+			>
+				{indicator}
+				<VisuallyHidden>
+					{lang?.openCalendar ?? defaultEnglish.openCalendar}
+				</VisuallyHidden>
+			</PopoverTrigger>
+			{label}
+			<input
+				{...inputProps}
+				value={formatDateToString(selectedDate)}
+				type="hidden"
+			/>
+		</div>
 	);
 };
 
