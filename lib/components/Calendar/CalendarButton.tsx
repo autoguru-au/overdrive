@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useButton, type AriaButtonProps } from 'react-aria';
 
-import { buttonStyle } from './DateTimePicker.css';
+import { buttonStyle } from './Calendar.css';
 
 export const CalendarButton = (props: AriaButtonProps) => {
 	const ref = useRef(null);
@@ -12,3 +12,5 @@ export const CalendarButton = (props: AriaButtonProps) => {
 		</button>
 	);
 };
+
+CalendarButton.displayName = 'CalendarButton';

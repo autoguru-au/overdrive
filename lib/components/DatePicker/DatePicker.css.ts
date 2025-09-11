@@ -1,53 +1,85 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 
+import { cssLayerComponent } from '../../styles/layers.css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
+export const inputContainer = style({
+	'@layer': {
+		[cssLayerComponent]: {
+			display: 'grid',
+			position: 'relative',
+		},
+	},
+});
+
 export const input = style({
-	bottom: 0,
-	cursor: 'pointer',
-	left: 0,
-	opacity: 0,
-	right: 0,
-	top: 0,
-	selectors: {
-		'&::-webkit-calendar-picker-indicator': {
-			background: 'transparent',
-			bottom: 0,
-			color: 'transparent',
+	'@layer': {
+		[cssLayerComponent]: {
 			cursor: 'pointer',
-			height: 'auto',
-			left: 0,
-			position: 'absolute',
-			right: 0,
-			top: 0,
-			width: 'auto',
+			gridArea: '1 / 1',
+			opacity: 0,
+			position: 'relative',
+			zIndex: 1,
+			selectors: {
+				'&::-webkit-calendar-picker-indicator': {
+					background: 'transparent',
+					color: 'transparent',
+					cursor: 'pointer',
+					height: '100%',
+					left: 0,
+					position: 'absolute',
+					top: 0,
+					width: '100%',
+				},
+			},
+		},
+	},
+});
+
+export const inputOverlay = style({
+	'@layer': {
+		[cssLayerComponent]: {
+			gridArea: '1 / 1',
+			pointerEvents: 'none',
+			zIndex: 0,
 		},
 	},
 });
 
 export const contents = styleVariants({
 	default: {
-		alignItems: 'center',
-		display: 'grid',
-		gridGap: vars.space['1'],
-		gridTemplateColumns: 'auto',
-		justifyContent: 'flex-start',
+		'@layer': {
+			[cssLayerComponent]: {
+				alignItems: 'center',
+				display: 'grid',
+				gridGap: vars.space['1'],
+				gridTemplateColumns: 'auto',
+				justifyContent: 'flex-start',
+			},
+		},
 	},
 	withLabel: {
-		gridTemplateColumns: 'auto auto',
-	},
-});
-export const disabled = styleVariants({
-	default: {
-		cursor: 'not-allowed',
-	},
-	root: {
-		opacity: '0.3',
+		'@layer': {
+			[cssLayerComponent]: {
+				gridTemplateColumns: 'auto auto',
+			},
+		},
 	},
 });
 
-export const spinner = style({
-	left: '50%',
-	top: '50%',
-	transform: 'translate(-50%, -50%)',
+export const disabled = styleVariants({
+	default: {
+		'@layer': {
+			[cssLayerComponent]: {
+				cursor: 'not-allowed',
+			},
+		},
+	},
+	root: {
+		'@layer': {
+			[cssLayerComponent]: {
+				opacity: '0.3',
+			},
+		},
+	},
 });

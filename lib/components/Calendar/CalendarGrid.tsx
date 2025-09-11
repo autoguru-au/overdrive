@@ -11,12 +11,7 @@ import type { CalendarState } from 'react-stately';
 
 import { dataAttrs } from '../../utils/dataAttrs';
 
-import {
-	calendarGridStyle,
-	cellStyle,
-	tdStyle,
-	thStyle,
-} from './DateTimePicker.css';
+import { calendarGridStyle, cellStyle, tdStyle, thStyle } from './Calendar.css';
 
 interface CalendarCellProps extends AriaCalendarCellProps {
 	state: CalendarState;
@@ -44,7 +39,7 @@ const CalendarCell = ({ state, date }: CalendarCellProps) => {
 				{...dataAttrs({
 					selected: isSelected,
 					disabled: isDisabled,
-					unvailable: isUnavailable,
+					unavailable: isUnavailable,
 				})}
 			>
 				{formattedDate}
@@ -70,8 +65,8 @@ export const CalendarGrid = ({ state, ...props }: CalendarGridProps) => {
 		<table {...gridProps} className={calendarGridStyle}>
 			<thead {...headerProps}>
 				<tr>
-					{weekDays.map((day) => (
-						<th key={day} className={thStyle}>
+					{weekDays.map((day, index) => (
+						<th key={index} className={thStyle}>
 							{day}
 						</th>
 					))}
@@ -86,12 +81,12 @@ export const CalendarGrid = ({ state, ...props }: CalendarGridProps) => {
 								.map((date, idx) =>
 									date ? (
 										<CalendarCell
-											key={idx}
+											key={`${date.year}-${date.month}-${date.day}`}
 											state={state}
 											date={date}
 										/>
 									) : (
-										<td key={idx} />
+										<td key={`empty-${weekIndex}-${idx}`} />
 									),
 								)}
 						</tr>
@@ -101,3 +96,5 @@ export const CalendarGrid = ({ state, ...props }: CalendarGridProps) => {
 		</table>
 	);
 };
+
+CalendarGrid.displayName = 'CalendarGrid';

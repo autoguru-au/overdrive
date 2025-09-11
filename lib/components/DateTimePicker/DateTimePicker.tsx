@@ -1,40 +1,20 @@
-import { ChevronLeftIcon, ChevronRightIcon } from '@autoguru/icons';
-import {
-	getLocalTimeZone,
-	// currently only supporting western-style Gregorian calendar
-	GregorianCalendar,
-	today,
-} from '@internationalized/date';
-import React, { useEffect, useRef } from 'react';
-import {
-	useCalendar,
-	// useDateFormatter,
-	useLocale,
-	useId,
-	type AriaCalendarProps,
-	type DateValue,
-} from 'react-aria';
-import { useCalendarState, type Selection } from 'react-stately';
+import { getLocalTimeZone, today } from '@internationalized/date';
+import React, { useRef } from 'react';
+import { useId, type AriaCalendarProps, type DateValue } from 'react-aria';
+import { type Selection } from 'react-stately';
 
 import { sprinkles } from '../../styles/sprinkles.css';
 import type { TestIdProp } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
+import { Calendar } from '../Calendar';
 import { Heading } from '../Heading';
-import { Icon } from '../Icon';
 import {
 	OptionGrid,
 	type OptionGridProps,
 	type OptionItem,
 } from '../OptionGrid/OptionGrid';
 
-import { CalendarButton } from './CalendarButton';
-import { CalendarGrid } from './CalendarGrid';
-import {
-	calendarStyle,
-	layoutStyle,
-	queryContainerStyle,
-	titleStyle,
-} from './DateTimePicker.css';
+import { layoutStyle, queryContainerStyle } from './DateTimePicker.css';
 
 const defaultEnglish = {
 	dateLabel: 'Date',
@@ -62,7 +42,7 @@ export interface DateTimePickerProps<D extends DateValue> extends TestIdProp {
 	 * - `defaultValue`: Today's date
 	 * - `firstDayOfWeek`: Monday
 	 */
-	calendar?: Exclude<AriaCalendarProps<D>, 'onChange'>;
+	calendarOptions?: Exclude<AriaCalendarProps<D>, 'onChange'>;
 	/**
 	 * `OptionGrid` props used to generate the time picker items. Ensure to include a descriptive `label` value (for
 	 * assistive technology). Currently time options are not tied to the day selection.
@@ -85,14 +65,6 @@ export interface DateTimePickerProps<D extends DateValue> extends TestIdProp {
 	lang?: Partial<Record<LangContent, string>>;
 }
 
-function createCalendar(identifier) {
-	if (identifier === 'gregory') {
-		return new GregorianCalendar();
-	}
-
-	throw new Error(`Unsupported calendar configured ${identifier}`);
-}
-
 // const dateTextPunctuationEN = (text: string) =>
 // 	text
 // 		.split(' ')
@@ -113,14 +85,14 @@ function createCalendar(identifier) {
  */
 export const DateTimePicker = <D extends DateValue>({
 	allowPastDate = false,
-	calendar,
+	calendarOptions,
 	lang,
 	onChange,
 	timeOptions,
 	title,
 	testId,
 }: DateTimePickerProps<D>) => {
-	const selectedDate = useRef<DateValue>(null);
+	const selectedDate = useRef<DateValue>(today(getLocalTimeZone()));
 	const selectedTimeOption = useRef<string>(null);
 
 	const handleChange = () => {
@@ -131,6 +103,12 @@ export const DateTimePicker = <D extends DateValue>({
 			});
 		}
 	};
+
+	const handleDateChange = (value: DateValue) => {
+		selectedDate.current = value;
+		handleChange();
+	};
+
 	const handleTimeChange = (keys: Selection) => {
 		if (keys === 'all') return;
 		// we expect only a single value for time picker
@@ -139,16 +117,6 @@ export const DateTimePicker = <D extends DateValue>({
 		handleChange();
 	};
 
-	const calendarComponentProps: AriaCalendarProps<D> = {
-		defaultValue: today(getLocalTimeZone()) as D,
-		firstDayOfWeek: 'sun',
-		minValue: allowPastDate ? undefined : today(getLocalTimeZone()),
-		onChange: (value) => {
-			selectedDate.current = value;
-			handleChange();
-		},
-		...calendar,
-	};
 	const optionGridComponentProps: OptionGridProps<OptionItem> = {
 		columns: '3',
 		onSelectionChange: handleTimeChange,
@@ -158,34 +126,15 @@ export const DateTimePicker = <D extends DateValue>({
 		...timeOptions,
 	};
 
-	const { locale } = useLocale();
-	const state = useCalendarState({
-		...calendarComponentProps,
-		locale,
-		createCalendar,
-	});
-
-	const {
-		calendarProps,
-		prevButtonProps,
-		nextButtonProps,
-		title: calendarTitle,
-	} = useCalendar(calendarComponentProps, state);
 	const titleId = useId();
 
-	useEffect(() => {
-		if (state.value) {
-			selectedDate.current = state.value;
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps -- run only once
-	}, []);
-
-	// const formatter = useDateFormatter({ dateStyle: 'full' });
-	// const dateText = state.value
-	// 	? dateTextPunctuationEN(
-	// 			formatter.format(state?.value?.toDate(getLocalTimeZone())),
-	// 		)
-	// 	: '';
+	// Create calendar lang props from our lang props
+	const calendarLang = lang
+		? {
+				nextLabel: lang.nextLabel,
+				prevLabel: lang.prevLabel,
+			}
+		: undefined;
 
 	return (
 		<div
@@ -204,30 +153,12 @@ export const DateTimePicker = <D extends DateValue>({
 					<Heading as="h3" mb="4" size="6">
 						{lang?.dateLabel ?? defaultEnglish.dateLabel}
 					</Heading>
-					<div {...calendarProps} className={calendarStyle}>
-						<CalendarButton
-							{...prevButtonProps}
-							aria-label={
-								lang?.prevLabel ?? defaultEnglish.prevLabel
-							}
-						>
-							<Icon icon={ChevronLeftIcon} size="medium" />
-						</CalendarButton>
-						<h4 className={titleStyle}>{calendarTitle}</h4>
-						<CalendarButton
-							{...nextButtonProps}
-							aria-label={
-								lang?.nextLabel ?? defaultEnglish.nextLabel
-							}
-						>
-							<Icon icon={ChevronRightIcon} size="medium" />
-						</CalendarButton>
-					</div>
-					<CalendarGrid
-						state={state}
-						firstDayOfWeek={calendarComponentProps.firstDayOfWeek}
+					<Calendar
+						allowPastDate={allowPastDate}
+						calendarOptions={calendarOptions}
+						lang={calendarLang}
+						onChange={handleDateChange}
 					/>
-					{/* {state.value && <h2>{dateText}</h2>} */}
 				</div>
 
 				<div className={sprinkles({ flexGrow: '1' })}>
@@ -240,3 +171,5 @@ export const DateTimePicker = <D extends DateValue>({
 		</div>
 	);
 };
+
+DateTimePicker.displayName = 'DateTimePicker';

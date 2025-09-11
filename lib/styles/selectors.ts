@@ -5,10 +5,11 @@
 export const selectors = {
 	active: '&:active',
 	checked: '&:checked, &[data-checked], &[data-selected]',
-	disabled: '&:disabled, &[data-disabled]',
+	disabled: '&:disabled, &[data-disabled], &[aria-disabled="true"]',
 	focus: '&:focus, &[data-focus], &[data-focused]',
 	focusVisible: '&:focus-visible, &[data-focus-visible]',
 	selected: '&[data-selected], &[aria-selected="true"]',
+	unavailable: '&[data-unavailable]',
 	get hover() {
 		return `&:hover:not(${this.disabled}), &[data-hover]:not(${this.disabled})`;
 	},
