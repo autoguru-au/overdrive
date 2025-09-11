@@ -1,5 +1,18 @@
 # @autoguru/overdrive
 
+## 4.47.0
+
+### Minor Changes
+
+- a4faa92: DatePicker component uplift, introducing Calendar and Popover
+  components
+  - **Calendar**: New component available as standalone localisable calendar
+  - **Popover**: New component available for creating flyout menus
+  - **DatePicker**: Updated to use Calendar with Popover for a more accessible
+    and consistent experience
+
+- f530aba: **Slider**: new component beta
+
 ## 4.46.0
 
 ### Minor Changes
