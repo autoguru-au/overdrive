@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 4.47.1
+
+### Patch Changes
+
+- 5cd9c4e: **DatePicker** and **Calendar**: consistent `defaultValue` and
+  `value` props for controlled/uncontrolled use
+
 ## 4.47.0
 
 ### Minor Changes
