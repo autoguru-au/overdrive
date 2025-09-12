@@ -202,6 +202,67 @@ describe('DatePicker', () => {
 		expect(hiddenInput).toHaveAttribute('id', 'test-id');
 	});
 
+	it('displays correct date when controlled with value prop', () => {
+		const testValue = '2025-12-25'; // Christmas 2025
+
+		render(
+			<DatePicker
+				name="test-controlled"
+				value={testValue}
+				onChange={vi.fn()}
+			/>,
+		);
+
+		// Hidden input should contain the controlled value
+		const hiddenInput = screen.getByDisplayValue(testValue);
+		expect(hiddenInput).toBeInTheDocument();
+		expect(hiddenInput).toHaveAttribute('type', 'hidden');
+
+		// Component should render with controlled value
+		const trigger = screen.getByRole('button');
+		expect(trigger).toBeInTheDocument();
+	});
+
+	it('displays correct date when uncontrolled with defaultValue prop', () => {
+		const testDefaultValue = '2025-11-15'; // Future date
+
+		render(
+			<DatePicker
+				name="test-uncontrolled"
+				defaultValue={testDefaultValue}
+				onChange={vi.fn()}
+			/>,
+		);
+
+		// Hidden input should contain the default value initially
+		const hiddenInput = screen.getByDisplayValue(testDefaultValue);
+		expect(hiddenInput).toBeInTheDocument();
+		expect(hiddenInput).toHaveAttribute('type', 'hidden');
+
+		// Component should render with default value
+		const trigger = screen.getByRole('button');
+		expect(trigger).toBeInTheDocument();
+	});
+
+	it('handles empty state when no value or defaultValue provided', () => {
+		render(
+			<DatePicker
+				name="test-empty"
+				valueLabel="Select a date"
+				onChange={vi.fn()}
+			/>,
+		);
+
+		// Hidden input should be empty when no value is provided
+		const hiddenInput = screen.getByDisplayValue('');
+		expect(hiddenInput).toBeInTheDocument();
+		expect(hiddenInput).toHaveAttribute('type', 'hidden');
+
+		// Should show the placeholder label
+		const label = screen.getByText('Select a date');
+		expect(label).toBeInTheDocument();
+	});
+
 	it('supports custom sizing and language options', () => {
 		render(<LargeWithLabel />);
 
