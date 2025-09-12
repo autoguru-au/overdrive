@@ -10,6 +10,9 @@ import * as stories from './Calendar.stories';
 
 const { Standard, DisabledWeekends } = composeStories(stories);
 
+// Constants to avoid duplicated literals
+const ARIA_DISABLED = 'aria-disabled';
+
 describe('Calendar', () => {
 	it('renders with default props and today selected', () => {
 		render(<Standard />);
@@ -44,7 +47,7 @@ describe('Calendar', () => {
 				(button) =>
 					button.textContent &&
 					/^\d+$/.test(button.textContent) &&
-					!button.hasAttribute('aria-disabled'),
+					!button.hasAttribute(ARIA_DISABLED),
 			);
 
 		// Click on the first available date
@@ -114,8 +117,8 @@ describe('Calendar', () => {
 			expect(
 				pastDateButtons.some(
 					(button) =>
-						button.hasAttribute('aria-disabled') &&
-						button.getAttribute('aria-disabled') === 'true',
+						button.hasAttribute(ARIA_DISABLED) &&
+						button.getAttribute(ARIA_DISABLED) === 'true',
 				),
 			).toBe(true);
 		}
@@ -129,8 +132,8 @@ describe('Calendar', () => {
 			.getAllByRole('button')
 			.filter(
 				(button) =>
-					button.hasAttribute('aria-disabled') &&
-					button.getAttribute('aria-disabled') === 'true',
+					button.hasAttribute(ARIA_DISABLED) &&
+					button.getAttribute(ARIA_DISABLED) === 'true',
 			);
 
 		// Should have some disabled weekend dates
@@ -151,6 +154,66 @@ describe('Calendar', () => {
 		expect(
 			screen.getByRole('button', { name: 'Mês seguinte' }),
 		).toBeInTheDocument();
+	});
+
+	it('displays correct month when controlled with value prop', () => {
+		const december15 = today(getLocalTimeZone()).set({
+			month: 12,
+			day: 15,
+		});
+		const mockOnChange = vi.fn();
+
+		render(
+			<Calendar
+				calendarOptions={{ value: december15 }}
+				allowPastDate={true}
+				onChange={mockOnChange}
+			/>,
+		);
+
+		// Calendar should display December 2025 in the heading when controlled
+		const heading = screen.getByRole('heading', { level: 4 });
+		expect(heading.textContent).toContain('December');
+		expect(heading.textContent).toContain('2025');
+	});
+
+	it('displays correct month when uncontrolled with defaultValue prop', () => {
+		const november10 = today(getLocalTimeZone()).set({
+			month: 11,
+			day: 10,
+		});
+		const mockOnChange = vi.fn();
+
+		render(
+			<Calendar
+				calendarOptions={{ defaultValue: november10 }}
+				allowPastDate={true}
+				onChange={mockOnChange}
+			/>,
+		);
+
+		// Calendar should display November 2025 in the heading when given defaultValue
+		const heading = screen.getByRole('heading', { level: 4 });
+		expect(heading.textContent).toContain('November');
+		expect(heading.textContent).toContain('2025');
+	});
+
+	it('falls back to today when no value or defaultValue provided', () => {
+		render(<Calendar onChange={vi.fn()} />);
+
+		// Should display current month/year in heading when no explicit date provided
+		const todayDate = today(getLocalTimeZone());
+		const currentMonth = todayDate
+			.toDate(getLocalTimeZone())
+			.toLocaleDateString('en-AU', { month: 'long' });
+		const currentYear = todayDate.year.toString();
+
+		const heading = screen.getByRole('heading', { level: 4 });
+		expect(heading.textContent).toContain(currentMonth);
+		expect(heading.textContent).toContain(currentYear);
+
+		// Calendar should render without errors
+		expect(screen.getByRole('grid')).toBeInTheDocument();
 	});
 
 	it('manages focus correctly for accessibility', async () => {

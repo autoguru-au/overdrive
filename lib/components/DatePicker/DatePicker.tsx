@@ -6,7 +6,7 @@ import {
 	type DateValue,
 } from '@internationalized/date';
 import clsx from 'clsx';
-import React, { type ChangeEvent, useMemo, useState } from 'react';
+import React, { type ChangeEvent, useEffect, useMemo, useState } from 'react';
 
 import { elementStyles } from '../../styles/elementStyles';
 import { sprinkles } from '../../styles/sprinkles.css';
@@ -28,14 +28,16 @@ const defaultEnglish = {
 
 type LanguageEntries = Partial<Record<keyof typeof defaultEnglish, string>>;
 
-export interface DatePickerProps
-	extends Pick<HTMLInputElement, 'id' | 'name'>,
-		TestIdProp {
+export interface DatePickerProps extends TestIdProp {
 	/**
 	 * Options to customise the calendar: `allowPastDate`, `lang`, etc.
 	 */
 	calendarOptions?: Omit<CalendarProps, 'onChange'>;
 	className?: string;
+	/**
+	 * Default selected date as an ISO string YYYY-MM-DD (uncontrolled)
+	 */
+	defaultValue?: string;
 	/**
 	 * Whether the picker is disabled and non-interactive
 	 */
@@ -45,14 +47,27 @@ export interface DatePickerProps
 	 */
 	icon?: IconType;
 	/**
+	 * Form field id
+	 */
+	id?: string;
+	/**
 	 * Show a loading state spinner instead of the icon
 	 */
 	isLoading?: boolean;
+	/**
+	 * Input field name recommended for form usage
+	 */
+	name?: string;
 	onChange(date: string): void;
 	/**
 	 * Visual size of the picker control (small, medium, large)
 	 */
 	size?: SizeScale;
+	/**
+	 * The selected date as an ISO string (YYYY-MM-DD). Use `undefined` for an empty value
+	 * (controlled)
+	 */
+	value?: string;
 	/**
 	 * Fallback label to display when no date value is selected.
 	 */
@@ -107,12 +122,21 @@ const parseDateString = (dateString: string): DateValue | null => {
  * - Advanced i18n and localization handled by [React Aria I18Provider](https://react-spectrum.adobe.com/react-aria/I18nProvider.html)
  * - Read more about [International calendars](https://react-spectrum.adobe.com/react-aria/useDatePicker.html#international-calendars)
  *
+ * @example
+ * // Uncontrolled component with default value
+ * <DatePicker
+ *   name="eventDate"
+ *   defaultValue="2025-03-15"
+ *   onChange={(isoDate) => console.log('Selected date:', isoDate)}
+ * />
  *
  * @example
+ * // Controlled component
  * <DatePicker
  *   name="bookingDate"
+ *   value={selectedDate}
  *   valueLabel="Select a date"
- *   onChange={(isoDate) => console.log('Selected date:', isoDate)}
+ *   onChange={(isoDate) => setSelectedDate(isoDate)}
  *   calendarOptions={{
  *     allowPastDate: false,
  *     weekdayFormat: 'short',
@@ -124,13 +148,14 @@ const parseDateString = (dateString: string): DateValue | null => {
  * <DatePicker
  *   name="startDate"
  *   useNativePicker
- *   value={initialDateISO} // e.g., "2025-03-12"
+ *   defaultValue="2025-03-12"
  *   onChange={(isoDate) => console.log('Native picked date:', isoDate)}
  * />
  */
 export const DatePicker = ({
 	calendarOptions,
 	className,
+	defaultValue,
 	disabled = false,
 	icon = CalendarIcon,
 	isLoading = false,
@@ -139,14 +164,28 @@ export const DatePicker = ({
 	size = 'medium',
 	testId,
 	useNativePicker = false,
+	value,
 	valueLabel,
 
 	...inputProps
 }: DatePickerProps) => {
-	const [selectedDate, setSelectedDate] = useState<DateValue | null>(null);
+	const isControlled = value !== undefined;
+
+	const [selectedDate, setSelectedDate] = useState<DateValue | null>(() => {
+		const initialValue = isControlled ? value : defaultValue;
+		return initialValue ? parseDateString(initialValue) : null;
+	});
 	const [popoverState, setPopoverState] = useState<{
 		close: () => void;
 	} | null>(null);
+
+	// Sync external value changes (only for controlled components)
+	useEffect(() => {
+		if (isControlled) {
+			const parsedDate = value ? parseDateString(value) : null;
+			setSelectedDate(parsedDate);
+		}
+	}, [value, isControlled]);
 
 	const onChangeEvent = (event: ChangeEvent<HTMLInputElement>) => {
 		const dateString = event.currentTarget.value;
@@ -183,8 +222,16 @@ export const DatePicker = ({
 
 	const calendarProps: CalendarProps = useMemo(
 		() => ({
-			calendar: {
-				defaultValue: selectedDate || today(getLocalTimeZone()),
+			calendarOptions: {
+				// For controlled components, use value. For uncontrolled, use defaultValue
+				...(isControlled
+					? {
+							value: selectedDate || today(getLocalTimeZone()),
+						}
+					: {
+							defaultValue:
+								selectedDate || today(getLocalTimeZone()),
+						}),
 				...calendarOptions,
 			},
 			onChange: (date: DateValue) => {
@@ -198,7 +245,7 @@ export const DatePicker = ({
 				}
 			},
 		}),
-		[selectedDate, calendarOptions, onChange, popoverState],
+		[selectedDate, calendarOptions, onChange, popoverState, isControlled],
 	);
 
 	const contentCalendar = useMemo(

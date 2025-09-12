@@ -76,18 +76,23 @@ function createCalendar(identifier: string) {
  * - Custom default values and date ranges
  * - Flexible styling and theming
  *
+ * ## Working with dates
+ *  - Use `parseDate('YYYY-MM-DD')` from `@internationalized/date` to create
+ *    DateValue objects.
+ *  - Other useful utilities include `today(getLocalTimeZone())` for current
+ *    date, and `date.add({ days: 7, months: 1 })` for date arithmetic.
+ *
  * ## Date Restrictions
  * You can restrict date selection using the `calendar` prop with react-aria calendar properties:
  * - `minValue` / `maxValue`: Define selectable date range
  * - `isDateUnavailable`: Function to disable specific dates
  * - `allowPastDate` prop: Convenient way to allow/disallow past dates
  *
- * ## Examples
- * See the Calendar stories for comprehensive examples including:
- * - Disabled specific dates and weekends
- * - Disabled date ranges
- * - Custom validation rules
- * - Localization examples
+ * ## Internationalization
+ * - Override text values via `lang={{ openCalendar: 'open calendar' }}`
+ * - Date formatting helper available in `...utils/dateFormat.ts` or use `@internationalized/date` utils
+ * - Advanced i18n and localization handled by [React Aria I18Provider](https://react-spectrum.adobe.com/react-aria/I18nProvider.html)
+ * - Read more about [International calendars](https://react-spectrum.adobe.com/react-aria/useDatePicker.html#international-calendars)
  */
 export const Calendar = ({
 	allowPastDate = false,
@@ -97,9 +102,13 @@ export const Calendar = ({
 	testId,
 }: CalendarProps) => {
 	const selectedDate = useRef<DateValue>(null);
+	const hasValue =
+		!!calendarOptions?.value || !!calendarOptions?.defaultValue;
+	const fallbackDefaultValue = hasValue
+		? {}
+		: { defaultValue: today(getLocalTimeZone()) };
 
 	const calendarComponentProps: AriaCalendarProps<DateValue> = {
-		defaultValue: today(getLocalTimeZone()),
 		firstDayOfWeek: FIRST_DAY_OF_WEEK,
 		minValue: allowPastDate ? undefined : today(getLocalTimeZone()),
 		onChange: (value) => {
@@ -107,6 +116,7 @@ export const Calendar = ({
 			onChange?.(value);
 		},
 		...calendarOptions,
+		...fallbackDefaultValue,
 	};
 
 	const { locale } = useLocale();
@@ -127,8 +137,7 @@ export const Calendar = ({
 		if (state.value) {
 			selectedDate.current = state.value;
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps -- run only once
-	}, []);
+	}, [state.value]);
 
 	return (
 		<div {...dataAttrs({ testid: testId })}>
