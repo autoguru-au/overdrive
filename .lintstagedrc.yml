@@ -1,5 +1,5 @@
 '*.{js,jsx,ts,tsx}':
-    - 'yarn run lint:eslint'
     - 'yarn run format:staged'
+    - 'yarn run lint:eslint'
 '*.{md,mdx,json,html,yml}':
     - 'yarn run format:staged'
