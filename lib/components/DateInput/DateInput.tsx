@@ -20,7 +20,7 @@ import * as styles from './DateInput.css';
 
 type FilteredDatePickerProps = Pick<
 	DatePickerProps,
-	'calendarOptions' | 'lang'
+	'calendarOptions' | 'lang' | 'valueLabel' | 'useNativePicker' | 'icon'
 >;
 
 function createCalendar(identifier: string) {
@@ -44,14 +44,15 @@ const parseDateString = (dateString: string): DateValue | null => {
 	}
 };
 
-function DateSegment({
-	segment,
-	state,
-}: {
-	segment: DateSegment;
-	state: DateFieldState;
-}) {
-	const ref = useRef(null);
+const DateSegment = React.forwardRef<
+	HTMLSpanElement,
+	{
+		segment: DateSegment;
+		state: DateFieldState;
+	}
+>(({ segment, state }, forwardedRef) => {
+	const internalRef = useRef<HTMLSpanElement>(null);
+	const ref = forwardedRef || internalRef;
 	const { segmentProps } = useDateSegment(segment, state, ref);
 
 	return (
@@ -64,7 +65,9 @@ function DateSegment({
 			{segment.text}
 		</span>
 	);
-}
+});
+
+DateSegment.displayName = 'DateSegment';
 
 export const DateInput = withEnhancedInput<
 	FilteredDatePickerProps & Partial<Pick<HTMLInputElement, 'min' | 'max'>>
@@ -73,12 +76,14 @@ export const DateInput = withEnhancedInput<
 		calendarOptions,
 		eventHandlers,
 		field,
+		icon,
 		isLoading,
 		lang,
 		size,
-		...props
+		useNativePicker,
+		valueLabel,
 	}) => {
-		const { disabled, name, onChange, value } = field;
+		const { disabled, id, name, onChange, value, ref } = field;
 
 		const { locale } = useLocale();
 		const [selectedDate, setSelectedDate] = useState<DateValue | null>(
@@ -94,8 +99,16 @@ export const DateInput = withEnhancedInput<
 		// Unified change handler for both date field and picker
 		const handleDateChange = (date: DateValue | null) => {
 			setSelectedDate(date);
-			if (typeof onChange === 'function') {
-				onChange(formatDateToString(date));
+			const dateString = formatDateToString(date);
+
+			// Trigger the withEnhancedInput onChange mechanism
+			if (eventHandlers.onChange && typeof onChange === 'function') {
+				// Create a synthetic event for compatibility with withEnhancedInput
+				const event = {
+					currentTarget: { value: dateString },
+					target: { value: dateString },
+				} as React.ChangeEvent<HTMLInputElement>;
+				eventHandlers.onChange(event);
 			}
 		};
 
@@ -111,42 +124,58 @@ export const DateInput = withEnhancedInput<
 		const { fieldProps } = useDateField(
 			{
 				isDisabled: disabled,
+				onFocus: eventHandlers.onFocus
+					? (e) => {
+							// Cast the event to match the expected type for withEnhancedInput
+							eventHandlers.onFocus?.(
+								e as React.FocusEvent<HTMLInputElement>,
+							);
+						}
+					: undefined,
+				onBlur: eventHandlers.onBlur
+					? (e) => {
+							// Cast the event to match the expected type for withEnhancedInput
+							eventHandlers.onBlur?.(
+								e as React.FocusEvent<HTMLInputElement>,
+							);
+						}
+					: undefined,
 			},
 			dateFieldState,
 			fieldRef,
 		);
 
-		// const handleDatePickerChange = (dateString: string) => {
-		// 	const parsedDate = dateString ? parseDateString(dateString) : null;
-		// 	handleDateChange(parsedDate);
-		// };
+		// Handle DatePicker changes
+		const handleDatePickerChange = (dateString: string) => {
+			const parsedDate = dateString ? parseDateString(dateString) : null;
+			handleDateChange(parsedDate);
+		};
 
 		return (
 			<div className={clsx(field.className, inline({ gap: '2' }))}>
 				<div {...fieldProps} ref={fieldRef}>
 					{dateFieldState.segments.map((segment, idx) => (
 						<DateSegment
-							key={`segment-${idx}`}
+							key={`${segment.type}-${segment.minValue || idx}`}
 							segment={segment}
 							state={dateFieldState}
+							ref={idx === 0 ? ref : undefined}
 						/>
 					))}
 				</div>
 				<DatePicker
+					id={id}
 					name={name}
 					value={formatDateToString(selectedDate)}
 					calendarOptions={calendarOptions}
+					disabled={disabled}
+					icon={icon}
+					isLoading={isLoading}
 					lang={lang}
-					onChange={(date: string) => {
-						if (eventHandlers.onChange) {
-							// Create a synthetic event for compatibility with withEnhancedInput
-							const event = {
-								currentTarget: { value: date },
-								target: { value: date },
-							} as React.ChangeEvent<HTMLInputElement>;
-							eventHandlers.onChange(event);
-						}
-					}}
+					size={size}
+					useNativePicker={useNativePicker}
+					valueLabel={valueLabel}
+					onChange={handleDatePickerChange}
 				/>
 			</div>
 		);
