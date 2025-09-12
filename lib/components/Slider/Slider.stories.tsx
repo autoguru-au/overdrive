@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 
+import { textStyles } from '../../styles/typography';
 import { Slider } from '../Slider';
 import { Stack } from '../Stack';
 
@@ -25,11 +26,18 @@ const meta = {
 		},
 	},
 	args: {
+		label: undefined,
+		step: 5,
 		minValue: 5,
 		maxValue: 50,
-		step: 5,
-		defaultValue: 30,
-		unitText: 'kms',
+		unitText: '',
+		defaultValue: undefined,
+		value: undefined,
+		name: 'demo-slider',
+		id: undefined,
+		onChange: undefined,
+		isDisabled: false,
+		testId: 'test-slider-component',
 	},
 } satisfies Meta<typeof Slider>;
 
@@ -56,28 +64,43 @@ export const Variants: Story = {
 		<Stack space="8">
 			<Slider
 				label="Value with units"
+				name="demo-distance-slider"
 				minValue={5}
 				maxValue={50}
 				defaultValue={30}
 				unitText="kms"
 			/>
 			<Slider
-				label="Decimal value"
+				label={
+					<label
+						className={textStyles({
+							size: '4',
+							weight: 'semiBold',
+						})}
+					>
+						Decimal (custom styled label)
+					</label>
+				}
+				name="demo-decimal-slider"
 				minValue={1}
 				maxValue={10}
 				defaultValue={5.5}
 				step={0.5}
 			/>
-			<Slider
-				label="Percentage"
-				minValue={0}
-				maxValue={100}
-				defaultValue={25}
-				unitText="%"
-				step={1}
-			/>
+			<div>
+				<Slider
+					label="Percentage"
+					name="demo-percentage-slider"
+					minValue={0}
+					maxValue={100}
+					defaultValue={25}
+					unitText="%"
+					step={1}
+				/>
+			</div>
 			<Slider
 				label="Disabled"
+				name="demo-disabled-slider"
 				minValue={5}
 				maxValue={50}
 				defaultValue={5}
@@ -144,5 +167,3 @@ export const Interactions: Story = {
 		});
 	},
 };
-
-// Import required testing utilities

@@ -1,5 +1,5 @@
 import { MinusIcon, PlusIcon } from '@autoguru/icons';
-import React from 'react';
+import React, { isValidElement } from 'react';
 import {
 	mergeProps,
 	useFocusRing,
@@ -24,9 +24,9 @@ export interface SliderProps
 		Pick<AriaSliderThumbProps, 'name'>,
 		TestIdProp {
 	/**
-	 * Optional label for the slider
+	 * Label for the slider. Can be a string or custom child element.
 	 */
-	label?: string;
+	label?: React.ReactNode;
 	/**
 	 * Unit text to display with the value (e.g., 'kms', 'miles', '%')
 	 */
@@ -82,11 +82,11 @@ const SliderThumb = ({ state, trackRef, index, name }: SliderThumbProps) => {
  * supports configurable step values and value unit post-fix. Use the `onChange` handler
  * in most instances for retrieving the current value.
  *
- * @example
- * const handleOnChange = (value) => {
- *   console.log('Distance changed to:', value);
- * };
+ * Supports flexible label approach:
+ * - Pre-styled label `label="Distance"`
+ * - Custom label content: `label={<label className={customlabelStyles}>Distance</label>}`
  *
+ * @example
  * <Slider
  *   label="Distance"
  *   value={distance}
@@ -98,22 +98,29 @@ const SliderThumb = ({ state, trackRef, index, name }: SliderThumbProps) => {
  * />;
  */
 export const Slider = ({
-	testId,
-	unitText = '',
-	step = 5,
 	formatOptions,
+	label,
+	step = 5,
+	testId,
+	unitText,
 	...props
 }: SliderProps) => {
 	const trackRef = React.useRef<HTMLDivElement>(null);
 	const numberFormatter = useNumberFormatter(formatOptions);
+
+	const hasTextLabel = !!label && typeof label === 'string' && label !== '';
+	const hasCustomLabel = !hasTextLabel && isValidElement(label);
+
 	const state = useSliderState({
 		...props,
 		step,
 		numberFormatter,
 	});
+
 	const { groupProps, trackProps, labelProps, outputProps } = useSlider(
 		{
 			...props,
+			label,
 			step,
 		},
 		state,
@@ -127,11 +134,16 @@ export const Slider = ({
 			odComponent="slider"
 			testId={testId}
 		>
-			{props.label && (
+			{hasTextLabel && (
 				<label {...labelProps} className={styles.label}>
-					{props.label}
+					{label}
 				</label>
 			)}
+
+			{hasCustomLabel &&
+				React.cloneElement(label as React.JSX.Element, {
+					...labelProps,
+				})}
 
 			<div className={styles.valueDisplay}>
 				<output {...outputProps} className={styles.valueText}>
