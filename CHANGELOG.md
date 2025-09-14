@@ -1,5 +1,14 @@
 # @autoguru/overdrive
 
+## 4.47.1
+
+### Patch Changes
+
+- 49935b9: feat: Enhanced Slider component to support flexible label content
+  including JSX elements and improved accessibility testing
+- 5cd9c4e: **DatePicker** and **Calendar**: consistent `defaultValue` and
+  `value` props for controlled/uncontrolled use
+
 ## 4.47.0
 
 ### Minor Changes
