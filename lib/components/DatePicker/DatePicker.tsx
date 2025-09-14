@@ -6,7 +6,13 @@ import {
 	type DateValue,
 } from '@internationalized/date';
 import clsx from 'clsx';
-import React, { type ChangeEvent, useEffect, useMemo, useState } from 'react';
+import React, {
+	type ChangeEvent,
+	useEffect,
+	useMemo,
+	useState,
+	forwardRef,
+} from 'react';
 
 import { elementStyles } from '../../styles/elementStyles';
 import { sprinkles } from '../../styles/sprinkles.css';
@@ -152,166 +158,187 @@ const parseDateString = (dateString: string): DateValue | null => {
  *   onChange={(isoDate) => console.log('Native picked date:', isoDate)}
  * />
  */
-export const DatePicker = ({
-	calendarOptions,
-	className,
-	defaultValue,
-	disabled = false,
-	icon = CalendarIcon,
-	isLoading = false,
-	lang,
-	onChange,
-	size = 'medium',
-	testId,
-	useNativePicker = false,
-	value,
-	valueLabel,
-
-	...inputProps
-}: DatePickerProps) => {
-	const isControlled = value !== undefined;
-
-	const [selectedDate, setSelectedDate] = useState<DateValue | null>(() => {
-		const initialValue = isControlled ? value : defaultValue;
-		return initialValue ? parseDateString(initialValue) : null;
-	});
-	const [popoverState, setPopoverState] = useState<{
-		close: () => void;
-	} | null>(null);
-
-	// Sync external value changes (only for controlled components)
-	useEffect(() => {
-		if (isControlled) {
-			const parsedDate = value ? parseDateString(value) : null;
-			setSelectedDate(parsedDate);
-		}
-	}, [value, isControlled]);
-
-	const onChangeEvent = (event: ChangeEvent<HTMLInputElement>) => {
-		const dateString = event.currentTarget.value;
-		if (dateString) {
-			const parsedDate = parseDateString(dateString);
-			setSelectedDate(parsedDate);
-		} else {
-			setSelectedDate(null);
-		}
-		if (typeof onChange === 'function') {
-			onChange(dateString);
-		}
-	};
-
-	const containerStyle = elementStyles({
-		className: [
+export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
+	(
+		{
+			calendarOptions,
 			className,
-			{
-				[styles.disabled.default]: disabled,
-				[styles.disabled.root]: disabled,
+			defaultValue,
+			disabled = false,
+			icon = CalendarIcon,
+			isLoading = false,
+			lang,
+			onChange,
+			size = 'medium',
+			testId,
+			useNativePicker = false,
+			value,
+			valueLabel,
+
+			...inputProps
+		},
+		ref,
+	) => {
+		const isControlled = value !== undefined;
+
+		const [selectedDate, setSelectedDate] = useState<DateValue | null>(
+			() => {
+				const initialValue = isControlled ? value : defaultValue;
+				return initialValue ? parseDateString(initialValue) : null;
 			},
-		],
-	});
+		);
+		const [popoverState, setPopoverState] = useState<{
+			close: () => void;
+		} | null>(null);
 
-	const indicator = isLoading ? (
-		<ProgressSpinner size={size} />
-	) : (
-		<Icon icon={icon} size={size} />
-	);
+		// Sync external value changes (only for controlled components)
+		useEffect(() => {
+			if (isControlled) {
+				const parsedDate = value ? parseDateString(value) : null;
+				setSelectedDate(parsedDate);
+			}
+		}, [value, isControlled]);
 
-	const label = valueLabel ? (
-		<Text size={textSizeMap[size]}>{valueLabel}</Text>
-	) : null;
+		const onChangeEvent = (event: ChangeEvent<HTMLInputElement>) => {
+			const dateString = event.currentTarget.value;
+			if (dateString) {
+				const parsedDate = parseDateString(dateString);
+				setSelectedDate(parsedDate);
+			} else {
+				setSelectedDate(null);
+			}
+			if (typeof onChange === 'function') {
+				onChange(dateString);
+			}
+		};
 
-	const calendarProps: CalendarProps = useMemo(
-		() => ({
-			calendarOptions: {
-				// For controlled components, use value. For uncontrolled, use defaultValue
-				...(isControlled
-					? {
-							value: selectedDate || today(getLocalTimeZone()),
-						}
-					: {
-							defaultValue:
-								selectedDate || today(getLocalTimeZone()),
-						}),
-				...calendarOptions,
-			},
-			onChange: (date: DateValue) => {
-				setSelectedDate(date);
-				if (typeof onChange === 'function') {
-					onChange(formatDateToString(date));
-				}
-				// Close the popover after date selection
-				if (popoverState) {
-					popoverState.close();
-				}
-			},
-		}),
-		[selectedDate, calendarOptions, onChange, popoverState, isControlled],
-	);
+		const containerStyle = elementStyles({
+			className: [
+				className,
+				{
+					[styles.disabled.default]: disabled,
+					[styles.disabled.root]: disabled,
+				},
+			],
+		});
 
-	const contentCalendar = useMemo(
-		() => <Calendar {...calendarProps} />,
-		[calendarProps],
-	);
+		const indicator = isLoading ? (
+			<ProgressSpinner size={size} />
+		) : (
+			<Icon icon={icon} size={size} />
+		);
 
-	// Use native picker only if explicitly requested
-	if (useNativePicker) {
-		return (
-			<div className={clsx(containerStyle, styles.inputContainer)}>
-				<input
-					{...inputProps}
-					className={elementStyles({
-						className: [
-							styles.input,
-							{
-								[styles.disabled.default]: disabled,
-							},
-						],
-					})}
-					type="date"
-					disabled={disabled}
-					onChange={onChangeEvent}
-				/>
-				<div className={styles.inputOverlay}>
-					<div
-						className={clsx(styles.contents.default, {
-							[styles.contents.withLabel]: Boolean(valueLabel),
+		const label = valueLabel ? (
+			<Text size={textSizeMap[size]}>{valueLabel}</Text>
+		) : null;
+
+		const calendarProps: CalendarProps = useMemo(
+			() => ({
+				calendarOptions: {
+					// For controlled components, use value. For uncontrolled, use defaultValue
+					...(isControlled
+						? {
+								value:
+									selectedDate || today(getLocalTimeZone()),
+							}
+						: {
+								defaultValue:
+									selectedDate || today(getLocalTimeZone()),
+							}),
+					...calendarOptions,
+				},
+				onChange: (date: DateValue) => {
+					setSelectedDate(date);
+					if (typeof onChange === 'function') {
+						onChange(formatDateToString(date));
+					}
+					// Close the popover after date selection
+					if (popoverState) {
+						popoverState.close();
+					}
+				},
+			}),
+			[
+				selectedDate,
+				calendarOptions,
+				onChange,
+				popoverState,
+				isControlled,
+			],
+		);
+
+		const contentCalendar = useMemo(
+			() => <Calendar {...calendarProps} />,
+			[calendarProps],
+		);
+
+		// Use native picker only if explicitly requested
+		if (useNativePicker) {
+			return (
+				<div className={clsx(containerStyle, styles.inputContainer)}>
+					<input
+						{...inputProps}
+						ref={ref}
+						className={elementStyles({
+							className: [
+								styles.input,
+								{
+									[styles.disabled.default]: disabled,
+								},
+							],
 						})}
-					>
-						{indicator}
-						{label}
+						type="date"
+						disabled={disabled}
+						onChange={onChangeEvent}
+					/>
+					<div className={styles.inputOverlay}>
+						<div
+							className={clsx(styles.contents.default, {
+								[styles.contents.withLabel]:
+									Boolean(valueLabel),
+							})}
+						>
+							{indicator}
+							{label}
+						</div>
 					</div>
 				</div>
+			);
+		}
+
+		return (
+			<div
+				className={clsx(
+					containerStyle,
+					sprinkles({
+						display: 'flex',
+						alignItems: 'center',
+						gap: '1',
+					}),
+				)}
+			>
+				<PopoverTrigger
+					content={contentCalendar}
+					placement="bottom left"
+					testId={testId}
+					isDisabled={disabled}
+					onStateReady={setPopoverState}
+				>
+					{indicator}
+					<VisuallyHidden>
+						{lang?.openCalendar ?? defaultEnglish.openCalendar}
+					</VisuallyHidden>
+				</PopoverTrigger>
+				{label}
+				<input
+					{...inputProps}
+					ref={ref}
+					value={formatDateToString(selectedDate)}
+					type="hidden"
+				/>
 			</div>
 		);
-	}
-
-	return (
-		<div
-			className={clsx(
-				containerStyle,
-				sprinkles({ display: 'flex', alignItems: 'center', gap: '1' }),
-			)}
-		>
-			<PopoverTrigger
-				content={contentCalendar}
-				placement="bottom left"
-				testId={testId}
-				isDisabled={disabled}
-				onStateReady={setPopoverState}
-			>
-				{indicator}
-				<VisuallyHidden>
-					{lang?.openCalendar ?? defaultEnglish.openCalendar}
-				</VisuallyHidden>
-			</PopoverTrigger>
-			{label}
-			<input
-				{...inputProps}
-				value={formatDateToString(selectedDate)}
-				type="hidden"
-			/>
-		</div>
-	);
-};
+	},
+);
 
 DatePicker.displayName = 'DatePicker';

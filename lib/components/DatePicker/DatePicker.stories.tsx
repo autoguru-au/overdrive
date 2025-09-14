@@ -1,4 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import isChromatic from 'chromatic/isChromatic';
+import MockDate from 'mockdate';
 import React, { useState } from 'react';
 import { expect, fn, userEvent, within, waitFor, screen } from 'storybook/test';
 
@@ -7,6 +9,9 @@ import { displayFormattedDate, isToday } from '../../utils/dateFormat';
 import { FlexInline } from '../Flex';
 
 import { DatePicker } from './DatePicker';
+
+const DEFAULT_VALUE_LABEL = 'Select date';
+const testDate = '2026-01-01';
 
 const meta = {
 	title: 'Components/Date Picker',
@@ -21,7 +26,7 @@ const meta = {
 	],
 	args: {
 		onChange: fn(),
-		valueLabel: 'Select date',
+		valueLabel: DEFAULT_VALUE_LABEL,
 		icon: undefined,
 		size: 'medium',
 		isLoading: false,
@@ -38,6 +43,9 @@ const meta = {
 			description: 'Input field Icon',
 			...argTypesExampleIcons,
 		},
+	},
+	beforeEach: () => {
+		if (isChromatic()) MockDate.set(testDate);
 	},
 } satisfies Meta<typeof DatePicker>;
 
@@ -115,7 +123,7 @@ export const NativePicker: Story = {
 export const Interaction: Story = {
 	args: {
 		// value: '2024-01-15',
-		valueLabel: 'Select date',
+		valueLabel: DEFAULT_VALUE_LABEL,
 	},
 	render: (args) => {
 		const [selectedDate, setSelectedDate] = useState(args.valueLabel);
@@ -136,7 +144,9 @@ export const Interaction: Story = {
 		await step('Verify initial state', async () => {
 			const trigger = canvas.getAllByRole('button')[0];
 			expect(trigger).toBeInTheDocument();
-			expect(canvas.getAllByText('Select date')[0]).toBeInTheDocument();
+			expect(
+				canvas.getAllByText(DEFAULT_VALUE_LABEL)[0],
+			).toBeInTheDocument();
 		});
 
 		await step('Open calendar popover', async () => {

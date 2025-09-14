@@ -5,7 +5,7 @@ import { expect, fn, getAllByRole, getByText, userEvent } from 'storybook/test';
 
 import { DateTimePicker } from './DateTimePicker';
 
-const testDate = '2025-01-01';
+const testDate = '2026-01-01';
 const dataSelected = '[data-selected]';
 
 const times = [
