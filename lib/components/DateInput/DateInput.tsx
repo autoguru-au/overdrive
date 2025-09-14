@@ -44,15 +44,11 @@ const parseDateString = (dateString: string): DateValue | null => {
 	}
 };
 
-const DateSegment = React.forwardRef<
-	HTMLSpanElement,
-	{
-		segment: DateSegment;
-		state: DateFieldState;
-	}
->(({ segment, state }, forwardedRef) => {
-	const internalRef = useRef<HTMLSpanElement>(null);
-	const ref = forwardedRef || internalRef;
+const DateSegment: React.FC<{
+	segment: DateSegment;
+	state: DateFieldState;
+}> = ({ segment, state }) => {
+	const ref = useRef<HTMLSpanElement>(null);
 	const { segmentProps } = useDateSegment(segment, state, ref);
 
 	return (
@@ -65,9 +61,9 @@ const DateSegment = React.forwardRef<
 			{segment.text}
 		</span>
 	);
-});
+};
 
-DateSegment.displayName = 'DateSegment';
+DateSegment.displayName = 'DateInput.DateSegment';
 
 export const DateInput = withEnhancedInput<
 	FilteredDatePickerProps & Partial<Pick<HTMLInputElement, 'min' | 'max'>>
@@ -159,11 +155,11 @@ export const DateInput = withEnhancedInput<
 							key={`${segment.type}-${segment.minValue || idx}`}
 							segment={segment}
 							state={dateFieldState}
-							ref={idx === 0 ? ref : undefined}
 						/>
 					))}
 				</div>
 				<DatePicker
+					ref={ref as React.Ref<HTMLInputElement>}
 					id={id}
 					name={name}
 					value={formatDateToString(selectedDate)}
