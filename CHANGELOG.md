@@ -6,7 +6,7 @@
 
 - 5cd9c4e: **DatePicker** and **Calendar**: consistent `defaultValue` and
   `value` props for controlled/uncontrolled use
-- 49935b9: *Slider** beta: support flexible label
+- 49935b9: **Slider** beta: support flexible label
 
 ## 4.47.0
 
