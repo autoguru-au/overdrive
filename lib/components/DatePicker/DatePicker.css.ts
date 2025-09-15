@@ -68,14 +68,14 @@ export const contents = styleVariants({
 });
 
 export const disabled = styleVariants({
-	default: {
+	cursor: {
 		'@layer': {
 			[cssLayerComponent]: {
 				cursor: 'not-allowed',
 			},
 		},
 	},
-	root: {
+	native: {
 		'@layer': {
 			[cssLayerComponent]: {
 				opacity: '0.3',

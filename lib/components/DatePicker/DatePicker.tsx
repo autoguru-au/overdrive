@@ -8,6 +8,7 @@ import {
 import clsx from 'clsx';
 import React, {
 	type ChangeEvent,
+	useCallback,
 	useEffect,
 	useMemo,
 	useState,
@@ -212,16 +213,6 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 			}
 		};
 
-		const containerStyle = elementStyles({
-			className: [
-				className,
-				{
-					[styles.disabled.default]: disabled,
-					[styles.disabled.root]: disabled,
-				},
-			],
-		});
-
 		const indicator = isLoading ? (
 			<ProgressSpinner size={size} />
 		) : (
@@ -229,8 +220,27 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 		);
 
 		const label = valueLabel ? (
-			<Text size={textSizeMap[size]}>{valueLabel}</Text>
+			<Text
+				colour={!useNativePicker && disabled ? 'muted' : undefined}
+				size={textSizeMap[size]}
+			>
+				{valueLabel}
+			</Text>
 		) : null;
+
+		const handleCalendarChange = useCallback(
+			(date: DateValue) => {
+				setSelectedDate(date);
+				if (typeof onChange === 'function') {
+					onChange(formatDateToString(date));
+				}
+				// Close the popover after date selection
+				if (popoverState) {
+					popoverState.close();
+				}
+			},
+			[onChange, popoverState],
+		);
 
 		const calendarProps: CalendarProps = useMemo(
 			() => ({
@@ -247,24 +257,9 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 							}),
 				},
 				...calendarOptions,
-				onChange: (date: DateValue) => {
-					setSelectedDate(date);
-					if (typeof onChange === 'function') {
-						onChange(formatDateToString(date));
-					}
-					// Close the popover after date selection
-					if (popoverState) {
-						popoverState.close();
-					}
-				},
+				onChange: handleCalendarChange,
 			}),
-			[
-				selectedDate,
-				calendarOptions,
-				onChange,
-				popoverState,
-				isControlled,
-			],
+			[selectedDate, calendarOptions, handleCalendarChange, isControlled],
 		);
 
 		const contentCalendar = useMemo(
@@ -275,7 +270,13 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 		// Use native picker only if explicitly requested
 		if (useNativePicker) {
 			return (
-				<div className={clsx(containerStyle, styles.inputContainer)}>
+				<div
+					className={clsx(
+						className,
+						styles.inputContainer,
+						disabled && styles.disabled.native,
+					)}
+				>
 					<input
 						{...inputProps}
 						ref={ref}
@@ -283,7 +284,7 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 							className: [
 								styles.input,
 								{
-									[styles.disabled.default]: disabled,
+									[styles.disabled.cursor]: disabled,
 								},
 							],
 						})}
@@ -307,16 +308,7 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 		}
 
 		return (
-			<div
-				className={clsx(
-					containerStyle,
-					sprinkles({
-						display: 'flex',
-						alignItems: 'center',
-						gap: '1',
-					}),
-				)}
-			>
+			<div className={className}>
 				<PopoverTrigger
 					content={contentCalendar}
 					placement="bottom left"
@@ -324,12 +316,20 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 					isDisabled={disabled}
 					onStateReady={setPopoverState}
 				>
-					{indicator}
+					<div
+						className={sprinkles({
+							display: 'flex',
+							alignItems: 'center',
+							gap: '1',
+						})}
+					>
+						{indicator}
+						{label}
+					</div>
 					<VisuallyHidden>
 						{lang?.openCalendar ?? defaultEnglish.openCalendar}
 					</VisuallyHidden>
 				</PopoverTrigger>
-				{label}
 				<input
 					{...inputProps}
 					ref={ref}

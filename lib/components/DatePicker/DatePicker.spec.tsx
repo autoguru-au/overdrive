@@ -132,6 +132,29 @@ describe('DatePicker', () => {
 		expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
 	});
 
+	it('allows clicking valueLabel to open calendar in modern mode', async () => {
+		const user = userEvent.setup();
+
+		render(
+			<DatePicker
+				name="test-clickable-label"
+				valueLabel="Click me to open calendar"
+				onChange={vi.fn()}
+			/>,
+		);
+
+		// Initially calendar should be closed
+		expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+
+		// Click on the label text
+		const label = screen.getByText('Click me to open calendar');
+		await user.click(label);
+
+		// Calendar should open
+		expect(screen.getByRole('dialog')).toBeInTheDocument();
+		expect(screen.getByRole('grid')).toBeInTheDocument();
+	});
+
 	it('handles disabled state and prevents interactions', async () => {
 		const user = userEvent.setup();
 		const mockOnChange = vi.fn();
