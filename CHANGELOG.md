@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 4.47.2
+
+### Patch Changes
+
+- 0b3470f: **DatePicker**: fix calendar options handling, more consistent states
+  and interactions
+
 ## 4.47.1
 
 ### Patch Changes
