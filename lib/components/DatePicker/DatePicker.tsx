@@ -245,8 +245,8 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 								defaultValue:
 									selectedDate || today(getLocalTimeZone()),
 							}),
-					...calendarOptions,
 				},
+				...calendarOptions,
 				onChange: (date: DateValue) => {
 					setSelectedDate(date);
 					if (typeof onChange === 'function') {

@@ -21,6 +21,17 @@ const mockMatchMedia = (query: string) => ({
 	dispatchEvent: () => {},
 });
 
+// Helper function to open calendar popover
+const openCalendar = async (user: ReturnType<typeof userEvent.setup>) => {
+	const trigger = screen.getByRole('button');
+	await user.click(trigger);
+	return {
+		trigger,
+		dialog: screen.getByRole('dialog'),
+		grid: screen.getByRole('grid'),
+	};
+};
+
 describe('DatePicker', () => {
 	beforeAll(() => {
 		Object.defineProperty(globalThis, 'matchMedia', {
@@ -202,65 +213,50 @@ describe('DatePicker', () => {
 		expect(hiddenInput).toHaveAttribute('id', 'test-id');
 	});
 
-	it('displays correct date when controlled with value prop', () => {
-		const testValue = '2025-12-25'; // Christmas 2025
+	describe('value and state management', () => {
+		it('handles controlled state correctly', () => {
+			const controlledValue = '2025-12-25';
+			render(
+				<DatePicker
+					name="test-controlled"
+					value={controlledValue}
+					onChange={vi.fn()}
+				/>,
+			);
 
-		render(
-			<DatePicker
-				name="test-controlled"
-				value={testValue}
-				onChange={vi.fn()}
-			/>,
-		);
+			const hiddenInput = screen.getByDisplayValue(controlledValue);
+			expect(hiddenInput).toHaveAttribute('type', 'hidden');
+			expect(screen.getByRole('button')).toBeInTheDocument();
+		});
 
-		// Hidden input should contain the controlled value
-		const hiddenInput = screen.getByDisplayValue(testValue);
-		expect(hiddenInput).toBeInTheDocument();
-		expect(hiddenInput).toHaveAttribute('type', 'hidden');
+		it('handles uncontrolled state correctly', () => {
+			const defaultValue = '2025-11-15';
+			render(
+				<DatePicker
+					name="test-uncontrolled"
+					defaultValue={defaultValue}
+					onChange={vi.fn()}
+				/>,
+			);
 
-		// Component should render with controlled value
-		const trigger = screen.getByRole('button');
-		expect(trigger).toBeInTheDocument();
-	});
+			const hiddenInput = screen.getByDisplayValue(defaultValue);
+			expect(hiddenInput).toHaveAttribute('type', 'hidden');
+			expect(screen.getByRole('button')).toBeInTheDocument();
+		});
 
-	it('displays correct date when uncontrolled with defaultValue prop', () => {
-		const testDefaultValue = '2025-11-15'; // Future date
+		it('handles empty state correctly', () => {
+			render(
+				<DatePicker
+					name="test-empty"
+					valueLabel="Select a date"
+					onChange={vi.fn()}
+				/>,
+			);
 
-		render(
-			<DatePicker
-				name="test-uncontrolled"
-				defaultValue={testDefaultValue}
-				onChange={vi.fn()}
-			/>,
-		);
-
-		// Hidden input should contain the default value initially
-		const hiddenInput = screen.getByDisplayValue(testDefaultValue);
-		expect(hiddenInput).toBeInTheDocument();
-		expect(hiddenInput).toHaveAttribute('type', 'hidden');
-
-		// Component should render with default value
-		const trigger = screen.getByRole('button');
-		expect(trigger).toBeInTheDocument();
-	});
-
-	it('handles empty state when no value or defaultValue provided', () => {
-		render(
-			<DatePicker
-				name="test-empty"
-				valueLabel="Select a date"
-				onChange={vi.fn()}
-			/>,
-		);
-
-		// Hidden input should be empty when no value is provided
-		const hiddenInput = screen.getByDisplayValue('');
-		expect(hiddenInput).toBeInTheDocument();
-		expect(hiddenInput).toHaveAttribute('type', 'hidden');
-
-		// Should show the placeholder label
-		const label = screen.getByText('Select a date');
-		expect(label).toBeInTheDocument();
+			const hiddenInput = screen.getByDisplayValue('');
+			expect(hiddenInput).toHaveAttribute('type', 'hidden');
+			expect(screen.getByText('Select a date')).toBeInTheDocument();
+		});
 	});
 
 	it('supports custom sizing and language options', () => {
@@ -271,5 +267,115 @@ describe('DatePicker', () => {
 
 		// Component should render with custom size
 		expect(trigger).toBeVisible();
+	});
+
+	describe('calendarOptions prop handling', () => {
+		it('passes allowPastDate and other options correctly to Calendar component', async () => {
+			const user = userEvent.setup();
+			const mockOnChange = vi.fn();
+
+			// Test allowPastDate: true with custom language
+			const { rerender } = render(
+				<DatePicker
+					name="test-calendar-options"
+					calendarOptions={{
+						allowPastDate: true,
+						lang: {
+							nextLabel: 'Custom Next',
+							prevLabel: 'Custom Previous',
+						},
+					}}
+					onChange={mockOnChange}
+				/>,
+			);
+
+			let { dialog, grid } = await openCalendar(user);
+			expect(dialog).toBeInTheDocument();
+			expect(grid).toBeInTheDocument();
+			expect(screen.getByLabelText('Custom Next')).toBeInTheDocument();
+			expect(
+				screen.getByLabelText('Custom Previous'),
+			).toBeInTheDocument();
+
+			// Close calendar
+			await user.keyboard('{Escape}');
+
+			// Test allowPastDate: false
+			rerender(
+				<DatePicker
+					name="test-no-past-dates"
+					calendarOptions={{ allowPastDate: false }}
+					onChange={mockOnChange}
+				/>,
+			);
+
+			({ dialog, grid } = await openCalendar(user));
+			expect(dialog).toBeInTheDocument();
+			expect(grid).toBeInTheDocument();
+		});
+
+		it('merges calendarOptions with controlled state values correctly', async () => {
+			const user = userEvent.setup();
+			const controlledValue = '2025-06-15';
+			render(
+				<DatePicker
+					name="test-controlled-options"
+					value={controlledValue}
+					calendarOptions={{
+						allowPastDate: true,
+						lang: {
+							nextLabel: 'Next Month',
+							prevLabel: 'Previous Month',
+						},
+					}}
+					onChange={vi.fn()}
+				/>,
+			);
+
+			const { dialog } = await openCalendar(user);
+			expect(dialog).toBeInTheDocument();
+			expect(screen.getByLabelText('Next Month')).toBeInTheDocument();
+			expect(
+				screen.getByDisplayValue(controlledValue),
+			).toBeInTheDocument();
+		});
+
+		it('merges calendarOptions with uncontrolled defaultValue correctly', async () => {
+			const user = userEvent.setup();
+			const uncontrolledValue = '2025-07-20';
+			render(
+				<DatePicker
+					name="test-uncontrolled-options"
+					defaultValue={uncontrolledValue}
+					calendarOptions={{
+						allowPastDate: false,
+						lang: {
+							nextLabel: 'Forward',
+							prevLabel: 'Backward',
+						},
+					}}
+					onChange={vi.fn()}
+				/>,
+			);
+
+			const { dialog } = await openCalendar(user);
+			expect(dialog).toBeInTheDocument();
+			expect(screen.getByLabelText('Forward')).toBeInTheDocument();
+			expect(
+				screen.getByDisplayValue(uncontrolledValue),
+			).toBeInTheDocument();
+		});
+
+		it('handles undefined calendarOptions gracefully', async () => {
+			const user = userEvent.setup();
+
+			render(<DatePicker name="test-no-options" onChange={vi.fn()} />);
+
+			const { dialog, grid } = await openCalendar(user);
+			expect(dialog).toBeInTheDocument();
+			expect(grid).toBeInTheDocument();
+			expect(screen.getByLabelText('Next month')).toBeInTheDocument();
+			expect(screen.getByLabelText('Previous month')).toBeInTheDocument();
+		});
 	});
 });
