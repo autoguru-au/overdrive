@@ -1,6 +1,7 @@
 import { style } from '@vanilla-extract/css';
 
 import { cssLayerComponent } from '../../styles/layers.css';
+import { selectors } from '../../styles/selectors';
 import { sprinkles } from '../../styles/sprinkles.css';
 import { overdriveTokens as tokens } from '../../themes/theme.css';
 
@@ -30,6 +31,11 @@ export const triggerStyle = style({
 			border: 'none',
 			cursor: 'pointer',
 			padding: 0,
+			selectors: {
+				[selectors.disabled]: {
+					cursor: 'not-allowed',
+				},
+			},
 		},
 	},
 });
@@ -43,6 +49,7 @@ export const fullScreenStyle = style({
 			position: 'fixed',
 			right: 0,
 			top: 0,
+			zIndex: 3,
 		},
 	},
 });
