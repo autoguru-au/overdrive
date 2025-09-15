@@ -1,7 +1,4 @@
-import type {
-	CSSProperties,
-	StyleRule,
-} from '@vanilla-extract/css/dist/vanilla-extract-css.cjs';
+import type { CSSProperties, StyleRule } from '@vanilla-extract/css';
 
 import { breakpoints } from '../themes/makeTheme';
 
