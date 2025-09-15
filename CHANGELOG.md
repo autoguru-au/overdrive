@@ -1,5 +1,13 @@
 # @autoguru/overdrive
 
+## 4.47.1
+
+### Patch Changes
+
+- 5cd9c4e: **DatePicker** and **Calendar**: consistent `defaultValue` and
+  `value` props for controlled/uncontrolled use
+- 49935b9: **Slider** beta: support flexible label
+
 ## 4.47.0
 
 ### Minor Changes
