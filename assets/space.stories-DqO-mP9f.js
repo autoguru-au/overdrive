@@ -1,0 +1,7 @@
+import{e,H as n,s as d,p as c,x as E}from"./iframe-B6_QgceS.js";import{F as l}from"./FlexInline-CejCwliN.js";import{F as o}from"./FlexStack-CHTkft35.js";import{t as m,l as p,s as g}from"./styles.css-DFXj2_wA.js";import"./preload-helper-D9Z9MdNV.js";import"./flex-CU5_bmZj.js";const{space:k}=c,u=Object.keys(k).filter(a=>a!=="none"),S=()=>e.createElement(o,{gap:"5"},e.createElement(n,{as:"h2",className:m},"Space scale"),u.map(a=>e.createElement(l,{gap:"5",justify:"center",key:a},e.createElement("p",{className:p},a),e.createElement("div",{className:d({backgroundColour:"black700",height:"5",width:a})}),e.createElement("p",{className:g},c.space[a])))),s=Object.entries(E),h=()=>e.createElement(o,{gap:"5"},e.createElement(n,{as:"h2",className:m},"Breakpoints"),s.map(([a,i],r)=>e.createElement("div",{key:a},e.createElement("span",{className:p},a),": ",i,r<s.length-1?` to ${s[r+1][1]}`:" and up"))),y={title:"Foundation/Space",tags:["!autodocs"]},t={render:()=>e.createElement(l,{gap:"8"},e.createElement(n,{as:"h1"},"Space"),e.createElement(S,null),e.createElement(h,null))};t.parameters={...t.parameters,docs:{...t.parameters?.docs,source:{originalSource:`{
+  render: () => <FlexInline gap="8">
+            <Heading as="h1">Space</Heading>
+            <SpaceScale />
+            <Breakpoints />
+        </FlexInline>
+}`,...t.parameters?.docs?.source}}};const H=["Space"];export{t as Space,H as __namedExportsOrder,y as default};
