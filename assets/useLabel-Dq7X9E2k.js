@@ -1,0 +1,1 @@
+import{$ as r}from"./useFocusable-DEn2IQoa.js";import{$ as f}from"./useLabels-DmemVkjT.js";function c(i){let{id:e,label:t,"aria-labelledby":l,"aria-label":$,labelElementType:d="label"}=i;e=r(e);let a=r(),b={};t&&(l=l?`${a} ${l}`:a,b={id:a,htmlFor:d==="label"?e:void 0});let o=f({id:e,"aria-label":$,"aria-labelledby":l});return{labelProps:b,fieldProps:o}}export{c as $};

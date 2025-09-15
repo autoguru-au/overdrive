@@ -1,0 +1,10 @@
+import{e,H as o,B as s,o as r,p as m}from"./iframe-C5x-mm7q.js";import{F as n}from"./FlexInline-BUzk4YJo.js";import{F as l}from"./FlexStack-D3zRyL02.js";import{t as c}from"./styles.css-C7l8eVXk.js";import"./preload-helper-D9Z9MdNV.js";import"./flex-BQ2abrn-.js";const{border:i,elevation:d}=m,p=Object.keys(d),u=Object.keys(i.width),E=Object.keys(i.radius),g=()=>e.createElement(l,{gap:"6"},e.createElement(o,{as:"h2",className:c},"Elevation"),p.map(t=>e.createElement(n,{gap:"5",justify:"center",key:t},e.createElement(s,{borderRadius:"1",boxShadow:t,size:"9",style:{backgroundColor:r.color.gamut.gray[100]}}),e.createElement("p",null,t)))),b=()=>e.createElement(l,{gap:"6"},e.createElement(o,{as:"h2",className:c},"Width"),u.map(t=>e.createElement(n,{gap:"5",justify:"center",key:t},e.createElement(s,{borderColor:"hard",borderRadius:"1",borderStyle:"solid",borderWidth:t,size:"9",style:{backgroundColor:r.color.gamut.black[100]}}),e.createElement("p",null,t)))),y=()=>e.createElement(l,{gap:"6"},e.createElement(o,{as:"h2",className:c},"Radius"),E.map(t=>e.createElement(n,{gap:"5",justify:"center",key:t},e.createElement(s,{alignItems:"center",borderColor:"soft",borderRadius:t,display:"flex",justifyContent:"center",size:"9",style:{backgroundColor:r.color.gamut.black[700],color:r.color.gamut.white,fontSize:r.typography.size[3].fontSize,...t==="pill"?{height:"64px"}:void 0}},m.border.radius[t]),e.createElement("p",null,t)))),B={title:"Foundation/Borders",tags:["!autodocs"]},a={render:()=>e.createElement(n,{gap:"8"},e.createElement(o,{as:"h1"},"Borders & ",e.createElement("br",null)," Elevation"),e.createElement(b,null),e.createElement(y,null),e.createElement(g,null))};a.parameters={...a.parameters,docs:{...a.parameters?.docs,source:{originalSource:`{
+  render: () => <FlexInline gap="8">
+            <Heading as="h1">
+                Borders &amp; <br /> Elevation
+            </Heading>
+            <Widths />
+            <Radius />
+            <Elevation />
+        </FlexInline>
+}`,...a.parameters?.docs?.source}}};const F=["Borders"];export{a as Borders,F as __namedExportsOrder,B as default};
