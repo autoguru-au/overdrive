@@ -14,13 +14,131 @@ exports[`<DateInput /> > should have some hintText 1`] = `
       <div
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_height_full_mobile__onxwjufl sprinkles_width_full_mobile__onxwjuh5"
       >
-        <input
-          autocomplete="off"
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_backgroundColour_transparent__onxwju5g sprinkles_width_full_mobile__onxwjuh5 sprinkles_position_relative_mobile__onxwju8h sprinkles_display_flex_mobile__onxwju6l sprinkles_borderRadius_md_mobile__onxwjubt withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
-          id="id"
-          type="date"
-          value="2019-01-21"
-        />
+        <div
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_backgroundColour_transparent__onxwju5g sprinkles_width_full_mobile__onxwjuh5 sprinkles_position_relative_mobile__onxwju8h sprinkles_display_flex_mobile__onxwju6l sprinkles_borderRadius_md_mobile__onxwjubt withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b sprinkles_display_flex_mobile__onxwju6l sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_wrap_mobile__onxwjur1 sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_start_mobile__onxwjup1"
+        >
+          <div
+            aria-describedby="react-aria-description-1"
+            data-react-aria-pressable="true"
+            id="react-aria-«rg»"
+            role="group"
+            style="unicode-bidi: isolate;"
+          >
+            <span
+              aria-describedby="react-aria-description-1"
+              aria-label="month"
+              aria-valuemax="12"
+              aria-valuemin="1"
+              aria-valuenow="1"
+              aria-valuetext="1 – January"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«rl»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              1
+            </span>
+            <span
+              aria-hidden="true"
+              class="DateInput_segment__1tme7k60"
+            >
+              /
+            </span>
+            <span
+              aria-label="day"
+              aria-valuemax="31"
+              aria-valuemin="1"
+              aria-valuenow="21"
+              aria-valuetext="21"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«rp»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              21
+            </span>
+            <span
+              aria-hidden="true"
+              class="DateInput_segment__1tme7k60"
+            >
+              /
+            </span>
+            <span
+              aria-label="year"
+              aria-valuemax="9999"
+              aria-valuemin="1"
+              aria-valuenow="2019"
+              aria-valuetext="2019"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«rt»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              2019
+            </span>
+          </div>
+          <div
+            class="sprinkles_display_flex_mobile__onxwju6l sprinkles_alignItems_center_mobile__onxwjumt sprinkles_gap_1_mobile__onxwjui5"
+          >
+            <button
+              aria-expanded="false"
+              class="Popover_triggerStyle__1cyo7c2"
+              data-react-aria-pressable="true"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6d Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+                data-od-component="icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
+                  fill="currentColor"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19 18.998H5v-11h14m-3-7v2H8v-2H6v2H5a1.99 1.99 0 00-1.99 2l-.01 14a2 2 0 002 2h14c1.102 0 2-.896 2-2v-14a2 2 0 00-2-2h-1v-2m-1 11h-5v5h5v-5z"
+                  />
+                </svg>
+              </span>
+              <div
+                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 VisuallyHidden_visuallyHidden__12d73qi0"
+                data-od-component="visually-hidden"
+              >
+                open calendar
+              </div>
+            </button>
+            <input
+              id="id"
+              type="hidden"
+              value="2019-01-21"
+            />
+          </div>
+        </div>
       </div>
       <div
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_height_full_mobile__onxwjufl sprinkles_pointerEvents_none__onxwju64 sprinkles_position_absolute_mobile__onxwju8l sprinkles_width_full_mobile__onxwjuh5 sprinkles_textAlign_left_mobile__onxwjuax NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
@@ -71,13 +189,131 @@ exports[`<DateInput /> > should match snapshot 1`] = `
       <div
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_height_full_mobile__onxwjufl sprinkles_width_full_mobile__onxwjuh5"
       >
-        <input
-          autocomplete="off"
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_backgroundColour_transparent__onxwju5g sprinkles_width_full_mobile__onxwjuh5 sprinkles_position_relative_mobile__onxwju8h sprinkles_display_flex_mobile__onxwju6l sprinkles_borderRadius_md_mobile__onxwjubt withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
-          id="id"
-          type="date"
-          value="2019-01-21"
-        />
+        <div
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_backgroundColour_transparent__onxwju5g sprinkles_width_full_mobile__onxwjuh5 sprinkles_position_relative_mobile__onxwju8h sprinkles_display_flex_mobile__onxwju6l sprinkles_borderRadius_md_mobile__onxwjubt withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b sprinkles_display_flex_mobile__onxwju6l sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_wrap_mobile__onxwjur1 sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_start_mobile__onxwjup1"
+        >
+          <div
+            aria-describedby="react-aria-description-0"
+            data-react-aria-pressable="true"
+            id="react-aria-«r0»"
+            role="group"
+            style="unicode-bidi: isolate;"
+          >
+            <span
+              aria-describedby="react-aria-description-0"
+              aria-label="month"
+              aria-valuemax="12"
+              aria-valuemin="1"
+              aria-valuenow="1"
+              aria-valuetext="1 – January"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«r5»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              1
+            </span>
+            <span
+              aria-hidden="true"
+              class="DateInput_segment__1tme7k60"
+            >
+              /
+            </span>
+            <span
+              aria-label="day"
+              aria-valuemax="31"
+              aria-valuemin="1"
+              aria-valuenow="21"
+              aria-valuetext="21"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«r9»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              21
+            </span>
+            <span
+              aria-hidden="true"
+              class="DateInput_segment__1tme7k60"
+            >
+              /
+            </span>
+            <span
+              aria-label="year"
+              aria-valuemax="9999"
+              aria-valuemin="1"
+              aria-valuenow="2019"
+              aria-valuetext="2019"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«rd»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              2019
+            </span>
+          </div>
+          <div
+            class="sprinkles_display_flex_mobile__onxwju6l sprinkles_alignItems_center_mobile__onxwjumt sprinkles_gap_1_mobile__onxwjui5"
+          >
+            <button
+              aria-expanded="false"
+              class="Popover_triggerStyle__1cyo7c2"
+              data-react-aria-pressable="true"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6d Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+                data-od-component="icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
+                  fill="currentColor"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19 18.998H5v-11h14m-3-7v2H8v-2H6v2H5a1.99 1.99 0 00-1.99 2l-.01 14a2 2 0 002 2h14c1.102 0 2-.896 2-2v-14a2 2 0 00-2-2h-1v-2m-1 11h-5v5h5v-5z"
+                  />
+                </svg>
+              </span>
+              <div
+                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 VisuallyHidden_visuallyHidden__12d73qi0"
+                data-od-component="visually-hidden"
+              >
+                open calendar
+              </div>
+            </button>
+            <input
+              id="id"
+              type="hidden"
+              value="2019-01-21"
+            />
+          </div>
+        </div>
       </div>
       <div
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_height_full_mobile__onxwjufl sprinkles_pointerEvents_none__onxwju64 sprinkles_position_absolute_mobile__onxwju8l sprinkles_width_full_mobile__onxwjuh5 sprinkles_textAlign_left_mobile__onxwjuax NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
@@ -123,21 +359,139 @@ exports[`<DateInput /> > should match snapshot when active 1`] = `
       <div
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_height_full_mobile__onxwjufl sprinkles_width_full_mobile__onxwjuh5"
       >
-        <input
-          autocomplete="off"
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_backgroundColour_transparent__onxwju5g sprinkles_width_full_mobile__onxwjuh5 sprinkles_position_relative_mobile__onxwju8h sprinkles_display_flex_mobile__onxwju6l sprinkles_borderRadius_md_mobile__onxwjubt withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
-          type="date"
-          value="2019-02-05"
-        />
+        <div
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_backgroundColour_transparent__onxwju5g sprinkles_width_full_mobile__onxwjuh5 sprinkles_position_relative_mobile__onxwju8h sprinkles_display_flex_mobile__onxwju6l sprinkles_borderRadius_md_mobile__onxwjubt withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b sprinkles_display_flex_mobile__onxwju6l sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_wrap_mobile__onxwjur1 sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_start_mobile__onxwjup1"
+        >
+          <div
+            aria-describedby="react-aria-description-4"
+            data-react-aria-pressable="true"
+            id="react-aria-«r20»"
+            role="group"
+            style="unicode-bidi: isolate;"
+          >
+            <span
+              aria-describedby="react-aria-description-4"
+              aria-label="month"
+              aria-valuemax="12"
+              aria-valuemin="1"
+              aria-valuenow="1"
+              aria-valuetext="1 – January"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«r25»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              1
+            </span>
+            <span
+              aria-hidden="true"
+              class="DateInput_segment__1tme7k60"
+            >
+              /
+            </span>
+            <span
+              aria-label="day"
+              aria-valuemax="31"
+              aria-valuemin="1"
+              aria-valuenow="21"
+              aria-valuetext="21"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«r29»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              21
+            </span>
+            <span
+              aria-hidden="true"
+              class="DateInput_segment__1tme7k60"
+            >
+              /
+            </span>
+            <span
+              aria-label="year"
+              aria-valuemax="9999"
+              aria-valuemin="1"
+              aria-valuenow="2019"
+              aria-valuetext="2019"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«r2d»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              2019
+            </span>
+          </div>
+          <div
+            class="sprinkles_display_flex_mobile__onxwju6l sprinkles_alignItems_center_mobile__onxwjumt sprinkles_gap_1_mobile__onxwjui5"
+          >
+            <button
+              aria-expanded="false"
+              class="Popover_triggerStyle__1cyo7c2"
+              data-react-aria-pressable="true"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6d Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+                data-od-component="icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
+                  fill="currentColor"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19 18.998H5v-11h14m-3-7v2H8v-2H6v2H5a1.99 1.99 0 00-1.99 2l-.01 14a2 2 0 002 2h14c1.102 0 2-.896 2-2v-14a2 2 0 00-2-2h-1v-2m-1 11h-5v5h5v-5z"
+                  />
+                </svg>
+              </span>
+              <div
+                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 VisuallyHidden_visuallyHidden__12d73qi0"
+                data-od-component="visually-hidden"
+              >
+                open calendar
+              </div>
+            </button>
+            <input
+              type="hidden"
+              value="2019-02-05"
+            />
+          </div>
+        </div>
       </div>
       <div
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_height_full_mobile__onxwjufl sprinkles_pointerEvents_none__onxwju64 sprinkles_position_absolute_mobile__onxwju8l sprinkles_width_full_mobile__onxwjuh5 sprinkles_textAlign_left_mobile__onxwjuax NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
-          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_activeBorderColour__a2a1mv1"
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_natural_default_borderColour__a2a1mv5"
         />
         <div
-          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_activeBorderColour__a2a1mv1"
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
         >
           <div
             class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_paddingLeft_2_mobile__onxwjuuh sprinkles_paddingRight_2_mobile__onxwjuvl sprinkles_display_block_mobile__onxwju6d NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
@@ -145,13 +499,13 @@ exports[`<DateInput /> > should match snapshot when active 1`] = `
             placeholder something
           </div>
           <label
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_label__18vhvlin  sprinkles_paddingBottom_none_mobile__onxwjuu9 sprinkles_paddingLeft_none_mobile__onxwjuvd sprinkles_paddingRight_none_mobile__onxwjuwh sprinkles_paddingTop_none_mobile__onxwjuxl sprinkles_marginBottom_none_mobile__onxwjuyp sprinkles_marginLeft_none_mobile__onxwjuzt sprinkles_marginRight_none_mobile__onxwju111 sprinkles_marginTop_none_mobile__onxwju129 sprinkles_display_inline_mobile__onxwju6t sprinkles_pointerEvents_none__onxwju64 sprinkles_position_absolute_mobile__onxwju8l NotchedBase_placeholder_default__1ft8sxlz InputState_activeColour__a2a1mv0 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_label__18vhvlin  sprinkles_paddingBottom_none_mobile__onxwjuu9 sprinkles_paddingLeft_none_mobile__onxwjuvd sprinkles_paddingRight_none_mobile__onxwjuwh sprinkles_paddingTop_none_mobile__onxwjuxl sprinkles_marginBottom_none_mobile__onxwjuyp sprinkles_marginLeft_none_mobile__onxwjuzt sprinkles_marginRight_none_mobile__onxwju111 sprinkles_marginTop_none_mobile__onxwju129 sprinkles_display_inline_mobile__onxwju6t sprinkles_pointerEvents_none__onxwju64 sprinkles_position_absolute_mobile__onxwju8l NotchedBase_placeholder_default__1ft8sxlz InputState_natural_default_colour__a2a1mv4 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
           >
             placeholder something
           </label>
         </div>
         <div
-          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle InputState_activeBorderColour__a2a1mv1"
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle InputState_natural_default_borderColour__a2a1mv5"
         />
       </div>
     </div>
@@ -206,13 +560,131 @@ exports[`<DateInput /> > should match snapshot when loading 1`] = `
             />
           </svg>
         </div>
-        <input
-          aria-busy="true"
-          autocomplete="off"
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_backgroundColour_transparent__onxwju5g sprinkles_width_full_mobile__onxwjuh5 sprinkles_position_relative_mobile__onxwju8h sprinkles_display_flex_mobile__onxwju6l sprinkles_borderRadius_md_mobile__onxwjubt withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b withEnhancedInput_inputItselfSize_medium_prefixed_any__5jmdy8d undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8e"
-          type="date"
-          value="2019-01-21"
-        />
+        <div
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_backgroundColour_transparent__onxwju5g sprinkles_width_full_mobile__onxwjuh5 sprinkles_position_relative_mobile__onxwju8h sprinkles_display_flex_mobile__onxwju6l sprinkles_borderRadius_md_mobile__onxwjubt withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b withEnhancedInput_inputItselfSize_medium_prefixed_any__5jmdy8d undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8e sprinkles_display_flex_mobile__onxwju6l sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_wrap_mobile__onxwjur1 sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_start_mobile__onxwjup1"
+        >
+          <div
+            aria-describedby="react-aria-description-11"
+            data-react-aria-pressable="true"
+            id="react-aria-«r5g»"
+            role="group"
+            style="unicode-bidi: isolate;"
+          >
+            <span
+              aria-describedby="react-aria-description-11"
+              aria-label="month"
+              aria-valuemax="12"
+              aria-valuemin="1"
+              aria-valuenow="1"
+              aria-valuetext="1 – January"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«r5l»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              1
+            </span>
+            <span
+              aria-hidden="true"
+              class="DateInput_segment__1tme7k60"
+            >
+              /
+            </span>
+            <span
+              aria-label="day"
+              aria-valuemax="31"
+              aria-valuemin="1"
+              aria-valuenow="21"
+              aria-valuetext="21"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«r5p»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              21
+            </span>
+            <span
+              aria-hidden="true"
+              class="DateInput_segment__1tme7k60"
+            >
+              /
+            </span>
+            <span
+              aria-label="year"
+              aria-valuemax="9999"
+              aria-valuemin="1"
+              aria-valuenow="2019"
+              aria-valuetext="2019"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«r5t»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              2019
+            </span>
+          </div>
+          <div
+            class="sprinkles_display_flex_mobile__onxwju6l sprinkles_alignItems_center_mobile__onxwjumt sprinkles_gap_1_mobile__onxwjui5"
+          >
+            <button
+              aria-expanded="false"
+              class="Popover_triggerStyle__1cyo7c2"
+              data-react-aria-pressable="true"
+              tabindex="0"
+              type="button"
+            >
+              <div
+                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 ProgressSpinner_size_medium_circular__1kpufmic ProgressSpinner_colours_primary__1kpufmi7"
+                data-od-component="progress-spinner"
+              >
+                <svg
+                  class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_overflow_hidden_mobile__onxwju7h ProgressSpinner_circular__1kpufmi1"
+                  viewBox="25 25 50 50"
+                >
+                  <circle
+                    class="ProgressSpinner_path__1kpufmi3 ProgressSpinner_size_medium_path__1kpufmid"
+                    cx="50"
+                    cy="50"
+                    fill="none"
+                    r="20"
+                    stroke-miterlimit="10"
+                  />
+                </svg>
+              </div>
+              <div
+                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 VisuallyHidden_visuallyHidden__12d73qi0"
+                data-od-component="visually-hidden"
+              >
+                open calendar
+              </div>
+            </button>
+            <input
+              type="hidden"
+              value="2019-01-21"
+            />
+          </div>
+        </div>
       </div>
       <div
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_height_full_mobile__onxwjufl sprinkles_pointerEvents_none__onxwju64 sprinkles_position_absolute_mobile__onxwju8l sprinkles_width_full_mobile__onxwjuh5 sprinkles_textAlign_left_mobile__onxwjuax NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
@@ -257,12 +729,130 @@ exports[`<DateInput /> > should match snapshot when touched 1`] = `
       <div
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_height_full_mobile__onxwjufl sprinkles_width_full_mobile__onxwjuh5"
       >
-        <input
-          autocomplete="off"
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_backgroundColour_transparent__onxwju5g sprinkles_width_full_mobile__onxwjuh5 sprinkles_position_relative_mobile__onxwju8h sprinkles_display_flex_mobile__onxwju6l sprinkles_borderRadius_md_mobile__onxwjubt withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
-          type="date"
-          value="2019-01-21"
-        />
+        <div
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_backgroundColour_transparent__onxwju5g sprinkles_width_full_mobile__onxwjuh5 sprinkles_position_relative_mobile__onxwju8h sprinkles_display_flex_mobile__onxwju6l sprinkles_borderRadius_md_mobile__onxwjubt withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b sprinkles_display_flex_mobile__onxwju6l sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_wrap_mobile__onxwjur1 sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_start_mobile__onxwjup1"
+        >
+          <div
+            aria-describedby="react-aria-description-5"
+            data-react-aria-pressable="true"
+            id="react-aria-«r2g»"
+            role="group"
+            style="unicode-bidi: isolate;"
+          >
+            <span
+              aria-describedby="react-aria-description-5"
+              aria-label="month"
+              aria-valuemax="12"
+              aria-valuemin="1"
+              aria-valuenow="1"
+              aria-valuetext="1 – January"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«r2l»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              1
+            </span>
+            <span
+              aria-hidden="true"
+              class="DateInput_segment__1tme7k60"
+            >
+              /
+            </span>
+            <span
+              aria-label="day"
+              aria-valuemax="31"
+              aria-valuemin="1"
+              aria-valuenow="21"
+              aria-valuetext="21"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«r2p»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              21
+            </span>
+            <span
+              aria-hidden="true"
+              class="DateInput_segment__1tme7k60"
+            >
+              /
+            </span>
+            <span
+              aria-label="year"
+              aria-valuemax="9999"
+              aria-valuemin="1"
+              aria-valuenow="2019"
+              aria-valuetext="2019"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«r2t»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              2019
+            </span>
+          </div>
+          <div
+            class="sprinkles_display_flex_mobile__onxwju6l sprinkles_alignItems_center_mobile__onxwjumt sprinkles_gap_1_mobile__onxwjui5"
+          >
+            <button
+              aria-expanded="false"
+              class="Popover_triggerStyle__1cyo7c2"
+              data-react-aria-pressable="true"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6d Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+                data-od-component="icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
+                  fill="currentColor"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19 18.998H5v-11h14m-3-7v2H8v-2H6v2H5a1.99 1.99 0 00-1.99 2l-.01 14a2 2 0 002 2h14c1.102 0 2-.896 2-2v-14a2 2 0 00-2-2h-1v-2m-1 11h-5v5h5v-5z"
+                  />
+                </svg>
+              </span>
+              <div
+                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 VisuallyHidden_visuallyHidden__12d73qi0"
+                data-od-component="visually-hidden"
+              >
+                open calendar
+              </div>
+            </button>
+            <input
+              type="hidden"
+              value="2019-01-21"
+            />
+          </div>
+        </div>
       </div>
       <div
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_height_full_mobile__onxwjufl sprinkles_pointerEvents_none__onxwju64 sprinkles_position_absolute_mobile__onxwju8l sprinkles_width_full_mobile__onxwjuh5 sprinkles_textAlign_left_mobile__onxwjuax NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
@@ -307,12 +897,130 @@ exports[`<DateInput /> > should match snapshot when touched and invalid 1`] = `
       <div
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_height_full_mobile__onxwjufl sprinkles_width_full_mobile__onxwjuh5"
       >
-        <input
-          autocomplete="off"
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_backgroundColour_transparent__onxwju5g sprinkles_width_full_mobile__onxwjuh5 sprinkles_position_relative_mobile__onxwju8h sprinkles_display_flex_mobile__onxwju6l sprinkles_borderRadius_md_mobile__onxwjubt withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
-          type="date"
-          value="2019-01-21"
-        />
+        <div
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_backgroundColour_transparent__onxwju5g sprinkles_width_full_mobile__onxwjuh5 sprinkles_position_relative_mobile__onxwju8h sprinkles_display_flex_mobile__onxwju6l sprinkles_borderRadius_md_mobile__onxwjubt withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b sprinkles_display_flex_mobile__onxwju6l sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_wrap_mobile__onxwjur1 sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_start_mobile__onxwjup1"
+        >
+          <div
+            aria-describedby="react-aria-description-7"
+            data-react-aria-pressable="true"
+            id="react-aria-«r3g»"
+            role="group"
+            style="unicode-bidi: isolate;"
+          >
+            <span
+              aria-describedby="react-aria-description-7"
+              aria-label="month"
+              aria-valuemax="12"
+              aria-valuemin="1"
+              aria-valuenow="1"
+              aria-valuetext="1 – January"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«r3l»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              1
+            </span>
+            <span
+              aria-hidden="true"
+              class="DateInput_segment__1tme7k60"
+            >
+              /
+            </span>
+            <span
+              aria-label="day"
+              aria-valuemax="31"
+              aria-valuemin="1"
+              aria-valuenow="21"
+              aria-valuetext="21"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«r3p»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              21
+            </span>
+            <span
+              aria-hidden="true"
+              class="DateInput_segment__1tme7k60"
+            >
+              /
+            </span>
+            <span
+              aria-label="year"
+              aria-valuemax="9999"
+              aria-valuemin="1"
+              aria-valuenow="2019"
+              aria-valuetext="2019"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«r3t»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              2019
+            </span>
+          </div>
+          <div
+            class="sprinkles_display_flex_mobile__onxwju6l sprinkles_alignItems_center_mobile__onxwjumt sprinkles_gap_1_mobile__onxwjui5"
+          >
+            <button
+              aria-expanded="false"
+              class="Popover_triggerStyle__1cyo7c2"
+              data-react-aria-pressable="true"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6d Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+                data-od-component="icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
+                  fill="currentColor"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19 18.998H5v-11h14m-3-7v2H8v-2H6v2H5a1.99 1.99 0 00-1.99 2l-.01 14a2 2 0 002 2h14c1.102 0 2-.896 2-2v-14a2 2 0 00-2-2h-1v-2m-1 11h-5v5h5v-5z"
+                  />
+                </svg>
+              </span>
+              <div
+                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 VisuallyHidden_visuallyHidden__12d73qi0"
+                data-od-component="visually-hidden"
+              >
+                open calendar
+              </div>
+            </button>
+            <input
+              type="hidden"
+              value="2019-01-21"
+            />
+          </div>
+        </div>
       </div>
       <div
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_height_full_mobile__onxwjufl sprinkles_pointerEvents_none__onxwju64 sprinkles_position_absolute_mobile__onxwju8l sprinkles_width_full_mobile__onxwjuh5 sprinkles_textAlign_left_mobile__onxwjuax NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
@@ -357,12 +1065,130 @@ exports[`<DateInput /> > should match snapshot when touched and valid 1`] = `
       <div
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_height_full_mobile__onxwjufl sprinkles_width_full_mobile__onxwjuh5"
       >
-        <input
-          autocomplete="off"
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_backgroundColour_transparent__onxwju5g sprinkles_width_full_mobile__onxwjuh5 sprinkles_position_relative_mobile__onxwju8h sprinkles_display_flex_mobile__onxwju6l sprinkles_borderRadius_md_mobile__onxwjubt withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
-          type="date"
-          value="2019-01-21"
-        />
+        <div
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_backgroundColour_transparent__onxwju5g sprinkles_width_full_mobile__onxwjuh5 sprinkles_position_relative_mobile__onxwju8h sprinkles_display_flex_mobile__onxwju6l sprinkles_borderRadius_md_mobile__onxwjubt withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b sprinkles_display_flex_mobile__onxwju6l sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_wrap_mobile__onxwjur1 sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_start_mobile__onxwjup1"
+        >
+          <div
+            aria-describedby="react-aria-description-6"
+            data-react-aria-pressable="true"
+            id="react-aria-«r30»"
+            role="group"
+            style="unicode-bidi: isolate;"
+          >
+            <span
+              aria-describedby="react-aria-description-6"
+              aria-label="month"
+              aria-valuemax="12"
+              aria-valuemin="1"
+              aria-valuenow="1"
+              aria-valuetext="1 – January"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«r35»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              1
+            </span>
+            <span
+              aria-hidden="true"
+              class="DateInput_segment__1tme7k60"
+            >
+              /
+            </span>
+            <span
+              aria-label="day"
+              aria-valuemax="31"
+              aria-valuemin="1"
+              aria-valuenow="21"
+              aria-valuetext="21"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«r39»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              21
+            </span>
+            <span
+              aria-hidden="true"
+              class="DateInput_segment__1tme7k60"
+            >
+              /
+            </span>
+            <span
+              aria-label="year"
+              aria-valuemax="9999"
+              aria-valuemin="1"
+              aria-valuenow="2019"
+              aria-valuetext="2019"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«r3d»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              2019
+            </span>
+          </div>
+          <div
+            class="sprinkles_display_flex_mobile__onxwju6l sprinkles_alignItems_center_mobile__onxwjumt sprinkles_gap_1_mobile__onxwjui5"
+          >
+            <button
+              aria-expanded="false"
+              class="Popover_triggerStyle__1cyo7c2"
+              data-react-aria-pressable="true"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6d Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+                data-od-component="icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
+                  fill="currentColor"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19 18.998H5v-11h14m-3-7v2H8v-2H6v2H5a1.99 1.99 0 00-1.99 2l-.01 14a2 2 0 002 2h14c1.102 0 2-.896 2-2v-14a2 2 0 00-2-2h-1v-2m-1 11h-5v5h5v-5z"
+                  />
+                </svg>
+              </span>
+              <div
+                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 VisuallyHidden_visuallyHidden__12d73qi0"
+                data-od-component="visually-hidden"
+              >
+                open calendar
+              </div>
+            </button>
+            <input
+              type="hidden"
+              value="2019-01-21"
+            />
+          </div>
+        </div>
       </div>
       <div
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_height_full_mobile__onxwjufl sprinkles_pointerEvents_none__onxwju64 sprinkles_position_absolute_mobile__onxwju8l sprinkles_width_full_mobile__onxwjuh5 sprinkles_textAlign_left_mobile__onxwjuax NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
@@ -437,12 +1263,130 @@ exports[`<DateInput /> > should match snapshot with both icons 1`] = `
             />
           </svg>
         </span>
-        <input
-          autocomplete="off"
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_backgroundColour_transparent__onxwju5g sprinkles_width_full_mobile__onxwjuh5 sprinkles_position_relative_mobile__onxwju8h sprinkles_display_flex_mobile__onxwju6l sprinkles_borderRadius_md_mobile__onxwjubt withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b withEnhancedInput_inputItselfSize_medium_prefixed_any__5jmdy8d undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8e"
-          type="date"
-          value="2019-01-21"
-        />
+        <div
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_backgroundColour_transparent__onxwju5g sprinkles_width_full_mobile__onxwjuh5 sprinkles_position_relative_mobile__onxwju8h sprinkles_display_flex_mobile__onxwju6l sprinkles_borderRadius_md_mobile__onxwjubt withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b withEnhancedInput_inputItselfSize_medium_prefixed_any__5jmdy8d undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8e sprinkles_display_flex_mobile__onxwju6l sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_wrap_mobile__onxwjur1 sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_start_mobile__onxwjup1"
+        >
+          <div
+            aria-describedby="react-aria-description-10"
+            data-react-aria-pressable="true"
+            id="react-aria-«r50»"
+            role="group"
+            style="unicode-bidi: isolate;"
+          >
+            <span
+              aria-describedby="react-aria-description-10"
+              aria-label="month"
+              aria-valuemax="12"
+              aria-valuemin="1"
+              aria-valuenow="1"
+              aria-valuetext="1 – January"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«r55»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              1
+            </span>
+            <span
+              aria-hidden="true"
+              class="DateInput_segment__1tme7k60"
+            >
+              /
+            </span>
+            <span
+              aria-label="day"
+              aria-valuemax="31"
+              aria-valuemin="1"
+              aria-valuenow="21"
+              aria-valuetext="21"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«r59»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              21
+            </span>
+            <span
+              aria-hidden="true"
+              class="DateInput_segment__1tme7k60"
+            >
+              /
+            </span>
+            <span
+              aria-label="year"
+              aria-valuemax="9999"
+              aria-valuemin="1"
+              aria-valuenow="2019"
+              aria-valuetext="2019"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«r5d»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              2019
+            </span>
+          </div>
+          <div
+            class="sprinkles_display_flex_mobile__onxwju6l sprinkles_alignItems_center_mobile__onxwjumt sprinkles_gap_1_mobile__onxwjui5"
+          >
+            <button
+              aria-expanded="false"
+              class="Popover_triggerStyle__1cyo7c2"
+              data-react-aria-pressable="true"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6d Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+                data-od-component="icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
+                  fill="currentColor"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19 18.998H5v-11h14m-3-7v2H8v-2H6v2H5a1.99 1.99 0 00-1.99 2l-.01 14a2 2 0 002 2h14c1.102 0 2-.896 2-2v-14a2 2 0 00-2-2h-1v-2m-1 11h-5v5h5v-5z"
+                  />
+                </svg>
+              </span>
+              <div
+                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 VisuallyHidden_visuallyHidden__12d73qi0"
+                data-od-component="visually-hidden"
+              >
+                open calendar
+              </div>
+            </button>
+            <input
+              type="hidden"
+              value="2019-01-21"
+            />
+          </div>
+        </div>
       </div>
       <div
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_height_full_mobile__onxwjufl sprinkles_pointerEvents_none__onxwju64 sprinkles_position_absolute_mobile__onxwju8l sprinkles_width_full_mobile__onxwjuh5 sprinkles_textAlign_left_mobile__onxwjuax NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
@@ -502,12 +1446,130 @@ exports[`<DateInput /> > should match snapshot with prefix icon 1`] = `
             />
           </svg>
         </span>
-        <input
-          autocomplete="off"
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_backgroundColour_transparent__onxwju5g sprinkles_width_full_mobile__onxwjuh5 sprinkles_position_relative_mobile__onxwju8h sprinkles_display_flex_mobile__onxwju6l sprinkles_borderRadius_md_mobile__onxwjubt withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b withEnhancedInput_inputItselfSize_medium_prefixed_any__5jmdy8d"
-          type="date"
-          value="2019-01-21"
-        />
+        <div
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_backgroundColour_transparent__onxwju5g sprinkles_width_full_mobile__onxwjuh5 sprinkles_position_relative_mobile__onxwju8h sprinkles_display_flex_mobile__onxwju6l sprinkles_borderRadius_md_mobile__onxwjubt withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b withEnhancedInput_inputItselfSize_medium_prefixed_any__5jmdy8d sprinkles_display_flex_mobile__onxwju6l sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_wrap_mobile__onxwjur1 sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_start_mobile__onxwjup1"
+        >
+          <div
+            aria-describedby="react-aria-description-8"
+            data-react-aria-pressable="true"
+            id="react-aria-«r40»"
+            role="group"
+            style="unicode-bidi: isolate;"
+          >
+            <span
+              aria-describedby="react-aria-description-8"
+              aria-label="month"
+              aria-valuemax="12"
+              aria-valuemin="1"
+              aria-valuenow="1"
+              aria-valuetext="1 – January"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«r45»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              1
+            </span>
+            <span
+              aria-hidden="true"
+              class="DateInput_segment__1tme7k60"
+            >
+              /
+            </span>
+            <span
+              aria-label="day"
+              aria-valuemax="31"
+              aria-valuemin="1"
+              aria-valuenow="21"
+              aria-valuetext="21"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«r49»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              21
+            </span>
+            <span
+              aria-hidden="true"
+              class="DateInput_segment__1tme7k60"
+            >
+              /
+            </span>
+            <span
+              aria-label="year"
+              aria-valuemax="9999"
+              aria-valuemin="1"
+              aria-valuenow="2019"
+              aria-valuetext="2019"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«r4d»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              2019
+            </span>
+          </div>
+          <div
+            class="sprinkles_display_flex_mobile__onxwju6l sprinkles_alignItems_center_mobile__onxwjumt sprinkles_gap_1_mobile__onxwjui5"
+          >
+            <button
+              aria-expanded="false"
+              class="Popover_triggerStyle__1cyo7c2"
+              data-react-aria-pressable="true"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6d Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+                data-od-component="icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
+                  fill="currentColor"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19 18.998H5v-11h14m-3-7v2H8v-2H6v2H5a1.99 1.99 0 00-1.99 2l-.01 14a2 2 0 002 2h14c1.102 0 2-.896 2-2v-14a2 2 0 00-2-2h-1v-2m-1 11h-5v5h5v-5z"
+                  />
+                </svg>
+              </span>
+              <div
+                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 VisuallyHidden_visuallyHidden__12d73qi0"
+                data-od-component="visually-hidden"
+              >
+                open calendar
+              </div>
+            </button>
+            <input
+              type="hidden"
+              value="2019-01-21"
+            />
+          </div>
+        </div>
       </div>
       <div
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_height_full_mobile__onxwjufl sprinkles_pointerEvents_none__onxwju64 sprinkles_position_absolute_mobile__onxwju8l sprinkles_width_full_mobile__onxwjuh5 sprinkles_textAlign_left_mobile__onxwjuax NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
@@ -567,12 +1629,130 @@ exports[`<DateInput /> > should match snapshot with suffix icon 1`] = `
             />
           </svg>
         </span>
-        <input
-          autocomplete="off"
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_backgroundColour_transparent__onxwju5g sprinkles_width_full_mobile__onxwjuh5 sprinkles_position_relative_mobile__onxwju8h sprinkles_display_flex_mobile__onxwju6l sprinkles_borderRadius_md_mobile__onxwjubt withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8e"
-          type="date"
-          value="2019-01-21"
-        />
+        <div
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_backgroundColour_transparent__onxwju5g sprinkles_width_full_mobile__onxwjuh5 sprinkles_position_relative_mobile__onxwju8h sprinkles_display_flex_mobile__onxwju6l sprinkles_borderRadius_md_mobile__onxwjubt withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8e sprinkles_display_flex_mobile__onxwju6l sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_wrap_mobile__onxwjur1 sprinkles_gap_2_mobile__onxwjui9 sprinkles_justifyContent_start_mobile__onxwjup1"
+        >
+          <div
+            aria-describedby="react-aria-description-9"
+            data-react-aria-pressable="true"
+            id="react-aria-«r4g»"
+            role="group"
+            style="unicode-bidi: isolate;"
+          >
+            <span
+              aria-describedby="react-aria-description-9"
+              aria-label="month"
+              aria-valuemax="12"
+              aria-valuemin="1"
+              aria-valuenow="1"
+              aria-valuetext="1 – January"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«r4l»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              1
+            </span>
+            <span
+              aria-hidden="true"
+              class="DateInput_segment__1tme7k60"
+            >
+              /
+            </span>
+            <span
+              aria-label="day"
+              aria-valuemax="31"
+              aria-valuemin="1"
+              aria-valuenow="21"
+              aria-valuetext="21"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«r4p»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              21
+            </span>
+            <span
+              aria-hidden="true"
+              class="DateInput_segment__1tme7k60"
+            >
+              /
+            </span>
+            <span
+              aria-label="year"
+              aria-valuemax="9999"
+              aria-valuemin="1"
+              aria-valuenow="2019"
+              aria-valuetext="2019"
+              autocorrect="off"
+              class="DateInput_segment__1tme7k60"
+              contenteditable="true"
+              data-placeholder="false"
+              enterkeyhint="next"
+              id="react-aria-«r4t»"
+              inputmode="numeric"
+              role="spinbutton"
+              spellcheck="false"
+              style="caret-color: transparent;"
+              tabindex="0"
+            >
+              2019
+            </span>
+          </div>
+          <div
+            class="sprinkles_display_flex_mobile__onxwju6l sprinkles_alignItems_center_mobile__onxwjumt sprinkles_gap_1_mobile__onxwjui5"
+          >
+            <button
+              aria-expanded="false"
+              class="Popover_triggerStyle__1cyo7c2"
+              data-react-aria-pressable="true"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6d Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+                data-od-component="icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
+                  fill="currentColor"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19 18.998H5v-11h14m-3-7v2H8v-2H6v2H5a1.99 1.99 0 00-1.99 2l-.01 14a2 2 0 002 2h14c1.102 0 2-.896 2-2v-14a2 2 0 00-2-2h-1v-2m-1 11h-5v5h5v-5z"
+                  />
+                </svg>
+              </span>
+              <div
+                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 VisuallyHidden_visuallyHidden__12d73qi0"
+                data-od-component="visually-hidden"
+              >
+                open calendar
+              </div>
+            </button>
+            <input
+              type="hidden"
+              value="2019-01-21"
+            />
+          </div>
+        </div>
       </div>
       <div
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_height_full_mobile__onxwjufl sprinkles_pointerEvents_none__onxwju64 sprinkles_position_absolute_mobile__onxwju8l sprinkles_width_full_mobile__onxwjuh5 sprinkles_textAlign_left_mobile__onxwjuax NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"

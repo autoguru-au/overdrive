@@ -4,7 +4,7 @@ import {
 	GregorianCalendar,
 } from '@internationalized/date';
 import clsx from 'clsx';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useImperativeHandle } from 'react';
 import { useDateField, useDateSegment, useLocale } from 'react-aria';
 import {
 	useDateFieldState,
@@ -81,6 +81,10 @@ export const DateInput = withEnhancedInput<
 	}) => {
 		const { disabled, id, name, onChange, value, ref } = field;
 
+		// Refs for the composite input interface
+		const datePickerRef = useRef<HTMLInputElement>(null);
+		const dateFieldRef = useRef<HTMLDivElement>(null);
+
 		const { locale } = useLocale();
 		const [selectedDate, setSelectedDate] = useState<DateValue | null>(
 			value ? parseDateString(value) : null,
@@ -116,7 +120,6 @@ export const DateInput = withEnhancedInput<
 			isDisabled: disabled,
 		});
 
-		const fieldRef = useRef<HTMLDivElement>(null);
 		const { fieldProps } = useDateField(
 			{
 				isDisabled: disabled,
@@ -138,8 +141,82 @@ export const DateInput = withEnhancedInput<
 					: undefined,
 			},
 			dateFieldState,
-			fieldRef,
+			dateFieldRef,
 		);
+
+		// Create composite ref that provides form compatibility + proper focus management
+		useImperativeHandle(ref, () => {
+			const hiddenInput = datePickerRef.current;
+
+			// Create a proxy object that provides essential HTMLInputElement interface
+			const compositeRef = {
+				// Focus management - targets the first interactive date segment
+				focus: (options?: FocusOptions) => {
+					const firstSegment = dateFieldRef.current?.querySelector(
+						'[role="spinbutton"]',
+					) as HTMLElement;
+					if (firstSegment) {
+						firstSegment.focus(options);
+					} else {
+						dateFieldRef.current?.focus(options);
+					}
+				},
+
+				// Click handling - targets the interactive date field
+				click: () => {
+					const firstSegment = dateFieldRef.current?.querySelector(
+						'[role="spinbutton"]',
+					) as HTMLElement;
+					if (firstSegment) {
+						firstSegment.click();
+					} else {
+						dateFieldRef.current?.click();
+					}
+				},
+
+				// Form value access
+				get value() {
+					return hiddenInput?.value || '';
+				},
+				set value(val: string) {
+					if (hiddenInput) hiddenInput.value = val;
+				},
+
+				// Form element properties
+				get name() {
+					return hiddenInput?.name || name || '';
+				},
+				get id() {
+					return hiddenInput?.id || id || '';
+				},
+				get type() {
+					return 'date';
+				},
+				get disabled() {
+					return disabled || false;
+				},
+
+				// Form validation
+				checkValidity: () => hiddenInput?.checkValidity() || true,
+				reportValidity: () => hiddenInput?.reportValidity() || true,
+				setCustomValidity: (message: string) =>
+					hiddenInput?.setCustomValidity(message),
+
+				// Required HTMLElement properties for form libraries
+				tagName: 'INPUT',
+				nodeType: 1,
+				classList: hiddenInput?.classList,
+				getAttribute: (name: string) => hiddenInput?.getAttribute(name),
+				setAttribute: (name: string, value: string) =>
+					hiddenInput?.setAttribute(name, value),
+				removeAttribute: (name: string) =>
+					hiddenInput?.removeAttribute(name),
+				hasAttribute: (name: string) =>
+					hiddenInput?.hasAttribute(name) || false,
+			} as unknown as HTMLInputElement;
+
+			return compositeRef;
+		});
 
 		// Handle DatePicker changes
 		const handleDatePickerChange = (dateString: string) => {
@@ -149,7 +226,7 @@ export const DateInput = withEnhancedInput<
 
 		return (
 			<div className={clsx(field.className, inline({ gap: '2' }))}>
-				<div {...fieldProps} ref={fieldRef}>
+				<div {...fieldProps} ref={dateFieldRef}>
 					{dateFieldState.segments.map((segment, idx) => (
 						<DateSegment
 							key={`${segment.type}-${segment.minValue || idx}`}
@@ -159,7 +236,7 @@ export const DateInput = withEnhancedInput<
 					))}
 				</div>
 				<DatePicker
-					ref={ref as React.Ref<HTMLInputElement>}
+					ref={datePickerRef}
 					id={id}
 					name={name}
 					value={formatDateToString(selectedDate)}
