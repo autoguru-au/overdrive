@@ -1,21 +1,19 @@
 import { style } from '@vanilla-extract/css';
 
-import { overdriveTokens as vars } from '../../themes/theme.css';
+import { cssLayerComponent } from '../../styles/layers.css';
+import { selectors } from '../../styles/selectors';
 
-export const segment = style({
+export const segmentStyle = style({
 	'@layer': {
-		component: {
-			borderRadius: '2px',
-			outline: 'none',
-			padding: '2px 1px',
-			textAlign: 'center',
+		[cssLayerComponent]: {
+			fontVariantNumeric: 'tabular-nums',
+			userSelect: 'none',
 			selectors: {
-				'&[data-placeholder="true"]': {
-					color: vars.typography.colour.muted,
+				[selectors.focusVisible]: {
+					outlineOffset: '3px',
 				},
-				'&:focus': {
-					backgroundColor: vars.colours.gamut.blue100,
-					color: vars.colours.gamut.blue700,
+				'&:nth-child(even)': {
+					padding: '0 2.5px',
 				},
 			},
 		},

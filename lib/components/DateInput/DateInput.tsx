@@ -4,7 +4,7 @@ import {
 	GregorianCalendar,
 } from '@internationalized/date';
 import clsx from 'clsx';
-import React, { useEffect, useRef, useState, useImperativeHandle } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useDateField, useDateSegment, useLocale } from 'react-aria';
 import {
 	useDateFieldState,
@@ -12,6 +12,8 @@ import {
 	type DateSegment,
 } from 'react-stately';
 
+import { useDateInputRef } from '../../hooks/useDateInputRef';
+import { sprinkles } from '../../styles/sprinkles.css';
 import { DatePicker, type DatePickerProps } from '../DatePicker/DatePicker';
 import { inline } from '../Flex/flex';
 import { withEnhancedInput } from '../private/InputBase';
@@ -20,7 +22,7 @@ import * as styles from './DateInput.css';
 
 type FilteredDatePickerProps = Pick<
 	DatePickerProps,
-	'calendarOptions' | 'lang' | 'valueLabel' | 'useNativePicker' | 'icon'
+	'calendarOptions' | 'lang'
 >;
 
 function createCalendar(identifier: string) {
@@ -44,10 +46,15 @@ const parseDateString = (dateString: string): DateValue | null => {
 	}
 };
 
+const defaultCalendarOptions: DatePickerProps['calendarOptions'] = {
+	allowPastDate: true,
+};
+
 const DateSegment: React.FC<{
+	className?: string;
 	segment: DateSegment;
 	state: DateFieldState;
-}> = ({ segment, state }) => {
+}> = ({ segment, state, className }) => {
 	const ref = useRef<HTMLSpanElement>(null);
 	const { segmentProps } = useDateSegment(segment, state, ref);
 
@@ -55,7 +62,7 @@ const DateSegment: React.FC<{
 		<span
 			{...segmentProps}
 			ref={ref}
-			className={styles.segment}
+			className={className}
 			data-placeholder={segment.isPlaceholder}
 		>
 			{segment.text}
@@ -68,20 +75,9 @@ DateSegment.displayName = 'DateInput.DateSegment';
 export const DateInput = withEnhancedInput<
 	FilteredDatePickerProps & Partial<Pick<HTMLInputElement, 'min' | 'max'>>
 >(
-	({
-		calendarOptions,
-		eventHandlers,
-		field,
-		icon,
-		isLoading,
-		lang,
-		size,
-		useNativePicker,
-		valueLabel,
-	}) => {
+	({ calendarOptions, eventHandlers, field, lang, size, ...props }) => {
 		const { disabled, id, name, onChange, value, ref } = field;
 
-		// Refs for the composite input interface
 		const datePickerRef = useRef<HTMLInputElement>(null);
 		const dateFieldRef = useRef<HTMLDivElement>(null);
 
@@ -90,27 +86,28 @@ export const DateInput = withEnhancedInput<
 			value ? parseDateString(value) : null,
 		);
 
-		// Sync external value changes
 		useEffect(() => {
 			const parsedDate = value ? parseDateString(value) : null;
 			setSelectedDate(parsedDate);
 		}, [value]);
 
-		// Unified change handler for both date field and picker
-		const handleDateChange = (date: DateValue | null) => {
-			setSelectedDate(date);
-			const dateString = formatDateToString(date);
+		const handleDateChange = useCallback(
+			(date: DateValue | null) => {
+				setSelectedDate(date);
+				const dateString = formatDateToString(date);
 
-			// Trigger the withEnhancedInput onChange mechanism
-			if (eventHandlers.onChange && typeof onChange === 'function') {
-				// Create a synthetic event for compatibility with withEnhancedInput
-				const event = {
-					currentTarget: { value: dateString },
-					target: { value: dateString },
-				} as React.ChangeEvent<HTMLInputElement>;
-				eventHandlers.onChange(event);
-			}
-		};
+				// Trigger the withEnhancedInput onChange mechanism
+				if (eventHandlers.onChange && typeof onChange === 'function') {
+					// Create a synthetic event for compatibility with withEnhancedInput
+					const event = {
+						currentTarget: { value: dateString },
+						target: { value: dateString },
+					} as React.ChangeEvent<HTMLInputElement>;
+					eventHandlers.onChange(event);
+				}
+			},
+			[eventHandlers, onChange],
+		);
 
 		const dateFieldState = useDateFieldState({
 			value: selectedDate,
@@ -120,118 +117,75 @@ export const DateInput = withEnhancedInput<
 			isDisabled: disabled,
 		});
 
+		const handleFocus = eventHandlers.onFocus
+			? useCallback(
+					(e: React.FocusEvent<Element>) => {
+						const syntheticEvent = {
+							...e,
+							target: dateFieldRef.current,
+							currentTarget: dateFieldRef.current,
+						} as unknown as React.FocusEvent<HTMLInputElement>;
+						eventHandlers.onFocus?.(syntheticEvent);
+					},
+					[eventHandlers],
+				)
+			: undefined;
+
+		const handleBlur = eventHandlers.onBlur
+			? useCallback(
+					(e: React.FocusEvent<Element>) => {
+						const syntheticEvent = {
+							...e,
+							target: dateFieldRef.current,
+							currentTarget: dateFieldRef.current,
+						} as unknown as React.FocusEvent<HTMLInputElement>;
+						eventHandlers.onBlur?.(syntheticEvent);
+					},
+					[eventHandlers],
+				)
+			: undefined;
+
 		const { fieldProps } = useDateField(
 			{
 				isDisabled: disabled,
-				onFocus: eventHandlers.onFocus
-					? (e) => {
-							// Cast the event to match the expected type for withEnhancedInput
-							eventHandlers.onFocus?.(
-								e as React.FocusEvent<HTMLInputElement>,
-							);
-						}
-					: undefined,
-				onBlur: eventHandlers.onBlur
-					? (e) => {
-							// Cast the event to match the expected type for withEnhancedInput
-							eventHandlers.onBlur?.(
-								e as React.FocusEvent<HTMLInputElement>,
-							);
-						}
-					: undefined,
+				onFocus: handleFocus,
+				onBlur: handleBlur,
 			},
 			dateFieldState,
 			dateFieldRef,
 		);
 
-		// Create composite ref that provides form compatibility + proper focus management
-		useImperativeHandle(ref, () => {
-			const hiddenInput = datePickerRef.current;
+		useDateInputRef(ref, datePickerRef, dateFieldRef);
 
-			// Create a proxy object that provides essential HTMLInputElement interface
-			const compositeRef = {
-				// Focus management - targets the first interactive date segment
-				focus: (options?: FocusOptions) => {
-					const firstSegment = dateFieldRef.current?.querySelector(
-						'[role="spinbutton"]',
-					) as HTMLElement;
-					if (firstSegment) {
-						firstSegment.focus(options);
-					} else {
-						dateFieldRef.current?.focus(options);
-					}
-				},
-
-				// Click handling - targets the interactive date field
-				click: () => {
-					const firstSegment = dateFieldRef.current?.querySelector(
-						'[role="spinbutton"]',
-					) as HTMLElement;
-					if (firstSegment) {
-						firstSegment.click();
-					} else {
-						dateFieldRef.current?.click();
-					}
-				},
-
-				// Form value access
-				get value() {
-					return hiddenInput?.value || '';
-				},
-				set value(val: string) {
-					if (hiddenInput) hiddenInput.value = val;
-				},
-
-				// Form element properties
-				get name() {
-					return hiddenInput?.name || name || '';
-				},
-				get id() {
-					return hiddenInput?.id || id || '';
-				},
-				get type() {
-					return 'date';
-				},
-				get disabled() {
-					return disabled || false;
-				},
-
-				// Form validation
-				checkValidity: () => hiddenInput?.checkValidity() || true,
-				reportValidity: () => hiddenInput?.reportValidity() || true,
-				setCustomValidity: (message: string) =>
-					hiddenInput?.setCustomValidity(message),
-
-				// Required HTMLElement properties for form libraries
-				tagName: 'INPUT',
-				nodeType: 1,
-				classList: hiddenInput?.classList,
-				getAttribute: (name: string) => hiddenInput?.getAttribute(name),
-				setAttribute: (name: string, value: string) =>
-					hiddenInput?.setAttribute(name, value),
-				removeAttribute: (name: string) =>
-					hiddenInput?.removeAttribute(name),
-				hasAttribute: (name: string) =>
-					hiddenInput?.hasAttribute(name) || false,
-			} as unknown as HTMLInputElement;
-
-			return compositeRef;
-		});
-
-		// Handle DatePicker changes
-		const handleDatePickerChange = (dateString: string) => {
-			const parsedDate = dateString ? parseDateString(dateString) : null;
-			handleDateChange(parsedDate);
-		};
+		const handleDatePickerChange = useCallback(
+			(dateString: string) => {
+				const parsedDate = dateString
+					? parseDateString(dateString)
+					: null;
+				handleDateChange(parsedDate);
+			},
+			[handleDateChange],
+		);
 
 		return (
-			<div className={clsx(field.className, inline({ gap: '2' }))}>
-				<div {...fieldProps} ref={dateFieldRef}>
+			<div
+				className={clsx(
+					field.className,
+					inline({ gap: '2', spaceBetween: true }),
+					disabled && sprinkles({ colour: 'muted' }),
+				)}
+			>
+				<div
+					{...fieldProps}
+					className={sprinkles({ alignSelf: 'center' })}
+					ref={dateFieldRef}
+				>
 					{dateFieldState.segments.map((segment, idx) => (
 						<DateSegment
-							key={`${segment.type}-${segment.minValue || idx}`}
+							className={styles.segmentStyle}
 							segment={segment}
 							state={dateFieldState}
+							key={`${segment.type}-${segment.minValue || idx}`}
 						/>
 					))}
 				</div>
@@ -240,14 +194,13 @@ export const DateInput = withEnhancedInput<
 					id={id}
 					name={name}
 					value={formatDateToString(selectedDate)}
-					calendarOptions={calendarOptions}
+					calendarOptions={{
+						...defaultCalendarOptions,
+						...calendarOptions,
+					}}
 					disabled={disabled}
-					icon={icon}
-					isLoading={isLoading}
 					lang={lang}
 					size={size}
-					useNativePicker={useNativePicker}
-					valueLabel={valueLabel}
 					onChange={handleDatePickerChange}
 				/>
 			</div>

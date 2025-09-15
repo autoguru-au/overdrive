@@ -9,7 +9,7 @@ import {
 } from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import isChromatic from 'chromatic/isChromatic';
-import { action } from 'storybook/actions';
+import { fn } from 'storybook/test';
 
 import { DateInput } from './DateInput';
 
@@ -27,11 +27,13 @@ const todayStr: string = formatDate(
 
 const meta: Meta<typeof DateInput> = {
 	title: 'Forms & Input Fields/Date Input',
+	tags: ['updated'],
 	component: DateInput,
 	args: {
-		disabled: false,
-		name: 'date',
 		placeholder: 'What is your DOB?',
+		name: 'date-input',
+		size: 'medium',
+		disabled: false,
 		isValid: false,
 		isTouched: false,
 		isLoading: false,
@@ -40,16 +42,11 @@ const meta: Meta<typeof DateInput> = {
 		hintText: '',
 		notch: true,
 		prefixIcon: undefined,
-		onChange: action('onChange'),
-		onFocus: action('onFocus'),
-		onBlur: action('onBlur'),
+		onChange: fn(),
+		onFocus: fn(),
+		onBlur: fn(),
 	},
 	argTypes: {
-		value: {
-			control: {
-				type: 'date',
-			},
-		},
 		attach: {
 			defaultValue: 'NONE',
 			description: 'Input attach',
