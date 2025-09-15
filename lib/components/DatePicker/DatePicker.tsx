@@ -14,6 +14,7 @@ import React, {
 	useState,
 	forwardRef,
 } from 'react';
+import type { AriaPopoverProps } from 'react-aria';
 
 import { elementStyles } from '../../styles/elementStyles';
 import { sprinkles } from '../../styles/sprinkles.css';
@@ -66,6 +67,10 @@ export interface DatePickerProps extends TestIdProp {
 	 */
 	name?: string;
 	onChange(date: string): void;
+	/**
+	 * Calendar popover placement relative to the trigger ('bottom left', 'top', etc.)
+	 */
+	placement?: AriaPopoverProps['placement'];
 	/**
 	 * Visual size of the picker control (small, medium, large)
 	 */
@@ -170,6 +175,7 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 			isLoading = false,
 			lang,
 			onChange,
+			placement = 'bottom left',
 			size = 'medium',
 			testId,
 			useNativePicker = false,
@@ -311,7 +317,7 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 			<div className={className}>
 				<PopoverTrigger
 					content={contentCalendar}
-					placement="bottom left"
+					placement={placement}
 					testId={testId}
 					isDisabled={disabled}
 					onStateReady={setPopoverState}
