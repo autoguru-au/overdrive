@@ -65,7 +65,8 @@ export const DateInput = withEnhancedInput<
 	FilteredDatePickerProps & Partial<Pick<HTMLInputElement, 'min' | 'max'>>
 >(
 	({ calendarOptions, eventHandlers, field, lang, max, min, size }) => {
-		const { disabled, id, name, onChange, value, ref } = field;
+		const { defaultValue, id, ref, ...filteredProps } = field;
+		const { disabled, name, onChange, value } = field;
 
 		const datePickerRef = useRef<HTMLInputElement>(null);
 		const dateFieldRef = useRef<HTMLDivElement>(null);
@@ -75,13 +76,10 @@ export const DateInput = withEnhancedInput<
 			value ? safeParseDateString(value) : null,
 		);
 
-		const minMaxValues = useMemo(
-			() => ({
-				minValue: min ? safeParseDateString(min) : undefined,
-				maxValue: max ? safeParseDateString(max) : undefined,
-			}),
-			[max, min],
-		);
+		const minMaxValues = {
+			minValue: min ? safeParseDateString(min) : undefined,
+			maxValue: max ? safeParseDateString(max) : undefined,
+		};
 
 		useEffect(() => {
 			const parsedDate = value ? safeParseDateString(value) : null;
@@ -105,15 +103,6 @@ export const DateInput = withEnhancedInput<
 			},
 			[eventHandlers, onChange],
 		);
-
-		const dateFieldState = useDateFieldState({
-			value: selectedDate,
-			onChange: handleDateChange,
-			locale,
-			createCalendar,
-			isDisabled: disabled,
-			...minMaxValues,
-		});
 
 		const createSyntheticHandler = useCallback(
 			(handler?: (e: React.FocusEvent<HTMLInputElement>) => void) => {
@@ -141,12 +130,24 @@ export const DateInput = withEnhancedInput<
 			[createSyntheticHandler, eventHandlers.onBlur],
 		);
 
+		const hookProps = {
+			...filteredProps,
+			isDisabled: field.disabled,
+			onBlur: handleBlur,
+			onChange: handleDateChange,
+			onFocus: handleFocus,
+			value: selectedDate,
+			...minMaxValues,
+		};
+
+		const dateFieldState = useDateFieldState({
+			...hookProps,
+			locale,
+			createCalendar,
+		});
+
 		const { fieldProps } = useDateField(
-			{
-				isDisabled: disabled,
-				onFocus: handleFocus,
-				onBlur: handleBlur,
-			},
+			hookProps,
 			dateFieldState,
 			dateFieldRef,
 		);

@@ -90,7 +90,11 @@ type Story = StoryObj<typeof meta>;
  * Additional examples of shared input field states and variants can be seen in
  * [Text Input](/docs/forms-input-fields-text-input--docs)
  */
-export const Standard: Story = {};
+export const Standard: Story = {
+	args: {
+		testId: 'demo-date-input',
+	},
+};
 
 export const Invalid: Story = {
 	args: {
