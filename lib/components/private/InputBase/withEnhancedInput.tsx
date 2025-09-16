@@ -18,9 +18,11 @@ import React, {
 	useState,
 } from 'react';
 
-import { sprinkles, elementStyles } from '../../../styles';
+import { elementStyles } from '../../../styles/elementStyles';
+import { sprinkles, type Sprinkles } from '../../../styles/sprinkles.css';
+import type { TestIdProp } from '../../../types';
 import { useInputControlledState } from '../../../utils';
-import { Box } from '../../Box/Box';
+import { useBox } from '../../Box/useBox/useBox';
 import { Icon } from '../../Icon/Icon';
 import { ProgressSpinner } from '../../ProgressSpinner/ProgressSpinner';
 
@@ -56,7 +58,8 @@ export interface EnhanceInputPrimitiveProps<E extends ElementTypes>
 			ComponentProps<typeof NotchedBase>,
 			'notch' | 'placeholder' | 'attach' | 'borderMerged' | 'isFocused'
 		>,
-		Pick<ComponentProps<typeof Box>, 'backgroundColour'> {
+		Pick<Sprinkles, 'backgroundColour'>,
+		TestIdProp {
 	name: string;
 	id?: string;
 	className?: string;
@@ -147,6 +150,7 @@ export const withEnhancedInput = <
 				reserveHintSpace = false,
 				size = 'medium',
 				backgroundColour = 'transparent',
+				testId,
 
 				value: incomingValue = defaultValue || '',
 				onChange: incomingOnChange,
@@ -293,13 +297,20 @@ export const withEnhancedInput = <
 				position: 'absolute',
 			});
 
+			const {
+				Component: ComponentRoot,
+				componentProps: rootComponentProps,
+			} = useBox({
+				width: 'full',
+				className,
+				onMouseEnter: onMouseOver,
+				onMouseLeave: onMouseOut,
+				odComponent: `${primitiveType}-input`,
+				testId,
+			});
+
 			return (
-				<Box
-					width="full"
-					className={className}
-					onMouseEnter={onMouseOver}
-					onMouseLeave={onMouseOut}
-				>
+				<ComponentRoot {...rootComponentProps}>
 					<NotchedBase
 						id={id}
 						prefixed={Boolean(prefixIcon)}
@@ -317,15 +328,14 @@ export const withEnhancedInput = <
 						})}
 						borderColourClassName={derivedColours.borderColour}
 					>
-						<Box
-							ref={wrapperRef}
-							className={
+						<div
+							className={clsx(
 								styles.inputWrapperSize[size].root[
 									primitiveType
-								]
-							}
-							width="full"
-							height="full"
+								],
+								sprinkles({ height: 'full', width: 'full' }),
+							)}
+							ref={wrapperRef}
 						>
 							{prefixIcon ? (
 								<Icon
@@ -366,7 +376,7 @@ export const withEnhancedInput = <
 								/>
 							) : null}
 							<WrappingComponent {...wrappingComponent} />
-						</Box>
+						</div>
 					</NotchedBase>
 					{hintText || reserveHintSpace ? (
 						<HintText
@@ -377,7 +387,7 @@ export const withEnhancedInput = <
 							size={size}
 						/>
 					) : null}
-				</Box>
+				</ComponentRoot>
 			);
 		},
 	);

@@ -7,12 +7,13 @@ exports[`<TextAreaInput /> > should have some hintText 1`] = `
 >
   <div
     class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_width_full_mobile__onxwjuh5"
+    data-od-component="textarea-input"
   >
     <div
       class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_paddingBottom_none_mobile__onxwjuu9 sprinkles_paddingLeft_none_mobile__onxwjuvd sprinkles_paddingRight_none_mobile__onxwjuwh sprinkles_paddingTop_none_mobile__onxwjuxl sprinkles_position_relative_mobile__onxwju8h sprinkles_width_full_mobile__onxwjuh5 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_height_full_mobile__onxwjufl sprinkles_width_full_mobile__onxwjuh5 withEnhancedInput_inputWrapperSize_medium_root_textarea__5jmdy83"
+        class="withEnhancedInput_inputWrapperSize_medium_root_textarea__5jmdy83 sprinkles_height_full_mobile__onxwjufl sprinkles_width_full_mobile__onxwjuh5"
       >
         <textarea
           autocomplete="off"
@@ -63,12 +64,13 @@ exports[`<TextAreaInput /> > should match snapshot 1`] = `
 >
   <div
     class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_width_full_mobile__onxwjuh5"
+    data-od-component="textarea-input"
   >
     <div
       class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_paddingBottom_none_mobile__onxwjuu9 sprinkles_paddingLeft_none_mobile__onxwjuvd sprinkles_paddingRight_none_mobile__onxwjuwh sprinkles_paddingTop_none_mobile__onxwjuxl sprinkles_position_relative_mobile__onxwju8h sprinkles_width_full_mobile__onxwjuh5 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_height_full_mobile__onxwjufl sprinkles_width_full_mobile__onxwjuh5 withEnhancedInput_inputWrapperSize_medium_root_textarea__5jmdy83"
+        class="withEnhancedInput_inputWrapperSize_medium_root_textarea__5jmdy83 sprinkles_height_full_mobile__onxwjufl sprinkles_width_full_mobile__onxwjuh5"
       >
         <textarea
           autocomplete="off"
@@ -114,12 +116,13 @@ exports[`<TextAreaInput /> > should match snapshot when active 1`] = `
 >
   <div
     class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_width_full_mobile__onxwjuh5 input-class"
+    data-od-component="textarea-input"
   >
     <div
       class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_paddingBottom_none_mobile__onxwjuu9 sprinkles_paddingLeft_none_mobile__onxwjuvd sprinkles_paddingRight_none_mobile__onxwjuwh sprinkles_paddingTop_none_mobile__onxwjuxl sprinkles_position_relative_mobile__onxwju8h sprinkles_width_full_mobile__onxwjuh5 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_height_full_mobile__onxwjufl sprinkles_width_full_mobile__onxwjuh5 withEnhancedInput_inputWrapperSize_medium_root_textarea__5jmdy83"
+        class="withEnhancedInput_inputWrapperSize_medium_root_textarea__5jmdy83 sprinkles_height_full_mobile__onxwjufl sprinkles_width_full_mobile__onxwjuh5"
       >
         <textarea
           autocomplete="off"
@@ -165,12 +168,13 @@ exports[`<TextAreaInput /> > should match snapshot when loading 1`] = `
 >
   <div
     class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_width_full_mobile__onxwjuh5"
+    data-od-component="textarea-input"
   >
     <div
       class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_paddingBottom_none_mobile__onxwjuu9 sprinkles_paddingLeft_none_mobile__onxwjuvd sprinkles_paddingRight_none_mobile__onxwjuwh sprinkles_paddingTop_none_mobile__onxwjuxl sprinkles_position_relative_mobile__onxwju8h sprinkles_width_full_mobile__onxwjuh5 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_height_full_mobile__onxwjufl sprinkles_width_full_mobile__onxwjuh5 withEnhancedInput_inputWrapperSize_medium_root_textarea__5jmdy83"
+        class="withEnhancedInput_inputWrapperSize_medium_root_textarea__5jmdy83 sprinkles_height_full_mobile__onxwjufl sprinkles_width_full_mobile__onxwjuh5"
       >
         <div
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 ProgressSpinner_size_medium_circular__1kpufmic ProgressSpinner_colours_default__1kpufmi5 sprinkles_pointerEvents_none__onxwju64 sprinkles_position_absolute_mobile__onxwju8l withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_suffixIcon__5jmdy8l withEnhancedInput_iconSize_medium__5jmdy8n"
@@ -235,12 +239,13 @@ exports[`<TextAreaInput /> > should match snapshot when touched 1`] = `
 >
   <div
     class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_width_full_mobile__onxwjuh5 input-class"
+    data-od-component="textarea-input"
   >
     <div
       class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_paddingBottom_none_mobile__onxwjuu9 sprinkles_paddingLeft_none_mobile__onxwjuvd sprinkles_paddingRight_none_mobile__onxwjuwh sprinkles_paddingTop_none_mobile__onxwjuxl sprinkles_position_relative_mobile__onxwju8h sprinkles_width_full_mobile__onxwjuh5 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_height_full_mobile__onxwjufl sprinkles_width_full_mobile__onxwjuh5 withEnhancedInput_inputWrapperSize_medium_root_textarea__5jmdy83"
+        class="withEnhancedInput_inputWrapperSize_medium_root_textarea__5jmdy83 sprinkles_height_full_mobile__onxwjufl sprinkles_width_full_mobile__onxwjuh5"
       >
         <textarea
           autocomplete="off"
@@ -284,12 +289,13 @@ exports[`<TextAreaInput /> > should match snapshot when touched and invalid 1`] 
 >
   <div
     class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_width_full_mobile__onxwjuh5 input-class"
+    data-od-component="textarea-input"
   >
     <div
       class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_paddingBottom_none_mobile__onxwjuu9 sprinkles_paddingLeft_none_mobile__onxwjuvd sprinkles_paddingRight_none_mobile__onxwjuwh sprinkles_paddingTop_none_mobile__onxwjuxl sprinkles_position_relative_mobile__onxwju8h sprinkles_width_full_mobile__onxwjuh5 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_height_full_mobile__onxwjufl sprinkles_width_full_mobile__onxwjuh5 withEnhancedInput_inputWrapperSize_medium_root_textarea__5jmdy83"
+        class="withEnhancedInput_inputWrapperSize_medium_root_textarea__5jmdy83 sprinkles_height_full_mobile__onxwjufl sprinkles_width_full_mobile__onxwjuh5"
       >
         <textarea
           autocomplete="off"
@@ -333,12 +339,13 @@ exports[`<TextAreaInput /> > should match snapshot when touched and valid 1`] = 
 >
   <div
     class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_width_full_mobile__onxwjuh5 input-class"
+    data-od-component="textarea-input"
   >
     <div
       class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_paddingBottom_none_mobile__onxwjuu9 sprinkles_paddingLeft_none_mobile__onxwjuvd sprinkles_paddingRight_none_mobile__onxwjuwh sprinkles_paddingTop_none_mobile__onxwjuxl sprinkles_position_relative_mobile__onxwju8h sprinkles_width_full_mobile__onxwjuh5 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_height_full_mobile__onxwjufl sprinkles_width_full_mobile__onxwjuh5 withEnhancedInput_inputWrapperSize_medium_root_textarea__5jmdy83"
+        class="withEnhancedInput_inputWrapperSize_medium_root_textarea__5jmdy83 sprinkles_height_full_mobile__onxwjufl sprinkles_width_full_mobile__onxwjuh5"
       >
         <textarea
           autocomplete="off"
