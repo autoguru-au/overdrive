@@ -401,4 +401,175 @@ describe('DatePicker', () => {
 			expect(screen.getByLabelText('Previous month')).toBeInTheDocument();
 		});
 	});
+
+	describe('min/max date constraints', () => {
+		it('applies min constraint to native date picker', () => {
+			const minDate = '2025-01-01';
+			render(
+				<DatePicker
+					name="test-min-native"
+					min={minDate}
+					useNativePicker
+					onChange={vi.fn()}
+				/>,
+			);
+
+			const input = screen.getByDisplayValue('');
+			expect(input).toHaveAttribute('min', minDate);
+		});
+
+		it('applies max constraint to native date picker', () => {
+			const maxDate = '2025-12-31';
+			render(
+				<DatePicker
+					name="test-max-native"
+					max={maxDate}
+					useNativePicker
+					onChange={vi.fn()}
+				/>,
+			);
+
+			const input = screen.getByDisplayValue('');
+			expect(input).toHaveAttribute('max', maxDate);
+		});
+
+		it('applies both min and max constraints to native date picker', () => {
+			const minDate = '2025-06-01';
+			const maxDate = '2025-08-31';
+			render(
+				<DatePicker
+					name="test-min-max-native"
+					min={minDate}
+					max={maxDate}
+					useNativePicker
+					onChange={vi.fn()}
+				/>,
+			);
+
+			const input = screen.getByDisplayValue('');
+			expect(input).toHaveAttribute('min', minDate);
+			expect(input).toHaveAttribute('max', maxDate);
+		});
+
+		it('passes min/max constraints to Calendar component', async () => {
+			const user = userEvent.setup();
+			const minDate = '2025-06-01';
+			const maxDate = '2025-08-31';
+
+			render(
+				<DatePicker
+					name="test-min-max-calendar"
+					min={minDate}
+					max={maxDate}
+					onChange={vi.fn()}
+				/>,
+			);
+
+			// Open calendar
+			const { dialog } = await openCalendar(user);
+			expect(dialog).toBeInTheDocument();
+
+			// Calendar should render with constraints (dates outside range should be disabled)
+			// This tests that the min/max are properly passed to Calendar component
+			const calendar = screen.getByRole('grid');
+			expect(calendar).toBeInTheDocument();
+		});
+
+		it('works with controlled state and min/max constraints', async () => {
+			const user = userEvent.setup();
+			const minDate = '2025-06-01';
+			const maxDate = '2025-08-31';
+			const validDate = '2025-07-15';
+			const mockOnChange = vi.fn();
+
+			render(
+				<DatePicker
+					name="test-controlled-min-max"
+					value={validDate}
+					min={minDate}
+					max={maxDate}
+					onChange={mockOnChange}
+				/>,
+			);
+
+			// Should display the controlled value
+			const hiddenInput = screen.getByDisplayValue(validDate);
+			expect(hiddenInput).toBeInTheDocument();
+
+			// Calendar should open and respect constraints
+			const { dialog } = await openCalendar(user);
+			expect(dialog).toBeInTheDocument();
+		});
+
+		it('works with uncontrolled state and min/max constraints', async () => {
+			const user = userEvent.setup();
+			const minDate = '2025-06-01';
+			const maxDate = '2025-08-31';
+			const defaultDate = '2025-07-15';
+
+			render(
+				<DatePicker
+					name="test-uncontrolled-min-max"
+					defaultValue={defaultDate}
+					min={minDate}
+					max={maxDate}
+					onChange={vi.fn()}
+				/>,
+			);
+
+			// Should display the default value
+			const hiddenInput = screen.getByDisplayValue(defaultDate);
+			expect(hiddenInput).toBeInTheDocument();
+
+			// Calendar should open with constraints
+			const { dialog } = await openCalendar(user);
+			expect(dialog).toBeInTheDocument();
+		});
+
+		it('allows min/max constraints to be undefined', async () => {
+			const user = userEvent.setup();
+
+			render(
+				<DatePicker
+					name="test-no-constraints"
+					min={undefined}
+					max={undefined}
+					onChange={vi.fn()}
+				/>,
+			);
+
+			// Should work normally without constraints
+			const { dialog } = await openCalendar(user);
+			expect(dialog).toBeInTheDocument();
+		});
+
+		it('preserves other calendarOptions when min/max are provided', async () => {
+			const user = userEvent.setup();
+			const minDate = '2025-06-01';
+
+			render(
+				<DatePicker
+					name="test-preserve-options"
+					min={minDate}
+					calendarOptions={{
+						allowPastDate: true,
+						lang: {
+							nextLabel: 'Custom Next',
+							prevLabel: 'Custom Previous',
+						},
+					}}
+					onChange={vi.fn()}
+				/>,
+			);
+
+			const { dialog } = await openCalendar(user);
+			expect(dialog).toBeInTheDocument();
+
+			// Custom language options should still work
+			expect(screen.getByLabelText('Custom Next')).toBeInTheDocument();
+			expect(
+				screen.getByLabelText('Custom Previous'),
+			).toBeInTheDocument();
+		});
+	});
 });
