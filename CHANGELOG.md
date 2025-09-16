@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.47.3
+
+### Patch Changes
+
+- 6668121: **Date Picker**: add missing `min`/`max` props
+
 ## 4.47.2
 
 ### Patch Changes
