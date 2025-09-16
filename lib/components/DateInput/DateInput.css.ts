@@ -2,6 +2,7 @@ import { style } from '@vanilla-extract/css';
 
 import { cssLayerComponent } from '../../styles/layers.css';
 import { selectors } from '../../styles/selectors';
+import { sprinkles } from '../../styles/sprinkles.css';
 
 export const segmentStyle = style({
 	'@layer': {
@@ -18,4 +19,10 @@ export const segmentStyle = style({
 			},
 		},
 	},
+});
+
+export const verticalCenterStyle = sprinkles({
+	alignSelf: 'center',
+	display: 'flex',
+	justifyContent: 'center',
 });

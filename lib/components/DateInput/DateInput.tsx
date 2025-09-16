@@ -1,10 +1,12 @@
-import {
-	parseDate,
-	type DateValue,
-	GregorianCalendar,
-} from '@internationalized/date';
+import { type DateValue, GregorianCalendar } from '@internationalized/date';
 import clsx from 'clsx';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, {
+	useCallback,
+	useEffect,
+	useMemo,
+	useRef,
+	useState,
+} from 'react';
 import { useDateField, useDateSegment, useLocale } from 'react-aria';
 import {
 	useDateFieldState,
@@ -14,6 +16,7 @@ import {
 
 import { useDateInputRef } from '../../hooks/useDateInputRef';
 import { sprinkles } from '../../styles/sprinkles.css';
+import { formatDateValue, safeParseDateString } from '../../utils/dateFormat';
 import { DatePicker, type DatePickerProps } from '../DatePicker/DatePicker';
 import { inline } from '../Flex/flex';
 import { withEnhancedInput } from '../private/InputBase';
@@ -32,29 +35,15 @@ function createCalendar(identifier: string) {
 	throw new Error(`Unsupported calendar configured ${identifier}`);
 }
 
-const formatDateToString = (date: DateValue | null): string => {
-	if (!date) return '';
-	return date.toString();
-};
-
-const parseDateString = (dateString: string): DateValue | null => {
-	if (!dateString) return null;
-	try {
-		return parseDate(dateString);
-	} catch {
-		return null;
-	}
-};
-
 const defaultCalendarOptions: DatePickerProps['calendarOptions'] = {
 	allowPastDate: true,
 };
 
-const DateSegment: React.FC<{
+const DateSegment = React.memo<{
 	className?: string;
 	segment: DateSegment;
 	state: DateFieldState;
-}> = ({ segment, state, className }) => {
+}>(({ segment, state, className }) => {
 	const ref = useRef<HTMLSpanElement>(null);
 	const { segmentProps } = useDateSegment(segment, state, ref);
 
@@ -63,38 +52,46 @@ const DateSegment: React.FC<{
 			{...segmentProps}
 			ref={ref}
 			className={className}
-			data-placeholder={segment.isPlaceholder}
+			data-placeholder={segment.isPlaceholder || undefined}
 		>
 			{segment.text}
 		</span>
 	);
-};
+});
 
 DateSegment.displayName = 'DateInput.DateSegment';
 
 export const DateInput = withEnhancedInput<
 	FilteredDatePickerProps & Partial<Pick<HTMLInputElement, 'min' | 'max'>>
 >(
-	({ calendarOptions, eventHandlers, field, lang, size, ...props }) => {
+	({ calendarOptions, eventHandlers, field, lang, max, min, size }) => {
 		const { disabled, id, name, onChange, value, ref } = field;
 
 		const datePickerRef = useRef<HTMLInputElement>(null);
 		const dateFieldRef = useRef<HTMLDivElement>(null);
-
 		const { locale } = useLocale();
+
 		const [selectedDate, setSelectedDate] = useState<DateValue | null>(
-			value ? parseDateString(value) : null,
+			value ? safeParseDateString(value) : null,
+		);
+
+		const minMaxValues = useMemo(
+			() => ({
+				minValue: min ? safeParseDateString(min) : undefined,
+				maxValue: max ? safeParseDateString(max) : undefined,
+			}),
+			[max, min],
 		);
 
 		useEffect(() => {
-			const parsedDate = value ? parseDateString(value) : null;
+			const parsedDate = value ? safeParseDateString(value) : null;
 			setSelectedDate(parsedDate);
 		}, [value]);
 
 		const handleDateChange = useCallback(
 			(date: DateValue | null) => {
 				setSelectedDate(date);
-				const dateString = formatDateToString(date);
+				const dateString = formatDateValue(date);
 
 				// Trigger the withEnhancedInput onChange mechanism
 				if (eventHandlers.onChange && typeof onChange === 'function') {
@@ -115,35 +112,34 @@ export const DateInput = withEnhancedInput<
 			locale,
 			createCalendar,
 			isDisabled: disabled,
+			...minMaxValues,
 		});
 
-		const handleFocus = eventHandlers.onFocus
-			? useCallback(
-					(e: React.FocusEvent<Element>) => {
-						const syntheticEvent = {
-							...e,
-							target: dateFieldRef.current,
-							currentTarget: dateFieldRef.current,
-						} as unknown as React.FocusEvent<HTMLInputElement>;
-						eventHandlers.onFocus?.(syntheticEvent);
-					},
-					[eventHandlers],
-				)
-			: undefined;
+		const createSyntheticHandler = useCallback(
+			(handler?: (e: React.FocusEvent<HTMLInputElement>) => void) => {
+				if (!handler) return;
 
-		const handleBlur = eventHandlers.onBlur
-			? useCallback(
-					(e: React.FocusEvent<Element>) => {
-						const syntheticEvent = {
-							...e,
-							target: dateFieldRef.current,
-							currentTarget: dateFieldRef.current,
-						} as unknown as React.FocusEvent<HTMLInputElement>;
-						eventHandlers.onBlur?.(syntheticEvent);
-					},
-					[eventHandlers],
-				)
-			: undefined;
+				return (e: React.FocusEvent<Element>) => {
+					const syntheticEvent = {
+						...e,
+						target: dateFieldRef.current,
+						currentTarget: dateFieldRef.current,
+					} as unknown as React.FocusEvent<HTMLInputElement>;
+					handler(syntheticEvent);
+				};
+			},
+			[],
+		);
+
+		const handleFocus = useMemo(
+			() => createSyntheticHandler(eventHandlers.onFocus),
+			[createSyntheticHandler, eventHandlers.onFocus],
+		);
+
+		const handleBlur = useMemo(
+			() => createSyntheticHandler(eventHandlers.onBlur),
+			[createSyntheticHandler, eventHandlers.onBlur],
+		);
 
 		const { fieldProps } = useDateField(
 			{
@@ -160,7 +156,7 @@ export const DateInput = withEnhancedInput<
 		const handleDatePickerChange = useCallback(
 			(dateString: string) => {
 				const parsedDate = dateString
-					? parseDateString(dateString)
+					? safeParseDateString(dateString)
 					: null;
 				handleDateChange(parsedDate);
 			},
@@ -177,7 +173,7 @@ export const DateInput = withEnhancedInput<
 			>
 				<div
 					{...fieldProps}
-					className={sprinkles({ alignSelf: 'center' })}
+					className={styles.verticalCenterStyle}
 					ref={dateFieldRef}
 				>
 					{dateFieldState.segments.map((segment, idx) => (
@@ -185,18 +181,20 @@ export const DateInput = withEnhancedInput<
 							className={styles.segmentStyle}
 							segment={segment}
 							state={dateFieldState}
-							key={`${segment.type}-${segment.minValue || idx}`}
+							key={`${segment.type}-${segment.minValue ?? idx}`}
 						/>
 					))}
 				</div>
 				<DatePicker
+					className={styles.verticalCenterStyle}
 					ref={datePickerRef}
 					id={id}
 					name={name}
-					value={formatDateToString(selectedDate)}
+					value={formatDateValue(selectedDate)}
 					calendarOptions={{
 						...defaultCalendarOptions,
 						...calendarOptions,
+						...minMaxValues,
 					}}
 					disabled={disabled}
 					lang={lang}
