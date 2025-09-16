@@ -61,6 +61,47 @@ const DateSegment = React.memo<{
 
 DateSegment.displayName = 'DateInput.DateSegment';
 
+/**
+ * Input component for structured date entry with integrated calendar date picker.
+ *
+ * ## Dates and internationalization
+ * - Uses ISO date strings (YYYY-MM-DD) for `value`, `min`, and `max`
+ * - Extends DatePicker text values via `lang` props
+ * - Also extends Calendar options including calendar-specific text values via `calendarOptions` prop
+ * - Advanced i18n and localization handled by [React Aria I18Provider](https://react-spectrum.adobe.com/react-aria/I18nProvider.html)
+ * - Read more about [International calendars](https://react-spectrum.adobe.com/react-aria/useDatePicker.html#international-calendars)
+ * - Date formatting helper available in `...utils/dateFormat.ts` or use `@internationalized/date` utils
+ *
+ * **Note:** By default, past dates are allowed. To restrict past date selection, use
+ * the `calendarOptions` prop: `<DateInput calendarOptions={{ allowPastDate: false }} />`
+ *
+ * @example
+ * ```tsx
+ * // Basic usage
+ * <DateInput
+ *   value="2025-10-15"
+ *   onChange={(e) => setValue(e.target.value)}
+ * />
+ *
+ * // With restrictions
+ * <DateInput
+ *   min="2025-01-01"
+ *   max="2025-12-31"
+ *   calendarOptions={{ allowPastDate: false }}
+ * />
+ *
+ * // With translated text values
+ * <DateInput
+ *   lang={{ openCalendar: 'kalendar offnen' }}
+ *   calendarOptions={{
+ *     lang: {
+ *       prevMonthAriaLabel: 'nachster monat',
+ *       nextMonthAriaLabel: 'vorheriger monat'
+ *     }
+ *   }}
+ * />
+ * ```
+ */
 export const DateInput = withEnhancedInput<
 	FilteredDatePickerProps & Partial<Pick<HTMLInputElement, 'min' | 'max'>>
 >(
