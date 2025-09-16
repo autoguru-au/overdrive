@@ -33,7 +33,9 @@ const meta = {
 		disabled: false,
 		useNativePicker: false,
 		name: 'demo-date-picker',
-		calendarOptions: undefined,
+		calendarOptions: {
+			allowPastDate: true,
+		},
 		className: undefined,
 		testId: 'test-date-picker',
 	},
