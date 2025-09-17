@@ -63,6 +63,14 @@ export interface DatePickerProps extends TestIdProp {
 	 */
 	isLoading?: boolean;
 	/**
+	 * Maximum selectable date YYYY-MM-DD
+	 */
+	max?: string;
+	/**
+	 * Minimum selectable date YYYY-MM-DD
+	 */
+	min?: string;
+	/**
 	 * Input field name recommended for form usage
 	 */
 	name?: string;
@@ -174,6 +182,8 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 			icon = CalendarIcon,
 			isLoading = false,
 			lang,
+			max,
+			min,
 			onChange,
 			placement = 'bottom left',
 			size = 'medium',
@@ -261,11 +271,20 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 								defaultValue:
 									selectedDate || today(getLocalTimeZone()),
 							}),
+					...(min && { minValue: parseDateString(min) }),
+					...(max && { maxValue: parseDateString(max) }),
 				},
 				...calendarOptions,
 				onChange: handleCalendarChange,
 			}),
-			[selectedDate, calendarOptions, handleCalendarChange, isControlled],
+			[
+				selectedDate,
+				calendarOptions,
+				handleCalendarChange,
+				isControlled,
+				min,
+				max,
+			],
 		);
 
 		const contentCalendar = useMemo(
@@ -296,6 +315,8 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 						})}
 						type="date"
 						disabled={disabled}
+						min={min}
+						max={max}
 						onChange={onChangeEvent}
 					/>
 					<div className={styles.inputOverlay}>
