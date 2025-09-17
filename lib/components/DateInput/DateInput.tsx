@@ -107,7 +107,7 @@ export const DateInput = withEnhancedInput<
 >(
 	({ calendarOptions, eventHandlers, field, lang, max, min, size }) => {
 		const { defaultValue, id, ref, ...filteredProps } = field;
-		const { disabled, name, onChange, value } = field;
+		const { disabled, name, value } = field;
 
 		const datePickerRef = useRef<HTMLInputElement>(null);
 		const dateFieldRef = useRef<HTMLDivElement>(null);
@@ -133,7 +133,7 @@ export const DateInput = withEnhancedInput<
 				const dateString = formatDateValue(date);
 
 				// Trigger the withEnhancedInput onChange mechanism
-				if (eventHandlers.onChange && typeof onChange === 'function') {
+				if (eventHandlers.onChange) {
 					// Create a synthetic event for compatibility with withEnhancedInput
 					const event = {
 						currentTarget: { value: dateString },
@@ -142,7 +142,7 @@ export const DateInput = withEnhancedInput<
 					eventHandlers.onChange(event);
 				}
 			},
-			[eventHandlers, onChange],
+			[eventHandlers],
 		);
 
 		const createSyntheticHandler = useCallback(

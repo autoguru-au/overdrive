@@ -2,7 +2,7 @@ import { composeStories } from '@storybook/react';
 import { render, screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 import React from 'react';
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 
 import { DateInput } from './DateInput';
 import * as stories from './DateInput.stories';
@@ -79,5 +79,61 @@ describe('DateInput', () => {
 		);
 
 		expect(hasDisabledSegments).toBe(true);
+	});
+
+	it('invokes all event handlers (onFocus, onBlur, onChange) correctly', async () => {
+		const user = userEvent.setup();
+		const mockOnChange = vi.fn();
+		const mockOnFocus = vi.fn();
+		const mockOnBlur = vi.fn();
+
+		render(
+			<DateInput
+				name="test-date"
+				placeholder="Select date"
+				value="2024-01-15"
+				onChange={mockOnChange}
+				onFocus={mockOnFocus}
+				onBlur={mockOnBlur}
+			/>,
+		);
+
+		// Get date segments and focus on the day segment
+		const segments = screen.getAllByRole('spinbutton');
+		const daySegment = segments.find((segment) =>
+			segment.getAttribute('aria-label')?.includes('day'),
+		);
+
+		if (daySegment) {
+			// Test onFocus handler
+			await user.click(daySegment);
+			expect(mockOnFocus).toHaveBeenCalled();
+
+			// Verify focus event structure
+			const focusCallArgs = mockOnFocus.mock.calls[0];
+			expect(focusCallArgs[0]).toHaveProperty('target');
+			expect(focusCallArgs[0]).toHaveProperty('currentTarget');
+
+			// Test onChange handler
+			await user.keyboard('{ArrowUp}'); // Increment day
+			expect(mockOnChange).toHaveBeenCalled();
+
+			// Verify onChange event structure
+			const changeCallArgs = mockOnChange.mock.calls[0];
+			expect(changeCallArgs[0]).toHaveProperty('target');
+			expect(changeCallArgs[0]).toHaveProperty('currentTarget');
+			expect(changeCallArgs[0].target.value).toMatch(
+				/^\d{4}-\d{2}-\d{2}$/,
+			); // ISO date format
+
+			// Test onBlur handler by clicking outside
+			await user.click(document.body);
+			expect(mockOnBlur).toHaveBeenCalled();
+
+			// Verify blur event structure
+			const blurCallArgs = mockOnBlur.mock.calls[0];
+			expect(blurCallArgs[0]).toHaveProperty('target');
+			expect(blurCallArgs[0]).toHaveProperty('currentTarget');
+		}
 	});
 });
