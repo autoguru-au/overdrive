@@ -116,8 +116,6 @@ export const Columns = forwardRef<HTMLElement, ColumnsProps>(
 				className,
 			],
 			odComponent: 'columns',
-			display: 'flex',
-			flexDirection: 'row',
 		});
 
 		return (
