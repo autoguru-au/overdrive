@@ -117,11 +117,6 @@ export const DateInput = withEnhancedInput<
 			value ? safeParseDateString(value) : null,
 		);
 
-		const minMaxValues = {
-			minValue: min ? safeParseDateString(min) : undefined,
-			maxValue: max ? safeParseDateString(max) : undefined,
-		};
-
 		useEffect(() => {
 			const parsedDate = value ? safeParseDateString(value) : null;
 			setSelectedDate(parsedDate);
@@ -178,7 +173,8 @@ export const DateInput = withEnhancedInput<
 			onChange: handleDateChange,
 			onFocus: handleFocus,
 			value: selectedDate,
-			...minMaxValues,
+			minValue: min ? safeParseDateString(min) : undefined,
+			maxValue: max ? safeParseDateString(max) : undefined,
 		};
 
 		const dateFieldState = useDateFieldState({
@@ -233,10 +229,11 @@ export const DateInput = withEnhancedInput<
 					id={id}
 					name={name}
 					value={formatDateValue(selectedDate)}
+					min={min}
+					max={max}
 					calendarOptions={{
 						...defaultCalendarOptions,
 						...calendarOptions,
-						...minMaxValues,
 					}}
 					disabled={disabled}
 					lang={lang}

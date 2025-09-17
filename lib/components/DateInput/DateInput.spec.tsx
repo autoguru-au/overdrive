@@ -136,4 +136,88 @@ describe('DateInput', () => {
 			expect(blurCallArgs[0]).toHaveProperty('currentTarget');
 		}
 	});
+
+	it('marks dates outside min/max constraints as invalid', async () => {
+		const ariaInvalidTrue = 'true';
+
+		const { rerender } = render(
+			<DateInput
+				name="test-date"
+				placeholder="Select date"
+				value="2025-10-15" // Valid date within range
+				min="2025-10-10"
+				max="2025-10-20"
+				onChange={vi.fn()}
+			/>,
+		);
+
+		// Initially valid date should not have aria-invalid
+		let segments = screen.getAllByRole('spinbutton');
+		expect(
+			segments.some(
+				(segment) =>
+					segment.getAttribute('aria-invalid') === ariaInvalidTrue,
+			),
+		).toBe(false);
+
+		// Test date below minimum
+		rerender(
+			<DateInput
+				name="test-date"
+				placeholder="Select date"
+				value="2025-10-05" // Below min (2025-10-10)
+				min="2025-10-10"
+				max="2025-10-20"
+				onChange={vi.fn()}
+			/>,
+		);
+
+		segments = screen.getAllByRole('spinbutton');
+		expect(
+			segments.some(
+				(segment) =>
+					segment.getAttribute('aria-invalid') === ariaInvalidTrue,
+			),
+		).toBe(true);
+
+		// Test date above maximum
+		rerender(
+			<DateInput
+				name="test-date"
+				placeholder="Select date"
+				value="2025-10-25" // Above max (2025-10-20)
+				min="2025-10-10"
+				max="2025-10-20"
+				onChange={vi.fn()}
+			/>,
+		);
+
+		segments = screen.getAllByRole('spinbutton');
+		expect(
+			segments.some(
+				(segment) =>
+					segment.getAttribute('aria-invalid') === ariaInvalidTrue,
+			),
+		).toBe(true);
+
+		// Test valid date again should remove invalid state
+		rerender(
+			<DateInput
+				name="test-date"
+				placeholder="Select date"
+				value="2025-10-18" // Valid date within range
+				min="2025-10-10"
+				max="2025-10-20"
+				onChange={vi.fn()}
+			/>,
+		);
+
+		segments = screen.getAllByRole('spinbutton');
+		expect(
+			segments.some(
+				(segment) =>
+					segment.getAttribute('aria-invalid') === ariaInvalidTrue,
+			),
+		).toBe(false);
+	});
 });

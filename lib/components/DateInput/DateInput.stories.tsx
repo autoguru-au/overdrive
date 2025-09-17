@@ -21,9 +21,12 @@ const formatDate = (date: Date = new Date()) => {
 	return `${year}-${month}-${day}`;
 };
 
-const todayStr: string = formatDate(
-	isChromatic() ? new Date(2019, 5, 1) : new Date(),
-);
+const today = isChromatic() ? new Date(2025, 6, 1) : new Date();
+const todayStr = formatDate(today);
+const todayPlus10 = new Date(today);
+todayPlus10.setDate(today.getDate() + 10);
+const minDateStr = formatDate(today);
+const maxDateStr = formatDate(todayPlus10);
 
 const meta: Meta<typeof DateInput> = {
 	title: 'Forms & Input Fields/Date Input',
@@ -119,10 +122,15 @@ export const LargeSize: Story = {
 	},
 };
 
+/**
+ * Demonstrates min and max dates that configure the date pickers
+ */
 export const SmallSize: Story = {
 	args: {
 		value: todayStr,
 		size: 'small',
+		min: minDateStr,
+		max: maxDateStr,
 	},
 };
 
