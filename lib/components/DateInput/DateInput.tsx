@@ -28,6 +28,15 @@ type FilteredDatePickerProps = Pick<
 	'calendarOptions' | 'lang'
 >;
 
+export interface DateInputProps
+	extends FilteredDatePickerProps,
+		Partial<Pick<HTMLInputElement, 'min' | 'max'>> {
+	/**
+	 * Accessible label for the date input field, can be the same or different to the `placeholder` content
+	 */
+	label?: string;
+}
+
 function createCalendar(identifier: string) {
 	if (identifier === 'gregory') {
 		return new GregorianCalendar();
@@ -102,10 +111,17 @@ DateSegment.displayName = 'DateInput.DateSegment';
  * />
  * ```
  */
-export const DateInput = withEnhancedInput<
-	FilteredDatePickerProps & Partial<Pick<HTMLInputElement, 'min' | 'max'>>
->(
-	({ calendarOptions, eventHandlers, field, lang, max, min, size }) => {
+export const DateInput = withEnhancedInput<DateInputProps>(
+	({
+		calendarOptions,
+		eventHandlers,
+		field,
+		label,
+		lang,
+		max,
+		min,
+		size,
+	}) => {
 		const { defaultValue, id, ref, ...filteredProps } = field;
 		const { disabled, name, value } = field;
 
@@ -173,6 +189,7 @@ export const DateInput = withEnhancedInput<
 			onChange: handleDateChange,
 			onFocus: handleFocus,
 			value: selectedDate,
+			label,
 			minValue: min ? safeParseDateString(min) : undefined,
 			maxValue: max ? safeParseDateString(max) : undefined,
 		};

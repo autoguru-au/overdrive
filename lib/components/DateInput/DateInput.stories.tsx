@@ -35,6 +35,7 @@ const meta: Meta<typeof DateInput> = {
 	args: {
 		placeholder: 'What is your DOB?',
 		name: 'date-input',
+		label: 'date of birth',
 		size: 'medium',
 		disabled: false,
 		isValid: false,
