@@ -4,13 +4,13 @@
 
 ### Patch Changes
 
-- 2ad5940: **Columns**: fixes some style props not being applied
+- 2ad5940: **Columns**: fixes certain style props not being applied
 
 ## 4.47.3
 
 ### Patch Changes
 
-- 6668121: **Date Picker**: add missing `min`/`max` props
+- 6668121: **DatePicker**: add missing `min`/`max` props
 
 ## 4.47.2
 
