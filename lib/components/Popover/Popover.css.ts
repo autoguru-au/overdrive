@@ -29,6 +29,7 @@ export const triggerStyle = style({
 		[cssLayerComponent]: {
 			background: 'transparent',
 			border: 'none',
+			color: 'inherit',
 			cursor: 'pointer',
 			padding: 0,
 			selectors: {
@@ -49,7 +50,7 @@ export const fullScreenStyle = style({
 			position: 'fixed',
 			right: 0,
 			top: 0,
-			zIndex: 3,
+			zIndex: 2000, // higher than modal
 		},
 	},
 });
