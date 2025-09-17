@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.47.4
+
+### Patch Changes
+
+- 2ad5940: **Columns**: fixes some style props not being applied
+
 ## 4.47.3
 
 ### Patch Changes
