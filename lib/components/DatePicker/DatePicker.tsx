@@ -236,12 +236,7 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 		);
 
 		const label = valueLabel ? (
-			<Text
-				colour={!useNativePicker && disabled ? 'muted' : undefined}
-				size={textSizeMap[size]}
-			>
-				{valueLabel}
-			</Text>
+			<Text size={textSizeMap[size]}>{valueLabel}</Text>
 		) : null;
 
 		const handleCalendarChange = useCallback(

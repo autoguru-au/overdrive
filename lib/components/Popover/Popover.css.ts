@@ -35,6 +35,7 @@ export const triggerStyle = style({
 			selectors: {
 				[selectors.disabled]: {
 					cursor: 'not-allowed',
+					opacity: 0.5,
 				},
 			},
 		},
