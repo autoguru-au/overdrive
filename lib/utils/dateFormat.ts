@@ -23,6 +23,29 @@ export function isToday(date: DateValue | string | null | undefined) {
 }
 
 /**
+ * Safely parses a date string into a DateValue
+ * @param dateString - ISO date string to parse
+ * @returns DateValue or null if parsing fails
+ */
+export function safeParseDateString(dateString: string): DateValue | null {
+	if (!dateString) return null;
+	try {
+		return parseDate(dateString);
+	} catch {
+		return null;
+	}
+}
+
+/**
+ * Formats a DateValue to its string representation
+ * @param date - DateValue or null
+ * @returns String representation of the date or empty string for null
+ */
+export function formatDateValue(date: DateValue | null): string {
+	return date?.toString() ?? '';
+}
+
+/**
  * Formats a date value or ISO date string for display, with special handling for "today"
  *
  * @param date - DateValue, ISO date string, or null/undefined

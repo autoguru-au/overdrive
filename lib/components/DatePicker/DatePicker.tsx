@@ -137,7 +137,7 @@ const parseDateString = (dateString: string): DateValue | null => {
  *
  * ## Internationalization
  * - Override text values via `lang={{ openCalendar: 'open calendar' }}`
- * - Calendar options including `lang`can be passed via `calendarOptions` prop
+ * - Calendar options including `lang` can be passed via `calendarOptions` prop
  * - Date formatting helper available in `...utils/dateFormat.ts` or use `@internationalized/date` utils
  * - Advanced i18n and localization handled by [React Aria I18Provider](https://react-spectrum.adobe.com/react-aria/I18nProvider.html)
  * - Read more about [International calendars](https://react-spectrum.adobe.com/react-aria/useDatePicker.html#international-calendars)
@@ -236,12 +236,7 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 		);
 
 		const label = valueLabel ? (
-			<Text
-				colour={!useNativePicker && disabled ? 'muted' : undefined}
-				size={textSizeMap[size]}
-			>
-				{valueLabel}
-			</Text>
+			<Text size={textSizeMap[size]}>{valueLabel}</Text>
 		) : null;
 
 		const handleCalendarChange = useCallback(

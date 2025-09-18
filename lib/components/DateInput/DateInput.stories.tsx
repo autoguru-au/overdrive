@@ -9,7 +9,7 @@ import {
 } from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import isChromatic from 'chromatic/isChromatic';
-import { action } from 'storybook/actions';
+import { fn } from 'storybook/test';
 
 import { DateInput } from './DateInput';
 
@@ -21,17 +21,23 @@ const formatDate = (date: Date = new Date()) => {
 	return `${year}-${month}-${day}`;
 };
 
-const todayStr: string = formatDate(
-	isChromatic() ? new Date(2019, 5, 1) : new Date(),
-);
+const today = isChromatic() ? new Date(2025, 6, 1) : new Date();
+const todayStr = formatDate(today);
+const todayPlus10 = new Date(today);
+todayPlus10.setDate(today.getDate() + 10);
+const minDateStr = formatDate(today);
+const maxDateStr = formatDate(todayPlus10);
 
 const meta: Meta<typeof DateInput> = {
 	title: 'Forms & Input Fields/Date Input',
+	tags: ['updated'],
 	component: DateInput,
 	args: {
-		disabled: false,
-		name: 'date',
 		placeholder: 'What is your DOB?',
+		name: 'date-input',
+		label: 'date of birth',
+		size: 'medium',
+		disabled: false,
 		isValid: false,
 		isTouched: false,
 		isLoading: false,
@@ -40,16 +46,11 @@ const meta: Meta<typeof DateInput> = {
 		hintText: '',
 		notch: true,
 		prefixIcon: undefined,
-		onChange: action('onChange'),
-		onFocus: action('onFocus'),
-		onBlur: action('onBlur'),
+		onChange: fn(),
+		onFocus: fn(),
+		onBlur: fn(),
 	},
 	argTypes: {
-		value: {
-			control: {
-				type: 'date',
-			},
-		},
 		attach: {
 			defaultValue: 'NONE',
 			description: 'Input attach',
@@ -93,7 +94,11 @@ type Story = StoryObj<typeof meta>;
  * Additional examples of shared input field states and variants can be seen in
  * [Text Input](/docs/forms-input-fields-text-input--docs)
  */
-export const Standard: Story = {};
+export const Standard: Story = {
+	args: {
+		testId: 'demo-date-input',
+	},
+};
 
 export const Invalid: Story = {
 	args: {
@@ -118,10 +123,15 @@ export const LargeSize: Story = {
 	},
 };
 
+/**
+ * Demonstrates min and max dates that configure the date pickers
+ */
 export const SmallSize: Story = {
 	args: {
 		value: todayStr,
 		size: 'small',
+		min: minDateStr,
+		max: maxDateStr,
 	},
 };
 
