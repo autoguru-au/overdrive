@@ -46,7 +46,7 @@ export interface DateTimeInputProps extends TestIdProp {
 	 * - `defaultValue`: Today's date
 	 * - `firstDayOfWeek`: Sunday
 	 */
-	calendar?: Exclude<AriaCalendarProps<DateValue>, 'onChange'>;
+	calendarOptions?: Exclude<AriaCalendarProps<DateValue>, 'onChange'>;
 	/**
 	 * Available time options for selection
 	 */
@@ -64,6 +64,10 @@ export interface DateTimeInputProps extends TestIdProp {
 	 */
 	defaultTime?: string;
 	/**
+	 * Input name attribute for forms
+	 */
+	name?: string;
+	/**
 	 * Custom event handler when date and time are selected
 	 */
 	onChange?: (value: DateWithTimeOption) => void;
@@ -71,39 +75,40 @@ export interface DateTimeInputProps extends TestIdProp {
 	 * Language content override
 	 */
 	lang?: Partial<Record<LangContent, string>>;
-	/**
-	 * Input attributes for the date input field
-	 */
-	inputProps?: Omit<
-		React.InputHTMLAttributes<HTMLInputElement>,
-		'type' | 'value' | 'onChange' | 'id'
-	>;
+	// /**
+	//  * Input attributes for the date input field
+	//  */
+	// inputProps?: Omit<
+	// 	React.InputHTMLAttributes<HTMLInputElement>,
+	// 	'type' | 'value' | 'onChange' | 'id'
+	// >;
 }
 
 /**
  * DateTimeField component for selecting a date and time in a compact field format.
- * The date selection opens a Calendar in a Popover, while time selection opens
- * an option grid for available time slots.
+ * The date selection opens a Calendar in a Popover, while time selector is a
+ * standard select input.
  */
 export const DateTimeInput = ({
 	allowPastDate = false,
-	calendar,
+	calendarOptions,
 	timeOptions,
 	defaultDate,
 	defaultTime,
+	name = 'datetime-input',
 	onChange,
 	lang,
-	inputProps,
 	testId,
 }: DateTimeInputProps) => {
 	const dateInputId = useId();
-	const timeInputId = useId();
+	const timeSelectId = useId();
 	const [selectedDate, setSelectedDate] = useState<DateValue>(
 		defaultDate ?? today(getLocalTimeZone()),
 	);
 	const [selectedTime, setSelectedTime] = useState<string>(defaultTime ?? '');
 
 	const datePopoverState = useRef<{ close: () => void } | null>(null);
+	const selectRef = useRef<HTMLSelectElement>(null);
 
 	const handleDateChange = useCallback(
 		(value: DateValue) => {
@@ -117,8 +122,18 @@ export const DateTimeInput = ({
 		[selectedTime, onChange],
 	);
 
+	const handleTimeFieldClick = () => {
+		if ('showPicker' in HTMLSelectElement.prototype && selectRef.current) {
+			try {
+				// programmatically trigger the select menu
+				selectRef.current.showPicker();
+			} catch {
+				// browser doesn't support triggering menu
+			}
+		}
+	};
+
 	const formatDate = (date: DateValue) => {
-		// Format as MM/DD/YY to match the Figma design
 		const month = String(date.month).padStart(2, '0');
 		const day = String(date.day).padStart(2, '0');
 		const year = String(date.year).slice(-2);
@@ -127,10 +142,9 @@ export const DateTimeInput = ({
 
 	const calendarProps: AriaCalendarProps<DateValue> = {
 		defaultValue: selectedDate,
-		...calendar,
+		...calendarOptions,
 	};
 
-	// Create calendar lang props from our lang props
 	const calendarLang = lang
 		? {
 				nextLabel: lang.nextLabel,
@@ -146,43 +160,47 @@ export const DateTimeInput = ({
 					<Box>
 						<Calendar
 							allowPastDate={allowPastDate}
-							calendar={calendarProps}
+							calendarOptions={calendarProps}
 							lang={calendarLang}
 							onChange={handleDateChange}
 						/>
 					</Box>
 				}
+				offset={1}
 				onStateReady={(state) => {
 					datePopoverState.current = state;
 				}}
-				placement="bottom start"
-				offset={8}
 			>
 				<button className={dateFieldStyle}>
-					<div>
-						<label className={labelStyle} htmlFor={dateInputId}>
-							{lang?.dateLabel ?? defaultEnglish.dateLabel}
-						</label>
-						<input
-							{...inputProps}
-							type="text"
-							id={dateInputId}
-							value={formatDate(selectedDate) ?? 'Select'}
-							className={dateInputStyle}
-							readOnly
-						/>
-					</div>
+					<label className={labelStyle} htmlFor={dateInputId}>
+						{lang?.dateLabel ?? defaultEnglish.dateLabel}
+					</label>
+					<input
+						type="text"
+						id={dateInputId}
+						name={`${name}-date`}
+						value={formatDate(selectedDate) ?? 'Select'}
+						className={dateInputStyle}
+						tabIndex={-1}
+						readOnly
+					/>
 				</button>
 			</PopoverTrigger>
 
 			{/* Time Field */}
-			<div className={timeFieldStyle}>
-				<label className={labelStyle} htmlFor={timeInputId}>
+			<label
+				className={timeFieldStyle}
+				htmlFor={timeSelectId}
+				onClick={handleTimeFieldClick}
+			>
+				<div className={labelStyle}>
 					{lang?.timeLabel ?? defaultEnglish.timeLabel}
-				</label>
+				</div>
 				<Box
 					as="select"
-					id={timeInputId}
+					ref={selectRef}
+					id={timeSelectId}
+					name={`${name}-time`}
 					className={[inputResetStyle, valueStyle]}
 					value={selectedTime}
 					onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -203,7 +221,7 @@ export const DateTimeInput = ({
 						</option>
 					))}
 				</Box>
-			</div>
+			</label>
 		</Box>
 	);
 };

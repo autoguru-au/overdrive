@@ -1,8 +1,11 @@
 import { style } from '@vanilla-extract/css';
 
+import { focusOutline, focusOutlineStyle } from '../../styles/focusOutline.css';
 import { cssLayerComponent } from '../../styles/layers.css';
+import { selectors } from '../../styles/selectors';
 import { sprinkles } from '../../styles/sprinkles.css';
 import { textStyles } from '../../styles/typography';
+import { overdriveTokens } from '../../themes';
 
 const baseFieldStyle = style([
 	sprinkles({
@@ -21,21 +24,16 @@ const baseFieldStyle = style([
 	{
 		'@layer': {
 			[cssLayerComponent]: {
-				cursor: 'pointer',
-				// minHeight: '48px',
-				// minWidth: '140px',
-				// transition: 'border-color 0.2s ease',
-				// ':hover': {
-				// 	borderColor: '#666666',
-				// },
-				// ':focus-within': {
-				// 	borderColor: '#0066cc',
-				// 	outline: '2px solid #0066cc',
-				// 	outlineOffset: '2px',
-				// },
-				// ':active': {
-				// 	borderColor: '#0066cc',
-				// },
+				transition: `border-color 0.2s ${overdriveTokens.animation.easing.decelerate} 0s`,
+				selectors: {
+					[selectors.hover]: {
+						borderColor: overdriveTokens.border.colours.dark,
+						cursor: 'pointer',
+					},
+					[selectors.focusVisible]: {
+						zIndex: '1',
+					},
+				},
 			},
 		},
 	},
@@ -46,6 +44,7 @@ export const dateFieldStyle = style([
 	{
 		'@layer': {
 			[cssLayerComponent]: {
+				borderBottomColor: 'transparent',
 				borderBottomLeftRadius: 0,
 				borderBottomRightRadius: 0,
 				// width: '100%',
@@ -57,6 +56,7 @@ export const dateFieldStyle = style([
 			},
 		},
 	},
+	focusOutlineStyle,
 ]);
 
 export const timeFieldStyle = style([
@@ -66,22 +66,24 @@ export const timeFieldStyle = style([
 			[cssLayerComponent]: {
 				borderTopLeftRadius: 0,
 				borderTopRightRadius: 0,
-				borderTopWidth: 0,
-				// selectors: {
-				// 	'&:focus': {
-				// 		outline: 'none',
-				// 	},
-				// },
+				selectors: {
+					['&:focus-within:not(:hover)']: focusOutline,
+				},
 			},
 		},
 	},
 ]);
 
-export const labelStyle = textStyles({
-	align: 'left',
-	size: '2',
-	weight: 'bold',
-});
+export const labelStyle = style([
+	{
+		pointerEvents: 'none',
+	},
+	textStyles({
+		align: 'left',
+		size: '2',
+		weight: 'bold',
+	}),
+]);
 export const valueStyle = textStyles({ size: '4' });
 
 export const inputResetStyle = style([

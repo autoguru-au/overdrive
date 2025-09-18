@@ -13,27 +13,27 @@ const testDate = '2025-12-31';
 const timeOptions: OptionItem[] = [
 	{
 		label: '7:00AM',
-		name: '7:00AM',
+		name: '700',
 	},
 	{
 		label: '8:00AM',
-		name: '8:00AM',
+		name: '800',
 	},
 	{
 		label: '10:00AM',
-		name: '10:00AM',
+		name: '1000',
 	},
 	{
 		label: '12:00PM',
-		name: '12:00PM',
+		name: '1200',
 	},
 	{
 		label: '2:00PM',
-		name: '2:00PM',
+		name: '1400',
 	},
 	{
 		label: '4:00PM',
-		name: '4:00PM',
+		name: '1600',
 	},
 ];
 
