@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { describe, expect, it, vi } from 'vitest';
 
-import { DateTimePicker } from './DateTimePicker';
+import { BookingDateTime } from './BookingDateTime';
 
 const defaultProps = {
 	title: 'Select Date & Time',
@@ -30,9 +30,9 @@ const defaultProps = {
 	},
 };
 
-describe('<DateTimePicker />', () => {
+describe('<BookingDateTime />', () => {
 	it('renders with calendar and time options', () => {
-		render(<DateTimePicker {...defaultProps} />);
+		render(<BookingDateTime {...defaultProps} />);
 
 		expect(screen.getByText('Select Date & Time')).toBeInTheDocument();
 		expect(screen.getByText('Date')).toBeInTheDocument();
@@ -51,7 +51,7 @@ describe('<DateTimePicker />', () => {
 	it('handles calendar navigation', async () => {
 		const user = userEvent.setup();
 
-		render(<DateTimePicker {...defaultProps} />);
+		render(<BookingDateTime {...defaultProps} />);
 
 		const nextButton = screen.getByLabelText('Next month');
 		const prevButton = screen.getByLabelText('Previous month');
@@ -67,7 +67,7 @@ describe('<DateTimePicker />', () => {
 		const handleChange = vi.fn();
 		const user = userEvent.setup();
 
-		render(<DateTimePicker {...defaultProps} onChange={handleChange} />);
+		render(<BookingDateTime {...defaultProps} onChange={handleChange} />);
 
 		// Select a time option first
 		const morningOption = screen.getByText('Morning (9:00 AM - 12:00 PM)');
@@ -101,7 +101,7 @@ describe('<DateTimePicker />', () => {
 			prevLabel: 'Custom Previous',
 		};
 
-		render(<DateTimePicker {...defaultProps} lang={customLang} />);
+		render(<BookingDateTime {...defaultProps} lang={customLang} />);
 
 		expect(screen.getByText('Custom Date')).toBeInTheDocument();
 		expect(screen.getByText('Custom Time')).toBeInTheDocument();
@@ -110,7 +110,7 @@ describe('<DateTimePicker />', () => {
 	});
 
 	it('handles past date restrictions when allowPastDate is false', () => {
-		render(<DateTimePicker {...defaultProps} allowPastDate={false} />);
+		render(<BookingDateTime {...defaultProps} allowPastDate={false} />);
 
 		// Past dates should be disabled
 		const calendarCells = screen.getAllByRole('gridcell');

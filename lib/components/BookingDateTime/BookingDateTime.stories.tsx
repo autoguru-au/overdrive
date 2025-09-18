@@ -3,7 +3,7 @@ import isChromatic from 'chromatic/isChromatic';
 import MockDate from 'mockdate';
 import { expect, fn, getAllByRole, getByText, userEvent } from 'storybook/test';
 
-import { DateTimePicker } from './DateTimePicker';
+import { BookingDateTime } from './BookingDateTime';
 
 const testDate = '2026-01-01';
 const dataSelected = '[data-selected]';
@@ -36,9 +36,9 @@ const times = [
 	},
 ];
 
-const meta: Meta<typeof DateTimePicker> = {
-	title: 'Forms & Input Fields/Date & Time Picker',
-	component: DateTimePicker,
+const meta: Meta<typeof BookingDateTime> = {
+	title: 'Forms & Input Fields/Booking Date & Time',
+	component: BookingDateTime,
 	args: {
 		title: 'Select preferred date and time to bring in your vehicle',
 		timeOptions: {
@@ -54,7 +54,7 @@ const meta: Meta<typeof DateTimePicker> = {
 			dateLabel: 'Date',
 			timeLabel: 'Time',
 		},
-		testId: 'demo-date-time-picker',
+		testId: 'demo-booking-date-time',
 	},
 	argTypes: {
 		allowPastDate: {
@@ -70,13 +70,13 @@ const meta: Meta<typeof DateTimePicker> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof DateTimePicker>;
+type Story = StoryObj<typeof BookingDateTime>;
 
 export const BringInYourVehicle: Story = {};
 
 export const Interactions: Story = {
 	args: {
-		title: 'Picker title',
+		title: 'Selector title',
 		timeOptions: {
 			items: times,
 			label: 'Aria label for time option grid',

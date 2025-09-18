@@ -14,7 +14,7 @@ import {
 	type OptionItem,
 } from '../OptionGrid/OptionGrid';
 
-import { layoutStyle, queryContainerStyle } from './DateTimePicker.css';
+import { layoutStyle, queryContainerStyle } from './BookingDateTime.css';
 
 const defaultEnglish = {
 	dateLabel: 'Date',
@@ -29,7 +29,7 @@ export type DateAndOption = {
 	timeOption: string;
 };
 
-export interface DateTimePickerProps<D extends DateValue> extends TestIdProp {
+export interface BookingDateTimeProps<D extends DateValue> extends TestIdProp {
 	/**
 	 * A title for the date/time selection
 	 */
@@ -44,7 +44,7 @@ export interface DateTimePickerProps<D extends DateValue> extends TestIdProp {
 	 */
 	calendarOptions?: Exclude<AriaCalendarProps<D>, 'onChange'>;
 	/**
-	 * `OptionGrid` props used to generate the time picker items. Ensure to include a descriptive `label` value (for
+	 * `OptionGrid` props used to generate the time selection items. Ensure to include a descriptive `label` value (for
 	 * assistive technology). Currently time options are not tied to the day selection.
 	 */
 	timeOptions: OptionGridProps<OptionItem>;
@@ -72,7 +72,7 @@ export interface DateTimePickerProps<D extends DateValue> extends TestIdProp {
 // 		.join(' ');
 
 /**
- * DateTimePicker component for selecting a date and time. The primary use case is for selecting a date and time for
+ * BookingDateTime component for selecting a date and time. The primary use case is for selecting a date and time for
  * the vehicle to be left at the place of service, not scheduling the time of the service itself. Some suppliers
  * may need the option to book a specficic time based on their availability which could require enahcement.
  *
@@ -83,7 +83,7 @@ export interface DateTimePickerProps<D extends DateValue> extends TestIdProp {
  * This component implements the react-aria `useCalendar` hook and supports controlled state as well
  * ([docs](https://react-spectrum.adobe.com/react-aria/useCalendar.html))
  */
-export const DateTimePicker = <D extends DateValue>({
+export const BookingDateTime = <D extends DateValue>({
 	allowPastDate = false,
 	calendarOptions,
 	lang,
@@ -91,7 +91,7 @@ export const DateTimePicker = <D extends DateValue>({
 	timeOptions,
 	title,
 	testId,
-}: DateTimePickerProps<D>) => {
+}: BookingDateTimeProps<D>) => {
 	const selectedDate = useRef<DateValue>(today(getLocalTimeZone()));
 	const selectedTimeOption = useRef<string>(null);
 
@@ -172,4 +172,4 @@ export const DateTimePicker = <D extends DateValue>({
 	);
 };
 
-DateTimePicker.displayName = 'DateTimePicker';
+BookingDateTime.displayName = 'BookingDateTime';
