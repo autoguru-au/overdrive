@@ -30,7 +30,7 @@ const defaultEnglish = {
 
 type TextContent = keyof typeof defaultEnglish;
 
-interface SearchBarProps extends AriaSearchFieldProps, TestIdProp {
+export interface SearchBarProps extends AriaSearchFieldProps, TestIdProp {
 	onChange?: AriaSearchFieldProps['onChange'];
 	isDisabled?: AriaSearchFieldProps['isDisabled'];
 	maxLength?: AriaSearchFieldProps['maxLength'];
