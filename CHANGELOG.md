@@ -4,8 +4,8 @@
 
 ### Minor Changes
 
-- 0a0bd05: **DateInput**: improved date input field with segmented input and
-  updated Date Picker calendar
+- 0a0bd05: **DateInput**: improved date input field with segmented field and
+  uses updated DatePicker calendar
 
 ## 4.47.4
 
