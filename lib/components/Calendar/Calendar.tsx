@@ -28,7 +28,7 @@ const defaultEnglish = {
 	prevLabel: 'Previous month',
 } as const;
 
-type LanguageEntries = Partial<Record<keyof typeof defaultEnglish, string>>;
+export type CalendarTextContent = Record<keyof typeof defaultEnglish, string>;
 
 export interface CalendarProps extends TestIdProp {
 	/**
@@ -51,7 +51,7 @@ export interface CalendarProps extends TestIdProp {
 	/**
 	 * Language content override
 	 */
-	lang?: LanguageEntries;
+	lang?: Partial<CalendarTextContent>;
 }
 
 function createCalendar(identifier: string) {
@@ -108,6 +108,8 @@ export const Calendar = ({
 		? {}
 		: { defaultValue: today(getLocalTimeZone()) };
 
+	const textValues = { ...defaultEnglish, ...lang };
+
 	const calendarComponentProps: AriaCalendarProps<DateValue> = {
 		firstDayOfWeek: FIRST_DAY_OF_WEEK,
 		minValue: allowPastDate ? undefined : today(getLocalTimeZone()),
@@ -144,14 +146,14 @@ export const Calendar = ({
 			<div {...calendarProps} className={calendarStyle}>
 				<CalendarButton
 					{...prevButtonProps}
-					aria-label={lang?.prevLabel ?? defaultEnglish.prevLabel}
+					aria-label={textValues.prevLabel}
 				>
 					<Icon icon={ChevronLeftIcon} size="medium" />
 				</CalendarButton>
 				<h4 className={titleStyle}>{calendarTitle}</h4>
 				<CalendarButton
 					{...nextButtonProps}
-					aria-label={lang?.nextLabel ?? defaultEnglish.nextLabel}
+					aria-label={textValues.nextLabel}
 				>
 					<Icon icon={ChevronRightIcon} size="medium" />
 				</CalendarButton>

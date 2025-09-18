@@ -11,7 +11,7 @@ import type { TestIdProp } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Button } from '../Button/Button';
 
-import { type Language, Popover } from './Popover';
+import { Popover, type PopoverTextContent } from './Popover';
 import { triggerStyle } from './Popover.css';
 
 /**
@@ -42,7 +42,7 @@ export interface PopoverTriggerProps
 	/**
 	 * Language content override
 	 */
-	lang?: Language;
+	lang?: Partial<PopoverTextContent>;
 	/**
 	 * Callback that receives the overlay trigger state for external control
 	 */

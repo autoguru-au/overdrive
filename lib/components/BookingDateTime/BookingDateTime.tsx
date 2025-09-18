@@ -23,7 +23,10 @@ const defaultEnglish = {
 	prevLabel: 'Previous month',
 } as const;
 
-type LangContent = keyof typeof defaultEnglish;
+export type BookingDateTimeTextContent = Record<
+	keyof typeof defaultEnglish,
+	string
+>;
 export type DateAndOption = {
 	date: DateValue;
 	timeOption: string;
@@ -62,14 +65,8 @@ export interface BookingDateTimeProps<D extends DateValue> extends TestIdProp {
 	/**
 	 * Language content override
 	 */
-	lang?: Partial<Record<LangContent, string>>;
+	lang?: Partial<BookingDateTimeTextContent>;
 }
-
-// const dateTextPunctuationEN = (text: string) =>
-// 	text
-// 		.split(' ')
-// 		.map((word, idx) => (idx === 0 ? `${word},` : word))
-// 		.join(' ');
 
 /**
  * BookingDateTime component for selecting a date and time. The primary use case is for selecting a date and time for
@@ -94,6 +91,8 @@ export const BookingDateTime = <D extends DateValue>({
 }: BookingDateTimeProps<D>) => {
 	const selectedDate = useRef<DateValue>(today(getLocalTimeZone()));
 	const selectedTimeOption = useRef<string>(null);
+
+	const textValues = { ...defaultEnglish, ...lang };
 
 	const handleChange = () => {
 		if (selectedDate.current && selectedTimeOption.current?.length) {
@@ -128,13 +127,10 @@ export const BookingDateTime = <D extends DateValue>({
 
 	const titleId = useId();
 
-	// Create calendar lang props from our lang props
-	const calendarLang = lang
-		? {
-				nextLabel: lang.nextLabel,
-				prevLabel: lang.prevLabel,
-			}
-		: undefined;
+	const langCalendar = {
+		nextLabel: textValues.nextLabel,
+		prevLabel: textValues.prevLabel,
+	};
 
 	return (
 		<div
@@ -156,7 +152,7 @@ export const BookingDateTime = <D extends DateValue>({
 					<Calendar
 						allowPastDate={allowPastDate}
 						calendarOptions={calendarOptions}
-						lang={calendarLang}
+						lang={langCalendar}
 						onChange={handleDateChange}
 					/>
 				</div>
