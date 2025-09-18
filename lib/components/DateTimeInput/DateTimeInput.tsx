@@ -73,19 +73,43 @@ export interface DateTimeInputProps extends TestIdProp {
 	 * Language content override
 	 */
 	lang?: Partial<DateTimeInputTextContent>;
-	// /**
-	//  * Input attributes for the date input field
-	//  */
-	// inputProps?: Omit<
-	// 	React.InputHTMLAttributes<HTMLInputElement>,
-	// 	'type' | 'value' | 'onChange' | 'id'
-	// >;
 }
 
 /**
- * DateTimeField component for selecting a date and time in a compact field format.
- * The date selection opens a Calendar in a Popover, while time selector is a
- * standard select input.
+ * DateTimeInput component for selecting a date and time in a compact field format.
+ *
+ * The date selection opens a Calendar in a Popover, while the time selector is a
+ * standard select input. The component provides a form-friendly interface with
+ * proper accessibility support and customizable time options.
+ *
+ * The `onChange` callback receives a `DateWithTimeOption` value:
+ * - `date`: DateValue | null
+ * - `timeOption`: string [name of the selected option]
+ *
+ * ## Usage
+ * ```tsx
+ * const timeOptions = [
+ *   { label: '9:00 AM', name: '0900' },
+ *   { label: '10:00 AM', name: '1000' },
+ * ];
+ *
+ * <DateTimeInput
+ *   timeOptions={timeOptions}
+ *   onChange={({ date, timeOption }: DateWithTimeOption) => {
+ *     console.log('Selected:', date, timeOption);
+ *   }}
+ * />
+ * ```
+ *
+ * @example
+ * // With default values
+ * <DateTimeInput
+ *   timeOptions={timeOptions}
+ *   defaultDate={parseDate('2024-12-25')}
+ *   defaultTime="1000"
+ *   name="appointment1"
+ *   onChange={handleChange}
+ * />
  */
 export const DateTimeInput = ({
 	allowPastDate = false,
@@ -113,7 +137,7 @@ export const DateTimeInput = ({
 		prevLabel: textValues.prevLabel,
 	};
 	const langPopover = {
-		close: textValues.nextLabel,
+		close: textValues.close,
 	};
 
 	const handleDateChange = useCallback(

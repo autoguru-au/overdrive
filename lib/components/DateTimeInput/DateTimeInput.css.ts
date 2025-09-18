@@ -47,12 +47,6 @@ export const dateFieldStyle = style([
 				borderBottomColor: 'transparent',
 				borderBottomLeftRadius: 0,
 				borderBottomRightRadius: 0,
-				// width: '100%',
-				// selectors: {
-				// 	'&:focus': {
-				// 		outline: 'none',
-				// 	},
-				// },
 			},
 		},
 	},
@@ -87,10 +81,6 @@ export const labelStyle = style([
 export const valueStyle = textStyles({ size: '4' });
 
 export const inputResetStyle = style([
-	// sprinkles({
-	// 	width: 'full',
-	// 	backgroundColor: 'transparent',
-	// }),
 	{
 		'@layer': {
 			[cssLayerComponent]: {
@@ -99,30 +89,10 @@ export const inputResetStyle = style([
 				border: 'none',
 				cursor: 'pointer',
 				outline: 'none',
-				// ':focus': {
-				// 	outline: 'none',
-				// },
 				width: '100%',
 			},
 		},
 	},
 ]);
 
-export const dateInputStyle = style([
-	inputResetStyle,
-	valueStyle,
-	// {
-	// 	'@layer': {
-	// 		[cssLayerComponent]: {
-	// 			backgroundColor: 'transparent',
-	// 			border: 'none',
-	// 			display: 'flex',
-	// 			// cursor: 'pointer',
-	// 			outline: 'none',
-	// 			// ':focus': {
-	// 			// 	outline: 'none',
-	// 			// },
-	// 		},
-	// 	},
-	// },
-]);
+export const dateInputStyle = style([inputResetStyle, valueStyle]);
