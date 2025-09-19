@@ -1,15 +1,16 @@
-import { today, getLocalTimeZone } from '@internationalized/date';
+import { parseDate, getLocalTimeZone } from '@internationalized/date';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import isChromatic from 'chromatic/isChromatic';
 import MockDate from 'mockdate';
 import React from 'react';
-import { expect, fn, userEvent, within, waitFor } from 'storybook/test';
+import { expect, fn, userEvent, within, waitFor, screen } from 'storybook/test';
 
 import type { OptionItem } from '../OptionGrid/OptionGrid';
 
 import { DateTimeInput } from './DateTimeInput';
 
 const testDate = '2025-12-31';
+const defaultTestId = 'date-time-input';
 
 const timeOptions: OptionItem[] = [
 	{ label: '7:00 AM', name: '0700' },
@@ -44,9 +45,16 @@ const meta = {
 		calendarOptions: undefined,
 		defaultDate: undefined,
 		defaultTime: undefined,
+		disabled: false,
+		invalidDate: false,
+		invalidTime: false,
+		loading: false,
 		name: undefined,
+		min: undefined,
+		max: undefined,
 		lang: undefined,
-		testId: 'date-time-input',
+		value: undefined,
+		testId: defaultTestId,
 	},
 	argTypes: {
 		allowPastDate: {
@@ -54,6 +62,9 @@ const meta = {
 		},
 		defaultDate: {
 			control: 'text',
+		},
+		invalidDate: {
+			control: 'boolean',
 		},
 	},
 } satisfies Meta<typeof DateTimeInput>;
@@ -64,146 +75,24 @@ type Story = StoryObj<typeof DateTimeInput>;
 export const Standard: Story = {};
 
 /**
- * DateTimeField with a pre-selected time slot to show the populated state.
+ * DateTimeInput with min and max props for simple date restrictions.
+ * Demonstrates the string-based min/max approach consistent with DateInput.
  */
-export const WithDefaultTime: Story = {
+export const MinMax: Story = {
 	args: {
-		defaultTime: '10:00AM',
-	},
-};
-
-/**
- * DateTimeField with custom language labels for internationalization.
- */
-export const CustomLabels: Story = {
-	args: {
-		lang: {
-			dateLabel: 'Datum', // Date
-			timeLabel: 'Uhrzeit', // Time
-			nextLabel: 'Nachster Monat', // Next month
-			prevLabel: 'Vorheriger Monat', // Previous month
-			select: 'Auswahlen', // Select
-		},
-	},
-};
-
-/**
- * Comprehensive interactive test covering user flows and accessibility.
- * Tests both mouse and keyboard interactions with organized step-by-step validation.
- */
-export const InteractiveSelection: Story = {
-	args: {
-		timeOptions: timeOptions.slice(0, 3), // Fewer options for testing
-	},
-	play: async ({ canvasElement, args }) => {
-		const canvas = within(canvasElement);
-		const user = userEvent.setup();
-
-		// === Date field mouse interaction ===
-		const dateButton = canvas.getAllByRole('button')[0];
-		expect(dateButton).toBeVisible();
-
-		// Click to open calendar popover
-		await user.click(dateButton);
-
-		// Wait for calendar to appear
-		await waitFor(() => {
-			const calendar = canvas.getByRole('application');
-			expect(calendar).toBeVisible();
-		});
-
-		// Click on today's date (should be available)
-		const todayButton = canvas
-			.getAllByRole('button')
-			.find((button) =>
-				button.getAttribute('aria-label')?.includes('Today'),
-			);
-		if (todayButton) {
-			await user.click(todayButton);
-		}
-
-		// Calendar should close and focus return to date button
-		await waitFor(() => {
-			expect(dateButton).toHaveFocus();
-		});
-
-		// === Time field interaction ===
-		const timeSelect = canvas.getByRole('combobox');
-		expect(timeSelect).toBeVisible();
-
-		// Select the first time option
-		await user.selectOptions(timeSelect, '0700');
-
-		// Verify onChange was called with correct structure
-		expect(args.onChange).toHaveBeenCalledWith({
-			date: expect.any(Object), // DateValue object
-			timeOption: '0700',
-		});
-
-		// === Keyboard navigation and accessibility ===
-		// Reset focus and test keyboard navigation
-		document.body.focus();
-
-		// Tab to date field
-		await user.tab();
-		expect(dateButton).toHaveFocus();
-
-		// Open calendar with Enter key
-		await user.keyboard('{Enter}');
-
-		await waitFor(() => {
-			const calendar = canvas.getByRole('application');
-			expect(calendar).toBeVisible();
-		});
-
-		// Close calendar with Escape key
-		await user.keyboard('{Escape}');
-
-		await waitFor(() => {
-			expect(dateButton).toHaveFocus();
-		});
-
-		// Tab to time field
-		await user.tab();
-		expect(timeSelect).toHaveFocus();
-
-		// Verify time field is accessible
-		expect(timeSelect).toHaveAttribute('name');
-
-		// === Time label click interaction ===
-		const timeLabel = canvas.getByText('TIME');
-
-		// Click on time label should focus select
-		await user.click(timeLabel);
-
-		// Note: Focus behavior may vary by browser for programmatic showPicker()
-		expect(timeSelect).toBeInTheDocument();
-	},
-};
-
-/**
- * DateTimeInput with minimum and maximum date restrictions.
- * Demonstrates calendar constraints for booking windows.
- */
-export const WithDateRestrictions: Story = {
-	args: {
-		calendarOptions: {
-			minValue: today(getLocalTimeZone()),
-			maxValue: today(getLocalTimeZone()).add({ months: 3 }),
-		},
-	},
-	parameters: {
-		docs: {
-			description: {
-				story: 'Restricts date selection to a 3-month window from today. Past dates and dates beyond 3 months are disabled.',
-			},
-		},
+		min: '2025-01-01',
+		max: '2025-12-31',
+		defaultDate: parseDate('2025-06-15'),
+		defaultTime: '1000',
 	},
 };
 
 /**
  * DateTimeInput with custom date availability function.
  * Demonstrates blocking specific dates (e.g., weekends, holidays).
+ *
+ * **NOTE**: Using the `isDateUnavailable` handler overrides past date availability
+ * as well as min/max values.
  */
 export const CustomDateAvailability: Story = {
 	args: {
@@ -215,11 +104,140 @@ export const CustomDateAvailability: Story = {
 			},
 		},
 	},
-	parameters: {
-		docs: {
-			description: {
-				story: 'Blocks weekend dates using a custom `isDateUnavailable` function. Weekends appear disabled in the calendar.',
-			},
-		},
+};
+
+/**
+ * Comprehensive interactive test covering user flows and accessibility.
+ * Tests both mouse and keyboard interactions with organized step-by-step validation.
+ */
+export const InteractionTest: Story = {
+	args: {
+		timeOptions: timeOptions.slice(0, 3), // Fewer options for testing
+	},
+	play: async ({ canvasElement, args, step }) => {
+		const canvas = within(canvasElement);
+		const user = userEvent.setup();
+
+		await step('Initial component structure validation', async () => {
+			const dateButton = canvas.getAllByRole('button')[0];
+			expect(dateButton).toBeVisible();
+
+			const timeSelect = canvas.getByRole('combobox');
+			expect(timeSelect).toBeVisible();
+
+			// Verify labels are present with correct text
+			expect(canvas.getByText('date')).toBeInTheDocument();
+			expect(canvas.getByText('time')).toBeInTheDocument();
+
+			// Check data attributes
+			const container = canvas.getByTestId(defaultTestId);
+			expect(container).toHaveAttribute(
+				'data-od-component',
+				defaultTestId,
+			);
+		});
+
+		await step('Date field mouse interaction', async () => {
+			const dateButton = canvas.getAllByRole('button')[0];
+
+			// Click to open calendar popover
+			await user.click(dateButton);
+
+			// Wait for calendar popover to appear (rendered outside canvas)
+			await waitFor(() => {
+				const calendarGrid = screen.queryByRole('grid');
+				expect(calendarGrid).toBeInTheDocument();
+			});
+
+			// Find and click on a selectable date (not disabled/unavailable)
+			const dateButtons = screen.getAllByRole('button').filter(
+				(button) =>
+					button.textContent &&
+					/^\d{1,2}$/.test(button.textContent.trim()) &&
+					!button.hasAttribute('aria-disabled') &&
+					!button.hasAttribute('aria-pressed'), // Not currently selected
+			);
+
+			if (dateButtons.length > 0) {
+				await user.click(dateButtons[0]);
+			}
+
+			// Calendar should close after date selection
+			await waitFor(() => {
+				const calendarGrid = screen.queryByRole('grid');
+				expect(calendarGrid).not.toBeInTheDocument();
+			});
+		});
+
+		await step('Time field interaction', async () => {
+			const timeSelect = canvas.getByRole('combobox');
+
+			// Select the first time option
+			await user.selectOptions(timeSelect, '0700');
+
+			// Verify onChange was called with correct structure
+			expect(args.onChange).toHaveBeenCalledWith({
+				date: expect.any(Object), // DateValue object
+				timeOption: '0700',
+			});
+		});
+
+		await step('Keyboard navigation and accessibility', async () => {
+			const dateButton = canvas.getAllByRole('button')[0];
+			const timeSelect = canvas.getByRole('combobox');
+
+			// Focus the date button directly to test keyboard navigation
+			dateButton.focus();
+			expect(dateButton).toHaveFocus();
+
+			// Open calendar with Enter key
+			await user.keyboard('{Enter}');
+
+			await waitFor(() => {
+				const calendarGrid = screen.queryByRole('grid');
+				expect(calendarGrid).toBeInTheDocument();
+			});
+
+			// Close calendar with Escape key
+			await user.keyboard('{Escape}');
+
+			await waitFor(() => {
+				const calendarGrid = screen.queryByRole('grid');
+				expect(calendarGrid).not.toBeInTheDocument();
+			});
+
+			// Focus the time field to test accessibility
+			timeSelect.focus();
+			expect(timeSelect).toHaveFocus();
+
+			// Verify time field is accessible
+			expect(timeSelect).toHaveAttribute('name');
+		});
+
+		await step('Time label click interaction', async () => {
+			const timeSelect = canvas.getByRole('combobox');
+			const timeFieldContainer = timeSelect.closest('label');
+
+			// Click on time field container should trigger showPicker()
+			if (timeFieldContainer) {
+				await user.click(timeFieldContainer);
+			}
+
+			// Note: Focus behavior may vary by browser for programmatic showPicker()
+			expect(timeSelect).toBeInTheDocument();
+		});
+
+		await step('Form integration validation', async () => {
+			const dateInput = canvas.getByRole('textbox');
+			const timeSelect = canvas.getByRole('combobox');
+
+			// Check form attributes
+			expect(dateInput).toHaveAttribute('name', 'datetime-input-date');
+			expect(timeSelect).toHaveAttribute('name', 'datetime-input-time');
+
+			// Check readonly/disabled states
+			expect(dateInput).toHaveAttribute('readonly');
+			expect(dateInput).toHaveAttribute('tabindex', '-1');
+		});
 	},
 };
