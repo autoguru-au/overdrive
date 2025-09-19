@@ -4,3 +4,4 @@ export {
 	type DateTimeInputTextContent,
 	type DateWithTimeOption,
 } from './DateTimeInput';
+export { useDateTimeInput } from './useDateTimeInput';

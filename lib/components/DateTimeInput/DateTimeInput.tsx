@@ -1,5 +1,5 @@
 import { type DateValue } from '@internationalized/date';
-import React, { useCallback, useId, useRef, useState } from 'react';
+import React, { useId, useRef } from 'react';
 import { type AriaCalendarProps } from 'react-aria';
 
 import type { TestIdProp } from '../../types';
@@ -25,6 +25,7 @@ import {
 	timeFieldStyle,
 	valueStyle,
 } from './DateTimeInput.css';
+import { useDateTimeInput } from './useDateTimeInput';
 
 const defaultEnglish = {
 	dateLabel: 'DATE',
@@ -266,14 +267,17 @@ export const DateTimeInput = ({
 }: DateTimeInputProps) => {
 	const dateInputId = useId();
 
-	const [internalDate, setInternalDate] = useState<DateValue | null>(
-		defaultDate ?? null,
-	);
-	const [internalTime, setInternalTime] = useState<string>(defaultTime ?? '');
-
-	const isControlled = value !== undefined;
-	const currentDate = value?.date ?? internalDate;
-	const currentTime = value?.timeOption ?? internalTime;
+	const {
+		currentDate,
+		currentTime,
+		handleDateChange: onDateChange,
+		handleTimeChange,
+	} = useDateTimeInput({
+		value,
+		defaultDate,
+		defaultTime,
+		onChange,
+	});
 
 	const datePopoverState = useRef<{ close: () => void } | null>(null);
 	const selectRef = useRef<HTMLSelectElement>(null);
@@ -288,20 +292,10 @@ export const DateTimeInput = ({
 		close: textValues.close,
 	};
 
-	const handleDateChange = useCallback(
-		(value: DateValue) => {
-			if (!isControlled) {
-				setInternalDate(value);
-			}
-
-			datePopoverState.current?.close();
-			onChange?.({
-				date: value,
-				timeOption: currentTime,
-			});
-		},
-		[currentTime, onChange, isControlled],
-	);
+	const handleDateChange = (dateValue: DateValue) => {
+		datePopoverState.current?.close();
+		onDateChange(dateValue);
+	};
 
 	const handleTimeFieldClick = () => {
 		if ('showPicker' in HTMLSelectElement.prototype && selectRef.current) {
@@ -373,16 +367,7 @@ export const DateTimeInput = ({
 					className={[inputResetStyle, valueStyle]}
 					value={currentTime}
 					onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
-						const newTime = event.target.value;
-
-						if (!isControlled) {
-							setInternalTime(newTime);
-						}
-
-						onChange?.({
-							date: currentDate ?? null,
-							timeOption: newTime,
-						});
+						handleTimeChange(event.target.value);
 					}}
 					onClick={(event: React.MouseEvent) => {
 						event.stopPropagation();
