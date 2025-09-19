@@ -8,6 +8,7 @@ export const selectors = {
 	disabled: '&:disabled, &[data-disabled], &[aria-disabled="true"]',
 	focus: '&:focus, &[data-focus], &[data-focused]',
 	focusVisible: '&:focus-visible, &[data-focus-visible]',
+	invalid: '&:invalid, &[data-invalid]',
 	selected: '&[data-selected], &[aria-selected="true"]',
 	unavailable: '&[data-unavailable]',
 	get hover() {

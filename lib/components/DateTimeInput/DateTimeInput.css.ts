@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+import { recipe } from '@vanilla-extract/recipes';
 
 import { focusOutline, focusOutlineStyle } from '../../styles/focusOutline.css';
 import { cssLayerComponent } from '../../styles/layers.css';
@@ -27,11 +28,21 @@ const baseFieldStyle = style([
 				transition: `border-color 0.2s ${overdriveTokens.animation.easing.decelerate} 0s`,
 				selectors: {
 					[selectors.hover]: {
-						borderColor: overdriveTokens.border.colours.dark,
 						cursor: 'pointer',
 					},
-					[selectors.focusVisible]: {
-						zIndex: '1',
+					[`&:hover:not(${selectors.disabled}, ${selectors.invalid})`]:
+						{
+							borderColor: overdriveTokens.border.colours.dark,
+						},
+					[selectors.invalid]: {
+						borderColor: overdriveTokens.color.surface.danger,
+					},
+					[`${selectors.hoverNotDisabled}, ${selectors.invalid}, ${selectors.focusVisible}`]:
+						{
+							zIndex: '1',
+						},
+					[selectors.disabled]: {
+						cursor: 'not-allowed',
 					},
 				},
 			},
@@ -44,9 +55,11 @@ export const dateFieldStyle = style([
 	{
 		'@layer': {
 			[cssLayerComponent]: {
+				appearance: 'none',
 				borderBottomColor: 'transparent',
 				borderBottomLeftRadius: 0,
 				borderBottomRightRadius: 0,
+				width: '100%',
 			},
 		},
 	},
@@ -60,6 +73,7 @@ export const timeFieldStyle = style([
 			[cssLayerComponent]: {
 				borderTopLeftRadius: 0,
 				borderTopRightRadius: 0,
+				marginTop: '-1px',
 				selectors: {
 					['&:focus-within:not(:hover)']: focusOutline,
 				},
@@ -68,17 +82,37 @@ export const timeFieldStyle = style([
 	},
 ]);
 
-export const labelStyle = style([
-	{
-		pointerEvents: 'none',
+export const labelVariants = recipe({
+	base: [
+		textStyles({
+			align: 'left',
+			size: '2',
+			transform: 'uppercase',
+			weight: 'bold',
+		}),
+		{
+			'@layer': {
+				[cssLayerComponent]: {
+					pointerEvents: 'none',
+				},
+			},
+		},
+	],
+	variants: {
+		invalid: {
+			true: sprinkles({ color: 'danger' }),
+		},
+		disabled: {
+			true: {
+				'@layer': {
+					[cssLayerComponent]: {
+						color: overdriveTokens.colours.gamut.black400,
+					},
+				},
+			},
+		},
 	},
-	textStyles({
-		align: 'left',
-		size: '2',
-		weight: 'bold',
-	}),
-]);
-export const valueStyle = textStyles({ size: '4' });
+});
 
 export const inputResetStyle = style([
 	{
@@ -88,11 +122,28 @@ export const inputResetStyle = style([
 				backgroundColor: 'transparent',
 				border: 'none',
 				cursor: 'pointer',
+				minHeight: overdriveTokens.space[6],
 				outline: 'none',
 				width: '100%',
 			},
 		},
 	},
 ]);
-
-export const dateInputStyle = style([inputResetStyle, valueStyle]);
+export const valueStyle = textStyles({ size: '4', transform: 'capitalize' });
+export const inputStyle = style([
+	inputResetStyle,
+	valueStyle,
+	{
+		'@layer': {
+			[cssLayerComponent]: {
+				selectors: {
+					[selectors.disabled]: {
+						color: overdriveTokens.colours.gamut.black300,
+						cursor: 'not-allowed',
+						opacity: 1,
+					},
+				},
+			},
+		},
+	},
+]);

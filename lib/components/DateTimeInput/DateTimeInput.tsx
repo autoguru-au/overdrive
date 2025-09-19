@@ -14,24 +14,23 @@ import {
 	type CalendarProps,
 	type CalendarTextContent,
 } from '../Calendar/Calendar';
+import { LoadingBox } from '../LoadingBox/LoadingBox';
 import { type OptionItem } from '../OptionGrid/OptionGrid';
 import type { PopoverTextContent } from '../Popover/Popover';
 import { PopoverTrigger } from '../Popover/PopoverTrigger';
 
 import {
 	dateFieldStyle,
-	dateInputStyle,
-	inputResetStyle,
-	labelStyle,
+	inputStyle,
+	labelVariants,
 	timeFieldStyle,
-	valueStyle,
 } from './DateTimeInput.css';
 import { useDateTimeInput } from './useDateTimeInput';
 
 const defaultEnglish = {
-	dateLabel: 'DATE',
-	timeLabel: 'TIME',
-	select: 'Select',
+	dateLabel: 'date',
+	timeLabel: 'time',
+	select: 'select',
 } as const;
 
 export interface DateTimeInputTextContent
@@ -140,6 +139,22 @@ export interface DateTimeInputProps
 	 */
 	onChange?: (value: DateWithTimeOption) => void;
 	/**
+	 * Disabled state - prevents user interaction
+	 */
+	disabled?: boolean;
+	/**
+	 * Invalid date field
+	 */
+	invalidDate?: boolean;
+	/**
+	 * Invalid date field
+	 */
+	invalidTime?: boolean;
+	/**
+	 * Loading state - shows spinner and disables interaction
+	 */
+	loading?: boolean;
+	/**
 	 * Text value overrides
 	 *
 	 * ```ts
@@ -233,7 +248,11 @@ export const DateTimeInput = forwardRef<HTMLDivElement, DateTimeInputProps>(
 			calendarOptions,
 			defaultDate,
 			defaultTime,
+			disabled = false,
+			invalidDate = false,
+			invalidTime = false,
 			lang,
+			loading = false,
 			max,
 			min,
 			name = 'datetime-input',
@@ -245,6 +264,7 @@ export const DateTimeInput = forwardRef<HTMLDivElement, DateTimeInputProps>(
 		ref,
 	) => {
 		const dateInputId = useId();
+		const isDisabled = disabled || loading;
 
 		const {
 			currentDate,
@@ -259,7 +279,11 @@ export const DateTimeInput = forwardRef<HTMLDivElement, DateTimeInputProps>(
 		});
 
 		const { Component, componentProps } = useBox({
-			...dataAttrs({ 'od-component': 'date-time-input' }),
+			...dataAttrs({
+				'od-component': 'date-time-input',
+				disabled,
+				loading,
+			}),
 			testId,
 		});
 
@@ -321,27 +345,42 @@ export const DateTimeInput = forwardRef<HTMLDivElement, DateTimeInputProps>(
 					onStateReady={(state) => {
 						datePopoverState.current = state;
 					}}
+					isDisabled={isDisabled}
 				>
-					<button className={dateFieldStyle}>
-						<label className={labelStyle} htmlFor={dateInputId}>
+					<button
+						className={dateFieldStyle}
+						{...dataAttrs({ invalid: invalidDate })}
+					>
+						<label
+							className={labelVariants({
+								disabled,
+								invalid: invalidDate,
+							})}
+							htmlFor={dateInputId}
+						>
 							{textValues.dateLabel}
 						</label>
-						<input
-							type="text"
-							id={dateInputId}
-							name={`${name}-date`}
-							value={
-								currentDate
-									? displayFormattedDate(
-											currentDate,
-											'short-padded',
-										)
-									: textValues.select
-							}
-							className={dateInputStyle}
-							tabIndex={-1}
-							readOnly
-						/>
+						{loading ? (
+							<LoadingBox height="6" />
+						) : (
+							<input
+								type="text"
+								id={dateInputId}
+								name={`${name}-date`}
+								value={
+									currentDate
+										? displayFormattedDate(
+												currentDate,
+												'short-padded',
+											)
+										: textValues.select
+								}
+								className={inputStyle}
+								disabled={isDisabled}
+								tabIndex={-1}
+								readOnly
+							/>
+						)}
 					</button>
 				</PopoverTrigger>
 
@@ -349,32 +388,51 @@ export const DateTimeInput = forwardRef<HTMLDivElement, DateTimeInputProps>(
 				<label
 					className={timeFieldStyle}
 					onClick={handleTimeFieldClick}
+					onMouseLeave={() => {
+						// work-around for :focus-within outline appearing for mouse users
+						selectRef?.current?.blur();
+					}}
+					aria-disabled={isDisabled}
+					{...dataAttrs({ invalid: invalidTime })}
 				>
-					<div className={labelStyle}>{textValues.timeLabel}</div>
-					<Box
-						as="select"
-						name={`${name}-time`}
-						className={[inputResetStyle, valueStyle]}
-						value={currentTime}
-						onChange={(
-							event: React.ChangeEvent<HTMLSelectElement>,
-						) => {
-							handleTimeChange(event.target.value);
-						}}
-						onClick={(event: React.MouseEvent) => {
-							event.stopPropagation();
-						}}
-						ref={selectRef}
+					<div
+						className={labelVariants({
+							disabled,
+							invalid: invalidTime,
+						})}
 					>
-						<option value="" disabled>
-							{textValues.select}
-						</option>
-						{timeOptions.map((option) => (
-							<option key={option.name} value={option.name}>
-								{option.label}
+						{textValues.timeLabel}
+					</div>
+					{loading ? (
+						<LoadingBox height="6" />
+					) : (
+						<select
+							name={`${name}-time`}
+							className={inputStyle}
+							value={currentTime}
+							disabled={disabled || loading}
+							onChange={(
+								event: React.ChangeEvent<HTMLSelectElement>,
+							) => {
+								if (!disabled && !loading) {
+									handleTimeChange(event.target.value);
+								}
+							}}
+							onClick={(event: React.MouseEvent) => {
+								event.stopPropagation();
+							}}
+							ref={selectRef}
+						>
+							<option value="" disabled>
+								{textValues.select}
 							</option>
-						))}
-					</Box>
+							{timeOptions.map((option) => (
+								<option key={option.name} value={option.name}>
+									{option.label}
+								</option>
+							))}
+						</select>
+					)}
 				</label>
 			</Component>
 		);
