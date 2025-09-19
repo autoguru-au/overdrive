@@ -5,7 +5,11 @@ import { type AriaCalendarProps } from 'react-aria';
 import type { TestIdProp } from '../../types';
 import { displayFormattedDate } from '../../utils/dateFormat';
 import { Box } from '../Box/Box';
-import { Calendar, type CalendarTextContent } from '../Calendar/Calendar';
+import {
+	Calendar,
+	type CalendarProps,
+	type CalendarTextContent,
+} from '../Calendar/Calendar';
 import { type OptionItem } from '../OptionGrid/OptionGrid';
 import type { PopoverTextContent } from '../Popover/Popover';
 import { PopoverTrigger } from '../Popover/PopoverTrigger';
@@ -42,11 +46,36 @@ export interface DateTimeInputProps extends TestIdProp {
 	 *
 	 * *Defaults*
 	 * - `defaultValue`: Today's date
-	 * - `firstDayOfWeek`: Sunday
+	 * - `firstDayOfWeek`: Monday
+	 *
+	 * ```ts
+	 * // Set minimum selectable date
+	 * calendarOptions: {
+	 *   minValue: today(getLocalTimeZone())
+	 * }
+	 *
+	 * // Set maximum selectable date
+	 * calendarOptions: {
+	 *   maxValue: today(getLocalTimeZone()).add({ years: 1 })
+	 * }
+	 *
+	 * // Disable specific dates
+	 * calendarOptions: {
+	 *   isDateUnavailable: (date) => date.compare(today(getLocalTimeZone())) < 0
+	 * }
+	 * ```
 	 */
-	calendarOptions?: Exclude<AriaCalendarProps<DateValue>, 'onChange'>;
+	calendarOptions?: CalendarProps['calendarOptions'];
 	/**
 	 * Available time options for selection
+	 *
+	 * ```ts
+	 * timeOptions: [
+	 *   { name: 'morning', label: '9:00 AM', value: '0900' },
+	 *   { name: 'afternoon', label: '2:00 PM', value: '1400' },
+	 *   { name: 'evening', label: '6:00 PM', value: '1800' }
+	 * ]
+	 * ```
 	 */
 	timeOptions: OptionItem[];
 	/**
@@ -55,10 +84,29 @@ export interface DateTimeInputProps extends TestIdProp {
 	allowPastDate?: boolean;
 	/**
 	 * Default selected date
+	 *
+	 * ```ts
+	 * // Today's date
+	 * defaultDate: today(getLocalTimeZone())
+	 *
+	 * // Specific date
+	 * defaultDate: parseDate('2025-12-25')
+	 *
+	 * // Future date
+	 * defaultDate: today(getLocalTimeZone()).add({ days: 7 })
+	 * ```
 	 */
 	defaultDate?: DateValue;
 	/**
-	 * Default selected time option
+	 * Default selected time option (must match a value from timeOptions)
+	 *
+	 * ```ts
+	 * // Matches timeOptions[0].value
+	 * defaultTime: '09:00'
+	 *
+	 * // Or matches timeOptions[1].name
+	 * defaultTime: 'afternoon'
+	 * ```
 	 */
 	defaultTime?: string;
 	/**
@@ -67,10 +115,32 @@ export interface DateTimeInputProps extends TestIdProp {
 	name?: string;
 	/**
 	 * Custom event handler when date and time are selected
+	 *
+	 * ```ts
+	 * onChange: (value) => {
+	 *   console.log('Selected date:', value.date?.toString());
+	 *   console.log('Selected time:', value.timeOption);
+	 *   // value = {
+	 *   //   date: CalendarDate { calendar: ..., era: 'AD', year: 2025, month: 1, day: 15 },
+	 *   //   timeOption: '14:00'
+	 *   // }
+	 * }
+	 * ```
 	 */
 	onChange?: (value: DateWithTimeOption) => void;
 	/**
-	 * Language content override
+	 * Text value overrides
+	 *
+	 * ```ts
+	 * {
+	 *   dateLabel?: string;
+	 *   timeLabel?: string;
+	 *   select?: string;
+	 *   nextLabel?: string;
+	 *   prevLabel?: string;
+	 *   close?: string;
+	 * }
+	 * ```
 	 */
 	lang?: Partial<DateTimeInputTextContent>;
 }
@@ -86,8 +156,19 @@ export interface DateTimeInputProps extends TestIdProp {
  * - `date`: DateValue | null
  * - `timeOption`: string [name of the selected option]
  *
- * ## Usage
- * ```tsx
+ * ## Date Restrictions
+ * You can restrict date selection using the `calendarOptions` prop with react-aria calendar properties:
+ * - `minValue` / `maxValue`: Define selectable date range
+ * - `isDateUnavailable`: Function to disable specific dates
+ * - `allowPastDate` prop: Convenient way to allow/disallow past dates
+ *
+ * ## Internationalization
+ * - Override text values via `lang={{ openCalendar: 'open calendar' }}`
+ * - Date formatting helper available in `...utils/dateFormat.ts` or use `@internationalized/date` utils
+ * - Advanced i18n and localization handled by [React Aria I18Provider](https://react-spectrum.adobe.com/react-aria/I18nProvider.html)
+ * - Read more about [International calendars](https://react-spectrum.adobe.com/react-aria/useDatePicker.html#international-calendars)
+ *
+ * @example
  * const timeOptions = [
  *   { label: '9:00 AM', name: '0900' },
  *   { label: '10:00 AM', name: '1000' },
@@ -95,20 +176,10 @@ export interface DateTimeInputProps extends TestIdProp {
  *
  * <DateTimeInput
  *   timeOptions={timeOptions}
- *   onChange={({ date, timeOption }: DateWithTimeOption) => {
- *     console.log('Selected:', date, timeOption);
- *   }}
- * />
- * ```
- *
- * @example
- * // With default values
- * <DateTimeInput
- *   timeOptions={timeOptions}
  *   defaultDate={parseDate('2024-12-25')}
  *   defaultTime="1000"
  *   name="appointment1"
- *   onChange={handleChange}
+ *   onChange={ ({ date, timeOption }: DateWithTimeOption) => {} }
  * />
  */
 export const DateTimeInput = ({
@@ -198,7 +269,10 @@ export const DateTimeInput = ({
 						name={`${name}-date`}
 						value={
 							selectedDate
-								? displayFormattedDate(selectedDate, 'short')
+								? displayFormattedDate(
+										selectedDate,
+										'short-padded',
+									)
 								: textValues.select
 						}
 						className={dateInputStyle}
@@ -230,7 +304,7 @@ export const DateTimeInput = ({
 					ref={selectRef}
 				>
 					<option value="" disabled>
-						Select
+						{textValues.select}
 					</option>
 					{timeOptions.map((option) => (
 						<option key={option.name} value={option.name}>
