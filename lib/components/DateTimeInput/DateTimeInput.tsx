@@ -3,7 +3,10 @@ import React, { useCallback, useId, useRef, useState } from 'react';
 import { type AriaCalendarProps } from 'react-aria';
 
 import type { TestIdProp } from '../../types';
-import { displayFormattedDate } from '../../utils/dateFormat';
+import {
+	displayFormattedDate,
+	safeParseDateString,
+} from '../../utils/dateFormat';
 import { Box } from '../Box/Box';
 import {
 	Calendar,
@@ -39,7 +42,9 @@ export type DateWithTimeOption = {
 	timeOption: string;
 };
 
-export interface DateTimeInputProps extends TestIdProp {
+export interface DateTimeInputProps
+	extends Partial<Pick<HTMLInputElement, 'min' | 'max'>>,
+		TestIdProp {
 	/**
 	 * Calendar props passed through to the react-aria hook
 	 * ([docs](https://react-spectrum.adobe.com/react-aria/useCalendar.html))
@@ -83,7 +88,37 @@ export interface DateTimeInputProps extends TestIdProp {
 	 */
 	allowPastDate?: boolean;
 	/**
-	 * Default selected date
+	 * Minimum selectable date (ISO string format: YYYY-MM-DD)
+	 *
+	 * ```ts
+	 * // Today as minimum
+	 * min: today(getLocalTimeZone()).toString()
+	 *
+	 * // Specific date
+	 * min: "2025-01-01"
+	 *
+	 * // One week from today
+	 * min: today(getLocalTimeZone()).add({ days: 7 }).toString()
+	 * ```
+	 */
+	min?: string;
+	/**
+	 * Maximum selectable date (ISO string format: YYYY-MM-DD)
+	 *
+	 * ```ts
+	 * // End of current year
+	 * max: "2025-12-31"
+	 *
+	 * // One year from today
+	 * max: today(getLocalTimeZone()).add({ years: 1 }).toString()
+	 *
+	 * // Specific future date
+	 * max: "2026-06-30"
+	 * ```
+	 */
+	max?: string;
+	/**
+	 * Default selected date (uncontrolled)
 	 *
 	 * ```ts
 	 * // Today's date
@@ -98,7 +133,7 @@ export interface DateTimeInputProps extends TestIdProp {
 	 */
 	defaultDate?: DateValue;
 	/**
-	 * Default selected time option (must match a value from timeOptions)
+	 * Default selected time option (uncontrolled, must match a value from timeOptions)
 	 *
 	 * ```ts
 	 * // Matches timeOptions[0].value
@@ -143,6 +178,17 @@ export interface DateTimeInputProps extends TestIdProp {
 	 * ```
 	 */
 	lang?: Partial<DateTimeInputTextContent>;
+	/**
+	 * Current selected date and time (controlled mode)
+	 *
+	 * ```ts
+	 * const [value, setValue] = useState({
+	 *   date: today(getLocalTimeZone()),
+	 *   timeOption: 'morning'
+	 * });
+	 * ```
+	 */
+	value?: DateWithTimeOption;
 }
 
 /**
@@ -150,20 +196,25 @@ export interface DateTimeInputProps extends TestIdProp {
  *
  * The date selection opens a Calendar in a Popover, while the time selector is a
  * standard select input. The component provides a form-friendly interface with
- * proper accessibility support and customizable time options.
+ * proper keyboard and accessbility support.
+ *
+ * For controlled usage, use the `value` prop which should match the structure
+ * returned by `onChange` for seamless state management.
  *
  * The `onChange` callback receives a `DateWithTimeOption` value:
  * - `date`: DateValue | null
  * - `timeOption`: string [name of the selected option]
  *
  * ## Date Restrictions
- * You can restrict date selection using the `calendarOptions` prop with react-aria calendar properties:
- * - `minValue` / `maxValue`: Define selectable date range
- * - `isDateUnavailable`: Function to disable specific dates
- * - `allowPastDate` prop: Convenient way to allow/disallow past dates
+ * - `min` / `max`: Define selectable date range using ISO YYYY-MM-DD
+ * - `allowPastDate`: Convenient way to allow/disallow past dates
+ *
+ * You can also handle complex date restriction with a function:
+ * - `calendarOptions`: pass through the react-aria calendar props
+ *   - `isDateUnavailable`: Function to disable specific dates
  *
  * ## Internationalization
- * - Override text values via `lang={{ openCalendar: 'open calendar' }}`
+ * - Override text values with `lang` prop: `lang={{ dateLabel: 'DATE', timeLabel: 'TIME' }}`
  * - Date formatting helper available in `...utils/dateFormat.ts` or use `@internationalized/date` utils
  * - Advanced i18n and localization handled by [React Aria I18Provider](https://react-spectrum.adobe.com/react-aria/I18nProvider.html)
  * - Read more about [International calendars](https://react-spectrum.adobe.com/react-aria/useDatePicker.html#international-calendars)
@@ -174,11 +225,28 @@ export interface DateTimeInputProps extends TestIdProp {
  *   { label: '10:00 AM', name: '1000' },
  * ];
  *
+ * // Uncontrolled usage (recommended)
  * <DateTimeInput
  *   timeOptions={timeOptions}
  *   defaultDate={parseDate('2024-12-25')}
  *   defaultTime="1000"
  *   name="appointment1"
+ *   onChange={ ({ date, timeOption }: DateWithTimeOption) => {} }
+ * />
+ *
+ * // Controlled usage with value prop
+ * const [value, setValue] = useState({ date: parseDate('2025-01-01'), timeOption: '0900' });
+ * <DateTimeInput
+ *   timeOptions={timeOptions}
+ *   value={value}
+ *   onChange={setValue}
+ * />
+ *
+ * // With min/max restrictions
+ * <DateTimeInput
+ *   timeOptions={timeOptions}
+ *   min="2025-01-01"
+ *   max="2025-12-31"
  *   onChange={ ({ date, timeOption }: DateWithTimeOption) => {} }
  * />
  */
@@ -188,16 +256,24 @@ export const DateTimeInput = ({
 	defaultDate,
 	defaultTime,
 	lang,
+	max,
+	min,
 	name = 'datetime-input',
 	onChange,
 	timeOptions,
 	testId,
+	value,
 }: DateTimeInputProps) => {
 	const dateInputId = useId();
-	const [selectedDate, setSelectedDate] = useState<DateValue | null>(
+
+	const [internalDate, setInternalDate] = useState<DateValue | null>(
 		defaultDate ?? null,
 	);
-	const [selectedTime, setSelectedTime] = useState<string>(defaultTime ?? '');
+	const [internalTime, setInternalTime] = useState<string>(defaultTime ?? '');
+
+	const isControlled = value !== undefined;
+	const currentDate = value?.date ?? internalDate;
+	const currentTime = value?.timeOption ?? internalTime;
 
 	const datePopoverState = useRef<{ close: () => void } | null>(null);
 	const selectRef = useRef<HTMLSelectElement>(null);
@@ -207,20 +283,24 @@ export const DateTimeInput = ({
 		nextLabel: textValues.nextLabel,
 		prevLabel: textValues.prevLabel,
 	};
+
 	const langPopover = {
 		close: textValues.close,
 	};
 
 	const handleDateChange = useCallback(
 		(value: DateValue) => {
-			setSelectedDate(value);
+			if (!isControlled) {
+				setInternalDate(value);
+			}
+
 			datePopoverState.current?.close();
 			onChange?.({
 				date: value,
-				timeOption: selectedTime,
+				timeOption: currentTime,
 			});
 		},
-		[selectedTime, onChange],
+		[currentTime, onChange, isControlled],
 	);
 
 	const handleTimeFieldClick = () => {
@@ -235,7 +315,9 @@ export const DateTimeInput = ({
 	};
 
 	const calendarProps: AriaCalendarProps<DateValue> = {
-		defaultValue: selectedDate,
+		defaultValue: currentDate,
+		minValue: min ? safeParseDateString(min) : undefined,
+		maxValue: max ? safeParseDateString(max) : undefined,
 		...calendarOptions,
 	};
 
@@ -268,9 +350,9 @@ export const DateTimeInput = ({
 						id={dateInputId}
 						name={`${name}-date`}
 						value={
-							selectedDate
+							currentDate
 								? displayFormattedDate(
-										selectedDate,
+										currentDate,
 										'short-padded',
 									)
 								: textValues.select
@@ -289,12 +371,16 @@ export const DateTimeInput = ({
 					as="select"
 					name={`${name}-time`}
 					className={[inputResetStyle, valueStyle]}
-					value={selectedTime}
+					value={currentTime}
 					onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
 						const newTime = event.target.value;
-						setSelectedTime(newTime);
+
+						if (!isControlled) {
+							setInternalTime(newTime);
+						}
+
 						onChange?.({
-							date: selectedDate ?? null,
+							date: currentDate ?? null,
 							timeOption: newTime,
 						});
 					}}
