@@ -1,13 +1,14 @@
 import { type DateValue } from '@internationalized/date';
-import React, { useId, useRef } from 'react';
+import React, { forwardRef, useId, useRef } from 'react';
 import { type AriaCalendarProps } from 'react-aria';
 
 import type { TestIdProp } from '../../types';
+import { dataAttrs } from '../../utils/dataAttrs';
 import {
 	displayFormattedDate,
 	safeParseDateString,
 } from '../../utils/dateFormat';
-import { Box } from '../Box/Box';
+import { Box, useBox } from '../Box';
 import {
 	Calendar,
 	type CalendarProps,
@@ -89,47 +90,21 @@ export interface DateTimeInputProps
 	 */
 	allowPastDate?: boolean;
 	/**
-	 * Minimum selectable date (ISO string format: YYYY-MM-DD)
-	 *
-	 * ```ts
-	 * // Today as minimum
-	 * min: today(getLocalTimeZone()).toString()
-	 *
-	 * // Specific date
-	 * min: "2025-01-01"
-	 *
-	 * // One week from today
-	 * min: today(getLocalTimeZone()).add({ days: 7 }).toString()
-	 * ```
+	 * Minimum selectable date (ISO YYYY-MM-DD)
 	 */
 	min?: string;
 	/**
-	 * Maximum selectable date (ISO string format: YYYY-MM-DD)
-	 *
-	 * ```ts
-	 * // End of current year
-	 * max: "2025-12-31"
-	 *
-	 * // One year from today
-	 * max: today(getLocalTimeZone()).add({ years: 1 }).toString()
-	 *
-	 * // Specific future date
-	 * max: "2026-06-30"
-	 * ```
+	 * Maximum selectable date (ISO YYYY-MM-DD)
 	 */
 	max?: string;
 	/**
 	 * Default selected date (uncontrolled)
 	 *
 	 * ```ts
-	 * // Today's date
 	 * defaultDate: today(getLocalTimeZone())
-	 *
-	 * // Specific date
+	 * ```
+	 * ```ts
 	 * defaultDate: parseDate('2025-12-25')
-	 *
-	 * // Future date
-	 * defaultDate: today(getLocalTimeZone()).add({ days: 7 })
 	 * ```
 	 */
 	defaultDate?: DateValue;
@@ -251,141 +226,159 @@ export interface DateTimeInputProps
  *   onChange={ ({ date, timeOption }: DateWithTimeOption) => {} }
  * />
  */
-export const DateTimeInput = ({
-	allowPastDate = false,
-	calendarOptions,
-	defaultDate,
-	defaultTime,
-	lang,
-	max,
-	min,
-	name = 'datetime-input',
-	onChange,
-	timeOptions,
-	testId,
-	value,
-}: DateTimeInputProps) => {
-	const dateInputId = useId();
+export const DateTimeInput = forwardRef<HTMLDivElement, DateTimeInputProps>(
+	(
+		{
+			allowPastDate = false,
+			calendarOptions,
+			defaultDate,
+			defaultTime,
+			lang,
+			max,
+			min,
+			name = 'datetime-input',
+			onChange,
+			timeOptions,
+			testId,
+			value,
+		},
+		ref,
+	) => {
+		const dateInputId = useId();
 
-	const {
-		currentDate,
-		currentTime,
-		handleDateChange: onDateChange,
-		handleTimeChange,
-	} = useDateTimeInput({
-		value,
-		defaultDate,
-		defaultTime,
-		onChange,
-	});
+		const {
+			currentDate,
+			currentTime,
+			handleDateChange: onDateChange,
+			handleTimeChange,
+		} = useDateTimeInput({
+			value,
+			defaultDate,
+			defaultTime,
+			onChange,
+		});
 
-	const datePopoverState = useRef<{ close: () => void } | null>(null);
-	const selectRef = useRef<HTMLSelectElement>(null);
-	const textValues = { ...defaultEnglish, ...lang };
+		const { Component, componentProps } = useBox({
+			...dataAttrs({ 'od-component': 'date-time-input' }),
+			testId,
+		});
 
-	const langCalendar = {
-		nextLabel: textValues.nextLabel,
-		prevLabel: textValues.prevLabel,
-	};
+		const datePopoverState = useRef<{ close: () => void } | null>(null);
+		const selectRef = useRef<HTMLSelectElement>(null);
+		const textValues = { ...defaultEnglish, ...lang };
 
-	const langPopover = {
-		close: textValues.close,
-	};
+		const langCalendar = {
+			nextLabel: textValues.nextLabel,
+			prevLabel: textValues.prevLabel,
+		};
 
-	const handleDateChange = (dateValue: DateValue) => {
-		datePopoverState.current?.close();
-		onDateChange(dateValue);
-	};
+		const langPopover = {
+			close: textValues.close,
+		};
 
-	const handleTimeFieldClick = () => {
-		if ('showPicker' in HTMLSelectElement.prototype && selectRef.current) {
-			try {
-				// programmatically trigger the select menu
-				selectRef.current.showPicker();
-			} catch {
-				// browser doesn't support triggering menu
-			}
-		}
-	};
+		const handleDateChange = (dateValue: DateValue) => {
+			datePopoverState.current?.close();
+			onDateChange(dateValue);
+		};
 
-	const calendarProps: AriaCalendarProps<DateValue> = {
-		defaultValue: currentDate,
-		minValue: min ? safeParseDateString(min) : undefined,
-		maxValue: max ? safeParseDateString(max) : undefined,
-		...calendarOptions,
-	};
-
-	return (
-		<Box data-od-component="date-time-field" testId={testId}>
-			{/* Date Field */}
-			<PopoverTrigger
-				content={
-					<Box>
-						<Calendar
-							allowPastDate={allowPastDate}
-							calendarOptions={calendarProps}
-							lang={langCalendar}
-							onChange={handleDateChange}
-						/>
-					</Box>
+		const handleTimeFieldClick = () => {
+			if (
+				'showPicker' in HTMLSelectElement.prototype &&
+				selectRef.current
+			) {
+				try {
+					// programmatically trigger the select menu
+					selectRef.current.showPicker();
+				} catch {
+					// browser doesn't support triggering menu
 				}
-				lang={langPopover}
-				offset={1}
-				onStateReady={(state) => {
-					datePopoverState.current = state;
-				}}
-			>
-				<button className={dateFieldStyle}>
-					<label className={labelStyle} htmlFor={dateInputId}>
-						{textValues.dateLabel}
-					</label>
-					<input
-						type="text"
-						id={dateInputId}
-						name={`${name}-date`}
-						value={
-							currentDate
-								? displayFormattedDate(
-										currentDate,
-										'short-padded',
-									)
-								: textValues.select
-						}
-						className={dateInputStyle}
-						tabIndex={-1}
-						readOnly
-					/>
-				</button>
-			</PopoverTrigger>
+			}
+		};
 
-			{/* Time Field */}
-			<label className={timeFieldStyle} onClick={handleTimeFieldClick}>
-				<div className={labelStyle}>{textValues.timeLabel}</div>
-				<Box
-					as="select"
-					name={`${name}-time`}
-					className={[inputResetStyle, valueStyle]}
-					value={currentTime}
-					onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
-						handleTimeChange(event.target.value);
+		const calendarProps: AriaCalendarProps<DateValue> = {
+			defaultValue: currentDate,
+			minValue: min ? safeParseDateString(min) : undefined,
+			maxValue: max ? safeParseDateString(max) : undefined,
+			...calendarOptions,
+		};
+
+		return (
+			<Component {...componentProps} ref={ref}>
+				{/* Date Field */}
+				<PopoverTrigger
+					content={
+						<Box>
+							<Calendar
+								allowPastDate={allowPastDate}
+								calendarOptions={calendarProps}
+								lang={langCalendar}
+								onChange={handleDateChange}
+							/>
+						</Box>
+					}
+					lang={langPopover}
+					offset={1}
+					onStateReady={(state) => {
+						datePopoverState.current = state;
 					}}
-					onClick={(event: React.MouseEvent) => {
-						event.stopPropagation();
-					}}
-					ref={selectRef}
 				>
-					<option value="" disabled>
-						{textValues.select}
-					</option>
-					{timeOptions.map((option) => (
-						<option key={option.name} value={option.name}>
-							{option.label}
+					<button className={dateFieldStyle}>
+						<label className={labelStyle} htmlFor={dateInputId}>
+							{textValues.dateLabel}
+						</label>
+						<input
+							type="text"
+							id={dateInputId}
+							name={`${name}-date`}
+							value={
+								currentDate
+									? displayFormattedDate(
+											currentDate,
+											'short-padded',
+										)
+									: textValues.select
+							}
+							className={dateInputStyle}
+							tabIndex={-1}
+							readOnly
+						/>
+					</button>
+				</PopoverTrigger>
+
+				{/* Time Field */}
+				<label
+					className={timeFieldStyle}
+					onClick={handleTimeFieldClick}
+				>
+					<div className={labelStyle}>{textValues.timeLabel}</div>
+					<Box
+						as="select"
+						name={`${name}-time`}
+						className={[inputResetStyle, valueStyle]}
+						value={currentTime}
+						onChange={(
+							event: React.ChangeEvent<HTMLSelectElement>,
+						) => {
+							handleTimeChange(event.target.value);
+						}}
+						onClick={(event: React.MouseEvent) => {
+							event.stopPropagation();
+						}}
+						ref={selectRef}
+					>
+						<option value="" disabled>
+							{textValues.select}
 						</option>
-					))}
-				</Box>
-			</label>
-		</Box>
-	);
-};
+						{timeOptions.map((option) => (
+							<option key={option.name} value={option.name}>
+								{option.label}
+							</option>
+						))}
+					</Box>
+				</label>
+			</Component>
+		);
+	},
+);
 
 DateTimeInput.displayName = 'DateTimeInput';
