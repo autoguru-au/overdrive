@@ -14,6 +14,8 @@ import { Button } from '../Button/Button';
 import { Popover, type PopoverTextContent } from './Popover';
 import { triggerStyle } from './Popover.css';
 
+export type OnStateReadyValue = { close: () => void; isOpen: boolean };
+
 /**
  * Props for the PopoverTrigger component.
  */
@@ -46,7 +48,8 @@ export interface PopoverTriggerProps
 	/**
 	 * Callback that receives the overlay trigger state for external control
 	 */
-	onStateReady?: (state: { close: () => void }) => void;
+	onStateReady?: (state: OnStateReadyValue) => void;
+	ref?: React.RefObject<HTMLButtonElement | null>;
 }
 
 /**
@@ -73,17 +76,19 @@ export const PopoverTrigger = ({
 	shouldFlip,
 	testId,
 	lang,
+	ref,
 	onStateReady,
 }: PopoverTriggerProps) => {
 	const state = useOverlayTriggerState({});
-	const triggerRef = useRef<HTMLButtonElement>(null);
+	const internalRef = useRef<HTMLButtonElement>(null);
+	const triggerRef = ref ?? internalRef;
 
 	// Provide state access to parent component
 	React.useEffect(() => {
 		if (onStateReady) {
-			onStateReady({ close: state.close });
+			onStateReady({ close: state.close, isOpen: state.isOpen });
 		}
-	}, [onStateReady, state.close]);
+	}, [onStateReady, state.close, state.isOpen]);
 
 	const { triggerProps, overlayProps } = useOverlayTrigger(
 		{ type: 'dialog' },
