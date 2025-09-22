@@ -1,7 +1,9 @@
 import { type DateValue } from '@internationalized/date';
-import React, { forwardRef, useId, useRef } from 'react';
+import { clsx } from 'clsx';
+import React, { forwardRef, useId, useRef, useState } from 'react';
 import { type AriaCalendarProps } from 'react-aria';
 
+import { elementReset } from '../../styles/elementReset.css';
 import type { TestIdProp } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import {
@@ -16,7 +18,10 @@ import {
 } from '../Calendar/Calendar';
 import { LoadingBox } from '../LoadingBox/LoadingBox';
 import type { PopoverTextContent } from '../Popover/Popover';
-import { PopoverTrigger } from '../Popover/PopoverTrigger';
+import {
+	PopoverTrigger,
+	type OnStateReadyValue,
+} from '../Popover/PopoverTrigger';
 
 import { dateFieldStyle, inputStyle, labelVariants } from './DateTimeInput.css';
 import type { CommonSelectorProps } from './types';
@@ -62,7 +67,7 @@ const defaultEnglish = {
  * DateSelector component for selecting a date with a Calendar popup.
  * Presently, this component is primarily used within the DateTimeInput.
  */
-export const DateSelector = forwardRef<HTMLButtonElement, DateSelectorProps>(
+export const DateSelector = forwardRef<HTMLLabelElement, DateSelectorProps>(
 	(
 		{
 			allowPastDate = false,
@@ -81,10 +86,16 @@ export const DateSelector = forwardRef<HTMLButtonElement, DateSelectorProps>(
 		},
 		ref,
 	) => {
+		const [internalValue, setInternalValue] = useState<DateValue | null>(
+			defaultValue ?? null,
+		);
+		const datePopoverState = useRef<OnStateReadyValue | null>(null);
+		const triggerRef = useRef<HTMLButtonElement>(null);
 		const dateInputId = useId();
-		const isDisabled = disabled || loading;
-		const datePopoverState = useRef<{ close: () => void } | null>(null);
 
+		const isControlled = value !== undefined;
+		const currentValue = isControlled ? value : internalValue;
+		const isDisabled = disabled || loading;
 		const textValues = { ...defaultEnglish, ...lang };
 
 		const langCalendar = {
@@ -98,70 +109,90 @@ export const DateSelector = forwardRef<HTMLButtonElement, DateSelectorProps>(
 
 		const handleDateChange = (dateValue: DateValue) => {
 			datePopoverState.current?.close();
+
+			// Update internal state if uncontrolled
+			if (!isControlled) {
+				setInternalValue(dateValue);
+			}
+
 			onChange?.(dateValue);
 		};
 
 		const calendarProps: AriaCalendarProps<DateValue> = {
-			defaultValue: value ?? defaultValue,
+			defaultValue: currentValue,
 			minValue: min ? safeParseDateString(min) : undefined,
 			maxValue: max ? safeParseDateString(max) : undefined,
 			...calendarOptions,
 		};
 
 		return (
-			<PopoverTrigger
-				content={
-					<Box>
-						<Calendar
-							allowPastDate={allowPastDate}
-							calendarOptions={calendarProps}
-							lang={langCalendar}
-							onChange={handleDateChange}
-						/>
-					</Box>
-				}
-				lang={langPopover}
-				offset={1}
-				onStateReady={(state) => {
-					datePopoverState.current = state;
+			<label
+				className={dateFieldStyle}
+				htmlFor={dateInputId}
+				onClick={(e) => {
+					if (!isDisabled && !datePopoverState.current?.isOpen) {
+						e.preventDefault();
+						triggerRef.current?.click();
+					}
 				}}
-				isDisabled={isDisabled}
-				testId={testId}
+				tabIndex={0}
+				{...dataAttrs({
+					disabled,
+					invalid,
+					'od-component': 'date-select-input',
+				})}
+				ref={ref}
 			>
-				<button
-					className={dateFieldStyle}
-					{...dataAttrs({ invalid })}
-					ref={ref}
+				<PopoverTrigger
+					content={
+						<Box>
+							<Calendar
+								allowPastDate={allowPastDate}
+								calendarOptions={calendarProps}
+								lang={langCalendar}
+								onChange={handleDateChange}
+							/>
+						</Box>
+					}
+					lang={langPopover}
+					offset={1}
+					onStateReady={(state) => {
+						datePopoverState.current = state;
+					}}
+					isDisabled={isDisabled}
+					testId={testId}
+					ref={triggerRef}
 				>
-					<label
-						className={labelVariants({
-							disabled,
-							invalid,
-						})}
-						htmlFor={dateInputId}
+					<button
+						className={clsx(
+							elementReset.button,
+							labelVariants({
+								invalid,
+							}),
+						)}
 					>
 						{textValues.dateLabel}
-					</label>
-					{loading ? (
-						<LoadingBox height="6" />
-					) : (
-						<input
-							type="text"
-							id={dateInputId}
-							name={name}
-							value={
-								value
-									? displayFormattedDate(value)
-									: textValues.select
-							}
-							className={inputStyle}
-							disabled={isDisabled}
-							tabIndex={-1}
-							readOnly
-						/>
-					)}
-				</button>
-			</PopoverTrigger>
+					</button>
+				</PopoverTrigger>
+				{loading ? (
+					<LoadingBox height="6" />
+				) : (
+					<input
+						type="text"
+						id={dateInputId}
+						name={name}
+						value={
+							currentValue
+								? displayFormattedDate(currentValue)
+								: textValues.select
+						}
+						className={inputStyle}
+						disabled={isDisabled}
+						tabIndex={-1}
+						readOnly
+					/>
+				)}
+			</label>
 		);
 	},
 );

@@ -7,7 +7,9 @@ import { expect, fn, userEvent, within, waitFor, screen } from 'storybook/test';
 
 import type { OptionItem } from '../OptionGrid/OptionGrid';
 
+import { DateSelector } from './DateSelector';
 import { DateTimeInput } from './DateTimeInput';
+import { TimeSelector } from './TimeSelector';
 
 const testDate = '2025-12-31';
 const defaultTestId = 'date-time-input';
@@ -31,40 +33,20 @@ const meta = {
 	beforeEach: () => {
 		if (isChromatic()) MockDate.set(testDate);
 	},
-	decorators: [
-		(Story) => (
-			<div style={{ maxWidth: '132px' }}>
-				<Story />
-			</div>
-		),
-	],
+	// decorators: [
+	// 	(Story) => (
+	// 		<div style={{ maxWidth: '132px' }}>
+	// 			<Story />
+	// 		</div>
+	// 	),
+	// ],
 	args: {
-		timeOptions,
-		onChange: fn(),
-		allowPastDate: false,
-		calendarOptions: undefined,
-		defaultDate: undefined,
-		defaultTime: undefined,
-		disabled: false,
-		invalidDate: false,
-		invalidTime: false,
-		loading: false,
-		name: undefined,
-		min: undefined,
-		max: undefined,
-		lang: undefined,
-		value: undefined,
+		children: undefined,
 		testId: defaultTestId,
 	},
 	argTypes: {
-		allowPastDate: {
-			control: 'boolean',
-		},
-		defaultDate: {
-			control: 'text',
-		},
-		invalidDate: {
-			control: 'boolean',
+		children: {
+			control: false,
 		},
 	},
 } satisfies Meta<typeof DateTimeInput>;
@@ -72,19 +54,35 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof DateTimeInput>;
 
-export const Standard: Story = {};
+export const Standard: Story = {
+	render: (args) => (
+		<DateTimeInput {...args}>
+			<DateSelector onChange={fn()} />
+			<TimeSelector timeOptions={timeOptions} onChange={fn()} />
+		</DateTimeInput>
+	),
+};
 
 /**
  * DateTimeInput with min and max props for simple date restrictions.
  * Demonstrates the string-based min/max approach consistent with DateInput.
  */
 export const MinMax: Story = {
-	args: {
-		min: '2025-01-01',
-		max: '2025-12-31',
-		defaultDate: parseDate('2025-06-15'),
-		defaultTime: '1000',
-	},
+	render: (args) => (
+		<DateTimeInput {...args}>
+			<DateSelector
+				min="2025-01-01"
+				max="2025-12-31"
+				defaultValue={parseDate('2025-06-15')}
+				onChange={fn()}
+			/>
+			<TimeSelector
+				timeOptions={timeOptions}
+				defaultValue="1000"
+				onChange={fn()}
+			/>
+		</DateTimeInput>
+	),
 };
 
 /**
@@ -95,15 +93,23 @@ export const MinMax: Story = {
  * as well as min/max values.
  */
 export const CustomDateAvailability: Story = {
-	args: {
-		calendarOptions: {
-			isDateUnavailable: (date) => {
-				// Block weekends (Saturday = 6, Sunday = 0)
-				const dayOfWeek = date.toDate(getLocalTimeZone()).getDay();
-				return dayOfWeek === 0 || dayOfWeek === 6;
-			},
-		},
-	},
+	render: (args) => (
+		<DateTimeInput {...args}>
+			<DateSelector
+				calendarOptions={{
+					isDateUnavailable: (date) => {
+						// Block weekends (Saturday = 6, Sunday = 0)
+						const dayOfWeek = date
+							.toDate(getLocalTimeZone())
+							.getDay();
+						return dayOfWeek === 0 || dayOfWeek === 6;
+					},
+				}}
+				onChange={fn()}
+			/>
+			<TimeSelector timeOptions={timeOptions} onChange={fn()} />
+		</DateTimeInput>
+	),
 };
 
 /**
@@ -111,10 +117,16 @@ export const CustomDateAvailability: Story = {
  * Tests both mouse and keyboard interactions with organized step-by-step validation.
  */
 export const InteractionTest: Story = {
-	args: {
-		timeOptions: timeOptions.slice(0, 3), // Fewer options for testing
-	},
-	play: async ({ canvasElement, args, step }) => {
+	render: (args) => (
+		<DateTimeInput {...args}>
+			<DateSelector onChange={fn()} />
+			<TimeSelector
+				timeOptions={timeOptions.slice(0, 3)}
+				onChange={fn()}
+			/>
+		</DateTimeInput>
+	),
+	play: async ({ canvasElement, step }) => {
 		const canvas = within(canvasElement);
 		const user = userEvent.setup();
 
@@ -133,7 +145,7 @@ export const InteractionTest: Story = {
 			const container = canvas.getByTestId(defaultTestId);
 			expect(container).toHaveAttribute(
 				'data-od-component',
-				defaultTestId,
+				'date-time-input',
 			);
 		});
 
@@ -175,11 +187,8 @@ export const InteractionTest: Story = {
 			// Select the first time option
 			await user.selectOptions(timeSelect, '0700');
 
-			// Verify onChange was called with correct structure
-			expect(args.onChange).toHaveBeenCalledWith({
-				date: expect.any(Object), // DateValue object
-				timeOption: '0700',
-			});
+			// Note: With slot approach, onChange is handled individually by each component
+			expect(timeSelect).toHaveValue('0700');
 		});
 
 		await step('Keyboard navigation and accessibility', async () => {
