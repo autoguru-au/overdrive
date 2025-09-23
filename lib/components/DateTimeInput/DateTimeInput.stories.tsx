@@ -1,4 +1,3 @@
-import { parseDate, getLocalTimeZone } from '@internationalized/date';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import isChromatic from 'chromatic/isChromatic';
 import MockDate from 'mockdate';
@@ -7,9 +6,9 @@ import { expect, fn, userEvent, within, waitFor, screen } from 'storybook/test';
 
 import type { OptionItem } from '../OptionGrid/OptionGrid';
 
-import { DateSelector } from './DateSelector';
+import { DateField } from './DateField/DateField';
 import { DateTimeInput } from './DateTimeInput';
-import { TimeSelector } from './TimeSelector';
+import { TimeField } from './TimeField/TimeField';
 
 const testDate = '2025-12-31';
 const defaultTestId = 'date-time-input';
@@ -33,15 +32,9 @@ const meta = {
 	beforeEach: () => {
 		if (isChromatic()) MockDate.set(testDate);
 	},
-	// decorators: [
-	// 	(Story) => (
-	// 		<div style={{ maxWidth: '132px' }}>
-	// 			<Story />
-	// 		</div>
-	// 	),
-	// ],
 	args: {
 		children: undefined,
+		className: undefined,
 		testId: defaultTestId,
 	},
 	argTypes: {
@@ -57,59 +50,64 @@ type Story = StoryObj<typeof DateTimeInput>;
 export const Standard: Story = {
 	render: (args) => (
 		<DateTimeInput {...args}>
-			<DateSelector onChange={fn()} />
-			<TimeSelector timeOptions={timeOptions} onChange={fn()} />
+			<DateField name="date" onChange={fn()} />
+			<TimeField name="time" timeOptions={timeOptions} onChange={fn()} />
 		</DateTimeInput>
 	),
 };
 
 /**
- * DateTimeInput with min and max props for simple date restrictions.
- * Demonstrates the string-based min/max approach consistent with DateInput.
+ * Demonstrates different field states (invalid, disabled, loading) applied to both DateField and TimeField components.
+ * Shows how to pass state props directly to individual components within the DateTimeInput wrapper.
+ * Invalid fields clear their invalid state when changed.
  */
-export const MinMax: Story = {
-	render: (args) => (
-		<DateTimeInput {...args}>
-			<DateSelector
-				min="2025-01-01"
-				max="2025-12-31"
-				defaultValue={parseDate('2025-06-15')}
-				onChange={fn()}
-			/>
-			<TimeSelector
-				timeOptions={timeOptions}
-				defaultValue="1000"
-				onChange={fn()}
-			/>
-		</DateTimeInput>
-	),
-};
+export const FieldStates: Story = {
+	render: () => {
+		const [dateInvalid, setDateInvalid] = React.useState(true);
+		const [timeInvalid, setTimeInvalid] = React.useState(true);
 
-/**
- * DateTimeInput with custom date availability function.
- * Demonstrates blocking specific dates (e.g., weekends, holidays).
- *
- * **NOTE**: Using the `isDateUnavailable` handler overrides past date availability
- * as well as min/max values.
- */
-export const CustomDateAvailability: Story = {
-	render: (args) => (
-		<DateTimeInput {...args}>
-			<DateSelector
-				calendarOptions={{
-					isDateUnavailable: (date) => {
-						// Block weekends (Saturday = 6, Sunday = 0)
-						const dayOfWeek = date
-							.toDate(getLocalTimeZone())
-							.getDay();
-						return dayOfWeek === 0 || dayOfWeek === 6;
-					},
+		return (
+			<div
+				style={{
+					display: 'grid',
+					gridTemplateColumns: '1fr 1fr 1fr',
+					gap: '16px',
 				}}
-				onChange={fn()}
-			/>
-			<TimeSelector timeOptions={timeOptions} onChange={fn()} />
-		</DateTimeInput>
-	),
+			>
+				<DateTimeInput>
+					<DateField
+						name="date-invalid"
+						invalid={dateInvalid}
+						onChange={() => setDateInvalid(false)}
+					/>
+					<TimeField
+						name="time-invalid"
+						invalid={timeInvalid}
+						timeOptions={timeOptions}
+						onChange={() => setTimeInvalid(false)}
+					/>
+				</DateTimeInput>
+				<DateTimeInput>
+					<DateField name="date-disabled" disabled onChange={fn()} />
+					<TimeField
+						name="time-disabled"
+						disabled
+						timeOptions={timeOptions}
+						onChange={fn()}
+					/>
+				</DateTimeInput>
+				<DateTimeInput>
+					<DateField name="date-loading" loading onChange={fn()} />
+					<TimeField
+						name="time-loading"
+						loading
+						timeOptions={timeOptions}
+						onChange={fn()}
+					/>
+				</DateTimeInput>
+			</div>
+		);
+	},
 };
 
 /**
@@ -119,8 +117,9 @@ export const CustomDateAvailability: Story = {
 export const InteractionTest: Story = {
 	render: (args) => (
 		<DateTimeInput {...args}>
-			<DateSelector onChange={fn()} />
-			<TimeSelector
+			<DateField name="date-test" onChange={fn()} />
+			<TimeField
+				name="time-test"
 				timeOptions={timeOptions.slice(0, 3)}
 				onChange={fn()}
 			/>
@@ -140,14 +139,9 @@ export const InteractionTest: Story = {
 			// Verify labels are present with correct text
 			expect(canvas.getByText('date')).toBeInTheDocument();
 			expect(canvas.getByText('time')).toBeInTheDocument();
-
-			// Check data attributes
-			const container = canvas.getByTestId(defaultTestId);
-			expect(container).toHaveAttribute(
-				'data-od-component',
-				'date-time-input',
-			);
 		});
+
+		let selectedDateText = '';
 
 		await step('Date field mouse interaction', async () => {
 			const dateButton = canvas.getAllByRole('button')[0];
@@ -171,6 +165,8 @@ export const InteractionTest: Story = {
 			);
 
 			if (dateButtons.length > 0) {
+				// Capture the selected date text for later validation
+				selectedDateText = dateButtons[0].textContent?.trim() || '';
 				await user.click(dateButtons[0]);
 			}
 
@@ -237,16 +233,29 @@ export const InteractionTest: Story = {
 		});
 
 		await step('Form integration validation', async () => {
-			const dateInput = canvas.getByRole('textbox');
 			const timeSelect = canvas.getByRole('combobox');
 
-			// Check form attributes
-			expect(dateInput).toHaveAttribute('name', 'datetime-input-date');
-			expect(timeSelect).toHaveAttribute('name', 'datetime-input-time');
+			// The DateField now uses a hidden input for form submission
+			const hiddenDateInput = canvasElement.querySelector(
+				'input[type="hidden"]',
+			);
+			expect(hiddenDateInput).toBeInTheDocument();
+			expect(hiddenDateInput).toHaveAttribute('name', 'date-test');
 
-			// Check readonly/disabled states
-			expect(dateInput).toHaveAttribute('readonly');
-			expect(dateInput).toHaveAttribute('tabindex', '-1');
+			// Validate the hidden input has a valid ISO date format (YYYY-MM-DD)
+			// if a date was selected
+			if (selectedDateText) {
+				const hiddenInputValue =
+					hiddenDateInput?.getAttribute('value') || '';
+				expect(hiddenInputValue).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+				// The day should match what was clicked
+				expect(hiddenInputValue.split('-')[2]).toBe(
+					selectedDateText.padStart(2, '0'),
+				);
+			}
+
+			// TimeField still uses a visible select
+			expect(timeSelect).toHaveAttribute('name', 'time-test');
 		});
 	},
 };
