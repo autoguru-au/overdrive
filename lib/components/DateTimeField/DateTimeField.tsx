@@ -61,7 +61,7 @@ export interface DateTimeFieldProps
  *
  * <DateTimeField>
  *   <DateField
- *     defaultValue={parseDate(tody())}
+ *     defaultValue={parseDate(today())}
  *     name="booking-date"
  *     onChange={(date) => console.log('Date selected:', date)}
  *   />
