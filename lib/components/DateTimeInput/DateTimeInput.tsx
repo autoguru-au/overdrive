@@ -40,6 +40,10 @@ export interface DateTimeInputProps
  * - **DateField**: Handles date selection with calendar popover functionality
  * - **TimeField**: Handles time selection from predefined options
  *
+ * ## State
+ * - **Uncontrolled** (recommended): Pass `defaultValue` prop
+ * - **Controlled**: Pass `value` prop
+ *
  * ## Internationalization
  * - Override text values via `lang` props on the DateField and TimeField components
  * - Full Calendar options available via `calendarOptions` prop on the DateField

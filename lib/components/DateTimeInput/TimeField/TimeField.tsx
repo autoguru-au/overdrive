@@ -70,6 +70,11 @@ export const TimeField = forwardRef<HTMLLabelElement, TimeFieldProps>(
 			}
 		};
 
+		const valueProps =
+			value === undefined
+				? { defaultValue: defaultValue ?? '' }
+				: { value };
+
 		return (
 			<label
 				className={timeFieldStyle}
@@ -101,7 +106,7 @@ export const TimeField = forwardRef<HTMLLabelElement, TimeFieldProps>(
 					<select
 						name={name}
 						className={inputStyle}
-						value={value ?? defaultValue}
+						{...valueProps}
 						disabled={isDisabled}
 						onChange={(
 							event: React.ChangeEvent<HTMLSelectElement>,
