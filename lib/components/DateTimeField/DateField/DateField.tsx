@@ -22,7 +22,7 @@ import {
 	dateFieldStyle,
 	inputStyle,
 	labelVariants,
-} from '../DateTimeInput.css';
+} from '../DateTimeField.css';
 import type { CommonSelectorProps } from '../types';
 
 export type DateFieldTextContent = Record<keyof typeof defaultEnglish, string> &

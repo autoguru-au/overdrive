@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useBox, type UseBoxProps } from '../Box';
 
-export interface DateTimeInputProps
+export interface DateTimeFieldProps
 	extends Pick<UseBoxProps, 'as' | 'className' | 'testId'> {
 	/**
 	 * The DateField and TimeField components to render as children.
@@ -31,7 +31,7 @@ export interface DateTimeInputProps
 }
 
 /**
- * DateTimeInput is a layout-only wrapper component that provides structure for DateField and TimeField components.
+ * DateTimeField is a layout-only wrapper component that provides structure for DateField and TimeField components.
  * It doesn't manage state or provide functionality. This allows for simple direct control and updates to each field.
  *
  * All props (name, disabled, loading, etc.) should be passed directly to the individual DateField and TimeField components.
@@ -59,7 +59,7 @@ export interface DateTimeInputProps
  *   { label: '6:00 PM', name: '1800' }
  * ];
  *
- * <DateTimeInput>
+ * <DateTimeField>
  *   <DateField
  *     defaultValue={parseDate(tody())}
  *     name="booking-date"
@@ -71,14 +71,14 @@ export interface DateTimeInputProps
  *     name="booking-time"
  *     onChange={(time) => console.log('Time selected:', time)}
  *   />
- * </DateTimeInput>
+ * </DateTimeField>
  *
  * @example
  * // With shared state management
  * const [dateValue, setDateValue] = useState(null);
  * const [timeValue, setTimeValue] = useState('');
  *
- * <DateTimeInput>
+ * <DateTimeField>
  *   <DateField
  *     allowPastDate={false}
  *     name="booking-1-date"
@@ -93,11 +93,11 @@ export interface DateTimeInputProps
  *     value={timeValue}
  *     disabled={isSubmitting}
  *   />
- * </DateTimeInput>
+ * </DateTimeField>
  *
  * @example
  * // With advanced calendar configuration
- * <DateTimeInput>
+ * <DateTimeField>
  *   <DateField
  *     calendarOptions={{
  *       minValue: today(getLocalTimeZone()),
@@ -111,12 +111,12 @@ export interface DateTimeInputProps
  *     lang={{ timeLabel: 'Arrival Time' }}
  *     name="booking-time"
  *   />
- * </DateTimeInput>
+ * </DateTimeField>
  */
-export const DateTimeInput = ({ children, ...props }: DateTimeInputProps) => {
+export const DateTimeField = ({ children, ...props }: DateTimeFieldProps) => {
 	const { Component, componentProps } = useBox(props);
 
 	return <Component {...componentProps}>{children}</Component>;
 };
 
-DateTimeInput.displayName = 'DateTimeInput';
+DateTimeField.displayName = 'DateTimeField';

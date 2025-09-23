@@ -8,7 +8,7 @@ import {
 	inputStyle,
 	labelVariants,
 	timeFieldStyle,
-} from '../DateTimeInput.css';
+} from '../DateTimeField.css';
 import type { CommonSelectorProps } from '../types';
 
 export type TimeFieldTextContent = Record<keyof typeof defaultEnglish, string>;

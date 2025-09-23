@@ -6,8 +6,8 @@ import React, { useState } from 'react';
 import { describe, it, expect, vi } from 'vitest';
 
 import { DateField } from './DateField/DateField';
-import { DateTimeInput } from './DateTimeInput';
-import * as stories from './DateTimeInput.stories';
+import { DateTimeField } from './DateTimeField';
+import * as stories from './DateTimeField.stories';
 import { TimeField } from './TimeField/TimeField';
 
 const { Standard } = composeStories(stories);
@@ -18,7 +18,7 @@ const mockTimeOptions = [
 	{ label: '11:00 AM', name: '1100' },
 ];
 
-describe('DateTimeInput', () => {
+describe('DateTimeField', () => {
 	it('renders with default props and expected structure', () => {
 		render(<Standard />);
 
@@ -42,7 +42,7 @@ describe('DateTimeInput', () => {
 		const mockTimeChange = vi.fn();
 
 		render(
-			<DateTimeInput>
+			<DateTimeField>
 				<DateField
 					onChange={mockDateChange}
 					defaultValue={parseDate('2024-12-25')}
@@ -51,7 +51,7 @@ describe('DateTimeInput', () => {
 					timeOptions={mockTimeOptions}
 					onChange={mockTimeChange}
 				/>
-			</DateTimeInput>,
+			</DateTimeField>,
 		);
 
 		// Select a time option
@@ -63,13 +63,13 @@ describe('DateTimeInput', () => {
 
 	it('supports form integration with custom names', () => {
 		render(
-			<DateTimeInput>
+			<DateTimeField>
 				<DateField name="appointment-date" />
 				<TimeField
 					name="appointment-time"
 					timeOptions={mockTimeOptions}
 				/>
-			</DateTimeInput>,
+			</DateTimeField>,
 		);
 
 		const dateInput = screen.getByDisplayValue('');
@@ -81,10 +81,10 @@ describe('DateTimeInput', () => {
 
 	it('renders with testId attribute', () => {
 		render(
-			<DateTimeInput testId="datetime">
+			<DateTimeField testId="datetime">
 				<DateField />
 				<TimeField timeOptions={mockTimeOptions} />
-			</DateTimeInput>,
+			</DateTimeField>,
 		);
 
 		expect(screen.getByTestId('datetime')).toBeInTheDocument();
@@ -92,10 +92,10 @@ describe('DateTimeInput', () => {
 
 	it('applies disabled state to both child components', () => {
 		render(
-			<DateTimeInput>
+			<DateTimeField>
 				<DateField disabled />
 				<TimeField disabled timeOptions={mockTimeOptions} />
-			</DateTimeInput>,
+			</DateTimeField>,
 		);
 
 		const dateButton = screen.getAllByRole('button')[0];
@@ -107,10 +107,10 @@ describe('DateTimeInput', () => {
 
 	it('applies loading state to both child components', () => {
 		const { container } = render(
-			<DateTimeInput>
+			<DateTimeField>
 				<DateField loading />
 				<TimeField loading timeOptions={mockTimeOptions} />
-			</DateTimeInput>,
+			</DateTimeField>,
 		);
 
 		// Loading state shows LoadingBox components instead of inputs
@@ -125,7 +125,7 @@ describe('DateTimeInput', () => {
 		const mockTimeChange = vi.fn();
 
 		render(
-			<DateTimeInput>
+			<DateTimeField>
 				<DateField
 					name="custom-date"
 					disabled={false}
@@ -138,7 +138,7 @@ describe('DateTimeInput', () => {
 					timeOptions={mockTimeOptions}
 					onChange={mockTimeChange}
 				/>
-			</DateTimeInput>,
+			</DateTimeField>,
 		);
 
 		const dateInput = screen.getByDisplayValue('');
@@ -161,7 +161,7 @@ describe('DateTimeInput', () => {
 			const [timeValue, setTimeValue] = useState('');
 
 			return (
-				<DateTimeInput>
+				<DateTimeField>
 					<DateField
 						name="controlled-date"
 						value={dateValue}
@@ -173,7 +173,7 @@ describe('DateTimeInput', () => {
 						value={timeValue}
 						onChange={setTimeValue}
 					/>
-				</DateTimeInput>
+				</DateTimeField>
 			);
 		};
 
@@ -189,10 +189,10 @@ describe('DateTimeInput', () => {
 
 	it('maintains component data attributes', () => {
 		render(
-			<DateTimeInput testId="date-time-input">
+			<DateTimeField testId="date-time-input">
 				<DateField testId="date-field" />
 				<TimeField testId="time-field" timeOptions={mockTimeOptions} />
-			</DateTimeInput>,
+			</DateTimeField>,
 		);
 
 		const container = screen.getByTestId('date-time-input');
@@ -210,7 +210,7 @@ describe('DateTimeInput', () => {
 
 	it('supports component composition with different configurations', () => {
 		render(
-			<DateTimeInput>
+			<DateTimeField>
 				<DateField
 					allowPastDate
 					calendarOptions={{
@@ -222,7 +222,7 @@ describe('DateTimeInput', () => {
 					timeOptions={mockTimeOptions}
 					lang={{ timeLabel: 'Arrival Time' }}
 				/>
-			</DateTimeInput>,
+			</DateTimeField>,
 		);
 
 		expect(screen.getByText('Check-in Date')).toBeInTheDocument();

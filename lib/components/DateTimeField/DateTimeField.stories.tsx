@@ -7,7 +7,7 @@ import { expect, fn, userEvent, within, waitFor, screen } from 'storybook/test';
 import type { OptionItem } from '../OptionGrid/OptionGrid';
 
 import { DateField } from './DateField/DateField';
-import { DateTimeInput } from './DateTimeInput';
+import { DateTimeField } from './DateTimeField';
 import { TimeField } from './TimeField/TimeField';
 
 const testDate = '2025-12-31';
@@ -26,9 +26,9 @@ const timeOptions: OptionItem[] = [
 ];
 
 const meta = {
-	title: 'Forms & Input Fields/Date & Time Input',
+	title: 'Forms & Input Fields/Date & Time Field',
 	tags: ['beta', 'skip-themes'],
-	component: DateTimeInput,
+	component: DateTimeField,
 	beforeEach: () => {
 		if (isChromatic()) MockDate.set(testDate);
 	},
@@ -42,23 +42,23 @@ const meta = {
 			control: false,
 		},
 	},
-} satisfies Meta<typeof DateTimeInput>;
+} satisfies Meta<typeof DateTimeField>;
 
 export default meta;
-type Story = StoryObj<typeof DateTimeInput>;
+type Story = StoryObj<typeof DateTimeField>;
 
 export const Standard: Story = {
 	render: (args) => (
-		<DateTimeInput {...args}>
+		<DateTimeField {...args}>
 			<DateField name="date" onChange={fn()} />
 			<TimeField name="time" timeOptions={timeOptions} onChange={fn()} />
-		</DateTimeInput>
+		</DateTimeField>
 	),
 };
 
 /**
  * Demonstrates different field states (invalid, disabled, loading) applied to both DateField and TimeField components.
- * Shows how to pass state props directly to individual components within the DateTimeInput wrapper.
+ * Shows how to pass state props directly to individual components within the DateTimeField wrapper.
  * Invalid fields clear their invalid state when changed.
  */
 export const FieldStates: Story = {
@@ -74,7 +74,7 @@ export const FieldStates: Story = {
 					gap: '16px',
 				}}
 			>
-				<DateTimeInput>
+				<DateTimeField>
 					<DateField
 						name="date-invalid"
 						invalid={dateInvalid}
@@ -86,8 +86,8 @@ export const FieldStates: Story = {
 						timeOptions={timeOptions}
 						onChange={() => setTimeInvalid(false)}
 					/>
-				</DateTimeInput>
-				<DateTimeInput>
+				</DateTimeField>
+				<DateTimeField>
 					<DateField name="date-disabled" disabled onChange={fn()} />
 					<TimeField
 						name="time-disabled"
@@ -95,8 +95,8 @@ export const FieldStates: Story = {
 						timeOptions={timeOptions}
 						onChange={fn()}
 					/>
-				</DateTimeInput>
-				<DateTimeInput>
+				</DateTimeField>
+				<DateTimeField>
 					<DateField name="date-loading" loading onChange={fn()} />
 					<TimeField
 						name="time-loading"
@@ -104,7 +104,7 @@ export const FieldStates: Story = {
 						timeOptions={timeOptions}
 						onChange={fn()}
 					/>
-				</DateTimeInput>
+				</DateTimeField>
 			</div>
 		);
 	},
@@ -116,14 +116,14 @@ export const FieldStates: Story = {
  */
 export const InteractionTest: Story = {
 	render: (args) => (
-		<DateTimeInput {...args}>
+		<DateTimeField {...args}>
 			<DateField name="date-test" onChange={fn()} />
 			<TimeField
 				name="time-test"
 				timeOptions={timeOptions.slice(0, 3)}
 				onChange={fn()}
 			/>
-		</DateTimeInput>
+		</DateTimeField>
 	),
 	play: async ({ canvasElement, step }) => {
 		const canvas = within(canvasElement);
