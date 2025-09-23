@@ -3,37 +3,37 @@ import { clsx } from 'clsx';
 import React, { forwardRef, useId, useRef, useState } from 'react';
 import { type AriaCalendarProps } from 'react-aria';
 
-import { elementReset } from '../../styles/elementReset.css';
-import type { TestIdProp } from '../../types';
-import { dataAttrs } from '../../utils/dataAttrs';
+import { elementReset } from '../../../styles/elementReset.css';
+import type { TestIdProp } from '../../../types';
+import { dataAttrs } from '../../../utils/dataAttrs';
 import {
 	displayFormattedDate,
 	safeParseDateString,
-} from '../../utils/dateFormat';
-import { Box } from '../Box';
+} from '../../../utils/dateFormat';
+import { Box } from '../../Box';
 import {
 	Calendar,
 	type CalendarProps,
 	type CalendarTextContent,
-} from '../Calendar/Calendar';
-import { LoadingBox } from '../LoadingBox/LoadingBox';
-import type { PopoverTextContent } from '../Popover/Popover';
+} from '../../Calendar/Calendar';
+import { LoadingBox } from '../../LoadingBox/LoadingBox';
+import type { PopoverTextContent } from '../../Popover/Popover';
 import {
 	PopoverTrigger,
 	type OnStateReadyValue,
-} from '../Popover/PopoverTrigger';
+} from '../../Popover/PopoverTrigger';
+import {
+	dateFieldStyle,
+	inputStyle,
+	labelVariants,
+} from '../DateTimeInput.css';
+import type { CommonSelectorProps } from '../types';
 
-import { dateFieldStyle, inputStyle, labelVariants } from './DateTimeInput.css';
-import type { CommonSelectorProps } from './types';
-
-export type DateSelectorTextContent = Record<
-	keyof typeof defaultEnglish,
-	string
-> &
+export type DateFieldTextContent = Record<keyof typeof defaultEnglish, string> &
 	CalendarTextContent &
 	PopoverTextContent;
 
-export interface DateSelectorProps
+export interface DateFieldProps
 	extends CommonSelectorProps<DateValue | null>,
 		TestIdProp {
 	/**
@@ -55,7 +55,7 @@ export interface DateSelectorProps
 	/**
 	 * Text values for localization
 	 */
-	lang?: Partial<DateSelectorTextContent>;
+	lang?: Partial<DateFieldTextContent>;
 }
 
 const defaultEnglish = {
@@ -64,10 +64,10 @@ const defaultEnglish = {
 } as const;
 
 /**
- * DateSelector component for selecting a date with a Calendar popup.
+ * DateField is a sub-component for selecting a date with a Calendar popup.
  * Presently, this component is primarily used within the DateTimeInput.
  */
-export const DateSelector = forwardRef<HTMLLabelElement, DateSelectorProps>(
+export const DateField = forwardRef<HTMLLabelElement, DateFieldProps>(
 	(
 		{
 			allowPastDate = false,
@@ -197,4 +197,4 @@ export const DateSelector = forwardRef<HTMLLabelElement, DateSelectorProps>(
 	},
 );
 
-DateSelector.displayName = 'DateSelector';
+DateField.displayName = 'DateField';

@@ -1,19 +1,19 @@
 import React, { forwardRef, useRef } from 'react';
 
-import type { TestIdProp } from '../../types';
-import { dataAttrs } from '../../utils/dataAttrs';
-import { LoadingBox } from '../LoadingBox/LoadingBox';
-import { type OptionItem } from '../OptionGrid/OptionGrid';
+import type { TestIdProp } from '../../../types';
+import { dataAttrs } from '../../../utils/dataAttrs';
+import { LoadingBox } from '../../LoadingBox/LoadingBox';
+import { type OptionItem } from '../../OptionGrid/OptionGrid';
+import {
+	inputStyle,
+	labelVariants,
+	timeFieldStyle,
+} from '../DateTimeInput.css';
+import type { CommonSelectorProps } from '../types';
 
-import { inputStyle, labelVariants, timeFieldStyle } from './DateTimeInput.css';
-import type { CommonSelectorProps } from './types';
+export type TimeFieldTextContent = Record<keyof typeof defaultEnglish, string>;
 
-export type TimeSelectorTextContent = Record<
-	keyof typeof defaultEnglish,
-	string
->;
-
-export interface TimeSelectorProps
+export interface TimeFieldProps
 	extends CommonSelectorProps<string>,
 		TestIdProp {
 	/**
@@ -23,7 +23,7 @@ export interface TimeSelectorProps
 	/**
 	 * Text values for localization
 	 */
-	lang?: Partial<TimeSelectorTextContent>;
+	lang?: Partial<TimeFieldTextContent>;
 }
 
 const defaultEnglish = {
@@ -32,10 +32,10 @@ const defaultEnglish = {
 } as const;
 
 /**
- * TimeSelector component for selecting a time from predefined options.
+ * TimeField is a sub-component for selecting a time from predefined options.
  * Presently, this component is primarily used within the DateTimeInput.
  */
-export const TimeSelector = forwardRef<HTMLLabelElement, TimeSelectorProps>(
+export const TimeField = forwardRef<HTMLLabelElement, TimeFieldProps>(
 	(
 		{
 			timeOptions,
@@ -126,4 +126,4 @@ export const TimeSelector = forwardRef<HTMLLabelElement, TimeSelectorProps>(
 	},
 );
 
-TimeSelector.displayName = 'TimeSelector';
+TimeField.displayName = 'TimeField';

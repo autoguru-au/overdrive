@@ -55,15 +55,15 @@ export function formatDateValue(date: DateValue | null): string {
  *
  * @example
  * ```ts
- * displayFormattedDate('2025-05-01') // (medium) "May 01, 2025"
- * displayFormattedDate('2025-01-05', 'short-padded') // "05/01/2025"
+ * displayFormattedDate('2025-09-21') // (locale default) "21/09/2025"
  * displayFormattedDate('2025-09-21', 'short') // "21/9/25"
+ * displayFormattedDate('2025-09-21', 'medium') // "Sep 21, 2025"
  * displayFormattedDate('2024-01-15', 'full') // "Monday, January 15, 2024"
  * ```
  */
 export function displayFormattedDate(
 	date: DateValue | string | null | undefined,
-	format: Intl.DateTimeFormatOptions['dateStyle'] | 'short-padded' = 'medium',
+	format?: Intl.DateTimeFormatOptions['dateStyle'],
 	locales: Intl.LocalesArgument = 'en-AU',
 ): string {
 	if (!date) return '';
@@ -81,16 +81,7 @@ export function displayFormattedDate(
 		dateValue = date;
 	}
 
-	const formatOptions: Intl.DateTimeFormatOptions =
-		format === 'short-padded'
-			? {
-					day: '2-digit',
-					month: '2-digit',
-					year: 'numeric',
-				}
-			: { dateStyle: format };
-
-	// Format the date using Intl.DateTimeFormat
+	const formatOptions: Intl.DateTimeFormatOptions = { dateStyle: format };
 	const formatter = new Intl.DateTimeFormat(locales, formatOptions);
 	return formatter.format(dateValue.toDate(getLocalTimeZone()));
 }

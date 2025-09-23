@@ -1,4 +1,4 @@
 export { DateTimeInput, type DateTimeInputProps } from './DateTimeInput';
-export { DateSelector, type DateSelectorProps } from './DateSelector';
-export { TimeSelector, type TimeSelectorProps } from './TimeSelector';
+export { DateField, type DateFieldProps } from './DateField/DateField';
+export { TimeField, type TimeFieldProps } from './TimeField/TimeField';
 export { type CommonSelectorProps } from './types';
