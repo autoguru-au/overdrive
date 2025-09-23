@@ -56,7 +56,6 @@ export const dateFieldStyle = style([
 		'@layer': {
 			[cssLayerComponent]: {
 				appearance: 'none',
-				borderBottomColor: 'transparent',
 				borderBottomLeftRadius: 0,
 				borderBottomRightRadius: 0,
 				width: '100%',
@@ -91,11 +90,7 @@ export const labelVariants = recipe({
 			weight: 'bold',
 		}),
 		{
-			'@layer': {
-				[cssLayerComponent]: {
-					pointerEvents: 'none',
-				},
-			},
+			userSelect: 'none',
 		},
 	],
 	variants: {

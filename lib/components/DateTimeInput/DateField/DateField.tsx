@@ -111,9 +111,6 @@ export const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
 		return (
 			<div
 				{...dataAttrs({
-					disabled,
-					loading,
-					invalid,
 					'od-component': 'date-field',
 					testId,
 				})}
@@ -133,14 +130,24 @@ export const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
 					placement="bottom left"
 					isDisabled={isDisabled}
 				>
-					<button className={dateFieldStyle}>
-						<div className={labelVariants({ invalid })}>
+					<button
+						className={dateFieldStyle}
+						{...dataAttrs({
+							disabled,
+							loading,
+							invalid,
+						})}
+					>
+						<div className={labelVariants({ disabled, invalid })}>
 							{textValues.dateLabel}
 						</div>
 						{loading ? (
 							<LoadingBox height="6" />
 						) : (
-							<div className={inputStyle}>
+							<div
+								className={inputStyle}
+								{...dataAttrs({ disabled })}
+							>
 								{selectedDate
 									? displayFormattedDate(selectedDate)
 									: textValues.select}
@@ -152,6 +159,7 @@ export const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
 					name={name}
 					value={formatDateValue(selectedDate)}
 					type="hidden"
+					disabled={disabled}
 					ref={ref}
 				/>
 			</div>
