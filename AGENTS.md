@@ -28,7 +28,7 @@ system. Use MUST/SHOULD/NEVER to guide decisions.
 ## Development Commands
 
 ```bash
-yarn test run Com. ponentName # Run specific component tests
+yarn test run ComponentName # Run specific component tests
 yarn format                   # Format the project consistently
 yarn lint                     # Run ESLint and TypeScript checks
 yarn plop component           # Generate new component scaffold
