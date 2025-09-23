@@ -65,10 +65,44 @@ export const InitialValue: Story = {
 };
 
 /**
- * Demonstrates disabling weekends using the `isDateUnavailable` function with the `isWeekend` utility from @internationalized/date.
+ * Calendar with min and max date restrictions.
+ * Demonstrates simple date range limiting using string-based min/max values.
+ */
+export const MinMax: Story = {
+	args: {
+		calendarOptions: {
+			minValue: parseDate('2025-06-05'),
+			maxValue: parseDate('2025-06-25'),
+			defaultValue: parseDate('2025-06-15'),
+		},
+	},
+	render: (args) => (
+		<Calendar
+			{...args}
+			onChange={(date) => console.log('Selected:', date)}
+		/>
+	),
+};
+
+/**
+ * Demonstrates disabling weekends using the `isDateUnavailable` function with the
+ * `isWeekend` utility from @internationalized/date.
+ *
+ * **NOTE**: Using the `isDateUnavailable` handler overrides past date availability
+ * as well as min/max values.
+ *
+ * Or this could be calculated manually:
+ * ```ts
+ * isDateUnavailable: (date: DateValue) => {
+ *  	// Block weekends (Saturday = 6, Sunday = 0)
+ * 	 const dayOfWeek = date.toDate(getLocalTimeZone()).getDay();
+ * 	 return dayOfWeek === 0 || dayOfWeek === 6;
+ * }
+ * ```
  */
 export const DisabledWeekends: Story = {
 	args: {
+		allowPastDate: true,
 		calendarOptions: {
 			isDateUnavailable: (date: DateValue) => isWeekend(date, 'en-AU'),
 		},

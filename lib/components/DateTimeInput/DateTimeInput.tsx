@@ -11,16 +11,18 @@ export interface DateTimeInputProps
 	 * ```tsx
 	 * <DateField
 	 *   allowPastDate={false}
+	 *   calendarOptions={{
+	 *     minValue: today(getLocalTimeZone()),
+	 *     isDateUnavailable: (date) => date.day === 0 // Disable Sundays
+	 *   }}
 	 *   name="booking-1-date"
 	 *   onChange={setDateValue}
-	 *   value={dateValue}
 	 *   disabled={isSubmitting}
 	 * />
 	 * <TimeField
 	 *   timeOptions={timeOptions}
 	 *   name="booking-1-time"
 	 *   onChange={setTimeValue}
-	 *   value={timeValue}
 	 *   disabled={isSubmitting}
 	 * />
 	 * ```
@@ -29,7 +31,21 @@ export interface DateTimeInputProps
 }
 
 /**
- * DateTimeInput is a layout container around DateField and TimeField components.
+ * DateTimeInput is a layout-only wrapper component that provides structure for DateField and TimeField components.
+ * It doesn't manage state or provide functionality. This allows for simple direct control and updates to each field.
+ *
+ * All props (name, disabled, loading, etc.) should be passed directly to the individual DateField and TimeField components.
+ *
+ * ## Child Components
+ * - **DateField**: Handles date selection with calendar popover functionality
+ * - **TimeField**: Handles time selection from predefined options
+ *
+ * ## Internationalization
+ * - Override text values via `lang` props on the DateField and TimeField components
+ * - Full Calendar options available via `calendarOptions` prop on the DateField
+ * - Date formatting helper available in `...utils/dateFormat.ts` or use `@internationalized/date` utils
+ * - Advanced i18n and localization handled by [React Aria I18Provider](https://react-spectrum.adobe.com/react-aria/I18nProvider.html)
+ * - Read more about [International calendars](https://react-spectrum.adobe.com/react-aria/useDatePicker.html#international-calendars)
  *
  * @example
  * // Basic usage with separate date and time selectors
