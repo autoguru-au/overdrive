@@ -1,16 +1,13 @@
 import { type DateValue } from '@internationalized/date';
-import { clsx } from 'clsx';
-import React, { forwardRef, useId, useRef, useState } from 'react';
+import React, { forwardRef, useCallback, useState } from 'react';
 import { type AriaCalendarProps } from 'react-aria';
 
-import { elementReset } from '../../../styles/elementReset.css';
 import type { TestIdProp } from '../../../types';
 import { dataAttrs } from '../../../utils/dataAttrs';
 import {
 	displayFormattedDate,
 	safeParseDateString,
 } from '../../../utils/dateFormat';
-import { Box } from '../../Box';
 import {
 	Calendar,
 	type CalendarProps,
@@ -18,10 +15,7 @@ import {
 } from '../../Calendar/Calendar';
 import { LoadingBox } from '../../LoadingBox/LoadingBox';
 import type { PopoverTextContent } from '../../Popover/Popover';
-import {
-	PopoverTrigger,
-	type OnStateReadyValue,
-} from '../../Popover/PopoverTrigger';
+import { PopoverTrigger } from '../../Popover/PopoverTrigger';
 import {
 	dateFieldStyle,
 	inputStyle,
@@ -67,7 +61,7 @@ const defaultEnglish = {
  * DateField is a sub-component for selecting a date with a Calendar popup.
  * Presently, this component is primarily used within the DateTimeInput.
  */
-export const DateField = forwardRef<HTMLLabelElement, DateFieldProps>(
+export const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
 	(
 		{
 			allowPastDate = false,
@@ -89,34 +83,33 @@ export const DateField = forwardRef<HTMLLabelElement, DateFieldProps>(
 		const [internalValue, setInternalValue] = useState<DateValue | null>(
 			defaultValue ?? null,
 		);
-		const datePopoverState = useRef<OnStateReadyValue | null>(null);
-		const triggerRef = useRef<HTMLButtonElement>(null);
-		const dateInputId = useId();
+		const [popoverState, setPopoverState] = useState<{
+			close: () => void;
+		} | null>(null);
 
 		const isControlled = value !== undefined;
 		const currentValue = isControlled ? value : internalValue;
 		const isDisabled = disabled || loading;
 		const textValues = { ...defaultEnglish, ...lang };
 
-		const langCalendar = {
+		const langTextCalendar = {
 			nextLabel: textValues.nextLabel,
 			prevLabel: textValues.prevLabel,
 		};
 
-		const langPopover = {
+		const langTextPopover = {
 			close: textValues.close,
 		};
 
-		const handleDateChange = (dateValue: DateValue) => {
-			datePopoverState.current?.close();
-
-			// Update internal state if uncontrolled
-			if (!isControlled) {
-				setInternalValue(dateValue);
-			}
-
-			onChange?.(dateValue);
-		};
+		const handleCalendarChange = useCallback(
+			(dateValue: DateValue) => {
+				if (!isControlled) setInternalValue(dateValue);
+				onChange?.(dateValue);
+				// Close the popover after date selection
+				if (popoverState) popoverState.close();
+			},
+			[isControlled, onChange, popoverState, setInternalValue],
+		);
 
 		const calendarProps: AriaCalendarProps<DateValue> = {
 			defaultValue: currentValue,
@@ -126,73 +119,54 @@ export const DateField = forwardRef<HTMLLabelElement, DateFieldProps>(
 		};
 
 		return (
-			<label
-				className={dateFieldStyle}
-				htmlFor={dateInputId}
-				onClick={(e) => {
-					if (!isDisabled && !datePopoverState.current?.isOpen) {
-						e.preventDefault();
-						triggerRef.current?.click();
-					}
-				}}
-				tabIndex={0}
+			<div
 				{...dataAttrs({
 					disabled,
+					loading,
 					invalid,
-					'od-component': 'date-select-input',
+					'od-component': 'date-field',
+					testId,
 				})}
-				ref={ref}
 			>
 				<PopoverTrigger
 					content={
-						<Box>
-							<Calendar
-								allowPastDate={allowPastDate}
-								calendarOptions={calendarProps}
-								lang={langCalendar}
-								onChange={handleDateChange}
-							/>
-						</Box>
+						<Calendar
+							allowPastDate={allowPastDate}
+							calendarOptions={calendarProps}
+							lang={langTextCalendar}
+							onChange={handleCalendarChange}
+						/>
 					}
-					lang={langPopover}
+					lang={langTextPopover}
 					offset={1}
-					onStateReady={(state) => {
-						datePopoverState.current = state;
-					}}
+					onStateReady={setPopoverState}
+					placement="bottom left"
 					isDisabled={isDisabled}
-					testId={testId}
-					ref={triggerRef}
 				>
-					<button
-						className={clsx(
-							elementReset.button,
-							labelVariants({
-								invalid,
-							}),
+					<button className={dateFieldStyle}>
+						<div className={labelVariants({ invalid })}>
+							{textValues.dateLabel}
+						</div>
+						{loading ? (
+							<LoadingBox height="6" />
+						) : (
+							<div className={inputStyle}>
+								{currentValue
+									? displayFormattedDate(currentValue)
+									: textValues.select}
+							</div>
 						)}
-					>
-						{textValues.dateLabel}
 					</button>
 				</PopoverTrigger>
-				{loading ? (
-					<LoadingBox height="6" />
-				) : (
-					<input
-						type="text"
-						id={dateInputId}
-						name={name}
-						value={
-							currentValue
-								? displayFormattedDate(currentValue)
-								: textValues.select
-						}
-						className={inputStyle}
-						disabled={isDisabled}
-						tabIndex={-1}
-						readOnly
-					/>
-				)}
-			</label>
+				<input
+					name={name}
+					value={
+						currentValue ? displayFormattedDate(currentValue) : ''
+					}
+					type="hidden"
+					ref={ref}
+				/>
+			</div>
 		);
 	},
 );

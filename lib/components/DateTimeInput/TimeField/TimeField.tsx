@@ -38,16 +38,16 @@ const defaultEnglish = {
 export const TimeField = forwardRef<HTMLLabelElement, TimeFieldProps>(
 	(
 		{
-			timeOptions,
-			value,
 			defaultValue,
-			name,
-			onChange,
 			disabled = false,
 			invalid = false,
-			loading = false,
 			lang = {},
+			loading = false,
+			name,
+			onChange,
 			testId,
+			timeOptions,
+			value,
 		},
 		ref,
 	) => {
@@ -79,8 +79,12 @@ export const TimeField = forwardRef<HTMLLabelElement, TimeFieldProps>(
 					selectRef?.current?.blur();
 				}}
 				aria-disabled={isDisabled}
-				{...dataAttrs({ invalid, 'od-component': 'time-selector' })}
-				{...(testId && { ...dataAttrs({ testId }) })}
+				{...dataAttrs({
+					invalid,
+					loading,
+					'od-component': 'time-field',
+					testId,
+				})}
 				ref={ref}
 			>
 				<div
