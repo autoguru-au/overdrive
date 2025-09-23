@@ -1,6 +1,6 @@
 # Overdrive Design System Rules
 
-Tules for building accessible, reusable React components in AutoGuru's design
+Rules for building accessible, reusable React components in AutoGuru's design
 system. Use MUST/SHOULD/NEVER to guide decisions.
 
 ## Architecture
