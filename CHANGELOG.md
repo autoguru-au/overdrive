@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 4.48.0
+
+### Minor Changes
+
+- 0a0bd05: **DateInput**: improved date input field with segmented field and
+  uses updated DatePicker calendar
+
 ## 4.47.4
 
 ### Patch Changes
