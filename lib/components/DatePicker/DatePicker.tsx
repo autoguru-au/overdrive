@@ -1,24 +1,13 @@
 import { CalendarIcon, IconType } from '@autoguru/icons';
-import {
-	getLocalTimeZone,
-	parseDate,
-	today,
-	type DateValue,
-} from '@internationalized/date';
+import { type DateValue } from '@internationalized/date';
 import clsx from 'clsx';
-import React, {
-	type ChangeEvent,
-	useCallback,
-	useEffect,
-	useMemo,
-	useState,
-	forwardRef,
-} from 'react';
+import React, { type ChangeEvent, useMemo, forwardRef } from 'react';
 import type { AriaPopoverProps } from 'react-aria';
 
 import { elementStyles } from '../../styles/elementStyles';
 import { sprinkles } from '../../styles/sprinkles.css';
 import type { TestIdProp } from '../../types';
+import { formatDateValue, safeParseDateString } from '../../utils/dateFormat';
 import { Calendar, type CalendarProps } from '../Calendar';
 import { Icon } from '../Icon/Icon';
 import { PopoverTrigger } from '../Popover';
@@ -27,6 +16,7 @@ import { Text, type TextProps } from '../Text/Text';
 import { VisuallyHidden } from '../VisuallyHidden/VisuallyHidden';
 
 import * as styles from './DatePicker.css';
+import { useCalendarPopover } from './hooks/useCalendarPopover';
 
 type SizeScale = 'small' | 'medium' | 'large';
 
@@ -108,19 +98,6 @@ const textSizeMap: Record<SizeScale, TextProps['size']> = {
 	large: '5',
 };
 
-const formatDateToString = (date: DateValue | null): string => {
-	if (!date) return '';
-	return date.toString(); // ISO format: YYYY-MM-DD to match native input
-};
-
-const parseDateString = (dateString: string): DateValue | null => {
-	try {
-		return parseDate(dateString);
-	} catch {
-		return null;
-	}
-};
-
 /**
  * The DatePicker has been updated to render the Calendar component with a Popover while
  * maintaining backwards compatability.
@@ -196,34 +173,25 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 		},
 		ref,
 	) => {
-		const isControlled = value !== undefined;
+		// Convert string props to DateValue for the hook
+		const dateValue = value ? safeParseDateString(value) : undefined;
+		const dateDefaultValue = defaultValue
+			? safeParseDateString(defaultValue)
+			: undefined;
 
-		const [selectedDate, setSelectedDate] = useState<DateValue | null>(
-			() => {
-				const initialValue = isControlled ? value : defaultValue;
-				return initialValue ? parseDateString(initialValue) : null;
-			},
-		);
-		const [popoverState, setPopoverState] = useState<{
-			close: () => void;
-		} | null>(null);
-
-		// Sync external value changes (only for controlled components)
-		useEffect(() => {
-			if (isControlled) {
-				const parsedDate = value ? parseDateString(value) : null;
-				setSelectedDate(parsedDate);
-			}
-		}, [value, isControlled]);
+		const { selectedDate, handleCalendarChange, setPopoverState } =
+			useCalendarPopover({
+				value: dateValue,
+				defaultValue: dateDefaultValue,
+				onChange: (dateVal: DateValue) => {
+					if (typeof onChange === 'function') {
+						onChange(formatDateValue(dateVal));
+					}
+				},
+			});
 
 		const onChangeEvent = (event: ChangeEvent<HTMLInputElement>) => {
 			const dateString = event.currentTarget.value;
-			if (dateString) {
-				const parsedDate = parseDateString(dateString);
-				setSelectedDate(parsedDate);
-			} else {
-				setSelectedDate(null);
-			}
 			if (typeof onChange === 'function') {
 				onChange(dateString);
 			}
@@ -239,47 +207,17 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 			<Text size={textSizeMap[size]}>{valueLabel}</Text>
 		) : null;
 
-		const handleCalendarChange = useCallback(
-			(date: DateValue) => {
-				setSelectedDate(date);
-				if (typeof onChange === 'function') {
-					onChange(formatDateToString(date));
-				}
-				// Close the popover after date selection
-				if (popoverState) {
-					popoverState.close();
-				}
-			},
-			[onChange, popoverState],
-		);
-
 		const calendarProps: CalendarProps = useMemo(
 			() => ({
 				calendarOptions: {
-					// For controlled components, use value. For uncontrolled, use defaultValue
-					...(isControlled
-						? {
-								value:
-									selectedDate || today(getLocalTimeZone()),
-							}
-						: {
-								defaultValue:
-									selectedDate || today(getLocalTimeZone()),
-							}),
-					...(min && { minValue: parseDateString(min) }),
-					...(max && { maxValue: parseDateString(max) }),
+					...(min && { minValue: safeParseDateString(min) }),
+					...(max && { maxValue: safeParseDateString(max) }),
+					...calendarOptions?.calendarOptions,
 				},
 				...calendarOptions,
 				onChange: handleCalendarChange,
 			}),
-			[
-				selectedDate,
-				calendarOptions,
-				handleCalendarChange,
-				isControlled,
-				min,
-				max,
-			],
+			[calendarOptions, handleCalendarChange, min, max],
 		);
 
 		const contentCalendar = useMemo(
@@ -312,6 +250,7 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 						disabled={disabled}
 						min={min}
 						max={max}
+						value={formatDateValue(selectedDate)}
 						onChange={onChangeEvent}
 					/>
 					<div className={styles.inputOverlay}>
@@ -355,7 +294,7 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 				<input
 					{...inputProps}
 					ref={ref}
-					value={formatDateToString(selectedDate)}
+					value={formatDateValue(selectedDate)}
 					type="hidden"
 				/>
 			</div>
