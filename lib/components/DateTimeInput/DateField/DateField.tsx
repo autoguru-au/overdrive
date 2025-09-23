@@ -1,11 +1,12 @@
 import { type DateValue } from '@internationalized/date';
-import React, { forwardRef, useCallback, useState } from 'react';
+import React, { forwardRef } from 'react';
 import { type AriaCalendarProps } from 'react-aria';
 
 import type { TestIdProp } from '../../../types';
 import { dataAttrs } from '../../../utils/dataAttrs';
 import {
 	displayFormattedDate,
+	formatDateValue,
 	safeParseDateString,
 } from '../../../utils/dateFormat';
 import {
@@ -13,6 +14,7 @@ import {
 	type CalendarProps,
 	type CalendarTextContent,
 } from '../../Calendar/Calendar';
+import { useCalendarPopover } from '../../DatePicker/hooks/useCalendarPopover';
 import { LoadingBox } from '../../LoadingBox/LoadingBox';
 import type { PopoverTextContent } from '../../Popover/Popover';
 import { PopoverTrigger } from '../../Popover/PopoverTrigger';
@@ -80,15 +82,13 @@ export const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
 		},
 		ref,
 	) => {
-		const [internalValue, setInternalValue] = useState<DateValue | null>(
-			defaultValue ?? null,
-		);
-		const [popoverState, setPopoverState] = useState<{
-			close: () => void;
-		} | null>(null);
+		const { selectedDate, handleCalendarChange, setPopoverState } =
+			useCalendarPopover({
+				value,
+				defaultValue,
+				onChange,
+			});
 
-		const isControlled = value !== undefined;
-		const currentValue = isControlled ? value : internalValue;
 		const isDisabled = disabled || loading;
 		const textValues = { ...defaultEnglish, ...lang };
 
@@ -101,18 +101,8 @@ export const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
 			close: textValues.close,
 		};
 
-		const handleCalendarChange = useCallback(
-			(dateValue: DateValue) => {
-				if (!isControlled) setInternalValue(dateValue);
-				onChange?.(dateValue);
-				// Close the popover after date selection
-				if (popoverState) popoverState.close();
-			},
-			[isControlled, onChange, popoverState, setInternalValue],
-		);
-
 		const calendarProps: AriaCalendarProps<DateValue> = {
-			defaultValue: currentValue,
+			defaultValue: selectedDate,
 			minValue: min ? safeParseDateString(min) : undefined,
 			maxValue: max ? safeParseDateString(max) : undefined,
 			...calendarOptions,
@@ -151,8 +141,8 @@ export const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
 							<LoadingBox height="6" />
 						) : (
 							<div className={inputStyle}>
-								{currentValue
-									? displayFormattedDate(currentValue)
+								{selectedDate
+									? displayFormattedDate(selectedDate)
 									: textValues.select}
 							</div>
 						)}
@@ -160,9 +150,7 @@ export const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
 				</PopoverTrigger>
 				<input
 					name={name}
-					value={
-						currentValue ? displayFormattedDate(currentValue) : ''
-					}
+					value={formatDateValue(selectedDate)}
 					type="hidden"
 					ref={ref}
 				/>

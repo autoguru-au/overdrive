@@ -37,9 +37,9 @@ export function safeParseDateString(dateString: string): DateValue | null {
 }
 
 /**
- * Formats a DateValue to its string representation
+ * Formats a DateValue to its ISO string representation (YYYY-MM-DD)
  * @param date - DateValue or null
- * @returns String representation of the date or empty string for null
+ * @returns ISO date string (e.g., "2025-09-21") or empty string
  */
 export function formatDateValue(date: DateValue | null): string {
 	return date?.toString() ?? '';

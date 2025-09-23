@@ -5,18 +5,18 @@ import { useBox, type UseBoxProps } from '../Box';
 export interface DateTimeInputProps
 	extends Pick<UseBoxProps, 'as' | 'className' | 'testId'> {
 	/**
-	 * The DateSelector and TimeSelector components to render as children.
+	 * The DateField and TimeField components to render as children.
 	 * This allows for maximum flexibility in configuration.
 	 *
 	 * ```tsx
-	 * <DateSelector
+	 * <DateField
 	 *   allowPastDate={false}
 	 *   name="booking-1-date"
 	 *   onChange={setDateValue}
 	 *   value={dateValue}
 	 *   disabled={isSubmitting}
 	 * />
-	 * <TimeSelector
+	 * <TimeField
 	 *   timeOptions={timeOptions}
 	 *   name="booking-1-time"
 	 *   onChange={setTimeValue}
@@ -29,7 +29,7 @@ export interface DateTimeInputProps
 }
 
 /**
- * DateTimeInput is a layout container around DateSelector and TimeSelector components.
+ * DateTimeInput is a layout container around DateField and TimeField components.
  *
  * @example
  * // Basic usage with separate date and time selectors
@@ -40,12 +40,12 @@ export interface DateTimeInputProps
  * ];
  *
  * <DateTimeInput>
- *   <DateSelector
+ *   <DateField
  *     defaultValue={parseDate(tody())}
  *     name="booking-date"
  *     onChange={(date) => console.log('Date selected:', date)}
  *   />
- *   <TimeSelector
+ *   <TimeField
  *     timeOptions={timeOptions}
  *     defaultValue="1400"
  *     name="booking-time"
@@ -59,14 +59,14 @@ export interface DateTimeInputProps
  * const [timeValue, setTimeValue] = useState('');
  *
  * <DateTimeInput>
- *   <DateSelector
+ *   <DateField
  *     allowPastDate={false}
  *     name="booking-1-date"
  *     onChange={setDateValue}
  *     value={dateValue}
  *     disabled={isSubmitting}
  *   />
- *   <TimeSelector
+ *   <TimeField
  *     timeOptions={timeOptions}
  *     name="booking-1-time"
  *     onChange={setTimeValue}
@@ -78,7 +78,7 @@ export interface DateTimeInputProps
  * @example
  * // With advanced calendar configuration
  * <DateTimeInput>
- *   <DateSelector
+ *   <DateField
  *     calendarOptions={{
  *       minValue: today(getLocalTimeZone()),
  *       isDateUnavailable: (date) => date.day === 0 // Disable Sundays
@@ -86,7 +86,7 @@ export interface DateTimeInputProps
  *     lang={{ dateLabel: 'Check-in Date' }}
  *     name="booking-date"
  *   />
- *   <TimeSelector
+ *   <TimeField
  *     timeOptions={businessHours}
  *     lang={{ timeLabel: 'Arrival Time' }}
  *     name="booking-time"

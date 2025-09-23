@@ -1,5 +1,5 @@
 /**
- * Common props shared between DateSelector and TimeSelector components
+ * Common props shared between DateField and TimeField components
  */
 export interface CommonSelectorProps<T> {
 	/**
