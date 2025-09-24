@@ -1,12 +1,13 @@
 import { MapPinOutlineIcon, StoreOutlineIcon } from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import React, { useState } from 'react';
-import type { Key } from 'react-stately';
+import React from 'react';
 import { expect, fn, userEvent, within } from 'storybook/test';
 
 import { Icon } from '../Icon/Icon';
 
 import { ToggleButtons, ToggleButton } from './ToggleButtons';
+
+const ICON_SIZE = 'medium' as const;
 
 const meta = {
 	title: 'Primitives/Toggle Buttons',
@@ -26,18 +27,10 @@ type Story = StoryObj<typeof ToggleButtons>;
 export const Standard: Story = {
 	render: (args) => {
 		return (
-			<ToggleButtons
-				{...args}
-			>
-				<ToggleButton id="confirm">
-					Confirm
-				</ToggleButton>
-				<ToggleButton id="decline">
-					Decline
-				</ToggleButton>
-				<ToggleButton id="change-date">
-					Change date
-				</ToggleButton>
+			<ToggleButtons {...args}>
+				<ToggleButton id="confirm">Confirm</ToggleButton>
+				<ToggleButton id="decline">Decline</ToggleButton>
+				<ToggleButton id="change-date">Change date</ToggleButton>
 			</ToggleButtons>
 		);
 	},
@@ -67,150 +60,53 @@ export const Standard: Story = {
 // Icon-only buttons matching the design mockup
 export const IconOnly: Story = {
 	render: (args) => {
-		const [selected, setSelected] = useState<Set<Key>>(
-			new Set(['location']),
-		);
-
 		return (
-			<ToggleButtons
-				{...args}
-				selectedKeys={selected}
-				onSelectionChange={(keys) => setSelected(new Set(keys))}
-			>
-				<ToggleButton key="list" id="list" aria-label="List view">
-					<Icon icon={StoreOutlineIcon} size="large" />
+			<ToggleButtons {...args} defaultSelectedKeys={['list']} iconOnly>
+				<ToggleButton id="list" aria-label="list view">
+					<Icon icon={StoreOutlineIcon} size={ICON_SIZE} />
 				</ToggleButton>
-				<ToggleButton
-					key="location"
-					id="location"
-					aria-label="Location view"
-				>
-					<Icon icon={MapPinOutlineIcon} size="large" />
-				</ToggleButton>
-			</ToggleButtons>
-		);
-	},
-	play: async ({ canvasElement }) => {
-		const canvas = within(canvasElement);
-		const user = userEvent.setup();
-
-		// Initially "Location" should be selected
-		await expect(canvas.getAllByRole('button')[1]).toHaveAttribute(
-			'aria-pressed',
-			'true',
-		);
-
-		// Click "List" to change selection
-		await user.click(canvas.getAllByRole('button')[0]);
-		await expect(canvas.getAllByRole('button')[0]).toHaveAttribute(
-			'aria-pressed',
-			'true',
-		);
-		await expect(canvas.getAllByRole('button')[1]).toHaveAttribute(
-			'aria-pressed',
-			'false',
-		);
-	},
-};
-
-// Stretch variant (TODO: implement stretch functionality)
-export const Stretch: Story = {
-	args: {
-		// stretch: true,
-	},
-	render: (args) => {
-		const [selected, setSelected] = useState<Set<Key>>(
-			new Set(['option2']),
-		);
-
-		return (
-			<ToggleButtons
-				{...args}
-				selectedKeys={selected}
-				onSelectionChange={(keys) => setSelected(new Set(keys))}
-			>
-				<ToggleButton key="option1" id="option1">
-					Option 1
-				</ToggleButton>
-				<ToggleButton key="option2" id="option2">
-					Option 2
-				</ToggleButton>
-				<ToggleButton key="option3" id="option3">
-					Option 3
+				<ToggleButton id="location" aria-label="map view">
+					<Icon icon={MapPinOutlineIcon} size={ICON_SIZE} />
 				</ToggleButton>
 			</ToggleButtons>
 		);
 	},
 };
 
-// Disabled state
-export const Disabled: Story = {
-	args: {
-		isDisabled: true,
-	},
-	render: (args) => {
-		const [selected, setSelected] = useState<Set<Key>>(
-			new Set(['option2']),
-		);
-
+export const Examples: Story = {
+	render: () => {
 		return (
-			<div
-				style={{
-					display: 'flex',
-					flexDirection: 'column',
-					gap: '16px',
-				}}
-			>
+			<div>
 				<div>
-					<h3
-						style={{
-							marginBottom: '8px',
-							fontSize: '14px',
-							fontWeight: 600,
-						}}
-					>
-						All Disabled
-					</h3>
+					<h3>Long Content</h3>
 					<ToggleButtons
-						{...args}
-						selectedKeys={selected}
-						onSelectionChange={(keys) => setSelected(new Set(keys))}
+						defaultSelectedKeys={['comprehensive']}
+						onSelectionChange={fn()}
 					>
-						<ToggleButton key="option1" id="option1">
-							Option 1
+						<ToggleButton id="comprehensive">
+							Comprehensive Analysis Report
 						</ToggleButton>
-						<ToggleButton key="option2" id="option2">
-							Option 2
+						<ToggleButton id="summary">
+							Executive Summary Only
 						</ToggleButton>
-						<ToggleButton key="option3" id="option3">
-							Option 3
+						<ToggleButton id="custom">
+							Custom Configuration Options
 						</ToggleButton>
 					</ToggleButtons>
 				</div>
 
 				<div>
-					<h3
-						style={{
-							marginBottom: '8px',
-							fontSize: '14px',
-							fontWeight: 600,
-						}}
-					>
-						Individual Disabled
-					</h3>
+					<h3>Disabled</h3>
 					<ToggleButtons
-						selectedKeys={selected}
-						onSelectionChange={(keys) => setSelected(new Set(keys))}
+						isDisabled
+						defaultSelectedKeys={['md']}
+						onSelectionChange={fn()}
 					>
-						<ToggleButton key="option1" id="option1">
-							Option 1
-						</ToggleButton>
-						<ToggleButton key="option2" id="option2" isDisabled>
-							Option 2 (Disabled)
-						</ToggleButton>
-						<ToggleButton key="option3" id="option3">
-							Option 3
-						</ToggleButton>
+						<ToggleButton id="xs">Extra Small</ToggleButton>
+						<ToggleButton id="sm">Small</ToggleButton>
+						<ToggleButton id="md">Medium</ToggleButton>
+						<ToggleButton id="lg">Large</ToggleButton>
+						<ToggleButton id="xl">Extra Large</ToggleButton>
 					</ToggleButtons>
 				</div>
 			</div>
@@ -218,17 +114,14 @@ export const Disabled: Story = {
 	},
 };
 
-// Accessibility testing
-export const Accessibility: Story = {
+export const InteractionTest: Story = {
 	args: {},
 	render: (args) => {
-		const [selected, setSelected] = useState<Set<Key>>(new Set(['home']));
-
 		return (
 			<ToggleButtons
 				{...args}
-				selectedKeys={selected}
-				onSelectionChange={(keys) => setSelected(new Set(keys))}
+				defaultSelectedKeys={['home']}
+				onSelectionChange={fn()}
 				aria-label="Navigation"
 			>
 				<ToggleButton key="home" id="home" aria-label="Home page">

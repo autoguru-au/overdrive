@@ -1,4 +1,3 @@
-import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 import { elementReset } from '../../styles/elementReset.css';
@@ -7,36 +6,41 @@ import { selectors } from '../../styles/selectors';
 import { sprinkles } from '../../styles/sprinkles.css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
-export const toggleButtonGroup = style([
-	sprinkles({
-		borderColour: 'gray',
-		borderRadius: 'md',
-		borderStyle: 'solid',
-		borderWidth: '1',
-		overflow: 'hidden',
-	}),
-	{
-		'@layer': {
-			[cssLayerComponent]: {
-				display: 'inline-grid',
-				gridTemplateColumns: 'repeat(auto-fit, minmax(0, 1fr))',
-				width: '100%',
+export const toggleButtonGroup = recipe({
+	base: [
+		sprinkles({
+			borderColour: 'gray',
+			borderRadius: 'md',
+			borderStyle: 'solid',
+			borderWidth: '1',
+			overflow: 'hidden',
+		}),
+		{
+			'@layer': {
+				[cssLayerComponent]: {
+					display: 'grid',
+					gridTemplateColumns: 'repeat(auto-fit, minmax(0, 1fr))',
+				},
 			},
 		},
-	},
-]);
-
-export const button = style([
-	elementReset.button,
-	{
-		selectors: {
-			// // Hover styles for unselected state
-			// ':hover:not([data-selected="true"]):not(:disabled)': {
-			// 	backgroundColor: vars.colours.intent.neutral.mild,
-			// },
+	],
+	variants: {
+		iconOnly: {
+			true: {
+				'@layer': {
+					[cssLayerComponent]: {
+						display: 'block',
+						width: 'fit-content',
+					},
+				},
+			},
+			false: {},
 		},
 	},
-]);
+	defaultVariants: {
+		iconOnly: false,
+	},
+});
 
 export const toggleButton = recipe({
 	base: [
@@ -50,12 +54,11 @@ export const toggleButton = recipe({
 		{
 			'@layer': {
 				[cssLayerComponent]: {
-					display: 'inline-grid',
-					gridTemplateColumns: 'repeat(auto-fit, minmax(0, 1fr))',
-					width: '100%',
 					appearance: 'none',
 					borderStyle: 'none',
 					MozAppearance: 'none',
+					overflow: 'hidden',
+					textOverflow: 'ellipsis',
 					userSelect: 'none',
 					WebkitAppearance: 'none',
 					selectors: {
@@ -64,6 +67,10 @@ export const toggleButton = recipe({
 						},
 						[selectors.hover]: {
 							cursor: 'pointer',
+						},
+						[selectors.disabled]: {
+							cursor: 'not-allowed',
+							opacity: 0.5,
 						},
 					},
 				},
@@ -88,25 +95,19 @@ export const toggleButton = recipe({
 				},
 			},
 		},
-		disabled: {
+		iconOnly: {
 			true: {
-				cursor: 'not-allowed',
-				opacity: 0.5,
+				'@layer': {
+					[cssLayerComponent]: {
+						width: 'fit-content',
+					},
+				},
 			},
+			false: {},
 		},
 	},
-	// compoundVariants: [
-	// 	{
-	// 		variants: { selected: true, disabled: true },
-	// 		style: {
-	// 			// backgroundColor: vars.colours.intent.dark.background,
-	// 			// color: vars.colours.intent.dark.foreground,
-	// 			opacity: 0.5,
-	// 		},
-	// 	},
-	// ],
 	defaultVariants: {
 		selected: false,
-		disabled: false,
+		iconOnly: false,
 	},
 });

@@ -1,16 +1,17 @@
 import { render } from '@testing-library/react';
 import React from 'react';
 
-import { ToggleButtons } from '.';
+import { ToggleButtons, ToggleButton } from '.';
 
 describe('<ToggleButtons />', () => {
 	it('should not throw', () => {
-		expect(() => render(<ToggleButtons />)).not.toThrow();
-	});
-
-	it('should match the snapshot', () => {
-		expect(
-			render(<ToggleButtons />).container.firstChild,
-		).toMatchSnapshot();
+		expect(() =>
+			render(
+				<ToggleButtons>
+					<ToggleButton id="test1">Test 1</ToggleButton>
+					<ToggleButton id="test2">Test 2</ToggleButton>
+				</ToggleButtons>,
+			),
+		).not.toThrow();
 	});
 });

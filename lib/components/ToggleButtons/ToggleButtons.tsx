@@ -15,53 +15,99 @@ import * as styles from './ToggleButtons.css';
 
 export interface ToggleButtonsProps
 	extends AriaToggleButtonGroupProps,
-	TestIdProp {
-	/** The toggle buttons to display in the group */
+		TestIdProp {
+	/**
+	 * The toggle buttons to display in the group
+	 * ```tsx
+	 * <ToggleButton id="option1">Option 1</ToggleButton>
+	 * <ToggleButton id="option2">Option 2</ToggleButton>
+	 * ```
+	 */
 	children: ReactNode;
-	/** Visual size variant of the toggle buttons */
-	size?: 'small' | 'medium' | 'large';
-	// TODO: Implement stretch functionality
-	// /** Whether the buttons should stretch to fill available width */
-	// stretch?: boolean;
+	/** Whether the buttons contain only icons (affects layout styling) */
+	iconOnly?: boolean;
 }
 
 /**
- * Context to pass state down to ToggleButton children
+ * Context to pass state and options down to ToggleButton children
  */
-const ToggleButtonGroupContext = React.createContext<ToggleGroupState | null>(
-	null,
-);
+interface ToggleButtonGroupContextValue {
+	state: ToggleGroupState;
+	iconOnly: boolean;
+}
+
+const ToggleButtonGroupContext =
+	React.createContext<ToggleButtonGroupContextValue | null>(null);
 
 /**
  * ## ToggleButtons
  *
- * A a simple toggle button of 2 or more items that allows users to select one option from a set.
- * The default use is for single item selection. Multiple item selection is supported using
- * `selectionMode="multiple"`.
+ * A toggle button group component that allows users to select one or more options from a set.
+ * Built with React Aria for full accessibility support including keyboard navigation and screen readers.
+ *
+ * ### Key Features
+ * - **Single or Multiple Selection**: Use `selectionMode="single"` (default) or `selectionMode="multiple"`
+ * - **Uncontrolled by Default**: Use `defaultSelectedKeys` for initial selection
+ * - **Controlled Mode**: Use `selectedKeys` and `onSelectionChange` for external state management
+ * - **Icon Support**: Use `iconOnly={true}` for optimized icon-only button layouts
+ * - **Accessibility**: Full ARIA support, keyboard navigation, and screen reader compatibility
+ *
+ * ### Component Props
+ * - `defaultSelectedKeys`: Initial selected keys (uncontrolled mode)
+ * - `selectedKeys` + `onSelectionChange`: External state control (controlled mode)
+ * - `selectionMode`: "single" or "multiple" selection behavior
+ * - `disallowEmptySelection`: Prevents deselecting all options (default: true)
+ * - `iconOnly`: Optimizes layout for icon-only buttons
+ * - `isDisabled`: Disables the entire group
+ *
+ * ### Selection Change Handling
+ * The `onSelectionChange` callback receives a `Set<Key>` containing selected button IDs:
+ * ```tsx
+ * onSelectionChange={(keys) => {
+ *   console.log([...keys]); // Convert Set to array: ["option1", "option3"]
+ *   setSelected(new Set(keys)); // Store as Set for controlled state
+ * }}
+ * ```
  *
  * @example
  * ```tsx
+ * // Uncontrolled (recommended)
  * <ToggleButtons
- *   selectedKeys={['option1']}
- *   onSelectionChange={(keys) => setSelected(keys)}
+ *   defaultSelectedKeys={['confirm']}
+ *   onSelectionChange={(keys) => handleChange(keys)}
  * >
- *   <ToggleButton key="option1">Confirm</ToggleButton>
- *   <ToggleButton key="option2">Decline</ToggleButton>
- *   <ToggleButton key="option3">Change date</ToggleButton>
+ *   <ToggleButton id="confirm">Confirm</ToggleButton>
+ *   <ToggleButton id="decline">Decline</ToggleButton>
+ *   <ToggleButton id="change-date">Change date</ToggleButton>
  * </ToggleButtons>
  * ```
  *
  * @example
  * ```tsx
- * // icons
+ * // Controlled mode
+ * const [selected, setSelected] = useState(new Set(['list']));
+ *
  * <ToggleButtons
- *   selectedKeys={['list']}
+ *   selectedKeys={selected}
+ *   onSelectionChange={setSelected}
+ * >
+ *   <ToggleButton id="list">List</ToggleButton>
+ *   <ToggleButton id="grid">Grid</ToggleButton>
+ * </ToggleButtons>
+ * ```
+ *
+ * @example
+ * ```tsx
+ * // Icon-only buttons
+ * <ToggleButtons
+ *   defaultSelectedKeys={['list']}
+ *   iconOnly
  *   onSelectionChange={handleViewChange}
  * >
- *   <ToggleButton key="list" aria-label="List view">
+ *   <ToggleButton id="list" aria-label="List view">
  *     <Icon icon={ListIcon} />
  *   </ToggleButton>
- *   <ToggleButton key="map" aria-label="Map view">
+ *   <ToggleButton id="map" aria-label="Map view">
  *     <Icon icon={MapIcon} />
  *   </ToggleButton>
  * </ToggleButtons>
@@ -70,25 +116,30 @@ const ToggleButtonGroupContext = React.createContext<ToggleGroupState | null>(
 export const ToggleButtons = ({
 	children,
 	disallowEmptySelection = true,
+	iconOnly = false,
 	selectionMode = 'single',
 	testId,
 
 	...props
 }: ToggleButtonsProps) => {
-	const propsWithDefault = { disallowEmptySelection, selectionMode, ...props };
+	const propsWithDefault = {
+		disallowEmptySelection,
+		selectionMode,
+		...props,
+	};
 	const state = useToggleGroupState(propsWithDefault);
 	const ref = useRef<HTMLDivElement>(null);
 	const { groupProps } = useToggleButtonGroup(propsWithDefault, state, ref);
 
 	const { Component, componentProps } = useBox({
-		className: [styles.toggleButtonGroup],
+		className: [styles.toggleButtonGroup({ iconOnly })],
 		odComponent: 'toggle-buttons',
 		testId,
 	});
 
 	return (
 		<Component {...componentProps} {...groupProps} ref={ref}>
-			<ToggleButtonGroupContext.Provider value={state}>
+			<ToggleButtonGroupContext.Provider value={{ state, iconOnly }}>
 				{children}
 			</ToggleButtonGroupContext.Provider>
 		</Component>
@@ -103,12 +154,13 @@ export const ToggleButton = ({
 	...props
 }: AriaToggleButtonGroupItemProps) => {
 	const ref = useRef<HTMLButtonElement>(null);
-	const state = React.useContext(ToggleButtonGroupContext);
+	const context = React.useContext(ToggleButtonGroupContext);
 
-	if (!state) {
+	if (!context) {
 		throw new Error('ToggleButton must be used within ToggleButtons');
 	}
 
+	const { state, iconOnly } = context;
 	const { buttonProps, isSelected } = useToggleButtonGroupItem(
 		props,
 		state,
@@ -122,7 +174,7 @@ export const ToggleButton = ({
 			{...buttonProps}
 			className={styles.toggleButton({
 				selected: isSelected,
-				disabled: isDisabled,
+				iconOnly,
 			})}
 			{...dataAttrs({
 				selected: isSelected,
