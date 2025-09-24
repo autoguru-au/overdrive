@@ -123,7 +123,7 @@ const textSizeMap: Record<SizeScale, TextProps['size']> = {
  * // Uncontrolled component with default value
  * <DatePicker
  *   name="eventDate"
- *   defaultValue="2025-03-15"
+ *   defaultValue={today(getLocalTimeZone()} // or an ISO date string YYYY-MM-DD
  *   onChange={(isoDate) => console.log('Selected date:', isoDate)}
  * />
  *
@@ -133,10 +133,16 @@ const textSizeMap: Record<SizeScale, TextProps['size']> = {
  *   name="bookingDate"
  *   value={selectedDate}
  *   valueLabel="Select a date"
- *   onChange={(isoDate) => setSelectedDate(isoDate)}
+ *   onChange={(isoDate) => {
+ *     setSelectedDate(isoDate);
+ *     if (isToday(isoDate)) {
+ *       setValueLabel('Today');
+ *     } else {
+ *       setValueLabel(displayFormattedDate(iseDate));
+ *     }
+ *   }}
  *   calendarOptions={{
  *     allowPastDate: false,
- *     weekdayFormat: 'short',
  *   }}
  * />
  *
@@ -146,7 +152,7 @@ const textSizeMap: Record<SizeScale, TextProps['size']> = {
  *   name="startDate"
  *   useNativePicker
  *   defaultValue="2025-03-12"
- *   onChange={(isoDate) => console.log('Native picked date:', isoDate)}
+ *   onChange={(isoDate) => console.log('Date input:', isoDate)}
  * />
  */
 export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
@@ -173,7 +179,6 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 		},
 		ref,
 	) => {
-		// Convert string props to DateValue for the hook
 		const dateValue = value ? safeParseDateString(value) : undefined;
 		const dateDefaultValue = defaultValue
 			? safeParseDateString(defaultValue)
@@ -184,17 +189,13 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 				value: dateValue,
 				defaultValue: dateDefaultValue,
 				onChange: (dateVal: DateValue) => {
-					if (typeof onChange === 'function') {
-						onChange(formatDateValue(dateVal));
-					}
+					onChange?.(formatDateValue(dateVal));
 				},
 			});
 
-		const onChangeEvent = (event: ChangeEvent<HTMLInputElement>) => {
+		const handleNativeChange = (event: ChangeEvent<HTMLInputElement>) => {
 			const dateString = event.currentTarget.value;
-			if (typeof onChange === 'function') {
-				onChange(dateString);
-			}
+			onChange?.(dateString);
 		};
 
 		const indicator = isLoading ? (
@@ -218,11 +219,6 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 				onChange: handleCalendarChange,
 			}),
 			[calendarOptions, handleCalendarChange, min, max],
-		);
-
-		const contentCalendar = useMemo(
-			() => <Calendar {...calendarProps} />,
-			[calendarProps],
 		);
 
 		// Use native picker only if explicitly requested
@@ -251,7 +247,7 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 						min={min}
 						max={max}
 						value={formatDateValue(selectedDate)}
-						onChange={onChangeEvent}
+						onChange={handleNativeChange}
 					/>
 					<div className={styles.inputOverlay}>
 						<div
@@ -271,7 +267,7 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 		return (
 			<div className={className}>
 				<PopoverTrigger
-					content={contentCalendar}
+					content={<Calendar {...calendarProps} />}
 					placement={placement}
 					testId={testId}
 					isDisabled={disabled}
