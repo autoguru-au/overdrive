@@ -1,22 +1,45 @@
-import React, { useRef, type ReactNode, type Key } from 'react';
-import { useToggleButton, useToggleButtonGroup } from 'react-aria';
-import { type useToggleGroupState } from 'react-stately';
+import type { AriaToggleButtonGroupItemProps } from '@react-types/button';
+import React, { useRef, type ReactNode } from 'react';
+import {
+	useToggleButtonGroup,
+	useToggleButtonGroupItem,
+	type AriaToggleButtonGroupProps,
+} from 'react-aria';
+import { useToggleGroupState, type ToggleGroupState } from 'react-stately';
 
 import type { TestIdProp } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
-import { Box } from '../Box';
+import { useBox } from '../Box/useBox/useBox';
 
 import * as styles from './ToggleButtons.css';
+
+export interface ToggleButtonsProps
+	extends AriaToggleButtonGroupProps,
+	TestIdProp {
+	/** The toggle buttons to display in the group */
+	children: ReactNode;
+	/** Visual size variant of the toggle buttons */
+	size?: 'small' | 'medium' | 'large';
+	// TODO: Implement stretch functionality
+	// /** Whether the buttons should stretch to fill available width */
+	// stretch?: boolean;
+}
+
+/**
+ * Context to pass state down to ToggleButton children
+ */
+const ToggleButtonGroupContext = React.createContext<ToggleGroupState | null>(
+	null,
+);
 
 /**
  * ## ToggleButtons
  *
- * A group of toggle buttons that allows users to select one option from a set.
- * Built with React Aria's `useToggleButtonGroup` for full accessibility support.
+ * A a simple toggle button of 2 or more items that allows users to select one option from a set.
+ * The default use is for single item selection. Multiple item selection is supported using
+ * `selectionMode="multiple"`.
  *
- * ### Usage Examples
- *
- * #### Basic Usage
+ * @example
  * ```tsx
  * <ToggleButtons
  *   selectedKeys={['option1']}
@@ -28,8 +51,9 @@ import * as styles from './ToggleButtons.css';
  * </ToggleButtons>
  * ```
  *
- * #### Icon-only Buttons
+ * @example
  * ```tsx
+ * // icons
  * <ToggleButtons
  *   selectedKeys={['list']}
  *   onSelectionChange={handleViewChange}
@@ -42,101 +66,69 @@ import * as styles from './ToggleButtons.css';
  *   </ToggleButton>
  * </ToggleButtons>
  * ```
- *
- * #### Different Sizes
- * ```tsx
- * <ToggleButtons
- *   size="large"
- *   selectedKeys={['option2']}
- *   onSelectionChange={handleChange}
- * >
- *   <ToggleButton key="option1">Small</ToggleButton>
- *   <ToggleButton key="option2">Medium</ToggleButton>
- *   <ToggleButton key="option3">Large</ToggleButton>
- * </ToggleButtons>
- * ```
- *
- * ### Accessibility Features
- *
- * - Full keyboard navigation with Arrow keys and Space/Enter
- * - Screen reader support with proper ARIA attributes
- * - Focus management and visual focus indicators
- * - Support for aria-label and aria-labelledby on individual buttons
- *
- * ### Visual Variants
- *
- * The component automatically handles visual styling based on selection state:
- * - Selected buttons have dark background with white text/icons
- * - Unselected buttons have light background with dark text/icons
- * - Seamless connection between adjacent buttons
- * - Rounded corners on the outer edges of the group
  */
-export interface ToggleButtonsProps
-	extends Omit<AriaToggleButtonGroupProps, 'children'>,
-		TestIdProp {
-	/** The toggle buttons to display in the group */
-	children: ReactNode;
-	/** Visual size variant of the toggle buttons */
-	size?: 'small' | 'medium' | 'large';
-	/** Whether the buttons should stretch to fill available width */
-	stretch?: boolean;
-}
+export const ToggleButtons = ({
+	children,
+	disallowEmptySelection = true,
+	selectionMode = 'single',
+	testId,
 
-export interface ToggleButtonProps extends TestIdProp {
-	/** The content of the toggle button */
-	children: ReactNode;
-	/** Unique key to identify this button */
-	key: Key;
-	/** Whether the button is disabled */
-	isDisabled?: boolean;
-	/** Accessible label for the button (especially important for icon-only buttons) */
-	'aria-label'?: string;
-	/** ID of element that labels this button */
-	'aria-labelledby'?: string;
-}
+	...props
+}: ToggleButtonsProps) => {
+	const propsWithDefault = { disallowEmptySelection, selectionMode, ...props };
+	const state = useToggleGroupState(propsWithDefault);
+	const ref = useRef<HTMLDivElement>(null);
+	const { groupProps } = useToggleButtonGroup(propsWithDefault, state, ref);
+
+	const { Component, componentProps } = useBox({
+		className: [styles.toggleButtonGroup],
+		odComponent: 'toggle-buttons',
+		testId,
+	});
+
+	return (
+		<Component {...componentProps} {...groupProps} ref={ref}>
+			<ToggleButtonGroupContext.Provider value={state}>
+				{children}
+			</ToggleButtonGroupContext.Provider>
+		</Component>
+	);
+};
+
+ToggleButtons.displayName = 'ToggleButtons';
 
 export const ToggleButton = ({
 	children,
-	isDisabled,
-	testId,
-	...ariaProps
-}: ToggleButtonProps) => {
-	const ref = useRef<HTMLButtonElement>(null);
-	const context = React.useContext(ToggleButtonGroupContext);
 
-	if (!context) {
+	...props
+}: AriaToggleButtonGroupItemProps) => {
+	const ref = useRef<HTMLButtonElement>(null);
+	const state = React.useContext(ToggleButtonGroupContext);
+
+	if (!state) {
 		throw new Error('ToggleButton must be used within ToggleButtons');
 	}
 
-	const { state, size } = context;
-	const { buttonProps, isPressed } = useToggleButton(
-		{
-			...ariaProps,
-			isDisabled,
-		},
+	const { buttonProps, isSelected } = useToggleButtonGroupItem(
+		props,
 		state,
 		ref,
 	);
 
-	const isSelected = state.isSelected(ariaProps.key as Key);
+	const { isDisabled } = props;
 
 	return (
 		<button
 			{...buttonProps}
-			ref={ref}
-			className={[
-				styles.toggleButton({
-					selected: isSelected,
-					pressed: isPressed,
-					disabled: isDisabled,
-				}),
-				styles.sizeVariants[size],
-			]}
+			className={styles.toggleButton({
+				selected: isSelected,
+				disabled: isDisabled,
+			})}
 			{...dataAttrs({
 				selected: isSelected,
 				disabled: isDisabled,
 			})}
-			data-testid={testId}
+			ref={ref}
 		>
 			{children}
 		</button>
@@ -144,52 +136,3 @@ export const ToggleButton = ({
 };
 
 ToggleButton.displayName = 'ToggleButton';
-
-// Context to pass state down to ToggleButton children
-interface ToggleButtonGroupContextValue {
-	state: ReturnType<typeof useToggleState>;
-	size: 'small' | 'medium' | 'large';
-}
-
-const ToggleButtonGroupContext =
-	React.createContext<ToggleButtonGroupContextValue | null>(null);
-
-export const ToggleButtons = ({
-	children,
-	size = 'medium',
-	stretch = false,
-	testId,
-	selectionMode = 'single',
-	...toggleGroupProps
-}: ToggleButtonsProps) => {
-	const ref = useRef<HTMLDivElement>(null);
-	const toggleGroupPropsWithDefaults = { selectionMode, ...toggleGroupProps };
-	const state = useToggleGroupState(toggleGroupPropsWithDefaults);
-	const { groupProps } = useToggleButtonGroup(
-		toggleGroupPropsWithDefaults,
-		state,
-		ref,
-	);
-
-	return (
-		<ToggleButtonGroupContext.Provider value={{ state, size }}>
-			<Box
-				{...groupProps}
-				ref={ref}
-				display="inline-flex"
-				alignItems="stretch"
-				width={stretch ? 'full' : undefined}
-				className={styles.toggleButtonGroup({
-					size,
-					stretch,
-				})}
-				data-od-component="toggle-buttons"
-				data-testid={testId}
-			>
-				{children}
-			</Box>
-		</ToggleButtonGroupContext.Provider>
-	);
-};
-
-ToggleButtons.displayName = 'ToggleButtons';
