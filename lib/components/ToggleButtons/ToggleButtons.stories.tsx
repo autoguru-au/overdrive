@@ -3,20 +3,41 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { expect, fn, userEvent, within } from 'storybook/test';
 
+import { Heading } from '../Heading/Heading';
 import { Icon } from '../Icon/Icon';
+import { VisuallyHidden } from '../VisuallyHidden/VisuallyHidden';
 
 import { ToggleButtons, ToggleButton } from './ToggleButtons';
 
-const ICON_SIZE = 'medium' as const;
+const ICON_SIZE = 'medium';
 
 const meta = {
 	title: 'Primitives/Toggle Buttons',
 	tags: ['new'],
 	component: ToggleButtons,
 	args: {
+		children: undefined,
 		defaultSelectedKeys: undefined,
 		disallowEmptySelection: true,
+		iconOnly: false,
+		isDisabled: false,
 		onSelectionChange: fn(),
+		selectedKeys: undefined,
+		testId: 'demo-toggle-buttons',
+	},
+	argTypes: {
+		children: {
+			control: false,
+		},
+		orientation: {
+			control: false,
+		},
+		selectionMode: {
+			control: false,
+		},
+		selectedKeys: {
+			control: false,
+		},
 	},
 } satisfies Meta<typeof ToggleButtons>;
 
@@ -44,14 +65,21 @@ export const Standard: Story = {
 };
 
 export const IconOnly: Story = {
+	args: {
+		'aria-label': 'change supplier view',
+		defaultSelectedKeys: ['list'],
+		iconOnly: true,
+	},
 	render: (args) => {
 		return (
-			<ToggleButtons {...args} defaultSelectedKeys={['list']} iconOnly>
-				<ToggleButton id="list" aria-label="list view">
+			<ToggleButtons {...args}>
+				<ToggleButton id="list">
 					<Icon icon={StoreOutlineIcon} size={ICON_SIZE} />
+					<VisuallyHidden>list view</VisuallyHidden>
 				</ToggleButton>
-				<ToggleButton id="location" aria-label="map view">
+				<ToggleButton id="location">
 					<Icon icon={MapPinOutlineIcon} size={ICON_SIZE} />
+					<VisuallyHidden>map view</VisuallyHidden>
 				</ToggleButton>
 			</ToggleButtons>
 		);
@@ -59,12 +87,14 @@ export const IconOnly: Story = {
 };
 
 export const ExampleUse: Story = {
-	render: () => {
+	render: (args) => {
 		return (
 			<div>
 				<div>
-					<h3>No Default Selection</h3>
-					<ToggleButtons>
+					<Heading as="h3" size="5" mb="3" id="heading-a">
+						No Default Selection
+					</Heading>
+					<ToggleButtons {...args} aria-labelledby="heading-a">
 						<ToggleButton id="confirm">Confirm</ToggleButton>
 						<ToggleButton id="decline">Decline</ToggleButton>
 						<ToggleButton id="change-date">
@@ -74,10 +104,13 @@ export const ExampleUse: Story = {
 				</div>
 
 				<div>
-					<h3>Long Content</h3>
+					<Heading as="h3" size="5" mt="7" mb="3" id="heading-b">
+						Long Content
+					</Heading>
 					<ToggleButtons
+						{...args}
+						aria-labelledby="heading-b"
 						defaultSelectedKeys={['comprehensive']}
-						onSelectionChange={fn()}
 					>
 						<ToggleButton id="comprehensive">
 							Comprehensive Analysis Report
@@ -92,11 +125,14 @@ export const ExampleUse: Story = {
 				</div>
 
 				<div>
-					<h3>Disabled</h3>
+					<Heading as="h3" size="5" mt="7" mb="3" id="heading-c">
+						Disabled
+					</Heading>
 					<ToggleButtons
+						{...args}
 						isDisabled
+						aria-labelledby="heading-c"
 						defaultSelectedKeys={['md']}
-						onSelectionChange={fn()}
 					>
 						<ToggleButton id="xs">Extra Small</ToggleButton>
 						<ToggleButton id="sm">Small</ToggleButton>
@@ -141,18 +177,20 @@ export const InteractionTest: Story = {
 		const user = userEvent.setup();
 		const buttons = canvas.getAllByRole('radio');
 
+		const ariaChecked = 'aria-checked';
+
 		await step('Verify initial state', async () => {
 			// Initially "Home" should be selected
-			await expect(buttons[0]).toHaveAttribute('aria-checked', 'true');
-			await expect(buttons[1]).toHaveAttribute('aria-checked', 'false');
-			await expect(buttons[2]).toHaveAttribute('aria-checked', 'false');
+			await expect(buttons[0]).toHaveAttribute(ariaChecked, 'true');
+			await expect(buttons[1]).toHaveAttribute(ariaChecked, 'false');
+			await expect(buttons[2]).toHaveAttribute(ariaChecked, 'false');
 		});
 
 		await step('Test mouse interactions', async () => {
 			// Click "About" to change selection
 			await user.click(buttons[1]);
-			await expect(buttons[1]).toHaveAttribute('aria-checked', 'true');
-			await expect(buttons[0]).toHaveAttribute('aria-checked', 'false');
+			await expect(buttons[1]).toHaveAttribute(ariaChecked, 'true');
+			await expect(buttons[0]).toHaveAttribute(ariaChecked, 'false');
 		});
 
 		await step('Test keyboard navigation', async () => {

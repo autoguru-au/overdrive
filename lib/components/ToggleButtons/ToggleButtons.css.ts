@@ -15,7 +15,7 @@ export const toggleButtonGroup = recipe({
 		{
 			'@layer': {
 				[cssLayerComponent]: {
-					color: vars.color.gamut.gray[400],
+					color: vars.color.gamut.gray[500],
 					display: 'grid',
 					gridTemplateColumns: 'repeat(auto-fit, minmax(0, 1fr))',
 				},
@@ -29,6 +29,7 @@ export const toggleButtonGroup = recipe({
 					[cssLayerComponent]: {
 						color: vars.color.content.normal,
 						display: 'block',
+						lineHeight: 1,
 						width: 'fit-content',
 					},
 				},
@@ -88,6 +89,8 @@ export const toggleButton = style([
 						backgroundColor: vars.color.gamut.gray[200],
 						boxShadow:
 							'inset 0 1px 5px 0 rgba(0, 0, 0, 0.03), inset 0 2px 2px 0 rgba(0, 0, 0, 0.03), inset 0 3px 1px -2px rgba(0, 0, 0, 0.05)',
+						transitionDelay: '50ms',
+						transitionDuration: '0.2s',
 					},
 					[selectors.selected]: {
 						backgroundColor: vars.color.surface.hard,
@@ -99,7 +102,7 @@ export const toggleButton = style([
 					},
 					[selectors.disabled]: {
 						cursor: 'not-allowed',
-						opacity: 0.5,
+						opacity: 0.6,
 					},
 				},
 			},

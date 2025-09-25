@@ -1,7 +1,7 @@
 import { composeStories } from '@storybook/react';
 import { render, screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
-import React from 'react';
+import React, { createRef } from 'react';
 import { describe, it, expect, vi } from 'vitest';
 
 import { ToggleButtons, ToggleButton } from './ToggleButtons';
@@ -101,7 +101,7 @@ describe('ToggleButtons', () => {
 
 		expect(() => {
 			render(<ToggleButton id="orphaned">Orphaned Button</ToggleButton>);
-		}).toThrow('ToggleButton must be used within ToggleButtons');
+		}).toThrow('ToggleButton: Must be used within ToggleButtons component');
 
 		consoleSpy.mockRestore();
 	});
@@ -191,5 +191,108 @@ describe('ToggleButtons', () => {
 
 		// Should remain selected due to disallowEmptySelection
 		expect(buttons[0]).toHaveAttribute('aria-checked', 'true');
+	});
+
+	describe('ref forwarding', () => {
+		it('forwards ref correctly for ToggleButtons container', () => {
+			const ref = createRef<HTMLDivElement>();
+
+			render(
+				<ToggleButtons ref={ref}>
+					<ToggleButton id="option1">Option 1</ToggleButton>
+					<ToggleButton id="option2">Option 2</ToggleButton>
+				</ToggleButtons>,
+			);
+
+			// Verify ref is attached to the container element
+			expect(ref.current).toBeInstanceOf(HTMLDivElement);
+			expect(ref.current).toHaveAttribute('role', 'radiogroup');
+		});
+
+		it('forwards ref correctly for individual ToggleButton', () => {
+			const buttonRef = createRef<HTMLButtonElement>();
+
+			render(
+				<ToggleButtons>
+					<ToggleButton id="option1" ref={buttonRef}>
+						Option 1
+					</ToggleButton>
+					<ToggleButton id="option2">Option 2</ToggleButton>
+				</ToggleButtons>,
+			);
+
+			// Verify ref is attached to the button element
+			expect(buttonRef.current).toBeInstanceOf(HTMLButtonElement);
+			expect(buttonRef.current).toHaveAttribute('role', 'radio');
+			expect(buttonRef.current).toHaveTextContent('Option 1');
+		});
+
+		it('supports callback refs for ToggleButtons', () => {
+			const refCallback = vi.fn();
+
+			render(
+				<ToggleButtons ref={refCallback}>
+					<ToggleButton id="option1">Option 1</ToggleButton>
+				</ToggleButtons>,
+			);
+
+			// Verify callback ref was called with the container element
+			expect(refCallback).toHaveBeenCalledWith(
+				expect.any(HTMLDivElement),
+			);
+			expect(refCallback.mock.calls[0][0]).toHaveAttribute(
+				'role',
+				'radiogroup',
+			);
+		});
+
+		it('supports callback refs for ToggleButton', () => {
+			const refCallback = vi.fn();
+
+			render(
+				<ToggleButtons>
+					<ToggleButton id="option1" ref={refCallback}>
+						Option 1
+					</ToggleButton>
+				</ToggleButtons>,
+			);
+
+			// Verify callback ref was called with the button element
+			expect(refCallback).toHaveBeenCalledWith(
+				expect.any(HTMLButtonElement),
+			);
+			expect(refCallback.mock.calls[0][0]).toHaveAttribute(
+				'role',
+				'radio',
+			);
+			expect(refCallback.mock.calls[0][0]).toHaveTextContent('Option 1');
+		});
+
+		it('handles multiple refs (object + callback) through mergeRefs', () => {
+			const objectRef = createRef<HTMLDivElement>();
+			const callbackRef = vi.fn();
+
+			const bothRefsCallback = (node: HTMLDivElement | null) => {
+				if (objectRef.current !== node) {
+					objectRef.current = node;
+				}
+				callbackRef(node);
+			};
+
+			// Create a component that passes both refs
+			const TestComponent = () => {
+				return (
+					<ToggleButtons ref={bothRefsCallback}>
+						<ToggleButton id="option1">Option 1</ToggleButton>
+					</ToggleButtons>
+				);
+			};
+
+			render(<TestComponent />);
+
+			// Both refs should receive the same element
+			expect(objectRef.current).toBeInstanceOf(HTMLDivElement);
+			expect(callbackRef).toHaveBeenCalledWith(objectRef.current);
+		});
 	});
 });
