@@ -28,16 +28,9 @@ export interface ToggleButtonsProps
 	iconOnly?: boolean;
 }
 
-/**
- * Context to pass state and options down to ToggleButton children
- */
-interface ToggleButtonGroupContextValue {
-	state: ToggleGroupState;
-	iconOnly: boolean;
-}
-
-const ToggleButtonGroupContext =
-	React.createContext<ToggleButtonGroupContextValue | null>(null);
+const ToggleButtonGroupContext = React.createContext<ToggleGroupState | null>(
+	null,
+);
 
 /**
  * ## ToggleButtons
@@ -45,22 +38,15 @@ const ToggleButtonGroupContext =
  * A toggle button group component that allows users to select one or more options from a set.
  * Built with React Aria for full accessibility support including keyboard navigation and screen readers.
  *
- * ### Key Features
- * - **Single or Multiple Selection**: Use `selectionMode="single"` (default) or `selectionMode="multiple"`
- * - **Uncontrolled by Default**: Use `defaultSelectedKeys` for initial selection
- * - **Controlled Mode**: Use `selectedKeys` and `onSelectionChange` for external state management
- * - **Icon Support**: Use `iconOnly={true}` for optimized icon-only button layouts
- * - **Accessibility**: Full ARIA support, keyboard navigation, and screen reader compatibility
- *
- * ### Component Props
- * - `defaultSelectedKeys`: Initial selected keys (uncontrolled mode)
- * - `selectedKeys` + `onSelectionChange`: External state control (controlled mode)
- * - `selectionMode`: "single" or "multiple" selection behavior
- * - `disallowEmptySelection`: Prevents deselecting all options (default: true)
- * - `iconOnly`: Optimizes layout for icon-only buttons
+ * ### Configuration Overview
+ * - **Selection mode**: `selectionMode` - "single" or "multiple" behavior
+ * - **Default selection**: `defaultSelectedKeys` - initial selected keys as `string[]` (uncontrolled)
+ * - **Controlled mode**: `selectedKeys` + `onSelectionChange` - external state control
+ * - **Icon-only**: `iconOnly` - changes layout for single icon content (ARIA label or hidden text label required)
+ * - `disallowEmptySelection`: Prevents deselecting all options (**default**: `true`)
  * - `isDisabled`: Disables the entire group
  *
- * ### Selection Change Handling
+ * ### Selection Handling
  * The `onSelectionChange` callback receives a `Set<Key>` containing selected button IDs:
  * ```tsx
  * onSelectionChange={(keys) => {
@@ -139,7 +125,7 @@ export const ToggleButtons = ({
 
 	return (
 		<Component {...componentProps} {...groupProps} ref={ref}>
-			<ToggleButtonGroupContext.Provider value={{ state, iconOnly }}>
+			<ToggleButtonGroupContext.Provider value={state}>
 				{children}
 			</ToggleButtonGroupContext.Provider>
 		</Component>
@@ -154,13 +140,12 @@ export const ToggleButton = ({
 	...props
 }: AriaToggleButtonGroupItemProps) => {
 	const ref = useRef<HTMLButtonElement>(null);
-	const context = React.useContext(ToggleButtonGroupContext);
+	const state = React.useContext(ToggleButtonGroupContext);
 
-	if (!context) {
+	if (!state) {
 		throw new Error('ToggleButton must be used within ToggleButtons');
 	}
 
-	const { state, iconOnly } = context;
 	const { buttonProps, isSelected } = useToggleButtonGroupItem(
 		props,
 		state,
@@ -172,10 +157,7 @@ export const ToggleButton = ({
 	return (
 		<button
 			{...buttonProps}
-			className={styles.toggleButton({
-				selected: isSelected,
-				iconOnly,
-			})}
+			className={styles.toggleButton}
 			{...dataAttrs({
 				selected: isSelected,
 				disabled: isDisabled,

@@ -1,23 +1,26 @@
+import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 import { elementReset } from '../../styles/elementReset.css';
+import { focusOutlineStyle } from '../../styles/focusOutline.css';
 import { cssLayerComponent } from '../../styles/layers.css';
 import { selectors } from '../../styles/selectors';
 import { sprinkles } from '../../styles/sprinkles.css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
+const TOGGLE_BUTTON_HEIGHT = '40px';
+
 export const toggleButtonGroup = recipe({
 	base: [
 		sprinkles({
-			borderColour: 'gray',
-			borderRadius: 'md',
-			borderStyle: 'solid',
-			borderWidth: '1',
-			overflow: 'hidden',
+			// borderColour: 'gray',
+			// borderRadius: 'md',
+			lineHeight: '1',
 		}),
 		{
 			'@layer': {
 				[cssLayerComponent]: {
+					color: vars.color.gamut.gray[400],
 					display: 'grid',
 					gridTemplateColumns: 'repeat(auto-fit, minmax(0, 1fr))',
 				},
@@ -29,12 +32,13 @@ export const toggleButtonGroup = recipe({
 			true: {
 				'@layer': {
 					[cssLayerComponent]: {
+						color: vars.color.content.normal,
 						display: 'block',
+						lineHeight: 0,
 						width: 'fit-content',
 					},
 				},
 			},
-			false: {},
 		},
 	},
 	defaultVariants: {
@@ -42,72 +46,68 @@ export const toggleButtonGroup = recipe({
 	},
 });
 
-export const toggleButton = recipe({
-	base: [
-		elementReset.button,
-		sprinkles({
-			backgroundColor: 'page',
-			color: 'normal',
-			p: '3',
-			textWrap: 'nowrap',
-		}),
-		{
-			'@layer': {
-				[cssLayerComponent]: {
-					appearance: 'none',
-					borderStyle: 'none',
-					MozAppearance: 'none',
-					overflow: 'hidden',
-					textOverflow: 'ellipsis',
-					userSelect: 'none',
-					WebkitAppearance: 'none',
-					selectors: {
-						'&+&': {
-							borderLeft: `1px solid ${vars.border.colours.gray}`,
-						},
-						[selectors.hover]: {
-							cursor: 'pointer',
-						},
-						[selectors.disabled]: {
-							cursor: 'not-allowed',
-							opacity: 0.5,
-						},
+export const toggleButton = style([
+	elementReset.button,
+	focusOutlineStyle,
+	sprinkles({
+		backgroundColor: 'page',
+		borderColour: 'gray',
+		borderStyle: 'solid',
+		borderWidth: '1',
+		px: '3',
+		text: '4',
+		textWrap: 'nowrap',
+	}),
+	{
+		'@layer': {
+			[cssLayerComponent]: {
+				appearance: 'none',
+				color: 'inherit',
+				height: TOGGLE_BUTTON_HEIGHT,
+				overflow: 'hidden',
+				textOverflow: 'ellipsis',
+				transitionDuration: '0.1s',
+				transitionProperty:
+					'background-color, border-color, box-shadow, color',
+				transitionTimingFunction: vars.animation.easing.standard,
+				userSelect: 'none',
+				selectors: {
+					'&:first-child': {
+						borderBottomLeftRadius: vars.border.radius.md,
+						borderTopLeftRadius: vars.border.radius.md,
 					},
-				},
-			},
-		},
-	],
-	variants: {
-		selected: {
-			true: {
-				'@layer': {
-					[cssLayerComponent]: {
+					'&:last-child': {
+						borderBottomRightRadius: vars.border.radius.md,
+						borderTopRightRadius: vars.border.radius.md,
+					},
+					'&:focus-visible': {
+						zIndex: 1,
+					},
+					'&+&': {
+						borderLeftStyle: 'none',
+					},
+					[selectors.hoverNotDisabled]: {
+						cursor: 'pointer',
+					},
+					[selectors.hoverNotSelected]: {
+						backgroundColor: vars.color.gamut.gray[200],
+						boxShadow:
+							'inset 0 1px 5px 0 rgba(0, 0, 0, 0.03), inset 0 2px 2px 0 rgba(0, 0, 0, 0.03), inset 0 3px 1px -2px rgba(0, 0, 0, 0.05)',
+					},
+					[selectors.selected]: {
 						backgroundColor: vars.color.surface.hard,
+						borderColor: vars.color.surface.hard,
 						color: vars.color.content.inverse,
 					},
-				},
-			},
-			false: {
-				'@layer': {
-					[cssLayerComponent]: {
-						color: vars.color.content.soft,
+					[`&+&:is(${selectors.selected})`]: {
+						borderLeftColor: vars.color.surface.hard,
+					},
+					[selectors.disabled]: {
+						cursor: 'not-allowed',
+						opacity: 0.5,
 					},
 				},
 			},
 		},
-		iconOnly: {
-			true: {
-				'@layer': {
-					[cssLayerComponent]: {
-						width: 'fit-content',
-					},
-				},
-			},
-			false: {},
-		},
 	},
-	defaultVariants: {
-		selected: false,
-		iconOnly: false,
-	},
-});
+]);

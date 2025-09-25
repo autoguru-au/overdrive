@@ -11,9 +11,10 @@ const ICON_SIZE = 'medium' as const;
 
 const meta = {
 	title: 'Primitives/Toggle Buttons',
+	tags: ['new'],
 	component: ToggleButtons,
 	args: {
-		defaultSelectedKeys: ['confirm'],
+		defaultSelectedKeys: undefined,
 		disallowEmptySelection: true,
 		onSelectionChange: fn(),
 	},
@@ -23,14 +24,20 @@ export default meta;
 
 type Story = StoryObj<typeof ToggleButtons>;
 
-// Standard text buttons matching the design mockup
+/**
+ * ToggleButtons default to single selection mode.
+ */
 export const Standard: Story = {
+	args: {
+		defaultSelectedKeys: ['option2'],
+	},
 	render: (args) => {
 		return (
 			<ToggleButtons {...args}>
-				<ToggleButton id="confirm">Confirm</ToggleButton>
-				<ToggleButton id="decline">Decline</ToggleButton>
-				<ToggleButton id="change-date">Change date</ToggleButton>
+				<ToggleButton id="option1">Option 1</ToggleButton>
+				<ToggleButton id="option2">Option 2</ToggleButton>
+				<ToggleButton id="option3">Option 3</ToggleButton>
+				<ToggleButton id="option4">Option 4</ToggleButton>
 			</ToggleButtons>
 		);
 	},
@@ -57,7 +64,6 @@ export const Standard: Story = {
 	// },
 };
 
-// Icon-only buttons matching the design mockup
 export const IconOnly: Story = {
 	render: (args) => {
 		return (
@@ -73,10 +79,21 @@ export const IconOnly: Story = {
 	},
 };
 
-export const Examples: Story = {
+export const ExampleUse: Story = {
 	render: () => {
 		return (
 			<div>
+				<div>
+					<h3>No Default Selection</h3>
+					<ToggleButtons>
+						<ToggleButton id="confirm">Confirm</ToggleButton>
+						<ToggleButton id="decline">Decline</ToggleButton>
+						<ToggleButton id="change-date">
+							Change date
+						</ToggleButton>
+					</ToggleButtons>
+				</div>
+
 				<div>
 					<h3>Long Content</h3>
 					<ToggleButtons
