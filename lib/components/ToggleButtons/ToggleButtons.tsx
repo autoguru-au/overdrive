@@ -18,7 +18,7 @@ import * as styles from './ToggleButtons.css';
 
 export interface ToggleButtonsProps
 	extends AriaToggleButtonGroupProps,
-		TestIdProp {
+	TestIdProp {
 	/**
 	 * The toggle buttons to display in the group
 	 * ```tsx
@@ -41,7 +41,7 @@ export interface ToggleButtonsProps
 	onSelectionChange?: (keys: Set<Key>) => void;
 	/** Whether all toggle buttons are disabled. */
 	isDisabled?: boolean;
-	/** (_Not in use__) The orientation of the toggle button group. @default 'horizontal' */
+	/** (_Not in use_) The orientation of the toggle button group. @default 'horizontal' */
 	orientation?: 'horizontal' | 'vertical';
 }
 
@@ -53,7 +53,7 @@ const ToggleButtonGroupContext = React.createContext<ToggleGroupState | null>(
  * ## ToggleButtons
  *
  * A toggle button group component that allows users to select one option from a set (multiple selection
- * configrable). The ToggleButtons component also exports `ToggleButton` which are the child contents.
+ * configurable). The ToggleButtons component also exports `ToggleButton` which are the child contents.
  * Each `ToggleButton` item must be populated with an `id="[value]"` prop which is used to identify it
  * both for default selection and in the on-change event.
  *
