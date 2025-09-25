@@ -41,27 +41,6 @@ export const Standard: Story = {
 			</ToggleButtons>
 		);
 	},
-	// play: async ({ canvasElement }) => {
-	// 	const canvas = within(canvasElement);
-	// 	const user = userEvent.setup();
-
-	// 	// Initially "Change date" should be selected
-	// 	await expect(canvas.getAllByRole('button')[2]).toHaveAttribute(
-	// 		'aria-pressed',
-	// 		'true',
-	// 	);
-
-	// 	// Click "Confirm" to change selection
-	// 	await user.click(canvas.getAllByRole('button')[0]);
-	// 	await expect(canvas.getAllByRole('button')[0]).toHaveAttribute(
-	// 		'aria-pressed',
-	// 		'true',
-	// 	);
-	// 	await expect(canvas.getAllByRole('button')[2]).toHaveAttribute(
-	// 		'aria-pressed',
-	// 		'false',
-	// 	);
-	// },
 };
 
 export const IconOnly: Story = {
@@ -157,27 +136,48 @@ export const InteractionTest: Story = {
 			</ToggleButtons>
 		);
 	},
-	play: async ({ canvasElement }) => {
+	play: async ({ canvasElement, step }) => {
 		const canvas = within(canvasElement);
 		const user = userEvent.setup();
+		const buttons = canvas.getAllByRole('radio');
 
-		// Test keyboard navigation
-		const buttons = canvas.getAllByRole('button');
-		await user.tab(); // Focus first button
-		await expect(buttons[0]).toHaveFocus();
+		await step('Verify initial state', async () => {
+			// Initially "Home" should be selected
+			await expect(buttons[0]).toHaveAttribute('aria-checked', 'true');
+			await expect(buttons[1]).toHaveAttribute('aria-checked', 'false');
+			await expect(buttons[2]).toHaveAttribute('aria-checked', 'false');
+		});
 
-		// Test arrow key navigation
-		await user.keyboard('{ArrowRight}');
-		await expect(buttons[1]).toHaveFocus();
+		await step('Test mouse interactions', async () => {
+			// Click "About" to change selection
+			await user.click(buttons[1]);
+			await expect(buttons[1]).toHaveAttribute('aria-checked', 'true');
+			await expect(buttons[0]).toHaveAttribute('aria-checked', 'false');
+		});
 
-		await user.keyboard('{ArrowRight}');
-		await expect(buttons[2]).toHaveFocus();
+		await step('Test keyboard navigation', async () => {
+			// Test tab navigation to focus first button
+			await expect(buttons[1]).toHaveFocus();
 
-		// Test Home/End keys
-		await user.keyboard('{Home}');
-		await expect(buttons[0]).toHaveFocus();
+			// Test arrow key navigation
+			await user.keyboard('{ArrowRight}');
+			await expect(buttons[2]).toHaveFocus();
 
-		await user.keyboard('{End}');
-		await expect(buttons[2]).toHaveFocus();
+			await user.keyboard('{ArrowLeft}{ArrowLeft}');
+			await expect(buttons[0]).toHaveFocus();
+		});
+
+		await step('Verify accessibility attributes', async () => {
+			// Verify radiogroup structure
+			const radiogroup = canvas.getByRole('radiogroup');
+			await expect(radiogroup).toHaveAttribute(
+				'aria-orientation',
+				'horizontal',
+			);
+			await expect(radiogroup).toHaveAttribute(
+				'aria-label',
+				'Navigation',
+			);
+		});
 	},
 };

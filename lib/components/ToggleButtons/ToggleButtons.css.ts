@@ -12,11 +12,6 @@ const TOGGLE_BUTTON_HEIGHT = '40px';
 
 export const toggleButtonGroup = recipe({
 	base: [
-		sprinkles({
-			// borderColour: 'gray',
-			// borderRadius: 'md',
-			lineHeight: '1',
-		}),
 		{
 			'@layer': {
 				[cssLayerComponent]: {
@@ -34,7 +29,6 @@ export const toggleButtonGroup = recipe({
 					[cssLayerComponent]: {
 						color: vars.color.content.normal,
 						display: 'block',
-						lineHeight: 0,
 						width: 'fit-content',
 					},
 				},
@@ -81,6 +75,7 @@ export const toggleButton = style([
 						borderTopRightRadius: vars.border.radius.md,
 					},
 					'&:focus-visible': {
+						position: 'relative',
 						zIndex: 1,
 					},
 					'&+&': {
