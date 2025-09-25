@@ -207,7 +207,7 @@ export const InteractionTest: Story = {
 
 		await step('Verify accessibility attributes', async () => {
 			// Verify radiogroup structure
-			const radiogroup = canvas.getByRole('radiogroup');
+			const radiogroup = canvas.getAllByRole('radiogroup')[0];
 			await expect(radiogroup).toHaveAttribute(
 				'aria-orientation',
 				'horizontal',
