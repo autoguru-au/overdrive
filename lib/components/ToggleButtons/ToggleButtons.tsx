@@ -18,7 +18,7 @@ import * as styles from './ToggleButtons.css';
 
 export interface ToggleButtonsProps
 	extends AriaToggleButtonGroupProps,
-	TestIdProp {
+		TestIdProp {
 	/**
 	 * The toggle buttons to display in the group
 	 * ```tsx
