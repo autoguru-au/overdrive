@@ -1,7 +1,13 @@
 import { invariant } from '@autoguru/utilities';
 import type { AriaToggleButtonGroupItemProps } from '@react-types/button';
 import type { Key } from '@react-types/shared';
-import React, { Children, forwardRef, useRef, type ReactNode } from 'react';
+import React, {
+	Children,
+	forwardRef,
+	useRef,
+	type ReactNode,
+	type RefObject,
+} from 'react';
 import {
 	useToggleButtonGroup,
 	useToggleButtonGroupItem,
@@ -9,15 +15,17 @@ import {
 } from 'react-aria';
 import { useToggleGroupState, type ToggleGroupState } from 'react-stately';
 
+import { useContainerWidth } from '../../hooks';
 import type { TestIdProp } from '../../types';
 import { mergeRefs } from '../../utils';
 import { dataAttrs } from '../../utils/dataAttrs';
-import { useBox } from '../Box/useBox/useBox';
+import { useBox, type UseBoxProps } from '../Box/useBox/useBox';
 
 import * as styles from './ToggleButtons.css';
 
 export interface ToggleButtonsProps
 	extends AriaToggleButtonGroupProps,
+		UseBoxProps,
 		TestIdProp {
 	/**
 	 * The toggle buttons to display in the group
@@ -45,6 +53,8 @@ export interface ToggleButtonsProps
 	orientation?: 'horizontal' | 'vertical';
 }
 
+export const WIDTH_COMPACT_ORIENTATION = 640;
+
 const ToggleButtonGroupContext = React.createContext<ToggleGroupState | null>(
 	null,
 );
@@ -64,6 +74,9 @@ const ToggleButtonGroupContext = React.createContext<ToggleGroupState | null>(
  * - **Icon-only**: `iconOnly` - changes layout for single icon content (ARIA label or hidden text label required)
  * - `disallowEmptySelection`: Prevents deselecting all options (**default**: `true`)
  * - `isDisabled`: Disables the entire group
+ *
+ * ### Responsive Behaviour
+ * - For toggle buttons that are not `iconOnly` the layout will be vertical below tablet viewport width
  *
  * ### Accessibility
  * - **Group Label**: When the button group has a label, associate it with `aria-labelledby` to and `id` on the heading text.
@@ -129,46 +142,86 @@ export const ToggleButtons = forwardRef<HTMLDivElement, ToggleButtonsProps>(
 			children,
 			disallowEmptySelection = true,
 			iconOnly = false,
+			orientation: incomingOrientation,
 			selectionMode = 'single',
-			testId,
-			...props
+
+			...withBoxProps
 		},
 		forwardedRef,
 	) => {
+		const {
+			selectedKeys,
+			defaultSelectedKeys,
+			onSelectionChange,
+			isDisabled,
+			'aria-describedby': ariaDescribedBy,
+			'aria-details': ariaDetails,
+			'aria-label': ariaLabel,
+			'aria-labelledby': ariaLabelledBy,
+			...boxProps
+		} = withBoxProps;
+
 		const childArray = Children.toArray(children);
 		invariant(
 			childArray.length > 0,
 			'ToggleButtons: Must contain at least one ToggleButton child',
 		);
 
-		const propsWithDefault = {
-			disallowEmptySelection,
-			selectionMode,
-			...props,
-		};
-		const state = useToggleGroupState(propsWithDefault);
 		const internalRef = useRef<HTMLDivElement>(null);
+		const containerWidth = useContainerWidth({
+			containerRef: internalRef as RefObject<HTMLElement>,
+		});
+
+		// Determine orientation based on container width (not iconOnly)
+		const hasCompactLayout =
+			!iconOnly &&
+			containerWidth > 0 &&
+			containerWidth < WIDTH_COMPACT_ORIENTATION;
+		const orientation = hasCompactLayout
+			? 'vertical'
+			: (incomingOrientation ?? 'horizontal');
+
+		const ariaProps: AriaToggleButtonGroupProps = {
+			disallowEmptySelection,
+			defaultSelectedKeys,
+			isDisabled,
+			selectionMode,
+			onSelectionChange,
+			orientation,
+			selectedKeys,
+			'aria-describedby': ariaDescribedBy,
+			'aria-details': ariaDetails,
+			'aria-label': ariaLabel,
+			'aria-labelledby': ariaLabelledBy,
+		};
+
+		const state = useToggleGroupState(ariaProps);
 		const { groupProps } = useToggleButtonGroup(
-			propsWithDefault,
+			ariaProps,
 			state,
 			internalRef,
 		);
 
 		const { Component, componentProps } = useBox({
-			className: [styles.toggleButtonGroup({ iconOnly })],
+			...boxProps,
+			className: styles.toggleButtonsContainerStyle,
 			odComponent: 'toggle-buttons',
-			testId,
 		});
 
 		return (
 			<Component
 				{...componentProps}
-				{...groupProps}
 				ref={mergeRefs([internalRef, forwardedRef])}
 			>
-				<ToggleButtonGroupContext.Provider value={state}>
-					{children}
-				</ToggleButtonGroupContext.Provider>
+				<div
+					className={styles.toggleButtonGroup({ iconOnly })}
+					{...groupProps}
+					{...dataAttrs({ iconOnly })}
+				>
+					<ToggleButtonGroupContext.Provider value={state}>
+						{children}
+					</ToggleButtonGroupContext.Provider>
+				</div>
 			</Component>
 		);
 	},

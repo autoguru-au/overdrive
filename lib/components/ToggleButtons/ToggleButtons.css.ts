@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { createContainer, style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 import { elementReset } from '../../styles/elementReset.css';
@@ -8,7 +8,19 @@ import { selectors } from '../../styles/selectors';
 import { sprinkles } from '../../styles/sprinkles.css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
+import { WIDTH_COMPACT_ORIENTATION } from './ToggleButtons';
+
 const TOGGLE_BUTTON_HEIGHT = '40px';
+
+export const toggleButtonsContainer = createContainer();
+export const toggleButtonsContainerStyle = style({
+	'@layer': {
+		[cssLayerComponent]: {
+			containerName: toggleButtonsContainer,
+			containerType: 'inline-size',
+		},
+	},
+});
 
 export const toggleButtonGroup = recipe({
 	base: [
@@ -17,7 +29,14 @@ export const toggleButtonGroup = recipe({
 				[cssLayerComponent]: {
 					color: vars.color.gamut.gray[500],
 					display: 'grid',
-					gridTemplateColumns: 'repeat(auto-fit, minmax(0, 1fr))',
+					gridTemplateColumns: '1fr',
+					'@container': {
+						[`${toggleButtonsContainer} (min-width: ${WIDTH_COMPACT_ORIENTATION}px)`]:
+							{
+								gridTemplateColumns:
+									'repeat(auto-fit, minmax(0, 1fr))',
+							},
+					},
 				},
 			},
 		},
@@ -40,6 +59,8 @@ export const toggleButtonGroup = recipe({
 		iconOnly: false,
 	},
 });
+
+const selectorNotIconOnly = `${toggleButtonGroup.classNames.base}:not([data-icon-only])`;
 
 export const toggleButton = style([
 	elementReset.button,
@@ -97,13 +118,36 @@ export const toggleButton = style([
 						borderColor: vars.color.surface.hard,
 						color: vars.color.content.inverse,
 					},
-					[`&+&:is(${selectors.selected})`]: {
-						borderLeftColor: vars.color.surface.hard,
-					},
 					[selectors.disabled]: {
 						cursor: 'not-allowed',
 						opacity: 0.6,
 					},
+				},
+				// Container-based responsive styles for mobile stacking (only for non-iconOnly)
+				'@container': {
+					[`${toggleButtonsContainer} (max-width: ${WIDTH_COMPACT_ORIENTATION}px)`]:
+						{
+							selectors: {
+								[`${selectorNotIconOnly} &`]: {
+									borderLeftStyle: 'solid',
+								},
+								[`${selectorNotIconOnly} &+&`]: {
+									borderTopStyle: 'none',
+								},
+								[`${selectorNotIconOnly} &:first-child`]: {
+									borderBottomLeftRadius: 0,
+									borderTopLeftRadius: vars.border.radius.md,
+									borderTopRightRadius: vars.border.radius.md,
+								},
+								[`${selectorNotIconOnly} &:last-child`]: {
+									borderBottomLeftRadius:
+										vars.border.radius.md,
+									borderBottomRightRadius:
+										vars.border.radius.md,
+									borderTopRightRadius: 0,
+								},
+							},
+						},
 				},
 			},
 		},
