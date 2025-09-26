@@ -176,6 +176,7 @@ export const InteractionTest: Story = {
 		const canvas = within(canvasElement);
 		const user = userEvent.setup();
 		const buttons = canvas.getAllByRole('radio');
+		const radiogroup = canvas.getAllByRole('radiogroup')[0];
 
 		const ariaChecked = 'aria-checked';
 
@@ -197,20 +198,33 @@ export const InteractionTest: Story = {
 			// Test tab navigation to focus first button
 			await expect(buttons[1]).toHaveFocus();
 
-			// Test arrow key navigation
-			await user.keyboard('{ArrowRight}');
-			await expect(buttons[2]).toHaveFocus();
+			// Detect orientation to use appropriate arrow keys
+			const orientation = radiogroup.getAttribute('aria-orientation');
+			const isVertical = orientation === 'vertical';
 
-			await user.keyboard('{ArrowLeft}{ArrowLeft}');
-			await expect(buttons[0]).toHaveFocus();
+			if (isVertical) {
+				// Vertical layout: use up/down arrows
+				await user.keyboard('{ArrowDown}');
+				await expect(buttons[2]).toHaveFocus();
+
+				await user.keyboard('{ArrowUp}{ArrowUp}');
+				await expect(buttons[0]).toHaveFocus();
+			} else {
+				// Horizontal layout: use left/right arrows
+				await user.keyboard('{ArrowRight}');
+				await expect(buttons[2]).toHaveFocus();
+
+				await user.keyboard('{ArrowLeft}{ArrowLeft}');
+				await expect(buttons[0]).toHaveFocus();
+			}
 		});
 
 		await step('Verify accessibility attributes', async () => {
 			// Verify radiogroup structure
-			const radiogroup = canvas.getAllByRole('radiogroup')[0];
+			const orientation = radiogroup.getAttribute('aria-orientation');
 			await expect(radiogroup).toHaveAttribute(
 				'aria-orientation',
-				'horizontal',
+				orientation, // Will be 'horizontal' or 'vertical' depending on viewport
 			);
 			await expect(radiogroup).toHaveAttribute(
 				'aria-label',
