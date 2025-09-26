@@ -204,9 +204,18 @@ describe('ToggleButtons', () => {
 				</ToggleButtons>,
 			);
 
-			// Verify ref is attached to the container element
+			// Verify ref is attached to the outer container element
 			expect(ref.current).toBeInstanceOf(HTMLDivElement);
-			expect(ref.current).toHaveAttribute('role', 'radiogroup');
+			expect(ref.current).toHaveAttribute(
+				'data-od-component',
+				'toggle-buttons',
+			);
+
+			// The radiogroup role is on the inner element
+			const radiogroup = ref.current?.querySelector(
+				'[role="radiogroup"]',
+			);
+			expect(radiogroup).toBeInTheDocument();
 		});
 
 		it('forwards ref correctly for individual ToggleButton', () => {
@@ -236,14 +245,21 @@ describe('ToggleButtons', () => {
 				</ToggleButtons>,
 			);
 
-			// Verify callback ref was called with the container element
+			// Verify callback ref was called with the outer container element
 			expect(refCallback).toHaveBeenCalledWith(
 				expect.any(HTMLDivElement),
 			);
-			expect(refCallback.mock.calls[0][0]).toHaveAttribute(
-				'role',
-				'radiogroup',
+			const containerElement = refCallback.mock.calls[0][0];
+			expect(containerElement).toHaveAttribute(
+				'data-od-component',
+				'toggle-buttons',
 			);
+
+			// The radiogroup role is on the inner element
+			const radiogroup = containerElement.querySelector(
+				'[role="radiogroup"]',
+			);
+			expect(radiogroup).toBeInTheDocument();
 		});
 
 		it('supports callback refs for ToggleButton', () => {

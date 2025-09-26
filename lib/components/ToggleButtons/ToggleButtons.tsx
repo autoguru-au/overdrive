@@ -53,6 +53,7 @@ export interface ToggleButtonsProps
 	orientation?: 'horizontal' | 'vertical';
 }
 
+// only applies to non `iconOnly` layout
 export const WIDTH_COMPACT_ORIENTATION = 640;
 
 const ToggleButtonGroupContext = React.createContext<ToggleGroupState | null>(
@@ -81,7 +82,7 @@ const ToggleButtonGroupContext = React.createContext<ToggleGroupState | null>(
  * ### Accessibility
  * - **Group Label**: When the button group has a label, associate it with `aria-labelledby` to and `id` on the heading text.
  *   To add a label without a heading use `aria-label`
- * - **Button Label**: For icons and other visual-only buttons add `aria-label` or label text within <VisuallyHidden>
+ * - **Button Label**: For icons and other visual-only buttons add `aria-label` or label text within VisuallyHidden
  *
  * ### Selection Handling
  * The `onSelectionChange` callback receives a `Set<Key>` containing the IDs of current selected buttons.
@@ -204,7 +205,8 @@ export const ToggleButtons = forwardRef<HTMLDivElement, ToggleButtonsProps>(
 
 		const { Component, componentProps } = useBox({
 			...boxProps,
-			className: styles.toggleButtonsContainerStyle,
+			className: !iconOnly && styles.toggleButtonsContainerStyle,
+			display: iconOnly ? 'flex' : undefined,
 			odComponent: 'toggle-buttons',
 		});
 

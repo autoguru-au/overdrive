@@ -49,7 +49,6 @@ export const toggleButtonGroup = recipe({
 						color: vars.color.content.normal,
 						display: 'block',
 						lineHeight: 1,
-						width: 'fit-content',
 					},
 				},
 			},
