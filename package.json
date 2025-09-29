@@ -132,7 +132,7 @@
 		"magic-string": "0.30.19",
 		"mini-css-extract-plugin": "2.9.4",
 		"mockdate": "3.0.5",
-		"playwright": "1.55.0",
+		"playwright": "1.55.1",
 		"plop": "4.0.2",
 		"postcss": "8.5.6",
 		"prettier": "3.6.2",
