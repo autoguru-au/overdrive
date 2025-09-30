@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 4.49.0
+
+### Minor Changes
+
+- 7b91ecc: **ToggleButtons**: New component available for creating simple toggle
+  button groups, supporting text and/or icons
+
 ## 4.48.0
 
 ### Minor Changes
