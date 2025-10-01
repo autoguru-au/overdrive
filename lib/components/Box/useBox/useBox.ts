@@ -1,4 +1,10 @@
-import type { AllHTMLAttributes, ElementType } from 'react';
+import type {
+	ComponentPropsWithoutRef,
+	ComponentPropsWithRef,
+	ElementType,
+	PropsWithChildren,
+	ReactElement,
+} from 'react';
 
 import {
 	elementStyles,
@@ -11,20 +17,53 @@ import type {
 } from '../../../types';
 import { dataAttrs } from '../../../utils/dataAttrs';
 
-type FilteredAttributes = Omit<
-	AllHTMLAttributes<HTMLElement>,
-	'as' | 'className' | 'color' | 'height' | 'is' | 'size' | 'width'
+/** Extract the ref type for a polymorphic component based on the provided element type */
+export type PolymorphicRef<C extends ElementType> =
+	ComponentPropsWithRef<C>['ref'];
+
+/**
+ * Constructs the props type for a polymorphic component.
+ * It combines base props (`Props`), the `as` prop, and the `ref` prop,
+ * while omitting conflicting keys from the base element's intrinsic props.
+ */
+export type PolymorphicComponentProps<
+	C extends ElementType,
+	Props = object,
+> = PropsWithChildren<Props> & {
+	as?: C | ReactElement;
+	ref?: ComponentPropsWithRef<C>['ref'];
+} & Omit<ComponentPropsWithoutRef<C>, keyof Props | 'as' | 'ref' | 'children'>;
+
+/** Polymorphic box props that merge sprinkles style props and the HTML element props */
+export type UseBoxProps<E extends ElementType = 'div'> =
+	PolymorphicComponentProps<
+		E,
+		ConsistentComponentProps &
+			OdComponentProp &
+			ElementStylesProps &
+			DataAttributes
+	>;
+
+/** Default box props when E is not specified - maintains backward compatibility */
+export type UseBoxPropsDefault = UseBoxProps<'div'>;
+
+/**
+ * Define custom props similar to Box with polymorphic, common and style props.
+ * Component props will take precedent over style props and can overwrite them
+ */
+export type BoxLikeProps<
+	E extends ElementType,
+	P = object,
+> = PolymorphicComponentProps<
+	E,
+	Omit<ElementStylesProps, keyof P> &
+		ConsistentComponentProps &
+		OdComponentProp &
+		P
 >;
 
-export interface UseBoxProps
-	extends FilteredAttributes,
-		ConsistentComponentProps,
-		OdComponentProp,
-		ElementStylesProps,
-		DataAttributes {}
-
-export const useBox = ({
-	as = 'div',
+export const useBox = <E extends ElementType = 'div'>({
+	as: _as,
 	className: incomingClassName,
 	odComponent,
 	testId,
@@ -149,7 +188,15 @@ export const useBox = ({
 	paddingTop,
 
 	...elementProps
-}: UseBoxProps) => {
+}: UseBoxProps<E>) => {
+	const isReactElement =
+		typeof _as !== 'string' &&
+		_as !== undefined &&
+		typeof _as === 'object' &&
+		'type' in _as;
+	const as = isReactElement ? undefined : ((_as ?? 'div') as E);
+	const Component: ElementType = as ?? 'div';
+
 	const className = elementStyles({
 		as,
 		className: incomingClassName,
@@ -279,11 +326,12 @@ export const useBox = ({
 		}),
 		...elementProps,
 		className,
-	};
+	} as ComponentPropsWithRef<E>;
 
 	return {
-		Component: as as ElementType,
+		Component,
 		componentProps,
+		reactElement: isReactElement ? _as : undefined,
 		// In future we may want to calc a child tag for semantic nested children
 	};
 };

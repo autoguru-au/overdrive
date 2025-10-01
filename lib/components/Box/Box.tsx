@@ -1,7 +1,11 @@
-import type { PropsWithChildren } from 'react';
-import React, { forwardRef } from 'react';
+import type { ElementType } from 'react';
+import React, { cloneElement, forwardRef } from 'react';
 
-import { useBox, type UseBoxProps as BoxProps } from './useBox/useBox';
+import {
+	type PolymorphicRef,
+	useBox,
+	type UseBoxProps as BoxProps,
+} from './useBox/useBox';
 
 /**
  * The Box component provides powerful responsive style props to a given tag, defaulting to a `<div>` element.
@@ -21,18 +25,39 @@ import { useBox, type UseBoxProps as BoxProps } from './useBox/useBox';
  * @example
  * <Box as={<MyCustomThing />} borderColor="info" borderWidth="1" />
  */
-export const Box = forwardRef<HTMLElement, PropsWithChildren<BoxProps>>(
-	({ children, ...props }, ref) => {
-		const { Component, componentProps } = useBox(props);
+const BoxRender = <E extends ElementType = 'div'>(
+	allProps: BoxProps<E>,
+	ref: PolymorphicRef<E>,
+) => {
+	const { children, ...props } = allProps;
+	const { Component, componentProps, reactElement } = useBox(props);
 
-		return (
-			<Component {...componentProps} ref={ref}>
-				{children}
-			</Component>
-		);
-	},
-);
+	if (reactElement) {
+		return cloneElement(reactElement, {
+			...componentProps,
+			ref,
+			children,
+		});
+	}
+
+	return (
+		<Component {...componentProps} ref={ref}>
+			{children}
+		</Component>
+	);
+};
+
+type BoxComponent = <E extends ElementType = 'div'>(
+	props: BoxProps<E> & { ref?: PolymorphicRef<E> },
+) => ReturnType<typeof BoxRender<E>>;
+
+export const Box = forwardRef(BoxRender) as BoxComponent & {
+	displayName?: string;
+};
 
 Box.displayName = 'Box';
 
-export { type UseBoxProps as BoxProps } from './useBox/useBox';
+export {
+	type UseBoxProps as BoxProps,
+	type UseBoxPropsDefault as BoxPropsDefault,
+} from './useBox/useBox';
