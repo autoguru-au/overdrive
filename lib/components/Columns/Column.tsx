@@ -2,13 +2,13 @@ import { invariant } from '@autoguru/utilities';
 import React, { forwardRef, ReactNode, useContext } from 'react';
 
 import { elementStyles } from '../../styles';
-import { useBox, type UseBoxProps } from '../Box/useBox/useBox';
+import { useBox, type UseBoxPropsDefault } from '../Box/useBox/useBox';
 
 import * as styles from './Column.css';
 import { ColumnContext } from './Columns';
 
 export interface ColumnProps
-	extends Omit<UseBoxProps, 'alignSelf' | 'width' | 'css'>,
+	extends Omit<UseBoxPropsDefault, 'alignSelf' | 'width' | 'css'>,
 		styles.ColumnRecipeVariants {
 	width?: styles.SprinklesColumnWidth['flexBasis'];
 	className?: string;

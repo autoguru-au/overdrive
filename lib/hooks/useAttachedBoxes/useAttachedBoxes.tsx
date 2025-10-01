@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import { ComponentProps, FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 
-import { Box } from '../../components/Box/Box';
+import { Box, type BoxPropsDefault } from '../../components/Box/Box';
 import {
 	getEarliestKnownToken,
 	resolveResponsiveStyle,
@@ -13,13 +13,13 @@ import { useMedia } from '../useMedia/useMedia';
 import * as styles from './useAttachedBoxes.css';
 
 interface UseAttachedBoxesProps
-	extends Pick<ComponentProps<typeof Box>, 'backgroundColour'> {
+	extends Pick<BoxPropsDefault, 'backgroundColour'> {
 	count: number;
 	columnCount: ResponsiveProp<number>;
 	gap?: ResponsiveProp<keyof typeof styles.grid.gaps>;
 }
 
-type AttachedBoxProps = Omit<ComponentProps<typeof Box>, 'borderRadius'>;
+type AttachedBoxProps = Omit<BoxPropsDefault, 'borderRadius'>;
 
 function useResponsiveValue<T extends string | number>(
 	responsiveValue: ResponsiveProp<T>,
@@ -39,7 +39,7 @@ function useResponsiveValue<T extends string | number>(
 type Returns = [
 	boxes: FunctionComponent<AttachedBoxProps>[],
 	wrapperCls: string,
-	style: ComponentProps<typeof Box>['style'],
+	style: BoxPropsDefault['style'],
 ];
 export const useAttachedBoxes = ({
 	count,

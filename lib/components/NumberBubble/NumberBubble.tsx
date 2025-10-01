@@ -2,11 +2,11 @@ import React, { useMemo } from 'react';
 
 import { textStyles } from '../../styles/typography';
 import { toPrettyBigNumber } from '../../utils/number';
-import { useBox, type UseBoxProps } from '../Box/useBox/useBox';
+import { useBox, type UseBoxPropsDefault } from '../Box/useBox/useBox';
 import { type TextProps } from '../Text/Text';
 
 export interface NumberBubbleProps
-	extends Pick<UseBoxProps, 'backgroundColor' | 'backgroundColour'> {
+	extends Pick<UseBoxPropsDefault, 'backgroundColor' | 'backgroundColour'> {
 	value: number;
 	rawNumbers?: boolean;
 	textColor?: TextProps['color'];
@@ -14,7 +14,7 @@ export interface NumberBubbleProps
 }
 
 type BubbleSize = 'SMALL' | 'MEDIUM' | 'LARGE';
-const sizeMap: Record<BubbleSize, UseBoxProps['size']> = {
+const sizeMap: Record<BubbleSize, UseBoxPropsDefault['size']> = {
 	SMALL: '4',
 	MEDIUM: '6',
 	LARGE: '7',

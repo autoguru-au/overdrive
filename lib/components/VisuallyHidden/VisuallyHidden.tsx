@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-import { Box, type BoxProps } from '../Box/Box';
+import { Box, type BoxPropsDefault } from '../Box/Box';
 
 import { visuallyHidden } from './VisuallyHidden.css';
 
-type VisuallyHiddenProps = Pick<BoxProps, 'as' | 'children'>;
+type VisuallyHiddenProps = Pick<BoxPropsDefault, 'as' | 'children'>;
 
 /**
  * Wrap any content or components with `<VisuallyHidden>` to apply styling that ensure the child content is not

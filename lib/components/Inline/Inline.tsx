@@ -10,10 +10,10 @@ import flattenChildren from 'react-keyed-flatten-children';
 
 import type { Sprinkles } from '../../styles/sprinkles.css';
 import { calcChildElement } from '../../utils/elements';
-import { useBox, type UseBoxProps } from '../Box/useBox/useBox';
+import { useBox, type UseBoxPropsDefault } from '../Box/useBox/useBox';
 import { Text } from '../Text/Text';
 
-export interface InlineProps extends Pick<UseBoxProps, 'as' | 'width'> {
+export interface InlineProps extends Pick<UseBoxPropsDefault, 'as' | 'width'> {
 	/**
 	 * Sets the horizontal alignment
 	 */

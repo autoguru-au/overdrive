@@ -1,10 +1,4 @@
-import React, {
-	ComponentProps,
-	createContext,
-	forwardRef,
-	ReactNode,
-	useMemo,
-} from 'react';
+import React, { createContext, forwardRef, ReactNode, useMemo } from 'react';
 
 import {
 	useNegativeMarginLeft,
@@ -13,13 +7,12 @@ import {
 import type { ThemeTokens as Tokens } from '../../themes';
 import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
 import { ResponsiveProp } from '../../utils/responsiveProps.css';
-import { Box } from '../Box/Box';
-import { useBox } from '../Box/useBox/useBox';
+import { useBox, type UseBoxPropsDefault } from '../Box/useBox/useBox';
 
 import * as styles from './Columns.css';
 
 export interface ColumnsProps
-	extends Omit<ComponentProps<typeof Box>, 'css'>,
+	extends Omit<UseBoxPropsDefault, 'css'>,
 		styles.ColumnsStyle {
 	children?: ReactNode;
 	className?: string;
