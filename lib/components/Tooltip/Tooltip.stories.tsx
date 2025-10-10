@@ -15,7 +15,7 @@ const standardTooltipLabel = "I'm the tooltip body";
 
 const meta = {
 	title: 'Components/Tooltip',
-	tags: ['updated'],
+	tags: [],
 	component: Tooltip,
 	decorators: [
 		(Story) => (

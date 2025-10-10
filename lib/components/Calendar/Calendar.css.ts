@@ -29,10 +29,11 @@ export const calendarStyle = style([
 export const cellStyle = style([
 	sprinkles({
 		alignItems: 'center',
+		borderRadius: 'md',
 		display: 'flex',
+		mx: 'auto',
 		justifyContent: 'center',
 		size: '7',
-		borderRadius: 'md',
 	}),
 	{
 		'@layer': {
@@ -113,7 +114,6 @@ export const thStyle = style({
 
 export const tdStyle = sprinkles({
 	padding: '1',
-	textAlign: 'center',
 });
 
 // === Heading styles

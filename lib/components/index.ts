@@ -12,6 +12,7 @@ export * from './ColourInput';
 export * from './Columns';
 export * from './DateInput';
 export * from './DatePicker';
+export * from './DateTimeField';
 export * from './DividerLine';
 export * from './DropDown';
 export * from './EditableText';

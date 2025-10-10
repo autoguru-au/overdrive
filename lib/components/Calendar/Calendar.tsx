@@ -28,7 +28,7 @@ const defaultEnglish = {
 	prevLabel: 'Previous month',
 } as const;
 
-type LanguageEntries = Partial<Record<keyof typeof defaultEnglish, string>>;
+export type CalendarTextContent = Record<keyof typeof defaultEnglish, string>;
 
 export interface CalendarProps extends TestIdProp {
 	/**
@@ -51,7 +51,7 @@ export interface CalendarProps extends TestIdProp {
 	/**
 	 * Language content override
 	 */
-	lang?: LanguageEntries;
+	lang?: Partial<CalendarTextContent>;
 }
 
 function createCalendar(identifier: string) {
@@ -69,13 +69,6 @@ function createCalendar(identifier: string) {
  * This component implements the react-aria `useCalendar` hook and supports controlled state
  * ([docs](https://react-spectrum.adobe.com/react-aria/useCalendar.html))
  *
- * ## Features
- * - Full keyboard navigation and screen reader support
- * - Localization and internationalization
- * - Configurable date restrictions (past dates, specific dates, date ranges)
- * - Custom default values and date ranges
- * - Flexible styling and theming
- *
  * ## Working with dates
  *  - Use `parseDate('YYYY-MM-DD')` from `@internationalized/date` to create
  *    DateValue objects.
@@ -83,7 +76,7 @@ function createCalendar(identifier: string) {
  *    date, and `date.add({ days: 7, months: 1 })` for date arithmetic.
  *
  * ## Date Restrictions
- * You can restrict date selection using the `calendar` prop with react-aria calendar properties:
+ * You can restrict date selection using the `calendarOptions` prop with react-aria calendar properties:
  * - `minValue` / `maxValue`: Define selectable date range
  * - `isDateUnavailable`: Function to disable specific dates
  * - `allowPastDate` prop: Convenient way to allow/disallow past dates
@@ -107,6 +100,8 @@ export const Calendar = ({
 	const fallbackDefaultValue = hasValue
 		? {}
 		: { defaultValue: today(getLocalTimeZone()) };
+
+	const textValues = { ...defaultEnglish, ...lang };
 
 	const calendarComponentProps: AriaCalendarProps<DateValue> = {
 		firstDayOfWeek: FIRST_DAY_OF_WEEK,
@@ -144,14 +139,14 @@ export const Calendar = ({
 			<div {...calendarProps} className={calendarStyle}>
 				<CalendarButton
 					{...prevButtonProps}
-					aria-label={lang?.prevLabel ?? defaultEnglish.prevLabel}
+					aria-label={textValues.prevLabel}
 				>
 					<Icon icon={ChevronLeftIcon} size="medium" />
 				</CalendarButton>
 				<h4 className={titleStyle}>{calendarTitle}</h4>
 				<CalendarButton
 					{...nextButtonProps}
-					aria-label={lang?.nextLabel ?? defaultEnglish.nextLabel}
+					aria-label={textValues.nextLabel}
 				>
 					<Icon icon={ChevronRightIcon} size="medium" />
 				</CalendarButton>

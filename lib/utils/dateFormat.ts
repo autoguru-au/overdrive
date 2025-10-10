@@ -37,9 +37,9 @@ export function safeParseDateString(dateString: string): DateValue | null {
 }
 
 /**
- * Formats a DateValue to its string representation
+ * Formats a DateValue to its ISO string representation (YYYY-MM-DD)
  * @param date - DateValue or null
- * @returns String representation of the date or empty string for null
+ * @returns ISO date string (e.g., "2025-09-21") or empty string
  */
 export function formatDateValue(date: DateValue | null): string {
 	return date?.toString() ?? '';
@@ -55,14 +55,15 @@ export function formatDateValue(date: DateValue | null): string {
  *
  * @example
  * ```ts
- * displayFormattedDate('2025-05-01') // "May 01, 2025"
- * displayFormattedDate('2024-01-15', 'full') // "Monday, January 15, 2024"
+ * displayFormattedDate('2025-09-21') // (locale default) "21/09/2025"
  * displayFormattedDate('2025-09-21', 'short') // "21/9/25"
+ * displayFormattedDate('2025-09-21', 'medium') // "Sep 21, 2025"
+ * displayFormattedDate('2024-01-15', 'full') // "Monday, January 15, 2024"
  * ```
  */
 export function displayFormattedDate(
 	date: DateValue | string | null | undefined,
-	format: Intl.DateTimeFormatOptions['dateStyle'] = 'medium',
+	format?: Intl.DateTimeFormatOptions['dateStyle'],
 	locales: Intl.LocalesArgument = 'en-AU',
 ): string {
 	if (!date) return '';
@@ -80,7 +81,7 @@ export function displayFormattedDate(
 		dateValue = date;
 	}
 
-	// Format the date using Intl.DateTimeFormat
-	const formatter = new Intl.DateTimeFormat(locales, { dateStyle: format });
+	const formatOptions: Intl.DateTimeFormatOptions = { dateStyle: format };
+	const formatter = new Intl.DateTimeFormat(locales, formatOptions);
 	return formatter.format(dateValue.toDate(getLocalTimeZone()));
 }

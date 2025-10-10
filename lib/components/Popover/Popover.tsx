@@ -21,7 +21,7 @@ const defaultEnglish = {
 	close: 'close',
 } as const;
 
-export type Language = Partial<Record<keyof typeof defaultEnglish, string>>;
+export type PopoverTextContent = Record<keyof typeof defaultEnglish, string>;
 
 /**
  * Internal props for the Popover component.
@@ -42,7 +42,7 @@ export interface PopoverProps extends Omit<AriaPopoverProps, 'popoverRef'> {
 	/**
 	 * Language content override
 	 */
-	lang?: Language;
+	lang?: Partial<PopoverTextContent>;
 }
 
 /**
@@ -75,6 +75,7 @@ export const Popover = ({
 	const [isTablet] = useMedia(['tablet']);
 
 	const isFullScreen = !isTablet;
+	const textValues = { ...defaultEnglish, ...lang };
 
 	// Handle Esc manually since we have two different modes (popover vs fullscreen dialog)
 	// and react-aria would need a slightly different ModalTrigger pattern
@@ -122,9 +123,7 @@ export const Popover = ({
 									minimal
 									rounded
 									onClick={state.close}
-									aria-label={
-										lang?.close ?? defaultEnglish.close
-									}
+									aria-label={textValues.close}
 								>
 									<Icon icon={CloseIcon} />
 								</Button>

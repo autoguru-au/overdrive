@@ -1,24 +1,13 @@
 import { CalendarIcon, IconType } from '@autoguru/icons';
-import {
-	getLocalTimeZone,
-	parseDate,
-	today,
-	type DateValue,
-} from '@internationalized/date';
+import { type DateValue } from '@internationalized/date';
 import clsx from 'clsx';
-import React, {
-	type ChangeEvent,
-	useCallback,
-	useEffect,
-	useMemo,
-	useState,
-	forwardRef,
-} from 'react';
+import React, { type ChangeEvent, useMemo, forwardRef } from 'react';
 import type { AriaPopoverProps } from 'react-aria';
 
 import { elementStyles } from '../../styles/elementStyles';
 import { sprinkles } from '../../styles/sprinkles.css';
 import type { TestIdProp } from '../../types';
+import { formatDateValue, safeParseDateString } from '../../utils/dateFormat';
 import { Calendar, type CalendarProps } from '../Calendar';
 import { Icon } from '../Icon/Icon';
 import { PopoverTrigger } from '../Popover';
@@ -27,6 +16,7 @@ import { Text, type TextProps } from '../Text/Text';
 import { VisuallyHidden } from '../VisuallyHidden/VisuallyHidden';
 
 import * as styles from './DatePicker.css';
+import { useCalendarPopover } from './hooks/useCalendarPopover';
 
 type SizeScale = 'small' | 'medium' | 'large';
 
@@ -108,19 +98,6 @@ const textSizeMap: Record<SizeScale, TextProps['size']> = {
 	large: '5',
 };
 
-const formatDateToString = (date: DateValue | null): string => {
-	if (!date) return '';
-	return date.toString(); // ISO format: YYYY-MM-DD to match native input
-};
-
-const parseDateString = (dateString: string): DateValue | null => {
-	try {
-		return parseDate(dateString);
-	} catch {
-		return null;
-	}
-};
-
 /**
  * The DatePicker has been updated to render the Calendar component with a Popover while
  * maintaining backwards compatability.
@@ -146,7 +123,7 @@ const parseDateString = (dateString: string): DateValue | null => {
  * // Uncontrolled component with default value
  * <DatePicker
  *   name="eventDate"
- *   defaultValue="2025-03-15"
+ *   defaultValue={today(getLocalTimeZone()} // or an ISO date string YYYY-MM-DD
  *   onChange={(isoDate) => console.log('Selected date:', isoDate)}
  * />
  *
@@ -156,10 +133,16 @@ const parseDateString = (dateString: string): DateValue | null => {
  *   name="bookingDate"
  *   value={selectedDate}
  *   valueLabel="Select a date"
- *   onChange={(isoDate) => setSelectedDate(isoDate)}
+ *   onChange={(isoDate) => {
+ *     setSelectedDate(isoDate);
+ *     if (isToday(isoDate)) {
+ *       setValueLabel('Today');
+ *     } else {
+ *       setValueLabel(displayFormattedDate(iseDate));
+ *     }
+ *   }}
  *   calendarOptions={{
  *     allowPastDate: false,
- *     weekdayFormat: 'short',
  *   }}
  * />
  *
@@ -169,7 +152,7 @@ const parseDateString = (dateString: string): DateValue | null => {
  *   name="startDate"
  *   useNativePicker
  *   defaultValue="2025-03-12"
- *   onChange={(isoDate) => console.log('Native picked date:', isoDate)}
+ *   onChange={(isoDate) => console.log('Date input:', isoDate)}
  * />
  */
 export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
@@ -196,37 +179,23 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 		},
 		ref,
 	) => {
-		const isControlled = value !== undefined;
+		const dateValue = value ? safeParseDateString(value) : undefined;
+		const dateDefaultValue = defaultValue
+			? safeParseDateString(defaultValue)
+			: undefined;
 
-		const [selectedDate, setSelectedDate] = useState<DateValue | null>(
-			() => {
-				const initialValue = isControlled ? value : defaultValue;
-				return initialValue ? parseDateString(initialValue) : null;
-			},
-		);
-		const [popoverState, setPopoverState] = useState<{
-			close: () => void;
-		} | null>(null);
+		const { selectedDate, handleCalendarChange, setPopoverState } =
+			useCalendarPopover({
+				value: dateValue,
+				defaultValue: dateDefaultValue,
+				onChange: (dateVal: DateValue) => {
+					onChange?.(formatDateValue(dateVal));
+				},
+			});
 
-		// Sync external value changes (only for controlled components)
-		useEffect(() => {
-			if (isControlled) {
-				const parsedDate = value ? parseDateString(value) : null;
-				setSelectedDate(parsedDate);
-			}
-		}, [value, isControlled]);
-
-		const onChangeEvent = (event: ChangeEvent<HTMLInputElement>) => {
+		const handleNativeChange = (event: ChangeEvent<HTMLInputElement>) => {
 			const dateString = event.currentTarget.value;
-			if (dateString) {
-				const parsedDate = parseDateString(dateString);
-				setSelectedDate(parsedDate);
-			} else {
-				setSelectedDate(null);
-			}
-			if (typeof onChange === 'function') {
-				onChange(dateString);
-			}
+			onChange?.(dateString);
 		};
 
 		const indicator = isLoading ? (
@@ -239,52 +208,17 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 			<Text size={textSizeMap[size]}>{valueLabel}</Text>
 		) : null;
 
-		const handleCalendarChange = useCallback(
-			(date: DateValue) => {
-				setSelectedDate(date);
-				if (typeof onChange === 'function') {
-					onChange(formatDateToString(date));
-				}
-				// Close the popover after date selection
-				if (popoverState) {
-					popoverState.close();
-				}
-			},
-			[onChange, popoverState],
-		);
-
 		const calendarProps: CalendarProps = useMemo(
 			() => ({
 				calendarOptions: {
-					// For controlled components, use value. For uncontrolled, use defaultValue
-					...(isControlled
-						? {
-								value:
-									selectedDate || today(getLocalTimeZone()),
-							}
-						: {
-								defaultValue:
-									selectedDate || today(getLocalTimeZone()),
-							}),
-					...(min && { minValue: parseDateString(min) }),
-					...(max && { maxValue: parseDateString(max) }),
+					...(min && { minValue: safeParseDateString(min) }),
+					...(max && { maxValue: safeParseDateString(max) }),
+					...calendarOptions?.calendarOptions,
 				},
 				...calendarOptions,
 				onChange: handleCalendarChange,
 			}),
-			[
-				selectedDate,
-				calendarOptions,
-				handleCalendarChange,
-				isControlled,
-				min,
-				max,
-			],
-		);
-
-		const contentCalendar = useMemo(
-			() => <Calendar {...calendarProps} />,
-			[calendarProps],
+			[calendarOptions, handleCalendarChange, min, max],
 		);
 
 		// Use native picker only if explicitly requested
@@ -312,7 +246,8 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 						disabled={disabled}
 						min={min}
 						max={max}
-						onChange={onChangeEvent}
+						value={formatDateValue(selectedDate)}
+						onChange={handleNativeChange}
 					/>
 					<div className={styles.inputOverlay}>
 						<div
@@ -332,7 +267,7 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 		return (
 			<div className={className}>
 				<PopoverTrigger
-					content={contentCalendar}
+					content={<Calendar {...calendarProps} />}
 					placement={placement}
 					testId={testId}
 					isDisabled={disabled}
@@ -355,7 +290,7 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
 				<input
 					{...inputProps}
 					ref={ref}
-					value={formatDateToString(selectedDate)}
+					value={formatDateValue(selectedDate)}
 					type="hidden"
 				/>
 			</div>

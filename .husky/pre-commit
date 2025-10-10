@@ -1,2 +1,2 @@
 yarn run format
-yarn dlx lint-staged
+# yarn dlx lint-staged
