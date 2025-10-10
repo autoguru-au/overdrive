@@ -1,13 +1,20 @@
 import { isWeekend, parseDate, type DateValue } from '@internationalized/date';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import isChromatic from 'chromatic/isChromatic';
+import MockDate from 'mockdate';
 import React from 'react';
 
 import { Calendar } from './Calendar';
+
+const testDate = '2025-12-31';
 
 const meta = {
 	title: 'Components/Calendar',
 	tags: ['new'],
 	component: Calendar,
+	beforeEach: () => {
+		if (isChromatic()) MockDate.set(testDate);
+	},
 	parameters: {
 		layout: 'padded',
 	},
