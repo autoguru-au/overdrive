@@ -67,5 +67,6 @@ export * from './TextContainer';
 export * from './TextInput';
 export * from './TextLink';
 export * from './Toaster';
+export * from './ToggleButtons';
 export * from './Tooltip';
 export * from './VisuallyHidden';
