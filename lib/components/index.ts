@@ -3,7 +3,6 @@ export * from './Alert';
 export * from './Anchor';
 export * from './AutoSuggest';
 export * from './Badge';
-export * from './BookingDateTime';
 export * from './Box';
 export * from './BulletList';
 export * from './BulletText';
