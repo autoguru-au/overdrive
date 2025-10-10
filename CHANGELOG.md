@@ -1,5 +1,17 @@
 # @autoguru/overdrive
 
+## 4.50.0
+
+### Minor Changes
+
+- cf9fa4b: **DateTimeField** beta: New component available for vertically
+  stacked date and time selection.
+
+### Patch Changes
+
+- cf9fa4b: **Removed**: BookingDateTime beta component as it is unused.
+  Preferred to combine Calendar with OptionGrid directly.
+
 ## 4.49.0
 
 ### Minor Changes
