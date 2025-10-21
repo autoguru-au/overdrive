@@ -5,7 +5,7 @@ import {
 	TrashCanOutlineIcon,
 } from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import React, { type ComponentProps } from 'react';
+import React, { type ComponentProps, useState } from 'react';
 import { action } from 'storybook/actions';
 
 import { Box } from '../Box/Box';
@@ -15,6 +15,7 @@ import { DropDown } from './DropDown';
 import { DropDownOption } from './DropDownOption';
 
 const onClick = action('onClick');
+const onOpenChange = action('onOpenChange');
 
 const meta = {
 	title: 'Components/Drop Down',
@@ -96,6 +97,7 @@ export const Primary: Story = {
 			</>
 		),
 		onClick,
+		onOpenChange,
 	},
 };
 
@@ -143,5 +145,43 @@ export const WithManyOptions: Story = {
 				))}
 			</>
 		),
+	},
+};
+
+/**
+ * Controlled example demonstrating the new onOpenChange callback
+ */
+export const Controlled: Story = {
+	render: (args) => {
+		const [isOpen, setIsOpen] = useState(false);
+		return (
+			<Box
+				style={{
+					height: '100vh',
+					width: '100vw',
+					maxHeight: '350px',
+				}}
+				display="flex"
+				alignItems="center"
+				justifyContent="center"
+			>
+				<DropDown
+					{...args}
+					isOpen={isOpen}
+					onOpenChange={(open) => {
+						onOpenChange(open);
+						setIsOpen(open);
+					}}
+				>
+					{option1}
+					{option2}
+					{optionDisabled}
+				</DropDown>
+			</Box>
+		);
+	},
+	args: {
+		label: 'Controlled Menu',
+		variant: 'primary',
 	},
 };
