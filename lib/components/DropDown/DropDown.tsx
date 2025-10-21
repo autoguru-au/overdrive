@@ -6,15 +6,19 @@ import {
 	MouseEventHandler,
 	ReactNode,
 	useCallback,
+	useEffect,
 	useRef,
 	useState,
 } from 'react';
 
+import { useMedia } from '../../hooks/useMedia/useMedia';
+import { dataAttrs } from '../../utils/dataAttrs';
 import { Button } from '../Button/Button';
 import { Flyout } from '../Flyout/Flyout';
 import { Icon } from '../Icon/Icon';
 import { useOutsideClick } from '../OutsideClick/OutsideClick';
 import { EPositionerAlignment } from '../Positioner/index';
+import { StandardModal } from '../StandardModal/StandardModal';
 
 import { DropDownOptionsList } from './DropDownOptionsList';
 
@@ -29,6 +33,7 @@ export interface DropDownProps extends ButtonProps, FlyoutProps {
 	label: string;
 	icon?: IconType;
 	isOpen?: boolean;
+	onOpenChange?: (isOpen: boolean) => void;
 	onClick?: ComponentProps<typeof Button>['onClick'];
 }
 
@@ -37,37 +42,92 @@ export const DropDown: FunctionComponent<DropDownProps> = ({
 	label,
 	icon = ChevronDownIcon,
 	alignment = EPositionerAlignment.BOTTOM_LEFT,
-	isOpen: incomingIsOpen = false,
+	isOpen: controlledIsOpen,
+	onOpenChange,
 	onClick: incomingOnClick,
 	...buttonProps
 }) => {
 	const buttonRef = useRef<HTMLButtonElement>(null);
 	const menuRef = useRef<HTMLDivElement>(null);
-	const [isOpen, setIsOpen] = useState<boolean>(incomingIsOpen);
+	const [uncontrolledIsOpen, setUncontrolledIsOpen] = useState(false);
+	const [isTablet] = useMedia(['tablet']);
+
+	// Use controlled state if provided, otherwise use uncontrolled state
+	const isControlled = controlledIsOpen !== undefined;
+	const isOpen = isControlled ? controlledIsOpen : uncontrolledIsOpen;
+
+	// Determine if we should use mobile modal (mobile = not tablet)
+	const isMobile = !isTablet;
+
+	// Reset to closed when viewport changes between mobile/desktop
+	useEffect(() => {
+		if (isOpen) {
+			if (isControlled && onOpenChange) {
+				onOpenChange(false);
+			} else if (!isControlled) {
+				setUncontrolledIsOpen(false);
+			}
+		}
+	}, [isMobile]); // Only trigger on viewport change
+
+	const handleOpenChange = useCallback(
+		(newIsOpen: boolean) => {
+			if (onOpenChange) {
+				onOpenChange(newIsOpen);
+			}
+			if (!isControlled) {
+				setUncontrolledIsOpen(newIsOpen);
+			}
+		},
+		[isControlled, onOpenChange],
+	);
 
 	const onMenuClick = useCallback<MouseEventHandler<HTMLButtonElement>>(
 		(event) => {
 			if (typeof incomingOnClick === 'function') incomingOnClick(event);
-			setIsOpen(!isOpen);
+			handleOpenChange(!isOpen);
 		},
-		[isOpen, incomingOnClick],
+		[isOpen, incomingOnClick, handleOpenChange],
 	);
-	useOutsideClick([menuRef], () => setIsOpen(false));
+
+	const handleClose = useCallback(() => {
+		handleOpenChange(false);
+	}, [handleOpenChange]);
+
+	useOutsideClick([menuRef], handleClose);
+
 	return (
 		<>
-			<Button ref={buttonRef} onClick={onMenuClick} {...buttonProps}>
+			<Button
+				ref={buttonRef}
+				onClick={onMenuClick}
+				{...buttonProps}
+				{...dataAttrs({ open: isOpen })}
+			>
 				{label}
 				<Icon icon={icon} />
 			</Button>
-			<Flyout
-				triggerRef={buttonRef}
-				isOpen={isOpen}
-				alignment={alignment}
-			>
-				<DropDownOptionsList ref={menuRef}>
-					{options}
-				</DropDownOptionsList>
-			</Flyout>
+			{isMobile ? (
+				<StandardModal
+					isOpen={isOpen}
+					onRequestClose={handleClose}
+					title={label}
+				>
+					<DropDownOptionsList>{options}</DropDownOptionsList>
+				</StandardModal>
+			) : (
+				<Flyout
+					triggerRef={buttonRef}
+					isOpen={isOpen}
+					alignment={alignment}
+				>
+					<DropDownOptionsList ref={menuRef}>
+						{options}
+					</DropDownOptionsList>
+				</Flyout>
+			)}
 		</>
 	);
 };
+
+DropDown.displayName = 'DropDown';
