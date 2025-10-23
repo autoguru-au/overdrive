@@ -3,6 +3,11 @@ import type { Colours, ThemeTokens } from './theme.css';
 export type DeviceSize = 'mobile' | 'tablet' | 'desktop' | 'largeDesktop';
 export type BreakPoints = Record<DeviceSize, string>;
 
+/**
+ * Color mode for themes
+ */
+export type ColorMode = 'light' | 'dark';
+
 export type ColourValue = Record<string, string>;
 export type ColourMap = Record<string, ColourValue | string>;
 type ColourKeys = keyof Colours;
