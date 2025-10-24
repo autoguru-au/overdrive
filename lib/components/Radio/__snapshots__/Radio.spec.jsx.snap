@@ -13,7 +13,7 @@ exports[`<RadioButton /> > when nested in a RadioGroup > should match the snapsh
     >
       <input
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_paddingBottom_none_mobile__onxwjuu9 sprinkles_paddingLeft_none_mobile__onxwjuvd sprinkles_paddingRight_none_mobile__onxwjuwh sprinkles_paddingTop_none_mobile__onxwjuxl sprinkles_marginBottom_none_mobile__onxwjuyp sprinkles_marginLeft_none_mobile__onxwjuzt sprinkles_marginRight_none_mobile__onxwju111 sprinkles_marginTop_none_mobile__onxwju129 sprinkles_height_full_mobile__onxwjufl sprinkles_position_absolute_mobile__onxwju8l sprinkles_width_full_mobile__onxwjuh5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 CheckableBase_nativeInput__y94qv2"
-        id="«r3»"
+        id="_r_3_"
         name="radio"
         type="radio"
         value="1"
@@ -30,7 +30,7 @@ exports[`<RadioButton /> > when nested in a RadioGroup > should match the snapsh
       </div>
       <label
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_label__18vhvlin  sprinkles_width_full_mobile__onxwjuh5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjua9 sprinkles_lineHeight_4_mobile__onxwju99 sprinkles_fontWeight_normal__onxwju5k typography_color_neutral__yhjp338"
-        for="«r3»"
+        for="_r_3_"
       >
         <span
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjua9 sprinkles_lineHeight_4_mobile__onxwju99 sprinkles_fontWeight_normal__onxwju5k typography_color_neutral__yhjp338"
@@ -44,7 +44,7 @@ exports[`<RadioButton /> > when nested in a RadioGroup > should match the snapsh
     >
       <input
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_paddingBottom_none_mobile__onxwjuu9 sprinkles_paddingLeft_none_mobile__onxwjuvd sprinkles_paddingRight_none_mobile__onxwjuwh sprinkles_paddingTop_none_mobile__onxwjuxl sprinkles_marginBottom_none_mobile__onxwjuyp sprinkles_marginLeft_none_mobile__onxwjuzt sprinkles_marginRight_none_mobile__onxwju111 sprinkles_marginTop_none_mobile__onxwju129 sprinkles_height_full_mobile__onxwjufl sprinkles_position_absolute_mobile__onxwju8l sprinkles_width_full_mobile__onxwjuh5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 CheckableBase_nativeInput__y94qv2"
-        id="«r4»"
+        id="_r_4_"
         name="radio"
         type="radio"
         value="2"
@@ -61,7 +61,7 @@ exports[`<RadioButton /> > when nested in a RadioGroup > should match the snapsh
       </div>
       <label
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_label__18vhvlin  sprinkles_width_full_mobile__onxwjuh5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjua9 sprinkles_lineHeight_4_mobile__onxwju99 sprinkles_fontWeight_normal__onxwju5k typography_color_neutral__yhjp338"
-        for="«r4»"
+        for="_r_4_"
       >
         <span
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjua9 sprinkles_lineHeight_4_mobile__onxwju99 sprinkles_fontWeight_normal__onxwju5k typography_color_neutral__yhjp338"
@@ -88,7 +88,7 @@ exports[`<RadioButton /> > when nested in a RadioGroup > should match the snapsh
       <input
         checked=""
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_paddingBottom_none_mobile__onxwjuu9 sprinkles_paddingLeft_none_mobile__onxwjuvd sprinkles_paddingRight_none_mobile__onxwjuwh sprinkles_paddingTop_none_mobile__onxwjuxl sprinkles_marginBottom_none_mobile__onxwjuyp sprinkles_marginLeft_none_mobile__onxwjuzt sprinkles_marginRight_none_mobile__onxwju111 sprinkles_marginTop_none_mobile__onxwju129 sprinkles_height_full_mobile__onxwjufl sprinkles_position_absolute_mobile__onxwju8l sprinkles_width_full_mobile__onxwjuh5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 CheckableBase_nativeInput__y94qv2"
-        id="«r5»"
+        id="_r_5_"
         name="radio"
         type="radio"
         value="1"
@@ -105,7 +105,7 @@ exports[`<RadioButton /> > when nested in a RadioGroup > should match the snapsh
       </div>
       <label
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_label__18vhvlin  sprinkles_width_full_mobile__onxwjuh5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjua9 sprinkles_lineHeight_4_mobile__onxwju99 sprinkles_fontWeight_normal__onxwju5k typography_color_neutral__yhjp338"
-        for="«r5»"
+        for="_r_5_"
       >
         <span
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjua9 sprinkles_lineHeight_4_mobile__onxwju99 sprinkles_fontWeight_normal__onxwju5k typography_color_neutral__yhjp338"
@@ -119,7 +119,7 @@ exports[`<RadioButton /> > when nested in a RadioGroup > should match the snapsh
     >
       <input
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_paddingBottom_none_mobile__onxwjuu9 sprinkles_paddingLeft_none_mobile__onxwjuvd sprinkles_paddingRight_none_mobile__onxwjuwh sprinkles_paddingTop_none_mobile__onxwjuxl sprinkles_marginBottom_none_mobile__onxwjuyp sprinkles_marginLeft_none_mobile__onxwjuzt sprinkles_marginRight_none_mobile__onxwju111 sprinkles_marginTop_none_mobile__onxwju129 sprinkles_height_full_mobile__onxwjufl sprinkles_position_absolute_mobile__onxwju8l sprinkles_width_full_mobile__onxwjuh5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 CheckableBase_nativeInput__y94qv2"
-        id="«r6»"
+        id="_r_6_"
         name="radio"
         type="radio"
         value="2"
@@ -136,7 +136,7 @@ exports[`<RadioButton /> > when nested in a RadioGroup > should match the snapsh
       </div>
       <label
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_label__18vhvlin  sprinkles_width_full_mobile__onxwjuh5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjua9 sprinkles_lineHeight_4_mobile__onxwju99 sprinkles_fontWeight_normal__onxwju5k typography_color_neutral__yhjp338"
-        for="«r6»"
+        for="_r_6_"
       >
         <span
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjua9 sprinkles_lineHeight_4_mobile__onxwju99 sprinkles_fontWeight_normal__onxwju5k typography_color_neutral__yhjp338"
@@ -150,7 +150,7 @@ exports[`<RadioButton /> > when nested in a RadioGroup > should match the snapsh
     >
       <input
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_paddingBottom_none_mobile__onxwjuu9 sprinkles_paddingLeft_none_mobile__onxwjuvd sprinkles_paddingRight_none_mobile__onxwjuwh sprinkles_paddingTop_none_mobile__onxwjuxl sprinkles_marginBottom_none_mobile__onxwjuyp sprinkles_marginLeft_none_mobile__onxwjuzt sprinkles_marginRight_none_mobile__onxwju111 sprinkles_marginTop_none_mobile__onxwju129 sprinkles_height_full_mobile__onxwjufl sprinkles_position_absolute_mobile__onxwju8l sprinkles_width_full_mobile__onxwjuh5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 CheckableBase_nativeInput__y94qv2"
-        id="«r7»"
+        id="_r_7_"
         name="radio"
         type="radio"
         value="3"
@@ -167,7 +167,7 @@ exports[`<RadioButton /> > when nested in a RadioGroup > should match the snapsh
       </div>
       <label
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_label__18vhvlin  sprinkles_width_full_mobile__onxwjuh5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjua9 sprinkles_lineHeight_4_mobile__onxwju99 sprinkles_fontWeight_normal__onxwju5k typography_color_neutral__yhjp338"
-        for="«r7»"
+        for="_r_7_"
       >
         <span
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjua9 sprinkles_lineHeight_4_mobile__onxwju99 sprinkles_fontWeight_normal__onxwju5k typography_color_neutral__yhjp338"
@@ -181,7 +181,7 @@ exports[`<RadioButton /> > when nested in a RadioGroup > should match the snapsh
     >
       <input
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_paddingBottom_none_mobile__onxwjuu9 sprinkles_paddingLeft_none_mobile__onxwjuvd sprinkles_paddingRight_none_mobile__onxwjuwh sprinkles_paddingTop_none_mobile__onxwjuxl sprinkles_marginBottom_none_mobile__onxwjuyp sprinkles_marginLeft_none_mobile__onxwjuzt sprinkles_marginRight_none_mobile__onxwju111 sprinkles_marginTop_none_mobile__onxwju129 sprinkles_height_full_mobile__onxwjufl sprinkles_position_absolute_mobile__onxwju8l sprinkles_width_full_mobile__onxwjuh5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 CheckableBase_nativeInput__y94qv2"
-        id="«r8»"
+        id="_r_8_"
         name="radio"
         type="radio"
         value="4"
@@ -198,7 +198,7 @@ exports[`<RadioButton /> > when nested in a RadioGroup > should match the snapsh
       </div>
       <label
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_label__18vhvlin  sprinkles_width_full_mobile__onxwjuh5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjua9 sprinkles_lineHeight_4_mobile__onxwju99 sprinkles_fontWeight_normal__onxwju5k typography_color_neutral__yhjp338"
-        for="«r8»"
+        for="_r_8_"
       >
         <span
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjua9 sprinkles_lineHeight_4_mobile__onxwju99 sprinkles_fontWeight_normal__onxwju5k typography_color_neutral__yhjp338"
@@ -224,7 +224,7 @@ exports[`<RadioButton /> > when nested in a RadioGroup > should match the snapsh
     >
       <input
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_paddingBottom_none_mobile__onxwjuu9 sprinkles_paddingLeft_none_mobile__onxwjuvd sprinkles_paddingRight_none_mobile__onxwjuwh sprinkles_paddingTop_none_mobile__onxwjuxl sprinkles_marginBottom_none_mobile__onxwjuyp sprinkles_marginLeft_none_mobile__onxwjuzt sprinkles_marginRight_none_mobile__onxwju111 sprinkles_marginTop_none_mobile__onxwju129 sprinkles_height_full_mobile__onxwjufl sprinkles_position_absolute_mobile__onxwju8l sprinkles_width_full_mobile__onxwjuh5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 CheckableBase_nativeInput__y94qv2"
-        id="«r2»"
+        id="_r_2_"
         name="radio"
         type="radio"
         value="1"
@@ -241,7 +241,7 @@ exports[`<RadioButton /> > when nested in a RadioGroup > should match the snapsh
       </div>
       <label
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_label__18vhvlin  sprinkles_width_full_mobile__onxwjuh5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjua9 sprinkles_lineHeight_4_mobile__onxwju99 sprinkles_fontWeight_normal__onxwju5k typography_color_neutral__yhjp338"
-        for="«r2»"
+        for="_r_2_"
       >
         <span
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjua9 sprinkles_lineHeight_4_mobile__onxwju99 sprinkles_fontWeight_normal__onxwju5k typography_color_neutral__yhjp338"
@@ -268,7 +268,7 @@ exports[`<RadioButton /> > when nested in a RadioGroup > should match the snapsh
       <input
         checked=""
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_paddingBottom_none_mobile__onxwjuu9 sprinkles_paddingLeft_none_mobile__onxwjuvd sprinkles_paddingRight_none_mobile__onxwjuwh sprinkles_paddingTop_none_mobile__onxwjuxl sprinkles_marginBottom_none_mobile__onxwjuyp sprinkles_marginLeft_none_mobile__onxwjuzt sprinkles_marginRight_none_mobile__onxwju111 sprinkles_marginTop_none_mobile__onxwju129 sprinkles_height_full_mobile__onxwjufl sprinkles_position_absolute_mobile__onxwju8l sprinkles_width_full_mobile__onxwjuh5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 CheckableBase_nativeInput__y94qv2"
-        id="«r1»"
+        id="_r_1_"
         name="radio"
         type="radio"
       />
@@ -284,7 +284,7 @@ exports[`<RadioButton /> > when nested in a RadioGroup > should match the snapsh
       </div>
       <label
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_label__18vhvlin  sprinkles_width_full_mobile__onxwjuh5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjua9 sprinkles_lineHeight_4_mobile__onxwju99 sprinkles_fontWeight_normal__onxwju5k typography_color_neutral__yhjp338"
-        for="«r1»"
+        for="_r_1_"
       >
         <span
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjua9 sprinkles_lineHeight_4_mobile__onxwju99 sprinkles_fontWeight_normal__onxwju5k typography_color_neutral__yhjp338"
@@ -308,7 +308,7 @@ exports[`<RadioButton /> > when with component child > should match the snapshot
     >
       <input
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_input__18vhvli14 elementReset_trimmedElement__18vhvli0 elementReset_input__18vhvli9 sprinkles_paddingBottom_none_mobile__onxwjuu9 sprinkles_paddingLeft_none_mobile__onxwjuvd sprinkles_paddingRight_none_mobile__onxwjuwh sprinkles_paddingTop_none_mobile__onxwjuxl sprinkles_marginBottom_none_mobile__onxwjuyp sprinkles_marginLeft_none_mobile__onxwjuzt sprinkles_marginRight_none_mobile__onxwju111 sprinkles_marginTop_none_mobile__onxwju129 sprinkles_height_full_mobile__onxwjufl sprinkles_position_absolute_mobile__onxwju8l sprinkles_width_full_mobile__onxwjuh5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 CheckableBase_nativeInput__y94qv2"
-        id="«rt»"
+        id="_r_t_"
         name="radio"
         type="radio"
         value="1"
@@ -325,7 +325,7 @@ exports[`<RadioButton /> > when with component child > should match the snapshot
       </div>
       <label
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_label__18vhvlin  sprinkles_width_full_mobile__onxwjuh5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjua9 sprinkles_lineHeight_4_mobile__onxwju99 sprinkles_fontWeight_normal__onxwju5k typography_color_neutral__yhjp338"
-        for="«rt»"
+        for="_r_t_"
       >
         <h1
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_h1__18vhvlig elementReset_trimmedElement__18vhvli0 elementReset_heading__18vhvli6 typography_common__yhjp33f sprinkles_fontSize_8_mobile__onxwjuap sprinkles_lineHeight_8_mobile__onxwju9p sprinkles_fontWeight_bold__onxwju5m typography_color_dark__yhjp335"
