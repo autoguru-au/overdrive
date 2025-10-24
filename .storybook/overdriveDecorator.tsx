@@ -41,7 +41,10 @@ export const useStorybookDecorator = (
 
 	return (
 		<OverdriveProvider
-			theme={themeConfig[context.globals.theme]}
+			theme={
+				themes.find((t) => t.name === context.globals.theme) ??
+				themes[0]
+			}
 			breakpoints={breakpoints}
 			colorMode={colorMode}
 			colorOverrides={customColours}

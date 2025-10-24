@@ -78,6 +78,12 @@ const preview: Preview = {
 				date: /Date$/i,
 			},
 		},
+		backgrounds: {
+			options: {
+				light: { name: 'Light', value: '#ffffff' },
+				dark: { name: 'Dark', value: '#212338' },
+			},
+		},
 		chromatic: {
 			// Mobile and large table and up
 			viewports: [320, 1024],
