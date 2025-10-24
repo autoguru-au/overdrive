@@ -4,13 +4,13 @@ A draft roadmap for Overdrive evoloution.
 
 ### Ongoing
 
-| Initiative                  | Description                                                                                                                              |
-| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| **Dependency Upgrades**     | Manual check using `yarn check-deps` to pick up additional upgrades                                                                      |
-| **MFE Component Promotion** | Continue identifying any MFE-based components that can be promoted into Overdrive                                                        |
-| **Accessibility Standards** | Review interactive components for WCAG and ARIA standards                                                                                |
-| **Story Args**              | Make handling of args and argTypes (especially style props) more consistent across all stories and continue to remove `@ts-expect-error` |
-| **Expand Test Coverage**    | Update tests to increase coverage (currently 83%)                                                                                        |
+| Initiative                  | Description                                                                                                                          |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| **Dependency Upgrades**     | Manual check using `yarn check-deps` to pick up additional upgrades                                                                  |
+| **MFE Component Promotion** | Continue identifying any MFE-based components that can be promoted into Overdrive                                                    |
+| **Accessibility Standards** | Review interactive components for WCAG and ARIA standards                                                                            |
+| **Story Args**              | Make handling of args and argTypes (especially style props) more consistent across all stories and enable removal `@ts-expect-error` |
+| **Expand Test Coverage**    | Update tests to increase coverage (currently 83%)                                                                                    |
 
 ---
 
@@ -30,6 +30,7 @@ A draft roadmap for Overdrive evoloution.
 
 | Initiative                            | Description                                                                                                                                                               | Reference                                                                                                                                                                                  |
 | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Vitest 4**                          | Latest version of Vitest has some breaking changes with Overdrive tests or possibly Storybook test harness                                                                | [Vitest 4 migration](https://vitest.dev/guide/migration.html#vitest-4)                                                                                                                     |
 | **Storybook MCP Server**              | Install and integrate experimental Storybook MCP server for enhanced development capabilities                                                                             | [Storybook MCP](https://github.com/storybookjs/mcp)                                                                                                                                        |
 | **Dark Mode**                         | Implement a simple dark mode mechanism and draft inverted version of base colour tokens                                                                                   |                                                                                                                                                                                            |
 | **Unified Testing with Storybook 10** | Migrate to Storybook 10's support for writing Vitest tests within `.stories.tsx` files to unify test running and coverage reports between Vitest and Story play functions | [Storybook .test syntax proposal](https://chromatic-ui.notion.site/Storybook-test-syntax-in-CSF-2566e816203480cb95ddc674ddfbf5d3#2566e816203480cb95ddc674ddfbf5d3)                         |
