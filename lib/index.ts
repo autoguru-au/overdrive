@@ -9,3 +9,19 @@ export {
 	type ElementStylesProps as BoxStyleProps,
 } from './styles';
 export { useId, arrayRingLookup } from './utils/index';
+
+// Color mode utilities
+export {
+	applyColorMode,
+	getEffectiveColorMode,
+	getStoredColorMode,
+	getSystemColorMode,
+	initializeColorMode,
+	removeColorMode,
+	setStoredColorMode,
+	watchSystemColorMode,
+	COLOR_MODE_ATTRIBUTE,
+} from './utils/colorMode';
+
+// Theme types
+export type { ColorMode } from './themes/types';

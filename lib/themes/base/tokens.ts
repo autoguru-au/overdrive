@@ -11,7 +11,7 @@ import {
  * Here lie the global tokens for theming Overdrive
  */
 export const tokens = {
-	mode: 'light',
+	mode: 'light' as const,
 	body: {
 		backgroundColour: colourMap.white,
 		colour: colourMap.gray['900'],
