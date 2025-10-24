@@ -17,7 +17,7 @@ export const baseThemeLight = createGlobalTheme(
 
 // Dark mode theme
 export const baseThemeDark = createGlobalTheme(
-	'[data-od-theme=base][data-od-color-mode=dark]',
+	'[data-od-color-mode=dark]',
 	overdriveTokens,
 	themeTokensWithLayer(tokensDark),
 );

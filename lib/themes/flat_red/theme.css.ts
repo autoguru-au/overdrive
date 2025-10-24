@@ -8,7 +8,7 @@ import { tokensDark } from './tokens.dark';
 
 // Flat Red theme dark mode
 export const flatRedThemeDark = createGlobalTheme(
-	'[data-od-theme=flatRed][data-od-color-mode=dark]',
+	'[data-od-color-mode=dark]',
 	overdriveTokens,
 	themeTokensWithLayer(tokensDark),
 );

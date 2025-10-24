@@ -8,7 +8,7 @@ import { tokensDark } from './tokens.dark';
 
 // Neutral theme dark mode
 export const neutralThemeDark = createGlobalTheme(
-	'[data-od-theme=neutral][data-od-color-mode=dark]',
+	'[data-od-color-mode=dark]',
 	overdriveTokens,
 	themeTokensWithLayer(tokensDark),
 );

@@ -32,6 +32,28 @@ export const globalTypes = {
 			dynamicTitle: true,
 		},
 	},
+	colorMode: {
+		name: 'colorMode',
+		description: 'Color mode (light/dark)',
+		defaultValue: 'light',
+		toolbar: {
+			icon: 'circlehollow',
+			items: [
+				{
+					title: 'Light Mode',
+					value: 'light',
+					icon: 'sun',
+				},
+				{
+					title: 'Dark Mode',
+					value: 'dark',
+					icon: 'moon',
+				},
+			],
+			showName: true,
+			dynamicTitle: true,
+		},
+	},
 	overrideColours: {
 		name: 'overrides',
 		description: 'Primary background colour override',
