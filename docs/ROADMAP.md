@@ -4,13 +4,14 @@ A draft roadmap for Overdrive evoloution.
 
 ### Ongoing
 
-| Initiative                  | Description                                                                                                                          |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| **Dependency Upgrades**     | Manual check using `yarn check-deps` to pick up additional upgrades                                                                  |
-| **MFE Component Promotion** | Continue identifying any MFE-based components that can be promoted into Overdrive                                                    |
-| **Accessibility Standards** | Review interactive components for WCAG and ARIA standards                                                                            |
-| **Story Args**              | Make handling of args and argTypes (especially style props) more consistent across all stories and enable removal `@ts-expect-error` |
-| **Expand Test Coverage**    | Update tests to increase coverage (currently 83%)                                                                                    |
+| Initiative                    | Description                                                                                                                          |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| **Dependency Upgrades**       | Manual check using `yarn check-deps` to pick up additional upgrades                                                                  |
+| **MFE Component Promotion**   | Continue identifying any MFE-based components that can be promoted into Overdrive                                                    |
+| **Update Agent Instructions** | Review agent instructions (CLAUDE, Copilot, etc) for updates, correctness and opportunities to consolidate                           |
+| **Accessibility Standards**   | Review interactive components for WCAG and ARIA standards                                                                            |
+| **Story Args**                | Make handling of args and argTypes (especially style props) more consistent across all stories and enable removal `@ts-expect-error` |
+| **Expand Test Coverage**      | Update tests to increase coverage (currently 83%)                                                                                    |
 
 ---
 
