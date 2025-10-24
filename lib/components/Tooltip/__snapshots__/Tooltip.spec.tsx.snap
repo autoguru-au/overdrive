@@ -40,7 +40,7 @@ exports[`<Tooltip /> > should match snapshot when opened 1`] = `
       data-od-component="provider"
     >
       <span
-        aria-describedby="«r3»"
+        aria-describedby="_r_3_"
         tabindex="0"
       >
         <div>
@@ -60,7 +60,7 @@ exports[`<Tooltip /> > should match snapshot when opened 1`] = `
     >
       <div
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_paddingLeft_3_mobile__onxwjuul sprinkles_paddingRight_3_mobile__onxwjuvp sprinkles_paddingTop_2_mobile__onxwjuwp sprinkles_paddingBottom_2_mobile__onxwjutd sprinkles_overflow_hidden_mobile__onxwju7h sprinkles_pointerEvents_none__onxwju64 sprinkles_userSelect_none__onxwju67 sprinkles_width_full_mobile__onxwjuh5 sprinkles_backgroundColour_gray900__onxwju4e sprinkles_boxShadow_4__onxwju60 sprinkles_borderRadius_1_mobile__onxwjubd Tooltip_root__1qliafn0"
-        id="«r3»"
+        id="_r_3_"
         role="tooltip"
       >
         <span
