@@ -20,6 +20,7 @@ const onOpenChange = action('onOpenChange');
 const meta = {
 	title: 'Components/Drop Down',
 	component: DropDown,
+	tags: ['updated'],
 	decorators: [
 		(Story) => (
 			<div
@@ -101,10 +102,41 @@ export const Primary: Story = {
 	},
 };
 
+/**
+ * Example with the dropdown initially open in controlled mode
+ */
 export const WithOpenMenu: Story = {
+	render: (args) => {
+		const [isOpen, setIsOpen] = useState(true);
+		return (
+			<Box
+				style={{
+					height: '100vh',
+					width: '100vw',
+					maxHeight: '350px',
+				}}
+				display="flex"
+				alignItems="center"
+				justifyContent="center"
+			>
+				<DropDown
+					{...args}
+					isOpen={isOpen}
+					onOpenChange={(open) => {
+						onOpenChange(open);
+						setIsOpen(open);
+					}}
+				>
+					{option1}
+					{option1}
+					{optionDisabled}
+				</DropDown>
+			</Box>
+		);
+	},
 	args: {
-		...Primary.args,
-		isOpen: true,
+		label: 'Attachment',
+		variant: 'primary',
 	},
 };
 
@@ -123,28 +155,82 @@ export const MinimalPrimary: Story = {
 	},
 };
 
+/**
+ * Example with custom icon in controlled mode
+ */
 export const WithCustomIcon: Story = {
+	render: (args) => {
+		const [isOpen, setIsOpen] = useState(true);
+		return (
+			<Box
+				style={{
+					height: '100vh',
+					width: '100vw',
+					maxHeight: '350px',
+				}}
+				display="flex"
+				alignItems="center"
+				justifyContent="center"
+			>
+				<DropDown
+					{...args}
+					isOpen={isOpen}
+					onOpenChange={(open) => {
+						onOpenChange(open);
+						setIsOpen(open);
+					}}
+				>
+					{option1}
+					{option1}
+					{optionDisabled}
+				</DropDown>
+			</Box>
+		);
+	},
 	args: {
-		...Primary.args,
+		label: 'Attachment',
 		variant: 'secondary',
 		icon: SettingsIcon,
-		isOpen: true,
 	},
 };
 
+/**
+ * Example with many options in controlled mode
+ */
 export const WithManyOptions: Story = {
+	render: (args) => {
+		const [isOpen, setIsOpen] = useState(true);
+		return (
+			<Box
+				style={{
+					height: '100vh',
+					width: '100vw',
+					maxHeight: '350px',
+				}}
+				display="flex"
+				alignItems="center"
+				justifyContent="center"
+			>
+				<DropDown
+					{...args}
+					isOpen={isOpen}
+					onOpenChange={(open) => {
+						onOpenChange(open);
+						setIsOpen(open);
+					}}
+				>
+					{Array.from({ length: 99 }).map((_, index) => (
+						<React.Fragment key={index}>
+							{index % 2 === 0 ? option1 : option2}
+						</React.Fragment>
+					))}
+				</DropDown>
+			</Box>
+		);
+	},
 	args: {
-		...Primary.args,
-		isOpen: true,
-		children: (
-			<>
-				{Array.from({ length: 99 }).map((_, index) => (
-					<React.Fragment key={index}>
-						{index % 2 === 0 ? option1 : option2}
-					</React.Fragment>
-				))}
-			</>
-		),
+		label: 'Attachment',
+		variant: 'primary',
 	},
 };
 

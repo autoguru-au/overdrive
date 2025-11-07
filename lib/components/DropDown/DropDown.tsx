@@ -12,7 +12,6 @@ import {
 } from 'react';
 
 import { useMedia } from '../../hooks/useMedia/useMedia';
-import { dataAttrs } from '../../utils/dataAttrs';
 import { Button } from '../Button/Button';
 import { Flyout } from '../Flyout/Flyout';
 import { Icon } from '../Icon/Icon';
@@ -102,7 +101,6 @@ export const DropDown: FunctionComponent<DropDownProps> = ({
 				ref={buttonRef}
 				onClick={onMenuClick}
 				{...buttonProps}
-				{...dataAttrs({ open: isOpen })}
 			>
 				{label}
 				<Icon icon={icon} />
