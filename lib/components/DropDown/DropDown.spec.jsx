@@ -2,7 +2,7 @@ import { DownloadIcon, TrashCanOutlineIcon } from '@autoguru/icons';
 import { render, screen, fireEvent } from '@testing-library/react';
 import * as React from 'react';
 import { useState } from 'react';
-import { beforeAll, describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 
 import { DropDown } from './DropDown';
 import { DropDownOption } from './DropDownOption';
@@ -20,25 +20,7 @@ const standardProps = {
 	),
 };
 
-// Mock window.matchMedia for useMedia hook
-const createMockMatchMedia = (isTablet = true) => (query) => ({
-	matches: isTablet && (query.includes('768px') || query.includes('1024px')),
-	media: query,
-	onchange: null,
-	addListener: () => {},
-	removeListener: () => {},
-	addEventListener: () => {},
-	removeEventListener: () => {},
-	dispatchEvent: () => true,
-});
-
 describe('<DropDown />', () => {
-	beforeAll(() => {
-		Object.defineProperty(globalThis, 'matchMedia', {
-			writable: true,
-			value: createMockMatchMedia(true),
-		});
-	});
 
 	it('should not throw', () => {
 		expect(() => render(<DropDown />)).not.toThrow();
@@ -107,35 +89,6 @@ describe('<DropDown />', () => {
 			};
 
 			render(<ControlledDropDown />);
-			const button = screen.getByRole('button', { name: /attachment/i });
-
-			// Click to open
-			fireEvent.click(button);
-			expect(onOpenChange).toHaveBeenCalledWith(true);
-
-			// Click to close
-			fireEvent.click(button);
-			expect(onOpenChange).toHaveBeenCalledWith(false);
-		});
-	});
-
-	describe('Mobile viewport behavior', () => {
-		beforeAll(() => {
-			Object.defineProperty(globalThis, 'matchMedia', {
-				writable: true,
-				value: createMockMatchMedia(false), // Mobile viewport
-			});
-		});
-
-		it('should render on mobile viewport', () => {
-			render(<DropDown {...standardProps} />);
-			const button = screen.getByRole('button', { name: /attachment/i });
-			expect(button).toBeInTheDocument();
-		});
-
-		it('should work in uncontrolled mode on mobile', () => {
-			const onOpenChange = vi.fn();
-			render(<DropDown {...standardProps} onOpenChange={onOpenChange} />);
 			const button = screen.getByRole('button', { name: /attachment/i });
 
 			// Click to open

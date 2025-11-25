@@ -6,18 +6,15 @@ import {
 	MouseEventHandler,
 	ReactNode,
 	useCallback,
-	useEffect,
 	useRef,
 	useState,
 } from 'react';
 
-import { useMedia } from '../../hooks/useMedia/useMedia';
 import { Button } from '../Button/Button';
 import { Flyout } from '../Flyout/Flyout';
 import { Icon } from '../Icon/Icon';
 import { useOutsideClick } from '../OutsideClick/OutsideClick';
 import { EPositionerAlignment } from '../Positioner/index';
-import { StandardModal } from '../StandardModal/StandardModal';
 
 import { DropDownOptionsList } from './DropDownOptionsList';
 
@@ -49,25 +46,10 @@ export const DropDown: FunctionComponent<DropDownProps> = ({
 	const buttonRef = useRef<HTMLButtonElement>(null);
 	const menuRef = useRef<HTMLDivElement>(null);
 	const [uncontrolledIsOpen, setUncontrolledIsOpen] = useState(false);
-	const [isTablet] = useMedia(['tablet']);
 
 	// Use controlled state if provided, otherwise use uncontrolled state
 	const isControlled = controlledIsOpen !== undefined;
 	const isOpen = isControlled ? controlledIsOpen : uncontrolledIsOpen;
-
-	// Determine if we should use mobile modal (mobile = not tablet)
-	const isMobile = !isTablet;
-
-	// Reset to closed when viewport changes between mobile/desktop
-	useEffect(() => {
-		if (isOpen) {
-			if (isControlled && onOpenChange) {
-				onOpenChange(false);
-			} else if (!isControlled) {
-				setUncontrolledIsOpen(false);
-			}
-		}
-	}, [isMobile]); // Only trigger on viewport change
 
 	const handleOpenChange = useCallback(
 		(newIsOpen: boolean) => {
@@ -105,25 +87,15 @@ export const DropDown: FunctionComponent<DropDownProps> = ({
 				{label}
 				<Icon icon={icon} />
 			</Button>
-			{isMobile ? (
-				<StandardModal
-					isOpen={isOpen}
-					onRequestClose={handleClose}
-					title={label}
-				>
-					<DropDownOptionsList>{options}</DropDownOptionsList>
-				</StandardModal>
-			) : (
-				<Flyout
-					triggerRef={buttonRef}
-					isOpen={isOpen}
-					alignment={alignment}
-				>
-					<DropDownOptionsList ref={menuRef}>
-						{options}
-					</DropDownOptionsList>
-				</Flyout>
-			)}
+			<Flyout
+				triggerRef={buttonRef}
+				isOpen={isOpen}
+				alignment={alignment}
+			>
+				<DropDownOptionsList ref={menuRef}>
+					{options}
+				</DropDownOptionsList>
+			</Flyout>
 		</>
 	);
 };
