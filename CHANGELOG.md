@@ -1,5 +1,16 @@
 # @autoguru/overdrive
 
+## 4.51.0
+
+### Minor Changes
+
+- 1eb0386: **DropDown**: Enhanced component with controlled/uncontrolled state
+  support
+  - Added `onOpenChange` prop for controlled state management
+  - Improved state handling with proper controlled/uncontrolled mode detection
+  - Expanded test coverage for both controlled and uncontrolled modes
+  - Updated Storybook stories with new controlled state examples
+
 ## 4.50.0
 
 ### Minor Changes
