@@ -1,1 +1,0 @@
-import{g as a,r as u}from"./iframe-CmQjDVxl.js";import{u as i}from"./useMedia-1sLtmF2i.js";import{g as m}from"./resolveResponsiveProps-BErviP19.js";function p(r,n){if(!a)return null;if(!Array.isArray(r))return r;const e=i(["mobile","tablet","desktop","largeDesktop"]).reduce((t,o,s)=>(o&&(t=s+1),t),1);return u.useMemo(()=>m(r,e),[r,e])}export{p as u};

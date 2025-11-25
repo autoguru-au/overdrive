@@ -1,0 +1,1 @@
+import{l as n}from"./useFocusable-C5F02sYK.js";function o(e){return n()?e.metaKey:e.ctrlKey}const a=new Set(["checkbox","radio","range","color","file","image","button","submit","reset"]);function c(e){return e instanceof HTMLInputElement&&!a.has(e.type)||e instanceof HTMLTextAreaElement||e instanceof HTMLElement&&e.isContentEditable}export{o as $,c as a};
