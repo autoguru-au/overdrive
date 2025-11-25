@@ -29,6 +29,7 @@ export interface DropDownProps extends ButtonProps, FlyoutProps {
 	label: string;
 	icon?: IconType;
 	isOpen?: boolean;
+	onOpenChange?: (isOpen: boolean) => void;
 	onClick?: ComponentProps<typeof Button>['onClick'];
 }
 
@@ -37,25 +38,51 @@ export const DropDown: FunctionComponent<DropDownProps> = ({
 	label,
 	icon = ChevronDownIcon,
 	alignment = EPositionerAlignment.BOTTOM_LEFT,
-	isOpen: incomingIsOpen = false,
+	isOpen: controlledIsOpen,
+	onOpenChange,
 	onClick: incomingOnClick,
 	...buttonProps
 }) => {
 	const buttonRef = useRef<HTMLButtonElement>(null);
 	const menuRef = useRef<HTMLDivElement>(null);
-	const [isOpen, setIsOpen] = useState<boolean>(incomingIsOpen);
+	const [uncontrolledIsOpen, setUncontrolledIsOpen] = useState(false);
+
+	// Use controlled state if provided, otherwise use uncontrolled state
+	const isOpen = controlledIsOpen ?? uncontrolledIsOpen;
+
+	const handleOpenChange = useCallback(
+		(newIsOpen: boolean) => {
+			// Always call onOpenChange if provided (for both controlled and uncontrolled)
+			onOpenChange?.(newIsOpen);
+			// Update internal state only if uncontrolled
+			if (controlledIsOpen === undefined) {
+				setUncontrolledIsOpen(newIsOpen);
+			}
+		},
+		[controlledIsOpen, onOpenChange],
+	);
 
 	const onMenuClick = useCallback<MouseEventHandler<HTMLButtonElement>>(
 		(event) => {
 			if (typeof incomingOnClick === 'function') incomingOnClick(event);
-			setIsOpen(!isOpen);
+			handleOpenChange(!isOpen);
 		},
-		[isOpen, incomingOnClick],
+		[isOpen, incomingOnClick, handleOpenChange],
 	);
-	useOutsideClick([menuRef], () => setIsOpen(false));
+
+	const handleClose = useCallback(() => {
+		handleOpenChange(false);
+	}, [handleOpenChange]);
+
+	useOutsideClick([menuRef], handleClose);
+
 	return (
 		<>
-			<Button ref={buttonRef} onClick={onMenuClick} {...buttonProps}>
+			<Button
+				ref={buttonRef}
+				onClick={onMenuClick}
+				{...buttonProps}
+			>
 				{label}
 				<Icon icon={icon} />
 			</Button>
@@ -71,3 +98,5 @@ export const DropDown: FunctionComponent<DropDownProps> = ({
 		</>
 	);
 };
+
+DropDown.displayName = 'DropDown';

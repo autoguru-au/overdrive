@@ -7,6 +7,7 @@ export * from './Box';
 export * from './BulletList';
 export * from './BulletText';
 export * from './Button';
+export * from './Calendar';
 export * from './CheckBox';
 export * from './ColourInput';
 export * from './Columns';
