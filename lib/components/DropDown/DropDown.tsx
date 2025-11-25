@@ -48,19 +48,18 @@ export const DropDown: FunctionComponent<DropDownProps> = ({
 	const [uncontrolledIsOpen, setUncontrolledIsOpen] = useState(false);
 
 	// Use controlled state if provided, otherwise use uncontrolled state
-	const isControlled = controlledIsOpen !== undefined;
-	const isOpen = isControlled ? controlledIsOpen : uncontrolledIsOpen;
+	const isOpen = controlledIsOpen ?? uncontrolledIsOpen;
 
 	const handleOpenChange = useCallback(
 		(newIsOpen: boolean) => {
-			if (onOpenChange) {
-				onOpenChange(newIsOpen);
-			}
-			if (!isControlled) {
+			// Always call onOpenChange if provided (for both controlled and uncontrolled)
+			onOpenChange?.(newIsOpen);
+			// Update internal state only if uncontrolled
+			if (controlledIsOpen === undefined) {
 				setUncontrolledIsOpen(newIsOpen);
 			}
 		},
-		[isControlled, onOpenChange],
+		[controlledIsOpen, onOpenChange],
 	);
 
 	const onMenuClick = useCallback<MouseEventHandler<HTMLButtonElement>>(
