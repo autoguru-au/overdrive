@@ -25,6 +25,8 @@ export interface ProviderProps {
 	colorOverrides?: Partial<ColorOverrides>;
 	/** Reference to an HTML element where portals should be mounted */
 	portalMountPoint?: PortalMountPoint;
+	/** Color mode (light/dark) - applies data-od-color-mode attribute */
+	colorMode?: 'light' | 'dark';
 	children?: React.ReactNode;
 }
 
@@ -63,6 +65,7 @@ const isSafeElement = (element: HTMLElement | null): boolean => {
 export const Provider = ({
 	breakpoints,
 	children,
+	colorMode,
 	colorOverrides,
 	noBodyLevelTheming = false,
 	portalMountPoint,
@@ -118,6 +121,7 @@ export const Provider = ({
 					className={theme.themeRef}
 					style={styles}
 					data-od-component="provider"
+					data-od-color-mode={colorMode}
 				>
 					{children}
 				</div>
