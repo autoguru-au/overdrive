@@ -9,6 +9,8 @@ interface MarkdownHorizontalRuleProps {
 export const MarkdownHorizontalRule = ({
 	node: _node,
 	...props
-}: MarkdownHorizontalRuleProps) => <DividerLine space="4" {...props} />;
+}: MarkdownHorizontalRuleProps) => (
+	<DividerLine space="4" colour="gray300" {...props} />
+);
 
 MarkdownHorizontalRule.displayName = 'MarkdownHorizontalRule';

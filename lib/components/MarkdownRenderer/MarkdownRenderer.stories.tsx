@@ -12,8 +12,6 @@ const meta: Meta<typeof MarkdownRenderer> = {
 		docs: {
 			description: {
 				component:
-					'Renders GitHub Flavored Markdown content using Overdrive design tokens and components. ' +
-					'Wraps `react-markdown` with `remark-gfm` and maps every HTML element to an Overdrive-styled sub-component.\n\n' +
 					'Supports headings, paragraphs, bold, italic, strikethrough, inline code, fenced code blocks, ' +
 					'blockquotes, ordered/unordered/task lists, tables, links, images, and horizontal rules.',
 			},
@@ -21,21 +19,13 @@ const meta: Meta<typeof MarkdownRenderer> = {
 	},
 	decorators: [
 		(Story) => (
-			<div style={{ maxWidth: '720px', width: '100%' }}>{Story()}</div>
+			<div style={{ maxWidth: '720px', width: '100%', margin: '0 auto' }}>{Story()}</div>
 		),
 	],
 };
 
 export default meta;
 type Story = StoryObj<typeof MarkdownRenderer>;
-
-export const Standard: Story = {
-	args: {
-		content:
-			'This is a **simple paragraph** demonstrating the Markdown Renderer component.',
-		testId: 'markdown-standard',
-	},
-};
 
 export const Headings: Story = {
 	args: {
@@ -126,117 +116,78 @@ export const Image: Story = {
 	},
 };
 
-export const Canary: Story = {
-	args: {
-		content: `# MD Renderer Canary
-
-## Heading 1
-
-### Heading 2
-
-#### Heading 3
-
-This is a paragraph with **bold text**, *italic text*, and ~~strikethrough~~.
-
-Here is some \`inline code\` within a sentence.
-
-\`\`\`typescript
-const greet = (name: string): string => {
-  return \`Hello, \${name}!\`;
-};
-
-console.log(greet('World'));
-\`\`\`
-
-> This is a blockquote. It can span multiple lines.
-
-- Unordered item one
-- Unordered item two
-  - Nested item
-- Unordered item three
-
-1. Ordered item one
-2. Ordered item two
-3. Ordered item three
-
-- [x] Completed task
-- [ ] Incomplete task
-- [ ] Another incomplete task
-
-[Visit AutoGuru](https://www.autoguru.com.au)
-
-![Placeholder image](https://placehold.co/600x400)
-
-| Column A | Column B | Column C |
-| --- | --- | --- |
-| Row 1A | Row 1B | Row 1C |
-| Row 2A | Row 2B | Row 2C |
-| Row 3A | Row 3B | Row 3C |
-
-That covers all the common markdown elements.`,
-		testId: 'markdown-canary',
-	},
-};
-
 export const FullDocument: Story = {
 	args: {
-		content: `# Full Document Example
+		content: `# Getting Started with Overdrive
 
-This demonstrates **all** the markdown features combined into a single document.
+Overdrive is AutoGuru's **design system** — a collection of *reusable components*, design tokens, and guidelines that help our teams build consistent, accessible experiences.
 
-## Formatting
+> Great design systems don't just enforce consistency — they empower teams to move faster with confidence.
 
-You can use **bold**, *italic*, ~~strikethrough~~, and \`inline code\`.
+## Why Use a Design System?
 
-## Links
+A shared component library removes guesswork. Instead of reinventing buttons, modals, and form fields for every project, engineers pull from a **single source of truth**. This means fewer bugs, faster reviews, and a more cohesive product.
 
-Visit [AutoGuru](https://www.autoguru.com.au) for more information.
+Key benefits include:
 
-## Code
+- Consistent look and feel across all products
+- Built-in accessibility out of the box
+- Faster development with pre-built, tested components
+- Easier onboarding for new team members
 
-\`\`\`javascript
-const overdrive = {
-  name: 'Overdrive',
-  type: 'Design System',
-  awesome: true,
-};
+## Quick Start
+
+Getting up and running is straightforward:
+
+1. Install the package from the registry
+2. Wrap your app with the \`OverdriveProvider\`
+3. Import and use any component
+
+Here is a minimal setup:
+
+\`\`\`tsx
+import { OverdriveProvider, Button } from '@autoguru/overdrive';
+
+function App() {
+  return (
+    <OverdriveProvider>
+      <Button variant="primary">Book Now</Button>
+    </OverdriveProvider>
+  );
+}
 \`\`\`
 
-## Lists
+## Component Overview
 
-### Unordered
+| Component | Category | Description |
+| --- | --- | --- |
+| Button | Actions | Primary and secondary actions |
+| TextInput | Forms | Single-line text entry |
+| Modal | Overlays | Dialogs and confirmations |
+| Heading | Typography | Section and page titles |
+| TextLink | Navigation | Inline and standalone links |
 
-- Components
-- Design tokens
-- Accessibility
+### Current Progress
 
-### Ordered
+- [x] Core primitive components
+- [x] Form inputs and validation
+- [x] Typography and layout system
+- [ ] Data visualisation components
+- [ ] Animation and motion library
 
-1. Install the package
-2. Import the component
-3. Render markdown
+## Inline Formatting
 
-### Tasks
+You can combine **bold text** with *italics*, use ~~strikethrough~~ for deprecated content, and reference code like \`<Button />\` or \`sprinkles()\` inline.
 
-- [x] Build component
-- [x] Write tests
-- [ ] Ship it
+## Learn More
 
-## Table
+Visit [AutoGuru](https://www.autoguru.com.au) to see the design system in action, or check the [contribution guide](/contributing) to get involved.
 
-| Component | Purpose |
-| --- | --- |
-| Heading | Section titles |
-| Text | Body copy |
-| TextLink | Navigation |
-
-## Blockquote
-
-> Design systems enable teams to build better products faster.
+![Overdrive banner](https://placehold.co/720x200?text=Overdrive+Design+System)
 
 ---
 
-*End of document.*`,
+*Built with care by the AutoGuru engineering team.*`,
 		testId: 'markdown-full',
 	},
 	play: async ({ canvasElement, step }) => {
@@ -244,10 +195,16 @@ const overdrive = {
 
 		await step('Renders headings', async () => {
 			await expect(
-				canvas.getByRole('heading', { level: 1, name: 'Full Document Example' }),
+				canvas.getByRole('heading', {
+					level: 1,
+					name: 'Getting Started with Overdrive',
+				}),
 			).toBeInTheDocument();
 			await expect(
-				canvas.getByRole('heading', { level: 2, name: 'Formatting' }),
+				canvas.getByRole('heading', {
+					level: 2,
+					name: 'Why Use a Design System?',
+				}),
 			).toBeInTheDocument();
 		});
 
@@ -265,7 +222,7 @@ const overdrive = {
 
 		await step('Renders a blockquote', async () => {
 			await expect(
-				canvas.getByText(/Design systems enable teams/),
+				canvas.getByText(/Great design systems/),
 			).toBeInTheDocument();
 		});
 
