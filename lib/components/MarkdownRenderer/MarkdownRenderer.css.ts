@@ -3,6 +3,9 @@ import { style } from '@vanilla-extract/css';
 import { cssLayerComponent } from '../../styles/layers.css';
 import { overdriveTokens as tokens } from '../../themes/theme.css';
 
+export const MONOSPACE_FONT_FAMILY =
+	"'Courier New', Courier, monospace" as const;
+
 export const root = style({
 	'@layer': {
 		[cssLayerComponent]: {

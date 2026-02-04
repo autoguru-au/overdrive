@@ -2,7 +2,7 @@ import React, { type ReactNode } from 'react';
 
 import * as styles from './MarkdownBlockquote.css';
 
-interface MarkdownBlockquoteProps {
+export interface MarkdownBlockquoteProps {
 	children?: ReactNode;
 	node?: unknown;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { DividerLine } from '../../DividerLine/DividerLine';
 
-interface MarkdownHorizontalRuleProps {
+export interface MarkdownHorizontalRuleProps {
 	node?: unknown;
 }
 

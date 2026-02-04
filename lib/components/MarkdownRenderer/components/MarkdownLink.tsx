@@ -2,7 +2,7 @@ import React, { type ReactNode } from 'react';
 
 import { TextLink } from '../../TextLink/TextLink';
 
-interface MarkdownLinkProps {
+export interface MarkdownLinkProps {
 	children?: ReactNode;
 	href?: string;
 	node?: unknown;

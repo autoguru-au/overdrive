@@ -2,7 +2,7 @@ import React, { type ReactNode } from 'react';
 
 import { Text } from '../../Text/Text';
 
-interface MarkdownStrongProps {
+export interface MarkdownStrongProps {
 	children?: ReactNode;
 	node?: unknown;
 }

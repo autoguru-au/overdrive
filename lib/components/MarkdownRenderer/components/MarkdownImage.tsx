@@ -2,7 +2,7 @@ import React from 'react';
 
 import * as styles from './MarkdownImage.css';
 
-interface MarkdownImageProps {
+export interface MarkdownImageProps {
 	src?: string;
 	alt?: string;
 	node?: unknown;

@@ -2,7 +2,7 @@ import React, { type ReactNode } from 'react';
 
 import { sprinkles } from '../../../styles/sprinkles.css';
 
-interface MarkdownOrderedListProps {
+export interface MarkdownOrderedListProps {
 	children?: ReactNode;
 	node?: unknown;
 }

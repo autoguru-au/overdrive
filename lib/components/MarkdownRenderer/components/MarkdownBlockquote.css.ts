@@ -7,7 +7,7 @@ export const blockquote = style({
 	'@layer': {
 		[cssLayerComponent]: {
 			backgroundColor: tokens.color.gamut.gray[100],
-			borderLeft: `3px solid ${tokens.color.gamut.gray[400]}`,
+			borderLeft: `${tokens.border.width['3']} solid ${tokens.color.gamut.gray[400]}`,
 			color: tokens.color.gamut.gray[700],
 			marginBottom: tokens.space[3],
 			marginLeft: 0,

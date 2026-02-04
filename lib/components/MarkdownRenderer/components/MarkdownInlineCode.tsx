@@ -2,7 +2,7 @@ import React, { type ReactNode } from 'react';
 
 import * as styles from './MarkdownInlineCode.css';
 
-interface MarkdownInlineCodeProps {
+export interface MarkdownInlineCodeProps {
 	children?: ReactNode;
 	node?: unknown;
 }

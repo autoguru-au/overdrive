@@ -2,7 +2,7 @@ import React, { type ReactNode } from 'react';
 
 import * as styles from './MarkdownTable.css';
 
-interface MarkdownTableElementProps {
+export interface MarkdownTableElementProps {
 	children?: ReactNode;
 	node?: unknown;
 }

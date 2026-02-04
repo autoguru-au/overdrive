@@ -26,7 +26,7 @@ export const th = style({
 	'@layer': {
 		[cssLayerComponent]: {
 			backgroundColor: tokens.color.gamut.gray[100],
-			border: `1px solid ${tokens.color.gamut.gray[300]}`,
+			border: `${tokens.border.width['1']} solid ${tokens.color.gamut.gray[300]}`,
 			fontWeight: tokens.typography.fontWeight.bold,
 			padding: `${tokens.space[2]} ${tokens.space[3]}`,
 			textAlign: 'left',
@@ -37,7 +37,7 @@ export const th = style({
 export const td = style({
 	'@layer': {
 		[cssLayerComponent]: {
-			border: `1px solid ${tokens.color.gamut.gray[300]}`,
+			border: `${tokens.border.width['1']} solid ${tokens.color.gamut.gray[300]}`,
 			padding: `${tokens.space[2]} ${tokens.space[3]}`,
 			textAlign: 'left',
 		},

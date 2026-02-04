@@ -4,7 +4,7 @@ import { Heading, type HeadingProps } from '../../Heading/Heading';
 
 type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
-interface MarkdownHeadingProps {
+export interface MarkdownHeadingProps {
 	children?: ReactNode;
 	node?: unknown;
 }

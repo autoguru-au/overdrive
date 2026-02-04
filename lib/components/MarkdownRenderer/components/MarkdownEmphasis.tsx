@@ -2,7 +2,7 @@ import React, { type ReactNode } from 'react';
 
 import * as styles from './MarkdownEmphasis.css';
 
-interface MarkdownEmphasisProps {
+export interface MarkdownEmphasisProps {
 	children?: ReactNode;
 	node?: unknown;
 }
