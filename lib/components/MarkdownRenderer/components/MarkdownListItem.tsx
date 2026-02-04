@@ -27,7 +27,10 @@ export const MarkdownListItem = ({
 	}
 
 	return (
-		<li className={`${listItemStyle}${className ? ` ${className}` : ''}`} {...props}>
+		<li
+			className={`${listItemStyle}${className ? ` ${className}` : ''}`}
+			{...props}
+		>
 			{children}
 		</li>
 	);

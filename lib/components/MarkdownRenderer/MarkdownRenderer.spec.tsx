@@ -20,7 +20,10 @@ describe('<MarkdownRenderer />', () => {
 			const { container } = render(<FullDocument />);
 			// Headings
 			expect(
-				screen.getByRole('heading', { level: 1, name: 'Getting Started with Overdrive' }),
+				screen.getByRole('heading', {
+					level: 1,
+					name: 'Getting Started with Overdrive',
+				}),
 			).toBeInTheDocument();
 			// Links
 			expect(
@@ -70,9 +73,9 @@ describe('<MarkdownRenderer />', () => {
 			const { container } = render(<Lists />);
 			expect(container.querySelector('ul')).toBeInTheDocument();
 			expect(container.querySelector('ol')).toBeInTheDocument();
-			expect(container.querySelectorAll('li').length).toBeGreaterThanOrEqual(
-				8,
-			);
+			expect(
+				container.querySelectorAll('li').length,
+			).toBeGreaterThanOrEqual(8);
 		});
 
 		it('renders the Table story', () => {
@@ -81,7 +84,6 @@ describe('<MarkdownRenderer />', () => {
 			expect(screen.getByText('Feature')).toBeInTheDocument();
 			expect(screen.getByText('Headings')).toBeInTheDocument();
 		});
-
 	});
 
 	// Component-level tests
@@ -94,7 +96,9 @@ describe('<MarkdownRenderer />', () => {
 		it('renders headings at correct levels', () => {
 			render(
 				<MarkdownRenderer
-					content={'# H1\n## H2\n### H3\n#### H4\n##### H5\n###### H6'}
+					content={
+						'# H1\n## H2\n### H3\n#### H4\n##### H5\n###### H6'
+					}
 				/>,
 			);
 			expect(
@@ -184,9 +188,7 @@ describe('<MarkdownRenderer />', () => {
 
 		it('renders task list items with checkboxes', () => {
 			const { container } = render(
-				<MarkdownRenderer
-					content={'- [x] Done\n- [ ] Not done'}
-				/>,
+				<MarkdownRenderer content={'- [x] Done\n- [ ] Not done'} />,
 			);
 			const checkboxes = container.querySelectorAll(
 				'input[type="checkbox"]',
@@ -223,10 +225,7 @@ describe('<MarkdownRenderer />', () => {
 			);
 			const img = screen.getByRole('img', { name: 'Alt text' });
 			expect(img).toBeInTheDocument();
-			expect(img).toHaveAttribute(
-				'src',
-				'https://placehold.co/100x100',
-			);
+			expect(img).toHaveAttribute('src', 'https://placehold.co/100x100');
 		});
 
 		it('renders horizontal rules', () => {
@@ -241,8 +240,7 @@ describe('<MarkdownRenderer />', () => {
 
 	// Props and attributes
 	describe('props', () => {
-		const OD_COMPONENT_SELECTOR =
-			'[data-od-component="markdown-renderer"]';
+		const OD_COMPONENT_SELECTOR = '[data-od-component="markdown-renderer"]';
 
 		it('applies testId as data-testid', () => {
 			const { container } = render(
@@ -262,9 +260,7 @@ describe('<MarkdownRenderer />', () => {
 		});
 
 		it('sets data-od-component="markdown-renderer"', () => {
-			const { container } = render(
-				<MarkdownRenderer content="test" />,
-			);
+			const { container } = render(<MarkdownRenderer content="test" />);
 			expect(
 				container.querySelector(OD_COMPONENT_SELECTOR),
 			).toBeInTheDocument();
@@ -280,9 +276,7 @@ describe('<MarkdownRenderer />', () => {
 		});
 
 		it('renders empty content without errors', () => {
-			const { container } = render(
-				<MarkdownRenderer content="" />,
-			);
+			const { container } = render(<MarkdownRenderer content="" />);
 			expect(
 				container.querySelector(OD_COMPONENT_SELECTOR),
 			).toBeInTheDocument();

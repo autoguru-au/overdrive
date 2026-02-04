@@ -35,7 +35,10 @@ export const MarkdownRenderer = React.forwardRef<
 
 	return (
 		<Component {...componentProps} ref={ref}>
-			<ReactMarkdown remarkPlugins={[remarkGfm]} components={componentMap}>
+			<ReactMarkdown
+				remarkPlugins={[remarkGfm]}
+				components={componentMap}
+			>
 				{content}
 			</ReactMarkdown>
 		</Component>

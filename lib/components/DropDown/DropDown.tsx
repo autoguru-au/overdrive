@@ -78,11 +78,7 @@ export const DropDown: FunctionComponent<DropDownProps> = ({
 
 	return (
 		<>
-			<Button
-				ref={buttonRef}
-				onClick={onMenuClick}
-				{...buttonProps}
-			>
+			<Button ref={buttonRef} onClick={onMenuClick} {...buttonProps}>
 				{label}
 				<Icon icon={icon} />
 			</Button>

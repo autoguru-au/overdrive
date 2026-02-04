@@ -19,7 +19,9 @@ const meta: Meta<typeof MarkdownRenderer> = {
 	},
 	decorators: [
 		(Story) => (
-			<div style={{ maxWidth: '720px', width: '100%', margin: '0 auto' }}>{Story()}</div>
+			<div style={{ maxWidth: '720px', width: '100%', margin: '0 auto' }}>
+				{Story()}
+			</div>
 		),
 	],
 };

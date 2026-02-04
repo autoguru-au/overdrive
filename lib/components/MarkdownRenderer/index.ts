@@ -1,1 +1,4 @@
-export { MarkdownRenderer, type MarkdownRendererProps } from './MarkdownRenderer';
+export {
+	MarkdownRenderer,
+	type MarkdownRendererProps,
+} from './MarkdownRenderer';

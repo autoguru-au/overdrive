@@ -14,7 +14,10 @@ export const MarkdownCodeBlock = ({
 }: MarkdownCodeBlockProps) => (
 	<pre className={styles.codeBlock} {...props}>
 		{React.Children.map(children, (child) => {
-			if (React.isValidElement<{ className?: string }>(child) && child.type === 'code') {
+			if (
+				React.isValidElement<{ className?: string }>(child) &&
+				child.type === 'code'
+			) {
 				return React.cloneElement(child, {
 					className: styles.codeBlockInner,
 				});

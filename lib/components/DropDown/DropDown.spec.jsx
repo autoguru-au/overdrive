@@ -21,7 +21,6 @@ const standardProps = {
 };
 
 describe('<DropDown />', () => {
-
 	it('should not throw', () => {
 		expect(() => render(<DropDown />)).not.toThrow();
 	});

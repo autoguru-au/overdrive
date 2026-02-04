@@ -181,8 +181,12 @@
 		"webpack": "*"
 	},
 	"peerDependenciesMeta": {
-		"react-markdown": { "optional": true },
-		"remark-gfm": { "optional": true }
+		"react-markdown": {
+			"optional": true
+		},
+		"remark-gfm": {
+			"optional": true
+		}
 	},
 	"volta": {
 		"node": "22.20.0",

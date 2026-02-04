@@ -19,7 +19,11 @@ function createHeadingComponent(level: HeadingLevel) {
 		h6: '4',
 	};
 
-	const Component = ({ children, node: _node, ...props }: MarkdownHeadingProps) => (
+	const Component = ({
+		children,
+		node: _node,
+		...props
+	}: MarkdownHeadingProps) => (
 		<Heading as={level} size={sizeMap[level]} mb="3" mt="5" {...props}>
 			{children}
 		</Heading>
