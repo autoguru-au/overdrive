@@ -256,6 +256,7 @@ export const tokens = {
 			information: colourMap.blue['500'],
 		},
 		fontFamily: 'AvertaStandard, system-ui, sans-serif',
+		fontFamilyMono: "'Courier New', Courier, monospace",
 		fontWeight: {
 			normal: '400',
 			semiBold: '500',
