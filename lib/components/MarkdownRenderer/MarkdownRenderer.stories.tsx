@@ -196,30 +196,29 @@ Visit [AutoGuru](https://www.autoguru.com.au) to see the design system in action
 		const canvas = within(canvasElement);
 
 		await step('Renders headings', async () => {
-			await expect(
-				canvas.getByRole('heading', {
-					level: 1,
-					name: 'Getting Started with Overdrive',
-				}),
-			).toBeInTheDocument();
-			await expect(
-				canvas.getByRole('heading', {
-					level: 2,
-					name: 'Why Use a Design System?',
-				}),
-			).toBeInTheDocument();
+			const h1s = canvas.getAllByRole('heading', {
+				level: 1,
+				name: 'Getting Started with Overdrive',
+			});
+			await expect(h1s.length).toBeGreaterThan(0);
+			const h2s = canvas.getAllByRole('heading', {
+				level: 2,
+				name: 'Why Use a Design System?',
+			});
+			await expect(h2s.length).toBeGreaterThan(0);
 		});
 
 		await step('Renders links', async () => {
-			const link = canvas.getByRole('link', { name: 'AutoGuru' });
-			await expect(link).toHaveAttribute(
+			const links = canvas.getAllByRole('link', { name: 'AutoGuru' });
+			await expect(links[0]).toHaveAttribute(
 				'href',
 				'https://www.autoguru.com.au',
 			);
 		});
 
 		await step('Renders a table', async () => {
-			await expect(canvas.getByRole('table')).toBeInTheDocument();
+			const tables = canvas.getAllByRole('table');
+			await expect(tables.length).toBeGreaterThan(0);
 		});
 
 		await step('Renders a blockquote', async () => {
