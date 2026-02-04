@@ -6,7 +6,7 @@ import { afterEach, describe, it, expect } from 'vitest';
 import { MarkdownRenderer } from './MarkdownRenderer';
 import * as stories from './MarkdownRenderer.stories';
 
-const { Standard, Headings, InlineFormatting, CodeBlock, Lists, Table, Canary } =
+const { Headings, InlineFormatting, CodeBlock, Lists, Table, FullDocument } =
 	composeStories(stories);
 
 describe('<MarkdownRenderer />', () => {
@@ -16,12 +16,27 @@ describe('<MarkdownRenderer />', () => {
 
 	// Story-based tests
 	describe('stories', () => {
-		it('renders the Standard story', () => {
-			render(<Standard />);
-			expect(screen.getByText(/simple paragraph/)).toBeInTheDocument();
+		it('renders the FullDocument story', () => {
+			const { container } = render(<FullDocument />);
+			// Headings
 			expect(
-				screen.getByText(/Markdown Renderer component/),
+				screen.getByRole('heading', { level: 1, name: 'Getting Started with Overdrive' }),
 			).toBeInTheDocument();
+			// Links
+			expect(
+				screen.getByRole('link', { name: 'AutoGuru' }),
+			).toBeInTheDocument();
+			// Table
+			expect(screen.getByRole('table')).toBeInTheDocument();
+			// Blockquote
+			expect(container.querySelector('blockquote')).toBeInTheDocument();
+			// Code block
+			expect(container.querySelector('pre')).toBeInTheDocument();
+			// Image
+			expect(screen.getByRole('img')).toBeInTheDocument();
+			// Lists
+			expect(container.querySelector('ul')).toBeInTheDocument();
+			expect(container.querySelector('ol')).toBeInTheDocument();
 		});
 
 		it('renders the Headings story with all levels', () => {
@@ -67,28 +82,6 @@ describe('<MarkdownRenderer />', () => {
 			expect(screen.getByText('Headings')).toBeInTheDocument();
 		});
 
-		it('renders the Canary story with all element types', () => {
-			const { container } = render(<Canary />);
-			// Headings
-			expect(
-				screen.getByRole('heading', { level: 1, name: 'MD Renderer Canary' }),
-			).toBeInTheDocument();
-			// Links
-			expect(
-				screen.getByRole('link', { name: 'Visit AutoGuru' }),
-			).toBeInTheDocument();
-			// Table
-			expect(screen.getByRole('table')).toBeInTheDocument();
-			// Blockquote
-			expect(container.querySelector('blockquote')).toBeInTheDocument();
-			// Code block
-			expect(container.querySelector('pre')).toBeInTheDocument();
-			// Image
-			expect(screen.getByRole('img')).toBeInTheDocument();
-			// Lists
-			expect(container.querySelector('ul')).toBeInTheDocument();
-			expect(container.querySelector('ol')).toBeInTheDocument();
-		});
 	});
 
 	// Component-level tests
