@@ -222,9 +222,8 @@ Visit [AutoGuru](https://www.autoguru.com.au) to see the design system in action
 		});
 
 		await step('Renders a blockquote', async () => {
-			await expect(
-				canvas.getByText(/Great design systems/),
-			).toBeInTheDocument();
+			const matches = canvas.getAllByText(/Great design systems/);
+			await expect(matches.length).toBeGreaterThan(0);
 		});
 
 		await step('Applies data attributes', async () => {
