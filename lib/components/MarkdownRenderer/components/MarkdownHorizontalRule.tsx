@@ -10,7 +10,7 @@ export const MarkdownHorizontalRule = ({
 	node: _node,
 	...props
 }: MarkdownHorizontalRuleProps) => (
-	<DividerLine space="4" colour="gray300" {...props} />
+	<DividerLine space="4" colour="neutral" {...props} />
 );
 
 MarkdownHorizontalRule.displayName = 'MarkdownHorizontalRule';
