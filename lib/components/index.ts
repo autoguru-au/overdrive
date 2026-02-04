@@ -28,6 +28,7 @@ export * from './Inline';
 export * from './IntentStripe';
 export * from './LinearProgressIndicator';
 export * from './LoadingBox';
+export * from './MarkdownRenderer';
 export * from './Meta';
 export * from './MinimalModal';
 export * from './Modal';
