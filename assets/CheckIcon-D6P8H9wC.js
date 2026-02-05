@@ -1,0 +1,1 @@
+import{e}from"./iframe-DrpTQ52u.js";const o=e.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24",fill:"currentColor",focusable:"false"},e.createElement("path",{d:"M21 7L9 19l-5.5-5.5 1.414-1.414L9 16.172 19.586 5.586 21 7z"}));export{o as I};
