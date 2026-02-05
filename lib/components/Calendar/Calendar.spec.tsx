@@ -171,10 +171,10 @@ describe('Calendar', () => {
 			/>,
 		);
 
-		// Calendar should display December 2025 in the heading when controlled
+		// Calendar should display December in the heading when controlled
 		const heading = screen.getByRole('heading', { level: 4 });
 		expect(heading.textContent).toContain('December');
-		expect(heading.textContent).toContain('2025');
+		expect(heading.textContent).toContain(String(december15.year));
 	});
 
 	it('displays correct month when uncontrolled with defaultValue prop', () => {
@@ -192,10 +192,10 @@ describe('Calendar', () => {
 			/>,
 		);
 
-		// Calendar should display November 2025 in the heading when given defaultValue
+		// Calendar should display November in the heading when given defaultValue
 		const heading = screen.getByRole('heading', { level: 4 });
 		expect(heading.textContent).toContain('November');
-		expect(heading.textContent).toContain('2025');
+		expect(heading.textContent).toContain(String(november10.year));
 	});
 
 	it('falls back to today when no value or defaultValue provided', () => {

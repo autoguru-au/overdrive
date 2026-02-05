@@ -22,6 +22,12 @@ coverage/
 # OS
 .DS_Store
 
+# MCP
+.mcp.json
+
+# Claude Code
+.claude/settings.local.json
+
 storybook-static/
 .rpt2_cache/
 

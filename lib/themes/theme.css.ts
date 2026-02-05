@@ -335,6 +335,7 @@ const THEME_CONTRACT = {
 			information: null,
 		},
 		fontFamily: 'font-family',
+		fontFamilyMono: 'font-family-mono',
 		fontWeight: {
 			normal: 'font-weight-normal',
 			semiBold: 'font-weight-semi-bold',
