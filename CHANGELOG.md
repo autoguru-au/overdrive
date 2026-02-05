@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 4.52.0
+
+### Minor Changes
+
+- 47e2998: Add MarkdownRenderer component for rendering GitHub Flavored Markdown
+  using Overdrive design tokens
+
 ## 4.51.0
 
 ### Minor Changes
