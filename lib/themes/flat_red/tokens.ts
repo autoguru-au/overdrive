@@ -5,7 +5,7 @@ import { tokens as baseTokens } from '../base/tokens';
 import { buildColourGamut } from '../makeTheme';
 import type { ThemeTokens } from '../theme.css';
 
-const colours = {
+export const colours = {
 	black: {
 		900: '#222222',
 		800: '#2A2C2A',

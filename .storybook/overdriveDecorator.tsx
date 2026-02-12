@@ -1,5 +1,6 @@
 import isChromatic from 'chromatic/isChromatic';
 import React, { useEffect, useRef } from 'react';
+import type { Renderer, StoryContext } from 'storybook/internal/types';
 
 import { Box } from '../lib/components/Box';
 import { Heading } from '../lib/components/Heading';
@@ -22,12 +23,17 @@ const overrideColors = {
 	},
 };
 
-export const useStorybookDecorator = (Story, context) => {
+export const useStorybookDecorator = (
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	Story: any,
+	context: StoryContext<Renderer>,
+) => {
 	const portalRef = useRef<HTMLDivElement>(null);
+	const colorMode =
+		(context.globals.colorMode as 'light' | 'dark') || 'light';
+	const overrideKey = context.globals.overrideColours as string;
 	const customColours =
-		context.globals.overrideColours in overrideColors
-			? overrideColors[context.globals.overrideColours]
-			: {};
+		overrideKey in overrideColors ? overrideColors[overrideKey] : {};
 
 	useEffect(() => {
 		document.documentElement.dataset.odTheme = 'ag';
@@ -35,9 +41,12 @@ export const useStorybookDecorator = (Story, context) => {
 
 	return (
 		<OverdriveProvider
-			// eslint-disable-next-line import/namespace
-			theme={themeConfig[context.globals.theme]}
+			theme={
+				themes.find((t) => t.name === context.globals.theme) ??
+				themes[0]
+			}
 			breakpoints={breakpoints}
+			colorMode={colorMode}
 			colorOverrides={customColours}
 			portalMountPoint={portalRef}
 			noBodyLevelTheming
@@ -50,7 +59,11 @@ export const useStorybookDecorator = (Story, context) => {
 };
 
 /** For Chromatic, render all available themes for visual testing */
-export const useChromaticDecorator = (Story, context) => {
+export const useChromaticDecorator = (
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	Story: any,
+	context: StoryContext<Renderer>,
+) => {
 	const portalRef = useRef<HTMLDivElement>(null);
 
 	// Check if the 'skip-themes' tag is present in the story's tags, render the story once

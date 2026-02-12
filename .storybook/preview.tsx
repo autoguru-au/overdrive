@@ -32,6 +32,28 @@ export const globalTypes = {
 			dynamicTitle: true,
 		},
 	},
+	colorMode: {
+		name: 'colorMode',
+		description: 'Color mode (light/dark)',
+		defaultValue: 'light',
+		toolbar: {
+			icon: 'circlehollow',
+			items: [
+				{
+					title: 'Light Mode',
+					value: 'light',
+					icon: 'sun',
+				},
+				{
+					title: 'Dark Mode',
+					value: 'dark',
+					icon: 'moon',
+				},
+			],
+			showName: true,
+			dynamicTitle: true,
+		},
+	},
 	overrideColours: {
 		name: 'overrides',
 		description: 'Primary background colour override',
@@ -54,6 +76,12 @@ const preview: Preview = {
 			matchers: {
 				color: /(background|color)$/i,
 				date: /Date$/i,
+			},
+		},
+		backgrounds: {
+			options: {
+				light: { name: 'Light', value: '#ffffff' },
+				dark: { name: 'Dark', value: '#212338' },
 			},
 		},
 		chromatic: {
