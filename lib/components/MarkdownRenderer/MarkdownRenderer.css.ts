@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { globalStyle, style } from '@vanilla-extract/css';
 
 import { cssLayerComponent } from '../../styles/layers.css';
 import { overdriveTokens as tokens } from '../../themes/theme.css';
@@ -12,4 +12,12 @@ export const root = style({
 			wordBreak: 'break-word',
 		},
 	},
+});
+
+globalStyle(`${root} > *:first-child`, {
+	marginTop: '0 !important',
+});
+
+globalStyle(`${root} > *:last-child`, {
+	marginBottom: '0 !important',
 });
