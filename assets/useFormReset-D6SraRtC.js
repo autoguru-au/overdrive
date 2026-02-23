@@ -1,0 +1,1 @@
+import{c as i}from"./useFocusable-CNcrOv3F.js";import{r as n}from"./iframe-DSW2f7z8.js";function c(r,a,d){let t=i(()=>{d&&d(a)});n.useEffect(()=>{var o;let e=r==null||(o=r.current)===null||o===void 0?void 0:o.form;return e?.addEventListener("reset",t),()=>{e?.removeEventListener("reset",t)}},[r,t])}export{c as $};
