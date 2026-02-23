@@ -22,6 +22,9 @@ import { dataAttrs } from '../../utils/dataAttrs';
 import { useBox, type UseBoxProps } from '../Box/useBox/useBox';
 
 import * as styles from './ToggleButtons.css';
+import { WIDTH_COMPACT_ORIENTATION } from './constants';
+
+export { WIDTH_COMPACT_ORIENTATION };
 
 export interface ToggleButtonsProps
 	extends AriaToggleButtonGroupProps,
@@ -52,9 +55,6 @@ export interface ToggleButtonsProps
 	/** (_Not in use_) The orientation of the toggle button group. @default 'horizontal' */
 	orientation?: 'horizontal' | 'vertical';
 }
-
-// only applies to non `iconOnly` layout
-export const WIDTH_COMPACT_ORIENTATION = 640;
 
 const ToggleButtonGroupContext = React.createContext<ToggleGroupState | null>(
 	null,

@@ -1,0 +1,1 @@
+export const WIDTH_COMPACT_ORIENTATION = 640;
