@@ -8,7 +8,7 @@ import { selectors } from '../../styles/selectors';
 import { sprinkles } from '../../styles/sprinkles.css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
-import { WIDTH_COMPACT_ORIENTATION } from './ToggleButtons';
+import { WIDTH_COMPACT_ORIENTATION } from './constants';
 
 const TOGGLE_BUTTON_HEIGHT = '40px';
 
