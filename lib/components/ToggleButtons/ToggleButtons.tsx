@@ -24,8 +24,6 @@ import { useBox, type UseBoxProps } from '../Box/useBox/useBox';
 import * as styles from './ToggleButtons.css';
 import { WIDTH_COMPACT_ORIENTATION } from './constants';
 
-export { WIDTH_COMPACT_ORIENTATION };
-
 export interface ToggleButtonsProps
 	extends AriaToggleButtonGroupProps,
 		UseBoxProps,
