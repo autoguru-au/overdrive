@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 4.52.2
+
+### Patch Changes
+
+- 216c988: Fix circular dependency between ToggleButtons.css.ts and
+  ToggleButtons.tsx that caused a Rolldown TDZ error in Vite 8
+
 ## 4.52.1
 
 ### Patch Changes
