@@ -24,12 +24,6 @@
 			}
 		],
 		[
-			"@babel/plugin-transform-strict-mode",
-			{
-				"loose": false
-			}
-		],
-		[
 			"@babel/plugin-proposal-export-default-from",
 			{
 				"loose": false

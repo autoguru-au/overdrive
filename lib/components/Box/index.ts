@@ -1,2 +1,2 @@
-export * from './Box';
-export * from './useBox/useBox';
+export { Box, type BoxProps } from './Box';
+export { useBox, type UseBoxProps } from './useBox/useBox';
