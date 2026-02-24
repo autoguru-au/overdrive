@@ -4,6 +4,42 @@
 	"description": "Overdrive is a product component library, and design system for AutoGuru.",
 	"types": "dist/index.d.ts",
 	"main": "dist/index.js",
+	"module": "dist/index.js",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		},
+		"./components/*": {
+			"types": "./dist/components/*/index.d.ts",
+			"default": "./dist/components/*/index.js"
+		},
+		"./hooks": {
+			"types": "./dist/hooks/index.d.ts",
+			"default": "./dist/hooks/index.js"
+		},
+		"./hooks/*": {
+			"types": "./dist/hooks/*/index.d.ts",
+			"default": "./dist/hooks/*/index.js"
+		},
+		"./styles": {
+			"types": "./dist/styles/index.d.ts",
+			"default": "./dist/styles/index.js"
+		},
+		"./styles/*": {
+			"types": "./dist/styles/*.d.ts",
+			"default": "./dist/styles/*.js"
+		},
+		"./themes/*": {
+			"types": "./dist/themes/*.d.ts",
+			"default": "./dist/themes/*.js"
+		},
+		"./utils/*": {
+			"types": "./dist/utils/*.d.ts",
+			"default": "./dist/utils/*.js"
+		},
+		"./dist/*": "./dist/*"
+	},
 	"keywords": [
 		"component",
 		"design-system",
@@ -23,7 +59,9 @@
 		"./lib/styles/global/*",
 		"./lib/themes/**/*",
 		"./dist/styles/global/*",
-		"./dist/themes/**/*"
+		"./dist/themes/**/*",
+		"./dist/**/*.css.js",
+		"./lib/**/*.css.ts"
 	],
 	"files": [
 		"dist"
