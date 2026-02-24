@@ -1,5 +1,13 @@
 # @autoguru/overdrive
 
+## 4.53.0
+
+### Minor Changes
+
+- e9e82a0: Add exports field and convert all barrel re-exports to explicit named
+  exports for tree-shaking support. Remove redundant strict-mode Babel plugin
+  from ESM output.
+
 ## 4.52.2
 
 ### Patch Changes
