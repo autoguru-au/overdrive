@@ -10,6 +10,7 @@
 			"types": "./dist/index.d.ts",
 			"default": "./dist/index.js"
 		},
+		"./package.json": "./package.json",
 		"./components/*": {
 			"types": "./dist/components/*/index.d.ts",
 			"default": "./dist/components/*/index.js"
@@ -30,15 +31,38 @@
 			"types": "./dist/styles/*.d.ts",
 			"default": "./dist/styles/*.js"
 		},
+		"./themes": {
+			"types": "./dist/themes/index.d.ts",
+			"default": "./dist/themes/index.js"
+		},
+		"./themes/base": {
+			"types": "./dist/themes/base/index.d.ts",
+			"default": "./dist/themes/base/index.js"
+		},
+		"./themes/flat_red": {
+			"types": "./dist/themes/flat_red/index.d.ts",
+			"default": "./dist/themes/flat_red/index.js"
+		},
+		"./themes/neutral": {
+			"types": "./dist/themes/neutral/index.d.ts",
+			"default": "./dist/themes/neutral/index.js"
+		},
 		"./themes/*": {
 			"types": "./dist/themes/*.d.ts",
 			"default": "./dist/themes/*.js"
+		},
+		"./utils": {
+			"types": "./dist/utils/index.d.ts",
+			"default": "./dist/utils/index.js"
 		},
 		"./utils/*": {
 			"types": "./dist/utils/*.d.ts",
 			"default": "./dist/utils/*.js"
 		},
-		"./dist/*": "./dist/*"
+		"./dist/*": {
+			"types": "./dist/*.d.ts",
+			"default": "./dist/*"
+		}
 	},
 	"keywords": [
 		"component",
