@@ -3,6 +3,7 @@ export {
 	useRuntimeTokens,
 	useTheme,
 } from './OverdriveProvider';
+export type { ProviderProps } from './OverdriveProvider';
 
 export {
 	FallbackProvider as ThemeProvider,

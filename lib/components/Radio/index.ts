@@ -1,2 +1,2 @@
 export { Radio } from './Radio';
-export { RadioGroup } from './RadioGroup';
+export { RadioGroup, useRadioContext } from './RadioGroup';
