@@ -3,22 +3,20 @@ name: Prerelease
 on:
     workflow_dispatch:
 
+permissions:
+    id-token: write
+    contents: write
+
 jobs:
     setup:
         name: Setup environment
         runs-on: ubuntu-latest
         outputs:
-            node_version: ${{ steps.version.outputs.node_version }}
             has_prerelease: ${{ steps.exists.outputs.pre_exists }}
         steps:
-            - uses: actions/checkout@main
+            - uses: actions/checkout@v4
               with:
                   fetch-depth: 0
-
-            - name: Get Node version
-              id: version
-              run: |
-                  echo "node_version=$(jq -r '.volta.node' package.json)" >> $GITHUB_OUTPUT
 
             - name: Check for changeset pre.json
               id: exists
@@ -36,20 +34,42 @@ jobs:
         needs: setup
         if: needs.setup.outputs.has_prerelease == 'true'
         runs-on: ubuntu-latest
+        environment: npm-publish
         env:
             TZ: Australia/Brisbane
             CI: true
         steps:
-            - uses: actions/checkout@main
+            - uses: actions/checkout@v4
               with:
                   fetch-depth: 0
 
             - name: Setup Node
-              uses: actions/setup-node@main
+              uses: actions/setup-node@v4
               with:
-                  node-version: ${{ needs.setup.outputs.node_version }}
+                  node-version-file: 'package.json'
                   cache: 'yarn'
-                  registry-url: 'https://registry.npmjs.org'
+
+            - name: Install npm 11+ for OIDC support
+              run: npm install -g npm@11
+
+            - name: Verify npm OIDC readiness
+              run: |
+                  echo "Node version: $(node --version)"
+                  echo "npm version: $(npm --version)"
+                  NPM_VERSION=$(npm --version)
+                  NPM_MAJOR=$(echo "$NPM_VERSION" | cut -d. -f1)
+                  NPM_MINOR=$(echo "$NPM_VERSION" | cut -d. -f2)
+                  if [ "$NPM_MAJOR" -lt 11 ] || { [ "$NPM_MAJOR" -eq 11 ] && [ "$NPM_MINOR" -lt 5 ]; }; then
+                    echo "::error::npm $NPM_VERSION does not support OIDC Trusted Publishing (requires >= 11.5.0)"
+                    exit 1
+                  fi
+                  echo "npm $NPM_VERSION supports OIDC Trusted Publishing"
+                  if [ -n "$ACTIONS_ID_TOKEN_REQUEST_URL" ]; then
+                    echo "OIDC token request URL is available"
+                  else
+                    echo "::error::ACTIONS_ID_TOKEN_REQUEST_URL is not set — id-token: write permission may be missing"
+                    exit 1
+                  fi
 
             - name: Yarn install
               run: yarn --immutable
@@ -73,18 +93,16 @@ jobs:
               id: version_check
               run: |
                   if [ "${{ steps.current_version.outputs.version }}" = "${{ steps.new_version.outputs.version }}" ]; then
-                    echo "📭 No version changes detected. Exiting prerelease workflow."
+                    echo "No version changes detected. Exiting prerelease workflow."
                     echo "changed=false" >> $GITHUB_OUTPUT
                   else
-                    echo "📬 Version changed from ${{ steps.current_version.outputs.version }} to ${{ steps.new_version.outputs.version }}"
+                    echo "Version changed from ${{ steps.current_version.outputs.version }} to ${{ steps.new_version.outputs.version }}"
                     echo "changed=true" >> $GITHUB_OUTPUT
                   fi
 
             - name: Publish to npm with prerelease tag
               if: steps.version_check.outputs.changed == 'true'
               run: yarn changeset publish
-              env:
-                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
             - name: Get package version
               if: steps.version_check.outputs.changed == 'true' && success()
@@ -95,18 +113,15 @@ jobs:
 
             - name: Create GitHub prerelease
               if: steps.version_check.outputs.changed == 'true' && success()
-              uses: actions/create-release@v1
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-              with:
-                  tag_name: v${{ steps.version.outputs.version }}
-                  release_name: v${{ steps.version.outputs.version }}
-                  draft: false
-                  prerelease: true
-                  body: |
-                      ### Prerelease version
+              run: |
+                  gh release create "v${{ steps.version.outputs.version }}" \
+                    --title "v${{ steps.version.outputs.version }}" \
+                    --prerelease \
+                    --notes "### Prerelease version
 
-                      - Install with: `yarn up @autoguru/overdrive@${{ steps.version.outputs.version }}`
+                  - Install with: \`yarn up @autoguru/overdrive@${{ steps.version.outputs.version }}\`"
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
             - name: Commit version changes
               if: steps.version_check.outputs.changed == 'true' && success()
@@ -121,5 +136,5 @@ jobs:
             - name: Post-publish Notifications
               if: steps.version_check.outputs.changed == 'true' && success()
               run: |
-                  echo "📦 Prerelease Published: ${{ steps.version.outputs.version }}"
-                  echo "🔗 NPM URL: https://www.npmjs.com/package/$(node -p "require('./package.json').name")"
+                  echo "Prerelease Published: ${{ steps.version.outputs.version }}"
+                  echo "NPM URL: https://www.npmjs.com/package/@autoguru/overdrive"
