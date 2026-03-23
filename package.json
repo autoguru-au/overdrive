@@ -91,7 +91,8 @@
 		"dist"
 	],
 	"publishConfig": {
-		"access": "public"
+		"access": "public",
+		"provenance": true
 	},
 	"scripts": {
 		"analyse": "vite build --config vite-analyse.config.ts",

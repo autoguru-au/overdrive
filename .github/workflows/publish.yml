@@ -1,0 +1,134 @@
+name: Publish
+
+on:
+    workflow_dispatch:
+    push:
+        branches: [main]
+        paths: ['CHANGELOG.md']
+
+permissions:
+    id-token: write
+    contents: write
+
+jobs:
+    publish:
+        name: Publish to npm
+        runs-on: ubuntu-latest
+        environment: npm-publish
+        outputs:
+            published: ${{ steps.new_tag.outputs.published }}
+        env:
+            TZ: Australia/Brisbane
+            CI: true
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version-file: 'package.json'
+                  cache: 'yarn'
+
+            - name: Install npm 11+ for OIDC support
+              run: npm install -g npm@11
+
+            - name: Verify npm OIDC readiness
+              run: |
+                  echo "Node version: $(node --version)"
+                  echo "npm version: $(npm --version)"
+                  NPM_VERSION=$(npm --version)
+                  NPM_MAJOR=$(echo "$NPM_VERSION" | cut -d. -f1)
+                  NPM_MINOR=$(echo "$NPM_VERSION" | cut -d. -f2)
+                  if [ "$NPM_MAJOR" -lt 11 ] || { [ "$NPM_MAJOR" -eq 11 ] && [ "$NPM_MINOR" -lt 5 ]; }; then
+                    echo "::error::npm $NPM_VERSION does not support OIDC Trusted Publishing (requires >= 11.5.0)"
+                    exit 1
+                  fi
+                  echo "npm $NPM_VERSION supports OIDC Trusted Publishing"
+                  if [ -n "$ACTIONS_ID_TOKEN_REQUEST_URL" ]; then
+                    echo "OIDC token request URL is available"
+                  else
+                    echo "::error::ACTIONS_ID_TOKEN_REQUEST_URL is not set — id-token: write permission may be missing"
+                    exit 1
+                  fi
+
+            - name: Yarn install
+              run: yarn --immutable
+
+            - name: Save existing tags
+              run: git tag -l | sort > /tmp/tags-before
+
+            - name: Publish to npm
+              run: yarn changeset publish
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Push release tags and create GitHub releases
+              id: new_tag
+              run: |
+                  git tag -l | sort > /tmp/tags-after
+                  NEW_TAGS=$(comm -13 /tmp/tags-before /tmp/tags-after)
+                  if [ -z "$NEW_TAGS" ]; then
+                    echo "No new tags created — nothing to release"
+                    echo "published=false" >> $GITHUB_OUTPUT
+                    exit 0
+                  fi
+
+                  echo "published=true" >> $GITHUB_OUTPUT
+                  echo "New tags:"
+                  echo "$NEW_TAGS"
+                  git push origin $NEW_TAGS
+
+                  for tag in $NEW_TAGS; do
+                    if gh release view "$tag" > /dev/null 2>&1; then
+                      echo "Release already exists: $tag — skipping"
+                      continue
+                    fi
+
+                    VERSION="${tag#v}"
+                    BODY=""
+                    if [ -f "CHANGELOG.md" ]; then
+                      BODY=$(awk "/^## ${VERSION}$/{found=1; next} found && /^## /{exit} found" CHANGELOG.md)
+                    fi
+
+                    if [ -n "$BODY" ]; then
+                      echo "$BODY" | gh release create "$tag" --title "$tag" --notes-file -
+                    else
+                      gh release create "$tag" --title "$tag" --generate-notes
+                    fi
+                    echo "Created release: $tag"
+                  done
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    storybook:
+        name: Publish Storybook
+        needs: publish
+        if: needs.publish.outputs.published == 'true'
+        runs-on: ubuntu-latest
+        env:
+            TZ: Australia/Brisbane
+            CI: true
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version-file: 'package.json'
+                  cache: 'yarn'
+
+            - name: Yarn install
+              run: yarn --immutable
+
+            - name: Build Storybook
+              run: yarn storybook:build
+
+            - name: Deploy Storybook to GitHub Pages
+              uses: peaceiris/actions-gh-pages@v4
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./storybook-static
