@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { DividerLine } from '../../DividerLine/DividerLine';
+import { useMarkdownRendererDensity } from '../MarkdownRendererContext';
 
 export interface MarkdownHorizontalRuleProps {
 	node?: unknown;
@@ -9,8 +10,16 @@ export interface MarkdownHorizontalRuleProps {
 export const MarkdownHorizontalRule = ({
 	node: _node,
 	...props
-}: MarkdownHorizontalRuleProps) => (
-	<DividerLine space="4" colour="neutral" {...props} />
-);
+}: MarkdownHorizontalRuleProps) => {
+	const density = useMarkdownRendererDensity();
+
+	return (
+		<DividerLine
+			space={density === 'compact' ? '2' : '4'}
+			colour="neutral"
+			{...props}
+		/>
+	);
+};
 
 MarkdownHorizontalRule.displayName = 'MarkdownHorizontalRule';
