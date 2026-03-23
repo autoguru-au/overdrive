@@ -235,3 +235,159 @@ Visit [AutoGuru](https://www.autoguru.com.au) to see the design system in action
 		});
 	},
 };
+
+// --- Compact density stories ---
+
+const compactDecorator = (Story: () => React.ReactNode) => (
+	<div style={{ maxWidth: '400px', width: '100%', margin: '0 auto' }}>
+		{Story()}
+	</div>
+);
+
+const aiSummaryContent = `## 1. Where is the booking at
+
+**Status:** Approved
+
+Booking 1509298 was created as a draft on 23 Mar 2026 and submitted for review. A reviewer flagged a concern ("is 1 litre enough?") and moved it to Requires Changes. The supplier resubmitted the same day, and the booking has now been **approved** with authorisation number **CF-1509298** at a total value of **$470.11**.
+
+## 2. What has changed
+
+The booking transitioned from **Submitted** to **Approved**. Higher-level authorisation was granted.
+
+- **Status:** Approved (authorisation CF-1509298 granted)
+- **Approval amount:** $470.11
+- **No changes to:** Tasks, pricing, supplier comments, or rules
+
+## 3. What should happen next
+
+**Required action: Await Supplier Completion** (MEDIUM priority)
+
+1. Monitor the booking for supplier action and completion
+2. Cancellation remains available if needed
+3. No further review or resubmission is required`;
+
+export const CompactHeadings: Story = {
+	args: {
+		content: `# Heading 1
+## Heading 2
+### Heading 3
+#### Heading 4
+##### Heading 5
+###### Heading 6`,
+		density: 'compact',
+	},
+	decorators: [compactDecorator],
+};
+
+export const CompactFullDocument: Story = {
+	args: {
+		content: `# Getting Started with Overdrive
+
+Overdrive is AutoGuru's **design system** — a collection of *reusable components*, design tokens, and guidelines that help our teams build consistent, accessible experiences.
+
+> Great design systems don't just enforce consistency — they empower teams to move faster with confidence.
+
+## Why Use a Design System?
+
+A shared component library removes guesswork. Instead of reinventing buttons, modals, and form fields for every project, engineers pull from a **single source of truth**. This means fewer bugs, faster reviews, and a more cohesive product.
+
+Key benefits include:
+
+- Consistent look and feel across all products
+- Built-in accessibility out of the box
+- Faster development with pre-built, tested components
+- Easier onboarding for new team members
+
+## Quick Start
+
+Getting up and running is straightforward:
+
+1. Install the package from the registry
+2. Wrap your app with the \`OverdriveProvider\`
+3. Import and use any component
+
+Here is a minimal setup:
+
+\`\`\`tsx
+import { OverdriveProvider, Button } from '@autoguru/overdrive';
+
+function App() {
+  return (
+    <OverdriveProvider>
+      <Button variant="primary">Book Now</Button>
+    </OverdriveProvider>
+  );
+}
+\`\`\`
+
+## Component Overview
+
+| Component | Category | Description |
+| --- | --- | --- |
+| Button | Actions | Primary and secondary actions |
+| TextInput | Forms | Single-line text entry |
+| Modal | Overlays | Dialogs and confirmations |
+
+### Current Progress
+
+- [x] Core primitive components
+- [x] Form inputs and validation
+- [ ] Data visualisation components
+
+## Inline Formatting
+
+You can combine **bold text** with *italics*, use ~~strikethrough~~ for deprecated content, and reference code like \`<Button />\` or \`sprinkles()\` inline.
+
+---
+
+*Built with care by the AutoGuru engineering team.*`,
+		density: 'compact',
+	},
+	decorators: [compactDecorator],
+};
+
+export const CompactAISummary: Story = {
+	args: {
+		content: aiSummaryContent,
+		density: 'compact',
+	},
+	decorators: [compactDecorator],
+	parameters: {
+		docs: {
+			description: {
+				story:
+					'Demonstrates compact density in a widget context such as an AI-generated booking summary panel.',
+			},
+		},
+	},
+};
+
+export const DensityComparison: Story = {
+	render: () => (
+		<div style={{ display: 'flex', gap: '2rem' }}>
+			<div style={{ flex: 1 }}>
+				<p>
+					<strong>Comfortable (default)</strong>
+				</p>
+				<MarkdownRenderer content={aiSummaryContent} />
+			</div>
+			<div style={{ flex: 1, maxWidth: '400px' }}>
+				<p>
+					<strong>Compact</strong>
+				</p>
+				<MarkdownRenderer
+					content={aiSummaryContent}
+					density="compact"
+				/>
+			</div>
+		</div>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					'Side-by-side comparison of comfortable and compact density using the same AI summary content.',
+			},
+		},
+	},
+};

@@ -1,5 +1,7 @@
 import React, { type ReactNode } from 'react';
 
+import { useMarkdownRendererDensity } from '../MarkdownRendererContext';
+
 import * as styles from './MarkdownInlineCode.css';
 
 export interface MarkdownInlineCodeProps {
@@ -11,10 +13,14 @@ export const MarkdownInlineCode = ({
 	children,
 	node: _node,
 	...props
-}: MarkdownInlineCodeProps) => (
-	<code className={styles.inlineCode} {...props}>
-		{children}
-	</code>
-);
+}: MarkdownInlineCodeProps) => {
+	const density = useMarkdownRendererDensity();
+
+	return (
+		<code className={styles.inlineCode({ density })} {...props}>
+			{children}
+		</code>
+	);
+};
 
 MarkdownInlineCode.displayName = 'MarkdownInlineCode';

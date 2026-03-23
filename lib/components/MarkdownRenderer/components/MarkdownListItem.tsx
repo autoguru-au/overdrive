@@ -1,6 +1,7 @@
 import React, { type ReactNode } from 'react';
 
 import { sprinkles } from '../../../styles/sprinkles.css';
+import { useMarkdownRendererDensity } from '../MarkdownRendererContext';
 
 export interface MarkdownListItemProps {
 	children?: ReactNode;
@@ -8,7 +9,8 @@ export interface MarkdownListItemProps {
 	node?: unknown;
 }
 
-const listItemStyle = sprinkles({ mb: '1' });
+const comfortableStyle = sprinkles({ mb: '1' });
+const compactStyle = sprinkles({ mb: 'none' });
 
 export const MarkdownListItem = ({
 	children,
@@ -16,11 +18,17 @@ export const MarkdownListItem = ({
 	node: _node,
 	...props
 }: MarkdownListItemProps) => {
+	const density = useMarkdownRendererDensity();
 	const isTaskItem = className?.includes('task-list-item');
+	const densityStyle =
+		density === 'compact' ? compactStyle : comfortableStyle;
 
 	if (isTaskItem) {
 		return (
-			<li className={className} {...props}>
+			<li
+				className={`${densityStyle}${className ? ` ${className}` : ''}`}
+				{...props}
+			>
 				{children}
 			</li>
 		);
@@ -28,7 +36,7 @@ export const MarkdownListItem = ({
 
 	return (
 		<li
-			className={`${listItemStyle}${className ? ` ${className}` : ''}`}
+			className={`${densityStyle}${className ? ` ${className}` : ''}`}
 			{...props}
 		>
 			{children}

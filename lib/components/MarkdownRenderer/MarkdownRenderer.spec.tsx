@@ -238,6 +238,130 @@ describe('<MarkdownRenderer />', () => {
 		});
 	});
 
+	// Density tests
+	describe('density', () => {
+		it('defaults to comfortable density', () => {
+			render(<MarkdownRenderer content="# Hello" />);
+			// In comfortable mode, h1 renders as a Heading component (which is still h1)
+			const heading = screen.getByRole('heading', {
+				level: 1,
+				name: 'Hello',
+			});
+			expect(heading).toBeInTheDocument();
+		});
+
+		it('renders headings at correct semantic levels in compact mode', () => {
+			render(
+				<MarkdownRenderer
+					density="compact"
+					content={
+						'# H1\n## H2\n### H3\n#### H4\n##### H5\n###### H6'
+					}
+				/>,
+			);
+			expect(
+				screen.getByRole('heading', { level: 1, name: 'H1' }),
+			).toBeInTheDocument();
+			expect(
+				screen.getByRole('heading', { level: 2, name: 'H2' }),
+			).toBeInTheDocument();
+			expect(
+				screen.getByRole('heading', { level: 3, name: 'H3' }),
+			).toBeInTheDocument();
+			expect(
+				screen.getByRole('heading', { level: 4, name: 'H4' }),
+			).toBeInTheDocument();
+			expect(
+				screen.getByRole('heading', { level: 5, name: 'H5' }),
+			).toBeInTheDocument();
+			expect(
+				screen.getByRole('heading', { level: 6, name: 'H6' }),
+			).toBeInTheDocument();
+		});
+
+		it('renders all block elements in compact mode', () => {
+			const { container } = render(
+				<MarkdownRenderer
+					density="compact"
+					content={`# Heading
+
+Paragraph text with **bold** and *italic*.
+
+> Blockquote
+
+\`\`\`
+code block
+\`\`\`
+
+- List item
+- Another item
+
+1. Ordered item
+2. Another ordered
+
+| A | B |
+| --- | --- |
+| 1 | 2 |
+
+---
+
+End`}
+				/>,
+			);
+			expect(
+				screen.getByRole('heading', { level: 1 }),
+			).toBeInTheDocument();
+			expect(container.querySelector('blockquote')).toBeInTheDocument();
+			expect(container.querySelector('pre')).toBeInTheDocument();
+			expect(container.querySelector('ul')).toBeInTheDocument();
+			expect(container.querySelector('ol')).toBeInTheDocument();
+			expect(screen.getByRole('table')).toBeInTheDocument();
+			expect(
+				container.querySelector('[data-od-component="divider-line"]'),
+			).toBeInTheDocument();
+		});
+
+		it('renders inline code in compact mode', () => {
+			const { container } = render(
+				<MarkdownRenderer
+					density="compact"
+					content="Use `console.log` for debugging"
+				/>,
+			);
+			const code = container.querySelector('code');
+			expect(code).toBeInTheDocument();
+			expect(code).toHaveTextContent('console.log');
+		});
+
+		it('renders task lists in compact mode', () => {
+			const { container } = render(
+				<MarkdownRenderer
+					density="compact"
+					content={'- [x] Done\n- [ ] Not done'}
+				/>,
+			);
+			const checkboxes = container.querySelectorAll(
+				'input[type="checkbox"]',
+			);
+			expect(checkboxes.length).toBe(2);
+			expect(checkboxes[0]).toBeChecked();
+			expect(checkboxes[1]).not.toBeChecked();
+		});
+
+		it('renders links correctly in compact mode', () => {
+			render(
+				<MarkdownRenderer
+					density="compact"
+					content="[External](https://example.com) and [Internal](/about)"
+				/>,
+			);
+			const external = screen.getByRole('link', { name: 'External' });
+			expect(external).toHaveAttribute('target', '_blank');
+			const internal = screen.getByRole('link', { name: 'Internal' });
+			expect(internal).not.toHaveAttribute('target', '_blank');
+		});
+	});
+
 	// Props and attributes
 	describe('props', () => {
 		const OD_COMPONENT_SELECTOR = '[data-od-component="markdown-renderer"]';
