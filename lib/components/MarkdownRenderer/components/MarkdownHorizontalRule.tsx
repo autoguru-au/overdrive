@@ -14,11 +14,12 @@ export const MarkdownHorizontalRule = ({
 	const density = useMarkdownRendererDensity();
 
 	return (
-		<DividerLine
-			space={density === 'compact' ? '2' : '4'}
-			colour="neutral"
-			{...props}
-		/>
+		<div role="separator" {...props}>
+			<DividerLine
+				space={density === 'compact' ? '2' : '4'}
+				colour="neutral"
+			/>
+		</div>
 	);
 };
 

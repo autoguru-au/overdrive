@@ -40,9 +40,17 @@ export const rootDensity = recipe({
 });
 
 globalStyle(`${rootBase} > *:first-child`, {
-	marginTop: '0 !important',
+	'@layer': {
+		[cssLayerComponent]: {
+			marginTop: 0,
+		},
+	},
 });
 
 globalStyle(`${rootBase} > *:last-child`, {
-	marginBottom: '0 !important',
+	'@layer': {
+		[cssLayerComponent]: {
+			marginBottom: 0,
+		},
+	},
 });

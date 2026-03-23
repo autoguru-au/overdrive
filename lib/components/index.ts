@@ -58,6 +58,7 @@ export { LinearProgressIndicator } from './LinearProgressIndicator';
 export { LoadingBox } from './LoadingBox';
 export {
 	MarkdownRenderer,
+	type MarkdownRendererDensity,
 	type MarkdownRendererProps,
 } from './MarkdownRenderer';
 export { Meta } from './Meta';

@@ -20,17 +20,19 @@ export const MarkdownListItem = ({
 }: MarkdownListItemProps) => {
 	const density = useMarkdownRendererDensity();
 	const isTaskItem = className?.includes('task-list-item');
+	const densityStyle =
+		density === 'compact' ? compactStyle : comfortableStyle;
 
 	if (isTaskItem) {
 		return (
-			<li className={className} {...props}>
+			<li
+				className={`${densityStyle}${className ? ` ${className}` : ''}`}
+				{...props}
+			>
 				{children}
 			</li>
 		);
 	}
-
-	const densityStyle =
-		density === 'compact' ? compactStyle : comfortableStyle;
 
 	return (
 		<li

@@ -20,7 +20,7 @@ export const MarkdownParagraph = ({
 		<Text
 			as="p"
 			display="block"
-			size={isCompact ? '3' : undefined}
+			size={isCompact ? '3' : '4'}
 			mb={isCompact ? '2' : '3'}
 			{...props}
 		>

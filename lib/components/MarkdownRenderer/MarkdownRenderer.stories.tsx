@@ -364,47 +364,24 @@ export const CompactAISummary: Story = {
 
 export const DensityComparison: Story = {
 	render: () => (
-		<div style={{ display: 'flex', gap: '32px' }}>
+		<div style={{ display: 'flex', gap: '2rem' }}>
 			<div style={{ flex: 1 }}>
-				<p style={{ fontWeight: 'bold', marginBottom: '8px' }}>
-					Comfortable (default)
+				<p>
+					<strong>Comfortable (default)</strong>
 				</p>
-				<div
-					style={{
-						border: '1px solid #e0e0e0',
-						borderRadius: '8px',
-						padding: '16px',
-					}}
-				>
-					<MarkdownRenderer content={aiSummaryContent} />
-				</div>
+				<MarkdownRenderer content={aiSummaryContent} />
 			</div>
 			<div style={{ flex: 1, maxWidth: '400px' }}>
-				<p style={{ fontWeight: 'bold', marginBottom: '8px' }}>
-					Compact
+				<p>
+					<strong>Compact</strong>
 				</p>
-				<div
-					style={{
-						border: '1px solid #e0e0e0',
-						borderRadius: '8px',
-						padding: '16px',
-					}}
-				>
-					<MarkdownRenderer
-						content={aiSummaryContent}
-						density="compact"
-					/>
-				</div>
+				<MarkdownRenderer
+					content={aiSummaryContent}
+					density="compact"
+				/>
 			</div>
 		</div>
 	),
-	decorators: [
-		(Story) => (
-			<div style={{ maxWidth: '1200px', width: '100%', margin: '0 auto' }}>
-				{Story()}
-			</div>
-		),
-	],
 	parameters: {
 		docs: {
 			description: {

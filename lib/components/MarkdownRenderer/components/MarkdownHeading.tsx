@@ -26,7 +26,7 @@ const compactSizeMap: Record<HeadingLevel, HeadingProps['size']> = {
 	h3: '3',
 	h4: '3',
 	h5: '3',
-	h6: '2',
+	h6: '3',
 };
 
 const compactWeightMap: Record<HeadingLevel, TypographyProps['weight']> = {

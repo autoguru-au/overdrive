@@ -57,6 +57,7 @@ export {
 	LinearProgressIndicator,
 	LoadingBox,
 	MarkdownRenderer,
+	type MarkdownRendererDensity,
 	type MarkdownRendererProps,
 	Meta,
 	MinimalModal,
