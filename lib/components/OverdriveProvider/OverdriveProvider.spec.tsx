@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
+import { useLocale } from 'react-aria';
 import { describe, expect, it } from 'vitest';
 
 import { OverdriveProvider, useTheme } from './OverdriveProvider';
@@ -69,5 +70,58 @@ describe('<OverdriveProvider />', () => {
 
 		const element = screen.getByTestId('no-body-theming');
 		expect(element).toBeInTheDocument();
+	});
+
+	it('should provide locale to React Aria context when locale prop is set', () => {
+		const LocaleDisplay = () => {
+			const { locale } = useLocale();
+			return <div data-testid="locale-display">{locale}</div>;
+		};
+
+		render(
+			<OverdriveProvider locale="en-AU">
+				<LocaleDisplay />
+			</OverdriveProvider>,
+		);
+
+		expect(screen.getByTestId('locale-display')).toHaveTextContent('en-AU');
+	});
+
+	it('should auto-detect locale from window.i18next when no prop is passed', () => {
+		const LocaleDisplay = () => {
+			const { locale } = useLocale();
+			return <div data-testid="locale-display">{locale}</div>;
+		};
+
+		(window as any).i18next = { language: 'en' };
+
+		render(
+			<OverdriveProvider>
+				<LocaleDisplay />
+			</OverdriveProvider>,
+		);
+
+		expect(screen.getByTestId('locale-display')).toHaveTextContent('en-AU');
+
+		delete (window as any).i18next;
+	});
+
+	it('should fall back to browser default when no locale prop and no i18next', () => {
+		const LocaleDisplay = () => {
+			const { locale } = useLocale();
+			return <div data-testid="locale-display">{locale}</div>;
+		};
+
+		delete (window as any).i18next;
+
+		render(
+			<OverdriveProvider>
+				<LocaleDisplay />
+			</OverdriveProvider>,
+		);
+
+		expect(screen.getByTestId('locale-display')).toHaveTextContent(
+			navigator.language,
+		);
 	});
 });
