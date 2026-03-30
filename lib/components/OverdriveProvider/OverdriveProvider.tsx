@@ -1,4 +1,5 @@
 import { invariant } from '@autoguru/utilities';
+import { I18nProvider as ReactAriaI18nProvider } from '@react-aria/i18n';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import { isEqual } from 'es-toolkit';
 import React, { createContext, useContext, useEffect, useMemo } from 'react';
@@ -14,6 +15,41 @@ import { useColorOverrides, type ColorOverrides } from './useColorOverrides';
 type ThemeContract = typeof overdriveTokens;
 type PortalMountPoint = React.RefObject<HTMLElement | null>;
 
+/**
+ * Maps 2-letter language codes to full BCP47 locale codes.
+ * English defaults to Australian locale (DD/MM/YYYY format).
+ */
+const LANGUAGE_TO_LOCALE: Record<string, string> = {
+	en: 'en-AU',
+	de: 'de-DE',
+	fr: 'fr-FR',
+	es: 'es-ES',
+	it: 'it-IT',
+	nl: 'nl-NL',
+	pl: 'pl-PL',
+	sv: 'sv-SE',
+	ja: 'ja-JP',
+};
+
+/**
+ * Resolves the locale for React Aria components.
+ * Priority: explicit prop > i18next language (mapped to full locale) > undefined (React Aria browser default)
+ */
+function resolveLocale(localeProp?: string): string | undefined {
+	if (localeProp) return localeProp;
+	if (!isBrowser) return undefined;
+
+	const i18nextLang = (
+		window as unknown as { i18next?: { language?: string } }
+	).i18next?.language;
+
+	if (i18nextLang) {
+		return LANGUAGE_TO_LOCALE[i18nextLang] || i18nextLang;
+	}
+
+	return undefined;
+}
+
 export interface ProviderProps {
 	/** The theme object to be used throughout the application */
 	theme?: typeof baseTheme;
@@ -25,6 +61,15 @@ export interface ProviderProps {
 	colorOverrides?: Partial<ColorOverrides>;
 	/** Reference to an HTML element where portals should be mounted */
 	portalMountPoint?: PortalMountPoint;
+	/**
+	 * BCP47 locale string for React Aria components (DateInput, Calendar, etc.).
+	 * Controls date segment ordering, number formatting, and text direction.
+	 *
+	 * @example "en-AU" for Australian English (DD/MM/YYYY)
+	 * @example "de-DE" for German
+	 * @default Falls back to browser's navigator.language
+	 */
+	locale?: string;
 	children?: React.ReactNode;
 }
 
@@ -64,6 +109,7 @@ export const Provider = ({
 	breakpoints,
 	children,
 	colorOverrides,
+	locale,
 	noBodyLevelTheming = false,
 	portalMountPoint,
 	theme = baseTheme,
@@ -111,16 +157,20 @@ export const Provider = ({
 		}
 	}, [portalMountPoint]);
 
+	const resolvedLocale = resolveLocale(locale);
+
 	return (
 		<OverdriveContext.Provider value={themeValues}>
 			<RuntimeTokensContext.Provider value={runtimeTokens}>
-				<div
-					className={theme.themeRef}
-					style={styles}
-					data-od-component="provider"
-				>
-					{children}
-				</div>
+				<ReactAriaI18nProvider locale={resolvedLocale}>
+					<div
+						className={theme.themeRef}
+						style={styles}
+						data-od-component="provider"
+					>
+						{children}
+					</div>
+				</ReactAriaI18nProvider>
 			</RuntimeTokensContext.Provider>
 		</OverdriveContext.Provider>
 	);
