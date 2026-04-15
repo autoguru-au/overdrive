@@ -29,7 +29,7 @@ type Story = StoryObj<typeof DataTable>;
 
 export const Standard: Story = {
 	args: {
-		columnTemplate: 'repeat(4, auto)',
+		columnTemplate: 'auto 2fr 1fr auto',
 		minWidth: '600px',
 		'aria-label': 'Bookings',
 	},
@@ -97,7 +97,7 @@ export const WithSorting: Story = {
 
 		return (
 			<DataTable
-				columnTemplate="repeat(6, auto)"
+				columnTemplate="auto 2fr 1fr 1fr auto auto"
 				minWidth="700px"
 				aria-label="Bookings with sorting"
 			>
@@ -218,7 +218,7 @@ export const LargeDataset: Story = {
 		return (
 			<Box style={{ maxHeight: '400px' }} overflow="auto">
 				<DataTable
-					columnTemplate="auto 1fr 1fr 1fr auto auto"
+					columnTemplate="auto 2fr 1fr 1fr auto auto"
 					minWidth="900px"
 					stickyHead
 					aria-label="Large fleet dataset"
@@ -273,7 +273,7 @@ export const SmallContainer: Story = {
 	],
 	render: () => (
 		<DataTable
-			columnTemplate="auto 1fr 1fr auto auto auto"
+			columnTemplate="auto 2fr 1fr 1fr auto auto"
 			minWidth="800px"
 			aria-label="Responsive fleet table"
 		>
@@ -326,7 +326,7 @@ export const ComplexCells: Story = {
 
 		return (
 			<DataTable
-				columnTemplate="1fr auto auto auto auto auto auto"
+				columnTemplate="1fr auto auto auto 2fr auto auto"
 				minWidth="900px"
 				aria-label="Fleet vehicles"
 			>
