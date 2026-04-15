@@ -217,7 +217,7 @@ describe('<Table />', () => {
 			fireEvent.click(sortItem);
 
 			expect(sortItem).toHaveAttribute('aria-sort', 'ascending');
-			expect(sortItem).toHaveTextContent('col 1 sorted ascending');
+			expect(sortItem).toHaveTextContent('col 1');
 
 			fireEvent.click(sortItem);
 

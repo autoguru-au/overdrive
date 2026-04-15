@@ -1,6 +1,6 @@
 import { ArrowUpIcon } from '@autoguru/icons';
 import clsx from 'clsx';
-import type { AriaAttributes } from 'react';
+import type { AriaAttributes, ReactNode } from 'react';
 import * as React from 'react';
 import { forwardRef, useCallback } from 'react';
 
@@ -9,7 +9,6 @@ import { Box, type BoxProps } from '../Box/Box';
 import { inline } from '../Flex/flex';
 import { Icon } from '../Icon/Icon';
 import { Text } from '../Text/Text';
-import { VisuallyHidden } from '../VisuallyHidden/VisuallyHidden';
 
 import * as styles from './TableHeadCell.css';
 import { useTableContext } from './context';
@@ -24,7 +23,7 @@ export interface TableHeadCellProps
 	sort?: Sort;
 	onSort?: (event: MouseEvent) => void;
 
-	children?: string | null;
+	children?: ReactNode;
 }
 
 const sortToAria = (sort: Sort): AriaAttributes['aria-sort'] => {
@@ -63,7 +62,7 @@ export const TableHeadCell = forwardRef<
 			[onSort],
 		);
 
-		const shouldSort = typeof sort === 'string'!;
+		const shouldSort = typeof sort === 'string';
 
 		const sorter = (
 			<Icon
@@ -93,12 +92,6 @@ export const TableHeadCell = forwardRef<
 					className={styles.text}
 				>
 					{children}
-					{shouldSort ? (
-						<VisuallyHidden as="span">
-							{' '}
-							sorted {sortToAria(sort!)}
-						</VisuallyHidden>
-					) : null}
 				</Text>
 				{(align === 'left' || align === 'center') && shouldSort
 					? sorter
@@ -129,7 +122,6 @@ export const TableHeadCell = forwardRef<
 						display="block"
 						width="full"
 						padding={padding}
-						tabIndex={-1}
 						className={styles.sorterButton}
 					>
 						{child}
