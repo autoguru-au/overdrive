@@ -22,7 +22,6 @@ export const input = style({
 
 			'@supports': {
 				'(field-sizing: content)': {
-					//@ts-expect-error 'field-sizing' property is not yet baseline available
 					fieldSizing: 'content',
 					width: 'unset',
 				},
