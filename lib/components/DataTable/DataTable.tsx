@@ -39,7 +39,7 @@ export const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
 			role="region"
 			aria-label={ariaLabel}
 			tabIndex={0}
-			overflow="auto"
+			overflowX="auto"
 			className={styles.scrollContainer}
 			odComponent="data-table"
 		>
