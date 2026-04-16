@@ -10,8 +10,14 @@ import { TableRowGroup } from '../Table/TableRowGroup';
 import { DataTable } from './DataTable';
 import * as stories from './DataTable.stories';
 
-const { Standard, WithSorting, LargeDataset, SmallContainer, ComplexCells } =
-	composeStories(stories);
+const {
+	Standard,
+	WithSorting,
+	LargeDataset,
+	SmallContainer,
+	ComplexCells,
+	Animated,
+} = composeStories(stories);
 
 const renderBasicTable = (
 	props: Partial<React.ComponentProps<typeof DataTable>> = {},
@@ -183,6 +189,14 @@ describe('<DataTable />', () => {
 			expect(
 				screen.getAllByText('Requested HA').length,
 			).toBeGreaterThanOrEqual(1);
+		});
+
+		it('renders the Animated story with staggered rows', () => {
+			render(<Animated />);
+
+			expect(screen.getByRole('region')).toBeInTheDocument();
+			// 10 data rows + 1 header row
+			expect(screen.getAllByRole('row').length).toBe(11);
 		});
 	});
 });

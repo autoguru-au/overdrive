@@ -1,5 +1,6 @@
 import { AlertCircleIcon, CalendarIcon, CarIcon } from '@autoguru/icons';
 import { Meta, type StoryObj } from '@storybook/react-vite';
+import { assignInlineVars } from '@vanilla-extract/dynamic';
 import React, { useState } from 'react';
 
 import { arrayRingLookup } from '../../utils';
@@ -16,7 +17,9 @@ import { TableRow } from '../Table/TableRow';
 import { TableRowGroup } from '../Table/TableRowGroup';
 import { Text } from '../Text/Text';
 
+
 import { DataTable } from './DataTable';
+import { rowEntering, staggerIndex } from './DataTable.css';
 
 const meta: Meta<typeof DataTable> = {
 	title: 'Components/DataTable',
@@ -532,4 +535,64 @@ export const ComplexCells: Story = {
 			</DataTable>
 		);
 	},
+};
+
+const animatedRows = Array.from({ length: 10 }, (_, i) => ({
+	id: 200_000 + i,
+	name: [
+		'My Auto Service',
+		'Magic Spanners',
+		'Super Special Cars',
+		'Quick Fix Autos',
+		'Top Gear Mechanics',
+	][i % 5],
+	location: ['Gold Coast', 'Brisbane CBD', 'Sydney CBD', 'Melbourne', 'Perth'][
+		i % 5
+	],
+	price: `$${(Math.random() * 3000 + 80).toFixed(2)}`,
+	status: (['Paid', 'Unpaid', 'Dispute', 'Complete'] as const)[i % 4],
+	statusColour: (['green', 'yellow', 'red', 'green'] as const)[i % 4],
+}));
+
+export const Animated: Story = {
+	render: () => (
+		<DataTable
+			columnTemplate="auto 2fr 1fr auto auto"
+			aria-label="Animated fleet table"
+		>
+			<TableRowGroup>
+				<TableRow>
+					<TableHeadCell>ID</TableHeadCell>
+					<TableHeadCell>Mechanic</TableHeadCell>
+					<TableHeadCell>Location</TableHeadCell>
+					<TableHeadCell align="right">Price</TableHeadCell>
+					<TableHeadCell>Status</TableHeadCell>
+				</TableRow>
+			</TableRowGroup>
+			<TableRowGroup>
+				{animatedRows.map((row, i) => (
+					<TableRow
+						key={row.id}
+						className={rowEntering}
+						style={assignInlineVars({
+							[staggerIndex]: String(i),
+						})}
+					>
+						<TableCell>{row.id}</TableCell>
+						<TableCell>{row.name}</TableCell>
+						<TableCell>{row.location}</TableCell>
+						<TableCell align="right">{row.price}</TableCell>
+						<TableCell>
+							<FlexInline>
+								<Badge
+									label={row.status}
+									colour={row.statusColour}
+								/>
+							</FlexInline>
+						</TableCell>
+					</TableRow>
+				))}
+			</TableRowGroup>
+		</DataTable>
+	),
 };

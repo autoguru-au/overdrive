@@ -43,7 +43,10 @@ export const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
 			className={styles.scrollContainer}
 			odComponent="data-table"
 		>
-			<Box overflow="hidden" style={minWidth ? { minWidth } : undefined}>
+			<Box
+			className={styles.innerWrapper}
+			style={minWidth ? { minWidth } : undefined}
+		>
 				<Table
 					columnTemplate={columnTemplate}
 					padding={padding}
