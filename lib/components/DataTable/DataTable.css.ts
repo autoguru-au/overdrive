@@ -40,19 +40,17 @@ export const scrollContainer = style({
 export const innerWrapper = style({});
 
 /*
- * Scroll-driven sticky header reveal. The shadow and background only
- * appear once the user scrolls, driven by animation-timeline: scroll().
+ * Scroll-driven sticky header background. The background only appears
+ * once the user scrolls, driven by animation-timeline: scroll().
  * The animation completes in the first 1px of scroll so the effect
  * snaps in immediately when content passes under the header.
  */
 const stickyReveal = keyframes({
 	from: {
 		backgroundColor: 'transparent',
-		boxShadow: 'none',
 	},
 	to: {
 		backgroundColor: vars.colours.background.body,
-		boxShadow: vars.elevation['1'],
 	},
 });
 
