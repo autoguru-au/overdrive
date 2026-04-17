@@ -1,0 +1,71 @@
+import type { ReactNode } from 'react';
+import * as React from 'react';
+import { forwardRef } from 'react';
+
+import { Box } from '../Box/Box';
+import { ScrollPane } from '../ScrollPane/ScrollPane';
+import { Table, type TableProps } from '../Table/Table';
+
+import * as styles from './DataTable.css';
+
+export interface DataTableProps extends Omit<TableProps, 'ref'> {
+	/** Minimum width before horizontal scroll activates. CSS value, e.g. '800px'. */
+	minWidth?: string;
+
+	/** Maximum height before vertical scroll activates. Required for stickyHead to work. */
+	maxHeight?: string;
+
+	/** Accessible label for the scrollable region. */
+	'aria-label'?: string;
+
+	children: ReactNode | ReactNode[];
+}
+
+/**
+ * A responsive data table wrapper that enables horizontal scrolling on narrow
+ * containers. Composes the existing `Table` component inside a scrollable
+ * region with keyboard-accessible overflow.
+ *
+ * When using `stickyHead`, set `maxHeight` so the DataTable itself is the
+ * vertical scroll container — this ensures sticky headers resolve against
+ * the correct scroll ancestor.
+ */
+export const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
+	(
+		{
+			minWidth,
+			maxHeight,
+			'aria-label': ariaLabel = 'Data table',
+			children,
+			columnTemplate,
+			padding,
+			stickyHead,
+		},
+		ref,
+	) => (
+		<ScrollPane
+			ref={ref}
+			role="region"
+			aria-label={ariaLabel}
+			tabIndex={0}
+			style={maxHeight ? { maxHeight } : undefined}
+			className={styles.scrollContainer}
+			odComponent="data-table"
+		>
+			<Box
+				className={styles.innerWrapper}
+				style={minWidth ? { minWidth } : undefined}
+			>
+				<Table
+					columnTemplate={columnTemplate}
+					padding={padding}
+					stickyHead={stickyHead}
+				>
+					{children}
+				</Table>
+			</Box>
+		</ScrollPane>
+	),
+);
+
+DataTable.displayName = 'DataTable';

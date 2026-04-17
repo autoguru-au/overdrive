@@ -19,7 +19,7 @@ export interface TableCellProps
 	children?: ReactNode | null;
 }
 
-export const TableCell = forwardRef<HTMLDivElement, TableCellProps>(
+export const TableCell = forwardRef<HTMLTableCellElement, TableCellProps>(
 	(
 		{
 			padding: incomingPadding,
@@ -35,10 +35,9 @@ export const TableCell = forwardRef<HTMLDivElement, TableCellProps>(
 
 		return (
 			<Box
+				as="td"
 				ref={ref}
 				role="gridcell"
-				// TODO: look into use of `scope` prop on non table headinging cells
-				// scope="row"
 				display="flex"
 				alignItems="center"
 				position="relative"

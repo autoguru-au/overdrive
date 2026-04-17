@@ -7,12 +7,7 @@ export {
 	type AutoSuggestItemRenderer,
 } from './AutoSuggest';
 export { Badge } from './Badge';
-export {
-	Box,
-	type BoxProps,
-	useBox,
-	type UseBoxProps,
-} from './Box';
+export { Box, type BoxProps, useBox, type UseBoxProps } from './Box';
 export { BulletList, Bullet } from './BulletList';
 export { BulletText } from './BulletText';
 export { Button } from './Button';
@@ -31,6 +26,7 @@ export {
 	type TimeFieldProps,
 	type CommonSelectorProps,
 } from './DateTimeField';
+export { DataTable, type DataTableProps } from './DataTable';
 export { DividerLine } from './DividerLine';
 export { DropDown, DropDownOption } from './DropDown';
 export { EditableText } from './EditableText';
@@ -98,10 +94,7 @@ export { ScrollPane } from './ScrollPane';
 export { SearchBar, type SearchBarProps } from './SearchBar';
 export { Section } from './Section';
 export { SelectInput } from './SelectInput';
-export {
-	SimplePagination,
-	EPageChangeDirection,
-} from './SimplePagination';
+export { SimplePagination, EPageChangeDirection } from './SimplePagination';
 export { Slider, type SliderProps } from './Slider';
 export { SliderProgress } from './SliderProgress';
 export { Stack } from './Stack';

@@ -1,6 +1,6 @@
-import { ArrowUpIcon } from '@autoguru/icons';
+import { SortIcon } from '@autoguru/icons';
 import clsx from 'clsx';
-import type { AriaAttributes } from 'react';
+import type { AriaAttributes, MouseEventHandler, ReactNode } from 'react';
 import * as React from 'react';
 import { forwardRef, useCallback } from 'react';
 
@@ -9,7 +9,6 @@ import { Box, type BoxProps } from '../Box/Box';
 import { inline } from '../Flex/flex';
 import { Icon } from '../Icon/Icon';
 import { Text } from '../Text/Text';
-import { VisuallyHidden } from '../VisuallyHidden/VisuallyHidden';
 
 import * as styles from './TableHeadCell.css';
 import { useTableContext } from './context';
@@ -22,9 +21,9 @@ export interface TableHeadCellProps
 	align?: Alignment;
 
 	sort?: Sort;
-	onSort?: (event: MouseEvent) => void;
+	onSort?: MouseEventHandler<HTMLTableCellElement>;
 
-	children?: string | null;
+	children?: ReactNode;
 }
 
 const sortToAria = (sort: Sort): AriaAttributes['aria-sort'] => {
@@ -54,7 +53,9 @@ export const TableHeadCell = forwardRef<
 
 		const padding = incomingPadding ?? tableContext?.padding ?? 'none';
 
-		const sortClickHandler = useCallback(
+		const sortClickHandler = useCallback<
+			MouseEventHandler<HTMLTableCellElement>
+		>(
 			(event) => {
 				if (typeof onSort === 'function') {
 					onSort(event);
@@ -63,11 +64,11 @@ export const TableHeadCell = forwardRef<
 			[onSort],
 		);
 
-		const shouldSort = typeof sort === 'string'!;
+		const shouldSort = typeof sort === 'string';
 
 		const sorter = (
 			<Icon
-				icon={ArrowUpIcon}
+				icon={SortIcon}
 				size="small"
 				className={clsx([
 					styles.sorter.root,
@@ -93,12 +94,6 @@ export const TableHeadCell = forwardRef<
 					className={styles.text}
 				>
 					{children}
-					{shouldSort ? (
-						<VisuallyHidden as="span">
-							{' '}
-							sorted {sortToAria(sort!)}
-						</VisuallyHidden>
-					) : null}
 				</Text>
 				{(align === 'left' || align === 'center') && shouldSort
 					? sorter
@@ -126,10 +121,10 @@ export const TableHeadCell = forwardRef<
 				{sort ? (
 					<Box
 						as="button"
+						type="button"
 						display="block"
 						width="full"
 						padding={padding}
-						tabIndex={-1}
 						className={styles.sorterButton}
 					>
 						{child}

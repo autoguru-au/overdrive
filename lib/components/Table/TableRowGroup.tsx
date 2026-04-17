@@ -7,12 +7,13 @@ export interface TableRowGroupProps {
 	children: ReactNode | ReactNode[];
 }
 
-export const TableRowGroup = forwardRef<HTMLDivElement, TableRowGroupProps>(
-	({ children }, ref) => (
-		<Box ref={ref} role="rowgroup" display="contents">
-			{children}
-		</Box>
-	),
-);
+export const TableRowGroup = forwardRef<
+	HTMLTableSectionElement,
+	TableRowGroupProps
+>(({ children }, ref) => (
+	<Box as="tbody" ref={ref} role="rowgroup" display="contents">
+		{children}
+	</Box>
+));
 
 TableRowGroup.displayName = 'TableRowGroup';
