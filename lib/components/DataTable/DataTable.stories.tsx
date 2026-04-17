@@ -453,7 +453,6 @@ const fleetRows = [
 export const ComplexCells: Story = {
 	render: () => {
 		const [sort, sortSetter] = useSortState({
-			asset: 'none',
 			rego: 'none',
 			year: 'none',
 			bookingId: 'none',
@@ -473,7 +472,7 @@ export const ComplexCells: Story = {
 			>
 				<TableRowGroup>
 					<TableRow>
-						<TableHeadCell sort={sort.asset} onSort={sortSetter('asset')}>Asset</TableHeadCell>
+						<TableHeadCell>Asset</TableHeadCell>
 						<TableHeadCell sort={sort.rego} onSort={sortSetter('rego')}>Rego</TableHeadCell>
 						<TableHeadCell sort={sort.year} onSort={sortSetter('year')}>Year</TableHeadCell>
 						<TableHeadCell sort={sort.bookingId} onSort={sortSetter('bookingId')}>Booking ID</TableHeadCell>
