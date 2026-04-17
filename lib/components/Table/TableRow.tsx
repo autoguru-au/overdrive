@@ -11,16 +11,29 @@ import {
 } from './TableRow.css';
 
 export interface TableRowProps {
+	/** Click handler fired when any part of the row is clicked. */
 	onClick?: MouseEventHandler<HTMLTableRowElement>;
 
 	/**
-	 * When set, the row's cells animate in with a staggered slide-up.
-	 * Pass the row's index (0, 1, 2, …) to cascade the animation across
-	 * rows. Omit to disable the animation.
+	 * Opt-in entrance animation. When set to a number, the row's cells
+	 * animate in with a staggered slide-up-and-fade (translateY 12px → 0,
+	 * opacity 0 → 1, 300 ms with the decelerate easing token).
+	 *
+	 * Pass the row's index within the list (0, 1, 2, …) so each row waits
+	 * `staggerIndex * 50 ms` before animating — producing a cascade.
+	 * Omit the prop to disable the animation entirely.
+	 *
+	 * @example
+	 * {rows.map((row, i) => (
+	 *   <TableRow key={row.id} staggerIndex={i}>…</TableRow>
+	 * ))}
 	 */
 	staggerIndex?: number;
 
+	/** Custom className applied to the underlying `<tr>` element. */
 	className?: string;
+
+	/** Inline style applied to the underlying `<tr>` element. */
 	style?: React.CSSProperties;
 
 	children: ReactNode | ReactNode[];
