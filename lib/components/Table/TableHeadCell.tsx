@@ -1,4 +1,4 @@
-import { ArrowUpIcon } from '@autoguru/icons';
+import { SortIcon } from '@autoguru/icons';
 import clsx from 'clsx';
 import type { AriaAttributes, ReactNode } from 'react';
 import * as React from 'react';
@@ -66,7 +66,7 @@ export const TableHeadCell = forwardRef<
 
 		const sorter = (
 			<Icon
-				icon={ArrowUpIcon}
+				icon={SortIcon}
 				size="small"
 				className={clsx([
 					styles.sorter.root,

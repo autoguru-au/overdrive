@@ -59,11 +59,15 @@ exports[`<Table /> > when implemented > should match snapshot 1`] = `
                   class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
                   fill="currentColor"
                   focusable="false"
-                  viewBox="0 0 512 512"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M277.333 426.667h-42.666v-256L117.333 288 87.04 257.707 256 88.747l168.96 168.96L394.667 288 277.333 170.667v256z"
+                    d="M3 10l9-8 9 8M3 14l9 8 9-8"
                   />
                 </svg>
               </span>
