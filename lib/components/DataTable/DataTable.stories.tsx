@@ -10,14 +10,13 @@ import { Badge } from '../Badge/Badge';
 import { Box } from '../Box/Box';
 import { Button } from '../Button/Button';
 import { FlexInline } from '../Flex/FlexInline';
-import { stack } from '../Flex/flex';
+import { inline, stack } from '../Flex/flex';
 import { Icon } from '../Icon/Icon';
 import { TableCell } from '../Table/TableCell';
 import { TableHeadCell } from '../Table/TableHeadCell';
 import { TableRow } from '../Table/TableRow';
 import { TableRowGroup } from '../Table/TableRowGroup';
 import { Text } from '../Text/Text';
-
 
 import { DataTable } from './DataTable';
 import { rowEntering, staggerIndex } from './DataTable.css';
@@ -594,4 +593,150 @@ export const Animated: Story = {
 			</TableRowGroup>
 		</DataTable>
 	),
+};
+
+const vehicleImageUrl =
+	'https://cdn.imagin.studio/getImage?customer=au-autoguru&target=car&tailoring=autoguru&make=audi&modelFamily=a6&modelYear=2026&paintId=pspc0004sspc0336&angle=001&zoomType=fullscreen&zoomLevel=1&width=2100&height=900&aspectRatio=21%3A9&fileType=png';
+
+const fleetRows = [
+	{
+		asset: 'Audi A6',
+		rego: 'SD73 PYY',
+		year: '2020',
+		bookingId: '#12273536',
+		update: 'Service due in 6 days',
+		updateIcon: AlertCircleIcon,
+		status: 'Requested HA',
+		statusColour: 'yellow' as const,
+		alert: '14/06/20',
+	},
+	{
+		asset: 'Audi A6',
+		rego: 'SD73 PYY',
+		year: '2020',
+		bookingId: '#12273536',
+		update: 'Service overdue by 2,000 kms',
+		updateIcon: AlertCircleIcon,
+		status: 'Supplier Uncontactable',
+		statusColour: 'yellow' as const,
+		alert: '14/06/20',
+	},
+	{
+		asset: 'Audi A6',
+		rego: 'SD73 PYY',
+		year: '2020',
+		bookingId: '#12273536',
+		update: 'Service due in 5 days',
+		updateIcon: AlertCircleIcon,
+		status: 'Requested HA',
+		statusColour: 'yellow' as const,
+		alert: '14/06/20',
+	},
+	{
+		asset: 'Audi A6',
+		rego: 'SD73 PYY',
+		year: '2022',
+		bookingId: '#12273539',
+		update: null,
+		updateIcon: null,
+		status: 'Complete',
+		statusColour: 'green' as const,
+		alert: '16/06/20',
+	},
+	{
+		asset: 'Audi A6',
+		rego: 'AB12 CDE',
+		year: '2021',
+		bookingId: '#12273540',
+		update: 'Service due in 12 days',
+		updateIcon: AlertCircleIcon,
+		status: 'Requested HA',
+		statusColour: 'yellow' as const,
+		alert: '18/06/20',
+	},
+	{
+		asset: 'Audi A6',
+		rego: 'FG34 HIJ',
+		year: '2019',
+		bookingId: '#12273541',
+		update: 'Service overdue by 500 kms',
+		updateIcon: AlertCircleIcon,
+		status: 'Dispute',
+		statusColour: 'red' as const,
+		alert: '20/06/20',
+	},
+];
+
+export const FleetPortal: Story = {
+	render: () => {
+		const [sort, sortSetter] = useSortState({
+			asset: 'none',
+			rego: 'none',
+			year: 'none',
+			bookingId: 'none',
+			updated: 'none',
+			status: 'none',
+			alert: 'none',
+		});
+
+		return (
+			<DataTable
+				columnTemplate="120px 1fr auto auto auto 2fr auto auto"
+				padding="5"
+				maxHeight="500px"
+				stickyHead
+				minWidth="900px"
+				aria-label="Fleet portal — requires action"
+			>
+				<TableRowGroup>
+					<TableRow>
+						<TableHeadCell sort={sort.asset} onSort={sortSetter('asset')}>Asset</TableHeadCell>
+						<TableHeadCell sort={sort.rego} onSort={sortSetter('rego')}>Rego</TableHeadCell>
+						<TableHeadCell sort={sort.year} onSort={sortSetter('year')}>Year</TableHeadCell>
+						<TableHeadCell sort={sort.bookingId} onSort={sortSetter('bookingId')}>Booking ID</TableHeadCell>
+						<TableHeadCell sort={sort.updated} onSort={sortSetter('updated')}>Updated</TableHeadCell>
+						<TableHeadCell sort={sort.status} onSort={sortSetter('status')}>Status</TableHeadCell>
+						<TableHeadCell sort={sort.alert} onSort={sortSetter('alert')}>Alert</TableHeadCell>
+					</TableRow>
+				</TableRowGroup>
+				<TableRowGroup>
+					{fleetRows.map((row, i) => (
+						<TableRow
+							key={i}
+							className={rowEntering}
+							style={assignInlineVars({ [staggerIndex]: String(i) })}
+						>
+							<TableCell>
+								<div className={stack({ gap: '1' })}>
+									<img
+										src={vehicleImageUrl}
+										alt={row.asset}
+										style={{ width: '100px', height: 'auto', objectFit: 'contain' }}
+									/>
+									<Text size="2" colour="muted">{row.asset}</Text>
+								</div>
+							</TableCell>
+							<TableCell>{row.rego}</TableCell>
+							<TableCell>{row.year}</TableCell>
+							<TableCell>{row.bookingId}</TableCell>
+							<TableCell>
+								{row.update ? (
+									<div className={inline({ gap: '1', align: 'center' })}>
+										<Icon icon={row.updateIcon!} size="small" aria-hidden />
+										<Text size="3" colour="dark">{row.update}</Text>
+									</div>
+								) : null}
+							</TableCell>
+							<TableCell>
+								<FlexInline>
+									<Badge label={row.status} colour={row.statusColour} />
+								</FlexInline>
+							</TableCell>
+							<TableCell>{row.alert}</TableCell>
+						</TableRow>
+					))}
+				</TableRowGroup>
+			</DataTable>
+		);
+	},
 };
