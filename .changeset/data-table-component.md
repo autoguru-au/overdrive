@@ -26,3 +26,16 @@ scroll via arrow keys (`role="region"` with `tabIndex={0}`).
 LargeDataset (25 rows with sticky header), SmallContainer (320px width
 demonstrating horizontal scroll), and ComplexCells (fleet-style composition
 with icons, badges, and stacked text).
+
+**ScrollPane refresh:** Overlay-style scrollbar — transparent track, pill
+thumb, Firefox support via `scrollbar-width` / `scrollbar-color`. The
+`rounded` prop is deprecated (no-op, scheduled for removal in the next
+major) since the thumb is now pill-rounded by default.
+
+**Table semantic fix:** `Table`, `TableRowGroup`, `TableRow`, and
+`TableCell` now render native `<table>` / `<tbody>` / `<tr>` / `<td>`
+elements (instead of `<div>` with ARIA roles) to eliminate a React DOM
+nesting warning when `<TableHeadCell>` rendered a `<th>` inside a
+non-`<tr>` ancestor. CSS Grid layout is preserved via `display: grid` on
+`<table>` and `display: contents` on `<tbody>` / `<tr>`. ARIA roles
+retained for the ARIA grid pattern. No component API changes.

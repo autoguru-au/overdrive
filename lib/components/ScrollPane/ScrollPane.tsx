@@ -12,10 +12,13 @@ export interface ScrollPaneProps
 	serverVhFallback?: number;
 	includeMobile?: boolean;
 	className?: string;
+	/** @deprecated No-op. Thumb is pill-rounded by default. Will be removed in the next major. */
+	rounded?: boolean;
 }
 
 export const ScrollPane = forwardRef<HTMLDivElement, ScrollPaneProps>(
-	({ className = '', ...rest }, ref) => (
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	({ className = '', rounded: _rounded, ...rest }, ref) => (
 		<Box
 			ref={ref}
 			overflow="auto"

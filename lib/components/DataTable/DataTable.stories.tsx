@@ -330,7 +330,7 @@ const animatedRows = Array.from({ length: 10 }, (_, i) => ({
 	location: ['Gold Coast', 'Brisbane CBD', 'Sydney CBD', 'Melbourne', 'Perth'][
 		i % 5
 	],
-	price: `$${(Math.random() * 3000 + 80).toFixed(2)}`,
+	price: `$${(isChromatic() ? 1500 : Math.random() * 3000 + 80).toFixed(2)}`,
 	status: (['Paid', 'Unpaid', 'Dispute', 'Complete'] as const)[i % 4],
 	statusColour: (['green', 'yellow', 'red', 'green'] as const)[i % 4],
 }));
