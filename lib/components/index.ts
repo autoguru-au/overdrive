@@ -26,12 +26,7 @@ export {
 	type TimeFieldProps,
 	type CommonSelectorProps,
 } from './DateTimeField';
-export {
-	DataTable,
-	type DataTableProps,
-	rowEntering,
-	staggerIndex,
-} from './DataTable';
+export { DataTable, type DataTableProps } from './DataTable';
 export { DividerLine } from './DividerLine';
 export { DropDown, DropDownOption } from './DropDown';
 export { EditableText } from './EditableText';

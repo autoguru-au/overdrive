@@ -1,6 +1,6 @@
 import { SortIcon } from '@autoguru/icons';
 import clsx from 'clsx';
-import type { AriaAttributes, ReactNode } from 'react';
+import type { AriaAttributes, MouseEventHandler, ReactNode } from 'react';
 import * as React from 'react';
 import { forwardRef, useCallback } from 'react';
 
@@ -21,7 +21,7 @@ export interface TableHeadCellProps
 	align?: Alignment;
 
 	sort?: Sort;
-	onSort?: (event: MouseEvent) => void;
+	onSort?: MouseEventHandler<HTMLTableCellElement>;
 
 	children?: ReactNode;
 }
@@ -53,7 +53,9 @@ export const TableHeadCell = forwardRef<
 
 		const padding = incomingPadding ?? tableContext?.padding ?? 'none';
 
-		const sortClickHandler = useCallback(
+		const sortClickHandler = useCallback<
+			MouseEventHandler<HTMLTableCellElement>
+		>(
 			(event) => {
 				if (typeof onSort === 'function') {
 					onSort(event);
@@ -119,6 +121,7 @@ export const TableHeadCell = forwardRef<
 				{sort ? (
 					<Box
 						as="button"
+						type="button"
 						display="block"
 						width="full"
 						padding={padding}

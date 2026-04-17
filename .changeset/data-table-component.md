@@ -24,8 +24,9 @@ scroll via arrow keys (`role="region"` with `tabIndex={0}`).
 
 **Stories:** Standard, WithSorting (mixed sortable/non-sortable columns),
 LargeDataset (25 rows with sticky header), SmallContainer (320px width
-demonstrating horizontal scroll), and ComplexCells (fleet-style composition
-with icons, badges, and stacked text).
+demonstrating horizontal scroll), ComplexCells (fleet-style composition
+with icons, badges, and stacked text), and Animated (staggered row
+entrance demo).
 
 **ScrollPane refresh:** Overlay-style scrollbar — transparent track, pill
 thumb, Firefox support via `scrollbar-width` / `scrollbar-color`. The

@@ -41,6 +41,7 @@ exports[`<Table /> > when implemented > should match snapshot 1`] = `
         >
           <button
             class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 sprinkles_paddingBottom_4_mobile__onxwjutl sprinkles_paddingLeft_4_mobile__onxwjuup sprinkles_paddingRight_4_mobile__onxwjuvt sprinkles_paddingTop_4_mobile__onxwjuwx sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 TableHeadCell_sorterButton__1a20v5n0"
+            type="button"
           >
             <div
               class="sprinkles_alignItems_center_mobile__onxwjumt sprinkles_display_flex_mobile__onxwju6l sprinkles_flexDirection_row_mobile__onxwjupt sprinkles_flexWrap_wrap_mobile__onxwjur1 sprinkles_gap_1_mobile__onxwjui5 sprinkles_justifyContent_start_mobile__onxwjup1"
