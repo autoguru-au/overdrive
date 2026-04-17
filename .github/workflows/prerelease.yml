@@ -50,7 +50,7 @@ jobs:
                   cache: 'yarn'
 
             - name: Install npm 11+ for OIDC support
-              run: npm install -g npm@11
+              run: npm install -g npm@11.6.2
 
             - name: Verify npm OIDC readiness
               run: |
