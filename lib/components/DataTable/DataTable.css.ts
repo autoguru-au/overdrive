@@ -40,6 +40,29 @@ export const scrollContainer = style({
 export const innerWrapper = style({});
 
 /*
+ * Scroll-driven sticky header reveal. The shadow and background only
+ * appear once the user scrolls, driven by animation-timeline: scroll().
+ * The animation completes in the first 1px of scroll so the effect
+ * snaps in immediately when content passes under the header.
+ */
+const stickyReveal = keyframes({
+	from: {
+		backgroundColor: 'transparent',
+		boxShadow: 'none',
+	},
+	to: {
+		backgroundColor: vars.colours.background.body,
+		boxShadow: vars.elevation['1'],
+	},
+});
+
+globalStyle(`${scrollContainer} [role="columnheader"]`, {
+	animation: `${stickyReveal} linear both`,
+	animationRange: '0px 1px',
+	animationTimeline: 'scroll()',
+});
+
+/*
  * Constrain the TableCell ::before hover pseudo-elements within DataTable.
  * Without this, left/right: -1000% inflates scrollWidth to ~7400px inside
  * the overflowX:auto scroll container. Pinning to 0 keeps the hover
