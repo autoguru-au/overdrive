@@ -18,6 +18,11 @@ export const innerWrapper = style({});
  * once the user scrolls, driven by animation-timeline: scroll().
  * The animation completes in the first 1px of scroll so the effect
  * snaps in immediately when content passes under the header.
+ *
+ * Guarded behind @supports because browsers without animation-timeline
+ * support would otherwise treat the `animation` shorthand as a 0s
+ * time-based animation and, combined with `animation-fill-mode: both`,
+ * apply the end-state background immediately on render.
  */
 const stickyReveal = keyframes({
 	from: {
@@ -29,9 +34,13 @@ const stickyReveal = keyframes({
 });
 
 globalStyle(`${scrollContainer} [role="columnheader"]`, {
-	animation: `${stickyReveal} linear both`,
-	animationRange: '0px 1px',
-	animationTimeline: 'scroll()',
+	'@supports': {
+		'(animation-timeline: scroll())': {
+			animation: `${stickyReveal} linear both`,
+			animationRange: '0px 1px',
+			animationTimeline: 'scroll()',
+		},
+	},
 });
 
 /*

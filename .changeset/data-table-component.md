@@ -44,4 +44,21 @@ elements (instead of `<div>` with ARIA roles) to eliminate a React DOM
 nesting warning when `<TableHeadCell>` rendered a `<th>` inside a
 non-`<tr>` ancestor. CSS Grid layout is preserved via `display: grid` on
 `<table>` and `display: contents` on `<tbody>` / `<tr>`. ARIA roles
-retained for the ARIA grid pattern. No component API changes.
+retained for the ARIA grid pattern. This introduces TypeScript-level API
+changes for the forwarded ref types: `Table` now forwards to
+`HTMLTableElement` (was `HTMLDivElement`), `TableRowGroup` to
+`HTMLTableSectionElement`, `TableRow` to `HTMLTableRowElement`, and
+`TableCell` to `HTMLTableCellElement`. `TableRow`'s `onClick` handler is
+correspondingly typed as `MouseEventHandler<HTMLTableRowElement>`.
+Runtime behaviour and visual output are unchanged.
+
+**Dependency alignment (not breaking for consumers):** Bumped
+`@internationalized/date` (`3.10.0` → `3.12.1`) and `react-stately`
+(`3.42.0` → `3.46.0`) to match the versions nested inside
+`@react-aria/calendar` and `@react-aria/datepicker`. The previous skew
+caused two separately-hoisted copies of these packages, which produced
+distinct TypeScript identities for `DateValue` and surfaced as 18 TS
+errors and 6 `DateInput` test failures on `main`. Required to unblock
+the build; no runtime behaviour changes in the date components. The
+`@autoguru/icons` bump (`1.8.16` → `1.8.22`) brings in the new
+`SortIcon` used by `TableHeadCell`.
