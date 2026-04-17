@@ -681,7 +681,7 @@ export const FleetPortal: Story = {
 
 		return (
 			<DataTable
-				columnTemplate="120px 1fr auto auto auto 2fr auto auto"
+				columnTemplate="120px auto auto auto 2fr auto auto"
 				padding="5"
 				maxHeight="500px"
 				stickyHead
