@@ -1,6 +1,7 @@
 import { AlertCircleIcon, CalendarIcon, CarIcon } from '@autoguru/icons';
 import { Meta, type StoryObj } from '@storybook/react-vite';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
+import isChromatic from 'chromatic/isChromatic';
 import React, { useState } from 'react';
 
 import { arrayRingLookup } from '../../utils';
@@ -209,7 +210,7 @@ const generateRows = (count: number) =>
 			'BMW X5',
 			'Toyota Camry',
 		][i % 5],
-		price: `$${(Math.random() * 5000 + 50).toFixed(2)}`,
+		price: `$${(isChromatic() ? 2500 : Math.random() * 5000 + 50).toFixed(2)}`,
 		status: (['Paid', 'Unpaid', 'Dispute', 'Complete'] as const)[i % 4],
 		statusColour: (['green', 'yellow', 'red', 'green'] as const)[i % 4],
 	}));
@@ -219,13 +220,13 @@ export const LargeDataset: Story = {
 		const rows = generateRows(25);
 
 		return (
-			<Box style={{ maxHeight: '400px' }} overflow="auto">
-				<DataTable
-					columnTemplate="auto 2fr 1fr 1fr auto auto"
-					minWidth="900px"
-					stickyHead
-					aria-label="Large fleet dataset"
-				>
+			<DataTable
+				columnTemplate="auto 2fr 1fr 1fr auto auto"
+				minWidth="900px"
+				maxHeight="400px"
+				stickyHead
+				aria-label="Large fleet dataset"
+			>
 					<TableRowGroup>
 						<TableRow>
 							<TableHeadCell>ID</TableHeadCell>
@@ -255,8 +256,7 @@ export const LargeDataset: Story = {
 							</TableRow>
 						))}
 					</TableRowGroup>
-				</DataTable>
-			</Box>
+			</DataTable>
 		);
 	},
 };
