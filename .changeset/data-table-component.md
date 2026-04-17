@@ -14,6 +14,11 @@ scroll via arrow keys (`role="region"` with `tabIndex={0}`).
   the minimum readable width before scroll activates) and `aria-label` for
   the scrollable region.
 
+**TableRow entrance animation:**
+- Added `staggerIndex?: number` prop to `TableRow`. Pass the row index
+  (e.g. `staggerIndex={i}` inside a `.map()`) to opt a row into a
+  staggered slide-up-and-fade entrance animation. Omit to disable.
+
 **TableHeadCell accessibility fixes:**
 - Removed `tabIndex={-1}` from the sort button so keyboard users can reach
   sort controls via Tab.

@@ -1,6 +1,5 @@
 import { AlertCircleIcon } from '@autoguru/icons';
 import { Meta, type StoryObj } from '@storybook/react-vite';
-import { assignInlineVars } from '@vanilla-extract/dynamic';
 import isChromatic from 'chromatic/isChromatic';
 import React, { useState } from 'react';
 
@@ -19,7 +18,6 @@ import { TableRowGroup } from '../Table/TableRowGroup';
 import { Text } from '../Text/Text';
 
 import { DataTable } from './DataTable';
-import { rowEntering, staggerIndex } from './DataTable.css';
 
 const meta: Meta<typeof DataTable> = {
 	title: 'Components/DataTable',
@@ -352,13 +350,7 @@ export const Animated: Story = {
 			</TableRowGroup>
 			<TableRowGroup>
 				{animatedRows.map((row, i) => (
-					<TableRow
-						key={row.id}
-						className={rowEntering}
-						style={assignInlineVars({
-							[staggerIndex]: String(i),
-						})}
-					>
+					<TableRow key={row.id} staggerIndex={i}>
 						<TableCell>{row.id}</TableCell>
 						<TableCell>{row.name}</TableCell>
 						<TableCell>{row.location}</TableCell>
@@ -483,11 +475,7 @@ export const ComplexCells: Story = {
 				</TableRowGroup>
 				<TableRowGroup>
 					{fleetRows.map((row, i) => (
-						<TableRow
-							key={i}
-							className={rowEntering}
-							style={assignInlineVars({ [staggerIndex]: String(i) })}
-						>
+						<TableRow key={i} staggerIndex={i}>
 							<TableCell>
 								<div className={stack({ gap: '1', align: 'center' })}>
 									<img
