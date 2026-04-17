@@ -274,50 +274,49 @@ export const SmallContainer: Story = {
 			</Box>
 		),
 	],
-	render: () => (
-		<DataTable
-			columnTemplate="auto 2fr 1fr 1fr auto auto"
-			minWidth="800px"
-			aria-label="Responsive fleet table"
-		>
-			<TableRowGroup>
-				<TableRow>
-					<TableHeadCell>ID</TableHeadCell>
-					<TableHeadCell>Mechanic</TableHeadCell>
-					<TableHeadCell>Location</TableHeadCell>
-					<TableHeadCell>Vehicle</TableHeadCell>
-					<TableHeadCell align="right">Price</TableHeadCell>
-					<TableHeadCell>Status</TableHeadCell>
-				</TableRow>
-			</TableRowGroup>
-			<TableRowGroup>
-				<TableRow>
-					<TableCell>522698</TableCell>
-					<TableCell>My Auto Service & Repair</TableCell>
-					<TableCell>Gold Coast</TableCell>
-					<TableCell>Audi A4</TableCell>
-					<TableCell align="right">$99.00</TableCell>
-					<TableCell>
-						<FlexInline>
-							<Badge label="Paid" colour="green" />
-						</FlexInline>
-					</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>597194</TableCell>
-					<TableCell>Magic Spanners</TableCell>
-					<TableCell>Brisbane CBD</TableCell>
-					<TableCell>Porsche Macan</TableCell>
-					<TableCell align="right">$102.00</TableCell>
-					<TableCell>
-						<FlexInline>
-							<Badge label="Unpaid" colour="yellow" />
-						</FlexInline>
-					</TableCell>
-				</TableRow>
-			</TableRowGroup>
-		</DataTable>
-	),
+	render: () => {
+		const rows = generateRows(15);
+
+		return (
+			<DataTable
+				columnTemplate="auto 2fr 1fr 1fr auto auto"
+				minWidth="800px"
+				maxHeight="300px"
+				stickyHead
+				aria-label="Responsive fleet table"
+			>
+				<TableRowGroup>
+					<TableRow>
+						<TableHeadCell>ID</TableHeadCell>
+						<TableHeadCell>Mechanic</TableHeadCell>
+						<TableHeadCell>Location</TableHeadCell>
+						<TableHeadCell>Vehicle</TableHeadCell>
+						<TableHeadCell align="right">Price</TableHeadCell>
+						<TableHeadCell>Status</TableHeadCell>
+					</TableRow>
+				</TableRowGroup>
+				<TableRowGroup>
+					{rows.map((row) => (
+						<TableRow key={row.id}>
+							<TableCell>{row.id}</TableCell>
+							<TableCell>{row.name}</TableCell>
+							<TableCell>{row.location}</TableCell>
+							<TableCell>{row.vehicle}</TableCell>
+							<TableCell align="right">{row.price}</TableCell>
+							<TableCell>
+								<FlexInline>
+									<Badge
+										label={row.status}
+										colour={row.statusColour}
+									/>
+								</FlexInline>
+							</TableCell>
+						</TableRow>
+					))}
+				</TableRowGroup>
+			</DataTable>
+		);
+	},
 };
 
 export const ComplexCells: Story = {
