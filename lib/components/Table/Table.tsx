@@ -20,10 +20,11 @@ Worth noting we use the aria role grid here instead of table, as we have areas
 
 @see https://www.w3.org/TR/wai-aria-1.1/#table
  */
-export const Table = forwardRef<HTMLDivElement, TableProps>(
+export const Table = forwardRef<HTMLTableElement, TableProps>(
 	({ children, padding = '4', stickyHead = false, columnTemplate }, ref) => (
 		<TableContextProvider padding={padding} stickyHead={stickyHead}>
 			<Box
+				as="table"
 				ref={ref}
 				role="grid"
 				width="full"

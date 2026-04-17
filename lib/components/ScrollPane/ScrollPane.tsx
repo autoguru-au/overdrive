@@ -11,18 +11,15 @@ export interface ScrollPaneProps
 	bottomGap?: keyof Tokens['space'];
 	serverVhFallback?: number;
 	includeMobile?: boolean;
-	rounded?: boolean;
 	className?: string;
 }
 
 export const ScrollPane = forwardRef<HTMLDivElement, ScrollPaneProps>(
-	({ className = '', rounded = false, ...rest }, ref) => (
+	({ className = '', ...rest }, ref) => (
 		<Box
 			ref={ref}
 			overflow="auto"
-			className={clsx(className, styles.root, {
-				[styles.rounded]: rounded,
-			})}
+			className={clsx(className, styles.root)}
 			odComponent="scroll-pane"
 			{...rest}
 		/>

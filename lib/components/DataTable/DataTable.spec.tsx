@@ -180,12 +180,10 @@ describe('<DataTable />', () => {
 			render(<ComplexCells />);
 
 			expect(screen.getByRole('region')).toBeInTheDocument();
-			// Verify composition patterns render
-			expect(screen.getByText('Audi S3')).toBeInTheDocument();
+			expect(screen.getAllByText('Audi A6').length).toBeGreaterThan(0);
 			expect(
 				screen.getByText('Service due in 6 days'),
 			).toBeInTheDocument();
-			// Badge text appears in multiple rows, so use getAllByText
 			expect(
 				screen.getAllByText('Requested HA').length,
 			).toBeGreaterThanOrEqual(1);

@@ -3,6 +3,7 @@ import * as React from 'react';
 import { forwardRef } from 'react';
 
 import { Box } from '../Box/Box';
+import { ScrollPane } from '../ScrollPane/ScrollPane';
 import { Table, type TableProps } from '../Table/Table';
 
 import * as styles from './DataTable.css';
@@ -42,13 +43,11 @@ export const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
 		},
 		ref,
 	) => (
-		<Box
+		<ScrollPane
 			ref={ref}
 			role="region"
 			aria-label={ariaLabel}
 			tabIndex={0}
-			overflowX="auto"
-			overflowY={maxHeight ? 'auto' : undefined}
 			style={maxHeight ? { maxHeight } : undefined}
 			className={styles.scrollContainer}
 			odComponent="data-table"
@@ -65,7 +64,7 @@ export const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
 					{children}
 				</Table>
 			</Box>
-		</Box>
+		</ScrollPane>
 	),
 );
 

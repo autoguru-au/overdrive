@@ -24,7 +24,6 @@ export const Standard: Story = {
 	},
 	render: (args) => (
 		<FillHeightBox
-			rounded
 			includeMobile
 			bottomGap="5"
 			width="full"

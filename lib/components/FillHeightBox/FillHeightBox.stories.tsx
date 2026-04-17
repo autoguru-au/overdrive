@@ -18,7 +18,6 @@ type Story = StoryObj<typeof FillHeightBox>;
 
 export const Standard: Story = {
 	args: {
-		rounded: true,
 		includeMobile: true,
 		bottomGap: '5',
 		width: 'full',

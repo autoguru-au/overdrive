@@ -1,4 +1,4 @@
-import { AlertCircleIcon, CalendarIcon, CarIcon } from '@autoguru/icons';
+import { AlertCircleIcon } from '@autoguru/icons';
 import { Meta, type StoryObj } from '@storybook/react-vite';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import isChromatic from 'chromatic/isChromatic';
@@ -318,223 +318,6 @@ export const SmallContainer: Story = {
 	},
 };
 
-export const ComplexCells: Story = {
-	render: () => {
-		const [sort, sortSetter] = useSortState({
-			updated: 'none',
-			status: 'none',
-		});
-
-		return (
-			<DataTable
-				columnTemplate="1fr auto auto auto 2fr auto auto"
-				minWidth="900px"
-				aria-label="Fleet vehicles"
-			>
-				<TableRowGroup>
-					<TableRow>
-						<TableHeadCell>Asset</TableHeadCell>
-						<TableHeadCell>Rego</TableHeadCell>
-						<TableHeadCell>Year</TableHeadCell>
-						<TableHeadCell>Booking ID</TableHeadCell>
-						<TableHeadCell
-							sort={sort.updated}
-							onSort={sortSetter('updated')}
-						>
-							Updated
-						</TableHeadCell>
-						<TableHeadCell
-							sort={sort.status}
-							onSort={sortSetter('status')}
-						>
-							Status
-						</TableHeadCell>
-						<TableHeadCell>Alert</TableHeadCell>
-					</TableRow>
-				</TableRowGroup>
-				<TableRowGroup>
-					<TableRow>
-						<TableCell>
-							<div className={stack({ gap: '1' })}>
-								<Icon
-									icon={CarIcon}
-									size="medium"
-									aria-hidden
-								/>
-								<Text size="2" colour="muted">
-									Audi S3
-								</Text>
-							</div>
-						</TableCell>
-						<TableCell>SD73 PYY</TableCell>
-						<TableCell>2020</TableCell>
-						<TableCell>#12273536</TableCell>
-						<TableCell>
-							<FlexInline gap="1">
-								<Icon
-									icon={AlertCircleIcon}
-									size="small"
-									aria-hidden
-								/>
-								<Text size="3" colour="dark">
-									Service due in 6 days
-								</Text>
-							</FlexInline>
-						</TableCell>
-						<TableCell>
-							<FlexInline>
-								<Badge label="Requested HA" colour="yellow" />
-							</FlexInline>
-						</TableCell>
-						<TableCell>
-							<FlexInline gap="1">
-								<Icon
-									icon={CalendarIcon}
-									size="small"
-									aria-hidden
-								/>
-								<Text size="3" colour="muted">
-									14/06/20
-								</Text>
-							</FlexInline>
-						</TableCell>
-					</TableRow>
-					<TableRow>
-						<TableCell>
-							<div className={stack({ gap: '1' })}>
-								<Icon
-									icon={CarIcon}
-									size="medium"
-									aria-hidden
-								/>
-								<Text size="2" colour="muted">
-									Toyota Camry
-								</Text>
-							</div>
-						</TableCell>
-						<TableCell>AB12 CDE</TableCell>
-						<TableCell>2021</TableCell>
-						<TableCell>#12273537</TableCell>
-						<TableCell>
-							<FlexInline gap="1">
-								<Icon
-									icon={AlertCircleIcon}
-									size="small"
-									aria-hidden
-								/>
-								<Text size="3" colour="dark">
-									Service overdue by 2,000 kms
-								</Text>
-							</FlexInline>
-						</TableCell>
-						<TableCell>
-							<FlexInline>
-								<Badge
-									label="Supplier Uncontactable"
-									colour="yellow"
-								/>
-							</FlexInline>
-						</TableCell>
-						<TableCell>
-							<FlexInline gap="1">
-								<Icon
-									icon={CalendarIcon}
-									size="small"
-									aria-hidden
-								/>
-								<Text size="3" colour="muted">
-									14/06/20
-								</Text>
-							</FlexInline>
-						</TableCell>
-					</TableRow>
-					<TableRow>
-						<TableCell>
-							<div className={stack({ gap: '1' })}>
-								<Icon
-									icon={CarIcon}
-									size="medium"
-									aria-hidden
-								/>
-								<Text size="2" colour="muted">
-									BMW X5
-								</Text>
-							</div>
-						</TableCell>
-						<TableCell>FG34 HIJ</TableCell>
-						<TableCell>2019</TableCell>
-						<TableCell>#12273538</TableCell>
-						<TableCell>
-							<FlexInline gap="1">
-								<Icon
-									icon={AlertCircleIcon}
-									size="small"
-									aria-hidden
-								/>
-								<Text size="3" colour="dark">
-									Service due in 5 days
-								</Text>
-							</FlexInline>
-						</TableCell>
-						<TableCell>
-							<FlexInline>
-								<Badge label="Requested HA" colour="yellow" />
-							</FlexInline>
-						</TableCell>
-						<TableCell>
-							<FlexInline gap="1">
-								<Icon
-									icon={CalendarIcon}
-									size="small"
-									aria-hidden
-								/>
-								<Text size="3" colour="muted">
-									15/06/20
-								</Text>
-							</FlexInline>
-						</TableCell>
-					</TableRow>
-					<TableRow>
-						<TableCell>
-							<div className={stack({ gap: '1' })}>
-								<Icon
-									icon={CarIcon}
-									size="medium"
-									aria-hidden
-								/>
-								<Text size="2" colour="muted">
-									Porsche Macan
-								</Text>
-							</div>
-						</TableCell>
-						<TableCell>KL56 MNO</TableCell>
-						<TableCell>2022</TableCell>
-						<TableCell>#12273539</TableCell>
-						<TableCell />
-						<TableCell>
-							<FlexInline>
-								<Badge label="Complete" colour="green" />
-							</FlexInline>
-						</TableCell>
-						<TableCell>
-							<FlexInline gap="1">
-								<Icon
-									icon={CalendarIcon}
-									size="small"
-									aria-hidden
-								/>
-								<Text size="3" colour="muted">
-									16/06/20
-								</Text>
-							</FlexInline>
-						</TableCell>
-					</TableRow>
-				</TableRowGroup>
-			</DataTable>
-		);
-	},
-};
-
 const animatedRows = Array.from({ length: 10 }, (_, i) => ({
 	id: 200_000 + i,
 	name: [
@@ -667,7 +450,7 @@ const fleetRows = [
 	},
 ];
 
-export const FleetPortal: Story = {
+export const ComplexCells: Story = {
 	render: () => {
 		const [sort, sortSetter] = useSortState({
 			asset: 'none',
@@ -707,7 +490,7 @@ export const FleetPortal: Story = {
 							style={assignInlineVars({ [staggerIndex]: String(i) })}
 						>
 							<TableCell>
-								<div className={stack({ gap: '1' })}>
+								<div className={stack({ gap: '1', align: 'center' })}>
 									<img
 										src={vehicleImageUrl}
 										alt={row.asset}

@@ -4,7 +4,7 @@ import { forwardRef, MouseEventHandler, ReactNode } from 'react';
 import { Box } from '../Box/Box';
 
 export interface TableRowProps {
-	onClick?: MouseEventHandler<HTMLDivElement>;
+	onClick?: MouseEventHandler<HTMLTableRowElement>;
 
 	className?: string;
 	style?: React.CSSProperties;
@@ -12,9 +12,10 @@ export interface TableRowProps {
 	children: ReactNode | ReactNode[];
 }
 
-export const TableRow = forwardRef<HTMLDivElement, TableRowProps>(
+export const TableRow = forwardRef<HTMLTableRowElement, TableRowProps>(
 	({ children, onClick, className, style }, ref) => (
 		<Box
+			as="tr"
 			ref={ref}
 			display="contents"
 			role="row"
