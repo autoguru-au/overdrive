@@ -56,6 +56,11 @@ jobs:
             - name: Yarn install
               run: yarn --immutable
 
+            - name: Configure git identity for tag creation
+              run: |
+                  git config user.email "github-actions[bot]@users.noreply.github.com"
+                  git config user.name "github-actions[bot]"
+
             - name: Save existing tags
               run: git tag -l | sort > /tmp/tags-before
 
