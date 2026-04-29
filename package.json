@@ -15,6 +15,10 @@
 			"types": "./dist/components/*/index.d.ts",
 			"default": "./dist/components/*/index.js"
 		},
+		"./components/*/default": {
+			"types": "./dist/components/*/default.d.ts",
+			"default": "./dist/components/*/default.js"
+		},
 		"./hooks": {
 			"types": "./dist/hooks/index.d.ts",
 			"default": "./dist/hooks/index.js"
