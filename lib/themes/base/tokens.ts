@@ -60,8 +60,8 @@ export const tokens = {
 			borderDisabled: colourMap.gray['100'],
 			surfaceDisabled: colourMap.gray['400'],
 			contentDisabled: colourMap.gray['600'],
-			link: `${overdriveTokens.color.content.info}`,
-			linkVisited: `${overdriveTokens.color.interactive.link}`,
+			link: colourMap.green['600'],
+			linkVisited: colourMap.green['700'],
 			overlayBg: colourMap.gray['300'],
 			overlayContainer: colourMap.white,
 			placeholder: colourMap.gray['700'],
@@ -75,7 +75,7 @@ export const tokens = {
 		},
 		foreground: {
 			body: colourMap.gray['900'],
-			link: colourMap.blue['500'],
+			link: colourMap.green['600'],
 		},
 		background: {
 			body: colourMap.white,
@@ -244,7 +244,7 @@ export const tokens = {
 			secondary: colourMap.gray['700'],
 			brand: colourMap.green['600'],
 			shine: colourMap.yellow['500'],
-			link: colourMap.blue['500'],
+			link: colourMap.green['600'],
 			dark: colourMap.gray['900'],
 			white: colourMap.white,
 			muted: colourMap.gray['400'],
