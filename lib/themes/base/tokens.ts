@@ -1,5 +1,5 @@
 import { buildColourGamut } from '../makeTheme';
-import { overdriveTokens, type ThemeTokens } from '../theme.css';
+import { type ThemeTokens } from '../theme.css';
 
 import {
 	colourMap,
