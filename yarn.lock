@@ -139,9 +139,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@autoguru/eslint-plugin@npm:2.0.0":
-  version: 2.0.0
-  resolution: "@autoguru/eslint-plugin@npm:2.0.0"
+"@autoguru/eslint-plugin@npm:2.0.1":
+  version: 2.0.1
+  resolution: "@autoguru/eslint-plugin@npm:2.0.1"
   dependencies:
     "@eslint/compat": "npm:^1.2.6"
     "@eslint/eslintrc": "npm:^3.2.0"
@@ -161,7 +161,7 @@ __metadata:
     typescript-eslint: "npm:^8.24.1"
   peerDependencies:
     eslint: ">=7"
-  checksum: 10/a6d799d7a03a58ceecaa05382d3c4ad939476956ce6f54632c6ae60e8531034551a21084f55286ac22d2262deb98ccc31fb36192fe5d7ddb6d3ab73e6d0a957c
+  checksum: 10/fa72406de8d7c3f15339944fe2c9391dc777704961e850d4d7b1c16bc13deb8bc6e00e9feab253f5ac404fa3e2f92986b12421721f2837f2edc2e75ecdf64a35
   languageName: node
   linkType: hard
 
@@ -182,7 +182,7 @@ __metadata:
   dependencies:
     "@antebudimir/eslint-plugin-vanilla-extract": "npm:^1.12.0"
     "@autoguru/babel-preset": "npm:3.2.0"
-    "@autoguru/eslint-plugin": "npm:2.0.0"
+    "@autoguru/eslint-plugin": "npm:2.0.1"
     "@autoguru/icons": "npm:1.8.22"
     "@autoguru/tsconfig": "npm:1.3.1"
     "@autoguru/utilities": "npm:^1.3.3"
@@ -237,7 +237,7 @@ __metadata:
     babel-plugin-add-import-extension: "npm:1.6.0"
     babel-plugin-dev-expression: "npm:0.2.3"
     babel-plugin-macros: "npm:3.1.0"
-    browserslist-config-autoguru: "npm:2.5.2"
+    browserslist-config-autoguru: "npm:2.5.3"
     chromatic: "npm:13.3.1"
     clsx: "npm:2.1.1"
     colord: "npm:2.9.3"
@@ -6763,12 +6763,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"browserslist-config-autoguru@npm:2.5.2":
-  version: 2.5.2
-  resolution: "browserslist-config-autoguru@npm:2.5.2"
+"browserslist-config-autoguru@npm:2.5.3":
+  version: 2.5.3
+  resolution: "browserslist-config-autoguru@npm:2.5.3"
   dependencies:
     browserslist: "npm:^4.25.1"
-  checksum: 10/117c5afd93b613643a731ed7aa7d55b06861aa05bbda9bd4421e1fffe0e04012e3a835a9e2f421e3eb4e1455b9e0e8875c96f76f25ec07ce8bebbe480f27445a
+  checksum: 10/a4aab1f5609590bfe286da128cf839377976143ccb025bcd1d2e2ad7344ab3beb7d86e129f42621e0c720df81f0705561d5509127ba296aac2482e725f32c21e
   languageName: node
   linkType: hard
 
