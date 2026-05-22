@@ -89,7 +89,9 @@
 		"./dist/styles/global/*",
 		"./dist/themes/**/*",
 		"./dist/**/*.css.js",
-		"./lib/**/*.css.ts"
+		"./lib/**/*.css.ts",
+		"./lib/hooks/**/*",
+		"./dist/hooks/**/*"
 	],
 	"files": [
 		"dist"
