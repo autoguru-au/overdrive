@@ -1,8 +1,8 @@
 import { invariant } from '@autoguru/utilities';
-import { I18nProvider as ReactAriaI18nProvider } from '@react-aria/i18n';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import { isEqual } from 'es-toolkit';
 import React, { createContext, useContext, useEffect, useMemo } from 'react';
+import { I18nProvider as ReactAriaI18nProvider } from 'react-aria';
 
 import type { BreakPoints } from '../../themes';
 import baseTheme from '../../themes/base';
