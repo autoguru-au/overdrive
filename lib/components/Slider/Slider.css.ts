@@ -1,7 +1,9 @@
 import { style } from '@vanilla-extract/css';
 
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
-import { cssLayerComponent } from '../../styles/layers.css';
+import { cssLayerComponent, ensureLayerOrder } from '../../styles/layers.css';
+
+ensureLayerOrder();
 import { selectors } from '../../styles/selectors';
 import { sprinkles } from '../../styles/sprinkles.css';
 import { overdriveTokens as vars } from '../../themes/theme.css';

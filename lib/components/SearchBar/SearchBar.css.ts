@@ -2,7 +2,9 @@ import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
-import { cssLayerComponent } from '../../styles/layers.css';
+import { cssLayerComponent, ensureLayerOrder } from '../../styles/layers.css';
+
+ensureLayerOrder();
 import { sprinkles } from '../../styles/sprinkles.css';
 import { overdriveTokens as tokens } from '../../themes/theme.css';
 

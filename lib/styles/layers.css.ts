@@ -1,6 +1,22 @@
 import { globalLayer } from '@vanilla-extract/css';
 
-globalLayer('ag, reset, theme, styleprops, component, util');
+const LAYER_ORDER = 'ag, reset, theme, styleprops, component, util';
+globalLayer(LAYER_ORDER);
+
+/**
+ * Call in any `.css.ts` file that uses cascade layers to guarantee the
+ * `@layer` order declaration is emitted *inside that file's CSS output*.
+ *
+ * Vanilla Extract guarantees `@layer` declarations appear before `@layer`
+ * blocks **within a single file**, but not across files.  Without this,
+ * a bundler that loads `Button.css.js` before `layers.css.js` would see
+ * `@layer component { … }` first, establishing `component` as the
+ * lowest-priority layer and breaking the cascade.
+ *
+ * The call is idempotent — multiple invocations produce a single
+ * `@layer ag, reset, theme, styleprops, component, util;` line.
+ */
+export const ensureLayerOrder = () => globalLayer(LAYER_ORDER);
 
 export const cssLayerReset = globalLayer('reset');
 export const cssLayerTheme = globalLayer('theme');

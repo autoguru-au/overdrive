@@ -1,6 +1,8 @@
 import { recipe } from '@vanilla-extract/recipes';
 
-import { cssLayerComponent } from '../../../styles/layers.css';
+import { cssLayerComponent, ensureLayerOrder } from '../../../styles/layers.css';
+
+ensureLayerOrder();
 import { overdriveTokens as tokens } from '../../../themes/theme.css';
 
 export const inlineCode = recipe({

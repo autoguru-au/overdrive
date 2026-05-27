@@ -1,7 +1,9 @@
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
 
-import { cssLayerComponent } from '../../styles/layers.css';
+import { cssLayerComponent, ensureLayerOrder } from '../../styles/layers.css';
+
+ensureLayerOrder();
 import { responsiveConditions, sprinkles } from '../../styles/sprinkles.css';
 
 const getSizeStyle = (scale: number) => `${scale * 100}%`;

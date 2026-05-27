@@ -1,7 +1,9 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
-import { cssLayerComponent } from '../../styles/layers.css';
+import { cssLayerComponent, ensureLayerOrder } from '../../styles/layers.css';
+
+ensureLayerOrder();
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
 const colorAccent = vars.colours.foreground.body;

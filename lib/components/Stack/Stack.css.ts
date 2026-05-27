@@ -1,6 +1,8 @@
 import { style } from '@vanilla-extract/css';
 
-import { cssLayerComponent } from '../../styles/layers.css';
+import { cssLayerComponent, ensureLayerOrder } from '../../styles/layers.css';
+
+ensureLayerOrder();
 import { gapVar } from '../../styles/vars.css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
