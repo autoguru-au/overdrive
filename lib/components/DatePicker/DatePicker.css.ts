@@ -1,9 +1,9 @@
-import { style, styleVariants } from '@vanilla-extract/css';
+import { globalLayer, style, styleVariants } from '@vanilla-extract/css';
 
-import { cssLayerComponent, ensureLayerOrder } from '../../styles/layers.css';
-
-ensureLayerOrder();
+import { LAYER_ORDER, cssLayerComponent } from '../../styles/layers.css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
+
+globalLayer(LAYER_ORDER);
 
 export const inputContainer = style({
 	'@layer': {

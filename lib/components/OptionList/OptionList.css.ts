@@ -1,12 +1,12 @@
-import { style } from '@vanilla-extract/css';
+import { globalLayer, style } from '@vanilla-extract/css';
 
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
-import { cssLayerComponent, ensureLayerOrder } from '../../styles/layers.css';
-
-ensureLayerOrder();
+import { LAYER_ORDER, cssLayerComponent } from '../../styles/layers.css';
 import { selectors } from '../../styles/selectors';
 import { sprinkles } from '../../styles/sprinkles.css';
 import { overdriveTokens as tokens } from '../../themes/theme.css';
+
+globalLayer(LAYER_ORDER);
 
 // === Group styles
 export const groupStyle = sprinkles({

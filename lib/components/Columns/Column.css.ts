@@ -1,10 +1,11 @@
+import { globalLayer } from '@vanilla-extract/css';
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
 
-import { cssLayerComponent, ensureLayerOrder } from '../../styles/layers.css';
-
-ensureLayerOrder();
+import { LAYER_ORDER, cssLayerComponent } from '../../styles/layers.css';
 import { responsiveConditions, sprinkles } from '../../styles/sprinkles.css';
+
+globalLayer(LAYER_ORDER);
 
 const getSizeStyle = (scale: number) => `${scale * 100}%`;
 

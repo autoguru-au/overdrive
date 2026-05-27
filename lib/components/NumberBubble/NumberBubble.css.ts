@@ -1,8 +1,8 @@
-import { style } from '@vanilla-extract/css';
+import { globalLayer, style } from '@vanilla-extract/css';
 
-import { cssLayerComponent, ensureLayerOrder } from '../../styles/layers.css';
+import { LAYER_ORDER, cssLayerComponent } from '../../styles/layers.css';
 
-ensureLayerOrder();
+globalLayer(LAYER_ORDER);
 
 export const numberStyle = style({
 	'@layer': {
