@@ -1,14 +1,16 @@
-import { createContainer, style } from '@vanilla-extract/css';
+import { createContainer, globalLayer, style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 import { elementReset } from '../../styles/elementReset.css';
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
-import { cssLayerComponent } from '../../styles/layers.css';
+import { LAYER_ORDER, cssLayerComponent } from '../../styles/layers.css';
 import { selectors } from '../../styles/selectors';
 import { sprinkles } from '../../styles/sprinkles.css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
 import { WIDTH_COMPACT_ORIENTATION } from './constants';
+
+globalLayer(LAYER_ORDER);
 
 const TOGGLE_BUTTON_HEIGHT = '40px';
 

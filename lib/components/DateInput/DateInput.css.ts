@@ -1,8 +1,10 @@
-import { style } from '@vanilla-extract/css';
+import { globalLayer, style } from '@vanilla-extract/css';
 
-import { cssLayerComponent } from '../../styles/layers.css';
+import { LAYER_ORDER, cssLayerComponent } from '../../styles/layers.css';
 import { selectors } from '../../styles/selectors';
 import { sprinkles } from '../../styles/sprinkles.css';
+
+globalLayer(LAYER_ORDER);
 
 export const segmentStyle = style({
 	'@layer': {

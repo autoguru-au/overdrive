@@ -1,8 +1,10 @@
-import { style, styleVariants } from '@vanilla-extract/css';
+import { globalLayer, style, styleVariants } from '@vanilla-extract/css';
 
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
-import { cssLayerComponent } from '../../styles/layers.css';
+import { LAYER_ORDER, cssLayerComponent } from '../../styles/layers.css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
+
+globalLayer(LAYER_ORDER);
 
 const colorAccent = vars.colours.foreground.body;
 const colorContrast = vars.colours.background.body;

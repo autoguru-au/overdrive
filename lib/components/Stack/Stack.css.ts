@@ -1,8 +1,10 @@
-import { style } from '@vanilla-extract/css';
+import { globalLayer, style } from '@vanilla-extract/css';
 
-import { cssLayerComponent } from '../../styles/layers.css';
+import { LAYER_ORDER, cssLayerComponent } from '../../styles/layers.css';
 import { gapVar } from '../../styles/vars.css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
+
+globalLayer(LAYER_ORDER);
 
 export const hr = style({
 	'@layer': {
