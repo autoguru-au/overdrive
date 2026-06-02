@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 4.57.3
+
+### Patch Changes
+
+- e04aa2e: Ensure CSS layer order declaration is emitted in each component's CSS
+  output to prevent cascade ordering issues with bundler chunking
+
 ## 4.57.2
 
 ### Patch Changes
