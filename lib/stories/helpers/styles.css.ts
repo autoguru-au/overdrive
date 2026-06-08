@@ -37,6 +37,72 @@ export const gridSwatches = style({
 	},
 });
 
+export const paletteGrid = style({
+	display: 'flex',
+	flexDirection: 'column',
+	gap: '32px',
+	maxWidth: '1040px',
+});
+
+export const hueGroup = style({
+	display: 'flex',
+	flexDirection: 'column',
+	gap: '10px',
+});
+
+export const rampBar = style({
+	borderRadius: overdriveTokens.border.radius.lg,
+	boxShadow: 'inset 0 0 0 1px rgb(0 0 0 / 10%)',
+	display: 'flex',
+	overflow: 'hidden',
+	width: '100%',
+});
+
+export const rampSegment = style({
+	alignItems: 'flex-start',
+	appearance: 'none',
+	border: 'none',
+	color: 'inherit',
+	cursor: 'pointer',
+	display: 'flex',
+	flex: 1,
+	flexDirection: 'column',
+	font: 'inherit',
+	gap: '3px',
+	justifyContent: 'flex-end',
+	margin: 0,
+	minHeight: '84px',
+	minWidth: 0,
+	overflow: 'hidden',
+	padding: '10px',
+	textAlign: 'left',
+	transitionDuration: '120ms',
+	transitionProperty: 'box-shadow',
+	transitionTimingFunction: 'ease',
+	selectors: {
+		'&:hover': {
+			boxShadow: 'inset 0 0 0 9999px rgb(255 255 255 / 14%)',
+		},
+		'&:focus-visible': {
+			outline: `2px solid ${overdriveTokens.color.gamut.gray[900]}`,
+			outlineOffset: '-2px',
+		},
+	},
+});
+
+export const rampShade = style({
+	fontSize: '13px',
+	fontWeight: 700,
+	letterSpacing: '0.02em',
+});
+
+export const rampHex = style({
+	fontFamily: 'monospace',
+	fontSize: '10px',
+	opacity: 0.85,
+	textTransform: 'uppercase',
+});
+
 export const hexPill = style({
 	backgroundColor: 'hsl(0 0 100 / 75%)',
 	borderRadius: '100px',

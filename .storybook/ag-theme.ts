@@ -4,7 +4,7 @@ const brand = {
 	brandTitle: 'AutoGuru - Car servicing and repairs made easy',
 	brandUrl: 'https://www.autoguru.com.au/',
 	colorPrimary: '#01c68c',
-	colorSecondary: '#00dd95',
+	colorSecondary: '#00dda5',
 	barHoverColor: '#01c68c',
 };
 
@@ -12,7 +12,7 @@ export const lightTheme = create({
 	...brand,
 	base: 'light',
 	brandImage: 'https://cdn.autoguru.com.au/images/logos/otto.svg',
-	barSelectedColor: '#05987a',
+	barSelectedColor: '#18856f',
 	barTextColor: '#34384c',
 });
 
@@ -20,7 +20,7 @@ export const darkTheme = create({
 	...brand,
 	base: 'dark',
 	brandImage: 'https://cdn.autoguru.com.au/images/logos/otto-white.svg',
-	barSelectedColor: '#00dd95',
+	barSelectedColor: '#00dda5',
 	barTextColor: '#d4d9dd',
 	textColor: '#d4d9dd',
 });

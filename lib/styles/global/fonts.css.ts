@@ -11,7 +11,7 @@ globalFontFace('AvertaStandard', {
 	src: `local('Averta Std Semibold'), local('AvertaStd-Semibold'),url('https://cdn.autoguru.com.au/assets/fonts/avertastd-semibold-webfont.woff2') format('woff2'),url('https://cdn.autoguru.com.au/assets/fonts/avertastd-semibold-webfont.woff') format('woff')`,
 	fontDisplay: 'swap',
 	fontStyle: 'normal',
-	fontWeight: 500,
+	fontWeight: 600,
 });
 
 globalFontFace('AvertaStandard', {

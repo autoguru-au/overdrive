@@ -47,7 +47,7 @@ export const WithCustomBullet: Story = {
 				style={{
 					width: '20px',
 					height: '20px',
-					backgroundColor: ' #00dd95',
+					backgroundColor: ' #00dda5',
 					color: 'white',
 					borderRadius: '50%',
 					flexDirection: 'row',
