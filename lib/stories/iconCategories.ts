@@ -231,7 +231,7 @@ export const iconCategory: Record<string, IconCategory> = {
 	XIcon: "System & Devices",
 	XSocialFilledIcon: "Filled",
 	XSocialIcon: "Brands",
-	XSquareIcon: "Math & Finance",
+	XSquareIcon: "System & Devices",
 	YoutubeFilledIcon: "Filled",
 	YoutubeIcon: "Brands",
 };
