@@ -1,5 +1,40 @@
 # @autoguru/overdrive
 
+## 4.58.0
+
+### Minor Changes
+
+- 6292cc0: Add `SplitButton`: a button that pairs a primary action with a
+  dropdown menu of related secondary actions. The left segment triggers the
+  primary action while the chevron on the right opens a menu of `DropDownOption`
+  children. Both segments share a single `variant`/`size`.
+
+  It composes existing primitives (`Button`, `Flyout`, `DropDownOptionsList`,
+  `DropDownOption`) and follows the WAI-ARIA split button pattern: two
+  independent buttons in a `role="group"`, with the trigger exposing
+  `aria-haspopup`/`aria-expanded` and Escape-to-close.
+
+  `Button` was also extended to accept and forward `onKeyDown` and the
+  `aria-controls`/`aria-expanded`/`aria-haspopup` attributes, which menu and
+  disclosure patterns require. This is additive and backwards compatible.
+
+- 86cd7cf: Upgrade `@autoguru/icons` to `2.0.1` (Phosphor-style redesign) and
+  bump the peer dependency floor to `>=2.0.0`.
+
+  `@autoguru/icons@2.0.x` renames/removes a number of icons, so every internal
+  usage in the library was migrated to the new names (e.g. `Chevron*` →
+  `Caret*`, `Close`/`WindowClose` → `X`, `Magnify` → `MagnifyingGlass`, `Email`
+  → `Envelope`, `Settings` → `Gear`, `Sort` → `ArrowsDownUp`, `StoreOutline` →
+  `Storefront`, `TrashCanOutline` → `Trash`, `Alert` → `Warning`). No public
+  component API changed.
+
+  The `Foundation/Icon Set` story was also rebuilt with a live name search and
+  icons grouped into the design-system categories from the DS 2026 Figma.
+
+  > Note: consumers still on `@autoguru/icons` 1.x must upgrade to 2.0.1.
+  > Reviewers may wish to release this as a major bump if that peer-dependency
+  > change is treated as breaking for downstream apps.
+
 ## 4.57.3
 
 ### Patch Changes
