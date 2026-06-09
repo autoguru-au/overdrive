@@ -8,6 +8,7 @@ import {
 	ReactNode,
 	useCallback,
 	useEffect,
+	useMemo,
 	useRef,
 	useState,
 } from 'react';
@@ -140,7 +141,11 @@ export const SplitButton: FunctionComponent<SplitButtonProps> = ({
 		[closeAndFocusTrigger],
 	);
 
-	useOutsideClick([menuRef, triggerRef], handleClose);
+	// `useOutsideClick` keeps the refs array in its effect deps, so memoise it to
+	// avoid tearing down and re-binding the document `mouseup` listener on every
+	// render. The refs themselves are stable, so an empty dep list is correct.
+	const outsideClickRefs = useMemo(() => [menuRef, triggerRef], []);
+	useOutsideClick(outsideClickRefs, handleClose);
 
 	// The menu renders in a portal, so an Escape keypress while focus is inside
 	// it does not bubble to the trigger. Listen on the menu element directly so
@@ -158,7 +163,12 @@ export const SplitButton: FunctionComponent<SplitButtonProps> = ({
 
 	return (
 		<>
-			<div role="group" className={styles.group} data-testid={testId}>
+			<div
+				role="group"
+				aria-label={label}
+				className={styles.group}
+				data-testid={testId}
+			>
 				<Button
 					{...sharedProps}
 					className={styles.primary}
@@ -171,7 +181,7 @@ export const SplitButton: FunctionComponent<SplitButtonProps> = ({
 					ref={triggerRef}
 					className={styles.trigger}
 					aria-label={menuLabel}
-					aria-haspopup="menu"
+					aria-haspopup
 					aria-expanded={isOpen}
 					onClick={onTriggerClick}
 					onKeyDown={onTriggerKeyDown}

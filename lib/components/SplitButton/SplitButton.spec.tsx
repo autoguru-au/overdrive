@@ -1,5 +1,6 @@
 import { CloudUploadOutlineIcon, ImportIcon } from '@autoguru/icons';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import * as React from 'react';
 import { useState } from 'react';
 import { describe, expect, it, vi } from 'vitest';
@@ -51,11 +52,12 @@ describe('<SplitButton />', () => {
 		render(<SplitButton {...standardProps} />);
 		expect(getPrimary()).toBeInTheDocument();
 		expect(getTrigger()).toBeInTheDocument();
-		expect(getTrigger()).toHaveAttribute('aria-haspopup', 'menu');
+		expect(getTrigger()).toHaveAttribute('aria-haspopup', 'true');
 		expect(getTrigger()).toHaveAttribute('aria-expanded', 'false');
 	});
 
-	it('calls onClick for the primary action without opening the menu', () => {
+	it('calls onClick for the primary action without opening the menu', async () => {
+		const user = userEvent.setup();
 		const onClick = vi.fn();
 		const onOpenChange = vi.fn();
 		render(
@@ -66,75 +68,81 @@ describe('<SplitButton />', () => {
 			/>,
 		);
 
-		fireEvent.click(getPrimary());
+		await user.click(getPrimary());
 		expect(onClick).toHaveBeenCalledTimes(1);
 		expect(onOpenChange).not.toHaveBeenCalled();
 	});
 
-	it('toggles the menu open and closed from the trigger', () => {
+	it('toggles the menu open and closed from the trigger', async () => {
+		const user = userEvent.setup();
 		const onOpenChange = vi.fn();
 		render(
 			<SplitButton {...standardProps} onOpenChange={onOpenChange} />,
 		);
 		const trigger = getTrigger();
 
-		fireEvent.click(trigger);
+		await user.click(trigger);
 		expect(onOpenChange).toHaveBeenCalledWith(true);
 		expect(trigger).toHaveAttribute('aria-expanded', 'true');
 
-		fireEvent.click(trigger);
+		await user.click(trigger);
 		expect(onOpenChange).toHaveBeenCalledWith(false);
 		expect(trigger).toHaveAttribute('aria-expanded', 'false');
 	});
 
-	it('closes the menu on Escape from the trigger', () => {
+	it('closes the menu on Escape from the trigger', async () => {
+		const user = userEvent.setup();
 		const onOpenChange = vi.fn();
 		render(
 			<SplitButton {...standardProps} onOpenChange={onOpenChange} />,
 		);
 		const trigger = getTrigger();
 
-		fireEvent.click(trigger);
+		await user.click(trigger);
 		expect(onOpenChange).toHaveBeenLastCalledWith(true);
 
-		fireEvent.keyDown(trigger, { key: 'Escape' });
+		await user.keyboard('{Escape}');
 		expect(onOpenChange).toHaveBeenLastCalledWith(false);
 	});
 
-	it('closes the menu on Escape from within the menu', () => {
+	it('closes the menu on Escape from within the menu', async () => {
+		const user = userEvent.setup();
 		const onOpenChange = vi.fn();
 		render(
 			<SplitButton {...standardProps} onOpenChange={onOpenChange} />,
 		);
 
-		fireEvent.click(getTrigger());
+		await user.click(getTrigger());
 		expect(onOpenChange).toHaveBeenLastCalledWith(true);
 
 		const option = screen.getByRole('button', { name: /single upload/i });
-		fireEvent.keyDown(option, { key: 'Escape' });
+		option.focus();
+		await user.keyboard('{Escape}');
 		expect(onOpenChange).toHaveBeenLastCalledWith(false);
 	});
 
-	it('does not emit onOpenChange when clicking away while already closed', () => {
+	it('does not emit onOpenChange when clicking away while already closed', async () => {
+		const user = userEvent.setup();
 		const onOpenChange = vi.fn();
 		render(
 			<SplitButton {...standardProps} onOpenChange={onOpenChange} />,
 		);
 
-		// useOutsideClick listens on document mouseup; firing it while the menu
-		// is closed must not report a (redundant) close.
-		fireEvent.mouseUp(document.body);
+		// useOutsideClick listens on document mouseup; clicking away while the
+		// menu is closed must not report a (redundant) close.
+		await user.click(document.body);
 		expect(onOpenChange).not.toHaveBeenCalled();
 	});
 
 	describe('Controlled mode', () => {
-		it('respects the isOpen prop and reports requested changes', () => {
+		it('respects the isOpen prop and reports requested changes', async () => {
+			const user = userEvent.setup();
 			const onOpenChange = vi.fn();
 			render(<ControlledSplitButton onOpenChange={onOpenChange} />);
 			const trigger = getTrigger();
 			expect(trigger).toHaveAttribute('aria-expanded', 'false');
 
-			fireEvent.click(trigger);
+			await user.click(trigger);
 			expect(onOpenChange).toHaveBeenCalledWith(true);
 			expect(trigger).toHaveAttribute('aria-expanded', 'true');
 		});

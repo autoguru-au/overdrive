@@ -85,7 +85,7 @@ export const Standard: Story = {
 		});
 
 		await step('Trigger opens the menu', async () => {
-			await expect(trigger).toHaveAttribute('aria-haspopup', 'menu');
+			await expect(trigger).toHaveAttribute('aria-haspopup', 'true');
 			await userEvent.click(trigger);
 			await expect(args.onOpenChange).toHaveBeenCalledWith(true);
 			await expect(trigger).toHaveAttribute('aria-expanded', 'true');
