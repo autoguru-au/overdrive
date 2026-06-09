@@ -100,6 +100,8 @@ export {
 	Slider,
 	type SliderProps,
 	SliderProgress,
+	SplitButton,
+	type SplitButtonProps,
 	Stack,
 	StandardModal,
 	EStandardModalSize,

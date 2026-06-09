@@ -45,12 +45,16 @@ export interface ButtonProps
 			| 'onBlur'
 			| 'onClick'
 			| 'onFocus'
+			| 'onKeyDown'
 			| 'onMouseEnter'
 			| 'onMouseLeave'
 			| 'type'
 			| 'className'
 		>,
-		Pick<AriaAttributes, 'aria-label'>,
+		Pick<
+			AriaAttributes,
+			'aria-label' | 'aria-controls' | 'aria-expanded' | 'aria-haspopup'
+		>,
 		StyledButtonProps,
 		TestIdProp {
 	/**
@@ -136,10 +140,14 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			onBlur,
 			onClick: incomingOnClick,
 			onFocus,
+			onKeyDown,
 			onMouseEnter,
 			onMouseLeave,
 
 			'aria-label': ariaLabel,
+			'aria-controls': ariaControls,
+			'aria-expanded': ariaExpanded,
+			'aria-haspopup': ariaHasPopup,
 		},
 		ref,
 	) => {
@@ -191,11 +199,15 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			pointerEvents: functionallyDisabled ? 'none' : undefined,
 
 			'aria-label': isLoading ? language.loading : ariaLabel,
+			'aria-controls': ariaControls,
+			'aria-expanded': ariaExpanded,
+			'aria-haspopup': ariaHasPopup,
 			'data-loading': isLoading ? '' : undefined,
 
 			onBlur,
 			onClick,
 			onFocus,
+			onKeyDown,
 			onMouseEnter,
 			onMouseLeave,
 		});
