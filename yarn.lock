@@ -165,14 +165,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@autoguru/icons@npm:2.0.0":
-  version: 2.0.0
-  resolution: "@autoguru/icons@npm:2.0.0"
+"@autoguru/icons@npm:2.0.1":
+  version: 2.0.1
+  resolution: "@autoguru/icons@npm:2.0.1"
   dependencies:
     tslib: "npm:^2.1.0"
   peerDependencies:
     react: ">=16.8"
-  checksum: 10/376bbc6a47b97b77240a20f20efb40375887f9bc0af136d309f5735f57dbde51c65b5f55dd37a459d00ebf35898eae104b2bda9de3e24de927c9e4a92d18259e
+  checksum: 10/2e25a934986cea6c587cb858af32ca8946db185171fbf975b2e4e84fa24bbb1f70b01f1a029852187a5e7231ba255a67a185fa03178254aeb237b698f77ab36a
   languageName: node
   linkType: hard
 
@@ -183,7 +183,7 @@ __metadata:
     "@antebudimir/eslint-plugin-vanilla-extract": "npm:^1.12.0"
     "@autoguru/babel-preset": "npm:3.2.0"
     "@autoguru/eslint-plugin": "npm:2.0.1"
-    "@autoguru/icons": "npm:2.0.0"
+    "@autoguru/icons": "npm:2.0.1"
     "@autoguru/tsconfig": "npm:1.3.1"
     "@autoguru/utilities": "npm:^1.3.3"
     "@babel/cli": "npm:7.28.3"
