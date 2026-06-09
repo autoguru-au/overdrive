@@ -97,6 +97,7 @@ export { SelectInput } from './SelectInput';
 export { SimplePagination, EPageChangeDirection } from './SimplePagination';
 export { Slider, type SliderProps } from './Slider';
 export { SliderProgress } from './SliderProgress';
+export { SplitButton, type SplitButtonProps } from './SplitButton';
 export { Stack } from './Stack';
 export { StandardModal, EStandardModalSize } from './StandardModal';
 export { StarRating, EStarRatingSize } from './StarRating';
