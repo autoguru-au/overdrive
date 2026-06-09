@@ -1,4 +1,4 @@
-import { CloudUploadOutlineIcon, ImportIcon } from '@autoguru/icons';
+import { CloudArrowUpIcon, DownloadIcon } from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { type ComponentProps, useState } from 'react';
 import { action } from 'storybook/actions';
@@ -59,8 +59,8 @@ type Story = StoryObj<typeof meta>;
 
 const options = (
 	<>
-		<DropDownOption label="Single upload" icon={CloudUploadOutlineIcon} />
-		<DropDownOption label="Import from CSV" icon={ImportIcon} />
+		<DropDownOption label="Single upload" icon={CloudArrowUpIcon} />
+		<DropDownOption label="Import from CSV" icon={DownloadIcon} />
 		<DropDownOption disabled label="Import from API" />
 	</>
 );

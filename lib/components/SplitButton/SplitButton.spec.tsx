@@ -1,4 +1,4 @@
-import { CloudUploadOutlineIcon, ImportIcon } from '@autoguru/icons';
+import { CloudArrowUpIcon, DownloadIcon } from '@autoguru/icons';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import * as React from 'react';
@@ -13,8 +13,8 @@ const standardProps = {
 	label: 'Bulk upload',
 	children: (
 		<>
-			<DropDownOption label="Single upload" icon={CloudUploadOutlineIcon} />
-			<DropDownOption label="Import from CSV" icon={ImportIcon} />
+			<DropDownOption label="Single upload" icon={CloudArrowUpIcon} />
+			<DropDownOption label="Import from CSV" icon={DownloadIcon} />
 		</>
 	),
 };
