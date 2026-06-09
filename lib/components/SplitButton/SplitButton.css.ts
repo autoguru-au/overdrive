@@ -38,8 +38,7 @@ export const primary = style({
 /**
  * Menu trigger segment (right, the chevron). Only the outer (right) corners are
  * rounded. A negative left margin collapses the adjacent 1px borders of the two
- * bordered segments into a single divider line; for filled intents the
- * `::before` overlay renders a subtle divider instead.
+ * bordered segments into a single divider line.
  */
 export const trigger = style({
 	'@layer': {
@@ -52,16 +51,6 @@ export const trigger = style({
 				// outline and overlapped border are never clipped.
 				'&:hover, &:focus-visible': {
 					zIndex: 1,
-				},
-				'&::before': {
-					backgroundColor: 'currentColor',
-					bottom: vars.space['1'],
-					content: '""',
-					left: 0,
-					opacity: 0.2,
-					position: 'absolute',
-					top: vars.space['1'],
-					width: vars.border.width['1'],
 				},
 			},
 		},
