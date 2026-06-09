@@ -1,4 +1,4 @@
-import { DownloadIcon, TrashCanOutlineIcon } from '@autoguru/icons';
+import { DownloadIcon, TrashIcon } from '@autoguru/icons';
 import { render, screen, fireEvent } from '@testing-library/react';
 import * as React from 'react';
 import { useState } from 'react';
@@ -8,7 +8,7 @@ import { DropDown } from './DropDown';
 import { DropDownOption } from './DropDownOption';
 
 const option1 = <DropDownOption label="Download" icon={DownloadIcon} />;
-const option2 = <DropDownOption label="Delete" icon={TrashCanOutlineIcon} />;
+const option2 = <DropDownOption label="Delete" icon={TrashIcon} />;
 
 const standardProps = {
 	label: 'Attachment',

@@ -1,4 +1,4 @@
-import { ChevronLeftIcon, ChevronRightIcon } from '@autoguru/icons';
+import { CaretLeftIcon, CaretRightIcon } from '@autoguru/icons';
 import {
 	getLocalTimeZone,
 	// currently only supporting western-style Gregorian calendar
@@ -141,14 +141,14 @@ export const Calendar = ({
 					{...prevButtonProps}
 					aria-label={textValues.prevLabel}
 				>
-					<Icon icon={ChevronLeftIcon} size="medium" />
+					<Icon icon={CaretLeftIcon} size="medium" />
 				</CalendarButton>
 				<h4 className={titleStyle}>{calendarTitle}</h4>
 				<CalendarButton
 					{...nextButtonProps}
 					aria-label={textValues.nextLabel}
 				>
-					<Icon icon={ChevronRightIcon} size="medium" />
+					<Icon icon={CaretRightIcon} size="medium" />
 				</CalendarButton>
 			</div>
 			<CalendarGrid

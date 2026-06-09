@@ -22,11 +22,11 @@ exports[`<Pagination /> > should match snapshot for loading phase 1`] = `
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
           fill="currentColor"
           focusable="false"
-          viewBox="0 0 24 24"
+          viewBox="0 0 256 256"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M15.414 16.584l-4.586-4.586 4.586-4.586-1.415-1.414-6 6 6 6 1.415-1.414z"
+            d="M165.66 202.34a8 8 0 0 1-11.32 11.32l-80-80a8 8 0 0 1 0-11.32l80-80a8 8 0 0 1 11.32 11.32L91.31 128z"
           />
         </svg>
       </span>
@@ -54,11 +54,11 @@ exports[`<Pagination /> > should match snapshot for loading phase 1`] = `
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
           fill="currentColor"
           focusable="false"
-          viewBox="0 0 24 24"
+          viewBox="0 0 256 256"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M8.585 16.584l4.586-4.586-4.586-4.586L10 5.998l6 6-6 6-1.414-1.414z"
+            d="M181.66 133.66l-80 80a8 8 0 0 1-11.32-11.32L164.69 128 90.34 53.66a8 8 0 0 1 11.32-11.32l80 80a8 8 0 0 1 0 11.32z"
           />
         </svg>
       </span>

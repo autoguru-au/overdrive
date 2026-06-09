@@ -1,4 +1,4 @@
-import { AlertIcon, OttoIcon } from '@autoguru/icons';
+import { WarningIcon, OttoIcon } from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import isChromatic from 'chromatic/isChromatic';
 import React, { useEffect, useState } from 'react';
@@ -150,7 +150,7 @@ export const WithComplexTab: Story = {
 								label="This tab is less awesome"
 							>
 								<Box>
-									<Icon icon={AlertIcon} />
+									<Icon icon={WarningIcon} />
 								</Box>
 							</Tooltip>
 						</FlexInline>

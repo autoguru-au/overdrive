@@ -165,14 +165,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@autoguru/icons@npm:1.8.22":
-  version: 1.8.22
-  resolution: "@autoguru/icons@npm:1.8.22"
+"@autoguru/icons@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@autoguru/icons@npm:2.0.0"
   dependencies:
     tslib: "npm:^2.1.0"
   peerDependencies:
     react: ">=16.8"
-  checksum: 10/96d8239caabe01f360fe078ff38636399330e2d60b2345c1366c066a819270d6ca0e7af2f41bdf5cebcc9fb7f89fd825d50d0e139c5f7234ec7a1fb3db8cf17f
+  checksum: 10/376bbc6a47b97b77240a20f20efb40375887f9bc0af136d309f5735f57dbde51c65b5f55dd37a459d00ebf35898eae104b2bda9de3e24de927c9e4a92d18259e
   languageName: node
   linkType: hard
 
@@ -183,7 +183,7 @@ __metadata:
     "@antebudimir/eslint-plugin-vanilla-extract": "npm:^1.12.0"
     "@autoguru/babel-preset": "npm:3.2.0"
     "@autoguru/eslint-plugin": "npm:2.0.1"
-    "@autoguru/icons": "npm:1.8.22"
+    "@autoguru/icons": "npm:2.0.0"
     "@autoguru/tsconfig": "npm:1.3.1"
     "@autoguru/utilities": "npm:^1.3.3"
     "@babel/cli": "npm:7.28.3"
@@ -281,7 +281,7 @@ __metadata:
     vitest: "npm:3.2.4"
     webpack: "npm:5.102.1"
   peerDependencies:
-    "@autoguru/icons": ">=1.8.8"
+    "@autoguru/icons": ">=2.0.0"
     "@autoguru/utilities": ^1.3.3
     "@popperjs/core": ^2.11.8
     "@vanilla-extract/dynamic": ^2.1.2

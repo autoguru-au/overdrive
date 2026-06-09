@@ -50,11 +50,11 @@ exports[`<SelectInput /> > should have some hintText 1`] = `
                 class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
                 fill="currentColor"
                 focusable="false"
-                viewBox="0 0 24 24"
+                viewBox="0 0 256 256"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+                  d="M213.66 101.66l-80 80a8 8 0 0 1-11.32 0l-80-80a8 8 0 0 1 11.32-11.32L128 164.69l74.34-74.35a8 8 0 0 1 11.32 11.32z"
                 />
               </svg>
             </span>
@@ -145,11 +145,11 @@ exports[`<SelectInput /> > should match snapshot 1`] = `
                 class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
                 fill="currentColor"
                 focusable="false"
-                viewBox="0 0 24 24"
+                viewBox="0 0 256 256"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+                  d="M213.66 101.66l-80 80a8 8 0 0 1-11.32 0l-80-80a8 8 0 0 1 11.32-11.32L128 164.69l74.34-74.35a8 8 0 0 1 11.32 11.32z"
                 />
               </svg>
             </span>
@@ -235,11 +235,11 @@ exports[`<SelectInput /> > should match snapshot when active 1`] = `
                 class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
                 fill="currentColor"
                 focusable="false"
-                viewBox="0 0 24 24"
+                viewBox="0 0 256 256"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+                  d="M213.66 101.66l-80 80a8 8 0 0 1-11.32 0l-80-80a8 8 0 0 1 11.32-11.32L128 164.69l74.34-74.35a8 8 0 0 1 11.32 11.32z"
                 />
               </svg>
             </span>
@@ -325,11 +325,11 @@ exports[`<SelectInput /> > should match snapshot when touched 1`] = `
                 class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
                 fill="currentColor"
                 focusable="false"
-                viewBox="0 0 24 24"
+                viewBox="0 0 256 256"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+                  d="M213.66 101.66l-80 80a8 8 0 0 1-11.32 0l-80-80a8 8 0 0 1 11.32-11.32L128 164.69l74.34-74.35a8 8 0 0 1 11.32 11.32z"
                 />
               </svg>
             </span>
@@ -415,11 +415,11 @@ exports[`<SelectInput /> > should match snapshot when touched and invalid 1`] = 
                 class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
                 fill="currentColor"
                 focusable="false"
-                viewBox="0 0 24 24"
+                viewBox="0 0 256 256"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+                  d="M213.66 101.66l-80 80a8 8 0 0 1-11.32 0l-80-80a8 8 0 0 1 11.32-11.32L128 164.69l74.34-74.35a8 8 0 0 1 11.32 11.32z"
                 />
               </svg>
             </span>
@@ -505,11 +505,11 @@ exports[`<SelectInput /> > should match snapshot when touched and valid 1`] = `
                 class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
                 fill="currentColor"
                 focusable="false"
-                viewBox="0 0 24 24"
+                viewBox="0 0 256 256"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+                  d="M213.66 101.66l-80 80a8 8 0 0 1-11.32 0l-80-80a8 8 0 0 1 11.32-11.32L128 164.69l74.34-74.35a8 8 0 0 1 11.32 11.32z"
                 />
               </svg>
             </span>
@@ -666,11 +666,11 @@ exports[`<SelectInput /> > should match snapshot with prefix icon 1`] = `
                 class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
                 fill="currentColor"
                 focusable="false"
-                viewBox="0 0 24 24"
+                viewBox="0 0 256 256"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+                  d="M213.66 101.66l-80 80a8 8 0 0 1-11.32 0l-80-80a8 8 0 0 1 11.32-11.32L128 164.69l74.34-74.35a8 8 0 0 1 11.32 11.32z"
                 />
               </svg>
             </span>

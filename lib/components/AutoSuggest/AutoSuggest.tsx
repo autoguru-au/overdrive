@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-type-constraint */
-import { ChevronDownIcon, CloseIcon, IconType } from '@autoguru/icons';
+import { CaretDownIcon, XIcon, IconType } from '@autoguru/icons';
 import { wrapEvent } from '@autoguru/utilities';
 import clsx from 'clsx';
 import React, {
@@ -325,7 +325,7 @@ const AutoSuggestFullscreenInput = forwardRef(
 						size="medium"
 						onClick={closeModal}
 					>
-						<Icon icon={CloseIcon} />
+						<Icon icon={XIcon} />
 					</Button>
 				</div>
 			</Portal>
@@ -634,7 +634,7 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 		suffixed,
 		prefixed,
 		isLoading,
-		fieldIcon = ChevronDownIcon,
+		fieldIcon = CaretDownIcon,
 		isFocused,
 		className,
 		size,
@@ -676,7 +676,7 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 					>
 						<Icon
 							size={size === 'large' ? size : 'medium'}
-							icon={CloseIcon}
+							icon={XIcon}
 						/>
 					</Box>
 				) : // eslint-disable-next-line sonarjs/no-nested-conditional

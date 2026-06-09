@@ -21,11 +21,11 @@ exports[`<BulletText /> > should match snapshot for custom bullet text 1`] = `
             class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
             fill="currentColor"
             focusable="false"
-            viewBox="0 0 24 24"
+            viewBox="0 0 256 256"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M21 7L9 19l-5.5-5.5 1.414-1.414L9 16.172 19.586 5.586 21 7z"
+              d="M229.66 77.66l-128 128a8 8 0 0 1-11.32 0l-56-56a8 8 0 0 1 11.32-11.32L96 188.69 218.34 66.34a8 8 0 0 1 11.32 11.32z"
             />
           </svg>
         </span>

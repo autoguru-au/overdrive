@@ -1,4 +1,4 @@
-import { AccountEditIcon, CalendarIcon } from '@autoguru/icons';
+import { NotePencilIcon, CalendarIcon } from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import isChromatic from 'chromatic/isChromatic';
 import React, { type ComponentProps } from 'react';
@@ -141,7 +141,7 @@ export const SmallSize: Story = {
 export const WithIcons: Story = {
 	args: {
 		prefixIcon: CalendarIcon,
-		suffixIcon: AccountEditIcon,
+		suffixIcon: NotePencilIcon,
 	},
 };
 

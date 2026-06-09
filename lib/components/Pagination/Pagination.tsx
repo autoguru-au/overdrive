@@ -1,4 +1,4 @@
-import { ChevronLeftIcon, ChevronRightIcon, IconType } from '@autoguru/icons';
+import { CaretLeftIcon, CaretRightIcon, IconType } from '@autoguru/icons';
 import clsx from 'clsx';
 import * as React from 'react';
 import {
@@ -77,14 +77,14 @@ const Loading: FunctionComponent<LoadingComponentProps> = ({
 	placeholderBubblesNum = 3,
 }) => (
 	<span className={inline({ gap: '3' })}>
-		<NavButton disabled icon={ChevronLeftIcon} />
+		<NavButton disabled icon={CaretLeftIcon} />
 		{Array.from({ length: placeholderBubblesNum })
 			.fill('')
 			.map((_, index) => (
 				<Bubble key={index} disabled className={styles.disabled} />
 			))}
 
-		<NavButton disabled icon={ChevronRightIcon} />
+		<NavButton disabled icon={CaretRightIcon} />
 	</span>
 );
 
@@ -118,7 +118,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
 			<NavButton
 				disabled={activePage <= 1}
 				label="navigate back"
-				icon={ChevronLeftIcon}
+				icon={CaretLeftIcon}
 				onClick={handleClick(activePage - 1)}
 			/>
 			{buildPagesList(
@@ -141,7 +141,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
 			<NavButton
 				disabled={activePage >= numPages}
 				label="navigate forward"
-				icon={ChevronRightIcon}
+				icon={CaretRightIcon}
 				onClick={handleClick(allowedActive + 1)}
 			/>
 		</span>

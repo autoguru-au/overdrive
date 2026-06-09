@@ -1,7 +1,7 @@
 import {
-	AirconIcon,
+	AirConditionerIcon,
 	CarWindshieldIcon,
-	ServiceAndRepairsIcon,
+	WrenchIcon,
 	TyreIcon,
 } from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react-vite';
@@ -60,7 +60,7 @@ const serviceSchedule: OptionItem[] = [
 const serviceTasks: OptionItem[] = [
 	{
 		label: 'Re-gas Air-conditioning',
-		icon: AirconIcon,
+		icon: AirConditionerIcon,
 		name: 'regas-aircon',
 	},
 	{
@@ -70,7 +70,7 @@ const serviceTasks: OptionItem[] = [
 	},
 	{
 		label: 'Roadworthy Inspection',
-		icon: ServiceAndRepairsIcon,
+		icon: WrenchIcon,
 		name: 'roadworthy',
 	},
 	{

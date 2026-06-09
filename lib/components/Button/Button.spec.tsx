@@ -1,4 +1,4 @@
-import { AccountBoxIcon } from '@autoguru/icons';
+import { UserSquareIcon } from '@autoguru/icons';
 import { composeStories } from '@storybook/react-vite';
 import { render, screen, cleanup, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -109,7 +109,7 @@ describe('<Button />', () => {
 	it('handles icon-only buttons correctly', () => {
 		render(
 			<Button aria-label="Account">
-				<Icon icon={AccountBoxIcon} />
+				<Icon icon={UserSquareIcon} />
 			</Button>,
 		);
 		const button = screen.getByRole('button', { name: 'Account' });

@@ -1,10 +1,10 @@
 import {
 	AlertCircleIcon,
-	AlertIcon,
+	WarningIcon,
 	CheckCircleIcon,
 	IconType,
 	InformationIcon,
-	WindowCloseIcon,
+	XIcon,
 } from '@autoguru/icons';
 import clsx from 'clsx';
 import React, { type ComponentProps, type ReactNode } from 'react';
@@ -35,7 +35,7 @@ const iconMapForIntent: Record<Intent, IconType> = {
 	danger: AlertCircleIcon,
 	information: InformationIcon,
 	success: CheckCircleIcon,
-	warning: AlertIcon,
+	warning: WarningIcon,
 };
 
 export const Alert = ({
@@ -97,7 +97,7 @@ export const Alert = ({
 						>
 							<Icon
 								className={sprinkles({ colour: 'muted' })}
-								icon={WindowCloseIcon}
+								icon={XIcon}
 								size="medium"
 							/>
 						</Button>

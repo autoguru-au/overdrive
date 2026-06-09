@@ -1,4 +1,4 @@
-import { AccountBoxIcon, ArrowLeftIcon } from '@autoguru/icons';
+import { UserSquareIcon, ArrowLeftIcon } from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { type ComponentProps } from 'react';
 import { fn } from 'storybook/test';
@@ -85,16 +85,16 @@ const TemplateMulti = ({
 					<FlexInline gap="3">
 						<Button {...args}>Login</Button>
 						<Button {...args}>
-							<Icon icon={AccountBoxIcon} />
+							<Icon icon={UserSquareIcon} />
 							Login
 						</Button>
 
 						<Button {...args} aria-label="login">
-							<Icon icon={AccountBoxIcon} />
+							<Icon icon={UserSquareIcon} />
 						</Button>
 
 						<Button rounded {...args} aria-label="login">
-							<Icon icon={AccountBoxIcon} />
+							<Icon icon={UserSquareIcon} />
 						</Button>
 
 						<Button isLoading {...args}>
@@ -116,12 +116,12 @@ const TemplateMulti = ({
 						</Button>
 
 						<Button minimal {...args}>
-							<Icon icon={AccountBoxIcon} />
+							<Icon icon={UserSquareIcon} />
 							Login
 						</Button>
 
 						<Button minimal {...args} aria-label="login">
-							<Icon icon={AccountBoxIcon} />
+							<Icon icon={UserSquareIcon} />
 						</Button>
 
 						<Button minimal rounded {...args}>
@@ -129,10 +129,10 @@ const TemplateMulti = ({
 						</Button>
 
 						<Button minimal rounded {...args} aria-label="login">
-							<Icon icon={AccountBoxIcon} />1
+							<Icon icon={UserSquareIcon} />1
 						</Button>
 						<Button minimal rounded {...args} aria-label="login">
-							<Icon icon={AccountBoxIcon} />
+							<Icon icon={UserSquareIcon} />
 						</Button>
 
 						<Button minimal isLoading {...args}>

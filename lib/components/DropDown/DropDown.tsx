@@ -1,4 +1,4 @@
-import { ChevronDownIcon, IconType } from '@autoguru/icons';
+import { CaretDownIcon, IconType } from '@autoguru/icons';
 import * as React from 'react';
 import {
 	ComponentProps,
@@ -36,7 +36,7 @@ export interface DropDownProps extends ButtonProps, FlyoutProps {
 export const DropDown: FunctionComponent<DropDownProps> = ({
 	children: options,
 	label,
-	icon = ChevronDownIcon,
+	icon = CaretDownIcon,
 	alignment = EPositionerAlignment.BOTTOM_LEFT,
 	isOpen: controlledIsOpen,
 	onOpenChange,
