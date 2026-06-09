@@ -45,7 +45,7 @@ export interface TextLinkProps
  * <TextLink href="https://example.com">Click me</TextLink>
  *
  * // With an icon
- * <TextLink href="/settings" icon={SettingsIcon}>Settings</TextLink>
+ * <TextLink href="/settings" icon={GearIcon}>Settings</TextLink>
  * ```
  */
 export const TextLink = forwardRef<HTMLAnchorElement, TextLinkProps>(

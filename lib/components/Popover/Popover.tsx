@@ -1,4 +1,4 @@
-import { CloseIcon } from '@autoguru/icons';
+import { XIcon } from '@autoguru/icons';
 import React, { useRef, useEffect } from 'react';
 import {
 	usePopover,
@@ -125,7 +125,7 @@ export const Popover = ({
 									onClick={state.close}
 									aria-label={textValues.close}
 								>
-									<Icon icon={CloseIcon} />
+									<Icon icon={XIcon} />
 								</Button>
 							</div>
 							{children}

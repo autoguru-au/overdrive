@@ -68,11 +68,11 @@ exports[`<StandardModal /> > should match snapshot with title and body 1`] = `
                     class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
                     fill="currentColor"
                     focusable="false"
-                    viewBox="0 0 24 24"
+                    viewBox="0 0 256 256"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M13.458 12L19 17.543V19h-1.457L12 13.457 6.458 19H5v-1.456L10.544 12 5 6.458V5h1.457L12 10.543 17.544 5H19v1.458L13.458 12z"
+                      d="M205.66 194.34a8 8 0 0 1-11.32 11.32L128 139.31l-66.34 66.35a8 8 0 0 1-11.32-11.32L116.69 128 50.34 61.66a8 8 0 0 1 11.32-11.32L128 116.69l66.34-66.35a8 8 0 0 1 11.32 11.32L139.31 128z"
                     />
                   </svg>
                 </span>
@@ -164,11 +164,11 @@ exports[`<StandardModal /> > should match snapshot without title and body 1`] = 
                     class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
                     fill="currentColor"
                     focusable="false"
-                    viewBox="0 0 24 24"
+                    viewBox="0 0 256 256"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M13.458 12L19 17.543V19h-1.457L12 13.457 6.458 19H5v-1.456L10.544 12 5 6.458V5h1.457L12 10.543 17.544 5H19v1.458L13.458 12z"
+                      d="M205.66 194.34a8 8 0 0 1-11.32 11.32L128 139.31l-66.34 66.35a8 8 0 0 1-11.32-11.32L116.69 128 50.34 61.66a8 8 0 0 1 11.32-11.32L128 116.69l66.34-66.35a8 8 0 0 1 11.32 11.32L139.31 128z"
                     />
                   </svg>
                 </span>

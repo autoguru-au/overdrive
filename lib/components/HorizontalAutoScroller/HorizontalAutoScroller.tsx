@@ -1,4 +1,4 @@
-import { ChevronLeftIcon, ChevronRightIcon } from '@autoguru/icons';
+import { CaretLeftIcon, CaretRightIcon } from '@autoguru/icons';
 import clsx from 'clsx';
 import * as React from 'react';
 import {
@@ -147,7 +147,7 @@ export const HorizontalAutoScroller: FunctionComponent<
 							}}
 							variant="secondary"
 						>
-							<Icon icon={ChevronLeftIcon} />
+							<Icon icon={CaretLeftIcon} />
 						</Button>
 					</Box>
 				)}
@@ -187,7 +187,7 @@ export const HorizontalAutoScroller: FunctionComponent<
 							}}
 							variant="secondary"
 						>
-							<Icon icon={ChevronRightIcon} />
+							<Icon icon={CaretRightIcon} />
 						</Button>
 					</Box>
 				)}

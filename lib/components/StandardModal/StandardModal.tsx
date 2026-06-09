@@ -1,4 +1,4 @@
-import { WindowCloseIcon } from '@autoguru/icons';
+import { XIcon } from '@autoguru/icons';
 import clsx from 'clsx';
 import type {
 	ComponentProps,
@@ -140,7 +140,7 @@ export const StandardModal: FunctionComponent<StandardModalProps> = ({
 						>
 							<Icon
 								className={textStyles({ colour: 'muted' })}
-								icon={WindowCloseIcon}
+								icon={XIcon}
 								size="medium"
 							/>
 						</Button>

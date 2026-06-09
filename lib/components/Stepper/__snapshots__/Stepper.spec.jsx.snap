@@ -31,11 +31,11 @@ exports[`<Stepper /> > should match snapshot with label formatter 1`] = `
               class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
               fill="currentColor"
               focusable="false"
-              viewBox="0 0 24 24"
+              viewBox="0 0 256 256"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M19 12.998H5V11l14-.002v2z"
+                d="M224 128a8 8 0 0 1-8 8H40a8 8 0 0 1 0-16h176a8 8 0 0 1 8 8z"
               />
             </svg>
           </span>
@@ -67,11 +67,11 @@ exports[`<Stepper /> > should match snapshot with label formatter 1`] = `
               class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
               fill="currentColor"
               focusable="false"
-              viewBox="0 0 24 24"
+              viewBox="0 0 256 256"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6v2z"
+                d="M224 128a8 8 0 0 1-8 8h-80v80a8 8 0 0 1-16 0v-80H40a8 8 0 0 1 0-16h80V40a8 8 0 0 1 16 0v80h80a8 8 0 0 1 8 8z"
               />
             </svg>
           </span>
@@ -113,11 +113,11 @@ exports[`<Stepper /> > should match snapshot with props 1`] = `
               class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
               fill="currentColor"
               focusable="false"
-              viewBox="0 0 24 24"
+              viewBox="0 0 256 256"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M19 12.998H5V11l14-.002v2z"
+                d="M224 128a8 8 0 0 1-8 8H40a8 8 0 0 1 0-16h176a8 8 0 0 1 8 8z"
               />
             </svg>
           </span>
@@ -149,11 +149,11 @@ exports[`<Stepper /> > should match snapshot with props 1`] = `
               class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
               fill="currentColor"
               focusable="false"
-              viewBox="0 0 24 24"
+              viewBox="0 0 256 256"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6v2z"
+                d="M224 128a8 8 0 0 1-8 8h-80v80a8 8 0 0 1-16 0v-80H40a8 8 0 0 1 0-16h80V40a8 8 0 0 1 16 0v80h80a8 8 0 0 1 8 8z"
               />
             </svg>
           </span>
@@ -195,11 +195,11 @@ exports[`<Stepper /> > should match snapshot without props 1`] = `
               class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
               fill="currentColor"
               focusable="false"
-              viewBox="0 0 24 24"
+              viewBox="0 0 256 256"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M19 12.998H5V11l14-.002v2z"
+                d="M224 128a8 8 0 0 1-8 8H40a8 8 0 0 1 0-16h176a8 8 0 0 1 8 8z"
               />
             </svg>
           </span>
@@ -231,11 +231,11 @@ exports[`<Stepper /> > should match snapshot without props 1`] = `
               class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6d sprinkles_width_full_mobile__onxwjuh5 sprinkles_height_full_mobile__onxwjufl"
               fill="currentColor"
               focusable="false"
-              viewBox="0 0 24 24"
+              viewBox="0 0 256 256"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6v2z"
+                d="M224 128a8 8 0 0 1-8 8h-80v80a8 8 0 0 1-16 0v-80H40a8 8 0 0 1 0-16h80V40a8 8 0 0 1 16 0v80h80a8 8 0 0 1 8 8z"
               />
             </svg>
           </span>

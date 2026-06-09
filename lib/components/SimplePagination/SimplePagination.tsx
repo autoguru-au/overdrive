@@ -1,4 +1,4 @@
-import { ChevronLeftIcon, ChevronRightIcon } from '@autoguru/icons';
+import { CaretLeftIcon, CaretRightIcon } from '@autoguru/icons';
 import * as React from 'react';
 import { FunctionComponent } from 'react';
 
@@ -43,7 +43,7 @@ export const SimplePagination: FunctionComponent<SimplePaginationProps> = ({
 				aria-label="previous page"
 				onClick={handleClick(EChangeDirection.Previous)}
 			>
-				<Icon size="medium" icon={ChevronLeftIcon} />
+				<Icon size="medium" icon={CaretLeftIcon} />
 			</Button>
 			<Button
 				rounded
@@ -54,7 +54,7 @@ export const SimplePagination: FunctionComponent<SimplePaginationProps> = ({
 				aria-label="next page"
 				onClick={handleClick(EChangeDirection.Next)}
 			>
-				<Icon size="medium" icon={ChevronRightIcon} />
+				<Icon size="medium" icon={CaretRightIcon} />
 			</Button>
 		</nav>
 	);

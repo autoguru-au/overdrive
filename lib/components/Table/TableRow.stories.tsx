@@ -114,7 +114,7 @@ export const Animated: Story = {
 								: undefined
 						}
 					>
-						<TableCell>{100001 + i}</TableCell>
+						<TableCell>{100_001 + i}</TableCell>
 						<TableCell>Row {i + 1}</TableCell>
 						<TableCell align="right">
 							${(99 + i * 10).toFixed(2)}

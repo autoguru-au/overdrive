@@ -1,4 +1,4 @@
-import { ChevronDownIcon, IconType } from '@autoguru/icons';
+import { CaretDownIcon, IconType } from '@autoguru/icons';
 import * as React from 'react';
 import {
 	ComponentProps,
@@ -53,7 +53,7 @@ export interface SplitButtonProps
 	children: ReactNode;
 	/**
 	 * Icon shown in the menu trigger segment (right).
-	 * @default ChevronDownIcon
+	 * @default CaretDownIcon
 	 */
 	icon?: IconType;
 	/**
@@ -91,7 +91,7 @@ export const SplitButton: FunctionComponent<SplitButtonProps> = ({
 	label,
 	onClick,
 	children,
-	icon = ChevronDownIcon,
+	icon = CaretDownIcon,
 	menuLabel = 'More options',
 	alignment = EPositionerAlignment.BOTTOM_RIGHT,
 	isOpen: controlledIsOpen,

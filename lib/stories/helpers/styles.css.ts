@@ -48,6 +48,27 @@ export const hexPill = style({
 	top: '5px',
 });
 
+export const stickyHeader = style({
+	backgroundColor: overdriveTokens.color.surface.page,
+	borderBottomColor: overdriveTokens.color.interactive.border,
+	borderBottomStyle: 'solid',
+	borderBottomWidth: overdriveTokens.border.width[1],
+	position: 'sticky',
+	top: 0,
+	zIndex: 1,
+});
+
+export const headerMeta = style({
+	color: overdriveTokens.color.content.soft,
+	fontSize: '13px',
+});
+
+export const categoryCount = style({
+	color: overdriveTokens.color.content.soft,
+	fontSize: '13px',
+	fontWeight: 'normal',
+});
+
 export const icon = style({
 	alignItems: 'center',
 	backgroundColor: overdriveTokens.color.surface.page,

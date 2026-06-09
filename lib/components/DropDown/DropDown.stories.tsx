@@ -1,8 +1,8 @@
 import {
 	DownloadIcon,
-	SettingsIcon,
-	SquareEditOutlineIcon,
-	TrashCanOutlineIcon,
+	GearIcon,
+	NotePencilIcon,
+	TrashIcon,
 } from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { type ComponentProps, useState } from 'react';
@@ -82,9 +82,9 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const option1 = <DropDownOption label="Download" icon={DownloadIcon} />;
-const option2 = <DropDownOption label="Delete" icon={TrashCanOutlineIcon} />;
+const option2 = <DropDownOption label="Delete" icon={TrashIcon} />;
 const optionDisabled = (
-	<DropDownOption disabled label="Edit" icon={SquareEditOutlineIcon} />
+	<DropDownOption disabled label="Edit" icon={NotePencilIcon} />
 );
 
 export const Primary: Story = {
@@ -190,7 +190,7 @@ export const WithCustomIcon: Story = {
 	args: {
 		label: 'Attachment',
 		variant: 'secondary',
-		icon: SettingsIcon,
+		icon: GearIcon,
 	},
 };
 

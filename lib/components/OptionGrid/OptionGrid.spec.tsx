@@ -1,4 +1,4 @@
-import { AirconIcon, CarWindshieldIcon } from '@autoguru/icons';
+import { AirConditionerIcon, CarWindshieldIcon } from '@autoguru/icons';
 import { composeStories } from '@storybook/react-vite';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -25,7 +25,7 @@ const itemsWithDescriptions: OptionItem[] = [
 ];
 
 const itemsWithIcons: OptionItem[] = [
-	{ name: 'aircon', label: 'Air Conditioning', icon: AirconIcon },
+	{ name: 'aircon', label: 'Air Conditioning', icon: AirConditionerIcon },
 	{ name: 'windscreen', label: 'Windscreen', icon: CarWindshieldIcon },
 ];
 
@@ -416,7 +416,7 @@ describe('<OptionGrid />', () => {
 
 		it('handles mixed items with and without icons', () => {
 			const mixedItems: OptionItem[] = [
-				{ name: 'with-icon', label: 'With Icon', icon: AirconIcon },
+				{ name: 'with-icon', label: 'With Icon', icon: AirConditionerIcon },
 				{ name: 'without-icon', label: 'Without Icon' },
 			];
 

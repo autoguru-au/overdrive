@@ -1,4 +1,4 @@
-import { MapPinOutlineIcon, StoreOutlineIcon } from '@autoguru/icons';
+import { MapPinIcon, StorefrontIcon } from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { expect, fn, userEvent, within } from 'storybook/test';
@@ -74,11 +74,11 @@ export const IconOnly: Story = {
 		return (
 			<ToggleButtons {...args}>
 				<ToggleButton id="list">
-					<Icon icon={StoreOutlineIcon} size={ICON_SIZE} />
+					<Icon icon={StorefrontIcon} size={ICON_SIZE} />
 					<VisuallyHidden>list view</VisuallyHidden>
 				</ToggleButton>
 				<ToggleButton id="location">
-					<Icon icon={MapPinOutlineIcon} size={ICON_SIZE} />
+					<Icon icon={MapPinIcon} size={ICON_SIZE} />
 					<VisuallyHidden>map view</VisuallyHidden>
 				</ToggleButton>
 			</ToggleButtons>

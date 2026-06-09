@@ -1,4 +1,4 @@
-import { ArrowRightIcon, ChevronRightIcon } from '@autoguru/icons';
+import { ArrowRightIcon, CaretRightIcon } from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { type ComponentProps } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
@@ -48,7 +48,7 @@ const meta = {
 			options: ['Arrow Right', 'Chevron Right'],
 			mapping: {
 				'Arrow Right': ArrowRightIcon,
-				'Chevron Right': ChevronRightIcon,
+				'Chevron Right': CaretRightIcon,
 			},
 		},
 		noWrap: {
@@ -113,7 +113,7 @@ export const InsideParagraph: Story = {
 
 export const WithIcon: Story = {
 	args: {
-		icon: ChevronRightIcon,
+		icon: CaretRightIcon,
 	},
 	play: async ({ canvasElement, step }) => {
 		const user = userEvent.setup();

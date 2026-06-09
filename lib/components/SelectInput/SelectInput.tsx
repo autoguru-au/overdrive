@@ -1,4 +1,4 @@
-import { ChevronDownIcon } from '@autoguru/icons';
+import { CaretDownIcon } from '@autoguru/icons';
 import clsx from 'clsx';
 import React from 'react';
 
@@ -23,7 +23,7 @@ export const SelectInput = withEnhancedInput<
 		isFocused,
 		isLoading,
 		size,
-		fieldIcon = ChevronDownIcon,
+		fieldIcon = CaretDownIcon,
 		...rest
 	}) => (
 		<Box

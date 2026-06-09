@@ -1,9 +1,9 @@
 import {
-	AccountEditIcon,
+	NotePencilIcon,
 	AlertCircleIcon,
 	CalendarIcon,
 	CarMultipleIcon,
-	CurrencyUsdIcon,
+	CurrencyDollarIcon,
 	PlusIcon,
 	StarIcon,
 } from '@autoguru/icons';
@@ -73,10 +73,10 @@ const meta: Meta<typeof DateInput> = {
 			options: {
 				// @ts-expect-error should be typed
 				CalendarIcon,
-				AccountEditIcon,
+				NotePencilIcon,
 				AlertCircleIcon,
 				CarMultipleIcon,
-				CurrencyUsdIcon,
+				CurrencyDollarIcon,
 				PlusIcon,
 				StarIcon,
 			},
@@ -141,6 +141,6 @@ export const SmallSize: Story = {
 export const WithIcons: Story = {
 	args: {
 		prefixIcon: StarIcon,
-		suffixIcon: AccountEditIcon,
+		suffixIcon: NotePencilIcon,
 	},
 };

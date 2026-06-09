@@ -1,4 +1,4 @@
-import { MagnifyIcon, CloseIcon } from '@autoguru/icons';
+import { MagnifyingGlassIcon, XIcon } from '@autoguru/icons';
 import React from 'react';
 import {
 	mergeProps,
@@ -104,7 +104,7 @@ export const SearchBar = (componentProps: SearchBarProps) => {
 				aria-label={componentProps.lang?.clear ?? defaultEnglish.clear}
 				{...clearButtonProps}
 			>
-				<Icon icon={CloseIcon} size="100%" />
+				<Icon icon={XIcon} size="100%" />
 			</ReactAriaButton>
 		);
 	};
@@ -124,7 +124,7 @@ export const SearchBar = (componentProps: SearchBarProps) => {
 		>
 			<Icon
 				className={sprinkles({ flexShrink: '0' })}
-				icon={MagnifyIcon}
+				icon={MagnifyingGlassIcon}
 				size="large"
 			/>
 			<div className={fieldWrapper}>

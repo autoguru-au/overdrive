@@ -1,4 +1,4 @@
-import { AccountEditIcon, EmailIcon } from '@autoguru/icons';
+import { NotePencilIcon, EnvelopeIcon } from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { type ComponentProps } from 'react';
 import { action } from 'storybook/actions';
@@ -119,7 +119,7 @@ export const Disabled: Story = {
 export const SmallSize: Story = {
 	args: {
 		...Filled.args,
-		prefixIcon: EmailIcon,
+		prefixIcon: EnvelopeIcon,
 		size: 'small',
 	},
 };
@@ -144,8 +144,8 @@ export const WithoutNotchLabel: Story = {
  */
 export const WithIcons: Story = {
 	args: {
-		prefixIcon: EmailIcon,
-		suffixIcon: AccountEditIcon,
+		prefixIcon: EnvelopeIcon,
+		suffixIcon: NotePencilIcon,
 	},
 };
 

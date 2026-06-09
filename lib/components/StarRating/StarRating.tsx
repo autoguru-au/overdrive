@@ -1,4 +1,9 @@
-import { StarHalfIcon, StarIcon } from '@autoguru/icons';
+import {
+	type IconType,
+	StarFilledIcon,
+	StarHalfIcon,
+	StarIcon,
+} from '@autoguru/icons';
 import clsx from 'clsx';
 import * as React from 'react';
 import { FunctionComponent, memo, NamedExoticComponent } from 'react';
@@ -24,6 +29,15 @@ enum EStarType {
 	Half,
 	Empty,
 }
+
+// In @autoguru/icons 2.x (Phosphor), `StarIcon` is the hollow outline and
+// `StarFilledIcon` is the solid star, so full ratings use the filled variant
+// while empty ratings keep the outline.
+const starIconMap: Record<EStarType, IconType> = {
+	[EStarType.Full]: StarFilledIcon,
+	[EStarType.Half]: StarHalfIcon,
+	[EStarType.Empty]: StarIcon,
+};
 
 const starSizeMap: Map<EStarRatingSize, keyof Tokens['icon']['size']> = new Map(
 	[
@@ -117,7 +131,7 @@ const Star: FunctionComponent<StarProps> = ({
 	size = EStarRatingSize.Medium,
 }) => {
 	const starType = getStarIconType(index, rating);
-	const star = starType === EStarType.Half ? StarHalfIcon : StarIcon;
+	const star = starIconMap[starType];
 	return (
 		<Icon
 			key={index}
