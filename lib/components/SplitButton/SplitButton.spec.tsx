@@ -87,7 +87,7 @@ describe('<SplitButton />', () => {
 		expect(trigger).toHaveAttribute('aria-expanded', 'false');
 	});
 
-	it('closes the menu on Escape', () => {
+	it('closes the menu on Escape from the trigger', () => {
 		const onOpenChange = vi.fn();
 		render(
 			<SplitButton {...standardProps} onOpenChange={onOpenChange} />,
@@ -99,6 +99,32 @@ describe('<SplitButton />', () => {
 
 		fireEvent.keyDown(trigger, { key: 'Escape' });
 		expect(onOpenChange).toHaveBeenLastCalledWith(false);
+	});
+
+	it('closes the menu on Escape from within the menu', () => {
+		const onOpenChange = vi.fn();
+		render(
+			<SplitButton {...standardProps} onOpenChange={onOpenChange} />,
+		);
+
+		fireEvent.click(getTrigger());
+		expect(onOpenChange).toHaveBeenLastCalledWith(true);
+
+		const option = screen.getByRole('button', { name: /single upload/i });
+		fireEvent.keyDown(option, { key: 'Escape' });
+		expect(onOpenChange).toHaveBeenLastCalledWith(false);
+	});
+
+	it('does not emit onOpenChange when clicking away while already closed', () => {
+		const onOpenChange = vi.fn();
+		render(
+			<SplitButton {...standardProps} onOpenChange={onOpenChange} />,
+		);
+
+		// useOutsideClick listens on document mouseup; firing it while the menu
+		// is closed must not report a (redundant) close.
+		fireEvent.mouseUp(document.body);
+		expect(onOpenChange).not.toHaveBeenCalled();
 	});
 
 	describe('Controlled mode', () => {

@@ -60,6 +60,7 @@ export const trigger = style({
 					left: 0,
 					opacity: 0.2,
 					position: 'absolute',
+					top: vars.space['1'],
 					width: vars.border.width['1'],
 				},
 			},

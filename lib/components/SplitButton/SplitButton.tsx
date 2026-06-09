@@ -7,6 +7,7 @@ import {
 	MouseEventHandler,
 	ReactNode,
 	useCallback,
+	useEffect,
 	useRef,
 	useState,
 } from 'react';
@@ -114,10 +115,18 @@ export const SplitButton: FunctionComponent<SplitButtonProps> = ({
 		[controlledIsOpen, onOpenChange],
 	);
 
-	const handleClose = useCallback(
-		() => handleOpenChange(false),
-		[handleOpenChange],
-	);
+	// Only request a close when the menu is actually open. `useOutsideClick`
+	// fires on any mouseup outside the trigger/menu (e.g. clicking the primary
+	// action), so without this guard `onOpenChange(false)` would be emitted
+	// even when the menu is already closed.
+	const handleClose = useCallback(() => {
+		if (isOpen) handleOpenChange(false);
+	}, [isOpen, handleOpenChange]);
+
+	const closeAndFocusTrigger = useCallback(() => {
+		handleClose();
+		triggerRef.current?.focus();
+	}, [handleClose]);
 
 	const onTriggerClick = useCallback<MouseEventHandler<HTMLButtonElement>>(
 		() => handleOpenChange(!isOpen),
@@ -126,14 +135,26 @@ export const SplitButton: FunctionComponent<SplitButtonProps> = ({
 
 	const onTriggerKeyDown = useCallback<KeyboardEventHandler<HTMLButtonElement>>(
 		(event) => {
-			if (event.key === 'Escape' && isOpen) {
-				handleClose();
-			}
+			if (event.key === 'Escape') closeAndFocusTrigger();
 		},
-		[isOpen, handleClose],
+		[closeAndFocusTrigger],
 	);
 
 	useOutsideClick([menuRef, triggerRef], handleClose);
+
+	// The menu renders in a portal, so an Escape keypress while focus is inside
+	// it does not bubble to the trigger. Listen on the menu element directly so
+	// Escape closes regardless of where focus sits.
+	useEffect(() => {
+		const node = menuRef.current;
+		if (!isOpen || !node) return;
+
+		const onKeyDown = (event: KeyboardEvent) => {
+			if (event.key === 'Escape') closeAndFocusTrigger();
+		};
+		node.addEventListener('keydown', onKeyDown);
+		return () => node.removeEventListener('keydown', onKeyDown);
+	}, [isOpen, closeAndFocusTrigger]);
 
 	return (
 		<>
