@@ -1,5 +1,13 @@
 # @autoguru/overdrive
 
+## 4.59.0
+
+### Minor Changes
+
+- 2ab1962: - Upgrade `@autoguru/icons` to `2.1.0`
+  - Full Phosphor 2.1 regular-weight set + AutoGuru's custom icons: **1,576
+    icons (up from 203)**.
+
 ## 4.58.0
 
 ### Minor Changes
