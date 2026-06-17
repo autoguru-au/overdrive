@@ -1,1 +1,0 @@
-import{e}from"./iframe-DoKoKBON.js";const r=e.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",fill:"currentColor",viewBox:"0 0 32 32",focusable:"false"},e.createElement("path",{fill:"currentColor",d:"M15.99 3a13 13 0 1 0 13 13 13.014 13.014 0 0 0-13-13zm-1 7a1 1 0 1 1 2 0v7a1 1 0 0 1-2 0v-7zm1 13a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"}));export{r as I};
