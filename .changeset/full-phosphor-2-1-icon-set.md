@@ -1,9 +1,7 @@
 ---
-"@autoguru/overdrive": patch
+"@autoguru/overdrive": minor
 ---
 
-Upgrade `@autoguru/icons` to the full Phosphor 2.1 + AutoGuru custom set (1,576
-icons, up from 203). Regenerated the icon-gallery category map
-(`lib/stories/iconCategories.ts`) to cover every icon and added the new
-"Health & Wellness" category. Purely additive — all existing icon imports are
-unchanged.
+- Upgrade `@autoguru/icons` to `2.1.0`
+- Full Phosphor 2.1 regular-weight set + AutoGuru's custom icons:
+  **1,576 icons (up from 203)**.
