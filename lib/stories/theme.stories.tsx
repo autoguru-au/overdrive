@@ -159,44 +159,74 @@ const textOn = (hex: string): string =>
 		? colourMap.white
 		: colourMap.gray['900'];
 
+const TokenDot = ({ token }: { token: ContrastColourToken }) => (
+	<span
+		style={{
+			display: 'inline-block',
+			width: 10,
+			height: 10,
+			borderRadius: '50%',
+			background: contrastGuideColour(token),
+			boxShadow: `inset 0 0 0 1px ${colourMap.gray['300']}`,
+			flexShrink: 0,
+		}}
+	/>
+);
+
 const ChangeBadge = ({ was, note }: Pick<ProposedToken, 'was' | 'note'>) => (
 	<span
 		style={{
+			display: 'inline-flex',
+			alignItems: 'center',
+			gap: 6,
 			background: note ? colourMap.yellow['200'] : colourMap.blue['100'],
 			color: colourMap.gray['900'],
 			borderRadius: 4,
-			padding: '1px 6px',
+			padding: '2px 8px',
 			fontWeight: 600,
 			fontSize: 11,
 			alignSelf: 'flex-start',
 		}}
 	>
-		{note ?? `changed · was ${was}`}
+		{was && <TokenDot token={was} />}
+		{note ?? `was ${was}`}
 	</span>
 );
 
-const Token2026 = ({ name, token, was, note }: ProposedToken) => {
+const Token2026 = ({
+	group,
+	name,
+	token,
+	was,
+	note,
+}: ProposedToken & { group: string }) => {
 	const hex = contrastGuideColour(token);
 	return (
 		<FlexStack gap="1">
 			<div
 				style={{
 					background: hex,
-					borderRadius: 8,
+					borderRadius: 10,
 					boxShadow: `inset 0 0 0 1px ${colourMap.gray['300']}`,
-					height: 72,
-					padding: '8px 10px',
+					height: 88,
+					padding: '10px 12px',
 					display: 'flex',
-					alignItems: 'flex-end',
+					flexDirection: 'column',
+					justifyContent: 'flex-end',
 					color: textOn(hex),
-					fontSize: 12,
-					fontWeight: 600,
 				}}
 			>
-				{token}
+				<div style={{ fontWeight: 700, fontSize: 13, lineHeight: 1.4 }}>
+					{token}
+				</div>
+				<div style={{ fontSize: 11, opacity: 0.85, lineHeight: 1.4 }}>
+					{hex.toUpperCase()}
+				</div>
 			</div>
 			<div className={labels}>{spacesFromCamelCase(name)}</div>
-			<code className={codeVariable}>{hex.toUpperCase()}</code>
+			<code className={codeVariable}>
+				--od-color-{group}-{kebabCaseFromCamelCase(name)}
+			</code>
 			{was && <ChangeBadge was={was} note={note} />}
 		</FlexStack>
 	);
@@ -234,7 +264,11 @@ export const ThemeColours2026: Story = {
 							</Heading>
 							<div className={gridSwatches}>
 								{entries.map((entry) => (
-									<Token2026 key={entry.name} {...entry} />
+									<Token2026
+										key={entry.name}
+										group={group}
+										{...entry}
+									/>
 								))}
 							</div>
 						</FlexStack>
@@ -244,19 +278,53 @@ export const ThemeColours2026: Story = {
 					<Heading as="h2" className={labels}>
 						What changes vs the current theme
 					</Heading>
-					<ul style={{ margin: 0, paddingLeft: 20, fontSize: 14 }}>
+					<FlexStack gap="2">
 						{changed.map(({ group, name, token, was, note }) => (
-							<li key={`${group}-${name}`}>
-								<code className={codeVariable}>
+							<div
+								key={`${group}-${name}`}
+								style={{
+									display: 'flex',
+									alignItems: 'center',
+									gap: 8,
+									fontSize: 13,
+									flexWrap: 'wrap',
+								}}
+							>
+								<code
+									className={codeVariable}
+									style={{ minWidth: 220 }}
+								>
 									color.{group}.{name}
-								</code>{' '}
-								—{' '}
-								{was === token
-									? `${token} (${note})`
-									: `${was} → ${token}`}
-							</li>
+								</code>
+								{was && <TokenDot token={was} />}
+								{was}
+								{was !== token && (
+									<>
+										<span
+											aria-hidden
+											style={{
+												color: colourMap.gray['600'],
+											}}
+										>
+											→
+										</span>
+										<TokenDot token={token} />
+										{token}
+									</>
+								)}
+								{note && (
+									<span
+										style={{
+											color: colourMap.gray['600'],
+											fontSize: 12,
+										}}
+									>
+										({note})
+									</span>
+								)}
+							</div>
 						))}
-					</ul>
+					</FlexStack>
 				</FlexStack>
 			</FlexStack>
 		);
