@@ -11,6 +11,9 @@ export {
 	type SprinklesLegacyColours as LegacyStyleProps,
 } from './sprinkles.css';
 export {
+	namedTextStyleMap,
+	type NamedTextStyle,
+	TEXT_STYLES,
 	textStyles,
 	type TextStylesProps,
 	typography,

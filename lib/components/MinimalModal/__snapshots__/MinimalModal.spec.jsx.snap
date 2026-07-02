@@ -32,17 +32,17 @@ exports[`<MinimalModal /> > should match snapshot with body 1`] = `
       >
         <div
           aria-hidden="false"
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_height_full_mobile__onxwjufl sprinkles_alignItems_center_mobile__onxwjumt sprinkles_justifyContent_center_mobile__onxwjuoh MinimalModal_container__13ik47w0"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_height_full_mobile__onxwjuhd sprinkles_alignItems_center_mobile__onxwjuol sprinkles_justifyContent_center_mobile__onxwjuq9 MinimalModal_container__13ik47w0"
           role="none presentation"
         >
           <article
             aria-labelledby="od-4"
             aria-modal="true"
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_article__18vhvlio elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_flexDirection_column_mobile__onxwjupx"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_article__18vhvlio elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_flexDirection_column_mobile__onxwjurp"
             role="dialog"
           >
             <main
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_height_full_mobile__onxwjufl sprinkles_flexDirection_column_mobile__onxwjupx sprinkles_flexGrow_0_mobile__onxwjuqd MinimalModal_content__13ik47w1"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_height_full_mobile__onxwjuhd sprinkles_flexDirection_column_mobile__onxwjurp sprinkles_flexGrow_0_mobile__onxwjus5 MinimalModal_content__13ik47w1"
             >
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis convallis neque a laoreet maximus. Vestibulum hendrerit quam at mi venenatis faucibus at vel nisi. In ut risus et ipsum tincidunt tempor. Suspendisse potenti. Praesent faucibus posuere risus, at congue mauris porttitor ut. Donec sit amet elit vitae purus dictum aliquet quis ut ligula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum dui sapien, porttitor ac erat vel, malesuada rutrum mauris. Nam arcu tellus, pretium ut aliquet eget, ultrices vel est. Maecenas dapibus volutpat eros a volutpat.
@@ -93,17 +93,17 @@ exports[`<MinimalModal /> > should match snapshot without title and body 1`] = `
       >
         <div
           aria-hidden="false"
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_height_full_mobile__onxwjufl sprinkles_alignItems_center_mobile__onxwjumt sprinkles_justifyContent_center_mobile__onxwjuoh MinimalModal_container__13ik47w0"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_height_full_mobile__onxwjuhd sprinkles_alignItems_center_mobile__onxwjuol sprinkles_justifyContent_center_mobile__onxwjuq9 MinimalModal_container__13ik47w0"
           role="none presentation"
         >
           <article
             aria-labelledby="od-3"
             aria-modal="true"
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_article__18vhvlio elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_flexDirection_column_mobile__onxwjupx"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_article__18vhvlio elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_flexDirection_column_mobile__onxwjurp"
             role="dialog"
           >
             <main
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_height_full_mobile__onxwjufl sprinkles_flexDirection_column_mobile__onxwjupx sprinkles_flexGrow_0_mobile__onxwjuqd MinimalModal_content__13ik47w1"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju6l sprinkles_height_full_mobile__onxwjuhd sprinkles_flexDirection_column_mobile__onxwjurp sprinkles_flexGrow_0_mobile__onxwjus5 MinimalModal_content__13ik47w1"
             />
           </article>
         </div>

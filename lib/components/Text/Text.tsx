@@ -3,8 +3,6 @@ import React, { type ComponentProps } from 'react';
 
 import { sprinkles, type Sprinkles } from '../../styles/sprinkles.css';
 import {
-	DEFAULT_TEXT_SIZE,
-	DEFAULT_TEXT_WEIGHT,
 	textStyles,
 	type TextTags,
 	type TypographyProps,
@@ -88,10 +86,10 @@ export const Text = React.forwardRef<HTMLElement, TextProps>(
 			color, // modern semantic colour tokens
 			colour, // legacy colours
 			noWrap,
-			size = DEFAULT_TEXT_SIZE,
+			size,
 			strong,
 			transform,
-			weight = DEFAULT_TEXT_WEIGHT,
+			weight,
 			wrap,
 
 			//style props
