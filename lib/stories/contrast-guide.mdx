@@ -1,7 +1,5 @@
 import { Meta } from '@storybook/addon-docs/blocks';
-import { Fragment } from 'react';
 
-import { colourMapWithoutWhite } from '../themes/base/colours';
 import {
   contrastGuide,
   contrastGuideColour,
@@ -33,13 +31,6 @@ combination passes WCAG AA for normal text (4.5:1); `icon only` and
 
 ## Approved combinations
 
-One grid per ramp: rows are foreground (text) colours, columns are backgrounds.
-Coloured cells are approved — each shows the live pair, its contrast ratio, and
-the WCAG level. Grey `✕` cells are not approved, even where the raw ratio
-passes.
-
-export const steps = Object.keys(colourMapWithoutWhite.gray);
-
 export const ratioOf = (foreground, background) =>
   1 /
   getContrastRatio(
@@ -47,148 +38,118 @@ export const ratioOf = (foreground, background) =>
     contrastGuideColour(background),
   );
 
-export const tokenOrder = (token) => {
-  if (token === 'white') return 0;
-  if (token === 'gray-900') return 1;
-  const [, step] = token.split('-');
-  return 2 + (900 - Number(step));
+export const capitalise = (token) =>
+  token.charAt(0).toUpperCase() + token.slice(1);
+
+export const groups = (hue) => {
+  const out = [];
+  for (const combo of contrastGuide[hue]) {
+    const badge = combo.usage === 'text' ? '' : combo.usage.replace('-', ' ');
+    const title =
+      combo.background === 'white'
+        ? `On white${badge ? ` — ${badge}` : ''}`
+        : `${capitalise(combo.foreground)} text${badge ? ` — ${badge}` : ''}`;
+    const last = out[out.length - 1];
+    if (last && last.title === title) {
+      last.combos.push(combo);
+    } else {
+      out.push({ title, combos: [combo] });
+    }
+  }
+  return out;
 };
 
-export const foregroundsFor = (hue) =>
-  [...new Set(contrastGuide[hue].map((combo) => combo.foreground))].sort(
-    (a, b) => tokenOrder(a) - tokenOrder(b),
-  );
-
-export const usageFor = (hue) =>
-  new Map(
-    contrastGuide[hue].map((combo) => [
-      `${combo.foreground}|${combo.background}`,
-      combo.usage,
-    ]),
-  );
-
-export const Cell = ({ foreground, background, usage }) => {
-  if (!usage) {
-    return (
+export const Swatch = ({ foreground, background }) => {
+  const onWhite = background === 'white';
+  const value = ratioOf(foreground, background);
+  return (
+    <div style={{ width: 76 }}>
       <div
         style={{
-          background: '#fafbfc',
-          borderRadius: 6,
-          minHeight: 56,
+          background: contrastGuideColour(background),
+          color: contrastGuideColour(foreground),
+          boxShadow: 'inset 0 0 0 1px rgba(33, 35, 56, 0.12)',
+          height: 40,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: '#d4d9dd',
-          fontSize: 12,
+          fontWeight: 700,
+          fontSize: 14,
         }}
       >
-        ✕
+        Aa
       </div>
-    );
-  }
-  const value = ratioOf(foreground, background);
-  const badge =
-    usage === 'icon-only'
-      ? 'icon only'
-      : usage === 'inactive-only'
-        ? 'inactive'
-        : value >= 7
-          ? 'AAA'
-          : 'AA';
-  return (
-    <div
-      style={{
-        background: contrastGuideColour(background),
-        color: contrastGuideColour(foreground),
-        borderRadius: 6,
-        boxShadow: 'inset 0 0 0 1px rgba(33, 35, 56, 0.12)',
-        minHeight: 56,
-        padding: '6px 8px',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        textAlign: 'center',
-      }}
-    >
-      <div style={{ fontWeight: 700, fontSize: 14, lineHeight: 1.3 }}>Aa</div>
-      <div style={{ fontSize: 10, lineHeight: 1.4, opacity: 0.9 }}>
-        {value.toFixed(2)} · {badge}
-      </div>
-    </div>
-  );
-};
-
-export const headStyle = {
-  fontSize: 11,
-  color: '#5c6172',
-  alignSelf: 'end',
-  textAlign: 'center',
-  paddingBottom: 4,
-};
-
-export const Grid = ({ hue }) => {
-  const backgrounds = ['white', ...steps.map((step) => `${hue}-${step}`)];
-  const foregrounds = foregroundsFor(hue);
-  const usage = usageFor(hue);
-  return (
-    <div style={{ margin: '24px 0 40px' }}>
       <div
         style={{
-          fontSize: 16,
-          fontWeight: 700,
-          color: '#212338',
-          textTransform: 'capitalize',
-          marginBottom: 8,
+          fontSize: 10,
+          color: '#5c6172',
+          textAlign: 'center',
+          lineHeight: 1.5,
+          marginTop: 4,
         }}
       >
-        {hue}
-      </div>
-      <div style={{ overflowX: 'auto' }}>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: `88px repeat(${backgrounds.length}, minmax(60px, 1fr))`,
-            gap: 4,
-            minWidth: 720,
-          }}
-        >
-          <div style={{ ...headStyle, textAlign: 'left' }}>text ↓ on →</div>
-          {backgrounds.map((background) => (
-            <div key={background} style={headStyle}>
-              {background === 'white' ? 'white' : background.split('-')[1]}
-            </div>
-          ))}
-          {foregrounds.map((foreground) => (
-            <Fragment key={foreground}>
-              <div
-                style={{
-                  fontSize: 11,
-                  color: '#212338',
-                  fontWeight: 600,
-                  alignSelf: 'center',
-                }}
-              >
-                {foreground}
-              </div>
-              {backgrounds.map((background) => (
-                <Cell
-                  key={background}
-                  foreground={foreground}
-                  background={background}
-                  usage={usage.get(`${foreground}|${background}`)}
-                />
-              ))}
-            </Fragment>
-          ))}
-        </div>
+        {onWhite ? foreground : background.split('-')[1]}
+        <br />
+        {value.toFixed(2)}:1
       </div>
     </div>
   );
 };
+
+export const Ramp = ({ hue }) => (
+  <div
+    style={{
+      display: 'flex',
+      margin: '20px 0',
+      paddingBottom: 20,
+      borderBottom: '1px solid #eef0f2',
+    }}
+  >
+    <div style={{ flex: '0 0 30%', fontWeight: 700, fontSize: 14 }}>
+      {capitalise(hue)}
+    </div>
+    <div
+      style={{
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 12,
+      }}
+    >
+      {groups(hue).map(({ title, combos }) => (
+        <div key={title} style={{ display: 'flex', alignItems: 'center' }}>
+          <div style={{ flex: '0 0 160px', fontSize: 12, color: '#5c6172' }}>
+            {title}
+          </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+            {combos.map((combo, index) => (
+              <div
+                key={`${combo.foreground}-${combo.background}`}
+                style={{
+                  borderRadius:
+                    combos.length === 1
+                      ? 6
+                      : index === 0
+                        ? '6px 0 0 6px'
+                        : index === combos.length - 1
+                          ? '0 6px 6px 0'
+                          : 0,
+                  overflow: 'hidden',
+                }}
+              >
+                <Swatch {...combo} />
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+);
 
 {Object.keys(contrastGuide).map((hue) => (
 
-<Grid key={hue} hue={hue} />
+<Ramp key={hue} hue={hue} />
 ))}
 
 <div
