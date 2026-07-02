@@ -6,10 +6,7 @@ import { colourMap, colourMapWithoutWhite } from '../themes/base/colours';
 
 # Palette
 
-The AutoGuru Design System 2026 colour ramps. Values are sourced from the
-[Figma palette](https://www.figma.com/design/ZkQlQcJkF7NTnZomVrPRN5/AutoGuru-Design-System-2026?node-id=360-12804)
-bound variables — `lib/themes/base/colours.ts` is the single source of truth in
-code.
+The AutoGuru Design System 2026 colour ramps.
 
 export const ramp = (hue) =>
   Object.entries(colourMapWithoutWhite[hue])
@@ -29,9 +26,3 @@ export const ramp = (hue) =>
   <ColorItem title="Red" colors={ramp('red')} />
   <ColorItem title="White" colors={{ white: colourMap.white.toUpperCase() }} />
 </ColorPalette>
-
-> **Deprecated:** the standalone `black` ramp was removed in Design System 2026
-> — "Tarmac Black" is now `gray/900`. The `black*` tokens (and
-> `--od-color-gamut-black-*` CSS vars) are aliased to the `gray` ramp for
-> backwards compatibility and will be removed in a future major release. Use
-> `gray*` instead.
