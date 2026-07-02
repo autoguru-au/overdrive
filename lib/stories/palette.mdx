@@ -16,39 +16,18 @@ export const ramp = (hue) =>
     .reverse()
     // the trailing space in the key stops JS from re-sorting integer-like
     // keys ascending, keeping the 900 → 100 display order
-    .reduce((shades, [step, hex]) => ({ ...shades, [`${step} `]: hex }), {});
+    .reduce(
+      (shades, [step, hex]) => ({ ...shades, [`${step} `]: hex.toUpperCase() }),
+      {},
+    );
 
 <ColorPalette>
-  <ColorItem
-    title="Green"
-    subtitle="Core brand — Adventure Green"
-    colors={ramp('green')}
-  />
-  <ColorItem
-    title="Gray"
-    subtitle="Neutral ramp — gray/900 is the brand Tarmac Black"
-    colors={ramp('gray')}
-  />
-  <ColorItem
-    title="Yellow"
-    subtitle="Core brand — Zest Yellow / warning intent"
-    colors={ramp('yellow')}
-  />
-  <ColorItem
-    title="Blue"
-    subtitle="Platform only — information intent"
-    colors={ramp('blue')}
-  />
-  <ColorItem
-    title="Red"
-    subtitle="Platform only — danger intent"
-    colors={ramp('red')}
-  />
-  <ColorItem
-    title="White"
-    subtitle="Base surface"
-    colors={{ white: colourMap.white }}
-  />
+  <ColorItem title="Green" colors={ramp('green')} />
+  <ColorItem title="Gray" colors={ramp('gray')} />
+  <ColorItem title="Yellow" colors={ramp('yellow')} />
+  <ColorItem title="Blue" colors={ramp('blue')} />
+  <ColorItem title="Red" colors={ramp('red')} />
+  <ColorItem title="White" colors={{ white: colourMap.white.toUpperCase() }} />
 </ColorPalette>
 
 > **Deprecated:** the standalone `black` ramp was removed in Design System 2026
