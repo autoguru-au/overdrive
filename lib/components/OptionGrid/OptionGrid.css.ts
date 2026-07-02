@@ -171,7 +171,7 @@ export const gridItemStyle = style([
 						display: 'block',
 						height: '100%',
 						left: 0,
-						outlineColor: tokens.colours.gamut.black900,
+						outlineColor: tokens.colours.gamut.gray900,
 						outlineStyle: 'solid',
 						outlineWidth: tokens.border.width[2],
 						position: 'absolute',
@@ -181,7 +181,7 @@ export const gridItemStyle = style([
 					[selectors.disabled]: {
 						backgroundColor: tokens.colours.gamut.gray100,
 						borderColor: 'transparent',
-						color: tokens.colours.gamut.black500,
+						color: tokens.colours.gamut.gray500,
 						cursor: 'not-allowed',
 					},
 				},

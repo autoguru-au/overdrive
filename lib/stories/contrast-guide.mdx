@@ -1,0 +1,190 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+import {
+  contrastGuide,
+  contrastGuideColour,
+} from '../themes/base/contrastGuide';
+import { getContrastRatio } from '../themes/helpers';
+
+<Meta title="Foundation/Contrast Guide" />
+
+# Contrast Guide
+
+The design-approved text-on-background combinations for the Design System 2026
+[Colour Palette](?path=/docs/foundation-colour-palette--docs). Every `text`
+combination passes WCAG AA for normal text (4.5:1); `icon only` and
+`inactive only` are conditional exceptions.
+
+**Do not use any colour combination that is not listed here.**
+
+## How the ramps work
+
+- **Gray, blue and red** — white text works on steps **500–900**. Reversed, the
+  same dark steps work as text on white (blue down to 600, red down to 700).
+- **Green** — white text only on **800–900**; use `gray-900` text on 300–600.
+- **Yellow** — **never white text**. Use `gray-900` text on any step, or
+  `red-900` on 100–500.
+- **Steps 100–200** — tinted backgrounds; pair with the same hue's 900 text (or
+  `gray-900`).
+- **Conditional** — `gray-400` on white is for inactive elements only;
+  `green-600` and `red-600` on white are for icons only, never text.
+
+## Approved combinations
+
+export const ratioOf = (foreground, background) =>
+  1 /
+  getContrastRatio(
+    contrastGuideColour(foreground),
+    contrastGuideColour(background),
+  );
+
+export const capitalise = (token) =>
+  token.charAt(0).toUpperCase() + token.slice(1);
+
+export const groups = (hue) => {
+  const out = [];
+  for (const combo of contrastGuide[hue]) {
+    const badge = combo.usage === 'text' ? '' : combo.usage.replace('-', ' ');
+    const title =
+      combo.background === 'white'
+        ? `On white${badge ? ` — ${badge}` : ''}`
+        : `${capitalise(combo.foreground)} text${badge ? ` — ${badge}` : ''}`;
+    const last = out[out.length - 1];
+    if (last && last.title === title) {
+      last.combos.push(combo);
+    } else {
+      out.push({ title, combos: [combo] });
+    }
+  }
+  return out;
+};
+
+export const Swatch = ({ foreground, background }) => {
+  const onWhite = background === 'white';
+  const value = ratioOf(foreground, background);
+  return (
+    <div style={{ width: 76 }}>
+      <div
+        style={{
+          background: contrastGuideColour(background),
+          color: contrastGuideColour(foreground),
+          boxShadow: 'inset 0 0 0 1px rgba(33, 35, 56, 0.12)',
+          height: 40,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontWeight: 700,
+          fontSize: 14,
+        }}
+      >
+        Aa
+      </div>
+      <div
+        style={{
+          fontSize: 10,
+          color: '#5c6172',
+          textAlign: 'center',
+          lineHeight: 1.5,
+          marginTop: 4,
+        }}
+      >
+        {onWhite ? foreground : background.split('-')[1]}
+        <br />
+        {value.toFixed(2)}:1
+      </div>
+    </div>
+  );
+};
+
+export const Ramp = ({ hue }) => (
+  <div
+    style={{
+      display: 'flex',
+      margin: '20px 0',
+      paddingBottom: 20,
+      borderBottom: '1px solid #eef0f2',
+    }}
+  >
+    <div style={{ flex: '0 0 30%', fontWeight: 700, fontSize: 14 }}>
+      {capitalise(hue)}
+    </div>
+    <div
+      style={{
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 12,
+      }}
+    >
+      {groups(hue).map(({ title, combos }) => (
+        <div key={title} style={{ display: 'flex', alignItems: 'center' }}>
+          <div style={{ flex: '0 0 160px', fontSize: 12, color: '#5c6172' }}>
+            {title}
+          </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+            {combos.map((combo, index) => (
+              <div
+                key={`${combo.foreground}-${combo.background}`}
+                style={{
+                  borderRadius:
+                    combos.length === 1
+                      ? 6
+                      : index === 0
+                        ? '6px 0 0 6px'
+                        : index === combos.length - 1
+                          ? '0 6px 6px 0'
+                          : 0,
+                  overflow: 'hidden',
+                }}
+              >
+                <Swatch {...combo} />
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+{Object.keys(contrastGuide).map((hue) => (
+
+<Ramp key={hue} hue={hue} />
+))}
+
+<div
+  style={{
+    border: '1px solid #ffc001',
+    background: '#fffcf2',
+    borderRadius: 8,
+    padding: '16px 20px',
+    margin: '40px 0',
+  }}
+>
+  <div
+    style={{
+      display: 'inline-block',
+      background: '#ffc001',
+      color: '#212338',
+      fontWeight: 700,
+      fontSize: 12,
+      borderRadius: 4,
+      padding: '2px 8px',
+      marginBottom: 8,
+    }}
+  >
+    DESIGN GUIDELINES
+  </div>
+  <ul style={{ margin: 0, paddingLeft: 20, fontSize: 14, color: '#212338' }}>
+    <li>
+      The text+bg combos displayed all pass at least AA standard. These are all
+      implemented in the existing components.
+    </li>
+    <li>Use conditionally as indicated (icon only / inactive only etc)</li>
+    <li>Do not use any colour combos that are not included in this chart</li>
+  </ul>
+</div>
+
+The guide is exported as data from `lib/themes/base/contrastGuide.ts` and
+enforced by `contrastGuide.spec.ts`, which also audits every theme's semantic
+and intent token pairings against AA.

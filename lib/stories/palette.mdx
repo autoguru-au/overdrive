@@ -1,0 +1,253 @@
+import { ColorItem, ColorPalette, Meta } from '@storybook/addon-docs/blocks';
+import { useState } from 'react';
+
+import { colourMap, colourMapWithoutWhite } from '../themes/base/colours';
+
+<Meta title="Foundation/Colour Palette" />
+
+# Colour Palette
+
+The AutoGuru Design System 2026 colour ramps. For the approved text-on-colour
+combinations, see the
+[Contrast Guide](?path=/docs/foundation-contrast-guide--docs).
+
+export const coreBrand = [
+  {
+    label: 'Adventure Green',
+    token: 'Green-500',
+    hex: colourMap.green['500'],
+    text: '#212338',
+  },
+  {
+    label: 'Zest Yellow',
+    token: 'Yellow-500',
+    hex: colourMap.yellow['500'],
+    text: '#212338',
+  },
+  {
+    label: 'Tarmac Black',
+    token: 'Gray-900',
+    hex: colourMap.gray['900'],
+    text: '#ffffff',
+  },
+];
+
+<div style={{ display: 'flex', margin: '24px 0 40px' }}>
+  <div style={{ flex: '0 0 30%', fontWeight: 700, fontSize: 14 }}>
+    Core brand
+  </div>
+  <div
+    style={{
+      flex: 1,
+      display: 'grid',
+      gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+      gap: 16,
+    }}
+  >
+    {coreBrand.map(({ label, token, hex, text }) => (
+      <div key={token}>
+        <div style={{ fontSize: 12, color: '#5c6172', marginBottom: 8 }}>
+          {label}
+        </div>
+        <div
+          style={{
+            background: hex,
+            borderRadius: 12,
+            height: 120,
+            padding: 16,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-end',
+            color: text,
+          }}
+        >
+          <div style={{ fontWeight: 700, fontSize: 15 }}>{token}</div>
+          <div style={{ fontSize: 13, opacity: 0.85 }}>{hex.toUpperCase()}</div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+export const ramp = (hue) =>
+  Object.entries(colourMapWithoutWhite[hue])
+    .reverse()
+    // the trailing space in the key stops JS from re-sorting integer-like
+    // keys ascending, keeping the 900 → 100 display order
+    .reduce(
+      (shades, [step, hex]) => ({ ...shades, [`${step} `]: hex.toUpperCase() }),
+      {},
+    );
+
+<ColorPalette>
+  <ColorItem title="Green" colors={ramp('green')} />
+  <ColorItem title="Gray" colors={ramp('gray')} />
+  <ColorItem title="Yellow" colors={ramp('yellow')} />
+  <ColorItem title="Blue" colors={ramp('blue')} />
+  <ColorItem title="Red" colors={ramp('red')} />
+  <ColorItem title="White" colors={{ white: colourMap.white.toUpperCase() }} />
+</ColorPalette>
+
+## Usage
+
+Every ramp step ships as a CSS custom property. Reference them with `var()` —
+never hardcode hex values — and only pair text and background colours approved
+by the [Contrast Guide](?path=/docs/foundation-contrast-guide--docs).
+
+export const codePanel = {
+  background: '#212338',
+  color: '#eef0f2',
+  borderRadius: 8,
+  padding: '16px 20px',
+  fontSize: 13,
+  lineHeight: 1.7,
+  overflowX: 'auto',
+  margin: 0,
+};
+
+export const panelHeading = {
+  fontSize: 14,
+  fontWeight: 700,
+  color: '#212338',
+  margin: '0 0 8px',
+};
+
+<div
+  style={{
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+    gap: 16,
+  }}
+>
+  <div>
+    <div style={panelHeading}>The Props</div>
+    <pre style={codePanel}>
+      {[
+        '--od-color-gamut-gray-{100-900}',
+        '--od-color-gamut-green-{100-900}',
+        '--od-color-gamut-blue-{100-900}',
+        '--od-color-gamut-yellow-{100-900}',
+        '--od-color-gamut-red-{100-900}',
+        '--od-color-gamut-white',
+      ].join('\n')}
+    </pre>
+  </div>
+  <div>
+    <div style={panelHeading}>Button Sample</div>
+    <pre style={codePanel}>
+      {[
+        'button.green {',
+        '  color: var(--od-color-gamut-white);',
+        '  background-color: var(--od-color-gamut-green-800);',
+        '  border: 1px solid var(--od-color-gamut-green-900);',
+        '',
+        '  &:hover {',
+        '    background-color: var(--od-color-gamut-green-900);',
+        '  }',
+        '}',
+      ].join('\n')}
+    </pre>
+  </div>
+</div>
+
+## Dynamic Palette
+
+Pick one of our hues to explore its ramp and the exact custom properties it
+ships — every swatch and value below is a real token from
+`lib/themes/base/colours.ts`.
+
+export const HUES = ['green', 'yellow', 'blue', 'red', 'gray'];
+
+export const DynamicPalette = () => {
+  const [hue, setHue] = useState('green');
+  const steps = Object.entries(colourMapWithoutWhite[hue]);
+  return (
+    <div style={{ background: '#212338', borderRadius: 12, padding: 24 }}>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 8,
+          marginBottom: 16,
+        }}
+      >
+        <span style={{ color: '#eef0f2', fontSize: 13, marginRight: 4 }}>
+          Our hues:
+        </span>
+        {HUES.map((name) => (
+          <button
+            key={name}
+            type="button"
+            title={name}
+            onClick={() => setHue(name)}
+            style={{
+              width: 24,
+              height: 24,
+              borderRadius: '50%',
+              border:
+                name === hue
+                  ? '2px solid #ffffff'
+                  : '2px solid rgba(255, 255, 255, 0.25)',
+              background: colourMapWithoutWhite[name]['500'],
+              cursor: 'pointer',
+            }}
+          />
+        ))}
+        <span
+          style={{
+            marginLeft: 'auto',
+            color: '#eef0f2',
+            fontWeight: 700,
+            fontSize: 14,
+            textTransform: 'capitalize',
+          }}
+        >
+          {hue}
+        </span>
+      </div>
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(9, 1fr)',
+          gap: 4,
+          margin: '16px 0',
+        }}
+      >
+        {steps.map(([step, hex]) => (
+          <div key={step} title={`--od-color-gamut-${hue}-${step}`}>
+            <div
+              style={{
+                background: hex,
+                borderRadius: 6,
+                height: 56,
+                boxShadow: 'inset 0 0 0 1px rgba(255, 255, 255, 0.12)',
+              }}
+            />
+            <div
+              style={{
+                color: '#8f95a1',
+                fontSize: 11,
+                textAlign: 'center',
+                marginTop: 4,
+              }}
+            >
+              {step}
+              <br />
+              {hex.toUpperCase()}
+            </div>
+          </div>
+        ))}
+      </div>
+      <pre style={{ ...codePanel, background: 'rgba(0, 0, 0, 0.35)' }}>
+        {steps
+          .map(
+            ([step, hex]) =>
+              `--od-color-gamut-${hue}-${step}: ${hex.toUpperCase()};`,
+          )
+          .join('\n')}
+      </pre>
+    </div>
+  );
+};
+
+<DynamicPalette />

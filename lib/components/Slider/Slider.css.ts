@@ -77,7 +77,7 @@ export const thumb = style([
 	{
 		'@layer': {
 			[cssLayerComponent]: {
-				backgroundColor: vars.colours.gamut.black900,
+				backgroundColor: vars.colours.gamut.gray900,
 				cursor: 'pointer',
 				position: 'absolute',
 				top: '50%',

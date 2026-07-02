@@ -54,7 +54,7 @@ const Widths = () => {
 						size="9"
 						style={{
 							backgroundColor:
-								overdriveTokens.color.gamut.black[100],
+								overdriveTokens.color.gamut.gray[100],
 						}}
 					/>
 					<p>{width}</p>
@@ -82,7 +82,7 @@ const Radius = () => {
 						size="9"
 						style={{
 							backgroundColor:
-								overdriveTokens.color.gamut.black[700],
+								overdriveTokens.color.gamut.gray[700],
 							color: overdriveTokens.color.gamut.white,
 							fontSize:
 								overdriveTokens.typography.size[3].fontSize,

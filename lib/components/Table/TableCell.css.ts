@@ -3,7 +3,7 @@ import { style } from '@vanilla-extract/css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
 export const root = style({
-	borderBottomColor: vars.colours.gamut.black100,
+	borderBottomColor: vars.colours.gamut.gray100,
 
 	/*
 	We do this hack, as our row's have no distinct element. Once subgrid is

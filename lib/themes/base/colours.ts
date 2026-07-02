@@ -1,34 +1,36 @@
 import type { ColourMap } from '../';
 
+/**
+ * Neutral / greyscale ramp. In AutoGuru Design System 2026 the darkest step
+ * (`gray/900`) is the brand "Tarmac Black".
+ */
+const gray = {
+	'900': '#212338',
+	'800': '#34384c',
+	'700': '#484c5f',
+	'600': '#5c6172',
+	'500': '#6c7283',
+	'400': '#8f95a1',
+	'300': '#d4d9dd',
+	'200': '#eef0f2',
+	'100': '#fafbfc',
+};
+
 export const colourMapWithoutWhite = {
-	black: {
-		'900': '#222222',
-		'800': '#2A2C2A',
-		'700': '#444644',
-		'600': '#626262',
-		'500': '#808080',
-		'400': '#ADB1B5',
-		'300': '#D4D9DD',
-		'200': '#DDE0E3',
-		'100': '#E4E4E4',
-	},
-	gray: {
-		'900': '#212338',
-		'800': '#34384c',
-		'700': '#484c5f',
-		'600': '#5c6172',
-		'500': '#6c7283',
-		'400': '#8f95a1',
-		'300': '#d4d9dd',
-		'200': '#eef0f2',
-		'100': '#fafbfc',
-	},
+	/**
+	 * @deprecated The standalone `black` ramp is removed in AutoGuru Design
+	 * System 2026 — "Tarmac Black" is now `gray/900`. `black` is aliased to
+	 * `gray` for backwards compatibility and will be removed in a future major.
+	 * Use `gray*` instead.
+	 */
+	black: gray,
+	gray,
 	green: {
-		'900': '#078171',
-		'800': '#05987a',
+		'900': '#00574c',
+		'800': '#18856f',
 		'700': '#03af83',
 		'600': '#01c68c',
-		'500': '#00dd95',
+		'500': '#00dda5',
 		'400': '#36e5aa',
 		'300': '#71edc2',
 		'200': '#e3f8f0',
@@ -40,9 +42,9 @@ export const colourMapWithoutWhite = {
 		'700': '#0d50ce',
 		'600': '#0d54e5',
 		'500': '#0d59fc',
-		'400': '#4680fc',
-		'300': '#80a7fd',
-		'200': '#e1edfe',
+		'400': '#4a86ff',
+		'300': '#81afff',
+		'200': '#bad4ff',
 		'100': '#f3f8ff',
 	},
 	yellow: {
