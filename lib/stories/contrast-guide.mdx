@@ -17,88 +17,79 @@ WCAG AA for normal text (4.5:1); combinations marked `icon only` or
 
 **Do not use any colour combination that is not listed here.**
 
-export const ratio = (foreground, background) =>
+export const ratio = ({ foreground, background }) =>
   (
     1 /
     getContrastRatio(
       contrastGuideColour(foreground),
       contrastGuideColour(background),
     )
-  ).toFixed(2);
+  ).toFixed(1);
 
-export const Combo = ({ foreground, background, usage }) => (
-  <div>
-    <div
-      style={{
-        background: contrastGuideColour(background),
-        borderRadius: 8,
-        boxShadow: 'inset 0 0 0 1px rgba(33, 35, 56, 0.12)',
-        height: 76,
-        padding: '10px 12px',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'flex-end',
-        color: contrastGuideColour(foreground),
-      }}
-    >
-      <div style={{ fontWeight: 700, fontSize: 18, lineHeight: 1.2 }}>Aa</div>
-      <div style={{ fontSize: 12, lineHeight: 1.4 }}>{foreground}</div>
+export const capitalise = (token) =>
+  token.charAt(0).toUpperCase() + token.slice(1);
+
+export const groups = (hue) => {
+  const out = [];
+  for (const combo of contrastGuide[hue]) {
+    const badge = combo.usage === 'text' ? '' : combo.usage.replace('-', ' ');
+    const title =
+      combo.background === 'white'
+        ? `On white${badge ? ` — ${badge}` : ''}`
+        : `${capitalise(combo.foreground)} text${badge ? ` — ${badge}` : ''}`;
+    const last = out[out.length - 1];
+    if (last && last.title === title) {
+      last.combos.push(combo);
+    } else {
+      out.push({ title, combos: [combo] });
+    }
+  }
+  return out;
+};
+
+export const Chip = (combo) => (
+  <div
+    style={{
+      background: contrastGuideColour(combo.background),
+      color: contrastGuideColour(combo.foreground),
+      borderRadius: 8,
+      boxShadow: 'inset 0 0 0 1px rgba(33, 35, 56, 0.12)',
+      minWidth: 92,
+      height: 64,
+      padding: '10px 12px',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+    }}
+  >
+    <div style={{ fontWeight: 700, fontSize: 14, lineHeight: 1.4 }}>
+      {combo.background === 'white'
+        ? combo.foreground
+        : combo.background.split('-')[1]}
     </div>
-    <div
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: 6,
-        marginTop: 6,
-        fontSize: 11,
-        color: '#5c6172',
-      }}
-    >
-      <span>
-        on {background} · {ratio(foreground, background)}:1
-      </span>
-      {usage !== 'text' && (
-        <span
-          style={{
-            background: '#eef0f2',
-            color: '#212338',
-            borderRadius: 4,
-            padding: '1px 6px',
-            fontWeight: 600,
-            whiteSpace: 'nowrap',
-          }}
-        >
-          {usage.replace('-', ' ')}
-        </span>
-      )}
+    <div style={{ fontSize: 11, opacity: 0.85, lineHeight: 1.4 }}>
+      {ratio(combo)}:1
     </div>
   </div>
 );
 
 export const Ramp = ({ hue }) => (
   <div style={{ margin: '32px 0' }}>
-    <div
-      style={{
-        fontSize: 16,
-        fontWeight: 700,
-        color: '#212338',
-        marginBottom: 12,
-        textTransform: 'capitalize',
-      }}
-    >
-      {hue}
+    <div style={{ fontSize: 16, fontWeight: 700, color: '#212338' }}>
+      {capitalise(hue)}
     </div>
-    <div
-      style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(132px, 1fr))',
-        gap: 12,
-      }}
-    >
-      {contrastGuide[hue].map((combo) => (
-        <Combo key={`${combo.foreground}-${combo.background}`} {...combo} />
-      ))}
-    </div>
+    {groups(hue).map(({ title, combos }) => (
+      <div key={title} style={{ marginTop: 12 }}>
+        <div style={{ fontSize: 12, color: '#5c6172', marginBottom: 6 }}>
+          {title}
+        </div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+          {combos.map((combo) => (
+            <Chip key={`${combo.foreground}-${combo.background}`} {...combo} />
+          ))}
+        </div>
+      </div>
+    ))}
   </div>
 );
 
