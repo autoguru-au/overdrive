@@ -1,0 +1,58 @@
+import { ColorItem, ColorPalette, Meta } from '@storybook/addon-docs/blocks';
+
+import { colourMap, colourMapWithoutWhite } from '../themes/base/colours';
+
+<Meta title="Foundation/Palette" />
+
+# Palette
+
+The AutoGuru Design System 2026 colour ramps. Values are sourced from the
+[Figma palette](https://www.figma.com/design/ZkQlQcJkF7NTnZomVrPRN5/AutoGuru-Design-System-2026?node-id=360-12804)
+bound variables — `lib/themes/base/colours.ts` is the single source of truth in
+code.
+
+export const ramp = (hue) =>
+  Object.entries(colourMapWithoutWhite[hue])
+    .reverse()
+    // the trailing space in the key stops JS from re-sorting integer-like
+    // keys ascending, keeping the 900 → 100 display order
+    .reduce((shades, [step, hex]) => ({ ...shades, [`${step} `]: hex }), {});
+
+<ColorPalette>
+  <ColorItem
+    title="Green"
+    subtitle="Core brand — Adventure Green"
+    colors={ramp('green')}
+  />
+  <ColorItem
+    title="Gray"
+    subtitle="Neutral ramp — gray/900 is the brand Tarmac Black"
+    colors={ramp('gray')}
+  />
+  <ColorItem
+    title="Yellow"
+    subtitle="Core brand — Zest Yellow / warning intent"
+    colors={ramp('yellow')}
+  />
+  <ColorItem
+    title="Blue"
+    subtitle="Platform only — information intent"
+    colors={ramp('blue')}
+  />
+  <ColorItem
+    title="Red"
+    subtitle="Platform only — danger intent"
+    colors={ramp('red')}
+  />
+  <ColorItem
+    title="White"
+    subtitle="Base surface"
+    colors={{ white: colourMap.white }}
+  />
+</ColorPalette>
+
+> **Deprecated:** the standalone `black` ramp was removed in Design System 2026
+> — "Tarmac Black" is now `gray/900`. The `black*` tokens (and
+> `--od-color-gamut-black-*` CSS vars) are aliased to the `gray` ramp for
+> backwards compatibility and will be removed in a future major release. Use
+> `gray*` instead.

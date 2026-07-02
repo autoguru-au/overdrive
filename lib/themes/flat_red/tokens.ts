@@ -5,29 +5,25 @@ import { tokens as baseTokens } from '../base/tokens';
 import { buildColourGamut } from '../makeTheme';
 import type { ThemeTokens } from '../theme.css';
 
+const gray = {
+	900: '#263238',
+	800: '#37474F',
+	700: '#455A64',
+	600: '#607D8B',
+	500: '#78909C',
+	400: '#90A4AE',
+	300: '#B0BEC5',
+	200: '#CFD8DC',
+	100: '#ECEFF1',
+};
+
 const colours = {
-	black: {
-		900: '#222222',
-		800: '#2A2C2A',
-		700: '#444644',
-		600: '#626262',
-		500: '#808080',
-		400: '#ADB1B5',
-		300: '#D4D9DD',
-		200: '#DDE0E3',
-		100: '#E4E4E4',
-	},
-	gray: {
-		900: '#263238',
-		800: '#37474F',
-		700: '#455A64',
-		600: '#607D8B',
-		500: '#78909C',
-		400: '#90A4AE',
-		300: '#B0BEC5',
-		200: '#CFD8DC',
-		100: '#ECEFF1',
-	},
+	/**
+	 * @deprecated The standalone `black` ramp is removed in AutoGuru Design
+	 * System 2026 — aliased to `gray` for backwards compatibility. Use `gray*`.
+	 */
+	black: gray,
+	gray,
 	green: {
 		900: '#007800',
 		800: '#009b00',
