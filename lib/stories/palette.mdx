@@ -8,6 +8,64 @@ import { colourMap, colourMapWithoutWhite } from '../themes/base/colours';
 
 The AutoGuru Design System 2026 colour ramps.
 
+export const coreBrand = [
+  {
+    label: 'Adventure Green',
+    token: 'Green-500',
+    hex: colourMap.green['500'],
+    text: '#212338',
+  },
+  {
+    label: 'Zest Yellow',
+    token: 'Yellow-500',
+    hex: colourMap.yellow['500'],
+    text: '#212338',
+  },
+  {
+    label: 'Tarmac Black',
+    token: 'Gray-900',
+    hex: colourMap.gray['900'],
+    text: '#ffffff',
+  },
+];
+
+<div style={{ display: 'flex', margin: '24px 0 40px' }}>
+  <div style={{ flex: '0 0 30%', fontWeight: 700, fontSize: 14 }}>
+    Core brand
+  </div>
+  <div
+    style={{
+      flex: 1,
+      display: 'grid',
+      gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+      gap: 16,
+    }}
+  >
+    {coreBrand.map(({ label, token, hex, text }) => (
+      <div key={token}>
+        <div style={{ fontSize: 12, color: '#5c6172', marginBottom: 8 }}>
+          {label}
+        </div>
+        <div
+          style={{
+            background: hex,
+            borderRadius: 12,
+            height: 120,
+            padding: 16,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-end',
+            color: text,
+          }}
+        >
+          <div style={{ fontWeight: 700, fontSize: 15 }}>{token}</div>
+          <div style={{ fontSize: 13, opacity: 0.85 }}>{hex.toUpperCase()}</div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
 export const ramp = (hue) =>
   Object.entries(colourMapWithoutWhite[hue])
     .reverse()
