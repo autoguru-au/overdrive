@@ -104,53 +104,246 @@ export const ThemeColours: Story = {
 interface ProposedToken {
 	name: string;
 	token: ContrastColourToken;
+	/** Plain-language guidance on when to use this token */
+	description: string;
 	was?: ContrastColourToken;
 	note?: string;
 }
 
+interface TokenSection {
+	title: string;
+	tokens: ProposedToken[];
+}
+
+interface TokenGroup {
+	group: string;
+	title: string;
+	blurb: string;
+	sections: TokenSection[];
+}
+
 /**
  * The full proposed Design System 2026 semantic set: current values carried
- * over unchanged except where the contrast guide requires a fix (`was`).
+ * over unchanged except where the contrast guide requires a fix (`was`),
+ * organised by human usage category.
  */
-const proposed2026: Record<string, ProposedToken[]> = {
-	surface: [
-		{ name: 'page', token: 'white' },
-		{ name: 'hard', token: 'gray-900' },
-		{ name: 'soft', token: 'gray-700' },
-		{ name: 'accent', token: 'green-400' },
-		{ name: 'success', token: 'green-800', was: 'green-700' },
-		{ name: 'info', token: 'blue-600' },
-		{ name: 'danger', token: 'red-600' },
-		{ name: 'warning', token: 'yellow-800' },
-	],
-	content: [
-		{ name: 'normal', token: 'gray-900' },
-		{ name: 'soft', token: 'gray-700' },
-		{ name: 'inverse', token: 'white' },
-		{ name: 'info', token: 'blue-600' },
-		{ name: 'danger', token: 'red-700', was: 'red-600' },
-		{ name: 'success', token: 'green-800', was: 'green-700' },
-		{
-			name: 'warning',
-			token: 'yellow-800',
-			was: 'yellow-800',
-			note: 'fails AA on white; no yellow passes — pending design decision',
-		},
-	],
-	interactive: [
-		{ name: 'border', token: 'gray-300' },
-		{ name: 'borderMuted', token: 'gray-200' },
-		{ name: 'borderDisabled', token: 'gray-100' },
-		{ name: 'surfaceDisabled', token: 'gray-400' },
-		{ name: 'contentDisabled', token: 'gray-600' },
-		{ name: 'link', token: 'green-800', was: 'green-600' },
-		{ name: 'linkVisited', token: 'green-900', was: 'green-700' },
-		{ name: 'overlayBg', token: 'gray-300' },
-		{ name: 'overlayContainer', token: 'white' },
-		{ name: 'placeholder', token: 'gray-700' },
-		{ name: 'focusOutline', token: 'blue-500' },
-	],
-};
+const proposed2026: TokenGroup[] = [
+	{
+		group: 'surface',
+		title: 'Surface',
+		blurb: 'Background colours for pages, panels and feedback banners.',
+		sections: [
+			{
+				title: 'Base surfaces',
+				tokens: [
+					{
+						name: 'page',
+						token: 'white',
+						description: 'The default page background.',
+					},
+					{
+						name: 'hard',
+						token: 'gray-900',
+						description:
+							'High-contrast dark surface — headers, footers, hero panels. Pair with inverse (white) content.',
+					},
+					{
+						name: 'soft',
+						token: 'gray-700',
+						description:
+							'Softer dark surface for secondary panels. Pair with inverse content.',
+					},
+				],
+			},
+			{
+				title: 'Brand & feedback surfaces',
+				tokens: [
+					{
+						name: 'accent',
+						token: 'green-400',
+						description:
+							'Brand highlight — promo strips, selected states. Use gray-900 text.',
+					},
+					{
+						name: 'success',
+						token: 'green-800',
+						was: 'green-700',
+						description:
+							'Positive feedback — confirmations, success banners. White text.',
+					},
+					{
+						name: 'info',
+						token: 'blue-600',
+						description:
+							'Informational notices and hints. White text.',
+					},
+					{
+						name: 'danger',
+						token: 'red-600',
+						description:
+							'Errors and destructive actions. White text.',
+					},
+					{
+						name: 'warning',
+						token: 'yellow-800',
+						description:
+							'Caution banners. Must use gray-900 text — never white on yellow.',
+					},
+				],
+			},
+		],
+	},
+	{
+		group: 'content',
+		title: 'Content',
+		blurb: 'Text and icon colours that sit on the surfaces above.',
+		sections: [
+			{
+				title: 'Body text',
+				tokens: [
+					{
+						name: 'normal',
+						token: 'gray-900',
+						description: 'Default body text on light surfaces.',
+					},
+					{
+						name: 'soft',
+						token: 'gray-700',
+						description: 'Secondary and supporting text.',
+					},
+					{
+						name: 'inverse',
+						token: 'white',
+						description:
+							'Text on hard, soft and strong feedback surfaces.',
+					},
+				],
+			},
+			{
+				title: 'Status text',
+				tokens: [
+					{
+						name: 'info',
+						token: 'blue-600',
+						description: 'Informational text on white.',
+					},
+					{
+						name: 'danger',
+						token: 'red-700',
+						was: 'red-600',
+						description: 'Error text on white.',
+					},
+					{
+						name: 'success',
+						token: 'green-800',
+						was: 'green-700',
+						description: 'Positive text on white.',
+					},
+					{
+						name: 'warning',
+						token: 'yellow-800',
+						was: 'yellow-800',
+						description:
+							'Caution text — avoid on white; prefer gray-900 on a warning surface.',
+						note: 'fails AA on white; no yellow passes — pending design decision',
+					},
+				],
+			},
+		],
+	},
+	{
+		group: 'interactive',
+		title: 'Interactive',
+		blurb: 'Colours for controls: borders, links, focus, overlays and disabled states.',
+		sections: [
+			{
+				title: 'Borders',
+				tokens: [
+					{
+						name: 'border',
+						token: 'gray-300',
+						description:
+							'Default border for inputs, cards and dividers.',
+					},
+					{
+						name: 'borderMuted',
+						token: 'gray-200',
+						description: 'Subtle border for quiet separation.',
+					},
+					{
+						name: 'borderDisabled',
+						token: 'gray-100',
+						description: 'Border of disabled controls.',
+					},
+				],
+			},
+			{
+				title: 'Disabled states',
+				tokens: [
+					{
+						name: 'surfaceDisabled',
+						token: 'gray-400',
+						description: 'Background of disabled controls.',
+					},
+					{
+						name: 'contentDisabled',
+						token: 'gray-600',
+						description: 'Text and icons inside disabled controls.',
+					},
+				],
+			},
+			{
+				title: 'Links',
+				tokens: [
+					{
+						name: 'link',
+						token: 'green-800',
+						was: 'green-600',
+						description:
+							'Inline text links — deepened so links pass AA on white.',
+					},
+					{
+						name: 'linkVisited',
+						token: 'green-900',
+						was: 'green-700',
+						description: 'Visited links — one step darker.',
+					},
+				],
+			},
+			{
+				title: 'Overlays',
+				tokens: [
+					{
+						name: 'overlayBg',
+						token: 'gray-300',
+						description: 'Scrim behind modals and drawers.',
+					},
+					{
+						name: 'overlayContainer',
+						token: 'white',
+						description: 'Surface of the modal or popover itself.',
+					},
+				],
+			},
+			{
+				title: 'Focus & input',
+				tokens: [
+					{
+						name: 'focusOutline',
+						token: 'blue-500',
+						description:
+							'Keyboard focus ring — blue so it never blends with brand green.',
+					},
+					{
+						name: 'placeholder',
+						token: 'gray-700',
+						description: 'Placeholder text inside inputs.',
+					},
+				],
+			},
+		],
+	},
+];
 
 // smaller inverted ratio = higher contrast
 const textOn = (hex: string): string =>
@@ -197,6 +390,7 @@ const Token2026 = ({
 	group,
 	name,
 	token,
+	description,
 	was,
 	note,
 }: ProposedToken & { group: string }) => {
@@ -224,6 +418,15 @@ const Token2026 = ({
 				</div>
 			</div>
 			<div className={labels}>{spacesFromCamelCase(name)}</div>
+			<div
+				style={{
+					fontSize: 12,
+					color: colourMap.gray['600'],
+					lineHeight: 1.5,
+				}}
+			>
+				{description}
+			</div>
 			<code className={codeVariable}>
 				--od-color-{group}-{kebabCaseFromCamelCase(name)}
 			</code>
@@ -234,11 +437,11 @@ const Token2026 = ({
 
 export const ThemeColours2026: Story = {
 	render: () => {
-		const changed = Object.entries(proposed2026).flatMap(
-			([group, entries]) =>
-				entries
-					.filter((entry) => entry.was)
-					.map((entry) => ({ group, ...entry })),
+		const changed = proposed2026.flatMap(({ group, sections }) =>
+			sections
+				.flatMap((section) => section.tokens)
+				.filter((entry) => entry.was)
+				.map((entry) => ({ group, ...entry })),
 		);
 		return (
 			<FlexStack gap="7">
@@ -257,20 +460,46 @@ export const ThemeColours2026: Story = {
 					</p>
 				</hgroup>
 				<FlexStack gap="7">
-					{Object.entries(proposed2026).map(([group, entries]) => (
+					{proposed2026.map(({ group, title, blurb, sections }) => (
 						<FlexStack gap="4" key={group}>
-							<Heading as="h2" className={labels}>
-								{group}
-							</Heading>
-							<div className={gridSwatches}>
-								{entries.map((entry) => (
-									<Token2026
-										key={entry.name}
-										group={group}
-										{...entry}
-									/>
-								))}
-							</div>
+							<hgroup>
+								<Heading as="h2" className={labels}>
+									{title}
+								</Heading>
+								<p
+									style={{
+										margin: '4px 0 0',
+										fontSize: 14,
+										color: colourMap.gray['600'],
+									}}
+								>
+									{blurb}
+								</p>
+							</hgroup>
+							{sections.map((section) => (
+								<FlexStack gap="3" key={section.title}>
+									<div
+										style={{
+											fontSize: 13,
+											fontWeight: 700,
+											color: colourMap.gray['900'],
+											borderBottom: `1px solid ${colourMap.gray['200']}`,
+											paddingBottom: 4,
+										}}
+									>
+										{section.title}
+									</div>
+									<div className={gridSwatches}>
+										{section.tokens.map((entry) => (
+											<Token2026
+												key={entry.name}
+												group={group}
+												{...entry}
+											/>
+										))}
+									</div>
+								</FlexStack>
+							))}
 						</FlexStack>
 					))}
 				</FlexStack>
