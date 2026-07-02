@@ -1,0 +1,145 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+import {
+  contrastGuide,
+  contrastGuideColour,
+} from '../themes/base/contrastGuide';
+import { getContrastRatio } from '../themes/helpers';
+
+<Meta title="Foundation/Contrast Guide" />
+
+# Contrast Guide
+
+The approved text-on-background colour combinations for the Design System 2026
+[Palette](?path=/docs/foundation-palette--docs). Every `text` combination passes
+WCAG AA for normal text (4.5:1); combinations marked `icon only` or
+`inactive only` are conditional exceptions.
+
+**Do not use any colour combination that is not listed here.**
+
+export const ratio = (foreground, background) =>
+  (
+    1 /
+    getContrastRatio(
+      contrastGuideColour(foreground),
+      contrastGuideColour(background),
+    )
+  ).toFixed(2);
+
+export const Combo = ({ foreground, background, usage }) => (
+  <div>
+    <div
+      style={{
+        background: contrastGuideColour(background),
+        borderRadius: 8,
+        boxShadow: 'inset 0 0 0 1px rgba(33, 35, 56, 0.12)',
+        height: 76,
+        padding: '10px 12px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-end',
+        color: contrastGuideColour(foreground),
+      }}
+    >
+      <div style={{ fontWeight: 700, fontSize: 18, lineHeight: 1.2 }}>Aa</div>
+      <div style={{ fontSize: 12, lineHeight: 1.4 }}>{foreground}</div>
+    </div>
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: 6,
+        marginTop: 6,
+        fontSize: 11,
+        color: '#5c6172',
+      }}
+    >
+      <span>
+        on {background} · {ratio(foreground, background)}:1
+      </span>
+      {usage !== 'text' && (
+        <span
+          style={{
+            background: '#eef0f2',
+            color: '#212338',
+            borderRadius: 4,
+            padding: '1px 6px',
+            fontWeight: 600,
+            whiteSpace: 'nowrap',
+          }}
+        >
+          {usage.replace('-', ' ')}
+        </span>
+      )}
+    </div>
+  </div>
+);
+
+export const Ramp = ({ hue }) => (
+  <div style={{ margin: '32px 0' }}>
+    <div
+      style={{
+        fontSize: 16,
+        fontWeight: 700,
+        color: '#212338',
+        marginBottom: 12,
+        textTransform: 'capitalize',
+      }}
+    >
+      {hue}
+    </div>
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(132px, 1fr))',
+        gap: 12,
+      }}
+    >
+      {contrastGuide[hue].map((combo) => (
+        <Combo key={`${combo.foreground}-${combo.background}`} {...combo} />
+      ))}
+    </div>
+  </div>
+);
+
+{Object.keys(contrastGuide).map((hue) => (
+
+<Ramp key={hue} hue={hue} />
+))}
+
+<div
+  style={{
+    border: '1px solid #ffc001',
+    background: '#fffcf2',
+    borderRadius: 8,
+    padding: '16px 20px',
+    margin: '40px 0',
+  }}
+>
+  <div
+    style={{
+      display: 'inline-block',
+      background: '#ffc001',
+      color: '#212338',
+      fontWeight: 700,
+      fontSize: 12,
+      borderRadius: 4,
+      padding: '2px 8px',
+      marginBottom: 8,
+    }}
+  >
+    DESIGN GUIDELINES
+  </div>
+  <ul style={{ margin: 0, paddingLeft: 20, fontSize: 14, color: '#212338' }}>
+    <li>
+      The text+bg combos displayed all pass at least AA standard. These are all
+      implemented in the existing components.
+    </li>
+    <li>Use conditionally as indicated (icon only / inactive only etc)</li>
+    <li>Do not use any colour combos that are not included in this chart</li>
+  </ul>
+</div>
+
+The guide is exported as data from `lib/themes/base/contrastGuide.ts` and
+enforced by `contrastGuide.spec.ts`, which also audits every theme's semantic
+and intent token pairings against AA.
