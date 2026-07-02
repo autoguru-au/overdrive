@@ -444,118 +444,130 @@ export const ThemeColours2026: Story = {
 				.map((entry) => ({ group, ...entry })),
 		);
 		return (
-			<FlexStack gap="7">
-				<hgroup>
-					<Heading>Theme Colours 2026</Heading>
-					<p style={{ maxWidth: 720 }}>
-						The full proposed Design System 2026 semantic set.
-						Values are carried over from the current theme except
-						where the{' '}
-						<a href="?path=/docs/foundation-contrast-guide--docs">
-							Contrast Guide
-						</a>{' '}
-						requires a fix — those tokens carry a badge showing the
-						current value they replace. Proposals pending design
-						sign-off; the shipped theme is unchanged.
-					</p>
-				</hgroup>
+			<div style={{ maxWidth: 1024, margin: '0 auto', padding: 32 }}>
 				<FlexStack gap="7">
-					{proposed2026.map(({ group, title, blurb, sections }) => (
-						<FlexStack gap="4" key={group}>
-							<hgroup>
-								<Heading as="h2" className={labels}>
-									{title}
-								</Heading>
-								<p
-									style={{
-										margin: '4px 0 0',
-										fontSize: 14,
-										color: colourMap.gray['600'],
-									}}
-								>
-									{blurb}
-								</p>
-							</hgroup>
-							{sections.map((section) => (
-								<FlexStack gap="3" key={section.title}>
-									<div
-										style={{
-											fontSize: 13,
-											fontWeight: 700,
-											color: colourMap.gray['900'],
-											borderBottom: `1px solid ${colourMap.gray['200']}`,
-											paddingBottom: 4,
-										}}
-									>
-										{section.title}
-									</div>
-									<div className={gridSwatches}>
-										{section.tokens.map((entry) => (
-											<Token2026
-												key={entry.name}
-												group={group}
-												{...entry}
-											/>
-										))}
-									</div>
-								</FlexStack>
-							))}
-						</FlexStack>
-					))}
-				</FlexStack>
-				<FlexStack gap="4">
-					<Heading as="h2" className={labels}>
-						What changes vs the current theme
-					</Heading>
-					<FlexStack gap="2">
-						{changed.map(({ group, name, token, was, note }) => (
-							<div
-								key={`${group}-${name}`}
-								style={{
-									display: 'flex',
-									alignItems: 'center',
-									gap: 8,
-									fontSize: 13,
-									flexWrap: 'wrap',
-								}}
-							>
-								<code
-									className={codeVariable}
-									style={{ minWidth: 220 }}
-								>
-									color.{group}.{name}
-								</code>
-								{was && <TokenDot token={was} />}
-								{was}
-								{was !== token && (
-									<>
-										<span
-											aria-hidden
+					<hgroup>
+						<Heading>Theme Colours 2026</Heading>
+						<p style={{ maxWidth: 720 }}>
+							The full proposed Design System 2026 semantic set.
+							Values are carried over from the current theme
+							except where the{' '}
+							<a href="?path=/docs/foundation-contrast-guide--docs">
+								Contrast Guide
+							</a>{' '}
+							requires a fix — those tokens carry a badge showing
+							the current value they replace. Proposals pending
+							design sign-off; the shipped theme is unchanged.
+						</p>
+					</hgroup>
+					<FlexStack gap="7">
+						{proposed2026.map(
+							({ group, title, blurb, sections }) => (
+								<FlexStack gap="4" key={group}>
+									<hgroup>
+										<Heading as="h2" className={labels}>
+											{title}
+										</Heading>
+										<p
 											style={{
+												margin: '4px 0 0',
+												fontSize: 14,
 												color: colourMap.gray['600'],
 											}}
 										>
-											→
-										</span>
-										<TokenDot token={token} />
-										{token}
-									</>
-								)}
-								{note && (
-									<span
+											{blurb}
+										</p>
+									</hgroup>
+									{sections.map((section) => (
+										<FlexStack gap="3" key={section.title}>
+											<div
+												style={{
+													fontSize: 13,
+													fontWeight: 700,
+													color: colourMap.gray[
+														'900'
+													],
+													borderBottom: `1px solid ${colourMap.gray['200']}`,
+													paddingBottom: 4,
+												}}
+											>
+												{section.title}
+											</div>
+											<div className={gridSwatches}>
+												{section.tokens.map((entry) => (
+													<Token2026
+														key={entry.name}
+														group={group}
+														{...entry}
+													/>
+												))}
+											</div>
+										</FlexStack>
+									))}
+								</FlexStack>
+							),
+						)}
+					</FlexStack>
+					<FlexStack gap="4">
+						<Heading as="h2" className={labels}>
+							What changes vs the current theme
+						</Heading>
+						<FlexStack gap="2">
+							{changed.map(
+								({ group, name, token, was, note }) => (
+									<div
+										key={`${group}-${name}`}
 										style={{
-											color: colourMap.gray['600'],
-											fontSize: 12,
+											display: 'flex',
+											alignItems: 'center',
+											gap: 8,
+											fontSize: 13,
+											flexWrap: 'wrap',
 										}}
 									>
-										({note})
-									</span>
-								)}
-							</div>
-						))}
+										<code
+											className={codeVariable}
+											style={{ minWidth: 220 }}
+										>
+											color.{group}.{name}
+										</code>
+										{was && <TokenDot token={was} />}
+										{was}
+										{was !== token && (
+											<>
+												<span
+													aria-hidden
+													style={{
+														color: colourMap.gray[
+															'600'
+														],
+													}}
+												>
+													→
+												</span>
+												<TokenDot token={token} />
+												{token}
+											</>
+										)}
+										{note && (
+											<span
+												style={{
+													color: colourMap.gray[
+														'600'
+													],
+													fontSize: 12,
+												}}
+											>
+												({note})
+											</span>
+										)}
+									</div>
+								),
+							)}
+						</FlexStack>
 					</FlexStack>
 				</FlexStack>
-			</FlexStack>
+			</div>
 		);
 	},
 };
