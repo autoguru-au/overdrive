@@ -56,10 +56,10 @@ export const track = style([
 	{
 		'@layer': {
 			[cssLayerComponent]: {
-				backgroundColor: vars.colours.gamut.gray300,
+				backgroundColor: vars.color.gamut.gray['300'],
 				selectors: {
 					[selectors.disabled]: {
-						backgroundColor: vars.colours.gamut.gray200,
+						backgroundColor: vars.color.gamut.gray['200'],
 						cursor: 'not-allowed',
 					},
 				},
@@ -77,7 +77,7 @@ export const thumb = style([
 	{
 		'@layer': {
 			[cssLayerComponent]: {
-				backgroundColor: vars.colours.gamut.gray900,
+				backgroundColor: vars.color.gamut.gray['900'],
 				cursor: 'pointer',
 				position: 'absolute',
 				top: '50%',
@@ -94,7 +94,7 @@ export const thumb = style([
 						boxShadow: `0 0 0 4px rgba(0, 0, 0, 0.2)`,
 					},
 					[selectors.disabled]: {
-						backgroundColor: vars.colours.gamut.gray500,
+						backgroundColor: vars.color.gamut.gray['500'],
 						cursor: 'not-allowed',
 					},
 				},

@@ -6,28 +6,28 @@ exports[`<Table /> > when implemented > should match snapshot 1`] = `
   data-od-component="provider"
 >
   <table
-    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_table__18vhvli18 elementReset_trimmedElement__18vhvli0 elementReset_table__18vhvlib sprinkles_width_full_mobile__onxwjupp Table_root__wqeywm0"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_table__18vhvli18 elementReset_trimmedElement__18vhvli0 elementReset_table__18vhvlib sprinkles_width_full_mobile__onxwjur9 Table_root__wqeywm0"
     data-od-component="table"
     role="grid"
   >
     <tbody
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_tbody__18vhvli1a elementReset_trimmedElement__18vhvli0 elementReset_vAlignMiddle__18vhvlic sprinkles_display_contents_mobile__onxwjuf1"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_tbody__18vhvli1a elementReset_trimmedElement__18vhvli0 elementReset_vAlignMiddle__18vhvlic sprinkles_display_contents_mobile__onxwjuf5"
       role="rowgroup"
     >
       <tr
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_tr__18vhvli1e elementReset_trimmedElement__18vhvli0 elementReset_vAlignMiddle__18vhvlic sprinkles_display_contents_mobile__onxwjuf1"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_tr__18vhvli1e elementReset_trimmedElement__18vhvli0 elementReset_vAlignMiddle__18vhvlic sprinkles_display_contents_mobile__onxwjuf5"
         role="row"
       >
         <th
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_th__18vhvli1d elementReset_trimmedElement__18vhvli0 elementReset_vAlignMiddle__18vhvlic elementReset_resetVariants_hasBorder_true__18vhvli1f elementReset_borderReset__18vhvli1 sprinkles_paddingBottom_4_mobile__onxwju125 sprinkles_paddingLeft_4_mobile__onxwju139 sprinkles_paddingRight_4_mobile__onxwju14d sprinkles_paddingTop_4_mobile__onxwju15h sprinkles_display_flex_mobile__onxwjuf5 sprinkles_borderBottomWidth_1_mobile__onxwjulh sprinkles_borderBottomColour_dark__onxwju6u sprinkles_alignItems_center_mobile__onxwjuvd sprinkles_justifyContent_start_mobile__onxwjuxl"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_th__18vhvli1d elementReset_trimmedElement__18vhvli0 elementReset_vAlignMiddle__18vhvlic elementReset_resetVariants_hasBorder_true__18vhvli1f elementReset_borderReset__18vhvli1 sprinkles_paddingBottom_4_mobile__onxwju151 sprinkles_paddingLeft_4_mobile__onxwju16l sprinkles_paddingRight_4_mobile__onxwju185 sprinkles_paddingTop_4_mobile__onxwju19p sprinkles_display_flex_mobile__onxwjuf9 sprinkles_borderBottomWidth_1_mobile__onxwjum5 sprinkles_borderBottomColour_dark__onxwju6u sprinkles_alignItems_center_mobile__onxwjuy9 sprinkles_justifyContent_start_mobile__onxwju10h"
           role="columnheader"
           scope="col"
         >
           <div
-            class="sprinkles_alignItems_center_mobile__onxwjuvd sprinkles_display_flex_mobile__onxwjuf5 sprinkles_flexDirection_row_mobile__onxwjuyd sprinkles_flexWrap_wrap_mobile__onxwjuzl sprinkles_gap_1_mobile__onxwjuqp sprinkles_justifyContent_start_mobile__onxwjuxl"
+            class="sprinkles_alignItems_center_mobile__onxwjuy9 sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwju119 sprinkles_flexWrap_wrap_mobile__onxwju12h sprinkles_gap_1_mobile__onxwjus9 sprinkles_justifyContent_start_mobile__onxwju10h"
           >
             <span
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuip sprinkles_lineHeight_3_mobile__onxwjuhp sprinkles_color_primary__onxwju8j sprinkles_fontWeight_bold__onxwjue6 sprinkles_textAlign_left_mobile__onxwjujh TableHeadCell_text__1a20v5n1"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_primary__onxwju8j sprinkles_fontWeight_bold__onxwjue6 sprinkles_textAlign_left_mobile__onxwjujl TableHeadCell_text__1a20v5n1"
             >
               col 1
             </span>
@@ -35,29 +35,29 @@ exports[`<Table /> > when implemented > should match snapshot 1`] = `
         </th>
         <th
           aria-sort="ascending"
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_th__18vhvli1d elementReset_trimmedElement__18vhvli0 elementReset_vAlignMiddle__18vhvlic elementReset_resetVariants_hasBorder_true__18vhvli1f elementReset_borderReset__18vhvli1 sprinkles_display_flex_mobile__onxwjuf5 sprinkles_borderBottomWidth_1_mobile__onxwjulh sprinkles_borderBottomColour_dark__onxwju6u sprinkles_alignItems_center_mobile__onxwjuvd sprinkles_justifyContent_start_mobile__onxwjuxl"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_th__18vhvli1d elementReset_trimmedElement__18vhvli0 elementReset_vAlignMiddle__18vhvlic elementReset_resetVariants_hasBorder_true__18vhvli1f elementReset_borderReset__18vhvli1 sprinkles_display_flex_mobile__onxwjuf9 sprinkles_borderBottomWidth_1_mobile__onxwjum5 sprinkles_borderBottomColour_dark__onxwju6u sprinkles_alignItems_center_mobile__onxwjuy9 sprinkles_justifyContent_start_mobile__onxwju10h"
           role="columnheader"
           scope="col"
         >
           <button
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 sprinkles_paddingBottom_4_mobile__onxwju125 sprinkles_paddingLeft_4_mobile__onxwju139 sprinkles_paddingRight_4_mobile__onxwju14d sprinkles_paddingTop_4_mobile__onxwju15h sprinkles_display_block_mobile__onxwjuex sprinkles_width_full_mobile__onxwjupp TableHeadCell_sorterButton__1a20v5n0"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 sprinkles_paddingBottom_4_mobile__onxwju151 sprinkles_paddingLeft_4_mobile__onxwju16l sprinkles_paddingRight_4_mobile__onxwju185 sprinkles_paddingTop_4_mobile__onxwju19p sprinkles_display_block_mobile__onxwjuf1 sprinkles_width_full_mobile__onxwjur9 TableHeadCell_sorterButton__1a20v5n0"
             type="button"
           >
             <div
-              class="sprinkles_alignItems_center_mobile__onxwjuvd sprinkles_display_flex_mobile__onxwjuf5 sprinkles_flexDirection_row_mobile__onxwjuyd sprinkles_flexWrap_wrap_mobile__onxwjuzl sprinkles_gap_1_mobile__onxwjuqp sprinkles_justifyContent_start_mobile__onxwjuxl"
+              class="sprinkles_alignItems_center_mobile__onxwjuy9 sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwju119 sprinkles_flexWrap_wrap_mobile__onxwju12h sprinkles_gap_1_mobile__onxwjus9 sprinkles_justifyContent_start_mobile__onxwju10h"
             >
               <span
-                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuip sprinkles_lineHeight_3_mobile__onxwjuhp sprinkles_color_primary__onxwju8j sprinkles_fontWeight_bold__onxwjue6 sprinkles_textAlign_left_mobile__onxwjujh TableHeadCell_text__1a20v5n1"
+                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_primary__onxwju8j sprinkles_fontWeight_bold__onxwjue6 sprinkles_textAlign_left_mobile__onxwjujl TableHeadCell_text__1a20v5n1"
               >
                 col 2
               </span>
               <span
-                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuex Icon_makeResponsiveStyle_key_bp__1gy3ire0 TableHeadCell_sorterRoot__1a20v5n2 TableHeadCell_sorter_root__1a20v5n3 TableHeadCell_sorter_asc__1a20v5n4"
+                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuf1 Icon_makeResponsiveStyle_key_bp__1gy3ire0 TableHeadCell_sorterRoot__1a20v5n2 TableHeadCell_sorter_root__1a20v5n3 TableHeadCell_sorter_asc__1a20v5n4"
                 data-od-component="icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_width_full_mobile__onxwjupp sprinkles_height_full_mobile__onxwjuo5"
+                  class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuf1 sprinkles_width_full_mobile__onxwjur9 sprinkles_height_full_mobile__onxwjup9"
                   fill="currentColor"
                   focusable="false"
                   viewBox="0 0 256 256"
@@ -74,54 +74,54 @@ exports[`<Table /> > when implemented > should match snapshot 1`] = `
       </tr>
     </tbody>
     <tbody
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_tbody__18vhvli1a elementReset_trimmedElement__18vhvli0 elementReset_vAlignMiddle__18vhvlic sprinkles_display_contents_mobile__onxwjuf1"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_tbody__18vhvli1a elementReset_trimmedElement__18vhvli0 elementReset_vAlignMiddle__18vhvlic sprinkles_display_contents_mobile__onxwjuf5"
       role="rowgroup"
     >
       <tr
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_tr__18vhvli1e elementReset_trimmedElement__18vhvli0 elementReset_vAlignMiddle__18vhvlic sprinkles_display_contents_mobile__onxwjuf1"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_tr__18vhvli1e elementReset_trimmedElement__18vhvli0 elementReset_vAlignMiddle__18vhvlic sprinkles_display_contents_mobile__onxwjuf5"
         role="row"
       >
         <td
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_td__18vhvli1c elementReset_trimmedElement__18vhvli0 elementReset_vAlignMiddle__18vhvlic elementReset_resetVariants_hasBorder_true__18vhvli1f elementReset_borderReset__18vhvli1 sprinkles_paddingBottom_4_mobile__onxwju125 sprinkles_paddingLeft_4_mobile__onxwju139 sprinkles_paddingRight_4_mobile__onxwju14d sprinkles_paddingTop_4_mobile__onxwju15h sprinkles_display_flex_mobile__onxwjuf5 sprinkles_position_relative_mobile__onxwjuh1 sprinkles_borderBottomWidth_1_mobile__onxwjulh sprinkles_alignItems_center_mobile__onxwjuvd sprinkles_justifyContent_start_mobile__onxwjuxl TableCell_root__10xbrtd0"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_td__18vhvli1c elementReset_trimmedElement__18vhvli0 elementReset_vAlignMiddle__18vhvlic elementReset_resetVariants_hasBorder_true__18vhvli1f elementReset_borderReset__18vhvli1 sprinkles_paddingBottom_4_mobile__onxwju151 sprinkles_paddingLeft_4_mobile__onxwju16l sprinkles_paddingRight_4_mobile__onxwju185 sprinkles_paddingTop_4_mobile__onxwju19p sprinkles_display_flex_mobile__onxwjuf9 sprinkles_position_relative_mobile__onxwjuh5 sprinkles_borderBottomWidth_1_mobile__onxwjum5 sprinkles_alignItems_center_mobile__onxwjuy9 sprinkles_justifyContent_start_mobile__onxwju10h TableCell_root__10xbrtd0"
           role="gridcell"
         >
           <span
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuip sprinkles_lineHeight_3_mobile__onxwjuhp sprinkles_color_primary__onxwju8j sprinkles_fontWeight_normal__onxwjue4 sprinkles_display_block_mobile__onxwjuex"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_primary__onxwju8j sprinkles_fontWeight_normal__onxwjue4 sprinkles_display_block_mobile__onxwjuf1"
           >
             row 1, col 1
           </span>
         </td>
         <td
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_td__18vhvli1c elementReset_trimmedElement__18vhvli0 elementReset_vAlignMiddle__18vhvlic elementReset_resetVariants_hasBorder_true__18vhvli1f elementReset_borderReset__18vhvli1 sprinkles_paddingBottom_4_mobile__onxwju125 sprinkles_paddingLeft_4_mobile__onxwju139 sprinkles_paddingRight_4_mobile__onxwju14d sprinkles_paddingTop_4_mobile__onxwju15h sprinkles_display_flex_mobile__onxwjuf5 sprinkles_position_relative_mobile__onxwjuh1 sprinkles_borderBottomWidth_1_mobile__onxwjulh sprinkles_alignItems_center_mobile__onxwjuvd sprinkles_justifyContent_start_mobile__onxwjuxl TableCell_root__10xbrtd0"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_td__18vhvli1c elementReset_trimmedElement__18vhvli0 elementReset_vAlignMiddle__18vhvlic elementReset_resetVariants_hasBorder_true__18vhvli1f elementReset_borderReset__18vhvli1 sprinkles_paddingBottom_4_mobile__onxwju151 sprinkles_paddingLeft_4_mobile__onxwju16l sprinkles_paddingRight_4_mobile__onxwju185 sprinkles_paddingTop_4_mobile__onxwju19p sprinkles_display_flex_mobile__onxwjuf9 sprinkles_position_relative_mobile__onxwjuh5 sprinkles_borderBottomWidth_1_mobile__onxwjum5 sprinkles_alignItems_center_mobile__onxwjuy9 sprinkles_justifyContent_start_mobile__onxwju10h TableCell_root__10xbrtd0"
           role="gridcell"
         >
           <span
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuip sprinkles_lineHeight_3_mobile__onxwjuhp sprinkles_color_primary__onxwju8j sprinkles_fontWeight_normal__onxwjue4 sprinkles_display_block_mobile__onxwjuex"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_primary__onxwju8j sprinkles_fontWeight_normal__onxwjue4 sprinkles_display_block_mobile__onxwjuf1"
           >
             row 1, col 2
           </span>
         </td>
       </tr>
       <tr
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_tr__18vhvli1e elementReset_trimmedElement__18vhvli0 elementReset_vAlignMiddle__18vhvlic sprinkles_display_contents_mobile__onxwjuf1"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_tr__18vhvli1e elementReset_trimmedElement__18vhvli0 elementReset_vAlignMiddle__18vhvlic sprinkles_display_contents_mobile__onxwjuf5"
         role="row"
       >
         <td
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_td__18vhvli1c elementReset_trimmedElement__18vhvli0 elementReset_vAlignMiddle__18vhvlic elementReset_resetVariants_hasBorder_true__18vhvli1f elementReset_borderReset__18vhvli1 sprinkles_paddingBottom_4_mobile__onxwju125 sprinkles_paddingLeft_4_mobile__onxwju139 sprinkles_paddingRight_4_mobile__onxwju14d sprinkles_paddingTop_4_mobile__onxwju15h sprinkles_display_flex_mobile__onxwjuf5 sprinkles_position_relative_mobile__onxwjuh1 sprinkles_borderBottomWidth_1_mobile__onxwjulh sprinkles_alignItems_center_mobile__onxwjuvd sprinkles_justifyContent_start_mobile__onxwjuxl TableCell_root__10xbrtd0"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_td__18vhvli1c elementReset_trimmedElement__18vhvli0 elementReset_vAlignMiddle__18vhvlic elementReset_resetVariants_hasBorder_true__18vhvli1f elementReset_borderReset__18vhvli1 sprinkles_paddingBottom_4_mobile__onxwju151 sprinkles_paddingLeft_4_mobile__onxwju16l sprinkles_paddingRight_4_mobile__onxwju185 sprinkles_paddingTop_4_mobile__onxwju19p sprinkles_display_flex_mobile__onxwjuf9 sprinkles_position_relative_mobile__onxwjuh5 sprinkles_borderBottomWidth_1_mobile__onxwjum5 sprinkles_alignItems_center_mobile__onxwjuy9 sprinkles_justifyContent_start_mobile__onxwju10h TableCell_root__10xbrtd0"
           role="gridcell"
         >
           <span
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuip sprinkles_lineHeight_3_mobile__onxwjuhp sprinkles_color_primary__onxwju8j sprinkles_fontWeight_normal__onxwjue4 sprinkles_display_block_mobile__onxwjuex"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_primary__onxwju8j sprinkles_fontWeight_normal__onxwjue4 sprinkles_display_block_mobile__onxwjuf1"
           >
             row 2, col 1
           </span>
         </td>
         <td
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_td__18vhvli1c elementReset_trimmedElement__18vhvli0 elementReset_vAlignMiddle__18vhvlic elementReset_resetVariants_hasBorder_true__18vhvli1f elementReset_borderReset__18vhvli1 sprinkles_paddingBottom_4_mobile__onxwju125 sprinkles_paddingLeft_4_mobile__onxwju139 sprinkles_paddingRight_4_mobile__onxwju14d sprinkles_paddingTop_4_mobile__onxwju15h sprinkles_display_flex_mobile__onxwjuf5 sprinkles_position_relative_mobile__onxwjuh1 sprinkles_borderBottomWidth_1_mobile__onxwjulh sprinkles_alignItems_center_mobile__onxwjuvd sprinkles_justifyContent_start_mobile__onxwjuxl TableCell_root__10xbrtd0"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_td__18vhvli1c elementReset_trimmedElement__18vhvli0 elementReset_vAlignMiddle__18vhvlic elementReset_resetVariants_hasBorder_true__18vhvli1f elementReset_borderReset__18vhvli1 sprinkles_paddingBottom_4_mobile__onxwju151 sprinkles_paddingLeft_4_mobile__onxwju16l sprinkles_paddingRight_4_mobile__onxwju185 sprinkles_paddingTop_4_mobile__onxwju19p sprinkles_display_flex_mobile__onxwjuf9 sprinkles_position_relative_mobile__onxwjuh5 sprinkles_borderBottomWidth_1_mobile__onxwjum5 sprinkles_alignItems_center_mobile__onxwjuy9 sprinkles_justifyContent_start_mobile__onxwju10h TableCell_root__10xbrtd0"
           role="gridcell"
         >
           <span
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuip sprinkles_lineHeight_3_mobile__onxwjuhp sprinkles_color_primary__onxwju8j sprinkles_fontWeight_normal__onxwjue4 sprinkles_display_block_mobile__onxwjuex"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_primary__onxwju8j sprinkles_fontWeight_normal__onxwjue4 sprinkles_display_block_mobile__onxwjuf1"
           >
             row 2, col 2
           </span>
