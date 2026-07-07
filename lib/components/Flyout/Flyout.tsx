@@ -20,11 +20,11 @@ export const Flyout = ({
 	>
 		<Box
 			overflow="hidden"
-			backgroundColour="white"
+			backgroundColor="white"
 			boxShadow="4"
 			borderRadius="1"
 			borderWidth="1"
-			borderColour="gray"
+			borderColor="default"
 		>
 			{children}
 		</Box>

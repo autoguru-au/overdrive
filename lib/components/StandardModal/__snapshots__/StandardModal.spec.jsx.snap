@@ -38,11 +38,11 @@ exports[`<StandardModal /> > should match snapshot with title and body 1`] = `
           <article
             aria-labelledby="od-4"
             aria-modal="true"
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_article__18vhvlio elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwjuf5 sprinkles_overflow_hidden_mobile__onxwjug1 sprinkles_backgroundColour_white__onxwjudy sprinkles_flexDirection_column_mobile__onxwjuyh sprinkles_marginTop_8_mobile__onxwju1al StandardModal_modal__1trinj21 StandardModal_modalSizeStandard__1trinj24"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_article__18vhvlio elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwjuf5 sprinkles_overflow_hidden_mobile__onxwjug1 sprinkles_backgroundColor_white__onxwjuce sprinkles_flexDirection_column_mobile__onxwjuyh sprinkles_marginTop_8_mobile__onxwju1al StandardModal_modal__1trinj21 StandardModal_modalSizeStandard__1trinj24"
             role="dialog"
           >
             <header
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_header__18vhvliu elementReset_block__18vhvli4 elementReset_resetVariants_hasBorder_true__18vhvli1f elementReset_borderReset__18vhvli1 sprinkles_borderBottomColour_light__onxwju6s sprinkles_borderLeftColour_light__onxwju74 sprinkles_borderRightColour_light__onxwju7g sprinkles_borderTopColour_light__onxwju7s sprinkles_borderBottomWidth_1_mobile__onxwjulh sprinkles_paddingTop_3_mobile__onxwju15d sprinkles_paddingBottom_3_mobile__onxwju121 sprinkles_display_flex_mobile__onxwjuf5 sprinkles_position_relative_mobile__onxwjuh1 sprinkles_width_full_mobile__onxwjupp sprinkles_alignItems_center_mobile__onxwjuvd sprinkles_flexShrink_0_mobile__onxwjuz9 sprinkles_justifyContent_space-between_mobile__onxwjuy5 sprinkles_paddingLeft_5_mobile__onxwju13d sprinkles_paddingRight_2_mobile__onxwju145"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_header__18vhvliu elementReset_block__18vhvli4 elementReset_resetVariants_hasBorder_true__18vhvli1f elementReset_borderReset__18vhvli1 sprinkles_borderBottomColor_muted__onxwju4 sprinkles_borderLeftColor_muted__onxwju1t sprinkles_borderRightColor_muted__onxwju3i sprinkles_borderTopColor_muted__onxwju57 sprinkles_borderBottomWidth_1_mobile__onxwjulh sprinkles_paddingTop_3_mobile__onxwju15d sprinkles_paddingBottom_3_mobile__onxwju121 sprinkles_display_flex_mobile__onxwjuf5 sprinkles_position_relative_mobile__onxwjuh1 sprinkles_width_full_mobile__onxwjupp sprinkles_alignItems_center_mobile__onxwjuvd sprinkles_flexShrink_0_mobile__onxwjuz9 sprinkles_justifyContent_space-between_mobile__onxwjuy5 sprinkles_paddingLeft_5_mobile__onxwju13d sprinkles_paddingRight_2_mobile__onxwju145"
             >
               <div
                 class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_flexGrow_0_mobile__onxwjuyx"
@@ -60,7 +60,7 @@ exports[`<StandardModal /> > should match snapshot with title and body 1`] = `
                 type="button"
               >
                 <span
-                  class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuex Icon_makeResponsiveStyle_key_bp__1gy3ire4 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_fontWeight_normal__onxwjue4 typography_color_muted__yhjp337"
+                  class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuex Icon_makeResponsiveStyle_key_bp__1gy3ire4 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_color_tertiaryInactive__onxwju8m sprinkles_fontWeight_normal__onxwjue4"
                   data-od-component="icon"
                 >
                   <svg
@@ -136,11 +136,11 @@ exports[`<StandardModal /> > should match snapshot without title and body 1`] = 
           <article
             aria-labelledby="od-3"
             aria-modal="true"
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_article__18vhvlio elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwjuf5 sprinkles_overflow_hidden_mobile__onxwjug1 sprinkles_backgroundColour_white__onxwjudy sprinkles_flexDirection_column_mobile__onxwjuyh sprinkles_marginTop_8_mobile__onxwju1al StandardModal_modal__1trinj21 StandardModal_modalSizeStandard__1trinj24"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_article__18vhvlio elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwjuf5 sprinkles_overflow_hidden_mobile__onxwjug1 sprinkles_backgroundColor_white__onxwjuce sprinkles_flexDirection_column_mobile__onxwjuyh sprinkles_marginTop_8_mobile__onxwju1al StandardModal_modal__1trinj21 StandardModal_modalSizeStandard__1trinj24"
             role="dialog"
           >
             <header
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_header__18vhvliu elementReset_block__18vhvli4 elementReset_resetVariants_hasBorder_true__18vhvli1f elementReset_borderReset__18vhvli1 sprinkles_borderBottomColour_light__onxwju6s sprinkles_borderLeftColour_light__onxwju74 sprinkles_borderRightColour_light__onxwju7g sprinkles_borderTopColour_light__onxwju7s sprinkles_borderBottomWidth_1_mobile__onxwjulh sprinkles_paddingTop_3_mobile__onxwju15d sprinkles_paddingBottom_3_mobile__onxwju121 sprinkles_display_flex_mobile__onxwjuf5 sprinkles_position_relative_mobile__onxwjuh1 sprinkles_width_full_mobile__onxwjupp sprinkles_alignItems_center_mobile__onxwjuvd sprinkles_flexShrink_0_mobile__onxwjuz9 sprinkles_justifyContent_space-between_mobile__onxwjuy5 sprinkles_paddingLeft_5_mobile__onxwju13d sprinkles_paddingRight_2_mobile__onxwju145"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_header__18vhvliu elementReset_block__18vhvli4 elementReset_resetVariants_hasBorder_true__18vhvli1f elementReset_borderReset__18vhvli1 sprinkles_borderBottomColor_muted__onxwju4 sprinkles_borderLeftColor_muted__onxwju1t sprinkles_borderRightColor_muted__onxwju3i sprinkles_borderTopColor_muted__onxwju57 sprinkles_borderBottomWidth_1_mobile__onxwjulh sprinkles_paddingTop_3_mobile__onxwju15d sprinkles_paddingBottom_3_mobile__onxwju121 sprinkles_display_flex_mobile__onxwjuf5 sprinkles_position_relative_mobile__onxwjuh1 sprinkles_width_full_mobile__onxwjupp sprinkles_alignItems_center_mobile__onxwjuvd sprinkles_flexShrink_0_mobile__onxwjuz9 sprinkles_justifyContent_space-between_mobile__onxwjuy5 sprinkles_paddingLeft_5_mobile__onxwju13d sprinkles_paddingRight_2_mobile__onxwju145"
             >
               <div
                 class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_flexGrow_0_mobile__onxwjuyx"
@@ -156,7 +156,7 @@ exports[`<StandardModal /> > should match snapshot without title and body 1`] = 
                 type="button"
               >
                 <span
-                  class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuex Icon_makeResponsiveStyle_key_bp__1gy3ire4 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_fontWeight_normal__onxwjue4 typography_color_muted__yhjp337"
+                  class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuex Icon_makeResponsiveStyle_key_bp__1gy3ire4 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_color_tertiaryInactive__onxwju8m sprinkles_fontWeight_normal__onxwjue4"
                   data-od-component="icon"
                 >
                   <svg
