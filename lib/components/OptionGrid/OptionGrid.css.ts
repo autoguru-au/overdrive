@@ -136,7 +136,7 @@ export const gridItemContainerStyle = style([
 	{
 		'@layer': {
 			[cssLayerComponent]: {
-				backgroundColor: tokens.colours.background.body,
+				backgroundColor: tokens.color.background.default,
 				borderColor: tokens.border.colours.gray,
 				minHeight: '80px',
 			},
@@ -149,7 +149,7 @@ export const gridItemStyle = style([
 	{
 		'@layer': {
 			[cssLayerComponent]: {
-				backgroundColor: tokens.colours.background.body,
+				backgroundColor: tokens.color.background.default,
 				borderColor: tokens.border.colours.gray,
 				minHeight: '80px',
 				selectors: {
@@ -157,7 +157,7 @@ export const gridItemStyle = style([
 						cursor: 'pointer',
 					},
 					[selectors.selected]: {
-						backgroundColor: tokens.colours.background.body,
+						backgroundColor: tokens.color.background.default,
 						borderColor: tokens.border.colours.dark,
 					},
 					[`${selectors.hoverNotSelected}, ${selectors.focusVisibleNotSelected}`]:
@@ -171,7 +171,7 @@ export const gridItemStyle = style([
 						display: 'block',
 						height: '100%',
 						left: 0,
-						outlineColor: tokens.colours.gamut.gray900,
+						outlineColor: tokens.color.gamut.gray['900'],
 						outlineStyle: 'solid',
 						outlineWidth: tokens.border.width[2],
 						position: 'absolute',
@@ -179,9 +179,9 @@ export const gridItemStyle = style([
 						width: '100%',
 					},
 					[selectors.disabled]: {
-						backgroundColor: tokens.colours.gamut.gray100,
+						backgroundColor: tokens.color.gamut.gray['100'],
 						borderColor: 'transparent',
-						color: tokens.colours.gamut.gray500,
+						color: tokens.color.gamut.gray['500'],
 						cursor: 'not-allowed',
 					},
 				},
@@ -206,7 +206,7 @@ export const indicatorStyle = style({
 export const checkboxStyle = style([
 	sprinkles({
 		alignItems: 'center',
-		borderColour: 'gray',
+		borderColor: 'default',
 		borderRadius: 'sm',
 		borderStyle: 'solid',
 		borderWidth: '1',
@@ -221,16 +221,16 @@ export const checkboxStyle = style([
 				color: 'transparent',
 				selectors: {
 					[selectors.selected]: {
-						backgroundColor: tokens.colours.foreground.body,
-						color: tokens.colours.background.body,
+						backgroundColor: tokens.color.foreground.primary,
+						color: tokens.color.background.default,
 					},
 					[`${selectors.hoverNotSelected}, ${selectors.focusVisibleNotSelected}`]:
 						{
-							backgroundColor: tokens.colours.gamut.gray300,
-							color: tokens.colours.background.body,
+							backgroundColor: tokens.color.gamut.gray['300'],
+							color: tokens.color.background.default,
 						},
 					[selectors.disabled]: {
-						borderColor: tokens.colours.gamut.gray200,
+						borderColor: tokens.color.gamut.gray['200'],
 					},
 				},
 			},
@@ -255,10 +255,10 @@ const pseudoRadio = style({
 					width: '100%',
 				},
 				[`${selectors.hover}:after, ${selectors.focusVisible}:after`]: {
-					background: tokens.colours.gamut.gray200,
+					background: tokens.color.gamut.gray['200'],
 				},
 				[`&[data-selected]:after`]: {
-					background: tokens.colours.gamut.white,
+					background: tokens.color.gamut.white,
 				},
 			},
 		},
@@ -277,21 +277,21 @@ export const radioButtonStyle = style([
 	{
 		'@layer': {
 			[cssLayerComponent]: {
-				backgroundColor: tokens.colours.background.body,
+				backgroundColor: tokens.color.background.default,
 				borderColor: tokens.border.colours.gray,
 				selectors: {
 					[selectors.selected]: {
-						backgroundColor: tokens.colours.foreground.body,
+						backgroundColor: tokens.color.foreground.primary,
 						borderColor: tokens.border.colours.dark,
 					},
 					[`${selectors.hoverNotSelected}, ${selectors.focusVisibleNotSelected}`]:
 						{
-							backgroundColor: tokens.colours.gamut.gray300,
-							borderColor: tokens.colours.gamut.gray300,
+							backgroundColor: tokens.color.gamut.gray['300'],
+							borderColor: tokens.color.gamut.gray['300'],
 						},
 					[selectors.disabled]: {
-						backgroundColor: tokens.colours.gamut.gray100,
-						borderColor: tokens.colours.gamut.gray200,
+						backgroundColor: tokens.color.gamut.gray['100'],
+						borderColor: tokens.color.gamut.gray['200'],
 					},
 				},
 			},
