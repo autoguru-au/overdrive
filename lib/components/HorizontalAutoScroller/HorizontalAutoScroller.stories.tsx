@@ -44,7 +44,7 @@ const RenderAutoScroller = (
 		{Array.from({ length: args.childrenNum }).map((_, index) => (
 			<Box
 				key={index}
-				backgroundColour="gray200"
+				backgroundColor="gray200"
 				padding="3"
 				display="flex"
 				width="full"
@@ -57,7 +57,7 @@ const RenderAutoScroller = (
 						width: '100%',
 						height: 20 + Math.ceil(randHeight.next() * 300),
 					}}
-					backgroundColour="gray900"
+					backgroundColor="gray900"
 				/>
 			</Box>
 		))}

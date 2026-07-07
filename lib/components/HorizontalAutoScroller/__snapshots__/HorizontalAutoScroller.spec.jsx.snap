@@ -210,10 +210,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
             class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_position_relative_mobile__onxwjuh1 SliderProgress_step__17uw35s1"
           >
             <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColour_primary__onxwjucg ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColor_green600__onxwjubj ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
             />
             <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColour_primary__onxwjucg ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3 ProgressStep_active__15qfq7e4 ProgressStep_paused__15qfq7e5"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColor_green600__onxwjubj ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3 ProgressStep_active__15qfq7e4 ProgressStep_paused__15qfq7e5"
               style="animation-duration: 10s;"
             />
           </div>
@@ -221,10 +221,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
             class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_position_relative_mobile__onxwjuh1 SliderProgress_step__17uw35s1"
           >
             <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColour_primary__onxwjucg ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColor_green600__onxwjubj ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
             />
             <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_none_mobile__onxwjuet sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColour_primary__onxwjucg ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_none_mobile__onxwjuet sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColor_green600__onxwjubj ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
               style="animation-duration: 10s;"
             />
           </div>
@@ -232,10 +232,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
             class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_position_relative_mobile__onxwjuh1 SliderProgress_step__17uw35s1"
           >
             <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColour_primary__onxwjucg ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColor_green600__onxwjubj ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
             />
             <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_none_mobile__onxwjuet sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColour_primary__onxwjucg ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_none_mobile__onxwjuet sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColor_green600__onxwjubj ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
               style="animation-duration: 10s;"
             />
           </div>
@@ -243,10 +243,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
             class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_position_relative_mobile__onxwjuh1 SliderProgress_step__17uw35s1"
           >
             <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColour_primary__onxwjucg ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColor_green600__onxwjubj ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
             />
             <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_none_mobile__onxwjuet sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColour_primary__onxwjucg ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_none_mobile__onxwjuet sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColor_green600__onxwjubj ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
               style="animation-duration: 10s;"
             />
           </div>
@@ -254,10 +254,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
             class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_position_relative_mobile__onxwjuh1 SliderProgress_step__17uw35s1"
           >
             <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColour_primary__onxwjucg ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColor_green600__onxwjubj ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
             />
             <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_none_mobile__onxwjuet sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColour_primary__onxwjucg ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_none_mobile__onxwjuet sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColor_green600__onxwjubj ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
               style="animation-duration: 10s;"
             />
           </div>
@@ -265,10 +265,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
             class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_position_relative_mobile__onxwjuh1 SliderProgress_step__17uw35s1"
           >
             <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColour_primary__onxwjucg ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColor_green600__onxwjubj ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
             />
             <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_none_mobile__onxwjuet sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColour_primary__onxwjucg ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_none_mobile__onxwjuet sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColor_green600__onxwjubj ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
               style="animation-duration: 10s;"
             />
           </div>
@@ -276,10 +276,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
             class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_position_relative_mobile__onxwjuh1 SliderProgress_step__17uw35s1"
           >
             <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColour_primary__onxwjucg ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColor_green600__onxwjubj ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
             />
             <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_none_mobile__onxwjuet sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColour_primary__onxwjucg ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_none_mobile__onxwjuet sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColor_green600__onxwjubj ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
               style="animation-duration: 10s;"
             />
           </div>
@@ -287,10 +287,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
             class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_position_relative_mobile__onxwjuh1 SliderProgress_step__17uw35s1"
           >
             <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColour_primary__onxwjucg ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColor_green600__onxwjubj ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
             />
             <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_none_mobile__onxwjuet sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColour_primary__onxwjucg ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_none_mobile__onxwjuet sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColor_green600__onxwjubj ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
               style="animation-duration: 10s;"
             />
           </div>
@@ -459,10 +459,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
             class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_position_relative_mobile__onxwjuh1 SliderProgress_step__17uw35s1"
           >
             <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColour_yellow500__onxwjudk ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColor_yellow500__onxwjuc0 ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
             />
             <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColour_yellow500__onxwjudk ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3 ProgressStep_active__15qfq7e4 ProgressStep_paused__15qfq7e5"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColor_yellow500__onxwjuc0 ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3 ProgressStep_active__15qfq7e4 ProgressStep_paused__15qfq7e5"
               style="animation-duration: 10s;"
             />
           </div>
@@ -470,10 +470,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
             class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_position_relative_mobile__onxwjuh1 SliderProgress_step__17uw35s1"
           >
             <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColour_yellow500__onxwjudk ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColor_yellow500__onxwjuc0 ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
             />
             <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_none_mobile__onxwjuet sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColour_yellow500__onxwjudk ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_none_mobile__onxwjuet sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColor_yellow500__onxwjuc0 ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
               style="animation-duration: 10s;"
             />
           </div>
@@ -481,10 +481,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
             class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_position_relative_mobile__onxwjuh1 SliderProgress_step__17uw35s1"
           >
             <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColour_yellow500__onxwjudk ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColor_yellow500__onxwjuc0 ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
             />
             <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_none_mobile__onxwjuet sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColour_yellow500__onxwjudk ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_none_mobile__onxwjuet sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColor_yellow500__onxwjuc0 ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
               style="animation-duration: 10s;"
             />
           </div>
@@ -492,10 +492,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
             class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_position_relative_mobile__onxwjuh1 SliderProgress_step__17uw35s1"
           >
             <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColour_yellow500__onxwjudk ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColor_yellow500__onxwjuc0 ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
             />
             <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_none_mobile__onxwjuet sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColour_yellow500__onxwjudk ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_none_mobile__onxwjuet sprinkles_position_absolute_mobile__onxwjuh5 sprinkles_backgroundColor_yellow500__onxwjuc0 ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
               style="animation-duration: 10s;"
             />
           </div>
