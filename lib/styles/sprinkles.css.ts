@@ -2,7 +2,7 @@
 import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
 import { mapValues } from 'es-toolkit';
 
-import { breakpoints } from '../themes/makeTheme';
+import { breakpoints, buildColourGamut } from '../themes/makeTheme';
 import { overdriveTokens as tokens } from '../themes/theme.css';
 import { arrayFromKeys } from '../utils/object';
 
@@ -82,6 +82,64 @@ const borderColours = {
 	...intentBorderColours,
 };
 
+// --- SEMANTIC COLOUR PARITY (C-P1) ---
+// Flat semantic ramp: every legacy gamut key (gray900, green300, …) gets a
+// semantic equivalent at the IDENTICAL base value (color.gamut === colours.gamut).
+const semanticGamut = buildColourGamut({
+	gray: tokens.color.gamut.gray,
+	green: tokens.color.gamut.green,
+	blue: tokens.color.gamut.blue,
+	yellow: tokens.color.gamut.yellow,
+	red: tokens.color.gamut.red,
+});
+
+// `color` (text/foreground) semantic value space
+const semanticColor = {
+	...tokens.color.content, // normal, soft, inverse, info, danger, success, warning (existing)
+	...tokens.color.foreground, // primary, secondary, reverse, tertiaryInactive, tertiaryInactiveLight (W1-P1)
+	infoText: tokens.color.info.text,
+	infoForeground: tokens.color.info.foreground,
+	successText: tokens.color.success.text,
+	successForeground: tokens.color.success.foreground,
+	warningText: tokens.color.warning.text,
+	warningForeground: tokens.color.warning.foreground,
+	alertText: tokens.color.alert.text,
+	alertForeground: tokens.color.alert.foreground,
+	...semanticGamut, // gray900 … red100
+	white: tokens.color.gamut.white,
+	unset: 'unset',
+};
+
+// `backgroundColor` semantic value space
+const semanticBackgroundColor = {
+	...tokens.color.surface, // page, hard, soft, accent, success, info, danger, warning (existing)
+	...tokens.color.background, // default, reverse, inactive, emphasisInactive (W1-P1)
+	infoBackground: tokens.color.info.background,
+	successBackgroundDark: tokens.color.success.backgroundDark,
+	successBackgroundLight: tokens.color.success.backgroundLight,
+	warningBackgroundDark: tokens.color.warning.backgroundDark,
+	warningBackgroundLight: tokens.color.warning.backgroundLight,
+	alertBackground: tokens.color.alert.background,
+	...semanticGamut,
+	white: tokens.color.gamut.white,
+	transparent: 'transparent',
+};
+
+// `border*Color` semantic value space
+const semanticBorderColor = {
+	// W1-P1: emphasis, selected, strong (+ default, which the explicit
+	// `default` below overrides to preserve the pre-existing gray300 binding
+	// byte-for-byte — both resolve to gray300, so zero drift).
+	...tokens.color.border,
+	default: tokens.color.interactive.border, // existing (gray300)
+	muted: tokens.color.interactive.borderMuted, // existing (gray200)
+	disabled: tokens.color.interactive.borderDisabled, // existing (gray100)
+	...tokens.color.surface, // existing
+	...semanticGamut,
+	white: tokens.color.gamut.white,
+	transparent: 'transparent',
+};
+
 const colours = {
 	...tokens.colours.foreground,
 	...tokens.typography.colour,
@@ -126,10 +184,10 @@ const baseProperties = defineProperties({
 	'@layer': cssLayerStyleprops,
 	properties: {
 		// Borders
-		borderBottomColor: borderColors,
-		borderLeftColor: borderColors,
-		borderRightColor: borderColors,
-		borderTopColor: borderColors,
+		borderBottomColor: semanticBorderColor,
+		borderLeftColor: semanticBorderColor,
+		borderRightColor: semanticBorderColor,
+		borderTopColor: semanticBorderColor,
 		borderBottomColour: mappedBorderBottomColours,
 		borderLeftColour: mappedBorderLeftColours,
 		borderRightColour: mappedBorderRightColours,
@@ -139,12 +197,9 @@ const baseProperties = defineProperties({
 		borderRightStyle: ['none', 'solid'],
 		borderTopStyle: ['none', 'solid'],
 		// Color
-		color: tokens.color.content,
+		color: semanticColor,
 		colour: mappedColours,
-		backgroundColor: {
-			...tokens.color.surface,
-			transparent: 'transparent',
-		},
+		backgroundColor: semanticBackgroundColor,
 		backgroundColour: mappedBackgroundColours,
 		opacity: [0, '1', '0'],
 		// Typography
