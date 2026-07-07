@@ -7,9 +7,8 @@ import { colourMap, colourMapWithoutWhite } from '../themes/base/colours';
 
 # Colour Palette
 
-The AutoGuru Design System 2026 colour ramps. For the approved text-on-colour
-combinations, see the
-[Contrast Guide](?path=/docs/foundation-contrast-guide--docs).
+The AutoGuru Design System colour ramps. Every hue ships from step 100
+(lightest) to 900 (darkest) as a CSS custom property.
 
 export const coreBrand = [
   {
@@ -90,26 +89,50 @@ export const ramp = (hue) =>
 
 ## Usage
 
-Every ramp step ships as a CSS custom property. Reference them with `var()` —
-never hardcode hex values — and only pair text and background colours approved
-by the [Contrast Guide](?path=/docs/foundation-contrast-guide--docs).
+Every ramp step ships as a CSS custom property. Pair text and background steps
+that meet WCAG AA contrast (4.5:1 for normal text).
 
-export const codePanel = {
-  background: '#212338',
-  color: '#eef0f2',
-  borderRadius: 8,
-  padding: '16px 20px',
-  fontSize: 13,
-  lineHeight: 1.7,
-  overflowX: 'auto',
-  margin: 0,
+export const codeCard = {
+  display: 'flex',
+  flexDirection: 'column',
+  border: '1px solid #e4e7ea',
+  borderRadius: 12,
+  overflow: 'hidden',
+  background: '#ffffff',
 };
 
-export const panelHeading = {
-  fontSize: 14,
+export const codeHead = {
+  display: 'flex',
+  alignItems: 'center',
+  gap: 10,
+  padding: '11px 16px',
+  borderBottom: '1px solid #eef0f2',
+  fontSize: 13,
   fontWeight: 700,
   color: '#212338',
-  margin: '0 0 8px',
+};
+
+export const codeTag = {
+  fontFamily: 'ui-monospace, "SF Mono", Menlo, monospace',
+  fontSize: 10,
+  letterSpacing: '0.08em',
+  textTransform: 'uppercase',
+  color: '#00574c',
+  background: '#e5f4ef',
+  borderRadius: 999,
+  padding: '3px 9px',
+};
+
+export const codeBody = {
+  flex: 1,
+  background: '#f6f7f9',
+  color: '#212338',
+  margin: 0,
+  padding: '16px 20px',
+  fontSize: 12.5,
+  lineHeight: 1.75,
+  overflowX: 'auto',
+  fontFamily: 'ui-monospace, "SF Mono", Menlo, Consolas, monospace',
 };
 
 <div
@@ -117,11 +140,15 @@ export const panelHeading = {
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
     gap: 16,
+    margin: '16px 0 8px',
+    alignItems: 'stretch',
   }}
 >
-  <div>
-    <div style={panelHeading}>The Props</div>
-    <pre style={codePanel}>
+  <div style={codeCard}>
+    <div style={codeHead}>
+      <span style={codeTag}>Tokens</span> Custom properties
+    </div>
+    <pre style={codeBody}>
       {[
         '--od-color-gamut-gray-{100-900}',
         '--od-color-gamut-green-{100-900}',
@@ -132,9 +159,11 @@ export const panelHeading = {
       ].join('\n')}
     </pre>
   </div>
-  <div>
-    <div style={panelHeading}>Button Sample</div>
-    <pre style={codePanel}>
+  <div style={codeCard}>
+    <div style={codeHead}>
+      <span style={codeTag}>CSS</span> Button sample
+    </div>
+    <pre style={codeBody}>
       {[
         'button.green {',
         '  color: var(--od-color-gamut-white);',
@@ -152,9 +181,8 @@ export const panelHeading = {
 
 ## Dynamic Palette
 
-Pick one of our hues to explore its ramp and the exact custom properties it
-ships — every swatch and value below is a real token from
-`lib/themes/base/colours.ts`.
+Pick a hue to explore its ramp and the exact custom properties it ships — every
+swatch and value below is a real token from `lib/themes/base/colours.ts`.
 
 export const HUES = ['green', 'yellow', 'blue', 'red', 'gray'];
 
@@ -162,43 +190,66 @@ export const DynamicPalette = () => {
   const [hue, setHue] = useState('green');
   const steps = Object.entries(colourMapWithoutWhite[hue]);
   return (
-    <div style={{ background: '#212338', borderRadius: 12, padding: 24 }}>
+    <div
+      style={{
+        background: '#ffffff',
+        border: '1px solid #e4e7ea',
+        borderRadius: 16,
+        padding: 24,
+        boxShadow: '0 1px 2px rgba(33, 35, 56, 0.04), 0 8px 24px rgba(33, 35, 56, 0.06)',
+      }}
+    >
       <div
         style={{
           display: 'flex',
           alignItems: 'center',
-          gap: 8,
-          marginBottom: 16,
+          gap: 10,
+          marginBottom: 20,
         }}
       >
-        <span style={{ color: '#eef0f2', fontSize: 13, marginRight: 4 }}>
-          Our hues:
+        <span
+          style={{
+            fontFamily: 'ui-monospace, "SF Mono", Menlo, monospace',
+            fontSize: 11,
+            letterSpacing: '0.1em',
+            textTransform: 'uppercase',
+            color: '#5c6172',
+            marginRight: 2,
+          }}
+        >
+          Hue
         </span>
         {HUES.map((name) => (
           <button
             key={name}
             type="button"
             title={name}
+            aria-label={name}
+            aria-pressed={name === hue}
             onClick={() => setHue(name)}
             style={{
-              width: 24,
-              height: 24,
+              width: 26,
+              height: 26,
               borderRadius: '50%',
+              padding: 0,
               border:
                 name === hue
-                  ? '2px solid #ffffff'
-                  : '2px solid rgba(255, 255, 255, 0.25)',
+                  ? '2px solid #212338'
+                  : '2px solid rgba(33, 35, 56, 0.15)',
               background: colourMapWithoutWhite[name]['500'],
               cursor: 'pointer',
+              boxShadow:
+                name === hue ? '0 0 0 3px rgba(33, 35, 56, 0.1)' : 'none',
+              transition: 'box-shadow 120ms ease, border-color 120ms ease',
             }}
           />
         ))}
         <span
           style={{
             marginLeft: 'auto',
-            color: '#eef0f2',
+            color: '#212338',
             fontWeight: 700,
-            fontSize: 14,
+            fontSize: 15,
             textTransform: 'capitalize',
           }}
         >
@@ -209,8 +260,8 @@ export const DynamicPalette = () => {
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(9, 1fr)',
-          gap: 4,
-          margin: '16px 0',
+          gap: 6,
+          margin: '0 0 20px',
         }}
       >
         {steps.map(([step, hex]) => (
@@ -218,17 +269,18 @@ export const DynamicPalette = () => {
             <div
               style={{
                 background: hex,
-                borderRadius: 6,
-                height: 56,
-                boxShadow: 'inset 0 0 0 1px rgba(255, 255, 255, 0.12)',
+                borderRadius: 8,
+                height: 60,
+                boxShadow: 'inset 0 0 0 1px rgba(33, 35, 56, 0.1)',
               }}
             />
             <div
               style={{
-                color: '#8f95a1',
+                color: '#5c6172',
                 fontSize: 11,
                 textAlign: 'center',
-                marginTop: 4,
+                marginTop: 6,
+                fontFamily: 'ui-monospace, "SF Mono", Menlo, monospace',
               }}
             >
               {step}
@@ -238,7 +290,19 @@ export const DynamicPalette = () => {
           </div>
         ))}
       </div>
-      <pre style={{ ...codePanel, background: 'rgba(0, 0, 0, 0.35)' }}>
+      <pre
+        style={{
+          background: '#f6f7f9',
+          color: '#212338',
+          margin: 0,
+          padding: '16px 20px',
+          borderRadius: 10,
+          fontSize: 12.5,
+          lineHeight: 1.7,
+          overflowX: 'auto',
+          fontFamily: 'ui-monospace, "SF Mono", Menlo, Consolas, monospace',
+        }}
+      >
         {steps
           .map(
             ([step, hex]) =>

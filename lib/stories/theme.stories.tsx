@@ -123,11 +123,11 @@ interface TokenGroup {
 }
 
 /**
- * The full proposed Design System 2026 semantic set: current values carried
- * over unchanged except where the contrast guide requires a fix (`was`),
- * organised by human usage category.
+ * The full semantic colour set: current values carried over unchanged except
+ * where a token needs an AA-safe fix (`was`), organised by human usage
+ * category.
  */
-const proposed2026: TokenGroup[] = [
+const semanticTokens: TokenGroup[] = [
 	{
 		group: 'surface',
 		title: 'Surface',
@@ -386,7 +386,7 @@ const ChangeBadge = ({ was, note }: Pick<ProposedToken, 'was' | 'note'>) => (
 	</span>
 );
 
-const Token2026 = ({
+const SemanticToken = ({
 	group,
 	name,
 	token,
@@ -435,9 +435,9 @@ const Token2026 = ({
 	);
 };
 
-export const ThemeColours2026: Story = {
+export const SemanticColours: Story = {
 	render: () => {
-		const changed = proposed2026.flatMap(({ group, sections }) =>
+		const changed = semanticTokens.flatMap(({ group, sections }) =>
 			sections
 				.flatMap((section) => section.tokens)
 				.filter((entry) => entry.was)
@@ -447,21 +447,15 @@ export const ThemeColours2026: Story = {
 			<div style={{ maxWidth: 1024, margin: '0 auto', padding: 32 }}>
 				<FlexStack gap="7">
 					<hgroup>
-						<Heading>Theme Colours 2026</Heading>
+						<Heading>Semantic Colours</Heading>
 						<p style={{ maxWidth: 720 }}>
-							The full proposed Design System 2026 semantic set.
-							Values are carried over from the current theme
-							except where the{' '}
-							<a href="?path=/docs/foundation-contrast-guide--docs">
-								Contrast Guide
-							</a>{' '}
-							requires a fix — those tokens carry a badge showing
-							the current value they replace. Proposals pending
-							design sign-off; the shipped theme is unchanged.
+							The full semantic colour set, organised by usage.
+							Where a token was adjusted to meet WCAG AA contrast
+							it carries a badge showing the value it replaces.
 						</p>
 					</hgroup>
 					<FlexStack gap="7">
-						{proposed2026.map(
+						{semanticTokens.map(
 							({ group, title, blurb, sections }) => (
 								<FlexStack gap="4" key={group}>
 									<hgroup>
@@ -495,7 +489,7 @@ export const ThemeColours2026: Story = {
 											</div>
 											<div className={gridSwatches}>
 												{section.tokens.map((entry) => (
-													<Token2026
+													<SemanticToken
 														key={entry.name}
 														group={group}
 														{...entry}
