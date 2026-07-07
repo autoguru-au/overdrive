@@ -5,7 +5,7 @@ import { overdriveTokens as vars } from '../../themes/theme.css';
 export const scrollContainer = style({
 	selectors: {
 		['&:focus-visible']: {
-			outline: `2px solid ${vars.colours.intent.primary.background.standard}`,
+			outline: `2px solid ${vars.color.gamut.green['600']}`,
 			outlineOffset: '-2px',
 		},
 	},
@@ -29,7 +29,7 @@ const stickyReveal = keyframes({
 		backgroundColor: 'transparent',
 	},
 	to: {
-		backgroundColor: vars.colours.background.body,
+		backgroundColor: vars.color.background.default,
 	},
 });
 

@@ -4,9 +4,9 @@ import { overdriveTokens as vars } from '../../themes/theme.css';
 
 export const variant = styleVariants({
 	primary: {
-		color: vars.colours.intent.primary.background.strong,
+		color: vars.color.gamut.green['700'],
 	},
 	secondary: {
-		color: vars.typography.colour.dark,
+		color: vars.color.foreground.primary,
 	},
 });

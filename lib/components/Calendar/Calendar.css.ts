@@ -40,23 +40,23 @@ export const cellStyle = style([
 	{
 		'@layer': {
 			[cssLayerComponent]: {
-				background: tokens.colours.background.body,
-				color: tokens.colours.foreground.body,
+				background: tokens.color.background.default,
+				color: tokens.color.foreground.primary,
 				cursor: 'pointer',
 				selectors: {
 					[selectors.focusVisible]: {
-						background: tokens.colours.gamut.gray200,
+						background: tokens.color.gamut.gray['200'],
 					},
 					[selectors.selected]: {
-						background: tokens.colours.foreground.body,
-						color: tokens.colours.background.body,
+						background: tokens.color.foreground.primary,
+						color: tokens.color.background.default,
 					},
 					[selectors.hoverNotSelected]: {
-						background: tokens.colours.gamut.gray200,
+						background: tokens.color.gamut.gray['200'],
 					},
 					[`${selectors.disabled}, ${selectors.unavailable}`]: {
-						background: tokens.colours.background.body,
-						color: tokens.colours.gamut.gray400,
+						background: tokens.color.background.default,
+						color: tokens.color.gamut.gray['400'],
 						cursor: 'default',
 					},
 				},
@@ -71,7 +71,7 @@ export const cellStyle = style([
 export const buttonStyle = style([
 	sprinkles({
 		alignItems: 'center',
-		borderColour: 'gray',
+		borderColor: 'default',
 		borderRadius: 'md',
 		borderStyle: 'solid',
 		borderWidth: '1',
@@ -83,20 +83,20 @@ export const buttonStyle = style([
 	{
 		'@layer': {
 			[cssLayerComponent]: {
-				background: tokens.colours.background.body,
-				color: tokens.colours.gamut.gray600,
+				background: tokens.color.background.default,
+				color: tokens.color.gamut.gray['600'],
 				cursor: 'pointer',
 				selectors: {
 					[selectors.hoverNotDisabled]: {
-						background: tokens.colours.gamut.gray200,
+						background: tokens.color.gamut.gray['200'],
 					},
 					[selectors.focusVisible]: {
-						background: tokens.colours.gamut.gray200,
+						background: tokens.color.gamut.gray['200'],
 					},
 					[selectors.disabled]: {
-						background: tokens.colours.background.body,
+						background: tokens.color.background.default,
 						borderColor: tokens.border.colours.light,
-						color: tokens.colours.gamut.gray300,
+						color: tokens.color.gamut.gray['300'],
 						cursor: 'not-allowed',
 					},
 				},
@@ -109,7 +109,7 @@ export const buttonStyle = style([
 export const thStyle = style({
 	'@layer': {
 		[cssLayerComponent]: {
-			color: tokens.colours.gamut.gray600,
+			color: tokens.color.gamut.gray['600'],
 		},
 	},
 });
