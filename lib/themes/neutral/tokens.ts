@@ -5,20 +5,18 @@ import { tokens as baseTokens } from '../base/tokens';
 import { buildColourGamut } from '../makeTheme';
 import type { ThemeTokens } from '../theme.css';
 
-const gray = {
-	900: '#212338',
-	800: '#34384c',
-	700: '#484c5f',
-	600: '#5c6172',
-	500: '#6c7283',
-	400: '#8f95a1',
-	300: '#d4d9dd',
-	200: '#eef0f2',
-	100: '#fafbfc',
-};
-
 const colours = {
-	gray,
+	gray: {
+		900: '#212338',
+		800: '#34384c',
+		700: '#484c5f',
+		600: '#5c6172',
+		500: '#6c7283',
+		400: '#8f95a1',
+		300: '#d4d9dd',
+		200: '#eef0f2',
+		100: '#fafbfc',
+	},
 	green: {
 		900: '#00574c',
 		800: '#18856f',
