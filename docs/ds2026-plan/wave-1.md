@@ -283,7 +283,7 @@ alert: {
 5. `yarn test:a11y`.
 6. Add changeset (minor) + summary below. Open PR; confirm Chromatic base-theme zero-diff.
 
-**Done-criteria:** contract + base carry all 26 new leaves; `yarn lint` clean; theme snapshots are hash-only churn (stripped diff empty); Chromatic base-theme zero-diff; `git diff lib/themes/theme.css.ts` and `git diff lib/themes/base/tokens.ts` show **only additions** (no edited/deleted existing lines); `flat_red`/`neutral`/`types.ts` unchanged.
+**Done-criteria:** contract + base carry all 27 new leaves; `yarn lint` clean; theme snapshots are hash-only churn (stripped diff empty); Chromatic base-theme zero-diff; `git diff lib/themes/theme.css.ts` and `git diff lib/themes/base/tokens.ts` show **only additions** (no edited/deleted existing lines); `flat_red`/`neutral`/`types.ts` unchanged.
 
 ### DO-NOT list (with MFE-measured reasons)
 - **Do NOT change or rename any existing `color.*`, `colours.*`, `space`, `radius`, `elevation`, or `typography` key/value.** `themeContractVars` is imported by **334 MFE files** (325 `vars` occurrences); legacy `colours.*` is referenced **390×**, `vars.space[...]` **556× (silent-failure)**. Any edit to an existing line is an automatic FAIL.
@@ -336,7 +336,7 @@ DONE: lint clean; snapshot churn is hash-only; git diff of the two files shows O
 You are the adversarial Reviewer for W1-P1. Inspect branch feat/w1-p1-semantic-colour-namespaces. Produce PASS/FAIL with file:line evidence.
 1. `git diff lib/themes/theme.css.ts` and `git diff lib/themes/base/tokens.ts` must show ONLY added lines — no existing key's name/value edited or deleted. Any modified existing line = FAIL. No Track-C exception is permitted in this package (all keys are new).
 2. `git diff lib/themes/flat_red/tokens.ts lib/themes/neutral/tokens.ts lib/themes/types.ts lib/styles/sprinkles.css.ts` must be EMPTY = FAIL if not.
-3. Every base value matches §3.1 variable hex: verify each of the 26 leaves against the colourMap hex table in this file. Specifically confirm info.background === '#e1edfe' (NOT #bad4ff), warning.text===red-800 (#96110e), warning.foreground===yellow-800 (#f69a1f). Any swatch-label value = FAIL, flag to §6-Q1.
+3. Every base value matches §3.1 variable hex: verify each of the 27 leaves against the colourMap hex table in this file. Specifically confirm info.background === '#e1edfe' (NOT #bad4ff), warning.text===red-800 (#96110e), warning.foreground===yellow-800 (#f69a1f). Any swatch-label value = FAIL, flag to §6-Q1.
 4. Contract var-name strings match the block above exactly (kebab-case, `color-…`).
 5. ColourMap/ThemeTokens not hand-edited; no new peerDependency in package.json.
 6. Base-theme Chromatic zero-diff; confirm the Builder's stripped-__hash diff is empty for base-theme stories (no real declaration change).
@@ -358,19 +358,23 @@ Interpret snapshot failures with the stripped-__hash procedure (plan §4.0.1): s
 - **Release/rollback:** master Appendix A; rollback = revert PR (keys have no consumer, safe).
 
 ### Post-release MFE verification
-Repo: `/Users/timamehro/grit/github.com/autoguru/mfe` (single `bun.lock` pinning **all** 100 apps/201 packages to one overdrive version, manual bumps — master §0.1). This package is **additive tokens with zero consumers**, so "verification" = prove nothing existing shifted + prove the 26 new leaves are usable. Never start a dev server for the screen spot-check — assume one is already running; ask the human if not.
+Repo: `/Users/timamehro/grit/github.com/autoguru/mfe` (single `bun.lock` pinning **all** 100 apps/201 packages to one overdrive version, manual bumps — master §0.1). This package is **additive tokens with zero consumers**, so "verification" = prove nothing existing shifted + prove the 27 new leaves are usable. Never start a dev server for the screen spot-check — assume one is already running; ask the human if not.
+
+> **Two verified procedure corrections (2026-07-07, from the `cded6390` pre-publish A/B — see track-c.md "Post-release MFE verification"):** (a) `.scripts/copy-overdrive.js` runs `yarn build` only (Babel) and never refreshes `.d.ts` — a meaningful type-level check requires `yarn typeEmit` in overdrive first, then syncing the fresh `.d.ts` into the linked `node_modules/@autoguru/overdrive`. (b) turbo's task cache is insensitive to `node_modules` swaps regardless of `--affected`/non-`--affected` form — the repo-wide type-check MUST add `--force` or it replays a stale cached log and reports a **false PASS**. (c) mfe is bun-managed: `bun run overdrive:local`, not `yarn`.
 
 **Pre-publish smoke (on the overdrive PR branch, before merge):**
 ```bash
-cd /Users/timamehro/grit/github.com/autoguru/overdrive && yarn build
-cd /Users/timamehro/grit/github.com/autoguru/mfe && yarn overdrive:local
+cd /Users/timamehro/grit/github.com/autoguru/overdrive && yarn build && yarn typeEmit
+cd /Users/timamehro/grit/github.com/autoguru/mfe && bun run overdrive:local
 # runs .scripts/copy-overdrive.js: rebuilds overdrive (sibling checkout) and
 # copies dist/ + package.json into mfe/node_modules/@autoguru/overdrive — no bun.lock edit.
+# copy-overdrive.js does NOT refresh .d.ts on its own — the `yarn typeEmit` above is required
+# for the type-check below to see the new token keys rather than a stale .d.ts.
 ```
-1. **Repo-wide type-check** — use the *non*-`--affected` form; a local-link copy touches no git-tracked file, so turbo's affected-diff would silently skip all 334 consumer files:
+1. **Repo-wide type-check** — use the *non*-`--affected` form; a local-link copy touches no git-tracked file, so turbo's affected-diff would silently skip all 334 consumer files. **`--force` is also required** — turbo's cache is insensitive to `node_modules` swaps and will replay a stale cached log (false PASS) without it:
    ```bash
    cd /Users/timamehro/grit/github.com/autoguru/mfe
-   ./node_modules/.bin/turbo run lint:mfe --concurrency=50%
+   ./node_modules/.bin/turbo run lint:mfe --concurrency=50% --force
    ```
    Expect fully green. If it fails on a hand-authored `ThemeTokens` literal, that's the Deviation #2 risk materialising — STOP and report file:line; do not patch the mfe repo. Confirm the only offenders (if any) are merge calls, never bare literals:
    ```bash
@@ -546,17 +550,20 @@ FAIL if any of 1–5 violated. Report specifics.
 ### Post-release MFE verification
 Repo: `/Users/timamehro/grit/github.com/autoguru/mfe` (single `bun.lock`, one pinned overdrive version, manual bumps — master §0.1). `color.button.*` is **additive tokens with zero consumers** (Button stays on legacy `colours.intent.*` until W3a-P1) — verification proves nothing shifted + the 7 new leaves are usable. Never start a dev server for the screen spot-check — assume one is already running; ask the human if not.
 
+> **Two verified procedure corrections (2026-07-07, from the `cded6390` pre-publish A/B — see track-c.md "Post-release MFE verification"):** (a) `.scripts/copy-overdrive.js` runs `yarn build` only and never refreshes `.d.ts` — run `yarn typeEmit` in overdrive first and sync the fresh `.d.ts` into the linked `node_modules/@autoguru/overdrive`. (b) turbo's cache is insensitive to `node_modules` swaps — the type-check MUST add `--force` or it can report a false PASS off a stale cached log. (c) mfe is bun-managed: `bun run overdrive:local`, not `yarn`.
+
 **Pre-publish smoke (on the overdrive PR branch, before merge):**
 ```bash
-cd /Users/timamehro/grit/github.com/autoguru/overdrive && yarn build
-cd /Users/timamehro/grit/github.com/autoguru/mfe && yarn overdrive:local
+cd /Users/timamehro/grit/github.com/autoguru/overdrive && yarn build && yarn typeEmit
+cd /Users/timamehro/grit/github.com/autoguru/mfe && bun run overdrive:local
 # .scripts/copy-overdrive.js rebuilds overdrive (sibling checkout) and copies
 # dist/ + package.json into mfe/node_modules/@autoguru/overdrive — no bun.lock edit.
+# Does NOT refresh .d.ts — the `yarn typeEmit` above is required first.
 ```
-1. **Repo-wide type-check** (non-`--affected` — a local-link copy is invisible to turbo's git-diff-based affected filter):
+1. **Repo-wide type-check** (non-`--affected` — a local-link copy is invisible to turbo's git-diff-based affected filter — **and `--force`, or turbo's node-modules-insensitive cache can report a false PASS**):
    ```bash
    cd /Users/timamehro/grit/github.com/autoguru/mfe
-   ./node_modules/.bin/turbo run lint:mfe --concurrency=50%
+   ./node_modules/.bin/turbo run lint:mfe --concurrency=50% --force
    ```
    Expect fully green — this widens the same `ThemeTokens` type W1-P1 widened, so it carries the identical Deviation #2 risk. Confirm no hand-authored offender:
    ```bash
@@ -790,17 +797,20 @@ FAIL if any of 1–4 violated. Report specifics.
 ### Post-release MFE verification
 Repo: `/Users/timamehro/grit/github.com/autoguru/mfe` (single `bun.lock`, one pinned overdrive version, manual bumps — master §0.1). The new radius/elevation/space leaves are **additive tokens with zero consumers** — verification proves nothing shifted (556× `space`, 46× `radius`, 20× `elevation` reference surfaces, incl. tenant-theme exact-value assertions) + the new keys are usable. Never start a dev server for the screen spot-check — assume one is already running; ask the human if not.
 
+> **Two verified procedure corrections (2026-07-07, from the `cded6390` pre-publish A/B — see track-c.md "Post-release MFE verification"):** (a) `.scripts/copy-overdrive.js` runs `yarn build` only and never refreshes `.d.ts` — run `yarn typeEmit` in overdrive first and sync the fresh `.d.ts` into the linked `node_modules/@autoguru/overdrive`. (b) turbo's cache is insensitive to `node_modules` swaps — the type-check MUST add `--force` or it can report a false PASS off a stale cached log. (c) mfe is bun-managed: `bun run overdrive:local`, not `yarn`.
+
 **Pre-publish smoke (on the overdrive PR branch, before merge):**
 ```bash
-cd /Users/timamehro/grit/github.com/autoguru/overdrive && yarn build
-cd /Users/timamehro/grit/github.com/autoguru/mfe && yarn overdrive:local
+cd /Users/timamehro/grit/github.com/autoguru/overdrive && yarn build && yarn typeEmit
+cd /Users/timamehro/grit/github.com/autoguru/mfe && bun run overdrive:local
 # .scripts/copy-overdrive.js rebuilds overdrive (sibling checkout) and copies
 # dist/ + package.json into mfe/node_modules/@autoguru/overdrive — no bun.lock edit.
+# Does NOT refresh .d.ts — the `yarn typeEmit` above is required first.
 ```
-1. **Repo-wide type-check** (non-`--affected` — a local-link copy is invisible to turbo's git-diff-based affected filter):
+1. **Repo-wide type-check** (non-`--affected` — a local-link copy is invisible to turbo's git-diff-based affected filter — **and `--force`, or turbo's node-modules-insensitive cache can report a false PASS**):
    ```bash
    cd /Users/timamehro/grit/github.com/autoguru/mfe
-   ./node_modules/.bin/turbo run lint:mfe --concurrency=50%
+   ./node_modules/.bin/turbo run lint:mfe --concurrency=50% --force
    ```
    Expect fully green (same widened-`ThemeTokens` Deviation #2 risk as P1/P2). Confirm no hand-authored offender:
    ```bash

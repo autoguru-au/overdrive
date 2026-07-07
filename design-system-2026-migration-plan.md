@@ -747,58 +747,79 @@ Board is design-led (Figma-first DoD); engineering sequencing is imposed by this
 ## 9. Tracking
 
 ### 9.1 Per-component legacy-colour burn-down
-> **Authoritative inventory: [`docs/ds2026-plan/track-c.md`](docs/ds2026-plan/track-c.md)** (measured with the full W1-P0 pattern, incl. `tokens.colours.*` refs the original seed grep missed). **Measured totals: 49 of 78 component dirs touch legacy** (corrected from 48 — `DateTimeField` was a genuine inventory-grep blind spot on the `overdriveTokens.colours.*` import alias, see track-c.md Deviation 11) — ≈20 folded into Wave-3 restyle packages, ≈29 standalone across batches **C-P2…C-P9**. The table below is the reconciled summary.
+> **Authoritative inventory: [`docs/ds2026-plan/track-c.md`](docs/ds2026-plan/track-c.md)** (measured with the full W1-P0 pattern, incl. `tokens.colours.*` refs the original seed grep missed). **Measured totals: 49 of 78 component dirs touch legacy, 29 clean** (corrected from 48 — `DateTimeField` was a genuine inventory-grep blind spot on the `overdriveTokens.colours.*` import alias, see track-c.md Deviation 11; dir count re-verified 2026-07-07 via `find lib/components -maxdepth 1 -mindepth 1 -type d | wc -l` = 78 — no drift). **W1-P0 done-criterion satisfied:** the table below is now the full one-row-per-dir classification of all 78 `lib/components/*` dirs — the 19 legacy-touching dirs previously deferred to a summary row are itemised individually, and all 29 clean dirs are listed by name (`Badge`/`Text`/`Heading` classify as clean at the direct-ref level — their only historical hits were a recipe-variant-name false positive and non-shipping stories / the now-repointed library-wide default path; see their rows below). **✅ = package landed on this branch, verified 2026-07-07 at tip `cded6390`.**
 
 Columns: **Uses legacy** (direct / via-sprinkles / clean) · **Direct refs** · **Repoint pkg** · **Wave**.
 
 | Component | Uses legacy | Direct refs | Repoint pkg | Wave |
 |---|---|---|---|---|
-| private/InputBase | direct | 24 | C-P/3b-P1 | 3b |
-| OptionGrid | direct (`tokens.colours.*` — missed by seed) | 19 | C-P2 | Track C |
-| Tabs | direct | ~15 (seed said 12) | C-P/3c-P4 | 3c |
-| Calendar | direct (`tokens.colours.*` — missed by seed) | 15 | C-P3 | Track C |
-| OptionList | direct (`tokens.colours.*` — missed by seed) | 10 | C-P2 | Track C |
-| ProgressSpinner | direct | 6 | C-P/3c-P8 | 3c |
-| SearchBar | direct (`tokens.colours.*` — missed by seed) | 6 | C-P2 | Track C |
-| Pagination | direct | 5 | C-P/3c-P6 | 3c |
-| Table | direct | 4 | C-P3 | Track C |
-| Switch | direct | 4 | C-P/3a-P4 | 3a |
-| Slider | direct | 4 | C-P/3b-P6 | 3b |
-| BulletText | direct | 4 | C-P4 | Track C |
-| BulletList | direct | 3 | C-P4 | Track C |
-| TextLink | direct | 3 | C-P/3c-P2 | 3c |
-| ScrollPane | direct | 3 | C-P4 | Track C |
-| Radio | direct | 3 | C-P/3a-P3 | 3a |
-| CheckBox | direct | 3 | C-P/3a-P2 | 3a |
-| Button | direct | 3 | C-P/3a-P1 | 3a |
-| AutoSuggest | direct | 3 | C-P8 | Track C |
-| Popover | direct (`tokens.colours.*` — missed by seed) | 2 | C-P2 | Track C |
-| Stepper | direct | 2 | C-P/3b-P6 | 3b |
-| StarRating | direct | 2 | C-P/3a-P5 | 3a |
-| OverdriveProvider | direct | 2 | C-P8 | Track C |
-| Meta | direct | 2 | C-P3 | Track C |
-| DataTable | direct | 2 | C-P3 | Track C |
-| DateTimeField | direct (`overdriveTokens.colours.*` import alias — missed by both seed and W1-P0 greps; see track-c.md Deviation 11) | 2 | C-P8 | Track C |
-| Alert | direct (+`sprinklesLegacyText`) | 2 | C-P/3c-P7 | 3c |
-| Text / Heading | **indirect** — the seed's "1 direct" each were **stories** (`Text.stories.tsx:93` / `Heading.stories.tsx:76`, non-shipping); real dependency is the library-wide `sprinklesLegacyText` default path in `styles/typography.ts` | — | C-P4 | Track C |
-| Stack | direct | 1 | C-P4 | Track C |
-| EditableText | direct | 1 | C-P4 | Track C |
-| DropDown | direct | 1 | C-P/3b-P3 | 3b |
-| Shared style utilities (`intentColorset.css.ts` + `focusOutline.css.ts`) | direct (feeds Badge/Alert/IntentStripe + 14-file focusOutline consumer set) | — | **C-P9** (before W3c-P1 Badge) | Track C |
-| **Remaining legacy-touching dirs (to 48 total)** | see track-c.md batches | via sprinkles props / `tokens.colours.*` | C-P2…C-P8 | Track C |
+| private/InputBase | direct | 24 | C-P/3b-P1 · F-1 ✅ (safe internals only; full fold pending) | 3b |
+| OptionGrid | direct (`tokens.colours.*` — missed by seed) | 19 | C-P2 ✅ | Track C |
+| Tabs | direct | ~15 (seed said 12) | C-P/3c-P4 · F-2 ✅ (safe internals only; full fold pending) | 3c |
+| Calendar | direct (`tokens.colours.*` — missed by seed) | 15 | C-P3 ✅ | Track C |
+| OptionList | direct (`tokens.colours.*` — missed by seed) | 10 | C-P2 ✅ | Track C |
+| ProgressSpinner | direct | 6 | C-P/3c-P8 · F-2 ✅ (safe internals only; full fold pending) | 3c |
+| SearchBar | direct (`tokens.colours.*` — missed by seed) | 6 | C-P2 ✅ | Track C |
+| Pagination | direct | 5 | C-P/3c-P6 · F-2 ✅ (safe internals only; full fold pending) | 3c |
+| Table | direct | 4 | C-P3 ✅ | Track C |
+| Switch | direct | 4 | C-P/3a-P4 · F-1 ✅ (safe internals only; full fold pending) | 3a |
+| Slider | direct | 4 | C-P/3b-P6 (not yet landed) | 3b |
+| BulletText | direct | 4 | C-P4 ✅ | Track C |
+| BulletList | direct | 3 | C-P4 ✅ | Track C |
+| TextLink | direct | 3 | C-P/3c-P2 (not yet landed) | 3c |
+| ScrollPane | direct | 3 | C-P4 ✅ | Track C |
+| Radio | direct | 3 | C-P/3a-P3 · F-1 ✅ (safe internals only; full fold pending) | 3a |
+| CheckBox | direct | 3 | C-P/3a-P2 · F-1 ✅ (safe internals only; full fold pending) | 3a |
+| Button | direct | 3 | C-P/3a-P1 · F-1+F-2 ✅ (safe internals only; full fold pending) | 3a |
+| AutoSuggest | direct | 3 | C-P8 ✅ | Track C |
+| Popover | direct (`tokens.colours.*` — missed by seed) | 2 | C-P2 ✅ | Track C |
+| Stepper | direct | 2 | C-P/3b-P6 (not yet landed) | 3b |
+| StarRating | direct | 2 | C-P/3a-P5 (not yet landed) | 3a |
+| OverdriveProvider | direct | 2 | C-P8 ✅ | Track C |
+| Meta | direct | 2 | C-P3 ✅ | Track C |
+| DataTable | direct | 2 | C-P3 ✅ | Track C |
+| DateTimeField | direct (`overdriveTokens.colours.*` import alias — missed by both seed and W1-P0 greps; see track-c.md Deviation 11) | 2 | C-P8 ✅ | Track C |
+| Alert | direct (+`sprinklesLegacyText`) | 2 | C-P/3c-P7 · F-2 ✅ (safe internals only; full fold pending) | 3c |
+| Text / Heading | **clean** (dirs themselves) — the seed's "1 direct" each were **stories** (`Text.stories.tsx:93` / `Heading.stories.tsx:76`, non-shipping); the real dependency was the library-wide `sprinklesLegacyText` default path in `styles/typography.ts`, now repointed | — | C-P4 ✅ | Track C |
+| Stack | direct | 1 | C-P4 ✅ (retained on legacy — `neutral` theme-variant drift, see track-c.md) | Track C |
+| EditableText | direct | 1 | C-P4 ✅ (`.tsx` pass-through prop retained, public-API rule) | Track C |
+| DropDown | direct | 1 | C-P/3b-P3 (not yet landed) | 3b |
+| Shared style utilities (`intentColorset.css.ts` + `focusOutline.css.ts`) | direct (feeds Badge/Alert/IntentStripe + 14-file focusOutline consumer set) | — | **C-P9 — superseded, retained until the major** (`eslint-disable` annotations added `cded6390`) | Track C |
+| Anchor | direct | 2 | C-P6 ✅ | Track C |
+| DividerLine | direct | 1 | C-P6 ✅ | Track C |
+| IntentStripe | direct | 1 | C-P6 ✅ | Track C |
+| NumberBubble | direct | 1 | C-P6 ✅ | Track C |
+| OrderedList | direct | 1 | C-P6 ✅ | Track C |
+| MarkdownRenderer | direct | 1 | C-P6 ✅ | Track C |
+| Modal | direct (intent ref retained, major-only) | 1 | C-P5 ✅ | Track C |
+| StandardModal | direct | 3 | C-P5 ✅ | Track C |
+| Flyout | direct | 2 | C-P5 ✅ | Track C |
+| StickyBox | direct | 1 | C-P5 ✅ | Track C |
+| LoadingBox | direct | 1 | C-P5 ✅ | Track C |
+| TextBubble | direct | 2 | C-P5 ✅ | Track C |
+| ProgressBar | direct | 2 | C-P7 ✅ | Track C |
+| ProgressBarGroup | direct | 3 | C-P7 ✅ | Track C |
+| SliderProgress | direct (public prop retained, intent-capable, major-only) | 3 | C-P7 ✅ | Track C |
+| HorizontalAutoScroller | direct | 1 | C-P7 ✅ | Track C |
+| LinearProgressIndicator | direct | 2 | C-P7 ✅ | Track C |
+| DateInput | direct | 1 | C-P8 ✅ | Track C |
+| Tooltip | direct (pure ramp/white values, bridge-safe) | 2 | F-2 ✅ (fully repointed — folded 3c-P3 target superseded) | Track C |
+| Badge | **clean** — `colour` in `Badge.css.ts` is a recipe **variant name**, not a legacy colour ref (false positive); the recipe's own colour values still resolve via legacy gamut | — | repoint via own recipe, W3c-P1 (not yet landed) | 3c |
+| **Clean — 26 dirs** (`Actions`, `Box`, `ColourInput`, `Columns`, `DatePicker`, `FillHeightBox`, `Flex`, `HintText`, `Icon`, `Image`, `Inline`, `MinimalModal`, `NumberInput`, `OutsideClick`, `Portal`, `Positioner`, `Section`, `SelectInput`, `SimplePagination`, `SplitButton`, `TextAreaInput`, `TextContainer`, `TextInput`, `Toaster`, `ToggleButtons`, `VisuallyHidden`) | clean | 0 | — | — |
 
 ### 9.2 Package status (orchestrator ticks as packages land)
 > **Detailed plan per package family:** W0-P* → `docs/ds2026-plan/wave-0.md` · W1-P* → `wave-1.md` · W2-P* → `wave-2.md` · W3-P0 + W3a/3b/3c-P* → `wave-3.md` · C-P* → `track-c.md` · W4-P* + G-P1 → `wave-4.md`.
+> **MFE pre-publish verification PASS at `cded6390`** (2026-07-07): build+link+type-check A/B against pristine `4.59.0` clean, 4 tenant-theme elevation test suites 97/97 passing, `black900` alias intact, semantic-namespace probe 4/4. See track-c.md "Post-release MFE verification" for the two procedure corrections found during this run (`copy-overdrive.js` doesn't refresh `.d.ts`; turbo needs `--force`) and Deviation 13 (theme-bridge breaks one MFE test's incomplete `theme.css` mock — one-line fix, flagged to the MFE team).
 
 | Package | Status |
 |---|---|
-| W0-P1 land colour branch + black900 alias | ☐ Not started |
-| W0-P2 reconcile + land typography | ☐ |
-| W0-P3 retire stale palette branch | ☐ |
-| W1-P0 legacy-usage inventory | ☐ |
-| W1-P1 semantic colour namespaces | ☐ |
-| W1-P2 button colour tokens | ☐ |
-| W1-P3 radius/shadow/spacing/motion | ☐ |
+| W0-P1 land colour branch + black900 alias | ✅ Landed (`caa353cf` + preceding ramp commits; changeset `.changeset/ds-2026-colour-ramps.md`) |
+| W0-P2 reconcile + land typography | ✅ Landed (`0c531b2f`) |
+| W0-P3 retire stale palette branch | ☐ **OPEN** — `feat/design-system-2026-palette` still exists both locally and on `origin` (verified 2026-07-07); not deleted/archived |
+| W1-P0 legacy-usage inventory | ✅ Landed — §9.1 above is now the full one-row-per-dir classification (all 78 dirs) |
+| W1-P1 semantic colour namespaces | ✅ Landed (`6ac913d2`) — all 27 leaves verified, incl. `info.background:'#e1edfe'` and `warning.text`=red800 |
+| W1-P2 button colour tokens | ✅ Landed (`0e4a89e8`) — 7 leaves, no `linkedText`/WIP |
+| W1-P3 radius/shadow/spacing/motion | ✅ Landed (`f6983f33`) — radius xsmall–xlarge, space px keys, elevation z1–z4 (fetched strings verified verbatim), `flat_red` divergence present; motion/focus deferred (no Figma variables, per changeset) |
 | W2-P1 Avatar | ☐ |
 | W2-P2 Tag | ☐ |
 | W2-P3 Skeleton | ☐ |
@@ -811,17 +832,19 @@ Columns: **Uses legacy** (direct / via-sprinkles / clean) · **Direct refs** · 
 | W2-P10 Pagination picker | ☐ |
 | W3-P0 ADR: ds2026 vehicle | ☐ |
 | G-P1 docs & governance | ☐ |
-| C-P1 sprinkles parity | ☐ |
-| C-P2 repoint batch (OptionGrid, OptionList, SearchBar, Popover, …) | ☐ |
-| C-P3 repoint batch (Calendar, …) | ☐ |
-| C-P4 repoint batch (sprinklesLegacyText / Text+Heading path, …) | ☐ |
-| C-P5…C-P8 repoint batches (composition per track-c.md) | ☐ |
-| C-P9 shared utils (intentColorset + focusOutline — before W3c-P1) | ☐ |
+| C-P1 sprinkles parity | ✅ Landed (`c3f2f596`) |
+| C-P2 repoint batch (OptionGrid, OptionList, SearchBar, Popover, …) | ✅ Landed (`ceace7fb`) |
+| C-P3 repoint batch (Calendar, …) | ✅ Landed (`2444c07b`) |
+| C-P4 repoint batch (sprinklesLegacyText / Text+Heading path, …) | ✅ Landed (`053b15d8`) |
+| C-P5…C-P8 repoint batches (composition per track-c.md) | ✅ Landed — C-P5 `ca7215e2`, C-P6 `f1a3f4b3`, C-P7 `2111a27d`, C-P8 `eb885d6e` |
+| C-P9 shared utils (intentColorset + focusOutline — before W3c-P1) | ✅ Superseded — retained until the major; no code ships (`eslint-disable` annotations added in `cded6390`) |
+| Track C theme-bridge (semantic `color.gamut` ↔ legacy `colours.gamut`) | ✅ Landed (`90b884ab`) — not part of the original C-Pn numbering; added here for tracking |
+| Track C F-1/F-2 folded-purge (safe internals of CheckBox/Radio/Switch/CheckableBase/InputBase/Button/Tabs/Tooltip/Pagination/ProgressSpinner/Alert, ahead of their Wave-3 restyle) | ✅ Landed (`af61bd14`) — **was previously undocumented in this plan**; changesets `track-c-f1-controls-inputs.md` / `track-c-f2-nav-feedback.md`. Retained items (intent/theme-variant/public-API) match §9.1 above; full fold repoint for these components still pending their W3a/3b/3c package |
 | W3a-P1..P5 Buttons & controls | ☐ |
 | W3b-P1..P6 Forms & inputs | ☐ |
 | W3c-P1..P8 Data/nav/feedback | ☐ |
 | W4-P1 adoption guide + codemods | ☐ |
-| W4-P2 deprecation warnings | ☐ |
+| W4-P2 deprecation warnings | ◐ **Partially landed** (`cded6390`) — `@deprecated` JSDoc on legacy sprinkles props/`sprinklesLegacyText`, `warn`-level ESLint guard (flips to `error` at Track C burn-down zero), and a deprecation banner on the "Legacy Coloursets" Storybook page. **Not yet done:** redundant radius-key (`sm`/`1`, `2xl`) deprecation, dev-time runtime `warning()` calls |
 | W4-P3 adoption tracking | ☐ |
 | W4-P6 tenant-theme migration + path cleanup | ☐ |
 | W4-P4 THE major | ☐ |
