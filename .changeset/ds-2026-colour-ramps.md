@@ -15,7 +15,9 @@ and intent token pairings against WCAG AA (currently-failing legacy pairings are
 documented in the spec pending design decisions).
 
 **Deprecated:** the standalone `black` ramp was removed in Design System 2026 —
-"Tarmac Black" is now `gray/900`. The `black*` tokens (and
-`--od-color-gamut-black-*` CSS vars) are aliased to the `gray` ramp for
-backwards compatibility and will be removed in a future major release. Use
-`gray*` instead.
+"Tarmac Black" is now `gray/900`. The `black*` tokens and their
+`--od-color-gamut-black-*` CSS vars have been **removed** from the theme
+contract; they are not aliased. Only the `backgroundColour="black900"` prop
+value is retained, as a deprecated alias of `gray900` (#212338), so existing
+`backgroundColour="black900"` usages keep resolving; it will be removed in the
+Design System 2026 major release. Use `gray900` instead.

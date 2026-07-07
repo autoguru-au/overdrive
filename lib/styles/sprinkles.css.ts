@@ -47,9 +47,26 @@ const intentBorderColours = mapValues(
 	({ border }) => border,
 );
 
+/**
+ * Test-only: deprecated colour-value aliases retained until the DS-2026 major.
+ * Exported so the R12 guard spec can assert the alias resolves to its real
+ * token value; spread into `backgroundColours` so the alias and the tested
+ * value are the same object.
+ */
+export const __deprecatedBackgroundColourAliases = {
+	/**
+	 * @deprecated Use `gray900`. `black900` is retained only as an alias of
+	 * `gray900` (#212338 — the DS-2026 "Tarmac Black") so existing
+	 * `backgroundColour="black900"` usages keep resolving after the black ramp
+	 * was removed. Scheduled for removal in the DS-2026 major (W4-P4).
+	 */
+	black900: tokens.colours.gamut.gray900,
+};
+
 const backgroundColours = {
 	...intentBackgroundColoursStandard,
 	...tokens.colours.gamut,
+	...__deprecatedBackgroundColourAliases,
 	transparent: 'transparent',
 };
 
