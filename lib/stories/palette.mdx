@@ -7,7 +7,7 @@ import { colourMap, colourMapWithoutWhite } from '../themes/base/colours';
 
 # Colour Palette
 
-The AutoGuru Design System colour ramps. Every hue ships from step 100
+The AutoGuru Design System colour ramps. Every colour ships from step 100
 (lightest) to 900 (darkest) as a CSS custom property.
 
 export const coreBrand = [
@@ -181,8 +181,8 @@ export const codeBody = {
 
 ## Dynamic Palette
 
-Pick a hue to explore its ramp and the exact custom properties it ships — every
-swatch and value below is a real token from `lib/themes/base/colours.ts`.
+Pick a colour to explore its ramp and the exact custom properties it ships.
+Every swatch and value below is a real token from `lib/themes/base/colours.ts`.
 
 export const HUES = ['green', 'yellow', 'blue', 'red', 'gray'];
 
@@ -217,7 +217,7 @@ export const DynamicPalette = () => {
             marginRight: 2,
           }}
         >
-          Hue
+          Colour
         </span>
         {HUES.map((name) => (
           <button
