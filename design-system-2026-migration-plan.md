@@ -560,7 +560,7 @@ Interpret snapshot failures with the stripped-__hash procedure from plan §4.0.1
 - **MFE impact:** opt-in per app / per component. **Builder** `opus`, **Reviewer** `opus`, **Verify** `sonnet` (run each codemod on a copied sample app). **OU:** OU-26/OU-27. **Depends on:** Wave 3 substantially complete.
 
 #### W4-P2 — Deprecation warnings
-- **Scope:** `@deprecated` JSDoc + dev-time `warning()` on legacy `colours.*` paths, `typography.colour`, redundant radius keys (`sm`/`1`, `2xl`), the legacy sprinkles properties, any black-ramp aliases, and the Storybook "Legacy Coloursets" page (`lib/stories/intentional-colours.stories.tsx` — add a banner pointing to the semantic tokens; mark for removal at the major). Warnings only, no behaviour change.
+- **Scope:** `@deprecated` JSDoc + dev-time `warning()` on legacy `colours.*` paths, `typography.colour`, redundant radius keys (`sm`/`1`, `2xl`), the legacy sprinkles properties, any black-ramp aliases, and the Storybook "Legacy Coloursets" page (`lib/stories/intentional-colours.stories.tsx` — add a banner pointing to the semantic tokens; mark for removal at the major). Warnings only, no behaviour change. **2026-07-08:** the Storybook page was subsequently removed early (product-owner decision — story-only surface, not npm API, so MFE-safe); the token deprecation itself is unchanged.
 - **MFE impact:** none (dev console). **OU:** OU-25. **Depends on:** Track C internal migration far enough that Overdrive doesn't trip its own warnings.
 
 #### W4-P3 — Adoption tracking
@@ -844,7 +844,7 @@ Columns: **Uses legacy** (direct / via-sprinkles / clean) · **Direct refs** · 
 | W3b-P1..P6 Forms & inputs | ☐ |
 | W3c-P1..P8 Data/nav/feedback | ☐ |
 | W4-P1 adoption guide + codemods | ☐ |
-| W4-P2 deprecation warnings | ◐ **Partially landed** (`cded6390`) — `@deprecated` JSDoc on legacy sprinkles props/`sprinklesLegacyText`, `warn`-level ESLint guard (flips to `error` at Track C burn-down zero), and a deprecation banner on the "Legacy Coloursets" Storybook page. **Not yet done:** redundant radius-key (`sm`/`1`, `2xl`) deprecation, dev-time runtime `warning()` calls |
+| W4-P2 deprecation warnings | ◐ **Partially landed** (`cded6390`) — `@deprecated` JSDoc on legacy sprinkles props/`sprinklesLegacyText`, `warn`-level ESLint guard (flips to `error` at Track C burn-down zero), and (formerly) a deprecation banner on the "Legacy Coloursets" Storybook page. **2026-07-08:** that Storybook page was removed entirely, ahead of the major, per product-owner decision (story-only surface, not npm API — MFE-safe; the underlying `colours.*` token deprecation is unaffected). **Not yet done:** redundant radius-key (`sm`/`1`, `2xl`) deprecation, dev-time runtime `warning()` calls |
 | W4-P3 adoption tracking | ☐ |
 | W4-P6 tenant-theme migration + path cleanup | ☐ |
 | W4-P4 THE major | ☐ |

@@ -250,7 +250,7 @@ Report PASS/FAIL per check.
 | Legacy sprinkles colour properties (`colour`, `backgroundColour`, `borderTopColour`/`RightColour`/`BottomColour`/`LeftColour` → `tokens.colours.*`) | `lib/styles/sprinkles.css.ts:35-74` | `@deprecated` JSDoc on the property definitions → `color`/`backgroundColor`/`border*Color` (semantic, `:57-61,125-130`) |
 | `black900` deprecated alias (added in W0-P1) | Box colour-prop value map | keep `@deprecated` JSDoc → `gray900`; keep the guard test from W0-P1 (master R12) |
 | `ThemeOverrideProvider` / `FallbackProvider` (already a no-op) | `lib/components/OverdriveProvider/FallbackProvider.tsx:5` (already `@deprecated`) | leave as-is; optionally add a `warnOnce` on render |
-| Storybook "Legacy Coloursets" page | `lib/stories/intentional-colours.stories.tsx` | add a deprecation banner (W4-P2.d) |
+| Storybook "Legacy Coloursets" page | ~~`lib/stories/intentional-colours.stories.tsx`~~ (removed) | add a deprecation banner (W4-P2.d) — **superseded 2026-07-08: page removed early per product-owner decision, see W4-P2.d** |
 
 ### W4-P2.b — Dev-only warning mechanism (consistent with the codebase)
 
@@ -288,6 +288,8 @@ export const warnOnce = (key: string, message: string): void => {
 ### W4-P2.d — Storybook Legacy Coloursets banner
 
 `lib/stories/intentional-colours.stories.tsx` renders semantic + intent swatches from `overdriveTokens`. Add a top-of-page banner (a `Story`/decorator or an MDX note) reading: *"Legacy Coloursets — deprecated. These `colours.*` tokens are retained for backwards compatibility and will be removed in the DS-2026 major (v5). Use the semantic `color.*` tokens (see 'Theme Colours 2026')."* Tag the story `deprecated` in Storybook and mark it for removal at the major.
+
+**2026-07-08 update — page removed early:** the banner shipped as planned, but the product owner decided the page itself should be removed from Storybook now rather than waiting for the major. `lib/stories/intentional-colours.stories.tsx` (a Storybook-only surface, never shipped in the npm dist) has been deleted. This is safe for MFEs — the page carried no runtime API — and does **not** change the token deprecation plan: the legacy `colours.*` tokens remain exported, deprecated, and scheduled for removal at the DS-2026 major as described above.
 
 ### W4-P2.e — Post-release MFE verification
 
