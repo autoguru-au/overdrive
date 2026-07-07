@@ -18,11 +18,6 @@ const gray = {
 };
 
 const colours = {
-	/**
-	 * @deprecated The standalone `black` ramp is removed in AutoGuru Design
-	 * System 2026 — aliased to `gray` for backwards compatibility. Use `gray*`.
-	 */
-	black: gray,
 	gray,
 	green: {
 		900: '#00574c',

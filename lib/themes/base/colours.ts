@@ -17,13 +17,6 @@ const gray = {
 };
 
 export const colourMapWithoutWhite = {
-	/**
-	 * @deprecated The standalone `black` ramp is removed in AutoGuru Design
-	 * System 2026 — "Tarmac Black" is now `gray/900`. `black` is aliased to
-	 * `gray` for backwards compatibility and will be removed in a future major.
-	 * Use `gray*` instead.
-	 */
-	black: gray,
 	gray,
 	green: {
 		'900': '#00574c',

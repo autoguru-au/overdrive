@@ -6,23 +6,6 @@ import { buildColourGamut } from './makeTheme';
 import type { ColourMap } from '.';
 
 const colours = {
-	/**
-	 * @deprecated The standalone `black` ramp is removed in AutoGuru Design
-	 * System 2026 — "Tarmac Black" is now `gray/900`. These keys are aliased to
-	 * the `gray` ramp for backwards compatibility and will be removed in a
-	 * future major. Use `gray*` instead.
-	 */
-	black: {
-		'900': 'color-gamut-black-900',
-		'800': 'color-gamut-black-800',
-		'700': 'color-gamut-black-700',
-		'600': 'color-gamut-black-600',
-		'500': 'color-gamut-black-500',
-		'400': 'color-gamut-black-400',
-		'300': 'color-gamut-black-300',
-		'200': 'color-gamut-black-200',
-		'100': 'color-gamut-black-100',
-	},
 	gray: {
 		'900': 'color-gamut-gray-900',
 		'800': 'color-gamut-gray-800',
