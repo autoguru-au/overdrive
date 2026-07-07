@@ -11,7 +11,7 @@ exports[`<Icon /> > should match snapshot for same icon 1`] = `
   >
     <svg
       aria-hidden="true"
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuf1 sprinkles_width_full_mobile__onxwjur9 sprinkles_height_full_mobile__onxwjup9"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuf1 sprinkles_width_full_mobile__onxwjut1 sprinkles_height_full_mobile__onxwjur1"
       viewBox="0 0 512 512"
       xmlns="http://www.w3.org/2000/svg"
     >

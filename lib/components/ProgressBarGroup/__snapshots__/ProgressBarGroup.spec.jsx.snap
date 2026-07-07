@@ -6,54 +6,54 @@ exports[`<ProgressBarGroup /> > should match the snapshot 1`] = `
   data-od-component="provider"
 >
   <div
-    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_alignItems_center_mobile__onxwjuy9 ProgressBarGroup_root__1e1wroi0"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_alignItems_center_mobile__onxwju101 ProgressBarGroup_root__1e1wroi0"
     data-od-component="progress-bar-group"
     style="grid-template-columns: 1fr;"
   >
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4 ProgressBarGroup_label__1e1wroi1"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjujp sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4 ProgressBarGroup_label__1e1wroi1"
     />
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_gray100__onxwjub5 sprinkles_borderRadius_1_mobile__onxwjuk1 ProgressBar_container__4k1c010"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_gray100__onxwjub5 sprinkles_borderRadius_1_mobile__onxwjult ProgressBar_container__4k1c010"
       data-od-component="progress-bar"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_green500__onxwjubi sprinkles_borderRadius_1_mobile__onxwjuk1 ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_green500__onxwjubi sprinkles_borderRadius_1_mobile__onxwjult ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 16.666666666666664%;"
       />
     </div>
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjujp sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4"
     />
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4 ProgressBarGroup_label__1e1wroi1"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjujp sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4 ProgressBarGroup_label__1e1wroi1"
     />
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_gray100__onxwjub5 sprinkles_borderRadius_1_mobile__onxwjuk1 ProgressBar_container__4k1c010"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_gray100__onxwjub5 sprinkles_borderRadius_1_mobile__onxwjult ProgressBar_container__4k1c010"
       data-od-component="progress-bar"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_green500__onxwjubi sprinkles_borderRadius_1_mobile__onxwjuk1 ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_green500__onxwjubi sprinkles_borderRadius_1_mobile__onxwjult ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 33.33333333333333%;"
       />
     </div>
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjujp sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4"
     />
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4 ProgressBarGroup_label__1e1wroi1"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjujp sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4 ProgressBarGroup_label__1e1wroi1"
     />
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_gray100__onxwjub5 sprinkles_borderRadius_1_mobile__onxwjuk1 ProgressBar_container__4k1c010"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_gray100__onxwjub5 sprinkles_borderRadius_1_mobile__onxwjult ProgressBar_container__4k1c010"
       data-od-component="progress-bar"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_green500__onxwjubi sprinkles_borderRadius_1_mobile__onxwjuk1 ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_green500__onxwjubi sprinkles_borderRadius_1_mobile__onxwjult ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 50%;"
       />
     </div>
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjujp sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4"
     />
   </div>
 </div>
@@ -65,60 +65,60 @@ exports[`<ProgressBarGroup /> > should should ignore extra labels 1`] = `
   data-od-component="provider"
 >
   <div
-    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_alignItems_center_mobile__onxwjuy9 ProgressBarGroup_root__1e1wroi0"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_alignItems_center_mobile__onxwju101 ProgressBarGroup_root__1e1wroi0"
     data-od-component="progress-bar-group"
     style="grid-template-columns: auto 1fr;"
   >
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4 ProgressBarGroup_label__1e1wroi1"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjujp sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4 ProgressBarGroup_label__1e1wroi1"
     >
       a
     </span>
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_gray100__onxwjub5 sprinkles_borderRadius_1_mobile__onxwjuk1 ProgressBar_container__4k1c010"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_gray100__onxwjub5 sprinkles_borderRadius_1_mobile__onxwjult ProgressBar_container__4k1c010"
       data-od-component="progress-bar"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_green500__onxwjubi sprinkles_borderRadius_1_mobile__onxwjuk1 ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_green500__onxwjubi sprinkles_borderRadius_1_mobile__onxwjult ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 16.666666666666664%;"
       />
     </div>
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjujp sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4"
     />
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4 ProgressBarGroup_label__1e1wroi1"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjujp sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4 ProgressBarGroup_label__1e1wroi1"
     >
       b
     </span>
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_gray100__onxwjub5 sprinkles_borderRadius_1_mobile__onxwjuk1 ProgressBar_container__4k1c010"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_gray100__onxwjub5 sprinkles_borderRadius_1_mobile__onxwjult ProgressBar_container__4k1c010"
       data-od-component="progress-bar"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_green500__onxwjubi sprinkles_borderRadius_1_mobile__onxwjuk1 ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_green500__onxwjubi sprinkles_borderRadius_1_mobile__onxwjult ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 33.33333333333333%;"
       />
     </div>
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjujp sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4"
     />
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4 ProgressBarGroup_label__1e1wroi1"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjujp sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4 ProgressBarGroup_label__1e1wroi1"
     >
       c
     </span>
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_gray100__onxwjub5 sprinkles_borderRadius_1_mobile__onxwjuk1 ProgressBar_container__4k1c010"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_gray100__onxwjub5 sprinkles_borderRadius_1_mobile__onxwjult ProgressBar_container__4k1c010"
       data-od-component="progress-bar"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_green500__onxwjubi sprinkles_borderRadius_1_mobile__onxwjuk1 ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_green500__onxwjubi sprinkles_borderRadius_1_mobile__onxwjult ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 50%;"
       />
     </div>
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjujp sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4"
     />
   </div>
 </div>
@@ -130,56 +130,56 @@ exports[`<ProgressBarGroup /> > should should ignore not break when not enough l
   data-od-component="provider"
 >
   <div
-    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_alignItems_center_mobile__onxwjuy9 ProgressBarGroup_root__1e1wroi0"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_alignItems_center_mobile__onxwju101 ProgressBarGroup_root__1e1wroi0"
     data-od-component="progress-bar-group"
     style="grid-template-columns: auto 1fr;"
   >
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4 ProgressBarGroup_label__1e1wroi1"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjujp sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4 ProgressBarGroup_label__1e1wroi1"
     >
       a
     </span>
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_gray100__onxwjub5 sprinkles_borderRadius_1_mobile__onxwjuk1 ProgressBar_container__4k1c010"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_gray100__onxwjub5 sprinkles_borderRadius_1_mobile__onxwjult ProgressBar_container__4k1c010"
       data-od-component="progress-bar"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_green500__onxwjubi sprinkles_borderRadius_1_mobile__onxwjuk1 ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_green500__onxwjubi sprinkles_borderRadius_1_mobile__onxwjult ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 16.666666666666664%;"
       />
     </div>
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjujp sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4"
     />
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4 ProgressBarGroup_label__1e1wroi1"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjujp sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4 ProgressBarGroup_label__1e1wroi1"
     />
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_gray100__onxwjub5 sprinkles_borderRadius_1_mobile__onxwjuk1 ProgressBar_container__4k1c010"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_gray100__onxwjub5 sprinkles_borderRadius_1_mobile__onxwjult ProgressBar_container__4k1c010"
       data-od-component="progress-bar"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_green500__onxwjubi sprinkles_borderRadius_1_mobile__onxwjuk1 ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_green500__onxwjubi sprinkles_borderRadius_1_mobile__onxwjult ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 33.33333333333333%;"
       />
     </div>
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjujp sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4"
     />
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4 ProgressBarGroup_label__1e1wroi1"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjujp sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4 ProgressBarGroup_label__1e1wroi1"
     />
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_gray100__onxwjub5 sprinkles_borderRadius_1_mobile__onxwjuk1 ProgressBar_container__4k1c010"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_gray100__onxwjub5 sprinkles_borderRadius_1_mobile__onxwjult ProgressBar_container__4k1c010"
       data-od-component="progress-bar"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_green500__onxwjubi sprinkles_borderRadius_1_mobile__onxwjuk1 ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_green500__onxwjubi sprinkles_borderRadius_1_mobile__onxwjult ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 50%;"
       />
     </div>
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjujp sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4"
     />
   </div>
 </div>
@@ -191,60 +191,60 @@ exports[`<ProgressBarGroup /> > should should render a prefix for every value 1`
   data-od-component="provider"
 >
   <div
-    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_alignItems_center_mobile__onxwjuy9 ProgressBarGroup_root__1e1wroi0"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_alignItems_center_mobile__onxwju101 ProgressBarGroup_root__1e1wroi0"
     data-od-component="progress-bar-group"
     style="grid-template-columns: auto 1fr;"
   >
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4 ProgressBarGroup_label__1e1wroi1"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjujp sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4 ProgressBarGroup_label__1e1wroi1"
     >
       a
     </span>
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_gray100__onxwjub5 sprinkles_borderRadius_1_mobile__onxwjuk1 ProgressBar_container__4k1c010"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_gray100__onxwjub5 sprinkles_borderRadius_1_mobile__onxwjult ProgressBar_container__4k1c010"
       data-od-component="progress-bar"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_green500__onxwjubi sprinkles_borderRadius_1_mobile__onxwjuk1 ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_green500__onxwjubi sprinkles_borderRadius_1_mobile__onxwjult ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 16.666666666666664%;"
       />
     </div>
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjujp sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4"
     />
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4 ProgressBarGroup_label__1e1wroi1"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjujp sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4 ProgressBarGroup_label__1e1wroi1"
     >
       b
     </span>
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_gray100__onxwjub5 sprinkles_borderRadius_1_mobile__onxwjuk1 ProgressBar_container__4k1c010"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_gray100__onxwjub5 sprinkles_borderRadius_1_mobile__onxwjult ProgressBar_container__4k1c010"
       data-od-component="progress-bar"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_green500__onxwjubi sprinkles_borderRadius_1_mobile__onxwjuk1 ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_green500__onxwjubi sprinkles_borderRadius_1_mobile__onxwjult ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 33.33333333333333%;"
       />
     </div>
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjujp sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4"
     />
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4 ProgressBarGroup_label__1e1wroi1"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjujp sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4 ProgressBarGroup_label__1e1wroi1"
     >
       c
     </span>
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_gray100__onxwjub5 sprinkles_borderRadius_1_mobile__onxwjuk1 ProgressBar_container__4k1c010"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_gray100__onxwjub5 sprinkles_borderRadius_1_mobile__onxwjult ProgressBar_container__4k1c010"
       data-od-component="progress-bar"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_green500__onxwjubi sprinkles_borderRadius_1_mobile__onxwjuk1 ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_backgroundColor_green500__onxwjubi sprinkles_borderRadius_1_mobile__onxwjult ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 50%;"
       />
     </div>
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuit sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjujp sprinkles_lineHeight_3_mobile__onxwjuht sprinkles_color_gray600__onxwju91 sprinkles_fontWeight_normal__onxwjue4"
     />
   </div>
 </div>
