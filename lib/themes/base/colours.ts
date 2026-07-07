@@ -1,23 +1,17 @@
 import type { ColourMap } from '../';
 
-/**
- * Neutral / greyscale ramp. In AutoGuru Design System 2026 the darkest step
- * (`gray/900`) is the brand "Tarmac Black".
- */
-const gray = {
-	'900': '#212338',
-	'800': '#34384c',
-	'700': '#484c5f',
-	'600': '#5c6172',
-	'500': '#6c7283',
-	'400': '#8f95a1',
-	'300': '#d4d9dd',
-	'200': '#eef0f2',
-	'100': '#fafbfc',
-};
-
 export const colourMapWithoutWhite = {
-	gray,
+	gray: {
+		'900': '#212338',
+		'800': '#34384c',
+		'700': '#484c5f',
+		'600': '#5c6172',
+		'500': '#6c7283',
+		'400': '#8f95a1',
+		'300': '#d4d9dd',
+		'200': '#eef0f2',
+		'100': '#fafbfc',
+	},
 	green: {
 		'900': '#00574c',
 		'800': '#18856f',
