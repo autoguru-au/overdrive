@@ -24,7 +24,7 @@ exports[`<Meta /> > should match snapshot with label, icon for Primary variant 1
       </svg>
     </span>
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_color_secondary__onxwju8k sprinkles_fontWeight_normal__onxwjue4"
     >
       Hello World!
     </span>
@@ -56,7 +56,7 @@ exports[`<Meta /> > should match snapshot with label, icon for Secondary variant
       </svg>
     </span>
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_color_secondary__onxwju8k sprinkles_fontWeight_normal__onxwjue4"
     >
       Hello World!
     </span>

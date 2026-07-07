@@ -8,7 +8,7 @@ globalLayer(LAYER_ORDER);
 export const root = style({
 	'@layer': {
 		[cssLayerComponent]: {
-			boxShadow: `inset 0 -1px 0 0 ${vars.typography.colour.muted}`,
+			boxShadow: `inset 0 -1px 0 0 ${vars.color.foreground.tertiaryInactive}`,
 			transitionDelay: '0s',
 			transitionDuration: '0.2s',
 			transitionProperty: 'box-shadow',

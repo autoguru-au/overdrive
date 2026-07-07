@@ -21,5 +21,5 @@ export const primaryText = style({
 });
 
 export const secondaryText = style({
-	color: vars.typography.colour.dark,
+	color: vars.color.foreground.primary,
 });

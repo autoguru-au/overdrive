@@ -20,7 +20,7 @@ export const root = styleVariants({
 
 		'::before': {
 			alignSelf: 'flex-start',
-			backgroundColor: vars.typography.colour.dark,
+			backgroundColor: vars.color.foreground.primary,
 			boxSizing: 'content-box',
 			content: "' '",
 			display: 'block',
@@ -32,14 +32,14 @@ export const root = styleVariants({
 	disc: {
 		'::before': {
 			backgroundColor: 'transparent',
-			border: `2px solid ${vars.typography.colour.dark}`,
+			border: `2px solid ${vars.color.foreground.primary}`,
 			borderRadius: '50%',
 		},
 	},
 	square: {
 		'::before': {
 			backgroundColor: 'transparent',
-			border: `2px solid ${vars.typography.colour.dark}`,
+			border: `2px solid ${vars.color.foreground.primary}`,
 		},
 	},
 });

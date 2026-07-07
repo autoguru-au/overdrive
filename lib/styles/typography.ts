@@ -11,6 +11,16 @@ import {
 export const TEXT_TAGS = ['p', 'span', 'label'] as const;
 export const HEADING_TAGS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] as const;
 export const DEFAULT_TEXT_COLOUR = 'neutral' as LegacyTextColours;
+/**
+ * Default-path semantic text colours (Track C C-P4). The legacy defaults
+ * `neutral`(gray700) / `dark`(gray900) are value-identical to these semantic
+ * `foreground.secondary` / `foreground.primary` tokens in every theme —
+ * including the `flat_red`/`neutral` in-repo themes and all MFE tenant themes,
+ * none of which override either the legacy or the semantic keys divergently —
+ * so routing the *default* colour through the semantic path is pixel-preserving.
+ */
+export const DEFAULT_TEXT_COLOR = 'secondary' as Sprinkles['color'];
+export const DEFAULT_HEADING_COLOR = 'primary' as Sprinkles['color'];
 export const DEFAULT_TEXT_SIZE = '4' as Sprinkles['text'];
 export const DEFAULT_TEXT_WEIGHT = 'normal' as Sprinkles['fontWeight'];
 
@@ -68,11 +78,19 @@ export const typography = ({
 	weight = DEFAULT_TEXT_WEIGHT,
 	wrap,
 	wordBreak,
-}: TypographyProps) =>
-	clsx(
+}: TypographyProps) => {
+	// An explicit legacy `colour` still resolves through the legacy text
+	// sprinkles: its named/intent keys (primary, link, information, …) are
+	// theme-overridden, so they are NEVER repointed (Track C intent rule).
+	// Only the *default* colour is routed through the semantic path —
+	// `dark`→`primary` and `neutral`→`secondary` are value-identical in every
+	// theme incl. MFE tenants (Track C C-P4).
+	const usesLegacyColour = !color && colour !== undefined;
+	const defaultColor = strong === true ? DEFAULT_HEADING_COLOR : DEFAULT_TEXT_COLOR;
+	return clsx(
 		common,
 		sprinkles({
-			color,
+			color: color ?? (usesLegacyColour ? undefined : defaultColor),
 			fontWeight: strong === true ? 'bold' : weight,
 			text,
 			textAlign,
@@ -80,12 +98,9 @@ export const typography = ({
 			textWrap: noWrap === true ? 'nowrap' : wrap,
 			wordBreak: breakWord === true ? 'break-word' : wordBreak,
 		}),
-		!color &&
-			sprinklesLegacyText({
-				color:
-					colour ?? (strong === true ? 'dark' : DEFAULT_TEXT_COLOUR),
-			}),
+		usesLegacyColour && sprinklesLegacyText({ color: colour }),
 	);
+};
 
 export interface TextStylesProps extends TypographyProps {
 	as?: TextTags | HeadingTags;
@@ -117,15 +132,25 @@ export function textStyles({
 	as = 'span',
 	className,
 
-	colour = isHeadingTag(as) ? 'dark' : undefined,
+	color,
+	colour,
 	size = isHeadingTag(as) ? headingSizeMap[as] : undefined,
 	weight = isHeadingTag(as) ? 'bold' : undefined,
 	// remaining style props
 	...props
 }: TextStylesProps) {
+	// Heading colour default repoints the legacy `dark` onto semantic
+	// `foreground.primary` (value-identical in every theme). It is applied only
+	// when the caller supplies no colour of either kind — an explicit legacy
+	// `colour` (e.g. an intent key) still wins and stays on the legacy path.
+	const headingColor =
+		color ??
+		(isHeadingTag(as) && colour === undefined
+			? DEFAULT_HEADING_COLOR
+			: undefined);
 	return clsx(
 		resetStyles(as),
-		typography({ colour, size, weight, ...props }),
+		typography({ color: headingColor, colour, size, weight, ...props }),
 		className,
 	);
 }

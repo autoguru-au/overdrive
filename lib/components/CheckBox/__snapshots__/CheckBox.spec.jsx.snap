@@ -42,11 +42,11 @@ exports[`<CheckBox /> > should match the snapshot for a checked check 1`] = `
       </div>
     </div>
     <label
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_label__18vhvlin  sprinkles_width_full_mobile__onxwjupp elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_label__18vhvlin  sprinkles_width_full_mobile__onxwjupp elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_color_secondary__onxwju8k sprinkles_fontWeight_normal__onxwjue4"
       for="_r_3_"
     >
       <span
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_color_secondary__onxwju8k sprinkles_fontWeight_normal__onxwjue4"
       >
         check label 1
       </span>
@@ -97,11 +97,11 @@ exports[`<CheckBox /> > should match the snapshot for a disable checkbox 1`] = `
       </div>
     </div>
     <label
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_label__18vhvlin  sprinkles_pointerEvents_none__onxwjueo sprinkles_width_full_mobile__onxwjupp elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338 CheckableBase_label_disabled__y94qv1"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_label__18vhvlin  sprinkles_pointerEvents_none__onxwjueo sprinkles_width_full_mobile__onxwjupp elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_color_secondary__onxwju8k sprinkles_fontWeight_normal__onxwjue4 CheckableBase_label_disabled__y94qv1"
       for="_r_4_"
     >
       <span
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_color_secondary__onxwju8k sprinkles_fontWeight_normal__onxwjue4"
       >
         check label 1
       </span>
@@ -151,11 +151,11 @@ exports[`<CheckBox /> > should match the snapshot for a single check 1`] = `
       </div>
     </div>
     <label
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_label__18vhvlin  sprinkles_width_full_mobile__onxwjupp elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_label__18vhvlin  sprinkles_width_full_mobile__onxwjupp elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_color_secondary__onxwju8k sprinkles_fontWeight_normal__onxwjue4"
       for="_r_2_"
     >
       <span
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_color_secondary__onxwju8k sprinkles_fontWeight_normal__onxwjue4"
       >
         check label 1
       </span>
@@ -204,11 +204,11 @@ exports[`<CheckBox /> > should match the snapshot for a single check with no val
       </div>
     </div>
     <label
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_label__18vhvlin  sprinkles_width_full_mobile__onxwjupp elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_label__18vhvlin  sprinkles_width_full_mobile__onxwjupp elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_color_secondary__onxwju8k sprinkles_fontWeight_normal__onxwjue4"
       for="_r_1_"
     >
       <span
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_color_secondary__onxwju8k sprinkles_fontWeight_normal__onxwjue4"
       />
     </label>
   </div>
@@ -256,7 +256,7 @@ exports[`<CheckBox /> > when with component child > should match the snapshot 1`
       </div>
     </div>
     <label
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_label__18vhvlin  sprinkles_width_full_mobile__onxwjupp elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_label__18vhvlin  sprinkles_width_full_mobile__onxwjupp elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_color_secondary__onxwju8k sprinkles_fontWeight_normal__onxwjue4"
       for="_r_a_"
     >
       <h1

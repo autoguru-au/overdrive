@@ -13,7 +13,7 @@ exports[`<Tabs /> > should allow id overriding 1`] = `
     >
       <div
         aria-orientation="horizontal"
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_width_full_mobile__onxwjupp sprinkles_flexWrap_nowrap_mobile__onxwjuzh elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_fontWeight_normal__onxwjue4 sprinkles_textWrap_nowrap__onxwjued typography_color_neutral__yhjp338"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_width_full_mobile__onxwjupp sprinkles_flexWrap_nowrap_mobile__onxwjuzh elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_color_secondary__onxwju8k sprinkles_fontWeight_normal__onxwjue4 sprinkles_textWrap_nowrap__onxwjued"
         role="tablist"
       >
         <button
@@ -115,7 +115,7 @@ exports[`<Tabs /> > should allow rendering indications 1`] = `
     >
       <div
         aria-orientation="horizontal"
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_width_full_mobile__onxwjupp sprinkles_flexWrap_nowrap_mobile__onxwjuzh elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_fontWeight_normal__onxwjue4 sprinkles_textWrap_nowrap__onxwjued typography_color_neutral__yhjp338"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_width_full_mobile__onxwjupp sprinkles_flexWrap_nowrap_mobile__onxwjuzh elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_color_secondary__onxwju8k sprinkles_fontWeight_normal__onxwjue4 sprinkles_textWrap_nowrap__onxwjued"
         role="tablist"
       >
         <button
@@ -232,7 +232,7 @@ exports[`<Tabs /> > should match snapshot (high level) 1`] = `
     >
       <div
         aria-orientation="horizontal"
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_width_full_mobile__onxwjupp sprinkles_flexWrap_nowrap_mobile__onxwjuzh elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_fontWeight_normal__onxwjue4 sprinkles_textWrap_nowrap__onxwjued typography_color_neutral__yhjp338"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuex sprinkles_width_full_mobile__onxwjupp sprinkles_flexWrap_nowrap_mobile__onxwjuzh elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_color_secondary__onxwju8k sprinkles_fontWeight_normal__onxwjue4 sprinkles_textWrap_nowrap__onxwjued"
         role="tablist"
       >
         <button

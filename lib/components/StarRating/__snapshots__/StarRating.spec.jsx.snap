@@ -102,7 +102,7 @@ exports[`<StarRating /> > should match snapshot for small size 1`] = `
         </span>
       </div>
       <span
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuip sprinkles_lineHeight_3_mobile__onxwjuhp sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3_mobile__onxwjuip sprinkles_lineHeight_3_mobile__onxwjuhp sprinkles_color_secondary__onxwju8k sprinkles_fontWeight_normal__onxwjue4"
         data-testid="star-rating-label"
       >
         Hello World!
@@ -214,7 +214,7 @@ exports[`<StarRating /> > should match snapshot with label 1`] = `
         </span>
       </div>
       <span
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_color_secondary__onxwju8k sprinkles_fontWeight_normal__onxwjue4"
         data-testid="star-rating-label"
       >
         Hello World!
@@ -326,7 +326,7 @@ exports[`<StarRating /> > should match snapshot with value 1`] = `
         </span>
       </div>
       <span
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_color_secondary__onxwju8k sprinkles_fontWeight_normal__onxwjue4"
         data-testid="star-rating-label"
       >
         2.7
@@ -438,7 +438,7 @@ exports[`<StarRating /> > should match snapshot without value 1`] = `
         </span>
       </div>
       <span
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuit sprinkles_lineHeight_4_mobile__onxwjuht sprinkles_color_secondary__onxwju8k sprinkles_fontWeight_normal__onxwjue4"
         data-testid="star-rating-label"
       />
     </div>
