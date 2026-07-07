@@ -133,6 +133,47 @@ const THEME_CONTRACT = {
 			placeholder: 'color-interactive-placeholder',
 			focusOutline: 'color-interactive-focus-outline',
 		},
+		foreground: {
+			primary: 'color-foreground-primary',
+			secondary: 'color-foreground-secondary',
+			reverse: 'color-foreground-reverse',
+			tertiaryInactive: 'color-foreground-tertiary-inactive',
+			tertiaryInactiveLight: 'color-foreground-tertiary-inactive-light',
+		},
+		background: {
+			default: 'color-background-default',
+			reverse: 'color-background-reverse',
+			inactive: 'color-background-inactive',
+			emphasisInactive: 'color-background-emphasis-inactive',
+		},
+		border: {
+			default: 'color-border-default',
+			emphasis: 'color-border-emphasis',
+			selected: 'color-border-selected',
+			strong: 'color-border-strong',
+		},
+		info: {
+			text: 'color-info-text',
+			foreground: 'color-info-foreground',
+			background: 'color-info-background',
+		},
+		success: {
+			text: 'color-success-text',
+			foreground: 'color-success-foreground',
+			backgroundDark: 'color-success-background-dark',
+			backgroundLight: 'color-success-background-light',
+		},
+		warning: {
+			text: 'color-warning-text',
+			foreground: 'color-warning-foreground',
+			backgroundDark: 'color-warning-background-dark',
+			backgroundLight: 'color-warning-background-light',
+		},
+		alert: {
+			text: 'color-alert-text',
+			foreground: 'color-alert-foreground',
+			background: 'color-alert-background',
+		},
 	},
 	// existing colours for compatability
 	colours: {

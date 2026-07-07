@@ -67,6 +67,47 @@ export const tokens = {
 			placeholder: colourMap.gray['700'],
 			focusOutline: colourMap.blue['500'],
 		},
+		foreground: {
+			primary: colourMap.gray['900'], // #212338
+			secondary: colourMap.gray['700'], // #484c5f
+			reverse: colourMap.white, // #ffffff
+			tertiaryInactive: colourMap.gray['400'], // #8f95a1
+			tertiaryInactiveLight: colourMap.gray['300'], // #d4d9dd
+		},
+		background: {
+			default: colourMap.white, // #ffffff
+			reverse: colourMap.gray['900'], // #212338
+			inactive: colourMap.gray['300'], // #d4d9dd
+			emphasisInactive: colourMap.gray['200'], // #eef0f2
+		},
+		border: {
+			default: colourMap.gray['300'], // #d4d9dd
+			emphasis: colourMap.gray['400'], // #8f95a1
+			selected: colourMap.gray['600'], // #5c6172
+			strong: colourMap.gray['900'], // #212338
+		},
+		info: {
+			text: colourMap.blue['900'], // #0d47a1
+			foreground: colourMap.blue['600'], // #0d54e5
+			background: '#e1edfe', // Figma info surface — NOT blue-200 (#bad4ff)
+		},
+		success: {
+			text: colourMap.green['900'], // #00574c
+			foreground: colourMap.green['600'], // #01c68c
+			backgroundDark: colourMap.green['800'], // #18856f
+			backgroundLight: colourMap.green['200'], // #e3f8f0
+		},
+		warning: {
+			text: colourMap.red['800'], // #96110e (Figma warning/text is RED, not yellow)
+			foreground: colourMap.yellow['800'], // #f69a1f
+			backgroundDark: colourMap.yellow['500'], // #ffc001
+			backgroundLight: colourMap.yellow['200'], // #ffedb5
+		},
+		alert: {
+			text: colourMap.red['800'], // #96110e
+			foreground: colourMap.red['600'], // #d42b26
+			background: colourMap.red['200'], // #ffd4d4
+		},
 	},
 	colours: {
 		gamut: {
