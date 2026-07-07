@@ -29,9 +29,27 @@ export const useStorybookDecorator = (Story, context) => {
 			? overrideColors[context.globals.overrideColours]
 			: {};
 
+	// Foundation reference pages read as documents, so give them the exact
+	// same page margins the Storybook docs pages have (64px top/bottom, centred
+	// with a 1000px max-width) rather than sitting flush to the top-left.
+	const isFoundationPage = context.title?.startsWith('Foundation/');
+
 	useEffect(() => {
 		document.documentElement.dataset.odTheme = 'ag';
 	}, []);
+
+	const story = (
+		<div
+			ref={portalRef}
+			style={
+				isFoundationPage
+					? { maxWidth: 1000, width: '100%' }
+					: undefined
+			}
+		>
+			<Story />
+		</div>
+	);
 
 	return (
 		<OverdriveProvider
@@ -42,9 +60,19 @@ export const useStorybookDecorator = (Story, context) => {
 			portalMountPoint={portalRef}
 			noBodyLevelTheming
 		>
-			<div ref={portalRef}>
-				<Story />
-			</div>
+			{isFoundationPage ? (
+				<div
+					style={{
+						display: 'flex',
+						justifyContent: 'center',
+						padding: '64px 20px',
+					}}
+				>
+					{story}
+				</div>
+			) : (
+				story
+			)}
 		</OverdriveProvider>
 	);
 };

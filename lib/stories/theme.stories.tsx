@@ -9,13 +9,13 @@ import {
 	type ContrastColourToken,
 } from '../themes/base/contrastGuide';
 import { getContrastRatio } from '../themes/helpers';
-import { overdriveTokens } from '../themes/theme.css';
 
 import {
-	codeVariable,
-	gridSwatches,
 	labels,
-	variantColourSwatch,
+	tokenCard,
+	tokenCode,
+	tokenDescription,
+	tokenGrid,
 } from './helpers/styles.css';
 
 function spacesFromCamelCase(text: string) {
@@ -35,71 +35,11 @@ function kebabCaseFromCamelCase(text: string) {
 
 const meta: Meta = {
 	title: 'Foundation/Theme Colours',
-	tags: ['!autodocs', 'updated'],
+	tags: ['!autodocs'],
 };
 export default meta;
 
 type Story = StoryObj;
-
-export const ThemeColours: Story = {
-	render: () => {
-		return (
-			<FlexStack gap="7">
-				<hgroup>
-					<Heading>Theme Colours</Heading>
-					<p style={{ fontStyle: 'italic' }}>
-						These colours are a work in progress. Tokens may be
-						added, renamed or colours reassigned.
-					</p>
-				</hgroup>
-				<FlexStack gap="7">
-					{Object.entries(overdriveTokens.color)
-						.filter(([key]) => key !== 'gamut')
-						.map(([group, colours]) => (
-							<FlexStack gap="4" key={group}>
-								<Heading as="h2" className={labels}>
-									{group}
-								</Heading>
-
-								<div className={gridSwatches}>
-									{Object.entries(colours).map(
-										([colour, cssVar]) => (
-											<FlexStack gap="1" key={colour}>
-												<div
-													className={variantColourSwatch(
-														{
-															shape: 'rectangle',
-														},
-													)}
-													style={
-														{
-															background: cssVar,
-														} as React.CSSProperties
-													}
-												></div>
-
-												<div className={labels}>
-													{spacesFromCamelCase(
-														colour,
-													)}
-												</div>
-												<code className={codeVariable}>
-													--od-color-{group}-
-													{kebabCaseFromCamelCase(
-														colour,
-													)}
-												</code>
-											</FlexStack>
-										),
-									)}
-								</div>
-							</FlexStack>
-						))}
-				</FlexStack>
-			</FlexStack>
-		);
-	},
-};
 
 interface ProposedToken {
 	name: string;
@@ -245,7 +185,7 @@ const semanticTokens: TokenGroup[] = [
 						was: 'yellow-800',
 						description:
 							'Caution text — avoid on white; prefer gray-900 on a warning surface.',
-						note: 'fails AA on white; no yellow passes — pending design decision',
+						note: 'fails AA on white; no yellow passes',
 					},
 				],
 			},
@@ -352,27 +292,13 @@ const textOn = (hex: string): string =>
 		? colourMap.white
 		: colourMap.gray['900'];
 
-const TokenDot = ({ token }: { token: ContrastColourToken }) => (
-	<span
-		style={{
-			display: 'inline-block',
-			width: 10,
-			height: 10,
-			borderRadius: '50%',
-			background: contrastGuideColour(token),
-			boxShadow: `inset 0 0 0 1px ${colourMap.gray['300']}`,
-			flexShrink: 0,
-		}}
-	/>
-);
-
-const ChangeBadge = ({ was, note }: Pick<ProposedToken, 'was' | 'note'>) => (
+const ChangeBadge = ({ note }: Required<Pick<ProposedToken, 'note'>>) => (
 	<span
 		style={{
 			display: 'inline-flex',
 			alignItems: 'center',
 			gap: 6,
-			background: note ? colourMap.yellow['200'] : colourMap.blue['100'],
+			background: colourMap.yellow['200'],
 			color: colourMap.gray['900'],
 			borderRadius: 4,
 			padding: '2px 8px',
@@ -381,8 +307,7 @@ const ChangeBadge = ({ was, note }: Pick<ProposedToken, 'was' | 'note'>) => (
 			alignSelf: 'flex-start',
 		}}
 	>
-		{was && <TokenDot token={was} />}
-		{note ?? `was ${was}`}
+		{note}
 	</span>
 );
 
@@ -391,18 +316,17 @@ const SemanticToken = ({
 	name,
 	token,
 	description,
-	was,
 	note,
 }: ProposedToken & { group: string }) => {
 	const hex = contrastGuideColour(token);
 	return (
-		<FlexStack gap="1">
+		<div className={tokenCard}>
 			<div
 				style={{
 					background: hex,
-					borderRadius: 10,
+					borderRadius: 8,
 					boxShadow: `inset 0 0 0 1px ${colourMap.gray['300']}`,
-					height: 88,
+					height: 80,
 					padding: '10px 12px',
 					display: 'flex',
 					flexDirection: 'column',
@@ -417,151 +341,71 @@ const SemanticToken = ({
 					{hex.toUpperCase()}
 				</div>
 			</div>
-			<div className={labels}>{spacesFromCamelCase(name)}</div>
-			<div
-				style={{
-					fontSize: 12,
-					color: colourMap.gray['600'],
-					lineHeight: 1.5,
-				}}
-			>
-				{description}
+			<div className={labels} style={{ fontWeight: 600, fontSize: 14 }}>
+				{spacesFromCamelCase(name)}
 			</div>
-			<code className={codeVariable}>
+			<div className={tokenDescription}>{description}</div>
+			<code className={tokenCode}>
 				--od-color-{group}-{kebabCaseFromCamelCase(name)}
 			</code>
-			{was && <ChangeBadge was={was} note={note} />}
-		</FlexStack>
+			{note && <ChangeBadge note={note} />}
+		</div>
 	);
 };
 
-export const SemanticColours: Story = {
-	render: () => {
-		const changed = semanticTokens.flatMap(({ group, sections }) =>
-			sections
-				.flatMap((section) => section.tokens)
-				.filter((entry) => entry.was)
-				.map((entry) => ({ group, ...entry })),
-		);
-		return (
-			<div style={{ maxWidth: 1024, margin: '0 auto', padding: 32 }}>
-				<FlexStack gap="7">
-					<hgroup>
-						<Heading>Semantic Colours</Heading>
-						<p style={{ maxWidth: 720 }}>
-							The full semantic colour set, organised by usage.
-							Where a token was adjusted to meet WCAG AA contrast
-							it carries a badge showing the value it replaces.
-						</p>
-					</hgroup>
-					<FlexStack gap="7">
-						{semanticTokens.map(
-							({ group, title, blurb, sections }) => (
-								<FlexStack gap="4" key={group}>
-									<hgroup>
-										<Heading as="h2" className={labels}>
-											{title}
-										</Heading>
-										<p
-											style={{
-												margin: '4px 0 0',
-												fontSize: 14,
-												color: colourMap.gray['600'],
-											}}
-										>
-											{blurb}
-										</p>
-									</hgroup>
-									{sections.map((section) => (
-										<FlexStack gap="3" key={section.title}>
-											<div
-												style={{
-													fontSize: 13,
-													fontWeight: 700,
-													color: colourMap.gray[
-														'900'
-													],
-													borderBottom: `1px solid ${colourMap.gray['200']}`,
-													paddingBottom: 4,
-												}}
-											>
-												{section.title}
-											</div>
-											<div className={gridSwatches}>
-												{section.tokens.map((entry) => (
-													<SemanticToken
-														key={entry.name}
-														group={group}
-														{...entry}
-													/>
-												))}
-											</div>
-										</FlexStack>
+export const ThemeColours: Story = {
+	render: () => (
+		<FlexStack gap="7">
+			<hgroup>
+				<Heading>Theme Colours</Heading>
+				<p style={{ maxWidth: 720 }}>
+					The full semantic colour set, organised by usage.
+				</p>
+			</hgroup>
+			<FlexStack gap="7">
+				{semanticTokens.map(({ group, title, blurb, sections }) => (
+					<FlexStack gap="4" key={group}>
+						<hgroup>
+							<Heading as="h2" className={labels}>
+								{title}
+							</Heading>
+							<p
+								style={{
+									margin: '4px 0 0',
+									fontSize: 14,
+									color: colourMap.gray['600'],
+								}}
+							>
+								{blurb}
+							</p>
+						</hgroup>
+						{sections.map((section) => (
+							<FlexStack gap="3" key={section.title}>
+								<div
+									style={{
+										fontSize: 13,
+										fontWeight: 700,
+										color: colourMap.gray['900'],
+										borderBottom: `1px solid ${colourMap.gray['200']}`,
+										paddingBottom: 4,
+									}}
+								>
+									{section.title}
+								</div>
+								<div className={tokenGrid}>
+									{section.tokens.map((entry) => (
+										<SemanticToken
+											key={entry.name}
+											group={group}
+											{...entry}
+										/>
 									))}
-								</FlexStack>
-							),
-						)}
+								</div>
+							</FlexStack>
+						))}
 					</FlexStack>
-					<FlexStack gap="4">
-						<Heading as="h2" className={labels}>
-							What changes vs the current theme
-						</Heading>
-						<FlexStack gap="2">
-							{changed.map(
-								({ group, name, token, was, note }) => (
-									<div
-										key={`${group}-${name}`}
-										style={{
-											display: 'flex',
-											alignItems: 'center',
-											gap: 8,
-											fontSize: 13,
-											flexWrap: 'wrap',
-										}}
-									>
-										<code
-											className={codeVariable}
-											style={{ minWidth: 220 }}
-										>
-											color.{group}.{name}
-										</code>
-										{was && <TokenDot token={was} />}
-										{was}
-										{was !== token && (
-											<>
-												<span
-													aria-hidden
-													style={{
-														color: colourMap.gray[
-															'600'
-														],
-													}}
-												>
-													→
-												</span>
-												<TokenDot token={token} />
-												{token}
-											</>
-										)}
-										{note && (
-											<span
-												style={{
-													color: colourMap.gray[
-														'600'
-													],
-													fontSize: 12,
-												}}
-											>
-												({note})
-											</span>
-										)}
-									</div>
-								),
-							)}
-						</FlexStack>
-					</FlexStack>
-				</FlexStack>
-			</div>
-		);
-	},
+				))}
+			</FlexStack>
+		</FlexStack>
+	),
 };

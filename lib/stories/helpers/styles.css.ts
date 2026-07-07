@@ -37,6 +37,52 @@ export const gridSwatches = style({
 	},
 });
 
+/**
+ * Responsive grid for semantic token cards. Columns size themselves so each
+ * card stays wide enough to hold its CSS variable name without breaking.
+ */
+export const tokenGrid = style({
+	display: 'grid',
+	gap: '20px 16px',
+	gridTemplateColumns: 'repeat(auto-fill, minmax(230px, 1fr))',
+});
+
+/** Bordered card that groups a swatch with its name, description and token. */
+export const tokenCard = style({
+	backgroundColor: overdriveTokens.color.gamut.white,
+	border: `1px solid ${overdriveTokens.color.gamut.gray[200]}`,
+	borderRadius: '12px',
+	display: 'flex',
+	flexDirection: 'column',
+	gap: '8px',
+	padding: '10px',
+});
+
+/** Pushes the token chip to the bottom so chips align across a row. */
+export const tokenDescription = style({
+	color: overdriveTokens.color.gamut.gray[600],
+	flexGrow: 1,
+	fontSize: '12px',
+	lineHeight: 1.5,
+});
+
+/**
+ * The CSS variable name, contained in a subtle code chip that wraps at any
+ * character so a long token never overflows or hyphenates awkwardly.
+ */
+export const tokenCode = style({
+	alignSelf: 'flex-start',
+	backgroundColor: overdriveTokens.color.gamut.gray[100],
+	borderRadius: '6px',
+	color: overdriveTokens.color.gamut.gray[700],
+	fontFamily: 'monospace',
+	fontSize: '11px',
+	lineHeight: 1.4,
+	maxWidth: '100%',
+	overflowWrap: 'anywhere',
+	padding: '4px 8px',
+});
+
 export const hexPill = style({
 	backgroundColor: 'hsl(0 0 100 / 75%)',
 	borderRadius: '100px',
