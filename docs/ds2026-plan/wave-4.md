@@ -26,6 +26,8 @@ Wave 4 turns a fully-additive library (Waves 0–3 + Track C, all shipped as min
 
 **Critical RC ordering (no circular dependency):** `W4-P4-RC` (publish RC) → `W4-P6` (migrate tenant themes against the RC) → `W4-P4 stable` (publish `5.0.0`) → MFE coordinated bump. This is mandatory and matches master §5.2 / Appendix A step 7.
 
+**Independence guarantee:** each pre-major Wave-4 minor (W4-P2, W4-P3; W4-P5 post-major) is independently releasable and independently testable in the MFE without waiting on any other Wave-4 package (W4-P1 and G-P1 ship no overdrive release at all); the **only** intentional coupling in this wave is the RC → W4-P6 → stable chain above, and that coupling is scoped strictly to the major — it never binds a minor's release or adoption.
+
 **Verified release mechanics (read against the real workflows):**
 - `release.yml` — on push to `main`, runs `changesets/action@v1`, which opens/updates the **"Version Packages" PR** (aggregates pending `.changeset/*.md`, bumps version, writes `CHANGELOG.md`).
 - `publish.yml` — on push to `main` **filtered to `paths: ['CHANGELOG.md']`** (or manual `workflow_dispatch`): installs npm 11.6.2, asserts OIDC readiness (`ACTIONS_ID_TOKEN_REQUEST_URL` present, npm ≥ 11.5.0), runs `yarn changeset publish` (npm via OIDC Trusted Publishing), pushes new git tags, creates GitHub releases (release notes sliced from `CHANGELOG.md` by `awk`), then builds + deploys Storybook to GitHub Pages (only if `published == 'true'`).
@@ -287,6 +289,32 @@ export const warnOnce = (key: string, message: string): void => {
 
 `lib/stories/intentional-colours.stories.tsx` renders semantic + intent swatches from `overdriveTokens`. Add a top-of-page banner (a `Story`/decorator or an MDX note) reading: *"Legacy Coloursets — deprecated. These `colours.*` tokens are retained for backwards compatibility and will be removed in the DS-2026 major (v5). Use the semantic `color.*` tokens (see 'Theme Colours 2026')."* Tag the story `deprecated` in Storybook and mark it for removal at the major.
 
+### W4-P2.e — Post-release MFE verification
+
+Confirms the independence guarantee in §0: this minor is testable in the MFE on its own, with no dependency on W4-P3/P4/P5/P6 having shipped or landed. Standard mechanics (master §0.1 / Appendix A §6): single `bun.lock`, `yarn overdrive:local` (`mfe/.scripts/copy-overdrive.js`) for a pre-publish smoke, a throwaway branch + manual version bump for the post-publish probe, pin-back rollback.
+
+**A. Pre-publish smoke (in overdrive, before merging):**
+```bash
+yarn build                        # succeeds — JSDoc + warnOnce only, no shape change
+# in mfe:
+yarn overdrive:local
+yarn tsc -b --force                # repo-wide type-check MUST stay clean (no type/API changed)
+```
+
+**B. Post-publish (after the minor is on npm):**
+```bash
+cd /Users/timamehro/grit/github.com/autoguru/mfe
+git checkout -b throwaway/verify-w4p2-vX.Y.Z
+# bump @autoguru/overdrive to the published version in the single bun.lock
+bun install
+```
+1. **Dev-mode warning fires once per key.** Run the app that owns `apps/fcp-booking/.../supplier-list/Badge.tsx:16` (`backgroundColour="black900"`) in dev mode (assume the dev server is already started by the user — do not start one yourself). Load the screen that renders that `Badge`. Confirm devtools console shows exactly one `[overdrive:deprecated] …` line for the `black900` key — re-rendering/re-navigating to the same screen must NOT print it again (dedupe via the `Set` in `warnOnce`).
+2. **Zero visual change.** Screenshot the screen before vs after the bump — byte-identical (JSDoc + a `console.warn` add no rendered output).
+3. **Zero production noise.** Build the same app for production (`NODE_ENV=production`) and load the same screen — confirm ZERO `[overdrive:deprecated]` lines in the console, proving the `warnOnce` `NODE_ENV` guard is dead-code-eliminated in the prod bundle.
+4. **Rollback.** Pin `bun.lock` back to the prior version, `bun install`, discard the throwaway branch.
+
+**Pass criteria:** A clean; B.1–B.3 all pass; throwaway branch discarded (B.4) regardless of outcome.
+
 ### W4-P2 — Agent prompts
 
 **Builder (`sonnet`):**
@@ -364,6 +392,19 @@ useEffect(() => {
 - **Dashboard:** a stacked adoption chart (base vs ds2026 vs tenant-2026) + a per-app table (which of the 99 apps have swapped). Hosted in the MFE's existing observability platform.
 - **Quarterly pulse (OU-30):** a scheduled snapshot summarising adoption %, remaining un-swapped apps, and the gate-readiness signal for the major (the major is gated on adoption %, master §5.1 / W4-P4). Feeds the go/no-go for W4-P4-RC.
 
+### W4-P3.c — Post-release MFE verification
+
+Confirms the independence guarantee in §0: this minor is testable on its own once published — it does not require W4-P2, W4-P4, or W4-P6. Standard mechanics as W4-P2.e (single `bun.lock`, `yarn overdrive:local`, throwaway branch + manual bump, pin-back rollback).
+
+**A. Pre-publish smoke:** `yarn build` in overdrive; `yarn overdrive:local` + `yarn tsc -b --force` in mfe — the new `onThemeMount?` prop is optional, so no existing call site should need a type change.
+
+**B. Post-publish (throwaway branch, manual bump, `bun install`):**
+1. **Unset = byte-identical.** In one pilot app (e.g. `apps/de-portal-app-shell`) that mounts `OverdriveProvider` WITHOUT wiring `onThemeMount`, run the app (assume already started). Confirm: no new network calls, no new console output, and the screen renders identically to pre-bump — the optional callback being unset must be a complete no-op.
+2. **Wired = exactly one event, no PII.** In the SAME pilot app, temporarily wire `onThemeMount` to the app's existing `@autoguru/logs` `LoggingAgentProvider` (already mounted above `OverdriveProvider` in `client.tsx:22`) as a throwaway probe. Reload the screen and confirm exactly **one** `{ theme, overdriveVersion }` event logs per provider mount (not per re-render, not per navigation within the same mount) and that the payload carries no route/user/session field — only the two documented keys.
+3. **Rollback.** Revert the probe wiring, pin `bun.lock` back to the prior version, `bun install`, discard the throwaway branch.
+
+**Pass criteria:** A clean; B.1–B.2 pass; throwaway branch/probe discarded (B.3).
+
 ### W4-P3 — Agent prompts
 
 **Builder (`opus`):**
@@ -421,6 +462,8 @@ This is one logically-atomic release split into three sequenced steps to de-risk
 5. **Do not merge the major branch to `main` yet** — merging to `main` would trigger `release.yml` (Version Packages PR) and eventually `publish.yml`. The RC lives entirely on the branch + npm prerelease tag.
 
 **Verified isolation guarantees:** `prerelease.yml` is `workflow_dispatch`-only (never auto-runs); it publishes only when `.changeset/pre.json` exists and the version actually changed; it deliberately keeps `CHANGELOG.md` off the branch so the stable `publish.yml` path filter stays dormant.
+
+**Post-release MFE verification (general pilot app, non-tenant):** W4-P6 below validates the tenant packages against the RC; the same discipline must also run against at least one ordinary, non-tenant pilot app so the migration guide is checked against a case the plan didn't hand-pick. On a throwaway branch, pin one non-tenant app (e.g. `apps/de-portal-app-shell`) to the `5.0.0-rc.N` prerelease dist-tag (or `yarn overdrive:local` against the RC build), `bun install`/rebuild, then run the app's type-check and the app itself (assume the dev server is already started by the user). Walk every compile error and runtime break the app actually hits against `docs/ds2026-plan/migration-guide-v5.md`'s breaking-change list, item by item: each observed break must appear there with the correct before/after and codemod pointer, and the guide must not be missing anything the app hit. Apply the guide's documented codemods/hand-fixes to get the app green and confirm it renders the 2026 look correctly. Any break observed but not documented is a FAIL on the major Reviewer's migration-guide check (item 6, below) and must be added to the guide before stable proceeds. Discard the throwaway pin/branch afterward — this is a pre-stable RC probe, not a merge.
 
 ### W4-P6 — Tenant-theme migration + MFE internal-path cleanup (against the RC)
 
@@ -608,6 +651,12 @@ Chromatic diffs are EXPECTED here — report the diff set for the Reviewer to si
 - **Provider surface:** `OverdriveProvider` already threads `theme.vars.mode` into `useColorOverrides` (`OverdriveProvider.tsx:121`); dark mode rides the `data-od-color-mode` attribute the app sets (or a new provider prop `colorMode?: 'light' | 'dark'`). Keep it additive on `5.x` (default `light`).
 - **Deliverables:** dark value-set in the theme dir; `data-od-color-mode=dark` global theme; a `colorMode` provider prop (default light); Storybook dark backgrounds + a11y contrast checks on dark; Chromatic dark stories.
 - **Out of scope here:** the full palette hex table (fetch from Figma via a Spec agent when the ticket is created).
+
+**Post-release MFE verification:** standard mechanics (single `bun.lock`, `yarn overdrive:local`, throwaway branch + manual bump, pin-back rollback). On a throwaway branch, bump one pilot app to the published `5.x` minor carrying dark mode.
+1. **Default stays light.** With no dark mechanism set (no `data-od-color-mode` attribute, `colorMode` prop unset), confirm the app renders byte-identical to pre-bump — screenshot diff of the bump alone, before touching anything dark-mode-related.
+2. **The mechanism flips one screen.** On exactly one screen, set the dark mechanism (`data-od-color-mode="dark"`, or the `colorMode="dark"` provider prop, whichever the major's Builder ships) and confirm that screen — and only that screen — renders the dark value-set (inverted gamut, dark backgrounds/foregrounds/borders).
+3. **A11y contrast spot-check.** Run an automated contrast check (Storybook a11y / axe) or a manual WCAG AA contrast check on that dark screen's key text/background/border pairs; confirm no contrast regression versus the light equivalent.
+4. **Rollback.** Pin back, `bun install`, discard the throwaway branch.
 
 ---
 

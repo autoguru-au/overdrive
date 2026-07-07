@@ -11,6 +11,8 @@
 
 Wave 1 completes the semantic `color.*` token layer and the radius/shadow/spacing/motion foundation. **Everything is additive** (Golden Rule, master §0): new contract keys, new token values, never a change to an existing key's value/name and never a component/API change. The one sanctioned exception (Track C `color.*` revalue) is **not** exercised in Wave 1 — see the W1-P2 note.
 
+**Independence guarantee:** W1-P1, W1-P2, and W1-P3 are each cut on their own branch, PR, changeset, and npm **minor** release, and each is independently postable to `/Users/timamehro/grit/github.com/autoguru/mfe` via `yarn overdrive:local`/a real version bump the moment it publishes — P2's and P3's "Depends on: W1-P1" is a *merge-order* dependency only (their contract edits land inside the `color:`/`border.radius`/`elevation`/`space` blocks W1-P1 already widened, so their branch must be cut **after** W1-P1 merges to `main` to avoid a contract-shape conflict), **never** a release-coupling: nothing requires P1, P2, and P3 to publish together, and each is safe to release, adopt, or roll back on its own (see the reinforced note in "Shared changeset / release" below). W1-P0 ships no package — it is analysis-only and produces zero npm releases.
+
 | Pkg | Title | Files touched | Depends on | Release |
 |---|---|---|---|---|
 | **W1-P0** | Legacy-usage inventory (analysis only) | none (writes §9.1 of master) | W0-P1, W0-P2 | none |
@@ -61,6 +63,8 @@ Only run `yarn test run themes -u` **after** the Reviewer confirms the churn is 
 ### Shared changeset / release (master Appendix A)
 
 Each shipping package (W1-P1/P2/P3): `yarn changeset` → select `@autoguru/overdrive` → **minor** → paste that package's summary → commit `.changeset/<slug>.md` with the code → PR to `main` (CI: `yarn lint`, `yarn test --run --coverage`, `visual_test`/Chromatic all green, base-theme zero-diff) → merge → merge the auto-opened **Version Packages** PR → `publish.yml` publishes to npm. A minor moves `4.59.0`→`4.60.0` (further Wave-1 minors accumulate). **Rollback:** revert the feature PR on `main` before the Version Packages PR is merged; if already published, ship a follow-up minor that removes the added keys (safe — they have no MFE consumer at Wave 1) rather than a version yank.
+
+**Independence discipline (do not batch):** merge each package's **Version Packages** PR and let `publish.yml` publish it **before** opening the next Wave-1 package's PR. Appendix A step 5 notes that multiple changesets merged to `main` before the Version Packages PR is merged collapse into a single minor — that collapsing behaviour must not be allowed to fire *across* W1-P1/P2/P3, or Wave 1 silently becomes one batched release instead of three independently releasable ones. Sequence: publish P1 (`4.60.0`) → run the P1 Post-release MFE verification below → only then cut P2's branch → publish P2 (`4.61.0`) → verify → cut P3 → publish P3 (`4.62.0`) → verify. Each publish is independently adoptable/rollback-able by the MFE monorepo without depending on the next.
 
 ---
 
@@ -160,6 +164,9 @@ Confirm no lib/ file changed. Re-run the two greps and report the total direct-r
 - **Gates:** greps reproduce; no `lib/` diff. No `yarn lint`/Chromatic needed (no code).
 - **Changeset:** none (analysis; no API).
 - **Rollback:** revert the §9.1 edit if wrong.
+
+### Post-release MFE verification
+**n/a.** W1-P0 publishes no package (analysis-only, zero code/token changes, no changeset) — there is nothing to build, link, bump, or verify in `/Users/timamehro/grit/github.com/autoguru/mfe`. Skip straight to W1-P1's checklist.
 
 ### OU mapping + dependencies
 - **OU:** OU-3 / OU-13. **Depends on:** W0-P1, W0-P2 landed (so the ramp/typography state the inventory measures is final). **Blocks:** C-P1 and every Track C repoint (sizes the burn-down); informs W1-P1/P2 net-new-vs-replacement.
@@ -350,6 +357,70 @@ Interpret snapshot failures with the stripped-__hash procedure (plan §4.0.1): s
 - **Changeset:** minor — *"Add DS-2026 semantic colour tokens (foreground/background/border/info/success/warning/alert) — additive."*
 - **Release/rollback:** master Appendix A; rollback = revert PR (keys have no consumer, safe).
 
+### Post-release MFE verification
+Repo: `/Users/timamehro/grit/github.com/autoguru/mfe` (single `bun.lock` pinning **all** 100 apps/201 packages to one overdrive version, manual bumps — master §0.1). This package is **additive tokens with zero consumers**, so "verification" = prove nothing existing shifted + prove the 26 new leaves are usable. Never start a dev server for the screen spot-check — assume one is already running; ask the human if not.
+
+**Pre-publish smoke (on the overdrive PR branch, before merge):**
+```bash
+cd /Users/timamehro/grit/github.com/autoguru/overdrive && yarn build
+cd /Users/timamehro/grit/github.com/autoguru/mfe && yarn overdrive:local
+# runs .scripts/copy-overdrive.js: rebuilds overdrive (sibling checkout) and
+# copies dist/ + package.json into mfe/node_modules/@autoguru/overdrive — no bun.lock edit.
+```
+1. **Repo-wide type-check** — use the *non*-`--affected` form; a local-link copy touches no git-tracked file, so turbo's affected-diff would silently skip all 334 consumer files:
+   ```bash
+   cd /Users/timamehro/grit/github.com/autoguru/mfe
+   ./node_modules/.bin/turbo run lint:mfe --concurrency=50%
+   ```
+   Expect fully green. If it fails on a hand-authored `ThemeTokens` literal, that's the Deviation #2 risk materialising — STOP and report file:line; do not patch the mfe repo. Confirm the only offenders (if any) are merge calls, never bare literals:
+   ```bash
+   grep -rn ": ThemeTokens" --include='*.ts' /Users/timamehro/grit/github.com/autoguru/mfe | grep -v node_modules
+   # every hit must read `merge<ThemeTokens, Partial<ThemeTokens>>(base, partial)` — a bare
+   # `: ThemeTokens = { ... }` object literal is the failure mode this grep exists to catch.
+   ```
+2. **Zero visual shift** — spot-check 2–3 screens from apps that render Table/Tabs/Button/Alert (the highest legacy-colour-touch components per the W1-P0 seed counts — most likely to visibly regress if an *existing* key were accidentally touched) under the `overdrive:local` link. Expectation stated plainly: **pixel-identical, zero diff, no exceptions** — the chromatic namespaces (info/success/warning/alert) and the grey-derived namespaces (foreground/background/border) have no consumer yet and the greys already equal the rendered value (architecture fact #6), so any visible change at all is a FAIL.
+3. **New-key usability probe** — create a throwaway pair of files in any existing mfe package (e.g. `packages/generic-ui/_ds2026-probe/`):
+   ```ts
+   // probe.css.ts
+   import { style } from '@vanilla-extract/css';
+   import { themeContractVars as vars } from '@autoguru/overdrive/themes/theme.css';
+
+   export const probe = style({ color: vars.color.foreground.primary });
+   ```
+   ```ts
+   // probe.test.ts
+   import { describe, expect, it } from 'vitest';
+   import { baseTheme } from '@autoguru/overdrive/themes';
+
+   describe('W1-P1 new-key probe', () => {
+     it('type-checks and resolves to the documented hex', () => {
+       expect(baseTheme.tokens.color.foreground.primary).toBe('#212338');
+     });
+   });
+   ```
+   ```bash
+   cd /Users/timamehro/grit/github.com/autoguru/mfe && bun run vitest run packages/generic-ui/_ds2026-probe
+   ```
+   Both must pass **only after** `overdrive:local` has run — the `probe.css.ts` build must fail with "Cannot read properties of undefined (reading 'foreground')" on the currently-pinned `4.59.0` (verified while writing this checklist); if it passes *before* linking, you are not actually exercising the new build. Then delete the probe — nothing is committed to mfe: `cd packages/generic-ui/_ds2026-probe && rm -f probe.css.ts probe.test.ts && cd .. && rmdir _ds2026-probe` (if your sandbox blocks `rm -rf` on a non-cwd path, `cd` into the exact directory first, as above).
+4. **Tenant-theme guard (R10)** — the 4 tenant theme packages must still compile and their exact-value elevation tests must still pass (they `merge`/`deepmerge` onto `base`, so the widened contract flows through them):
+   ```bash
+   cd /Users/timamehro/grit/github.com/autoguru/mfe && bun run vitest run packages/themes
+   ```
+   Covers `smartFleetTheme`, `ampolTheme`, `fleetGuruTheme` (`__tests__/tokens.test.ts` in each, asserting exact `elevation['1'..'5']` values) and `dynamicGuruTheme` (no tokens file of its own — verified by the repo-wide type-check in step 1).
+
+**Post-publish (after the real npm publish, on a throwaway mfe branch):**
+```bash
+cd /Users/timamehro/grit/github.com/autoguru/mfe
+git checkout -b throwaway/w1-p1-verify
+OLD=4.59.0; NEW=4.60.0   # NEW = the version this package actually published as
+grep -rl "\"@autoguru/overdrive\": \"$OLD\"" --include=package.json . | grep -v node_modules \
+  | xargs sed -i '' "s/\"@autoguru\/overdrive\": \"$OLD\"/\"@autoguru\/overdrive\": \"$NEW\"/g"
+bun install   # rewrites the single bun.lock entry — this is the real "monorepo bumps" moment (master §0.1)
+```
+Repeat checks 1–4 above verbatim against the real published version (skip the `yarn overdrive:local` step — the real package is now installed). Then discard: `git checkout main && git branch -D throwaway/w1-p1-verify` (never push the throwaway branch).
+
+**Rollback:** if any post-publish check fails, pin back — reverse the `sed` above (`$NEW` → `$OLD`), `bun install` to rewrite `bun.lock`, discard the throwaway branch. Matches this package's Gates & release rollback (revert the overdrive PR; no npm yank needed — the keys have no consumer).
+
 ### OU mapping + dependencies
 - **OU:** OU-3 / OU-1. **Depends on:** W1-P0. **Blocks:** W1-P2, W1-P3, W3-P0, C-P1, all Wave-2 components (they consume `vars.color.*`).
 
@@ -471,6 +542,68 @@ FAIL if any of 1–5 violated. Report specifics.
 - **Gates:** full suite; hash-only churn; Chromatic base zero-diff.
 - **Changeset:** minor — *"Add DS-2026 button colour tokens (additive)."*
 - **Rollback:** revert PR (no consumer).
+
+### Post-release MFE verification
+Repo: `/Users/timamehro/grit/github.com/autoguru/mfe` (single `bun.lock`, one pinned overdrive version, manual bumps — master §0.1). `color.button.*` is **additive tokens with zero consumers** (Button stays on legacy `colours.intent.*` until W3a-P1) — verification proves nothing shifted + the 7 new leaves are usable. Never start a dev server for the screen spot-check — assume one is already running; ask the human if not.
+
+**Pre-publish smoke (on the overdrive PR branch, before merge):**
+```bash
+cd /Users/timamehro/grit/github.com/autoguru/overdrive && yarn build
+cd /Users/timamehro/grit/github.com/autoguru/mfe && yarn overdrive:local
+# .scripts/copy-overdrive.js rebuilds overdrive (sibling checkout) and copies
+# dist/ + package.json into mfe/node_modules/@autoguru/overdrive — no bun.lock edit.
+```
+1. **Repo-wide type-check** (non-`--affected` — a local-link copy is invisible to turbo's git-diff-based affected filter):
+   ```bash
+   cd /Users/timamehro/grit/github.com/autoguru/mfe
+   ./node_modules/.bin/turbo run lint:mfe --concurrency=50%
+   ```
+   Expect fully green — this widens the same `ThemeTokens` type W1-P1 widened, so it carries the identical Deviation #2 risk. Confirm no hand-authored offender:
+   ```bash
+   grep -rn ": ThemeTokens" --include='*.ts' /Users/timamehro/grit/github.com/autoguru/mfe | grep -v node_modules
+   # every hit must read merge<ThemeTokens, Partial<ThemeTokens>>(base, partial) — never a bare literal.
+   ```
+2. **Zero visual shift** — spot-check 2–3 screens with real `Button` usage (576 JSX sites / 407 files monorepo-wide — pick any) under the `overdrive:local` link. Expectation stated plainly: **pixel-identical, zero diff** — Button is not repointed onto these tokens in this package, so every button (and everything else) must render byte-for-byte as before linking; any change at all is a FAIL.
+3. **New-key usability probe** — throwaway pair in any existing mfe package (e.g. `packages/generic-ui/_ds2026-probe/`):
+   ```ts
+   // probe.css.ts
+   import { style } from '@vanilla-extract/css';
+   import { themeContractVars as vars } from '@autoguru/overdrive/themes/theme.css';
+
+   export const probe = style({ backgroundColor: vars.color.button.primary.solid.default });
+   ```
+   ```ts
+   // probe.test.ts
+   import { describe, expect, it } from 'vitest';
+   import { baseTheme } from '@autoguru/overdrive/themes';
+
+   describe('W1-P2 new-key probe', () => {
+     it('type-checks and resolves to the documented hex', () => {
+       expect(baseTheme.tokens.color.button.primary.solid.default).toBe('#71edc2');
+     });
+   });
+   ```
+   ```bash
+   cd /Users/timamehro/grit/github.com/autoguru/mfe && bun run vitest run packages/generic-ui/_ds2026-probe
+   ```
+   Both must pass only **after** `overdrive:local` runs (pre-link, `vars.color.button` is `undefined` and the `.css.ts` build throws — that failure-before/pass-after is itself the sanity check). Then delete — nothing is committed to mfe: `cd packages/generic-ui/_ds2026-probe && rm -f probe.css.ts probe.test.ts && cd .. && rmdir _ds2026-probe`.
+4. **Tenant-theme guard (R10)** — the button block flows through the same `base` → `merge`/`deepmerge` chain as W1-P1's namespaces, so the 4 tenant packages must still compile and keep their exact-value elevation assertions green even though none of them consume `color.button.*` yet:
+   ```bash
+   cd /Users/timamehro/grit/github.com/autoguru/mfe && bun run vitest run packages/themes
+   ```
+
+**Post-publish (after the real npm publish, on a throwaway mfe branch):**
+```bash
+cd /Users/timamehro/grit/github.com/autoguru/mfe
+git checkout -b throwaway/w1-p2-verify
+OLD=4.60.0; NEW=4.61.0   # OLD = the version W1-P1 published; NEW = this package's published version
+grep -rl "\"@autoguru/overdrive\": \"$OLD\"" --include=package.json . | grep -v node_modules \
+  | xargs sed -i '' "s/\"@autoguru\/overdrive\": \"$OLD\"/\"@autoguru\/overdrive\": \"$NEW\"/g"
+bun install
+```
+Repeat checks 1–4 above verbatim against the real published version. Then discard: `git checkout main && git branch -D throwaway/w1-p2-verify` (never push the throwaway branch).
+
+**Rollback:** pin back — reverse the `sed` above (`$NEW` → `$OLD`), `bun install` to rewrite `bun.lock`, discard the throwaway branch. Matches this package's Gates & release rollback (revert PR; no npm yank needed).
 
 ### OU mapping + dependencies
 - **OU:** OU-8 / OU-34. **Depends on:** W1-P1. **Blocks:** W3a-P1 (Button restyle consumes these + applies the §4.C split), FavouriteButton (W2-P9) if it reuses button tokens.
@@ -653,6 +786,79 @@ FAIL if any of 1–4 violated. Report specifics.
 - **Gates:** full suite; hash-only churn; Chromatic base zero-diff.
 - **Changeset:** minor — *"Add DS-2026 radius aliases + 20px radius, z1–z4 shadows, missing spacing steps, motion/focus tokens (additive)."*
 - **Rollback:** revert PR (new keys have no consumer).
+
+### Post-release MFE verification
+Repo: `/Users/timamehro/grit/github.com/autoguru/mfe` (single `bun.lock`, one pinned overdrive version, manual bumps — master §0.1). The new radius/elevation/space leaves are **additive tokens with zero consumers** — verification proves nothing shifted (556× `space`, 46× `radius`, 20× `elevation` reference surfaces, incl. tenant-theme exact-value assertions) + the new keys are usable. Never start a dev server for the screen spot-check — assume one is already running; ask the human if not.
+
+**Pre-publish smoke (on the overdrive PR branch, before merge):**
+```bash
+cd /Users/timamehro/grit/github.com/autoguru/overdrive && yarn build
+cd /Users/timamehro/grit/github.com/autoguru/mfe && yarn overdrive:local
+# .scripts/copy-overdrive.js rebuilds overdrive (sibling checkout) and copies
+# dist/ + package.json into mfe/node_modules/@autoguru/overdrive — no bun.lock edit.
+```
+1. **Repo-wide type-check** (non-`--affected` — a local-link copy is invisible to turbo's git-diff-based affected filter):
+   ```bash
+   cd /Users/timamehro/grit/github.com/autoguru/mfe
+   ./node_modules/.bin/turbo run lint:mfe --concurrency=50%
+   ```
+   Expect fully green (same widened-`ThemeTokens` Deviation #2 risk as P1/P2). Confirm no hand-authored offender:
+   ```bash
+   grep -rn ": ThemeTokens" --include='*.ts' /Users/timamehro/grit/github.com/autoguru/mfe | grep -v node_modules
+   # every hit must read merge<ThemeTokens, Partial<ThemeTokens>>(base, partial) — never a bare literal.
+   ```
+2. **Zero visual shift** — spot-check 2–3 radius/shadow/spacing-heavy screens (Card, Modal, Table, Stepper) under the `overdrive:local` link, on **both** the base theme and a `flat_red`-themed app if one is reachable (flat_red gets an explicit divergence edit in this package). Expectation stated plainly: **pixel-identical, zero diff on every screen** — every existing `space`/`radius`/`elevation` key keeps its exact prior value *and* ordinal, so nothing visible should move; a shift anywhere is a FAIL.
+3. **New-key usability probe** — throwaway pair in any existing mfe package (e.g. `packages/generic-ui/_ds2026-probe/`):
+   ```ts
+   // probe.css.ts
+   import { style } from '@vanilla-extract/css';
+   import { themeContractVars as vars } from '@autoguru/overdrive/themes/theme.css';
+
+   export const probe = style({
+     borderRadius: vars.border.radius.xlarge,
+     padding: vars.space['40px'],
+     boxShadow: vars.elevation.z1,
+   });
+   ```
+   ```ts
+   // probe.test.ts
+   import { describe, expect, it } from 'vitest';
+   import { baseTheme } from '@autoguru/overdrive/themes';
+
+   describe('W1-P3 new-key probe', () => {
+     it('type-checks and resolves to the documented values', () => {
+       expect(baseTheme.tokens.border.radius.xlarge).toBe('20px');
+       expect(baseTheme.tokens.space['40px']).toBe('40px');
+       // z1 is the Spec agent's fetched string — assert it matches whatever this file's
+       // base-value block (§ W1-P3 above) records after the <FETCH …> placeholder is filled in;
+       // do NOT hardcode a guessed shadow string here.
+       expect(baseTheme.tokens.elevation.z1).toBeTruthy();
+       expect(baseTheme.tokens.elevation.z1).not.toContain('<FETCH');
+     });
+   });
+   ```
+   ```bash
+   cd /Users/timamehro/grit/github.com/autoguru/mfe && bun run vitest run packages/generic-ui/_ds2026-probe
+   ```
+   Both must pass only **after** `overdrive:local` runs (pre-link, `vars.border.radius.xlarge`/`vars.space['40px']`/`vars.elevation.z1` are all `undefined` and the `.css.ts` build throws — that failure-before/pass-after is itself the sanity check). Then delete — nothing is committed to mfe: `cd packages/generic-ui/_ds2026-probe && rm -f probe.css.ts probe.test.ts && cd .. && rmdir _ds2026-probe`.
+4. **Tenant-theme guard (R10) — the sharpest check in this package:**
+   ```bash
+   cd /Users/timamehro/grit/github.com/autoguru/mfe && bun run vitest run packages/themes
+   ```
+   Must stay green including the **exact-value elevation assertions** in `packages/themes/ampolTheme/lib/ampolTheme/__tests__/tokens.test.ts`, `packages/themes/smartFleetTheme/lib/smartFleetTheme/__tests__/tokens.test.ts` (both assert `elevation['1'..'3']` flatten to a literal and `elevation['4'|'5']` contain specific shadow substrings) and `packages/themes/fleetGuruTheme/lib/fleetGuruTheme/__tests__/tokens.test.ts` (asserts `tokens.elevation` deep-equals `baseTokens.elevation`) — any of these failing means an existing `elevation.1–5` value drifted, which is the one failure mode this whole package must never cause. `dynamicGuruTheme` has no tokens file of its own; its "still compiles" claim is covered by step 1.
+
+**Post-publish (after the real npm publish, on a throwaway mfe branch):**
+```bash
+cd /Users/timamehro/grit/github.com/autoguru/mfe
+git checkout -b throwaway/w1-p3-verify
+OLD=4.61.0; NEW=4.62.0   # OLD = the version W1-P2 published; NEW = this package's published version
+grep -rl "\"@autoguru/overdrive\": \"$OLD\"" --include=package.json . | grep -v node_modules \
+  | xargs sed -i '' "s/\"@autoguru\/overdrive\": \"$OLD\"/\"@autoguru\/overdrive\": \"$NEW\"/g"
+bun install
+```
+Repeat checks 1–4 above verbatim against the real published version. Then discard: `git checkout main && git branch -D throwaway/w1-p3-verify` (never push the throwaway branch).
+
+**Rollback:** pin back — reverse the `sed` above (`$NEW` → `$OLD`), `bun install` to rewrite `bun.lock`, discard the throwaway branch. Matches this package's Gates & release rollback (revert PR; no npm yank needed).
 
 ### OU mapping + dependencies
 - **OU:** OU-5 / OU-7. **Depends on:** W1-P1. **Blocks:** Wave-2 components (Skeleton uses new radius keys; several use `z1–z4` and new spacing), Wave-3 restyles.

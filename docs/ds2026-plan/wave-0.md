@@ -17,6 +17,10 @@
 
 **Sequencing.** W0-P1 and W0-P3 are independent and may run in parallel. W0-P2 is blocked on W0-P1 being merged to `main` (it must rebase onto the colour-landed contract). Landing Wave 0 removes the standing 3-way-merge tax on `theme.css.ts` / `base/tokens.ts` and unblocks all of Wave 1 (master §5.1).
 
+**Release-independence note (coupling check).** All three packages publish under the single `@autoguru/overdrive` npm package (master §2.1) — a "release" is independent only if its changeset reaches `publish.yml` on its own. Do **not** open/merge W0-P2's PR to `main` until W0-P1's **Version Packages PR has been merged and published**, not merely W0-P1's feature PR landing on `main`. Otherwise a second changeset queued behind an unmerged Version Packages PR silently collapses into the same npm minor (master Appendix A step 5: "multiple minor changesets merged before the Version Packages PR is merged collapse into one minor bump"), which would make W0-P1 impossible to post-publish-verify in the MFE in isolation. This precondition is repeated in W0-P2's own release section below.
+
+**Independence guarantee.** Each Wave-0 package that ships (W0-P1, W0-P2) publishes as its own minor version and is MFE-verifiable in isolation — pre-publish via the local-link build (`yarn overdrive:local`) and post-publish via a throwaway version bump — via the "Post-release MFE verification" procedure in each package's section below.
+
 **Headline finding that shapes this wave (see § Deviations item D1).** An in-memory 3-way merge of the two feature branches — `git merge-tree --write-tree HEAD AG-19972-typography` (merge base `d429dfc5` = current `main`) — returns **exit 0 with no conflict markers**. The two branches touch **disjoint regions** of both shared files, so there is **no textual git conflict**. The master's W0-P2 phrasing ("which hunks conflict and how to resolve each") does not match reality: the real reconciliation work is (a) **snapshot re-generation** (Vanilla-Extract `__hash` churn, because both branches change the emitted CSS) and (b) **behavioural verification of a default-prop refactor** in `Text.tsx`/`Heading.tsx` that the typography branch introduces. Both are handled explicitly in W0-P2 below.
 
 ---
@@ -208,7 +212,26 @@ Commands + expected outcomes:
 - **Chromatic (CI `visual_test`):** **intended diffs** on ramp/palette/theme/contrast-guide stories (the 2026 ramp change). **Reviewed and accepted deliberately — NOT auto-accepted.** Branch ≠ `main`, so `autoAcceptChanges:'main'` does not fire; `exitZeroOnChanges` keeps CI green while a human reviews.
 - **Changeset:** type **minor**; summary equivalent to *"Adopt DS-2026 colour ramps + 2026 contrast guide; retain `black900` as a deprecated alias of `gray900`."* (align the existing file's wording per step 4).
 
-Release walk-through (master Appendix A): merge PR → `main` (only after Tima sign-off) → `release.yml` opens/updates the **"Version Packages" PR** (bumps `4.59.0`→`4.60.0` if first this cycle) → merge Version Packages PR → `publish.yml` runs `yarn changeset publish` → npm (OIDC) + git tag + GitHub release + Storybook to Pages. The minor does **not** auto-flow to MFEs (single `bun.lock`, manual bump); apps pick it up on the next monorepo-wide overdrive bump.
+Release walk-through (master Appendix A): merge PR → `main` (only after Tima sign-off) → `release.yml` opens/updates the **"Version Packages" PR** (bumps `4.59.0`→`4.60.0` if first this cycle) → merge Version Packages PR → `publish.yml` runs `yarn changeset publish` → npm (OIDC) + git tag + GitHub release + Storybook to Pages. The minor does **not** auto-flow to MFEs (single `bun.lock`, manual bump); apps pick it up on the next monorepo-wide overdrive bump. **Merge and publish this Version Packages PR before opening W0-P2's PR** (see wave overview "Release-independence note") so W0-P1 ships as its own minor.
+
+### Post-release MFE verification
+
+**Pre-publish smoke (before merging the Version Packages PR).** Repo: `/Users/timamehro/grit/github.com/autoguru/mfe`.
+1. In `overdrive`, on `feature/AG-19959-overdrive-colour`: `yarn build` — must exit 0 (this is also what `overdrive:local` invokes under the hood).
+2. In `mfe`, on a scratch branch: `yarn overdrive:local` — runs `node .scripts/copy-overdrive.js`, which shells `yarn build` inside the overdrive checkout and copies `overdrive/dist` + `package.json` into `mfe/node_modules/@autoguru/overdrive/dist`.
+3. Check:
+   - `apps/fcp-booking/src/features/fcp-booking-draft-supplier/components/supplier-list/Badge.tsx:16` and `packages/supported-browser-boundary/SupportedBrowsersBoundary/SupportedBrowsersBoundary.tsx:64` still compile (`turbo run lint:mfe --filter=@autoguru/fcp-booking --filter=@autoguru/supported-browser-boundary`) and render `black900` as the same colour as `gray900`.
+   - **REVIEWED visual pass on high-traffic screens for the intended 2026 ramp shift** — this is the one intentional visual change in Wave 0 (the "⚠️ VISUAL BLAST-RADIUS WARNING" above). This visual pass is evidence *for* that same "Confirm with Tima before merging W0-P1" done-criterion, not a separate approval.
+4. Do not start a dev server yourself — confirm one is already running (per project convention), then browse the smoke-checked screens.
+
+**Post-publish verification (after `npm publish`, before/with the monorepo bump).**
+1. Confirm the release: `npm view @autoguru/overdrive version` (or the GitHub release) shows the new version (`4.60.0` if this is the cycle's first minor).
+2. In `mfe`, on a throwaway branch (e.g. `git checkout -b verify/od-4.60.0-w0-p1`): bump the pinned overdrive version to the published one, then `bun install` (single `bun.lock` — one edit reaches all 100 apps).
+3. Repo-wide type-check: `bun run lint:tsgo` (or `turbo run lint:mfe --concurrency=50%` for a full non-`--affected` pass) — must be clean.
+4. Targeted checks: re-run the two black900 file checks from step 3 above, this time against the published bits (not the local-link copy), plus the reviewed high-traffic-screen visual pass.
+5. Discard the throwaway branch (`git branch -D verify/od-4.60.0-w0-p1`) — do not merge it.
+
+**Rollback.** If verification fails at either stage: do not bump the monorepo. If it has already been bumped, pin `bun.lock` back to the prior version (`4.59.x`) and re-run `bun install` — a single-lockfile edit, since the whole monorepo resolves to one overdrive version (master §0.1).
 
 ---
 
@@ -335,7 +358,26 @@ Interpret snapshot failures with the stripped-__hash procedure (master §4.0.1):
 - **Chromatic:** **base-theme zero-diff** (additive; opt-in named styles have no existing consumer). New typography stories establish new baselines only.
 - **Changeset:** keep `.changeset/design-system-2026-typography.md`, type **minor**, summary *"Add opt-in named text styles (h1–h4, p1–p4)."* (the on-branch wording already matches).
 
-Release walk-through (master Appendix A): merge PR → `main` → "Version Packages" PR (accumulates with the W0-P1 minor into one bump if merged in the same cycle, else `4.60.0`→`4.61.0`) → merge it → `publish.yml` → npm/tag/release/Storybook. Additive minor; no MFE auto-flow.
+Release walk-through (master Appendix A): **precondition — W0-P1's Version Packages PR is already merged and published** (see wave overview "Release-independence note"; do not merge W0-P2's PR to `main` before that lands, or the two changesets collapse into one npm minor and W0-P1 can no longer be post-publish-verified in isolation). Merge PR → `main` → `release.yml` opens a fresh "Version Packages" PR bumping `4.60.0`→`4.61.0` (its own minor, not batched with W0-P1) → merge it → `publish.yml` → npm/tag/release/Storybook. Additive minor; no MFE auto-flow.
+
+### Post-release MFE verification
+
+**Pre-publish smoke (before merging the Version Packages PR).** Repo: `/Users/timamehro/grit/github.com/autoguru/mfe`.
+1. On the rebased `AG-19972-typography` branch: `yarn build` in `overdrive`.
+2. In `mfe`, on a scratch branch: `yarn overdrive:local` (`.scripts/copy-overdrive.js` builds `overdrive` and copies `dist` + `package.json` into `mfe/node_modules/@autoguru/overdrive`).
+3. Check:
+   - `<Text>` / `<Heading>` default rendering is unchanged on 2–3 text-heavy screens (Text 2,443 / Heading 473 usages — spot-check, not exhaustive; pick screens with dense body copy plus headings, e.g. a booking-detail/summary screen and a settings/profile screen).
+   - The new `size="h1"…"p4"` values are accepted by `tsc`: add a throwaway usage such as `<Text size="p2">x</Text>` / `<Heading size="h1">x</Heading>` in a scratch file inside `mfe` and confirm it compiles (`turbo run lint:mfe --filter=<the app the scratch file lives in>`), then delete the scratch file.
+4. Do not start a dev server yourself — confirm one is already running (per project convention), then browse the spot-checked screens.
+
+**Post-publish verification (after `npm publish`, before/with the monorepo bump).**
+1. Confirm precondition: W0-P1 is already published and (if bumped) verified in the MFE per its own section above — W0-P2 must not be the first place a W0-P1 regression surfaces.
+2. In `mfe`, on a throwaway branch (e.g. `git checkout -b verify/od-4.61.0-w0-p2`): bump the pinned overdrive version to the published `4.61.0`, then `bun install`.
+3. Repo-wide type-check: `bun run lint:tsgo` (or `turbo run lint:mfe --concurrency=50%` for a full non-`--affected` pass) — must be clean.
+4. Targeted checks: re-run the Text/Heading spot-check and the `size="h1"…"p4"` scratch-usage compile check from step 3 above against the published bits.
+5. Discard the throwaway branch — do not merge it.
+
+**Rollback.** Same single-file `bun.lock` pin-back to the prior version (`4.60.0`, i.e. W0-P1 without W0-P2) if verification fails; because W0-P2 depends on W0-P1 but not vice versa, pinning back to `4.60.0` retains the colour work and only drops the typography additions.
 
 ---
 
@@ -398,6 +440,10 @@ PASS/FAIL with evidence. FAIL if the branch holds any unique work not superseded
 ### Gates & release
 
 **None.** No code merged, no changeset, no version bump. The only artefact is the ADR/decision-log entry and the deleted (archived) branch.
+
+### Post-release MFE verification
+
+**n/a, no release.** W0-P3 merges no code and ships no changeset, so there is nothing to build, publish, or bump into the MFE. The Reviewer's confirmation (above) is the entire gate.
 
 ---
 

@@ -11,6 +11,8 @@
 
 Wave 2 adds ten net-new components (or, for W2-P10, augments one existing dir). Every package is a **new export → zero MFE risk** (no consumer imports it yet). All ten depend on Wave 1 tokens (**W1-P1** semantic colour namespaces, **W1-P2** button tokens, **W1-P3** radius/shadow/spacing) being merged first. See master §5.2.
 
+**Independence guarantee:** each Wave-2 package (W2-P1…P10, including the W2-P10 Pagination augmentation) ships its **own minor** as it merges — release is per-package, not per-wave — so it is immediately adoptable and testable in the MFE the moment that minor is published, without waiting for any other package in the wave to land (Appendix A §5–6; see the **Post-release MFE verification** playbook, §1.11).
+
 Each package runs the **quad: Spec → Builder → Reviewer → Verify** (master §4.0.2). The Spec agent is the *only* agent with Figma access; it writes `docs/ds2026-specs/<Component>.md`, committed with the PR, so the Builder never needs Figma.
 
 ### Order & parallelism
@@ -319,6 +321,63 @@ Exact summary text is given per-package below. Commit the changeset with the cod
 ### 1.10 Spec-file convention
 
 The Spec agent writes `docs/ds2026-specs/<Component>.md` (create the dir if missing) containing: the Figma screenshot reference, a variant×property table (dimensions/paddings/gaps/radii/border widths/icon sizes/typography), the **surface → §3.1 token key → hex** mapping (sourced from **bound variables**, never swatch labels), state deltas (Default/Hover/Pressed/Disabled/Selected…), and any ambiguity flagged for the Reviewer/§6. It is committed with the package PR. The Builder's data = master §3.1 tables **+** this spec file; the Builder never opens Figma.
+
+### 1.11 Post-release MFE verification (every Wave-2 package)
+
+Shared across all ten packages — do **not** copy this per-package; run it once per package's own release (see §3 summary table footnote). Confirms the independence guarantee in §0: each component's minor is immediately adoptable and testable in the MFE (`/Users/timamehro/grit/github.com/autoguru/mfe`) on its own, with zero coupling to sibling Wave-2 packages. MFE facts used below: one Bun/yarn-workspace monorepo, a **single `bun.lock`** pinning `@autoguru/overdrive` to one version across all 100 apps, **manual** bumps (no renovate), and `yarn overdrive:local` (`.scripts/copy-overdrive.js`) to point the monorepo at a local overdrive build (master §0.1, Appendix A §6).
+
+**A. Pre-publish smoke (in overdrive, before merging the package PR):**
+```bash
+# In overdrive:
+yarn build                       # must succeed with the new component's dist output present
+
+# In mfe:
+yarn overdrive:local               # .scripts/copy-overdrive.js points mfe's overdrive dep at the local build
+bun run lint:tsgo                  # mfe's repo-wide type-check (turbo run lint:mfe); drop --affected if
+                                    # needed to force a full, non-cached repo-wide pass — MUST stay clean
+# The barrel (lib/components/index.ts + lib/index.ts) was widened with new exports only (additive,
+# alphabetical) — confirm this does NOT break any of the mfe repo's 2,982 existing barrel imports.
+```
+
+**B. Post-publish (after the package's own minor is on npm):**
+```bash
+# 1. Throwaway branch in mfe — never commit/push this probe.
+cd /Users/timamehro/grit/github.com/autoguru/mfe
+git checkout -b throwaway/verify-<name>-vX.Y.Z
+
+# 2. Manual version bump (single bun.lock — this is how the monorepo actually upgrades overdrive).
+#    Bump @autoguru/overdrive to the just-published version in the relevant package.json(s), then:
+bun install
+
+# 3. New-component adoption probe — scratch-mount the new component in one RUNNING mfe app
+#    (assume the app dev server is already started by the user; do not start one yourself).
+#    e.g. in any page/component of a chosen app:
+#      import { <Name> } from '@autoguru/overdrive';
+#      <<Name> {...minimalDocumentedProps} />
+#    Verify:
+#      - it renders with the DS-2026 look under the DEFAULT base theme (no explicit theme= needed)
+#      - keyboard/a11y sane per the component's §1.7 checklist (focus visible, operable, accessible name)
+#      - the deep import also resolves and renders identically:
+#          import <Name> from '@autoguru/overdrive/components/<Name>/default';
+#    Then DELETE the probe code (do not leave it in the app).
+
+# 4. Zero-regression check (net-new export ⇒ nothing else in the app should have changed):
+#    - existing screens/components in the probed app render unaffected by the bump alone
+#      (diff/screenshot before vs after the version bump, prior to adding the probe)
+#    - FOR W2-P10 SPECIFICALLY (name the check): "existing Pagination byte-identical" —
+#      mount an existing Pagination consumer with its current props (no `type` passed) and confirm
+#      its rendered output/snapshot is byte-identical to pre-bump; this is the check that proves the
+#      new opt-in `type` prop has zero effect on today's Pagination consumers.
+
+# 5. Rollback (if anything above fails): pin bun.lock back to the previous overdrive version and
+#    `bun install`, discard the throwaway branch. No other mfe file needs to change, since the bump
+#    was additive-only.
+git checkout -- <package.json files>   # revert the manual version bump
+bun install                             # restores bun.lock to the pinned prior version
+git checkout main && git branch -D throwaway/verify-<name>-vX.Y.Z
+```
+
+**Pass criteria:** A green, B.2–B.4 all pass, and the throwaway branch/probe is deleted (B.5) whether or not a rollback was needed. Record the result (pass/fail + probe app used) in the package's PR or Verify-agent report.
 
 ---
 
@@ -1192,6 +1251,8 @@ Verify for W2-P5 — SideNav. Branch ds2026/w2-sidenav. Run + report per gate: y
 ---
 
 ## 3. Gates, release & OU summary (all packages)
+
+> Every row below ships its own minor and must pass **Post-release MFE verification** (§1.11) after its own publish — run once per package, not duplicated here.
 
 | Package | Component | OU | Depends on | Changeset (minor) summary |
 |---|---|---|---|---|

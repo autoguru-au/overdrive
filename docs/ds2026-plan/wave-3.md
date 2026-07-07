@@ -15,12 +15,15 @@ Wave 3 turns the additive foundation (Waves 0–1) and the semantic colour contr
 - **New capability is additive only.** New look arrives via (a) the opt-in `ds2026` theme carrying 2026 token values, and/or (b) **new prop *values*** added to existing unions with `defaultVariants`/defaults **unchanged**. Nothing that flips a default or renames/removes a prop, token key, or directory ships before Wave 4.
 - **Track C repoint folds into each restyle.** A component is "2026-capable" only once it is (a) repointed off legacy `colours.*`/`typography.colour`/legacy-sprinkles onto semantic `color.*` tokens (Track C, §4.C of the master) and (b) the `ds2026` theme carries the Figma values for those tokens. Base carries the value-preserving (legacy) value. The value-split rule, the token-collision rule, and the Golden-rule exception (§4.C) are restated in every Builder/Reviewer prompt below.
 - **§6 open questions are designed around, not resolved here.** Especially **Q5** (Button 7-intent → 3-Class mapping and the fate of `variant`): this file adds the new `class`/`style` axes *additively alongside* `variant`, never resolves the eventual mapping. It flags the collision for Reviewer scrutiny.
+- **Every Wave-3 package is independently releasable:** it ships its own minor changeset the moment its own PR is green, gated only by its declared dependency list (§0.2, per-package "Depends on", the summary table's "Extra deps" column) and never by an undeclared wave-wide gate — see §0.1's build-vs-release note and §0.7's serialisation table for what "depends on" actually means mechanically.
 
 ### 0.1 Execution order within the wave
 
 1. **W3-P0 first — it blocks everything.** It creates the `ds2026` theme scaffold (a pure passthrough clone of base; applying it is a visual no-op) and ratifies the opt-in ADR. No restyle or Track C repoint can proceed without it, because they write `ds2026/tokens.ts` overrides.
 2. **C-P1 (sprinkles parity) next** — a Track-C prerequisite owned by the master, not re-specified here. It ensures every legacy sprinkles colour value has a semantic equivalent at the identical base value. Restyle packages that repoint sprinkles-driven components assume C-P1 has landed.
-3. **Then the three sub-waves, parallelised** per §0.6 below. Within a sub-wave, packages that touch **shared files serialise** (notably every 3b input package touches `private/InputBase` — see §0.6).
+3. **Then the three sub-waves, parallelised** per §0.7 below. Within a sub-wave, packages that touch **shared files serialise** (notably every 3b input package touches `private/InputBase` — see §0.7).
+
+> **Build ordering ≠ release coupling.** "Serialise" above (and in §0.7) means a **git merge-order** constraint: whichever package repoints a shared file (`private/InputBase` → W3b-P1; `private/CheckableBase` → W3a-P2; `lib/themes/ds2026/tokens.ts` → every package, mechanically) must have its PR merged to `main` first, so the next package's branch is cut from the already-repointed file and the collision rule (shared boilerplate) has something to grep against. It is **not** a release gate: there is no rule requiring an earlier package's npm version to be *published* before a later, dependent package's PR can merge or its own changeset can ship — Appendix A's "Version Packages" PR aggregates whatever changesets have merged and can (and often will) bundle several dependent Wave-3 packages into the same minor. The only thing that genuinely blocks a package's release is an item in its own declared dependency list (§0.2; the per-package "Depends on" sections; the summary-table "Extra deps" column) — e.g. W3a-P3 (Radio) cannot merge until W3a-P2 (CheckBox) has landed on `main`, but W3a-P2 does not have to be *published to npm* first, and both can end up in the same `4.6x.0` if their PRs merge close together (Appendix A step 5).
 
 ### 0.2 The dependency shape for every restyle package
 
@@ -60,7 +63,35 @@ git diff -- '**/__snapshots__/**' | sed -E 's/__[a-z0-9]{6,7}[0-9]?//g' > /tmp/s
 - **Release:** one **minor** changeset per component (`.changeset/<slug>.md`, type `minor`), per master Appendix A. Summary form: *"Restyle `<Component>` for DS-2026 (opt-in via ds2026 theme + additive prop values); repoint onto semantic colour tokens (base pixel-identical)."*
 - **OU mapping** (master §8.1): W3a → **OU-8/OU-34**; W3b → **OU-8**; W3c → **OU-9/OU-10/OU-11**. W3-P0 → **OU-25/OU-2**. (Resolve the OU-8/OU-34 overlap before scheduling W3a — master §8.2.)
 
-### 0.6 Parallelisation & shared-file serialisation
+### 0.6 Post-release MFE verification (every Wave-3 package)
+
+Chromatic and the unit/a11y gates (§0.4) prove the component is correct in isolation; they cannot prove it is correct **as consumed** — deep-import fragility, tenant-theme coupling, and app-level `OverdriveProvider` mounting (master §0.1) only surface inside the mfe monorepo. The product-owner requirement is that every Wave-3 package be **testable in the mfe repo** after it ships, not just in Storybook. This procedure is identical for every package below; run it from `/Users/timamehro/grit/github.com/autoguru/mfe` (single `bun.lock`, manual overdrive bumps — master §0.1, Appendix A step 6). Overdrive and mfe are sibling checkouts: `mfe/.scripts/copy-overdrive.js` resolves `../../overdrive` relative to itself.
+
+**Pre-publish smoke (on the package's own branch, before merging to `main`):**
+```bash
+# In overdrive, on the package branch:
+yarn build
+
+# In mfe:
+yarn overdrive:local          # runs .scripts/copy-overdrive.js — builds overdrive and copies dist/ into mfe/node_modules/@autoguru/overdrive/dist
+yarn tsc -b                   # (or mfe's equivalent type-check script) — MUST be clean; new prop unions must not break existing call sites
+```
+Then, on **base** (no `theme=` prop, no new opt-in prop values set anywhere), spot-check screens that render the restyled component — the **DEFAULT look must be pixel-identical** to `main` today; this is the wave's core guarantee (§0), and Storybook zero-diff alone does not prove it holds through the real build/bundle pipeline:
+- **Button (W3a-P1):** 576 JSX call sites monorepo-wide — pick 2 heavy apps, e.g. `apps/gb-language-selector` (25 `<Button` sites) and `apps/fcp-booking` (22 sites).
+- **Inputs (W3b-\*):** a form-heavy app, e.g. `apps/fmo-admin-fleet-company` (8 `<TextInput` sites).
+- **Tabs/Pagination (W3c-P4/P6):** a list-heavy app, e.g. `apps/fls-booking` or `apps/fcp-booking` (both render `<Tabs`). **Pagination has zero `<Pagination` usage anywhere in the mfe monorepo today** (repo-wide grep confirmed) — there is no live screen to spot-check for W3c-P6; fall back to Storybook/Chromatic as the DEFAULT-look proof for that package and record the gap in its PR.
+- Any other package: `grep -rl '<ComponentName' apps` in the mfe repo to find a real screen and spot-check it.
+
+**Post-publish opt-in probes (after the package's changeset has actually been published and the mfe monorepo bumps to it — Appendix A steps 3–6):** on a **throwaway** mfe branch (never merged) with `@autoguru/overdrive` bumped to the new version:
+(a) **Per-component probe** — on one instance in a screen from the pre-publish smoke list, set the package's new opt-in prop value(s) (e.g. Button's ADR-recorded Class/Style props — see the ADR log for the actual shipped names, §E) and confirm the 2026 look renders on that one instance while every neighbouring instance on the same screen stays unchanged.
+(b) **Per-app/subtree probe** — wrap one screen (or a subtree of one) in `<OverdriveProvider theme={ds2026Theme} noBodyLevelTheming>` and confirm that subtree flips to the 2026 look while the rest of the app stays on base. This doubles as the **W3-P0 scoping proof** (§W3-P0.3) exercised in a real app, not just a Storybook story.
+Delete both probes before discarding the branch — nothing from this step is ever committed.
+
+**Tenant guard (every package, mandatory):** confirm the 4 tenant theme packages — `mfe/packages/themes/{smartFleetTheme,ampolTheme,fleetGuruTheme,dynamicGuruTheme}` — still type-check against the bumped overdrive and their `__tests__/tokens.test.ts` elevation-value assertions still pass (master §0.1: "10 tenant-theme unit tests asserting exact elevation values"). A Wave-3 package is additive-only by construction, but this is the cheap, real check that it actually held.
+
+**Rollback:** if anything above fails post-publish, pin `@autoguru/overdrive` back to the prior version in mfe's root `package.json` and reinstall (single `bun.lock` — a one-line version-pin diff; no app code changes are needed to roll back, since nothing consumes the new opt-in surface by default).
+
+### 0.7 Parallelisation & shared-file serialisation
 
 | Group | Packages | Parallel? | Shared-file hazard |
 |---|---|---|---|
@@ -274,6 +305,7 @@ Interpret snapshot failures with the stripped-__hash procedure (plan §4.0.1) �
 - `git diff` of `base/tokens.ts` and `theme.css.ts` empty; base-theme Chromatic zero-diff.
 - ADR committed under `docs/adr/`; nested-provider scoping story present.
 - Gates green (hash-only churn accepted with note).
+- **Post-release MFE check (§0.6):** once published, bump `@autoguru/overdrive` in the mfe repo and confirm `import ds2026Theme from '@autoguru/overdrive/themes/ds2026'` resolves (no module-not-found — proves the `package.json` exports block from §W3-P0.2 Registration 2 works outside the monorepo build); then mount `<OverdriveProvider theme={ds2026Theme}>` around any real mfe screen and confirm it is a **visual no-op** (identical to not wrapping it at all) — the passthrough proof from §W3-P0.4, re-run against a real app instead of Storybook.
 
 ---
 
@@ -955,30 +987,30 @@ Composes the existing CheckBox/Radio/Switch (post-W3a) — introduces no new con
 
 ## Package summary — dependencies, gates, OU
 
-Every package's gate suite is identical (§0.4): `yarn lint` + `yarn test run <Scope>` + `yarn test:a11y` + Chromatic (base zero-diff, ds2026 intended-delta). Every package ships a **minor** changeset. Dependencies below are IN ADDITION to the universal `W3-P0` + relevant W1 tokens.
+Every package's gate suite is identical (§0.4): `yarn lint` + `yarn test run <Scope>` + `yarn test:a11y` + Chromatic (base zero-diff, ds2026 intended-delta). Every package ships a **minor** changeset, independently of its siblings — the "Extra deps" column below is the *complete* list of what can delay a package's merge/release; anything not listed there is parallel-safe (§0, §0.1). Every package also runs the shared post-release MFE procedure (§0.6); the last column is that procedure's per-package spot-check target.
 
-| Pkg | Component(s) | Builder | Extra deps (beyond W3-P0 + W1) | Track C refs | OU |
-|---|---|---|---|---|---|
-| W3-P0 | ds2026 theme scaffold + ADR | opus | W1-P1 | — | OU-25/OU-2 |
-| W3a-P1 | Button | opus | W1-P2 (button colours), C-P1 | 3 (intent + 2 typo) | OU-8/OU-34 |
-| W3a-P2 | CheckBox | sonnet | C-P1 | 3 (+CheckableBase) | OU-8 |
-| W3a-P3 | Radio | sonnet | **W3a-P2** (CheckableBase repointed) | 3 | OU-8 |
-| W3a-P4 | Switch | sonnet | C-P1 | 4 | OU-8 |
-| W3a-P5 | StarRating | sonnet | C-P1 | 2 | OU-8 |
-| W3b-P1 | TextInput/TextArea (InputBase spine) | opus | C-P1 | **24** | OU-8 |
-| W3b-P2 | CompoundField (net-new) | opus | **W3b-P1** | 0 (inherits spine) | OU-8 |
-| W3b-P3 | SelectInput/DropDown | sonnet | **W3b-P1** | 1 (DropDown) | OU-8 |
-| W3b-P4 | SelectionField (net-new) | opus | W3a-P2/P3/P4 + W3b-P1 | 0 | OU-8 |
-| W3b-P5 | Date set | opus | **W3b-P1** + W1-P3 (elevation.z*) | spine + Calendar grep | OU-8 |
-| W3b-P6 | Slider/Stepper | sonnet | C-P1 | 4 (Slider) + 2 (Stepper) | OU-8 |
-| W3c-P1 | Badge | sonnet | shared intentColorset C-package | via intentColorset | OU-10/OU-11 |
-| W3c-P2 | TextLink | sonnet | W1-P2 + **§6-Q3** (linkedText) | 3 | OU-11 |
-| W3c-P3 | Tooltip | sonnet | C-P1 | via sprinkles | OU-10 |
-| W3c-P4 | Tabs | opus | C-P1 | ~15 (14 Tab + 1 TabList) | OU-9 |
-| W3c-P5 | ToggleButtons | sonnet | C-P1 | ~0 (already migrated) | OU-9 |
-| W3c-P6 | Pagination | sonnet | **W2-P10** coordination | 5 | OU-9 |
-| W3c-P7 | Toast/Alert | opus | C-P1 | 2 + sprinklesLegacyText | OU-10 |
-| W3c-P8 | Progress/Loaders | sonnet | C-P1 | 6 (ProgressSpinner) | OU-9/OU-10 |
+| Pkg | Component(s) | Builder | Extra deps (beyond W3-P0 + W1) | Track C refs | OU | MFE spot-check (§0.6) |
+|---|---|---|---|---|---|---|
+| W3-P0 | ds2026 theme scaffold + ADR | opus | W1-P1 | — | OU-25/OU-2 | `themes/ds2026` import resolves; no-op on any real screen |
+| W3a-P1 | Button | opus | W1-P2 (button colours), C-P1 | 3 (intent + 2 typo) | OU-8/OU-34 | `gb-language-selector` + `fcp-booking` (heaviest Button use) |
+| W3a-P2 | CheckBox | sonnet | C-P1 | 3 (+CheckableBase) | OU-8 | any form screen with checkboxes (e.g. `fmo-admin-fleet-company`) |
+| W3a-P3 | Radio | sonnet | **W3a-P2** (CheckableBase repointed) | 3 | OU-8 | any form screen with radios |
+| W3a-P4 | Switch | sonnet | C-P1 | 4 | OU-8 | any settings/toggle screen |
+| W3a-P5 | StarRating | sonnet | C-P1 | 2 | OU-8 | any rating-display screen |
+| W3b-P1 | TextInput/TextArea (InputBase spine) | opus | C-P1 | **24** | OU-8 | `fmo-admin-fleet-company` (form-heavy, 8 `<TextInput` sites) |
+| W3b-P2 | CompoundField (net-new) | opus | **W3b-P1** | 0 (inherits spine) | OU-8 | no MFE usage yet (net-new) — Storybook/Chromatic only |
+| W3b-P3 | SelectInput/DropDown | sonnet | **W3b-P1** | 1 (DropDown) | OU-8 | any form-heavy app's select/dropdown screens |
+| W3b-P4 | SelectionField (net-new) | opus | W3a-P2/P3/P4 + W3b-P1 | 0 | OU-8 | no MFE usage yet (net-new) — Storybook/Chromatic only |
+| W3b-P5 | Date set | opus | **W3b-P1** + W1-P3 (elevation.z*) | spine + Calendar grep | OU-8 | any app with a date picker (e.g. a booking app) |
+| W3b-P6 | Slider/Stepper | sonnet | C-P1 | 4 (Slider) + 2 (Stepper) | OU-8 | any app with a slider/stepper control |
+| W3c-P1 | Badge | sonnet | shared intentColorset C-package | via intentColorset | OU-10/OU-11 | any status-badge screen |
+| W3c-P2 | TextLink | sonnet | W1-P2 + **§6-Q3** (linkedText) | 3 | OU-11 | any screen with inline links |
+| W3c-P3 | Tooltip | sonnet | C-P1 | via sprinkles | OU-10 | any screen with tooltips |
+| W3c-P4 | Tabs | opus | C-P1 | ~15 (14 Tab + 1 TabList) | OU-9 | `fls-booking` or `fcp-booking` (render `<Tabs`) |
+| W3c-P5 | ToggleButtons | sonnet | C-P1 | ~0 (already migrated) | OU-9 | any filter/segmented-control screen |
+| W3c-P6 | Pagination | sonnet | **W2-P10** coordination | 5 | OU-9 | **zero `<Pagination` usage found in the mfe monorepo** — Storybook/Chromatic only; flag for Reviewer |
+| W3c-P7 | Toast/Alert | opus | C-P1 | 2 + sprinklesLegacyText | OU-10 | any app calling `useToast()` / rendering `<Alert>` |
+| W3c-P8 | Progress/Loaders | sonnet | C-P1 | 6 (ProgressSpinner) | OU-9/OU-10 | any screen with a loading state |
 
 **Cross-package shared-file serialisation (must respect):**
 - `private/InputBase/*` → **W3b-P1 first**; W3b-P2/P3/P5 (and any input consumer) rebase; no re-assignment of spine base tokens.
@@ -1010,6 +1042,7 @@ Items where the real repo diverged from what the master plan assumed, plus concr
 7. **`SimplePagination` and `Toaster` have no own colour/styling to repoint.** SimplePagination composes `Button` only (no `.css.ts`); Toaster renders through `Alert`. Their look is 2026-capable transitively once Button (W3a-P1) and Alert (W3c-P7) land — no standalone package needed, but W3c-P7 must verify **Toaster** Chromatic (it inherits Alert).
 
 8. **Slider is already off legacy `typography.colour`** — it uses `colours.gamut.*` directly (gray300/gray200/gray900/gray500) + hardcoded rgba shadows. The **thumb-disabled `gray500` (`#6C7283`) has no exact §3.1 semantic grey token** (§3.1 greys are gray900/700/600/400/300/200/100 semantic roles; gray500 is not mapped to a role) → W3b-P6 uses a **component-scoped `color.slider.thumbDisabled`** (collision rule step 3) and records it in master §6.
+9. **The Overdrive `Pagination` component has zero usage in the mfe monorepo.** A repo-wide grep for `<Pagination` across `apps/` and `packages/` returns no hits — every monorepo hit for the string "Pagination" is `react-relay`'s `usePaginationFragment` (data-fetching pagination, unrelated to the UI component). This does not block W3c-P6's release (Storybook/Chromatic still gate it per §0.4), but it means the §0.6 post-release **MFE spot-check has no live screen to check** for this package specifically — the DEFAULT-pixel-identical guarantee for Pagination can only be demonstrated in Storybook until some app actually adopts the component. Flagged in the §0.6 summary-table row for W3c-P6; not a release blocker, but the PO's "testable in the MFE" bar is not fully met for this one package and should be tracked as a known gap.
 
 ### E. Concrete proposals flagged for Reviewer (not resolved here)
 
