@@ -209,14 +209,14 @@ White `#FFFFFF`. ✗ = swatch label disagrees with the variable — **use the va
 
 **Shadows (`elevation.z1..z4`) — 3-layer composites:**
 
-| Token | Layer offsets (x/y) | ⚠ blur / spread / rgba |
+| Token | Layer offsets (x/y) | blur / spread / rgba |
 |---|---|---|
-| `elevation.z1` | 0/3, 0/2, 0/1 | **FETCH from Figma node `360:12800` (dev-mode inspect) — not in the metadata dump. Do NOT guess.** |
-| `elevation.z2` | 0/2, 0/4, 0/1 | same ⚠ |
-| `elevation.z3` | 0/5, 0/8, 0/3 | same ⚠ |
-| `elevation.z4` | 0/8, 0/16, 0/6 | same ⚠ |
+| `elevation.z1` | 0/3, 0/2, 0/1 | `1px -2px rgba(0,0,0,0.05)`, `2px 0px rgba(0,0,0,0.03)`, `5px 0px rgba(0,0,0,0.03)` |
+| `elevation.z2` | 0/2, 0/4, 0/1 | `4px -1px rgba(0,0,0,0.05)`, `5px 0px rgba(0,0,0,0.03)`, `10px 0px rgba(0,0,0,0.03)` |
+| `elevation.z3` | 0/5, 0/8, 0/3 | `5px -3px rgba(0,0,0,0.05)`, `10px 1px rgba(0,0,0,0.03)`, `14px 2px rgba(0,0,0,0.03)` |
+| `elevation.z4` | 0/8, 0/16, 0/6 | `10px -5px rgba(0,0,0,0.05)`, `24px 2px rgba(0,0,0,0.03)`, `30px 5px rgba(0,0,0,0.03)` |
 
-> The blur/spread/alpha for z1–z4 are the **only** values not inlined in this document (they are not present in the available metadata). W1-P3 must read them from node `360:12800` in Figma dev mode and record them back into this file's table before shipping. Existing `elevation.1..5` are unaffected.
+> Fetched from Figma node `360:12800` (bound `Shadow/z1..z4` effect variables, via `get_variable_defs` — cross-checked against Figma's own generated `box-shadow` CSS for the S/M/L/XL example instances on that frame). Y-offsets match this table's pre-existing known set exactly, in the same per-layer order — no discrepancy found. Ready-to-paste `box-shadow` strings and the full per-layer breakdown are recorded in `docs/ds2026-specs/foundation-shadows.md` and inlined into `docs/ds2026-plan/wave-1.md`'s W1-P3 base-value block. Existing `elevation.1..5` are unaffected.
 
 **Spacing — full Figma scale (px):** `0, 2, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96`.
 Current base has `0,4,8,12,16,20,24,32,48,96`. **Missing: 2, 40, 64, 80.** (Add as new keys — never renumber `1`–`9`; see W1-P3 + §6-Q7.)

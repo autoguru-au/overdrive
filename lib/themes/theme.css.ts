@@ -174,6 +174,25 @@ const THEME_CONTRACT = {
 			foreground: 'color-alert-foreground',
 			background: 'color-alert-background',
 		},
+		button: {
+			primary: {
+				solid: {
+					default: 'color-button-primary-solid-default',
+					hover: 'color-button-primary-solid-hover',
+					pressed: 'color-button-primary-solid-pressed',
+					border: 'color-button-primary-solid-border',
+				},
+				outlined: {
+					border: 'color-button-primary-outlined-border',
+					text: 'color-button-primary-outlined-text',
+				},
+			},
+			critical: {
+				solid: {
+					default: 'color-button-critical-solid-default',
+				},
+			},
+		},
 	},
 	// existing colours for compatability
 	colours: {

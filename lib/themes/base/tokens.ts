@@ -176,6 +176,25 @@ export const tokens = {
 			foreground: colourMap.red['600'], // #d42b26
 			background: colourMap.red['200'], // #ffd4d4
 		},
+		button: {
+			primary: {
+				solid: {
+					default: colourMap.green['300'], // #71edc2
+					hover: colourMap.green['400'], // #36e5aa
+					pressed: colourMap.green['600'], // #01c68c
+					border: colourMap.green['600'], // #01c68c
+				},
+				outlined: {
+					border: colourMap.green['800'], // #18856f
+					text: colourMap.green['800'], // #18856f
+				},
+			},
+			critical: {
+				solid: {
+					default: colourMap.red['500'], // #e12e28
+				},
+			},
+		},
 	},
 	colours: {
 		gamut: {

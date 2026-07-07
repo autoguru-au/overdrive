@@ -670,10 +670,10 @@ xlarge: '20px',   // genuinely new value (2xl=24 ≠ 20)
 
 // inside elevation — 3-layer composites; offsets fixed, blur/spread/rgba FILLED FROM FIGMA 360:12800 (see Spec step).
 // Offsets (x/y) per §3.1:  z1 0/3,0/2,0/1 · z2 0/2,0/4,0/1 · z3 0/5,0/8,0/3 · z4 0/8,0/16,0/6
-z1: '<FETCH 360:12800: "0 3px <blur>px <spread>px <rgba>, 0 2px <blur>px <spread>px <rgba>, 0 1px <blur>px <spread>px <rgba>">',
-z2: '<FETCH 360:12800: "0 2px …, 0 4px …, 0 1px …">',
-z3: '<FETCH 360:12800: "0 5px …, 0 8px …, 0 3px …">',
-z4: '<FETCH 360:12800: "0 8px …, 0 16px …, 0 6px …">',
+z1: '0px 1px 5px 0px rgba(0,0,0,0.03), 0px 2px 2px 0px rgba(0,0,0,0.03), 0px 3px 1px -2px rgba(0,0,0,0.05)',
+z2: '0px 1px 10px 0px rgba(0,0,0,0.03), 0px 4px 5px 0px rgba(0,0,0,0.03), 0px 2px 4px -1px rgba(0,0,0,0.05)',
+z3: '0px 3px 14px 2px rgba(0,0,0,0.03), 0px 8px 10px 1px rgba(0,0,0,0.03), 0px 5px 5px -3px rgba(0,0,0,0.05)',
+z4: '0px 6px 30px 5px rgba(0,0,0,0.03), 0px 16px 24px 2px rgba(0,0,0,0.03), 0px 8px 10px -5px rgba(0,0,0,0.05)',
 ```
 
 **`flat_red/tokens.ts` divergence override (add to the existing `deepmerge` overrides object):**
