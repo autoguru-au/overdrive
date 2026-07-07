@@ -103,7 +103,7 @@ export const labelVariants = recipe({
 			true: {
 				'@layer': {
 					[cssLayerComponent]: {
-						color: overdriveTokens.colours.gamut.gray400,
+						color: overdriveTokens.color.gamut.gray['400'],
 					},
 				},
 			},
@@ -135,7 +135,7 @@ export const inputStyle = style([
 			[cssLayerComponent]: {
 				selectors: {
 					[selectors.disabled]: {
-						color: overdriveTokens.colours.gamut.gray300,
+						color: overdriveTokens.color.gamut.gray['300'],
 						cursor: 'not-allowed',
 						opacity: 1,
 					},

@@ -395,7 +395,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 			width="full"
 		>
 			<Box
-				backgroundColour="white"
+				backgroundColor="white"
 				borderRadius="sm"
 				className={styles.input}
 			>
@@ -564,7 +564,7 @@ const SuggestionsList = <PayloadType extends unknown>({
 	<Box
 		as="ul"
 		ref={suggestionListRef}
-		backgroundColour="white"
+		backgroundColor="white"
 		className={[styles.suggestionList.defaults, className]}
 		id={suggestionListId}
 		aria-label={placeholder}
@@ -756,9 +756,9 @@ const SuggestionListFlyout: FunctionComponent<
 	>
 		<Box
 			borderWidth="1"
-			borderColour="gray"
+			borderColor="default"
 			borderRadius="md"
-			backgroundColour="white"
+			backgroundColor="white"
 			boxShadow="4"
 			style={{
 				width:

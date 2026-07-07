@@ -747,7 +747,7 @@ Board is design-led (Figma-first DoD); engineering sequencing is imposed by this
 ## 9. Tracking
 
 ### 9.1 Per-component legacy-colour burn-down
-> **Authoritative inventory: [`docs/ds2026-plan/track-c.md`](docs/ds2026-plan/track-c.md)** (measured with the full W1-P0 pattern, incl. `tokens.colours.*` refs the original seed grep missed). **Measured totals: 48 of 78 component dirs touch legacy** — ≈20 folded into Wave-3 restyle packages, ≈28 standalone across batches **C-P2…C-P9**. The table below is the reconciled summary.
+> **Authoritative inventory: [`docs/ds2026-plan/track-c.md`](docs/ds2026-plan/track-c.md)** (measured with the full W1-P0 pattern, incl. `tokens.colours.*` refs the original seed grep missed). **Measured totals: 49 of 78 component dirs touch legacy** (corrected from 48 — `DateTimeField` was a genuine inventory-grep blind spot on the `overdriveTokens.colours.*` import alias, see track-c.md Deviation 11) — ≈20 folded into Wave-3 restyle packages, ≈29 standalone across batches **C-P2…C-P9**. The table below is the reconciled summary.
 
 Columns: **Uses legacy** (direct / via-sprinkles / clean) · **Direct refs** · **Repoint pkg** · **Wave**.
 
@@ -778,6 +778,7 @@ Columns: **Uses legacy** (direct / via-sprinkles / clean) · **Direct refs** · 
 | OverdriveProvider | direct | 2 | C-P8 | Track C |
 | Meta | direct | 2 | C-P3 | Track C |
 | DataTable | direct | 2 | C-P3 | Track C |
+| DateTimeField | direct (`overdriveTokens.colours.*` import alias — missed by both seed and W1-P0 greps; see track-c.md Deviation 11) | 2 | C-P8 | Track C |
 | Alert | direct (+`sprinklesLegacyText`) | 2 | C-P/3c-P7 | 3c |
 | Text / Heading | **indirect** — the seed's "1 direct" each were **stories** (`Text.stories.tsx:93` / `Heading.stories.tsx:76`, non-shipping); real dependency is the library-wide `sprinklesLegacyText` default path in `styles/typography.ts` | — | C-P4 | Track C |
 | Stack | direct | 1 | C-P4 | Track C |
