@@ -1,5 +1,5 @@
 import { buildColourGamut } from '../makeTheme';
-import { type ThemeTokens } from '../theme.css';
+import { overdriveTokens, type ThemeTokens } from '../theme.css';
 
 import {
 	colourMap,
@@ -34,7 +34,75 @@ export const tokens = {
 		none: '0px',
 	},
 	color: {
-		gamut: colourMap,
+		/**
+		 * TRANSITION BRIDGE — the semantic `color.gamut` aliases the LEGACY
+		 * `colours.gamut` CSS vars instead of holding raw hex. Themes and MFE
+		 * tenants that override ONLY `colours.gamut` (flat_red, tenant custom
+		 * palettes) therefore automatically drive the semantic gamut too. In the
+		 * base theme the computed values are byte-identical to the raw hex
+		 * (`colours.gamut` resolves to `colourMap`); the only thing that changes
+		 * is that the semantic gamut now points at the legacy var rather than
+		 * inlining the hex. This alias flips back to raw values at the DS-2026
+		 * major (W4-P4), once tenants set the semantic gamut directly.
+		 */
+		gamut: {
+			gray: {
+				'900': overdriveTokens.colours.gamut.gray900,
+				'800': overdriveTokens.colours.gamut.gray800,
+				'700': overdriveTokens.colours.gamut.gray700,
+				'600': overdriveTokens.colours.gamut.gray600,
+				'500': overdriveTokens.colours.gamut.gray500,
+				'400': overdriveTokens.colours.gamut.gray400,
+				'300': overdriveTokens.colours.gamut.gray300,
+				'200': overdriveTokens.colours.gamut.gray200,
+				'100': overdriveTokens.colours.gamut.gray100,
+			},
+			green: {
+				'900': overdriveTokens.colours.gamut.green900,
+				'800': overdriveTokens.colours.gamut.green800,
+				'700': overdriveTokens.colours.gamut.green700,
+				'600': overdriveTokens.colours.gamut.green600,
+				'500': overdriveTokens.colours.gamut.green500,
+				'400': overdriveTokens.colours.gamut.green400,
+				'300': overdriveTokens.colours.gamut.green300,
+				'200': overdriveTokens.colours.gamut.green200,
+				'100': overdriveTokens.colours.gamut.green100,
+			},
+			blue: {
+				'900': overdriveTokens.colours.gamut.blue900,
+				'800': overdriveTokens.colours.gamut.blue800,
+				'700': overdriveTokens.colours.gamut.blue700,
+				'600': overdriveTokens.colours.gamut.blue600,
+				'500': overdriveTokens.colours.gamut.blue500,
+				'400': overdriveTokens.colours.gamut.blue400,
+				'300': overdriveTokens.colours.gamut.blue300,
+				'200': overdriveTokens.colours.gamut.blue200,
+				'100': overdriveTokens.colours.gamut.blue100,
+			},
+			yellow: {
+				'900': overdriveTokens.colours.gamut.yellow900,
+				'800': overdriveTokens.colours.gamut.yellow800,
+				'700': overdriveTokens.colours.gamut.yellow700,
+				'600': overdriveTokens.colours.gamut.yellow600,
+				'500': overdriveTokens.colours.gamut.yellow500,
+				'400': overdriveTokens.colours.gamut.yellow400,
+				'300': overdriveTokens.colours.gamut.yellow300,
+				'200': overdriveTokens.colours.gamut.yellow200,
+				'100': overdriveTokens.colours.gamut.yellow100,
+			},
+			red: {
+				'900': overdriveTokens.colours.gamut.red900,
+				'800': overdriveTokens.colours.gamut.red800,
+				'700': overdriveTokens.colours.gamut.red700,
+				'600': overdriveTokens.colours.gamut.red600,
+				'500': overdriveTokens.colours.gamut.red500,
+				'400': overdriveTokens.colours.gamut.red400,
+				'300': overdriveTokens.colours.gamut.red300,
+				'200': overdriveTokens.colours.gamut.red200,
+				'100': overdriveTokens.colours.gamut.red100,
+			},
+			white: overdriveTokens.colours.gamut.white,
+		},
 		surface: {
 			page: colourMap.white,
 			hard: colourMap.gray['900'],

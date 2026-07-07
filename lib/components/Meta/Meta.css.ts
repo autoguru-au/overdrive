@@ -4,7 +4,7 @@ import { overdriveTokens as vars } from '../../themes/theme.css';
 
 export const variant = styleVariants({
 	primary: {
-		color: vars.color.gamut.green['700'],
+		color: vars.colours.intent.primary.background.strong,
 	},
 	secondary: {
 		color: vars.color.foreground.primary,

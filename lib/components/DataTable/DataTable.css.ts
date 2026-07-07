@@ -5,7 +5,7 @@ import { overdriveTokens as vars } from '../../themes/theme.css';
 export const scrollContainer = style({
 	selectors: {
 		['&:focus-visible']: {
-			outline: `2px solid ${vars.color.gamut.green['600']}`,
+			outline: `2px solid ${vars.colours.intent.primary.background.standard}`,
 			outlineOffset: '-2px',
 		},
 	},
