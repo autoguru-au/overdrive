@@ -31,6 +31,10 @@ export const tokens = {
 		'7': '32px',
 		'8': '48px',
 		'9': '96px',
+		'2px': '2px',
+		'40px': '40px',
+		'64px': '64px',
+		'80px': '80px',
 		none: '0px',
 	},
 	color: {
@@ -302,6 +306,10 @@ export const tokens = {
 		'3': '0 3px 14px 2px rgba(0, 0, 0, 0.03),  0 8px 10px 1px rgba(0, 0, 0, 0.03),  0 5px 5px -3px rgba(0, 0, 0, 0.05)',
 		'4': '0 6px 30px 5px rgba(0, 0, 0, 0.03), 0 16px 24px 2px rgba(0, 0, 0, 0.03), 0 8px 10px -5px rgba(0, 0, 0, 0.05)',
 		'5': '0 9px 46px 8px rgba(0, 0, 0, 0.03), 0 24px 38px 3px rgba(0, 0, 0, 0.03), 0 11px 15px -7px rgba(0, 0, 0, 0.05)',
+		z1: '0px 1px 5px 0px rgba(0,0,0,0.03), 0px 2px 2px 0px rgba(0,0,0,0.03), 0px 3px 1px -2px rgba(0,0,0,0.05)',
+		z2: '0px 1px 10px 0px rgba(0,0,0,0.03), 0px 4px 5px 0px rgba(0,0,0,0.03), 0px 2px 4px -1px rgba(0,0,0,0.05)',
+		z3: '0px 3px 14px 2px rgba(0,0,0,0.03), 0px 8px 10px 1px rgba(0,0,0,0.03), 0px 5px 5px -3px rgba(0,0,0,0.05)',
+		z4: '0px 6px 30px 5px rgba(0,0,0,0.03), 0px 16px 24px 2px rgba(0,0,0,0.03), 0px 8px 10px -5px rgba(0,0,0,0.05)',
 	},
 	border: {
 		width: {
@@ -326,6 +334,11 @@ export const tokens = {
 			'1': '4px',
 			pill: `${1e9}px`,
 			full: '50%',
+			xsmall: '4px',
+			small: '8px',
+			medium: '12px',
+			large: '16px',
+			xlarge: '20px',
 		},
 	},
 	typography: {

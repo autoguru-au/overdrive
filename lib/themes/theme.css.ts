@@ -96,6 +96,10 @@ const THEME_CONTRACT = {
 		'7': 'space-7',
 		'8': 'space-8',
 		'9': 'space-9',
+		'2px': 'space-2px',
+		'40px': 'space-40px',
+		'64px': 'space-64px',
+		'80px': 'space-80px',
 		none: 'space-none',
 	},
 	// new colour token structure 2025
@@ -300,6 +304,10 @@ const THEME_CONTRACT = {
 		'3': 'elevation-3',
 		'4': 'elevation-4',
 		'5': 'elevation-5',
+		z1: 'elevation-z1',
+		z2: 'elevation-z2',
+		z3: 'elevation-z3',
+		z4: 'elevation-z4',
 		none: 'elevation-none',
 	},
 	border: {
@@ -325,6 +333,11 @@ const THEME_CONTRACT = {
 			'1': 'border-radius-1',
 			pill: 'border-radius-pill',
 			full: 'border-radius-full',
+			xsmall: 'border-radius-xsmall',
+			small: 'border-radius-small',
+			medium: 'border-radius-medium',
+			large: 'border-radius-large',
+			xlarge: 'border-radius-xlarge',
 		},
 	},
 	typography: {

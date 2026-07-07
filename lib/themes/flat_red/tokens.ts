@@ -105,6 +105,10 @@ export const tokens = deepmerge(baseTokens, {
 		'3': flatElevation,
 		'4': flatElevation,
 		'5': flatElevation,
+		z1: flatElevation,
+		z2: flatElevation,
+		z3: flatElevation,
+		z4: flatElevation,
 	},
 	border: {
 		radius: {
@@ -112,6 +116,8 @@ export const tokens = deepmerge(baseTokens, {
 			sm: 'none',
 			md: 'none',
 			'1': 'none',
+			xsmall: 'none',
+			small: 'none',
 		},
 	},
 	typography: {
