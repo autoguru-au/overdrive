@@ -41,6 +41,7 @@ export const ProgressStep: NamedExoticComponent<ProgressStepProps> = memo(
 					position="absolute"
 					display={hasPassed ? 'none' : 'block'}
 					className={[styles.item, styles.empty]}
+					// eslint-disable-next-line no-restricted-syntax -- RETAINED: public prop pass-through, intent-capable, reverted by the C-theme-bridge corrective package (docs/ds2026-plan/track-c.md §1.5 + deviation 12).
 					backgroundColour={backgroundColour}
 				/>
 				<Box
@@ -56,6 +57,7 @@ export const ProgressStep: NamedExoticComponent<ProgressStepProps> = memo(
 							[styles.paused]: isActive && paused,
 						},
 					]}
+					// eslint-disable-next-line no-restricted-syntax -- RETAINED: public prop pass-through, intent-capable, reverted by the C-theme-bridge corrective package (docs/ds2026-plan/track-c.md §1.5 + deviation 12).
 					backgroundColour={backgroundColour}
 					style={{
 						animationDuration: duration,

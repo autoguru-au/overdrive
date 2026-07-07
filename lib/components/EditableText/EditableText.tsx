@@ -179,6 +179,7 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 					ref={textRef}
 					as={as}
 					color={color}
+					// eslint-disable-next-line no-restricted-syntax -- RETAINED: pass-through of the public, union-typed (intent-capable) `colour` prop (docs/ds2026-plan/track-c.md §1.5, EditableText row).
 					colour={colour}
 					size={size}
 					className={[

@@ -199,21 +199,34 @@ const THEME_CONTRACT = {
 		},
 	},
 	// existing colours for compatability
+	/**
+	 * @deprecated Use color.* — removed in v5 (DS-2026 major). The legacy
+	 * `colours` contract (gamut/foreground/background/intent) is retained,
+	 * exported, and fully functional for MFE compatibility until then — do
+	 * not add new internal usages (see docs/ds2026-plan/track-c.md).
+	 */
 	colours: {
+		/** @deprecated Use color.gamut.* — removed in v5 (DS-2026 major). */
 		gamut: {
 			...buildColourGamut(colours),
 			white: 'color-gamut-white',
 		},
+		/** @deprecated Use color.foreground.* — removed in v5 (DS-2026 major). */
 		foreground: {
 			body: null,
 			link: null,
 		},
+		/** @deprecated Use color.background.* — removed in v5 (DS-2026 major). */
 		background: {
 			body: null,
 			light: null,
 			neutral: null,
 			neutralDark: null,
 		},
+		/**
+		 * @deprecated Use color.{info,success,warning,alert}.* — removed in v5
+		 * (DS-2026 major).
+		 */
 		intent: {
 			primary: {
 				background: {
@@ -325,11 +338,19 @@ const THEME_CONTRACT = {
 		radius: {
 			none: 'border-radius-none',
 			min: 'border-radius-min',
+			/** @deprecated Use radius.xsmall (identical 4px value) — removed in v5 (DS-2026 major). */
 			sm: 'border-radius-sm',
 			md: 'border-radius-md',
 			lg: 'border-radius-lg',
 			xl: 'border-radius-xl',
+			/**
+			 * @deprecated Use radius.xlarge — removed in v5 (DS-2026 major).
+			 * Note: values differ today (2xl = 24px, xlarge = 20px); the exact
+			 * DS-2026 mapping for this key is pending design resolution
+			 * (master §6-Q2) and will be finalised at the major.
+			 */
 			'2xl': 'border-radius-2xl',
+			/** @deprecated Use radius.xsmall (identical 4px value) — removed in v5 (DS-2026 major). */
 			'1': 'border-radius-1',
 			pill: 'border-radius-pill',
 			full: 'border-radius-full',
@@ -413,6 +434,7 @@ const THEME_CONTRACT = {
 			},
 		},
 		// phase out: typography specific colours for backwards compatibility
+		/** @deprecated Use color.foreground.* — removed in v5 (DS-2026 major). */
 		colour: {
 			primary: null,
 			brand: null,

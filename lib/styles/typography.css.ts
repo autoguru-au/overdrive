@@ -15,6 +15,9 @@ const legacyTextProperties = defineProperties({
 	},
 });
 
+/**
+ * @deprecated Use the semantic `color` path (sprinkles `color` / `textStyles({ color })`) — removed in v5 (DS-2026 major).
+ */
 export const sprinklesLegacyText = createSprinkles(legacyTextProperties);
 export type LegacyTextColours = Parameters<
 	typeof sprinklesLegacyText

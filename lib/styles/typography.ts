@@ -5,6 +5,7 @@ import { sprinkles, type Sprinkles } from './sprinkles.css';
 import {
 	common,
 	type LegacyTextColours,
+	// eslint-disable-next-line no-restricted-imports -- RETAINED: an explicitly-supplied legacy `colour` still resolves through sprinklesLegacyText (intent keys are theme-overridden — never repointed pre-major); docs/ds2026-plan/track-c.md §"C-P4 default-path decision".
 	sprinklesLegacyText,
 } from './typography.css';
 

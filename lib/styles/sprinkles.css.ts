@@ -188,9 +188,13 @@ const baseProperties = defineProperties({
 		borderLeftColor: semanticBorderColor,
 		borderRightColor: semanticBorderColor,
 		borderTopColor: semanticBorderColor,
+		/** @deprecated Use borderBottomColor — removed in v5 (DS-2026 major). */
 		borderBottomColour: mappedBorderBottomColours,
+		/** @deprecated Use borderLeftColor — removed in v5 (DS-2026 major). */
 		borderLeftColour: mappedBorderLeftColours,
+		/** @deprecated Use borderRightColor — removed in v5 (DS-2026 major). */
 		borderRightColour: mappedBorderRightColours,
+		/** @deprecated Use borderTopColor — removed in v5 (DS-2026 major). */
 		borderTopColour: mappedBorderTopColours,
 		borderLeftStyle: ['none', 'solid'],
 		borderBottomStyle: ['none', 'solid'],
@@ -198,8 +202,10 @@ const baseProperties = defineProperties({
 		borderTopStyle: ['none', 'solid'],
 		// Color
 		color: semanticColor,
+		/** @deprecated Use color — removed in v5 (DS-2026 major). */
 		colour: mappedColours,
 		backgroundColor: semanticBackgroundColor,
+		/** @deprecated Use backgroundColor — removed in v5 (DS-2026 major). */
 		backgroundColour: mappedBackgroundColours,
 		opacity: [0, '1', '0'],
 		// Typography
@@ -229,13 +235,16 @@ const baseProperties = defineProperties({
 		],
 		borderColorX: ['borderLeftColor', 'borderRightColor'],
 		borderColorY: ['borderBottomColor', 'borderTopColor'],
+		/** @deprecated Use borderColor — removed in v5 (DS-2026 major). */
 		borderColour: [
 			'borderBottomColour',
 			'borderLeftColour',
 			'borderRightColour',
 			'borderTopColour',
 		],
+		/** @deprecated Use borderColorX — removed in v5 (DS-2026 major). */
 		borderColourX: ['borderLeftColour', 'borderRightColour'],
+		/** @deprecated Use borderColorY — removed in v5 (DS-2026 major). */
 		borderColourY: ['borderBottomColour', 'borderTopColour'],
 		borderStyle: [
 			'borderBottomStyle',

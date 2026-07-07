@@ -134,6 +134,7 @@ export const Modal: FunctionComponent<ModalProps> = ({
 								: undefined
 						}
 						opacity={state === 'OPEN' ? undefined : 0}
+						// eslint-disable-next-line no-restricted-syntax -- RETAINED: intent-derived ref ("neutral" resolves via colours.intent.neutral), reverted by the C-theme-bridge corrective package — never repointed pre-major (docs/ds2026-plan/track-c.md §1.5 + deviation 12).
 						backgroundColour={
 							hideBackdrop ? 'transparent' : 'neutral'
 						}

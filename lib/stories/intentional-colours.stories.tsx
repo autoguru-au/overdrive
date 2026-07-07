@@ -1,12 +1,41 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 
+import { Box } from '../components/Box';
 import { FlexInline } from '../components/Flex/FlexInline';
 import { FlexStack } from '../components/Flex/FlexStack';
 import { Heading } from '../components/Heading';
+import { Text } from '../components/Text';
 import { overdriveTokens } from '../themes/theme.css';
 
 import { labels, variantColourSwatch } from './helpers/styles.css';
+
+/**
+ * Deprecation banner rendered at the top of the Legacy Coloursets page.
+ * The `colours.*` legacy contract documented on this page is retained,
+ * exported, and fully functional for MFE backwards compatibility — but it is
+ * frozen (see docs/ds2026-plan/track-c.md) and scheduled for removal in the
+ * DS-2026 major.
+ */
+const DeprecationBanner = () => (
+	<Box
+		backgroundColor="warning"
+		borderColor="warning"
+		borderWidth="1"
+		borderRadius="md"
+		p="5"
+	>
+		<Text strong color="warning">
+			Legacy Coloursets — deprecated
+		</Text>
+		<Text color="warning">
+			These <code>colours.*</code> tokens are retained for backwards
+			compatibility and will be removed in the DS-2026 major (v5). Use
+			the semantic <code>color.*</code> tokens (see &ldquo;Theme Colours
+			2026&rdquo;).
+		</Text>
+	</Box>
+);
 
 const ThemeSwatch = ({ label, cssVar }) => (
 	<FlexStack gap="1" key={label}>
@@ -65,16 +94,18 @@ const IntentionalSwatches = ({
 
 const meta: Meta = {
 	title: 'Foundation/Legacy Coloursets',
-	tags: ['!autodocs'],
+	tags: ['!autodocs', 'deprecated'],
 };
 export default meta;
 
 type Story = StoryObj;
 
 export const LegacyColoursets: Story = {
+	tags: ['deprecated'],
 	render: () => {
 		return (
 			<FlexStack gap="7">
+				<DeprecationBanner />
 				<hgroup>
 					<Heading as="h1">Intentional Colours</Heading>
 					<p>

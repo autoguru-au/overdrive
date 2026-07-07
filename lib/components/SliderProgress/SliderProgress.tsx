@@ -41,6 +41,7 @@ export const SliderProgress: NamedExoticComponent<SliderProgressProps> = memo(
 						className={styles.step}
 						paused={paused}
 						duration={duration}
+						// eslint-disable-next-line no-restricted-syntax -- RETAINED: public prop pass-through, intent-capable (accepts the 9 legacy intents), reverted by the C-theme-bridge corrective package (docs/ds2026-plan/track-c.md §1.5 + deviation 12).
 						backgroundColour={backgroundColour}
 						hasPassed={index < activeIndex}
 						isActive={index === activeIndex}

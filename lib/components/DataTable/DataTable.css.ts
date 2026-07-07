@@ -5,6 +5,7 @@ import { overdriveTokens as vars } from '../../themes/theme.css';
 export const scrollContainer = style({
 	selectors: {
 		['&:focus-visible']: {
+			// eslint-disable-next-line no-restricted-syntax -- RETAINED: intent-derived ref, reverted by the C-theme-bridge corrective package — never repointed pre-major (docs/ds2026-plan/track-c.md §1.5 + deviation 12).
 			outline: `2px solid ${vars.colours.intent.primary.background.standard}`,
 			outlineOffset: '-2px',
 		},
