@@ -49,9 +49,10 @@ export const tokens = {
 			normal: colourMap.gray['900'],
 			soft: colourMap.gray['700'],
 			inverse: colourMap.white,
-			info: colourMap.blue['600'],
-			danger: colourMap.red['600'],
-			success: colourMap.green['700'],
+			// Semantic text repointed to Figma's dark, AA-safe shades (AG-19959).
+			info: colourMap.blue['900'],
+			danger: colourMap.red['800'],
+			success: colourMap.green['900'],
 			warning: colourMap.yellow['800'],
 		},
 		interactive: {

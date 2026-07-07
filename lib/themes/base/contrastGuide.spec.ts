@@ -91,7 +91,8 @@ const tokenPairs = (tokens: Tokens): Array<[string, string, string]> => {
 // are corrected. Any NEW failure (or unexpected pass) breaks this suite.
 const KNOWN_AA_FAILURES: Record<string, string[]> = {
 	base: [
-		'content.success on surface.page',
+		// Pending designer decision (AG-19959): yellow can't pass AA as text;
+		// warning text stays yellow until a dark amber token is agreed.
 		'content.warning on surface.page',
 		'intent.brand foreground on background.standard',
 		'intent.primary foreground on background.standard',
@@ -103,7 +104,6 @@ const KNOWN_AA_FAILURES: Record<string, string[]> = {
 		'intent.warning foreground on background.strong',
 	],
 	flat_red: [
-		'content.success on surface.page',
 		'content.warning on surface.page',
 		'intent.brand foreground on background.standard',
 		'intent.primary foreground on background.standard',
@@ -114,7 +114,6 @@ const KNOWN_AA_FAILURES: Record<string, string[]> = {
 		'intent.warning foreground on background.strong',
 	],
 	neutral: [
-		'content.success on surface.page',
 		'content.warning on surface.page',
 		'intent.brand foreground on background.standard',
 		'intent.shine foreground on background.standard',
