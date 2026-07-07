@@ -7,8 +7,6 @@ import { tokens as neutralTokens } from '../neutral/tokens';
 import { contrastGuide, contrastGuideColour } from './contrastGuide';
 import { tokens as baseTokens } from './tokens';
 
-// getContrastRatio returns the inverted (min/max) ratio; convert to the
-// conventional WCAG ">= 4.5" form
 const ratio = (foreground: string, background: string) =>
 	1 / getContrastRatio(foreground, background);
 
@@ -16,9 +14,6 @@ const allCombos = Object.values(contrastGuide).flat();
 const label = ({ foreground, background }: (typeof allCombos)[number]) =>
 	`${foreground} on ${background}`;
 
-// Design-approved exceptions that sit below even the 3:1 non-text threshold.
-// Flagged with the design team — remove entries here once the palette or the
-// guide is adjusted.
 const KNOWN_BELOW_ICON_THRESHOLD = new Set(['green-600 on white']);
 
 describe('contrast guide', () => {
@@ -56,8 +51,6 @@ describe('contrast guide', () => {
 
 type Tokens = typeof baseTokens;
 
-// The foreground/background pairings each theme's tokens are intended to
-// produce in components
 const tokenPairs = (tokens: Tokens): Array<[string, string, string]> => {
 	const { surface, content } = tokens.color;
 	return [
@@ -86,9 +79,6 @@ const tokenPairs = (tokens: Tokens): Array<[string, string, string]> => {
 	];
 };
 
-// Pairings that do not currently meet AA under the Design System 2026 ramps.
-// Listed with the design team via AG-19959 — remove entries as token values
-// are corrected. Any NEW failure (or unexpected pass) breaks this suite.
 const KNOWN_AA_FAILURES: Record<string, string[]> = {
 	base: [
 		'content.warning on surface.page',
