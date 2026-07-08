@@ -47,6 +47,25 @@ export const tokenGrid = style({
 	gridTemplateColumns: 'repeat(auto-fill, minmax(230px, 1fr))',
 });
 
+/**
+ * Aligned columns for the Foundation/Space ladder: Figma index, px value,
+ * proportional bar, token-key chip and tag. Bars share a common left
+ * baseline so the ascending scale reads as a clean staircase.
+ */
+export const spaceLadderGrid = style({
+	alignItems: 'center',
+	columnGap: '20px',
+	display: 'grid',
+	gridTemplateColumns: 'repeat(5, auto)',
+	rowGap: '10px',
+});
+
+/** Subtle divider under the Foundation/Space ladder header row. */
+export const spaceLadderHeaderCell = style({
+	borderBottom: `1px solid ${overdriveTokens.color.gamut.gray[200]}`,
+	paddingBottom: '6px',
+});
+
 /** Bordered card that groups a swatch with its name, description and token. */
 export const tokenCard = style({
 	backgroundColor: overdriveTokens.color.gamut.white,

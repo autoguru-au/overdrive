@@ -13,6 +13,8 @@ import { breakpoints } from '../themes/makeTheme';
 import {
 	labels,
 	small,
+	spaceLadderGrid,
+	spaceLadderHeaderCell,
 	titles,
 	tokenCode,
 	tokenDescription,
@@ -64,13 +66,8 @@ if (process.env.NODE_ENV !== 'production') {
 	});
 }
 
-const isOrdinalKey = (key: keyof typeof tokens.space) => /^[1-9]$/.test(key);
-const legacyOrdinals = SPACE_SCALE.filter((step) =>
-	isOrdinalKey(step.tokenKey),
-);
-
 const SpaceRow = ({ figmaIndex, px, tokenKey, legacy }: SpaceStep) => (
-	<FlexInline gap="5" justify="center">
+	<>
 		<span className={clsx(labels, small)}>
 			{figmaIndex === null ? '—' : figmaIndex}
 		</span>
@@ -87,59 +84,50 @@ const SpaceRow = ({ figmaIndex, px, tokenKey, legacy }: SpaceStep) => (
 			/>
 		)}
 		<code className={tokenCode}>space=&quot;{tokenKey}&quot;</code>
-		{!legacy && (
-			<span className={clsx(small, tokenDescription)}>DS-2026</span>
+		{legacy ? (
+			<span className={small} aria-hidden="true" />
+		) : (
+			<span className={clsx(small, tokenDescription)}>new-DS</span>
 		)}
-	</FlexInline>
+	</>
 );
 
 const SpaceScale = () => (
 	<FlexStack gap="5">
-		<Heading as="h2" className={titles}>
-			DS-2026 spacing scale
-		</Heading>
 		<div className={sprinkles({ maxWidth: 'medium' })}>
 			<Text as="p">
-				The ladder below is the complete DS-2026 spacing system,
-				delivered by a mix of frozen legacy ordinal keys (
+				The ladder below is the complete spacing system, delivered by a
+				mix of frozen legacy ordinal keys (
 				<code className={tokenCode}>1</code>–
 				<code className={tokenCode}>9</code>, never renumbered, so
-				existing consumers are unaffected) and new px-named keys added
-				for DS-2026 (<code className={tokenCode}>2px</code>,{' '}
+				existing consumers are unaffected) and new px-named keys (
+				<code className={tokenCode}>2px</code>,{' '}
 				<code className={tokenCode}>40px</code>,{' '}
 				<code className={tokenCode}>64px</code>,{' '}
 				<code className={tokenCode}>80px</code>). The Figma column maps
 				each step to the design file&apos;s 0–12 numbering.
 			</Text>
 		</div>
-		<FlexStack gap="3">
+		<div className={spaceLadderGrid}>
+			<span className={clsx(labels, small, spaceLadderHeaderCell)}>
+				Figma
+			</span>
+			<span className={clsx(labels, small, spaceLadderHeaderCell)}>
+				Px
+			</span>
+			<span className={clsx(labels, small, spaceLadderHeaderCell)}>
+				Scale
+			</span>
+			<span className={clsx(labels, small, spaceLadderHeaderCell)}>
+				Token
+			</span>
+			<span className={clsx(labels, small, spaceLadderHeaderCell)}>
+				Tag
+			</span>
 			{SPACE_SCALE.map((step) => (
 				<SpaceRow key={step.tokenKey} {...step} />
 			))}
-		</FlexStack>
-	</FlexStack>
-);
-
-const LegacyOrdinals = () => (
-	<FlexStack gap="3">
-		<Heading as="h3" className={titles}>
-			Legacy ordinal keys
-		</Heading>
-		<Text as="p" className={small}>
-			The ordinal keys 1–9 (and none) are retained unchanged for backwards
-			compatibility until the DS-2026 major. Where values overlap, ordinal
-			and px-named keys render identically.
-		</Text>
-		<FlexInline gap="3">
-			{legacyOrdinals.map(({ tokenKey, px }) => (
-				<code
-					key={tokenKey}
-					className={clsx(tokenCode, tokenDescription)}
-				>
-					{tokenKey} → {px}
-				</code>
-			))}
-		</FlexInline>
+		</div>
 	</FlexStack>
 );
 
@@ -176,7 +164,6 @@ export const Space: Story = {
 		<FlexInline gap="8">
 			<Heading as="h1">Space</Heading>
 			<SpaceScale />
-			<LegacyOrdinals />
 			<Breakpoints />
 		</FlexInline>
 	),
