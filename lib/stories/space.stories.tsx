@@ -21,8 +21,6 @@ import {
 } from './helpers/styles.css';
 
 interface SpaceStep {
-	/** Position in the DS-2026 Figma spacing scale (0–12), or `null` for the legacy zero value. */
-	figmaIndex: number | null;
 	/** The rendered pixel value — cross-checked against `tokens.space` below. */
 	px: string;
 	/** The token key consumers pass as `space="…"`. */
@@ -34,24 +32,24 @@ interface SpaceStep {
 /**
  * The complete DS-2026 spacing ladder, in visual order. This is an explicit
  * array rather than `Object.keys(tokens.space)` because JS auto-sorts
- * integer-like object keys, which would scramble the `2px`/`40px`/`64px`/
+ * integer-like object keys, which would scramble the `40px`/`64px`/
  * `80px` entries relative to the ordinal keys.
  */
 const SPACE_SCALE: SpaceStep[] = [
-	{ figmaIndex: null, px: '0px', tokenKey: 'none', legacy: true },
-	{ figmaIndex: 0, px: '2px', tokenKey: '2px', legacy: false },
-	{ figmaIndex: 1, px: '4px', tokenKey: '1', legacy: true },
-	{ figmaIndex: 2, px: '8px', tokenKey: '2', legacy: true },
-	{ figmaIndex: 3, px: '12px', tokenKey: '3', legacy: true },
-	{ figmaIndex: 4, px: '16px', tokenKey: '4', legacy: true },
-	{ figmaIndex: 5, px: '20px', tokenKey: '5', legacy: true },
-	{ figmaIndex: 6, px: '24px', tokenKey: '6', legacy: true },
-	{ figmaIndex: 7, px: '32px', tokenKey: '7', legacy: true },
-	{ figmaIndex: 8, px: '40px', tokenKey: '40px', legacy: false },
-	{ figmaIndex: 9, px: '48px', tokenKey: '8', legacy: true },
-	{ figmaIndex: 10, px: '64px', tokenKey: '64px', legacy: false },
-	{ figmaIndex: 11, px: '80px', tokenKey: '80px', legacy: false },
-	{ figmaIndex: 12, px: '96px', tokenKey: '9', legacy: true },
+	{ px: '0px', tokenKey: 'none', legacy: true },
+	{ px: '2px', tokenKey: '0', legacy: false },
+	{ px: '4px', tokenKey: '1', legacy: true },
+	{ px: '8px', tokenKey: '2', legacy: true },
+	{ px: '12px', tokenKey: '3', legacy: true },
+	{ px: '16px', tokenKey: '4', legacy: true },
+	{ px: '20px', tokenKey: '5', legacy: true },
+	{ px: '24px', tokenKey: '6', legacy: true },
+	{ px: '32px', tokenKey: '7', legacy: true },
+	{ px: '40px', tokenKey: '40px', legacy: false },
+	{ px: '48px', tokenKey: '8', legacy: true },
+	{ px: '64px', tokenKey: '64px', legacy: false },
+	{ px: '80px', tokenKey: '80px', legacy: false },
+	{ px: '96px', tokenKey: '9', legacy: true },
 ];
 
 // Fail loudly if the curated scale above ever drifts from the real tokens,
@@ -66,14 +64,11 @@ if (process.env.NODE_ENV !== 'production') {
 	});
 }
 
-const SpaceRow = ({ figmaIndex, px, tokenKey, legacy }: SpaceStep) => (
+const SpaceRow = ({ px, tokenKey, legacy }: SpaceStep) => (
 	<>
-		<span className={clsx(labels, small)}>
-			{figmaIndex === null ? '—' : figmaIndex}
-		</span>
 		<span className={small}>{px}</span>
 		{tokenKey === 'none' ? (
-			<span className={small}>—</span>
+			<span className={small} aria-hidden="true" />
 		) : (
 			<div
 				className={sprinkles({
@@ -101,17 +96,13 @@ const SpaceScale = () => (
 				<code className={tokenCode}>1</code>–
 				<code className={tokenCode}>9</code>, never renumbered, so
 				existing consumers are unaffected) and new px-named keys (
-				<code className={tokenCode}>2px</code>,{' '}
+				<code className={tokenCode}>0</code>,{' '}
 				<code className={tokenCode}>40px</code>,{' '}
 				<code className={tokenCode}>64px</code>,{' '}
-				<code className={tokenCode}>80px</code>). The Figma column maps
-				each step to the design file&apos;s 0–12 numbering.
+				<code className={tokenCode}>80px</code>).
 			</Text>
 		</div>
 		<div className={spaceLadderGrid}>
-			<span className={clsx(labels, small, spaceLadderHeaderCell)}>
-				Figma
-			</span>
 			<span className={clsx(labels, small, spaceLadderHeaderCell)}>
 				Px
 			</span>

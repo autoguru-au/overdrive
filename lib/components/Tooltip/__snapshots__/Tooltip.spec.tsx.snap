@@ -59,7 +59,7 @@ exports[`<Tooltip /> > should match snapshot when opened 1`] = `
       style="position: absolute; left: 0px; top: 0px; margin: 0px;"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_paddingLeft_3_mobile__onxwju189 sprinkles_paddingRight_3_mobile__onxwju19t sprinkles_paddingTop_2_mobile__onxwju1b9 sprinkles_paddingBottom_2_mobile__onxwju16l sprinkles_overflow_hidden_mobile__onxwjug5 sprinkles_pointerEvents_none__onxwjues sprinkles_userSelect_none__onxwjuev sprinkles_width_full_mobile__onxwjut1 sprinkles_backgroundColor_gray900__onxwjubd sprinkles_boxShadow_4__onxwjuek sprinkles_borderRadius_1_mobile__onxwjult Tooltip_root__1qliafn0"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_paddingLeft_3_mobile__onxwju18d sprinkles_paddingRight_3_mobile__onxwju19x sprinkles_paddingTop_2_mobile__onxwju1bd sprinkles_paddingBottom_2_mobile__onxwju16p sprinkles_overflow_hidden_mobile__onxwjug5 sprinkles_pointerEvents_none__onxwjues sprinkles_userSelect_none__onxwjuev sprinkles_width_full_mobile__onxwjut1 sprinkles_backgroundColor_gray900__onxwjubd sprinkles_boxShadow_4__onxwjuek sprinkles_borderRadius_1_mobile__onxwjult Tooltip_root__1qliafn0"
         id="_r_3_"
         role="tooltip"
       >

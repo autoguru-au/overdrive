@@ -22,6 +22,7 @@ export const tokens = {
 		medium: '940px',
 	},
 	space: {
+		'0': '2px',
 		'1': '4px',
 		'2': '8px',
 		'3': '12px',
@@ -31,7 +32,6 @@ export const tokens = {
 		'7': '32px',
 		'8': '48px',
 		'9': '96px',
-		'2px': '2px',
 		'40px': '40px',
 		'64px': '64px',
 		'80px': '80px',

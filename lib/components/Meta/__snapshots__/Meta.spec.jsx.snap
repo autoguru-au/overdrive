@@ -6,7 +6,7 @@ exports[`<Meta /> > should match snapshot with label, icon for Primary variant 1
   data-od-component="provider"
 >
   <span
-    class="sprinkles_alignItems_center_mobile__onxwju101 sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwju131 sprinkles_flexWrap_nowrap_mobile__onxwju145 sprinkles_gap_2_mobile__onxwjuu5 sprinkles_justifyContent_start_mobile__onxwju129"
+    class="sprinkles_alignItems_center_mobile__onxwju101 sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwju131 sprinkles_flexWrap_nowrap_mobile__onxwju145 sprinkles_gap_2_mobile__onxwjuu9 sprinkles_justifyContent_start_mobile__onxwju129"
   >
     <span
       class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuf1 Icon_makeResponsiveStyle_key_bp__1gy3ire0 Meta_variant_primary__5jk44p0"
@@ -38,7 +38,7 @@ exports[`<Meta /> > should match snapshot with label, icon for Secondary variant
   data-od-component="provider"
 >
   <span
-    class="sprinkles_alignItems_center_mobile__onxwju101 sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwju131 sprinkles_flexWrap_nowrap_mobile__onxwju145 sprinkles_gap_2_mobile__onxwjuu5 sprinkles_justifyContent_start_mobile__onxwju129"
+    class="sprinkles_alignItems_center_mobile__onxwju101 sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwju131 sprinkles_flexWrap_nowrap_mobile__onxwju145 sprinkles_gap_2_mobile__onxwjuu9 sprinkles_justifyContent_start_mobile__onxwju129"
   >
     <span
       class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuf1 Icon_makeResponsiveStyle_key_bp__1gy3ire0 Meta_variant_secondary__5jk44p1"

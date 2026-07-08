@@ -23,7 +23,7 @@ exports[`<Tabs /> > should allow id overriding 1`] = `
           role="tab"
         >
           <div
-            class="sprinkles_alignItems_center_mobile__onxwju101 sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwju131 sprinkles_flexWrap_nowrap_mobile__onxwju145 sprinkles_gap_2_mobile__onxwjuu5 sprinkles_justifyContent_center_mobile__onxwju11p"
+            class="sprinkles_alignItems_center_mobile__onxwju101 sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwju131 sprinkles_flexWrap_nowrap_mobile__onxwju145 sprinkles_gap_2_mobile__onxwjuu9 sprinkles_justifyContent_center_mobile__onxwju11p"
           >
             <span
               class="Tab_item__11wt3mu8"
@@ -40,7 +40,7 @@ exports[`<Tabs /> > should allow id overriding 1`] = `
           tabindex="-1"
         >
           <div
-            class="sprinkles_alignItems_center_mobile__onxwju101 sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwju131 sprinkles_flexWrap_nowrap_mobile__onxwju145 sprinkles_gap_2_mobile__onxwjuu5 sprinkles_justifyContent_center_mobile__onxwju11p"
+            class="sprinkles_alignItems_center_mobile__onxwju101 sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwju131 sprinkles_flexWrap_nowrap_mobile__onxwju145 sprinkles_gap_2_mobile__onxwjuu9 sprinkles_justifyContent_center_mobile__onxwju11p"
           >
             <span
               class="Tab_item__11wt3mu8"
@@ -57,7 +57,7 @@ exports[`<Tabs /> > should allow id overriding 1`] = `
           tabindex="-1"
         >
           <div
-            class="sprinkles_alignItems_center_mobile__onxwju101 sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwju131 sprinkles_flexWrap_nowrap_mobile__onxwju145 sprinkles_gap_2_mobile__onxwjuu5 sprinkles_justifyContent_center_mobile__onxwju11p"
+            class="sprinkles_alignItems_center_mobile__onxwju101 sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwju131 sprinkles_flexWrap_nowrap_mobile__onxwju145 sprinkles_gap_2_mobile__onxwjuu9 sprinkles_justifyContent_center_mobile__onxwju11p"
           >
             <span
               class="Tab_item__11wt3mu8"
@@ -70,7 +70,7 @@ exports[`<Tabs /> > should allow id overriding 1`] = `
     </div>
   </div>
   <div
-    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_width_full_mobile__onxwjut1 sprinkles_paddingBottom_6_mobile__onxwju171 sprinkles_paddingTop_6_mobile__onxwju1bp TabPanes_root__15xyz920"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_width_full_mobile__onxwjut1 sprinkles_paddingBottom_6_mobile__onxwju175 sprinkles_paddingTop_6_mobile__onxwju1bt TabPanes_root__15xyz920"
   >
     <div
       class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_width_full_mobile__onxwjut1 TabPane_root__1e18dwc0"
@@ -125,7 +125,7 @@ exports[`<Tabs /> > should allow rendering indications 1`] = `
           role="tab"
         >
           <div
-            class="sprinkles_alignItems_center_mobile__onxwju101 sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwju131 sprinkles_flexWrap_nowrap_mobile__onxwju145 sprinkles_gap_2_mobile__onxwjuu5 sprinkles_justifyContent_center_mobile__onxwju11p"
+            class="sprinkles_alignItems_center_mobile__onxwju101 sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwju131 sprinkles_flexWrap_nowrap_mobile__onxwju145 sprinkles_gap_2_mobile__onxwjuu9 sprinkles_justifyContent_center_mobile__onxwju11p"
           >
             <span
               class="Tab_item__11wt3mu8"
@@ -147,7 +147,7 @@ exports[`<Tabs /> > should allow rendering indications 1`] = `
           tabindex="-1"
         >
           <div
-            class="sprinkles_alignItems_center_mobile__onxwju101 sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwju131 sprinkles_flexWrap_nowrap_mobile__onxwju145 sprinkles_gap_2_mobile__onxwjuu5 sprinkles_justifyContent_center_mobile__onxwju11p"
+            class="sprinkles_alignItems_center_mobile__onxwju101 sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwju131 sprinkles_flexWrap_nowrap_mobile__onxwju145 sprinkles_gap_2_mobile__onxwjuu9 sprinkles_justifyContent_center_mobile__onxwju11p"
           >
             <span
               class="Tab_item__11wt3mu8"
@@ -169,7 +169,7 @@ exports[`<Tabs /> > should allow rendering indications 1`] = `
           tabindex="-1"
         >
           <div
-            class="sprinkles_alignItems_center_mobile__onxwju101 sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwju131 sprinkles_flexWrap_nowrap_mobile__onxwju145 sprinkles_gap_2_mobile__onxwjuu5 sprinkles_justifyContent_center_mobile__onxwju11p"
+            class="sprinkles_alignItems_center_mobile__onxwju101 sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwju131 sprinkles_flexWrap_nowrap_mobile__onxwju145 sprinkles_gap_2_mobile__onxwjuu9 sprinkles_justifyContent_center_mobile__onxwju11p"
           >
             <span
               class="Tab_item__11wt3mu8"
@@ -187,7 +187,7 @@ exports[`<Tabs /> > should allow rendering indications 1`] = `
     </div>
   </div>
   <div
-    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_width_full_mobile__onxwjut1 sprinkles_paddingBottom_6_mobile__onxwju171 sprinkles_paddingTop_6_mobile__onxwju1bp TabPanes_root__15xyz920"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_width_full_mobile__onxwjut1 sprinkles_paddingBottom_6_mobile__onxwju175 sprinkles_paddingTop_6_mobile__onxwju1bt TabPanes_root__15xyz920"
   >
     <div
       class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_width_full_mobile__onxwjut1 TabPane_root__1e18dwc0"
@@ -242,7 +242,7 @@ exports[`<Tabs /> > should match snapshot (high level) 1`] = `
           role="tab"
         >
           <div
-            class="sprinkles_alignItems_center_mobile__onxwju101 sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwju131 sprinkles_flexWrap_nowrap_mobile__onxwju145 sprinkles_gap_2_mobile__onxwjuu5 sprinkles_justifyContent_center_mobile__onxwju11p"
+            class="sprinkles_alignItems_center_mobile__onxwju101 sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwju131 sprinkles_flexWrap_nowrap_mobile__onxwju145 sprinkles_gap_2_mobile__onxwjuu9 sprinkles_justifyContent_center_mobile__onxwju11p"
           >
             <span
               class="Tab_item__11wt3mu8"
@@ -259,7 +259,7 @@ exports[`<Tabs /> > should match snapshot (high level) 1`] = `
           tabindex="-1"
         >
           <div
-            class="sprinkles_alignItems_center_mobile__onxwju101 sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwju131 sprinkles_flexWrap_nowrap_mobile__onxwju145 sprinkles_gap_2_mobile__onxwjuu5 sprinkles_justifyContent_center_mobile__onxwju11p"
+            class="sprinkles_alignItems_center_mobile__onxwju101 sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwju131 sprinkles_flexWrap_nowrap_mobile__onxwju145 sprinkles_gap_2_mobile__onxwjuu9 sprinkles_justifyContent_center_mobile__onxwju11p"
           >
             <span
               class="Tab_item__11wt3mu8"
@@ -276,7 +276,7 @@ exports[`<Tabs /> > should match snapshot (high level) 1`] = `
           tabindex="-1"
         >
           <div
-            class="sprinkles_alignItems_center_mobile__onxwju101 sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwju131 sprinkles_flexWrap_nowrap_mobile__onxwju145 sprinkles_gap_2_mobile__onxwjuu5 sprinkles_justifyContent_center_mobile__onxwju11p"
+            class="sprinkles_alignItems_center_mobile__onxwju101 sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwju131 sprinkles_flexWrap_nowrap_mobile__onxwju145 sprinkles_gap_2_mobile__onxwjuu9 sprinkles_justifyContent_center_mobile__onxwju11p"
           >
             <span
               class="Tab_item__11wt3mu8"
@@ -289,7 +289,7 @@ exports[`<Tabs /> > should match snapshot (high level) 1`] = `
     </div>
   </div>
   <div
-    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_width_full_mobile__onxwjut1 sprinkles_paddingBottom_6_mobile__onxwju171 sprinkles_paddingTop_6_mobile__onxwju1bp TabPanes_root__15xyz920"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_width_full_mobile__onxwjut1 sprinkles_paddingBottom_6_mobile__onxwju175 sprinkles_paddingTop_6_mobile__onxwju1bt TabPanes_root__15xyz920"
   >
     <div
       class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_width_full_mobile__onxwjut1 TabPane_root__1e18dwc0"

@@ -48,15 +48,15 @@ export const tokenGrid = style({
 });
 
 /**
- * Aligned columns for the Foundation/Space ladder: Figma index, px value,
- * proportional bar, token-key chip and tag. Bars share a common left
- * baseline so the ascending scale reads as a clean staircase.
+ * Aligned columns for the Foundation/Space ladder: px value, proportional
+ * bar, token-key chip and tag. Bars share a common left baseline so the
+ * ascending scale reads as a clean staircase.
  */
 export const spaceLadderGrid = style({
 	alignItems: 'center',
 	columnGap: '20px',
 	display: 'grid',
-	gridTemplateColumns: 'repeat(5, auto)',
+	gridTemplateColumns: 'repeat(4, auto)',
 	rowGap: '10px',
 });
 

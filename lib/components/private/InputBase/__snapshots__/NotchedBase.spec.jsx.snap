@@ -18,7 +18,7 @@ exports[`<NotchedBase /> > should match snapshot for active notch 1`] = `
         class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld"
       >
         <div
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_paddingLeft_2_mobile__onxwju185 sprinkles_paddingRight_2_mobile__onxwju19p sprinkles_display_block_mobile__onxwjuf1 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_paddingLeft_2_mobile__onxwju189 sprinkles_paddingRight_2_mobile__onxwju19t sprinkles_display_block_mobile__onxwjuf1 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
         >
           placeholder something
         </div>
@@ -54,7 +54,7 @@ exports[`<NotchedBase /> > should match snapshot for default notch 1`] = `
         class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld"
       >
         <div
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_paddingLeft_2_mobile__onxwju185 sprinkles_paddingRight_2_mobile__onxwju19p sprinkles_display_block_mobile__onxwjuf1 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_paddingLeft_2_mobile__onxwju189 sprinkles_paddingRight_2_mobile__onxwju19t sprinkles_display_block_mobile__onxwjuf1 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
         >
           placeholder something
         </div>
@@ -90,7 +90,7 @@ exports[`<NotchedBase /> > should match snapshot for dirty and active notch 1`] 
         class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld"
       >
         <div
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_paddingLeft_2_mobile__onxwju185 sprinkles_paddingRight_2_mobile__onxwju19p sprinkles_display_block_mobile__onxwjuf1 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_paddingLeft_2_mobile__onxwju189 sprinkles_paddingRight_2_mobile__onxwju19t sprinkles_display_block_mobile__onxwjuf1 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
         >
           placeholder something
         </div>
@@ -126,7 +126,7 @@ exports[`<NotchedBase /> > should match snapshot for dirty notch 1`] = `
         class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld"
       >
         <div
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_paddingLeft_2_mobile__onxwju185 sprinkles_paddingRight_2_mobile__onxwju19p sprinkles_display_block_mobile__onxwjuf1 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_paddingLeft_2_mobile__onxwju189 sprinkles_paddingRight_2_mobile__onxwju19t sprinkles_display_block_mobile__onxwjuf1 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
         >
           placeholder something
         </div>

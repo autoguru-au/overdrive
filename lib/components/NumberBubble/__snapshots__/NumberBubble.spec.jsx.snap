@@ -6,7 +6,7 @@ exports[`<Section /> > should match the snapshot for negative value 1`] = `
   data-od-component="provider"
 >
   <div
-    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_width_4_mobile__onxwjurl sprinkles_height_4_mobile__onxwjupl sprinkles_display_inline-flex_mobile__onxwjufx sprinkles_backgroundColour_gray900__onxwjucx sprinkles_borderRadius_full_mobile__onxwjumt sprinkles_alignItems_center_mobile__onxwju101 sprinkles_justifyContent_center_mobile__onxwju11p"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_width_4_mobile__onxwjurp sprinkles_height_4_mobile__onxwjupp sprinkles_display_inline-flex_mobile__onxwjufx sprinkles_backgroundColour_gray900__onxwjucx sprinkles_borderRadius_full_mobile__onxwjumt sprinkles_alignItems_center_mobile__onxwju101 sprinkles_justifyContent_center_mobile__onxwju11p"
     data-od-component="number-bubble"
   >
     <span
@@ -24,7 +24,7 @@ exports[`<Section /> > should match the snapshot for positive value 1`] = `
   data-od-component="provider"
 >
   <div
-    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_width_4_mobile__onxwjurl sprinkles_height_4_mobile__onxwjupl sprinkles_display_inline-flex_mobile__onxwjufx sprinkles_backgroundColour_gray900__onxwjucx sprinkles_borderRadius_full_mobile__onxwjumt sprinkles_alignItems_center_mobile__onxwju101 sprinkles_justifyContent_center_mobile__onxwju11p"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_width_4_mobile__onxwjurp sprinkles_height_4_mobile__onxwjupp sprinkles_display_inline-flex_mobile__onxwjufx sprinkles_backgroundColour_gray900__onxwjucx sprinkles_borderRadius_full_mobile__onxwjumt sprinkles_alignItems_center_mobile__onxwju101 sprinkles_justifyContent_center_mobile__onxwju11p"
     data-od-component="number-bubble"
   >
     <span
