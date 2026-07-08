@@ -23,6 +23,42 @@ export const small = style({
 	fontSize: 'small',
 });
 
+/**
+ * Aligned columns for the Foundation/Space ladder: px value, proportional
+ * bar and token-key chip. Bars share a common left baseline so the ascending
+ * scale reads as a clean staircase.
+ */
+export const spaceLadderGrid = style({
+	alignItems: 'center',
+	columnGap: '20px',
+	display: 'grid',
+	gridTemplateColumns: 'repeat(3, auto)',
+	rowGap: '10px',
+});
+
+/** Subtle divider under the Foundation/Space ladder header row. */
+export const spaceLadderHeaderCell = style({
+	borderBottom: `1px solid ${overdriveTokens.color.gamut.gray[200]}`,
+	paddingBottom: '6px',
+});
+
+/**
+ * The token key, contained in a subtle code chip that wraps at any character
+ * so a long token never overflows or hyphenates awkwardly.
+ */
+export const tokenCode = style({
+	alignSelf: 'flex-start',
+	backgroundColor: overdriveTokens.color.gamut.gray[100],
+	borderRadius: '6px',
+	color: overdriveTokens.color.gamut.gray[700],
+	fontFamily: 'monospace',
+	fontSize: '11px',
+	lineHeight: 1.4,
+	maxWidth: '100%',
+	overflowWrap: 'anywhere',
+	padding: '4px 8px',
+});
+
 export const gridSwatches = style({
 	display: 'grid',
 	gap: '1.3em',
