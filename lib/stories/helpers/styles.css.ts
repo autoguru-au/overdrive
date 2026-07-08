@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { globalStyle, style } from '@vanilla-extract/css';
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
 import { overdriveTokens } from '../../themes';
@@ -64,6 +64,79 @@ export const spaceLadderGrid = style({
 export const spaceLadderHeaderCell = style({
 	borderBottom: `1px solid ${overdriveTokens.color.gamut.gray[200]}`,
 	paddingBottom: '6px',
+});
+
+/**
+ * Ladder variant for Foundation/Borders → Width:
+ * Px · Scale · Token · Use · Shape · Tag.
+ */
+export const widthLadderGrid = style({
+	alignItems: 'center',
+	columnGap: '20px',
+	display: 'grid',
+	// Use column flexes so the Tag lands at the far right, aligned with the
+	// Radius/Shadow tables.
+	gridTemplateColumns: 'auto auto auto minmax(0, 1fr) auto auto',
+	rowGap: '10px',
+});
+
+/**
+ * Ladder variant for Foundation/Borders → Radius:
+ * Value · Shape · Token · Use · Tag.
+ */
+export const radiusLadderGrid = style({
+	alignItems: 'center',
+	columnGap: '20px',
+	display: 'grid',
+	gridTemplateColumns: 'auto auto auto minmax(0, 1fr) auto',
+	rowGap: '12px',
+});
+
+/**
+ * A single ladder row that re-uses the parent grid's column tracks via
+ * `subgrid`, so a highlighted (deprecated) row can paint one continuous
+ * background across every column, gaps included.
+ */
+export const ladderRow = style({
+	alignItems: 'center',
+	display: 'grid',
+	gridColumn: '1 / -1',
+	gridTemplateColumns: 'subgrid',
+	paddingBlock: '8px',
+	paddingInline: '12px',
+});
+
+// `tokenCode` sets alignSelf: flex-start for the card layout; in a ladder row
+// that top-aligns the chip while the other cells centre. Force it centred so
+// every cell in the row sits on one line.
+globalStyle(`${ladderRow} code`, {
+	alignSelf: 'center',
+});
+
+/** Amber wash for a deprecated row (matches the Deprecated header bar). */
+export const ladderRowDeprecated = style({
+	backgroundColor: overdriveTokens.color.gamut.yellow[100],
+	borderRadius: '8px',
+});
+
+// On a deprecated (amber) row, drop the token chip's grey fill so it doesn't
+// clash with the amber wash — the token reads directly on the row.
+globalStyle(`${ladderRowDeprecated} code`, {
+	backgroundColor: 'transparent',
+});
+
+/**
+ * Aligned columns for the Foundation/Borders ladders: swatch preview, value,
+ * token-key chip, usage note and status chip. Shared by the Width, Radius and
+ * Shadow tables so all three read as one consistent scale, matching
+ * Foundation/Space.
+ */
+export const borderLadderGrid = style({
+	alignItems: 'center',
+	columnGap: '20px',
+	display: 'grid',
+	gridTemplateColumns: 'auto auto auto minmax(0, 1fr) auto',
+	rowGap: '14px',
 });
 
 /** Bordered card that groups a swatch with its name, description and token. */
