@@ -22,7 +22,6 @@ export const tokens = {
 		medium: '940px',
 	},
 	space: {
-		'0': '2px',
 		'1': '4px',
 		'2': '8px',
 		'3': '12px',
@@ -32,9 +31,6 @@ export const tokens = {
 		'7': '32px',
 		'8': '48px',
 		'9': '96px',
-		'40px': '40px',
-		'64px': '64px',
-		'80px': '80px',
 		none: '0px',
 	},
 	color: {
@@ -378,40 +374,6 @@ export const tokens = {
 			'9': {
 				fontSize: '40px',
 				lineHeight: '48px',
-			},
-			// Design System 2026 named text styles (opt-in) — line heights
-			// are ratio-derived: 1.25 for headings, 1.4 for paragraphs
-			h1: {
-				fontSize: '40px',
-				lineHeight: '50px',
-			},
-			h2: {
-				fontSize: '32px',
-				lineHeight: '40px',
-			},
-			h3: {
-				fontSize: '24px',
-				lineHeight: '30px',
-			},
-			h4: {
-				fontSize: '20px',
-				lineHeight: '25px',
-			},
-			p1: {
-				fontSize: '16px',
-				lineHeight: '22.4px',
-			},
-			p2: {
-				fontSize: '14px',
-				lineHeight: '19.6px',
-			},
-			p3: {
-				fontSize: '12px',
-				lineHeight: '16.8px',
-			},
-			p4: {
-				fontSize: '10px',
-				lineHeight: '14px',
 			},
 		},
 		colour: {

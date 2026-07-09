@@ -96,10 +96,6 @@ const THEME_CONTRACT = {
 		'7': 'space-7',
 		'8': 'space-8',
 		'9': 'space-9',
-		'0': 'space-0',
-		'40px': 'space-40px',
-		'64px': 'space-64px',
-		'80px': 'space-80px',
 		none: 'space-none',
 	},
 	// new colour token structure 2025
@@ -398,39 +394,6 @@ const THEME_CONTRACT = {
 			'9': {
 				fontSize: 'typography-size-9-font-size',
 				lineHeight: 'typography-size-9-line-height',
-			},
-			// Design System 2026 named text styles (opt-in)
-			h1: {
-				fontSize: 'typography-size-h1-font-size',
-				lineHeight: 'typography-size-h1-line-height',
-			},
-			h2: {
-				fontSize: 'typography-size-h2-font-size',
-				lineHeight: 'typography-size-h2-line-height',
-			},
-			h3: {
-				fontSize: 'typography-size-h3-font-size',
-				lineHeight: 'typography-size-h3-line-height',
-			},
-			h4: {
-				fontSize: 'typography-size-h4-font-size',
-				lineHeight: 'typography-size-h4-line-height',
-			},
-			p1: {
-				fontSize: 'typography-size-p1-font-size',
-				lineHeight: 'typography-size-p1-line-height',
-			},
-			p2: {
-				fontSize: 'typography-size-p2-font-size',
-				lineHeight: 'typography-size-p2-line-height',
-			},
-			p3: {
-				fontSize: 'typography-size-p3-font-size',
-				lineHeight: 'typography-size-p3-line-height',
-			},
-			p4: {
-				fontSize: 'typography-size-p4-font-size',
-				lineHeight: 'typography-size-p4-line-height',
 			},
 		},
 		// phase out: typography specific colours for backwards compatibility

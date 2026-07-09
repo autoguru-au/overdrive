@@ -38,7 +38,7 @@ export const Heading = ({
 	size,
 	transform,
 	testId,
-	weight,
+	weight = 'bold',
 	wrap,
 
 	display,

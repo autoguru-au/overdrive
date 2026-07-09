@@ -5,70 +5,20 @@ import { sprinkles, type Sprinkles } from './sprinkles.css';
 import {
 	common,
 	type LegacyTextColours,
-	// eslint-disable-next-line no-restricted-imports -- RETAINED: an explicitly-supplied legacy `colour` still resolves through sprinklesLegacyText (intent keys are theme-overridden — never repointed pre-major); docs/ds2026-plan/track-c.md §"C-P4 default-path decision".
+	// eslint-disable-next-line no-restricted-imports -- RETAINED: the legacy text-colour sprinkle stays until the DS-2026 major (Track C).
 	sprinklesLegacyText,
 } from './typography.css';
 
 export const TEXT_TAGS = ['p', 'span', 'label'] as const;
 export const HEADING_TAGS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] as const;
 export const DEFAULT_TEXT_COLOUR = 'neutral' as LegacyTextColours;
-/**
- * Default-path semantic text colours (Track C C-P4). The legacy defaults
- * `neutral`(gray700) / `dark`(gray900) are value-identical to these semantic
- * `foreground.secondary` / `foreground.primary` tokens in every theme —
- * including the `flat_red`/`neutral` in-repo themes and all MFE tenant themes,
- * none of which override either the legacy or the semantic keys divergently —
- * so routing the *default* colour through the semantic path is pixel-preserving.
- */
-export const DEFAULT_TEXT_COLOR = 'secondary' as Sprinkles['color'];
-export const DEFAULT_HEADING_COLOR = 'primary' as Sprinkles['color'];
 export const DEFAULT_TEXT_SIZE = '4' as Sprinkles['text'];
 export const DEFAULT_TEXT_WEIGHT = 'normal' as Sprinkles['fontWeight'];
 
 export type TextTags = (typeof TEXT_TAGS)[number];
 export type HeadingTags = (typeof HEADING_TAGS)[number];
 
-export const TEXT_STYLES = [
-	'h1',
-	'h2',
-	'h3',
-	'h4',
-	'p1',
-	'p2',
-	'p3',
-	'p4',
-] as const;
-export type NamedTextStyle = (typeof TEXT_STYLES)[number];
-
-/**
- * Design System 2026 named text styles (opt-in). Each has its own size
- * token — headings use a 1.25 line-height ratio, paragraphs 1.4 — and a
- * default weight applied when no `weight` or `strong` is set. Named styles
- * supply size + weight only; colour still resolves via the semantic defaults.
- */
-export const namedTextStyleMap = {
-	h1: { size: 'h1', weight: 'bold' }, // 40/50
-	h2: { size: 'h2', weight: 'bold' }, // 32/40
-	h3: { size: 'h3', weight: 'bold' }, // 24/30
-	h4: { size: 'h4', weight: 'bold' }, // 20/25
-	p1: { size: 'p1', weight: 'normal' }, // 16/22.4
-	p2: { size: 'p2', weight: 'normal' }, // 14/19.6
-	p3: { size: 'p3', weight: 'normal' }, // 12/16.8
-	p4: { size: 'p4', weight: 'normal' }, // 10/14 — no semibold per spec
-} as const satisfies Record<
-	NamedTextStyle,
-	{
-		size: NonNullable<Sprinkles['text']>;
-		weight: NonNullable<Sprinkles['fontWeight']>;
-	}
->;
-
 const isHeadingTag = (tag: string) => HEADING_TAGS.includes(tag as HeadingTags);
-
-const isNamedTextStyle = (
-	size: TypographyProps['size'],
-): size is NamedTextStyle =>
-	typeof size === 'string' && TEXT_STYLES.includes(size as NamedTextStyle);
 
 const headingSizeMap: Record<HeadingTags, Sprinkles['fontSize']> = {
 	h1: '8',
@@ -90,8 +40,8 @@ export interface TypographyProps {
 	colour?: LegacyTextColours;
 	/** @deprecated prefer `wrap` prop as it supports all wrapping values */
 	noWrap?: boolean;
-	/** Font size of the text, a size scale value or a named text style (`h1`-`h4`, `p1`-`p4`) */
-	size?: Sprinkles['text'] | NamedTextStyle;
+	/** Font size of the text */
+	size?: Sprinkles['text'];
 	/** Bold font weight */
 	strong?: boolean;
 	/** Applies text capitalisation style */
@@ -113,45 +63,30 @@ export const typography = ({
 	color, // modern semantic colour tokens
 	colour, // legacy colours
 	noWrap = false,
-	size,
+	size: text = DEFAULT_TEXT_SIZE,
 	strong = false,
 	transform: textTransform,
-	weight,
+	weight = DEFAULT_TEXT_WEIGHT,
 	wrap,
 	wordBreak,
-}: TypographyProps) => {
-	// Named text styles (opt-in) supply size + weight only; colour still
-	// resolves via the semantic defaults below.
-	const namedStyle =
-		size && isNamedTextStyle(size) ? namedTextStyleMap[size] : undefined;
-	const text =
-		namedStyle?.size ?? (size as Sprinkles['text']) ?? DEFAULT_TEXT_SIZE;
-	// precedence: explicit weight > strong > named-style weight > default
-	const fontWeight =
-		weight ??
-		(strong === true ? 'bold' : (namedStyle?.weight ?? DEFAULT_TEXT_WEIGHT));
-	// An explicit legacy `colour` still resolves through the legacy text
-	// sprinkles: its named/intent keys (primary, link, information, …) are
-	// theme-overridden, so they are NEVER repointed (Track C intent rule).
-	// Only the *default* colour is routed through the semantic path —
-	// `dark`→`primary` and `neutral`→`secondary` are value-identical in every
-	// theme incl. MFE tenants (Track C C-P4).
-	const usesLegacyColour = !color && colour !== undefined;
-	const defaultColor = strong === true ? DEFAULT_HEADING_COLOR : DEFAULT_TEXT_COLOR;
-	return clsx(
+}: TypographyProps) =>
+	clsx(
 		common,
 		sprinkles({
-			color: color ?? (usesLegacyColour ? undefined : defaultColor),
-			fontWeight,
+			color,
+			fontWeight: strong === true ? 'bold' : weight,
 			text,
 			textAlign,
 			textTransform,
 			textWrap: noWrap === true ? 'nowrap' : wrap,
 			wordBreak: breakWord === true ? 'break-word' : wordBreak,
 		}),
-		usesLegacyColour && sprinklesLegacyText({ color: colour }),
+		!color &&
+			sprinklesLegacyText({
+				color:
+					colour ?? (strong === true ? 'dark' : DEFAULT_TEXT_COLOUR),
+			}),
 	);
-};
 
 export interface TextStylesProps extends TypographyProps {
 	as?: TextTags | HeadingTags;
@@ -183,25 +118,15 @@ export function textStyles({
 	as = 'span',
 	className,
 
-	color,
-	colour,
+	colour = isHeadingTag(as) ? 'dark' : undefined,
 	size = isHeadingTag(as) ? headingSizeMap[as] : undefined,
 	weight = isHeadingTag(as) ? 'bold' : undefined,
 	// remaining style props
 	...props
 }: TextStylesProps) {
-	// Heading colour default repoints the legacy `dark` onto semantic
-	// `foreground.primary` (value-identical in every theme). It is applied only
-	// when the caller supplies no colour of either kind — an explicit legacy
-	// `colour` (e.g. an intent key) still wins and stays on the legacy path.
-	const headingColor =
-		color ??
-		(isHeadingTag(as) && colour === undefined
-			? DEFAULT_HEADING_COLOR
-			: undefined);
 	return clsx(
 		resetStyles(as),
-		typography({ color: headingColor, colour, size, weight, ...props }),
+		typography({ colour, size, weight, ...props }),
 		className,
 	);
 }
