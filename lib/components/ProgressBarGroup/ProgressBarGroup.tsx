@@ -38,11 +38,11 @@ export const ProgressBarGroup: FunctionComponent<ProgressBarGroupProps> = ({
 		>
 			{values.map((value, idx) => (
 				<Fragment key={idx}>
-					<Text size="3" color="gray600" className={styles.label}>
+					<Text size="3" color="gray700" className={styles.label}>
 						{hasPrefixLabels ? prefixLabels![idx] : ''}
 					</Text>
 					<ProgressBar colour={colour} value={value / count} />
-					<Text size="3" color="gray600">
+					<Text size="3" color="gray700">
 						{hasSuffixLabels ? suffixLabels![idx] : ''}
 					</Text>
 				</Fragment>
