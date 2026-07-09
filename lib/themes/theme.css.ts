@@ -87,6 +87,7 @@ const THEME_CONTRACT = {
 		large: 'content-width-lg',
 	},
 	space: {
+		'0': 'space-0',
 		'1': 'space-1',
 		'2': 'space-2',
 		'3': 'space-3',
@@ -96,10 +97,9 @@ const THEME_CONTRACT = {
 		'7': 'space-7',
 		'8': 'space-8',
 		'9': 'space-9',
-		'0': 'space-0',
-		'40px': 'space-40px',
-		'64px': 'space-64px',
-		'80px': 'space-80px',
+		'10': 'space-10',
+		'11': 'space-11',
+		'12': 'space-12',
 		none: 'space-none',
 	},
 	// new colour token structure 2025

@@ -26,10 +26,10 @@ interface SpaceStep {
 }
 
 /**
- * The complete DS-2026 spacing ladder, in visual order. This is an explicit
- * array rather than `Object.keys(tokens.space)` because JS auto-sorts
- * integer-like object keys, which would scramble the `40px`/`64px`/
- * `80px` entries relative to the ordinal keys.
+ * The complete DS-2026 spacing ladder, in visual order. Kept as an explicit
+ * array (rather than derived from `tokens.space`) so the `none` (0px) row
+ * always leads the ladder and the display order never depends on JS
+ * object-key iteration.
  */
 const SPACE_SCALE: SpaceStep[] = [
 	{ px: '0px', tokenKey: 'none' },
@@ -41,11 +41,11 @@ const SPACE_SCALE: SpaceStep[] = [
 	{ px: '20px', tokenKey: '5' },
 	{ px: '24px', tokenKey: '6' },
 	{ px: '32px', tokenKey: '7' },
-	{ px: '40px', tokenKey: '40px' },
-	{ px: '48px', tokenKey: '8' },
-	{ px: '64px', tokenKey: '64px' },
-	{ px: '80px', tokenKey: '80px' },
-	{ px: '96px', tokenKey: '9' },
+	{ px: '40px', tokenKey: '8' },
+	{ px: '48px', tokenKey: '9' },
+	{ px: '64px', tokenKey: '10' },
+	{ px: '80px', tokenKey: '11' },
+	{ px: '96px', tokenKey: '12' },
 ];
 
 // Fail loudly if the curated scale above ever drifts from the real tokens,
@@ -133,7 +133,7 @@ type Story = StoryObj;
 
 export const Space: Story = {
 	render: () => (
-		<FlexStack gap="8">
+		<FlexStack gap="9">
 			<Heading as="h1">Space</Heading>
 			<SpaceScale />
 			<Breakpoints />

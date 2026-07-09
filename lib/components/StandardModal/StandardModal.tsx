@@ -104,7 +104,7 @@ export const StandardModal: FunctionComponent<StandardModalProps> = ({
 					display="flex"
 					flexDirection="column"
 					backgroundColor="white"
-					marginTop="8"
+					marginTop="9"
 					className={clsx([
 						styles.modal,
 						{ [styles.modalSizeStandard]: size === 'standard' },

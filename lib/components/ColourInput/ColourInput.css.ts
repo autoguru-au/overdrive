@@ -11,7 +11,7 @@ export const colouredBoxHolder = style({
 });
 export const colouredBoxHolderSize = styleVariants({
 	medium: {
-		width: vars.space['8'],
+		width: vars.space['9'],
 	},
 	small: {
 		width: `calc(${vars.typography.size['3'].lineHeight} + (2* ${vars.space['2']}))`,
@@ -23,7 +23,7 @@ export const valueText = style({
 });
 export const valueTextSize = styleVariants({
 	medium: {
-		left: vars.space['8'],
+		left: vars.space['9'],
 	},
 	small: {
 		left: `calc(${vars.typography.size['3'].lineHeight} + (2* ${vars.space['2']}))`,

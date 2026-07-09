@@ -9,7 +9,7 @@ export const input = style({
 export const paddedInput = style({
 	selectors: {
 		[`${input}&`]: {
-			paddingRight: vars.space['8'],
+			paddingRight: vars.space['9'],
 		},
 	},
 });
