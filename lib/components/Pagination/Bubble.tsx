@@ -29,14 +29,14 @@ export const Bubble: FunctionComponent<BubbleProps> = ({
 	disabled,
 	onClick,
 }) => {
-	let backgroundColour: ComponentProps<typeof Box>['backgroundColour'] =
+	let backgroundColor: ComponentProps<typeof Box>['backgroundColor'] =
 		'transparent';
-	if (selected) backgroundColour = 'green900';
-	else if (disabled) backgroundColour = 'gray200';
+	if (selected) backgroundColor = 'green900';
+	else if (disabled) backgroundColor = 'gray200';
 	return (
 		<Box
 			as="button"
-			backgroundColour={backgroundColour}
+			backgroundColor={backgroundColor}
 			display="flex"
 			overflow="hidden"
 			alignItems="center"

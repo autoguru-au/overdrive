@@ -103,7 +103,7 @@ export const StandardModal: FunctionComponent<StandardModalProps> = ({
 					aria-labelledby={titleId!}
 					display="flex"
 					flexDirection="column"
-					backgroundColour="white"
+					backgroundColor="white"
 					marginTop="8"
 					className={clsx([
 						styles.modal,
@@ -125,7 +125,7 @@ export const StandardModal: FunctionComponent<StandardModalProps> = ({
 						paddingLeft="5"
 						paddingRight="2"
 						borderWidthBottom="1"
-						borderColour="light"
+						borderColor="muted"
 					>
 						<Box flexGrow="0" id={titleId!}>
 							<Heading as="h4">{title}</Heading>
@@ -139,7 +139,7 @@ export const StandardModal: FunctionComponent<StandardModalProps> = ({
 							onClick={closeButtonHandler}
 						>
 							<Icon
-								className={textStyles({ colour: 'muted' })}
+								className={textStyles({ color: 'tertiaryInactive' })}
 								icon={XIcon}
 								size="medium"
 							/>

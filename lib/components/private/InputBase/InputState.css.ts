@@ -3,11 +3,11 @@ import { style, styleVariants } from '@vanilla-extract/css';
 import { overdriveTokens as vars } from '../../../themes/theme.css';
 
 const activeColour = style({
-	color: vars.typography.colour.dark,
+	color: vars.color.foreground.primary,
 });
 
 const activeBorderColour = style({
-	color: vars.typography.colour.dark,
+	color: vars.color.foreground.primary,
 });
 
 export const disabled = styleVariants({
@@ -15,14 +15,14 @@ export const disabled = styleVariants({
 		borderColor: vars.border.colours.gray,
 	},
 	colour: {
-		color: vars.colours.gamut.gray200,
+		color: vars.color.gamut.gray['200'],
 	},
 });
 
 export const natural = {
 	default: {
 		colour: style({
-			color: vars.typography.colour.muted,
+			color: vars.color.foreground.tertiaryInactive,
 		}),
 		borderColour: style({
 			borderColor: vars.border.colours.gray,
@@ -55,23 +55,23 @@ export const active = {
 
 export const success = {
 	default: {
-		colour: style({ color: vars.typography.colour.success }),
-		borderColour: style({ borderColor: vars.typography.colour.success }),
+		colour: style({ color: vars.color.success.foreground }),
+		borderColour: style({ borderColor: vars.color.success.foreground }),
 	},
 	hover: {
 		colour: style({
-			color: vars.typography.colour.success,
+			color: vars.color.success.foreground,
 		}),
 		borderColour: style({
-			borderColor: vars.typography.colour.success,
+			borderColor: vars.color.success.foreground,
 		}),
 	},
 	active: {
 		colour: style({
-			color: vars.typography.colour.success,
+			color: vars.color.success.foreground,
 		}),
 		borderColour: style({
-			borderColor: vars.typography.colour.success,
+			borderColor: vars.color.success.foreground,
 		}),
 	},
 };
@@ -79,22 +79,22 @@ export const success = {
 export const error = {
 	default: {
 		colour: style({
-			color: vars.typography.colour.danger,
+			color: vars.color.alert.foreground,
 		}),
 		borderColour: style({
-			borderColor: vars.typography.colour.danger,
+			borderColor: vars.color.alert.foreground,
 		}),
 	},
 	hover: {
-		colour: style({ color: vars.typography.colour.danger }),
-		borderColour: style({ borderColor: vars.typography.colour.danger }),
+		colour: style({ color: vars.color.alert.foreground }),
+		borderColour: style({ borderColor: vars.color.alert.foreground }),
 	},
 	active: {
 		colour: style({
-			color: vars.typography.colour.danger,
+			color: vars.color.alert.foreground,
 		}),
 		borderColour: style({
-			borderColor: vars.typography.colour.danger,
+			borderColor: vars.color.alert.foreground,
 		}),
 	},
 };

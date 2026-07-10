@@ -141,12 +141,12 @@ export const useTooltip = ({
 						overflow="hidden"
 						borderRadius="1"
 						boxShadow="4"
-						backgroundColour="gray900"
+						backgroundColor="gray900"
 						paddingY="2"
 						paddingX="3"
 						role="tooltip"
 					>
-						<Text size={textSize} colour="white">
+						<Text size={textSize} color="white">
 							{label}
 						</Text>
 					</Box>

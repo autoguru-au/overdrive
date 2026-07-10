@@ -6,13 +6,13 @@ import { overdriveTokens as vars } from '../../../themes/theme.css';
 export const root = style({
 	cursor: 'pointer',
 	':hover': {
-		backgroundColor: vars.colours.background.body,
+		backgroundColor: vars.color.background.default,
 	},
 });
 
 export const label = styleVariants({
 	disabled: {
-		color: vars.typography.colour.dark,
+		color: vars.color.foreground.primary,
 	},
 });
 

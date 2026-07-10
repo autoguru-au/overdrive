@@ -63,7 +63,7 @@ const Handle: FunctionComponent<HandleProps> = ({
 		className={[
 			styles.handle.default,
 			{ [styles.handle.disabled]: disabled },
-			textStyles({ colour: 'white' }),
+			textStyles({ color: 'white' }),
 		]}
 		backgroundColour={disabled ? 'neutral' : 'primary'}
 		aria-label={label}
@@ -159,7 +159,7 @@ export const Stepper: FunctionComponent<StepperProps> = ({
 			aria-disabled={disabled}
 			tabIndex={0}
 			borderWidth="1"
-			borderColour="gray"
+			borderColor="default"
 			padding="3"
 			borderRadius="1"
 			width={isFullWidth ? 'full' : 'fit-content'}
@@ -186,7 +186,7 @@ export const Stepper: FunctionComponent<StepperProps> = ({
 				<Box>
 					<Text
 						as="span"
-						colour="dark"
+						color="primary"
 						display="block"
 						className={clsx(styles.label)}
 						size="4"

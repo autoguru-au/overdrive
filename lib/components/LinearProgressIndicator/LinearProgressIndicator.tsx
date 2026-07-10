@@ -16,7 +16,7 @@ export const LinearProgressIndicator: NamedExoticComponent<LinearProgressIndicat
 				position="relative"
 				overflow="hidden"
 				width="full"
-				backgroundColour="gray200"
+				backgroundColor="gray200"
 				className={[styles.root, className]}
 				odComponent="linear-progress-indicator"
 			>
@@ -28,7 +28,7 @@ export const LinearProgressIndicator: NamedExoticComponent<LinearProgressIndicat
 				>
 					<Box
 						as="span"
-						backgroundColour="green300"
+						backgroundColor="green300"
 						position="absolute"
 						width="full"
 						height="full"

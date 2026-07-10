@@ -3,7 +3,7 @@ import { style } from '@vanilla-extract/css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
 export const root = style({
-	borderBottomColor: vars.colours.gamut.black100,
+	borderBottomColor: vars.color.border.default,
 
 	/*
 	We do this hack, as our row's have no distinct element. Once subgrid is
@@ -25,7 +25,7 @@ export const root = style({
 
 	selectors: {
 		'&:hover:before': {
-			backgroundColor: vars.colours.gamut.gray100,
+			backgroundColor: vars.color.gamut.gray['100'],
 			transitionTimingFunction: vars.animation.easing.decelerate,
 		},
 	},

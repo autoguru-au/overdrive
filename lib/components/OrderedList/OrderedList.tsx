@@ -53,7 +53,7 @@ export const OrderedList: FunctionComponent<OrderedListProps> & {
 		className: [
 			styles.root.default,
 			stack({ gap: '2' }),
-			textStyles({ colour: 'dark' }),
+			textStyles({ color: 'primary' }),
 			{ [styles.root.firstOccurrence]: cycle === -1 },
 			className,
 		],

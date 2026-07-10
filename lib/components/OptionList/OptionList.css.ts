@@ -26,7 +26,7 @@ export const descriptionStyle = style([
 	{
 		'@layer': {
 			[cssLayerComponent]: {
-				color: tokens.colours.gamut.gray400,
+				color: tokens.color.gamut.gray['400'],
 			},
 		},
 	},
@@ -35,7 +35,7 @@ export const descriptionStyle = style([
 // === Option item styles
 export const optionItemStyle = style([
 	sprinkles({
-		borderColour: 'gray',
+		borderColor: 'default',
 		borderStyle: 'solid',
 		borderWidth: '1',
 		display: 'flex',
@@ -48,7 +48,7 @@ export const optionItemStyle = style([
 	{
 		'@layer': {
 			[cssLayerComponent]: {
-				background: tokens.colours.background.body,
+				background: tokens.color.background.default,
 				selectors: {
 					['&+&']: {
 						borderTopStyle: 'none',
@@ -62,14 +62,14 @@ export const optionItemStyle = style([
 						borderBottomRightRadius: tokens.border.radius.md,
 					},
 					[selectors.hoverNotDisabled]: {
-						background: tokens.colours.gamut.gray200,
+						background: tokens.color.gamut.gray['200'],
 						cursor: 'pointer',
 					},
 					[selectors.focusVisible]: {
-						background: tokens.colours.gamut.gray200,
+						background: tokens.color.gamut.gray['200'],
 					},
 					[selectors.disabled]: {
-						background: tokens.colours.background.body,
+						background: tokens.color.background.default,
 						cursor: 'default',
 					},
 				},
@@ -100,7 +100,7 @@ export const checkbox = style([
 	{
 		'@layer': {
 			[cssLayerComponent]: {
-				background: tokens.colours.background.body,
+				background: tokens.color.background.default,
 				borderColor: tokens.border.colours.gray,
 				color: 'transparent',
 				transitionDuration: '100ms',
@@ -108,14 +108,14 @@ export const checkbox = style([
 				transitionTimingFunction: 'ease-in',
 				selectors: {
 					[selectors.checked]: {
-						background: tokens.colours.gamut.gray900,
+						background: tokens.color.gamut.gray['900'],
 						borderColor: tokens.border.colours.dark,
-						color: tokens.colours.background.body,
+						color: tokens.color.background.default,
 					},
 					[`${optionItemStyle}:hover &:not([data-checked],[data-disabled])`]:
 						{
-							background: tokens.colours.gamut.gray300,
-							color: tokens.colours.background.body,
+							background: tokens.color.gamut.gray['300'],
+							color: tokens.color.background.default,
 						},
 				},
 			},

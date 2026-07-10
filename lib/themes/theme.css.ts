@@ -6,17 +6,6 @@ import { buildColourGamut } from './makeTheme';
 import type { ColourMap } from '.';
 
 const colours = {
-	black: {
-		'900': 'color-gamut-black-900',
-		'800': 'color-gamut-black-800',
-		'700': 'color-gamut-black-700',
-		'600': 'color-gamut-black-600',
-		'500': 'color-gamut-black-500',
-		'400': 'color-gamut-black-400',
-		'300': 'color-gamut-black-300',
-		'200': 'color-gamut-black-200',
-		'100': 'color-gamut-black-100',
-	},
 	gray: {
 		'900': 'color-gamut-gray-900',
 		'800': 'color-gamut-gray-800',
@@ -144,23 +133,96 @@ const THEME_CONTRACT = {
 			placeholder: 'color-interactive-placeholder',
 			focusOutline: 'color-interactive-focus-outline',
 		},
+		foreground: {
+			primary: 'color-foreground-primary',
+			secondary: 'color-foreground-secondary',
+			reverse: 'color-foreground-reverse',
+			tertiaryInactive: 'color-foreground-tertiary-inactive',
+			tertiaryInactiveLight: 'color-foreground-tertiary-inactive-light',
+		},
+		background: {
+			default: 'color-background-default',
+			reverse: 'color-background-reverse',
+			inactive: 'color-background-inactive',
+			emphasisInactive: 'color-background-emphasis-inactive',
+		},
+		border: {
+			default: 'color-border-default',
+			emphasis: 'color-border-emphasis',
+			selected: 'color-border-selected',
+			strong: 'color-border-strong',
+		},
+		info: {
+			text: 'color-info-text',
+			foreground: 'color-info-foreground',
+			background: 'color-info-background',
+		},
+		success: {
+			text: 'color-success-text',
+			foreground: 'color-success-foreground',
+			backgroundDark: 'color-success-background-dark',
+			backgroundLight: 'color-success-background-light',
+		},
+		warning: {
+			text: 'color-warning-text',
+			foreground: 'color-warning-foreground',
+			backgroundDark: 'color-warning-background-dark',
+			backgroundLight: 'color-warning-background-light',
+		},
+		alert: {
+			text: 'color-alert-text',
+			foreground: 'color-alert-foreground',
+			background: 'color-alert-background',
+		},
+		button: {
+			primary: {
+				solid: {
+					default: 'color-button-primary-solid-default',
+					hover: 'color-button-primary-solid-hover',
+					pressed: 'color-button-primary-solid-pressed',
+					border: 'color-button-primary-solid-border',
+				},
+				outlined: {
+					border: 'color-button-primary-outlined-border',
+					text: 'color-button-primary-outlined-text',
+				},
+			},
+			critical: {
+				solid: {
+					default: 'color-button-critical-solid-default',
+				},
+			},
+		},
 	},
 	// existing colours for compatability
+	/**
+	 * @deprecated Use color.* — removed in v5 (DS-2026 major). The legacy
+	 * `colours` contract (gamut/foreground/background/intent) is retained,
+	 * exported, and fully functional for MFE compatibility until then — do
+	 * not add new internal usages (see docs/ds2026-plan/track-c.md).
+	 */
 	colours: {
+		/** @deprecated Use color.gamut.* — removed in v5 (DS-2026 major). */
 		gamut: {
 			...buildColourGamut(colours),
 			white: 'color-gamut-white',
 		},
+		/** @deprecated Use color.foreground.* — removed in v5 (DS-2026 major). */
 		foreground: {
 			body: null,
 			link: null,
 		},
+		/** @deprecated Use color.background.* — removed in v5 (DS-2026 major). */
 		background: {
 			body: null,
 			light: null,
 			neutral: null,
 			neutralDark: null,
 		},
+		/**
+		 * @deprecated Use color.{info,success,warning,alert}.* — removed in v5
+		 * (DS-2026 major).
+		 */
 		intent: {
 			primary: {
 				background: {
@@ -251,6 +313,10 @@ const THEME_CONTRACT = {
 		'3': 'elevation-3',
 		'4': 'elevation-4',
 		'5': 'elevation-5',
+		z1: 'elevation-z1',
+		z2: 'elevation-z2',
+		z3: 'elevation-z3',
+		z4: 'elevation-z4',
 		none: 'elevation-none',
 	},
 	border: {
@@ -268,14 +334,27 @@ const THEME_CONTRACT = {
 		radius: {
 			none: 'border-radius-none',
 			min: 'border-radius-min',
+			/** @deprecated Use radius.xsmall (identical 4px value) — removed in v5 (DS-2026 major). */
 			sm: 'border-radius-sm',
 			md: 'border-radius-md',
 			lg: 'border-radius-lg',
 			xl: 'border-radius-xl',
+			/**
+			 * @deprecated Use radius.xlarge — removed in v5 (DS-2026 major).
+			 * Note: values differ today (2xl = 24px, xlarge = 20px); the exact
+			 * DS-2026 mapping for this key is pending design resolution
+			 * (master §6-Q2) and will be finalised at the major.
+			 */
 			'2xl': 'border-radius-2xl',
+			/** @deprecated Use radius.xsmall (identical 4px value) — removed in v5 (DS-2026 major). */
 			'1': 'border-radius-1',
 			pill: 'border-radius-pill',
 			full: 'border-radius-full',
+			xsmall: 'border-radius-xsmall',
+			small: 'border-radius-small',
+			medium: 'border-radius-medium',
+			large: 'border-radius-large',
+			xlarge: 'border-radius-xlarge',
 		},
 	},
 	typography: {
@@ -351,6 +430,7 @@ const THEME_CONTRACT = {
 			},
 		},
 		// phase out: typography specific colours for backwards compatibility
+		/** @deprecated Use color.foreground.* — removed in v5 (DS-2026 major). */
 		colour: {
 			primary: null,
 			brand: null,

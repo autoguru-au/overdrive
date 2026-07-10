@@ -12,13 +12,13 @@ export const overlayStyle = style([
 		borderRadius: 'md',
 		borderWidth: '1',
 		borderStyle: 'solid',
-		borderColour: 'light',
+		borderColor: 'gray200',
 		padding: '4',
 	}),
 	{
 		'@layer': {
 			[cssLayerComponent]: {
-				backgroundColor: tokens.colours.background.body,
+				backgroundColor: tokens.color.background.default,
 				boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
 				minWidth: '280px',
 			},
@@ -47,7 +47,7 @@ export const triggerStyle = style({
 export const fullScreenStyle = style({
 	'@layer': {
 		[cssLayerComponent]: {
-			backgroundColor: tokens.colours.background.body,
+			backgroundColor: tokens.color.background.default,
 			bottom: 0,
 			left: 0,
 			position: 'fixed',

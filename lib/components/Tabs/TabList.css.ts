@@ -8,7 +8,7 @@ export const styledTabList = recipe({
 	variants: {
 		appearance: {
 			underlined: {
-				boxShadow: `inset 0 -1px 0 0 ${vars.border.colours.gray}`,
+				boxShadow: `inset 0 -1px 0 0 ${vars.color.border.default}`,
 			},
 			pill: {},
 			minimal: {},

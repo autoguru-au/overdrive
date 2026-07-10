@@ -54,9 +54,9 @@ export const Alert = ({
 			role="alert"
 			overflow="hidden"
 			position="relative"
-			backgroundColour="white"
+			backgroundColor="white"
 			borderWidth="1"
-			borderColour="gray"
+			borderColor="default"
 			borderRadius="1"
 			boxShadow={inline ? 'none' : '4'}
 			padding="2"
@@ -77,7 +77,7 @@ export const Alert = ({
 				<Box
 					alignSelf="center"
 					width="auto"
-					className={sprinkles({ colour: 'dark' })}
+					className={sprinkles({ color: 'primary' })}
 				>
 					{typeof children === 'string' ? (
 						<Text>{children}</Text>
@@ -96,7 +96,7 @@ export const Alert = ({
 							onClick={onRequestClose}
 						>
 							<Icon
-								className={sprinkles({ colour: 'muted' })}
+								className={sprinkles({ color: 'tertiaryInactive' })}
 								icon={XIcon}
 								size="medium"
 							/>

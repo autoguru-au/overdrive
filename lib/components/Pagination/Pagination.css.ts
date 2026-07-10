@@ -21,11 +21,11 @@ export const activeItem = style({
 
 	selectors: {
 		[`&:not(${selectedItem}):hover`]: {
-			backgroundColor: vars.colours.background.body,
+			backgroundColor: vars.color.background.default,
 			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.primary.background.strong}, ${vars.elevation['1']}`,
 		},
 		[`&:not(${selectedItem}):active`]: {
-			backgroundColor: vars.colours.background.body,
+			backgroundColor: vars.color.background.default,
 			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.primary.background.strong}, ${vars.elevation['1']}`,
 		},
 	},

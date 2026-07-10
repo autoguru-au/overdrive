@@ -184,7 +184,7 @@ export const placeholder = styleVariants({
 		color: vars.colours.background.neutral,
 	},
 	mutedLabelStyles: {
-		color: vars.typography.colour.muted,
+		color: vars.color.foreground.tertiaryInactive,
 	},
 });
 

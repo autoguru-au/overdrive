@@ -26,10 +26,10 @@ const placeholder = style({
 		[cssLayerComponent]: {
 			selectors: {
 				'&::placeholder': {
-					color: tokens.colours.gamut.gray400,
+					color: tokens.color.gamut.gray['400'],
 				},
 				'&:disabled::placeholder': {
-					color: tokens.colours.gamut.gray300,
+					color: tokens.color.gamut.gray['300'],
 				},
 			},
 		},
@@ -41,23 +41,23 @@ export const searchBarStyle = style([
 		'@layer': {
 			[cssLayerComponent]: {
 				alignItems: 'center',
-				backgroundColor: tokens.colours.background.body,
+				backgroundColor: tokens.color.background.default,
 				borderColor: tokens.border.colours.gray,
 				borderRadius: tokens.border.radius['md'],
 				borderStyle: 'solid',
 				borderWidth: tokens.border.width[2],
-				color: tokens.colours.gamut.gray400,
+				color: tokens.color.gamut.gray['400'],
 				display: 'flex',
 				gap: tokens.space[2],
 				padding: `0 ${tokens.space[4]}`,
 				selectors: {
 					'&:focus, &[data-focus], &[data-focused]': {
 						borderColor: tokens.border.colours.dark,
-						color: tokens.colours.gamut.gray900,
+						color: tokens.color.gamut.gray['900'],
 					},
 					'&:disabled, &[data-disabled]': {
 						borderColor: tokens.border.colours.light,
-						color: tokens.colours.gamut.gray300,
+						color: tokens.color.gamut.gray['300'],
 						cursor: 'not-allowed',
 					},
 					'&:hover:not(:disabled,[data-disabled]), &[data-hover]:not(:disabled,[data-disabled])':

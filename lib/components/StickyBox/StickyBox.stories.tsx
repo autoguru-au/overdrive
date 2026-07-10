@@ -27,8 +27,8 @@ export const Standard: Story = {
 			includeMobile
 			bottomGap="5"
 			width="full"
-			backgroundColour="white"
-			borderColour="gray"
+			backgroundColor="white"
+			borderColor="default"
 			borderWidth="1"
 			boxShadow="1"
 			height="full"
@@ -39,11 +39,11 @@ export const Standard: Story = {
 					marginTop="8"
 					padding="3"
 					width="full"
-					backgroundColour="yellow700"
+					backgroundColor="yellow700"
 					borderRadius="1"
 					overflow="hidden"
 				>
-					<Heading as="h2" colour="white">
+					<Heading as="h2" color="white">
 						I&apos;m a sticky header
 					</Heading>
 				</Box>

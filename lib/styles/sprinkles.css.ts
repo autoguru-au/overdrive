@@ -2,7 +2,7 @@
 import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
 import { mapValues } from 'es-toolkit';
 
-import { breakpoints } from '../themes/makeTheme';
+import { breakpoints, buildColourGamut } from '../themes/makeTheme';
 import { overdriveTokens as tokens } from '../themes/theme.css';
 import { arrayFromKeys } from '../utils/object';
 
@@ -47,9 +47,26 @@ const intentBorderColours = mapValues(
 	({ border }) => border,
 );
 
+/**
+ * Test-only: deprecated colour-value aliases retained until the DS-2026 major.
+ * Exported so the R12 guard spec can assert the alias resolves to its real
+ * token value; spread into `backgroundColours` so the alias and the tested
+ * value are the same object.
+ */
+export const __deprecatedBackgroundColourAliases = {
+	/**
+	 * @deprecated Use `gray900`. `black900` is retained only as an alias of
+	 * `gray900` (#212338 — the DS-2026 "Tarmac Black") so existing
+	 * `backgroundColour="black900"` usages keep resolving after the black ramp
+	 * was removed. Scheduled for removal in the DS-2026 major (W4-P4).
+	 */
+	black900: tokens.colours.gamut.gray900,
+};
+
 const backgroundColours = {
 	...intentBackgroundColoursStandard,
 	...tokens.colours.gamut,
+	...__deprecatedBackgroundColourAliases,
 	transparent: 'transparent',
 };
 
@@ -63,6 +80,64 @@ const borderColors = {
 const borderColours = {
 	...tokens.border.colours,
 	...intentBorderColours,
+};
+
+// --- SEMANTIC COLOUR PARITY (C-P1) ---
+// Flat semantic ramp: every legacy gamut key (gray900, green300, …) gets a
+// semantic equivalent at the IDENTICAL base value (color.gamut === colours.gamut).
+const semanticGamut = buildColourGamut({
+	gray: tokens.color.gamut.gray,
+	green: tokens.color.gamut.green,
+	blue: tokens.color.gamut.blue,
+	yellow: tokens.color.gamut.yellow,
+	red: tokens.color.gamut.red,
+});
+
+// `color` (text/foreground) semantic value space
+const semanticColor = {
+	...tokens.color.content, // normal, soft, inverse, info, danger, success, warning (existing)
+	...tokens.color.foreground, // primary, secondary, reverse, tertiaryInactive, tertiaryInactiveLight (W1-P1)
+	infoText: tokens.color.info.text,
+	infoForeground: tokens.color.info.foreground,
+	successText: tokens.color.success.text,
+	successForeground: tokens.color.success.foreground,
+	warningText: tokens.color.warning.text,
+	warningForeground: tokens.color.warning.foreground,
+	alertText: tokens.color.alert.text,
+	alertForeground: tokens.color.alert.foreground,
+	...semanticGamut, // gray900 … red100
+	white: tokens.color.gamut.white,
+	unset: 'unset',
+};
+
+// `backgroundColor` semantic value space
+const semanticBackgroundColor = {
+	...tokens.color.surface, // page, hard, soft, accent, success, info, danger, warning (existing)
+	...tokens.color.background, // default, reverse, inactive, emphasisInactive (W1-P1)
+	infoBackground: tokens.color.info.background,
+	successBackgroundDark: tokens.color.success.backgroundDark,
+	successBackgroundLight: tokens.color.success.backgroundLight,
+	warningBackgroundDark: tokens.color.warning.backgroundDark,
+	warningBackgroundLight: tokens.color.warning.backgroundLight,
+	alertBackground: tokens.color.alert.background,
+	...semanticGamut,
+	white: tokens.color.gamut.white,
+	transparent: 'transparent',
+};
+
+// `border*Color` semantic value space
+const semanticBorderColor = {
+	// W1-P1: emphasis, selected, strong (+ default, which the explicit
+	// `default` below overrides to preserve the pre-existing gray300 binding
+	// byte-for-byte — both resolve to gray300, so zero drift).
+	...tokens.color.border,
+	default: tokens.color.interactive.border, // existing (gray300)
+	muted: tokens.color.interactive.borderMuted, // existing (gray200)
+	disabled: tokens.color.interactive.borderDisabled, // existing (gray100)
+	...tokens.color.surface, // existing
+	...semanticGamut,
+	white: tokens.color.gamut.white,
+	transparent: 'transparent',
 };
 
 const colours = {
@@ -109,25 +184,28 @@ const baseProperties = defineProperties({
 	'@layer': cssLayerStyleprops,
 	properties: {
 		// Borders
-		borderBottomColor: borderColors,
-		borderLeftColor: borderColors,
-		borderRightColor: borderColors,
-		borderTopColor: borderColors,
+		borderBottomColor: semanticBorderColor,
+		borderLeftColor: semanticBorderColor,
+		borderRightColor: semanticBorderColor,
+		borderTopColor: semanticBorderColor,
+		/** @deprecated Use borderBottomColor — removed in v5 (DS-2026 major). */
 		borderBottomColour: mappedBorderBottomColours,
+		/** @deprecated Use borderLeftColor — removed in v5 (DS-2026 major). */
 		borderLeftColour: mappedBorderLeftColours,
+		/** @deprecated Use borderRightColor — removed in v5 (DS-2026 major). */
 		borderRightColour: mappedBorderRightColours,
+		/** @deprecated Use borderTopColor — removed in v5 (DS-2026 major). */
 		borderTopColour: mappedBorderTopColours,
 		borderLeftStyle: ['none', 'solid'],
 		borderBottomStyle: ['none', 'solid'],
 		borderRightStyle: ['none', 'solid'],
 		borderTopStyle: ['none', 'solid'],
 		// Color
-		color: tokens.color.content,
+		color: semanticColor,
+		/** @deprecated Use color — removed in v5 (DS-2026 major). */
 		colour: mappedColours,
-		backgroundColor: {
-			...tokens.color.surface,
-			transparent: 'transparent',
-		},
+		backgroundColor: semanticBackgroundColor,
+		/** @deprecated Use backgroundColor — removed in v5 (DS-2026 major). */
 		backgroundColour: mappedBackgroundColours,
 		opacity: [0, '1', '0'],
 		// Typography
@@ -157,13 +235,16 @@ const baseProperties = defineProperties({
 		],
 		borderColorX: ['borderLeftColor', 'borderRightColor'],
 		borderColorY: ['borderBottomColor', 'borderTopColor'],
+		/** @deprecated Use borderColor — removed in v5 (DS-2026 major). */
 		borderColour: [
 			'borderBottomColour',
 			'borderLeftColour',
 			'borderRightColour',
 			'borderTopColour',
 		],
+		/** @deprecated Use borderColorX — removed in v5 (DS-2026 major). */
 		borderColourX: ['borderLeftColour', 'borderRightColour'],
+		/** @deprecated Use borderColorY — removed in v5 (DS-2026 major). */
 		borderColourY: ['borderBottomColour', 'borderTopColour'],
 		borderStyle: [
 			'borderBottomStyle',

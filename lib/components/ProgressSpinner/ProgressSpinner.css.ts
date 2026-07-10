@@ -46,10 +46,10 @@ export const colours = styleVariants({
 		stroke: vars.typography.colour.danger,
 	},
 	default: {
-		stroke: vars.colours.foreground.body,
+		stroke: vars.color.foreground.primary,
 	},
 	light: {
-		stroke: vars.typography.colour.white,
+		stroke: vars.color.foreground.reverse,
 	},
 	primary: {
 		stroke: vars.typography.colour.primary,
