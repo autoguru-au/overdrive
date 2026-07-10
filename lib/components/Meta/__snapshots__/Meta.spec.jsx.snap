@@ -6,7 +6,7 @@ exports[`<Meta /> > should match snapshot with label, icon for Primary variant 1
   data-od-component="provider"
 >
   <span
-    class="sprinkles_alignItems_center_mobile__onxwjuw1 sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwjuz1 sprinkles_flexWrap_nowrap_mobile__onxwju105 sprinkles_gap_2_mobile__onxwjurh sprinkles_justifyContent_start_mobile__onxwjuy9"
+    class="sprinkles_alignItems_center_mobile__onxwjuxt sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwju10t sprinkles_flexWrap_nowrap_mobile__onxwju11x sprinkles_gap_2_mobile__onxwjut9 sprinkles_justifyContent_start_mobile__onxwju101"
   >
     <span
       class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuf1 Icon_makeResponsiveStyle_key_bp__1gy3ire0 Meta_variant_primary__5jk44p0"
@@ -14,7 +14,7 @@ exports[`<Meta /> > should match snapshot with label, icon for Primary variant 1
     >
       <svg
         aria-hidden="true"
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuf1 sprinkles_width_full_mobile__onxwjuqd sprinkles_height_full_mobile__onxwjuot"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuf1 sprinkles_width_full_mobile__onxwjus5 sprinkles_height_full_mobile__onxwjuql"
         viewBox="0 0 512 512"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -24,7 +24,7 @@ exports[`<Meta /> > should match snapshot with label, icon for Primary variant 1
       </svg>
     </span>
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuix sprinkles_lineHeight_4_mobile__onxwjuhx sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjujt sprinkles_lineHeight_4_mobile__onxwjuhx sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338"
     >
       Hello World!
     </span>
@@ -38,7 +38,7 @@ exports[`<Meta /> > should match snapshot with label, icon for Secondary variant
   data-od-component="provider"
 >
   <span
-    class="sprinkles_alignItems_center_mobile__onxwjuw1 sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwjuz1 sprinkles_flexWrap_nowrap_mobile__onxwju105 sprinkles_gap_2_mobile__onxwjurh sprinkles_justifyContent_start_mobile__onxwjuy9"
+    class="sprinkles_alignItems_center_mobile__onxwjuxt sprinkles_display_flex_mobile__onxwjuf9 sprinkles_flexDirection_row_mobile__onxwju10t sprinkles_flexWrap_nowrap_mobile__onxwju11x sprinkles_gap_2_mobile__onxwjut9 sprinkles_justifyContent_start_mobile__onxwju101"
   >
     <span
       class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuf1 Icon_makeResponsiveStyle_key_bp__1gy3ire0 Meta_variant_secondary__5jk44p1"
@@ -46,7 +46,7 @@ exports[`<Meta /> > should match snapshot with label, icon for Secondary variant
     >
       <svg
         aria-hidden="true"
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuf1 sprinkles_width_full_mobile__onxwjuqd sprinkles_height_full_mobile__onxwjuot"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuf1 sprinkles_width_full_mobile__onxwjus5 sprinkles_height_full_mobile__onxwjuql"
         viewBox="0 0 512 512"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -56,7 +56,7 @@ exports[`<Meta /> > should match snapshot with label, icon for Secondary variant
       </svg>
     </span>
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuix sprinkles_lineHeight_4_mobile__onxwjuhx sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjujt sprinkles_lineHeight_4_mobile__onxwjuhx sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338"
     >
       Hello World!
     </span>
