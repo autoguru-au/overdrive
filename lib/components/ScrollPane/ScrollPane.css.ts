@@ -3,7 +3,7 @@ import { style } from '@vanilla-extract/css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
 export const root = style({
-	scrollbarColor: `${vars.colours.gamut.gray300} transparent`,
+	scrollbarColor: `${vars.color.gamut.gray['300']} transparent`,
 	scrollbarWidth: 'thin',
 	'::-webkit-scrollbar': {
 		backgroundColor: 'transparent',
@@ -17,7 +17,7 @@ export const root = style({
 		backgroundColor: 'transparent',
 	},
 	'::-webkit-scrollbar-thumb': {
-		backgroundColor: vars.colours.gamut.gray300,
+		backgroundColor: vars.color.gamut.gray['300'],
 		borderRadius: '999px',
 	},
 	'::-webkit-scrollbar-button': {
@@ -25,7 +25,7 @@ export const root = style({
 	},
 	selectors: {
 		['&::-webkit-scrollbar-thumb:hover']: {
-			backgroundColor: vars.colours.gamut.gray400,
+			backgroundColor: vars.color.gamut.gray['400'],
 		},
 	},
 });

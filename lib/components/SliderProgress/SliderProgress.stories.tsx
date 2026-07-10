@@ -15,7 +15,7 @@ const meta = {
 	},
 	decorators: [
 		(Story) => (
-			<Box paddingY="8" paddingX="3" backgroundColour="gray800">
+			<Box paddingY="8" paddingX="3" backgroundColor="gray800">
 				<Story />
 			</Box>
 		),

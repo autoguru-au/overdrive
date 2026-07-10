@@ -7,7 +7,7 @@ export const sorterButton = style({ userSelect: 'text' });
 export const text = style({
 	selectors: {
 		[`${sorterButton}:hover &`]: {
-			color: vars.typography.colour.dark,
+			color: vars.color.foreground.primary,
 		},
 	},
 });
@@ -23,7 +23,7 @@ export const sorter = {
 	root: [
 		sorterRoot,
 		style({
-			color: vars.typography.colour.dark,
+			color: vars.color.foreground.primary,
 			transitionTimingFunction: vars.animation.easing.standard,
 		}),
 	],

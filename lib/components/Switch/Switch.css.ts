@@ -6,8 +6,8 @@ import { overdriveTokens as vars } from '../../themes/theme.css';
 
 globalLayer(LAYER_ORDER);
 
-const colorAccent = vars.colours.foreground.body;
-const colorContrast = vars.colours.background.body;
+const colorAccent = vars.color.foreground.primary;
+const colorContrast = vars.color.background.default;
 const colorMid = vars.colours.background.neutral;
 const colorLight = vars.colours.background.light;
 const height = vars.space['6'];

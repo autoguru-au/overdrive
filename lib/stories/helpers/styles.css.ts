@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { globalStyle, style } from '@vanilla-extract/css';
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
 import { overdriveTokens } from '../../themes';
@@ -35,6 +35,144 @@ export const gridSwatches = style({
 			gridTemplateColumns: 'repeat(5, 1fr)',
 		},
 	},
+});
+
+/**
+ * Responsive grid for semantic token cards. Columns size themselves so each
+ * card stays wide enough to hold its CSS variable name without breaking.
+ */
+export const tokenGrid = style({
+	display: 'grid',
+	gap: '20px 16px',
+	gridTemplateColumns: 'repeat(auto-fill, minmax(230px, 1fr))',
+});
+
+/**
+ * Aligned columns for the Foundation/Space ladder: px value, proportional
+ * bar and token-key chip. Bars share a common left baseline so the ascending
+ * scale reads as a clean staircase.
+ */
+export const spaceLadderGrid = style({
+	alignItems: 'center',
+	columnGap: '20px',
+	display: 'grid',
+	gridTemplateColumns: 'repeat(3, auto)',
+	rowGap: '10px',
+});
+
+/** Subtle divider under the Foundation/Space ladder header row. */
+export const spaceLadderHeaderCell = style({
+	borderBottom: `1px solid ${overdriveTokens.color.gamut.gray[200]}`,
+	paddingBottom: '6px',
+});
+
+/**
+ * Ladder variant for Foundation/Borders → Width:
+ * Px · Scale · Token · Use · Shape · Tag.
+ */
+export const widthLadderGrid = style({
+	alignItems: 'center',
+	columnGap: '20px',
+	display: 'grid',
+	// Use column flexes so the Tag lands at the far right, aligned with the
+	// Radius/Shadow tables.
+	gridTemplateColumns: 'auto auto auto minmax(0, 1fr) auto auto',
+	rowGap: '10px',
+});
+
+/**
+ * Ladder variant for Foundation/Borders → Radius:
+ * Value · Shape · Token · Use · Tag.
+ */
+export const radiusLadderGrid = style({
+	alignItems: 'center',
+	columnGap: '20px',
+	display: 'grid',
+	gridTemplateColumns: 'auto auto auto minmax(0, 1fr) auto',
+	rowGap: '12px',
+});
+
+/**
+ * A single ladder row that re-uses the parent grid's column tracks via
+ * `subgrid`, so a highlighted (deprecated) row can paint one continuous
+ * background across every column, gaps included.
+ */
+export const ladderRow = style({
+	alignItems: 'center',
+	display: 'grid',
+	gridColumn: '1 / -1',
+	gridTemplateColumns: 'subgrid',
+	paddingBlock: '8px',
+	paddingInline: '12px',
+});
+
+// `tokenCode` sets alignSelf: flex-start for the card layout; in a ladder row
+// that top-aligns the chip while the other cells centre. Force it centred so
+// every cell in the row sits on one line.
+globalStyle(`${ladderRow} code`, {
+	alignSelf: 'center',
+});
+
+/** Amber wash for a deprecated row (matches the Deprecated header bar). */
+export const ladderRowDeprecated = style({
+	backgroundColor: overdriveTokens.color.gamut.yellow[100],
+	borderRadius: '8px',
+});
+
+// On a deprecated (amber) row, drop the token chip's grey fill so it doesn't
+// clash with the amber wash — the token reads directly on the row.
+globalStyle(`${ladderRowDeprecated} code`, {
+	backgroundColor: 'transparent',
+});
+
+/**
+ * Aligned columns for the Foundation/Borders ladders: swatch preview, value,
+ * token-key chip, usage note and status chip. Shared by the Width, Radius and
+ * Shadow tables so all three read as one consistent scale, matching
+ * Foundation/Space.
+ */
+export const borderLadderGrid = style({
+	alignItems: 'center',
+	columnGap: '20px',
+	display: 'grid',
+	gridTemplateColumns: 'auto auto auto minmax(0, 1fr) auto',
+	rowGap: '14px',
+});
+
+/** Bordered card that groups a swatch with its name, description and token. */
+export const tokenCard = style({
+	backgroundColor: overdriveTokens.color.gamut.white,
+	border: `1px solid ${overdriveTokens.color.gamut.gray[200]}`,
+	borderRadius: '12px',
+	display: 'flex',
+	flexDirection: 'column',
+	gap: '8px',
+	padding: '10px',
+});
+
+/** Pushes the token chip to the bottom so chips align across a row. */
+export const tokenDescription = style({
+	color: overdriveTokens.color.gamut.gray[600],
+	flexGrow: 1,
+	fontSize: '12px',
+	lineHeight: 1.5,
+});
+
+/**
+ * The CSS variable name, contained in a subtle code chip that wraps at any
+ * character so a long token never overflows or hyphenates awkwardly.
+ */
+export const tokenCode = style({
+	alignSelf: 'flex-start',
+	backgroundColor: overdriveTokens.color.gamut.gray[100],
+	borderRadius: '6px',
+	color: overdriveTokens.color.gamut.gray[700],
+	fontFamily: 'monospace',
+	fontSize: '11px',
+	lineHeight: 1.4,
+	maxWidth: '100%',
+	overflowWrap: 'anywhere',
+	padding: '4px 8px',
 });
 
 export const hexPill = style({

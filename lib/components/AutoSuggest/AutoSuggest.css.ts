@@ -98,6 +98,14 @@ export const suggestionListItem = styleVariants({
 });
 
 export const suggestionHighlight = style({
+	// `colours.background.light` is overridden by MFE tenant themes
+	// (smartFleet/ampol → their custom gray100), and the semantic
+	// `color.background.emphasisInactive` is unbridged — retained on the
+	// legacy token until the major (Track C tenant-variant rule).
+	// eslint-disable-next-line no-restricted-syntax -- RETAINED: tenant-variant key (docs/ds2026-plan/track-c.md §1.5 extension).
 	backgroundColor: vars.colours.background.light,
-	color: vars.typography.colour.information,
+	// `typography.colour.information` (blue500 #0d59fc) drifts from
+	// `color.info.foreground` (Figma blue600 #0d54e5) — use the exact-value
+	// gamut fallback per Track C plan §1.6/§1.9 (C-P8).
+	color: vars.color.gamut.blue['500'],
 });

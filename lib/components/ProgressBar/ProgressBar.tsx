@@ -17,7 +17,7 @@ export interface ProgressBarProps {
 
 const backgroundColorMap: Record<
 	Required<ProgressBarProps>['colour'],
-	ComponentProps<typeof Box>['backgroundColour']
+	ComponentProps<typeof Box>['backgroundColor']
 > = {
 	red: 'red500',
 	green: 'green500',
@@ -33,12 +33,12 @@ export const ProgressBar: FunctionComponent<ProgressBarProps> = ({
 	<Box
 		className={styles.container}
 		borderRadius="1"
-		backgroundColour="gray100"
+		backgroundColor="gray100"
 		odComponent="progress-bar"
 	>
 		<Box
 			borderRadius="1"
-			backgroundColour={backgroundColorMap[colour]}
+			backgroundColor={backgroundColorMap[colour]}
 			className={[styles.bar, styles.container]}
 			style={{
 				width: `${clamp(value, 0, 1) * 100}%`,

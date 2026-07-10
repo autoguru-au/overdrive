@@ -24,7 +24,7 @@ const SpaceScale = () => (
 				<p className={labels}>{space}</p>
 				<div
 					className={sprinkles({
-						backgroundColour: 'black700',
+						backgroundColour: 'gray700',
 						height: '5',
 						width: space as Sprinkles['width'],
 					})}

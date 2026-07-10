@@ -16,7 +16,7 @@ export const styledTab = recipe({
 		},
 		selectors: {
 			'&:not([aria-selected=true]):hover': {
-				color: vars.colours.foreground.body,
+				color: vars.color.foreground.primary,
 			},
 		},
 	},
@@ -31,7 +31,7 @@ export const styledTab = recipe({
 			},
 			pill: {
 				borderRadius: vars.border.radius.pill,
-				color: vars.colours.foreground.body,
+				color: vars.color.foreground.primary,
 				fontWeight: vars.typography.fontWeight.normal,
 				padding: `${vars.space['2']} ${vars.space['4']}`,
 				selectors: {
@@ -39,7 +39,7 @@ export const styledTab = recipe({
 						marginLeft: vars.space['3'],
 					},
 					'&:not([aria-selected=true]):hover': {
-						backgroundColor: vars.colours.gamut.gray200,
+						backgroundColor: vars.color.gamut.gray['200'],
 					},
 				},
 			},
@@ -75,8 +75,8 @@ export const styledTab = recipe({
 				active: true,
 			},
 			style: {
-				backgroundColor: vars.colours.foreground.body,
-				color: vars.colours.background.body,
+				backgroundColor: vars.color.foreground.primary,
+				color: vars.color.background.default,
 			},
 		},
 		{
@@ -148,7 +148,7 @@ export const indication = recipe({
 			},
 			style: {
 				backgroundColor: vars.colours.background.light,
-				color: vars.colours.foreground.body,
+				color: vars.color.foreground.primary,
 			},
 		},
 	],

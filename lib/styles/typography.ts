@@ -5,6 +5,7 @@ import { sprinkles, type Sprinkles } from './sprinkles.css';
 import {
 	common,
 	type LegacyTextColours,
+	// eslint-disable-next-line no-restricted-imports -- RETAINED: the legacy text-colour sprinkle stays until the DS-2026 major (Track C).
 	sprinklesLegacyText,
 } from './typography.css';
 

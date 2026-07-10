@@ -6,17 +6,6 @@ import { buildColourGamut } from '../makeTheme';
 import type { ThemeTokens } from '../theme.css';
 
 const colours = {
-	black: {
-		900: '#222222',
-		800: '#2A2C2A',
-		700: '#444644',
-		600: '#626262',
-		500: '#808080',
-		400: '#ADB1B5',
-		300: '#D4D9DD',
-		200: '#DDE0E3',
-		100: '#E4E4E4',
-	},
 	gray: {
 		900: '#263238',
 		800: '#37474F',
@@ -116,6 +105,10 @@ export const tokens = deepmerge(baseTokens, {
 		'3': flatElevation,
 		'4': flatElevation,
 		'5': flatElevation,
+		z1: flatElevation,
+		z2: flatElevation,
+		z3: flatElevation,
+		z4: flatElevation,
 	},
 	border: {
 		radius: {
@@ -123,6 +116,8 @@ export const tokens = deepmerge(baseTokens, {
 			sm: 'none',
 			md: 'none',
 			'1': 'none',
+			xsmall: 'none',
+			small: 'none',
 		},
 	},
 	typography: {

@@ -79,7 +79,7 @@ export const Tab = forwardRef<HTMLDivElement, TabProps>(
 					as: typeof Component === 'string' ? Component : 'button',
 					display: 'inline-flex',
 					justifyContent: 'center',
-					backgroundColour: 'transparent',
+					backgroundColor: 'transparent',
 				}),
 				textStyles({
 					colour: 'light',
@@ -117,7 +117,7 @@ export const Tab = forwardRef<HTMLDivElement, TabProps>(
 						size="2"
 						align="center"
 						display="block"
-						colour={isActive ? 'white' : 'dark'}
+						color={isActive ? 'reverse' : 'primary'}
 						className={styles.indication({
 							appearance,
 							active: isActive,

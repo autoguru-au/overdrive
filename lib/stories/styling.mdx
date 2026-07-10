@@ -115,6 +115,11 @@ _without_ the element reset styles.
 **When to use it:** When you need to apply only typographic styles and want to
 manage element resets yourself, or when no reset is needed.
 
+The `size` prop accepts either a size-scale token (`'1'`–`'9'`) or a Design
+System 2026 named style (`'h1'`–`'h4'`, `'p1'`–`'p4'`). Named styles also apply
+their default weight (bold for headings, normal for paragraphs) unless `weight`
+or `strong` is set.
+
 **Example:**
 
 ```tsx
@@ -122,10 +127,14 @@ import { typography } from '@autoguru/overdrive';
 
 const SimpleText = ({ children }) => {
   return (
-    <span className={typography({ size: '4', weight: 'semibold' })}>
+    <span className={typography({ size: '4', weight: 'semiBold' })}>
       {children}
     </span>
   );
+};
+
+const Caption = ({ children }) => {
+  return <span className={typography({ size: 'p3' })}>{children}</span>;
 };
 ```
 
@@ -153,8 +162,8 @@ const MyLabel = ({ children, className }) => {
       className={textStyles({
         as: 'label',
         className,
-        size: '5',
-        weight: 'semibold',
+        size: 'p2',
+        weight: 'semiBold',
         px: '2',
       })}
     >
@@ -280,7 +289,7 @@ Size tokens: (`"0"`, `"1"`, `"2"`, `"3"`, `"4"`, `"5"`, `"6"`,`"7"`, `"8"`,
 
 - **`text`** - Shorthand for `fontSize` and `lineHeight`
 - **`fontSize`** - Font size using design tokens
-- **`fontWeight`** - Font weight using design tokens (`normal`, `semibold`,
+- **`fontWeight`** - Font weight using design tokens (`normal`, `semiBold`,
   `bold`)
 - **`lineHeight`** - Line height using design tokens
 - **`textAlign`** - Text alignment (`left`, `center`, `right`)
@@ -288,12 +297,12 @@ Size tokens: (`"0"`, `"1"`, `"2"`, `"3"`, `"4"`, `"5"`, `"6"`,`"7"`, `"8"`,
 - **`textWrap`** - Text wrapping (`balance`, `pretty`, `stable`, `nowrap`)
 - **`wordBreak`** - Word breaking (`break-all`, `break-word`, `keep-all`)
 
-### Colors
+### Colours
 
 - **`color`** / **`fg`** - Text colour using semantic tokens
 - **`backgroundColor`** / **`bg`** - Background colour using semantic tokens
 
-- **`colour`** - Text color using legacy intentional colorset
+- **`colour`** - Text colour using legacy intentional colorset
 - **`backgroundColour`** - Background colour using legacy intentional colorset
 
 ### Borders
@@ -306,7 +315,7 @@ Size tokens: (`"0"`, `"1"`, `"2"`, `"3"`, `"4"`, `"5"`, `"6"`,`"7"`, `"8"`,
 - **`borderTopWidth`** / **`borderRightWidtht`** / **`borderBottomWidth`** /
   **`borderLeftWidth`**
 
-**Border Color:**
+**Border Colour:**
 
 - **`borderColor`** - Border colour (all sides)
 - **`borderColorX`** - Border colour left + right

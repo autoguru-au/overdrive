@@ -214,7 +214,7 @@ export const button = recipe({
 					[cssLayerComponent]: {
 						backgroundColor: 'transparent',
 						borderStyle: 'none',
-						color: vars.typography.colour.neutral,
+						color: vars.color.foreground.secondary,
 					},
 				},
 			},

@@ -8,6 +8,13 @@ export { default as neutralTheme } from './neutral';
 
 export const themes = [baseTheme, flatRedTheme, neutralTheme];
 export {
+	contrastGuide,
+	contrastGuideColour,
+	type ContrastColourToken,
+	type ContrastCombo,
+	type ContrastUsage,
+} from './base/contrastGuide';
+export {
 	overdriveTokens,
 	themeContractVars,
 	type ThemeTokens,

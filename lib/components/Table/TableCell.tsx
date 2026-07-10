@@ -49,7 +49,7 @@ export const TableCell = forwardRef<HTMLTableCellElement, TableCellProps>(
 			>
 				{typeof children === 'string' ||
 				typeof children === 'number' ? (
-					<Text as="span" colour="dark" display="block" size="3">
+					<Text as="span" color="primary" display="block" size="3">
 						{children}
 					</Text>
 				) : (

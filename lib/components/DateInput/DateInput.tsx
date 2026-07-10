@@ -223,7 +223,7 @@ export const DateInput = withEnhancedInput<DateInputProps>(
 				className={clsx(
 					field.className,
 					inline({ gap: '2', spaceBetween: true }),
-					disabled && sprinkles({ colour: 'muted' }),
+					disabled && sprinkles({ color: 'tertiaryInactive' }),
 				)}
 			>
 				<div

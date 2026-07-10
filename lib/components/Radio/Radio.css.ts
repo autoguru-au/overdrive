@@ -6,8 +6,8 @@ import {
 	nativeInput,
 } from '../private/CheckableBase/CheckableBase.css';
 
-const colorAccent = vars.colours.foreground.body;
-const colorContrast = vars.colours.background.body;
+const colorAccent = vars.color.foreground.primary;
+const colorContrast = vars.color.background.default;
 const colorMid = vars.colours.background.neutral;
 const outerSize = vars.space['6'];
 const innerSize = vars.space['3'];

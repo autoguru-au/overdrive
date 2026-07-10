@@ -1,85 +1,436 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import clsx from 'clsx';
-import React from 'react';
+import React, { useState } from 'react';
 
-import { FlexInline } from '../components/Flex/FlexInline';
-import { FlexStack } from '../components/Flex/FlexStack';
 import { Heading } from '../components/Heading';
-import { sprinkles } from '../styles/sprinkles.css';
-import { overdriveTokens, type ColourValue } from '../themes';
-import { colourMapWithoutWhite } from '../themes/base/colours';
-
-import { ColourSwatch } from './helpers';
-import { labels, hexPill } from './helpers/styles.css';
-
-interface SwatchProps {
-	colour: string;
-	hex?: string;
-	hue?: string;
-}
-const Swatch = ({ colour, hex, hue }: SwatchProps) => (
-	<FlexInline justify="center">
-		<ColourSwatch
-			size="lg"
-			style={{
-				backgroundColor: overdriveTokens.color.gamut[hue!][colour],
-			}}
-		>
-			<div className={hexPill}>{hex}</div>
-		</ColourSwatch>
-		{hue && colour.replace(hue, '')}
-	</FlexInline>
-);
-
-interface PaletteSwatchesProps {
-	hue: string;
-	shades: ColourValue;
-}
-const PaletteSwatches = ({ hue, shades }: PaletteSwatchesProps) => (
-	<FlexStack gap="5">
-		{Object.entries(shades)
-			.reverse()
-			.map(([colour, hex]) => (
-				<Swatch colour={colour} hex={hex} hue={hue} key={hex} />
-			))}
-	</FlexStack>
-);
-
-const Palettes = () => (
-	<FlexInline gap="8">
-		{Object.keys(colourMapWithoutWhite).map((hue) => (
-			<div key={hue}>
-				<Heading
-					as="h3"
-					className={clsx([labels, sprinkles({ marginBottom: '5' })])}
-				>
-					{hue}
-				</Heading>
-				<PaletteSwatches
-					hue={hue}
-					shades={colourMapWithoutWhite[hue]}
-				/>
-			</div>
-		))}
-	</FlexInline>
-);
+import { colourMap, colourMapWithoutWhite } from '../themes/base/colours';
 
 const meta: Meta = {
-	title: 'Foundation/Palette',
+	title: 'Foundation/Colour Palette',
 	tags: ['!autodocs'],
 };
 export default meta;
 
 type Story = StoryObj;
 
-export const Palette: Story = {
-	render: () => {
-		return (
-			<FlexStack gap="7">
-				<Heading as="h1">Palette</Heading>
-				<Heading as="h2">Colours</Heading>
-				<Palettes />
-			</FlexStack>
-		);
+const coreBrand = [
+	{
+		label: 'Adventure Green',
+		token: 'Green-500',
+		hex: colourMap.green['500'],
+		text: '#212338',
 	},
+	{
+		label: 'Zest Yellow',
+		token: 'Yellow-500',
+		hex: colourMap.yellow['500'],
+		text: '#212338',
+	},
+	{
+		label: 'Tarmac Black',
+		token: 'Gray-900',
+		hex: colourMap.gray['900'],
+		text: '#ffffff',
+	},
+];
+
+const ramp = (
+	hue: keyof typeof colourMapWithoutWhite,
+): Record<string, string> =>
+	Object.fromEntries(
+		Object.entries(colourMapWithoutWhite[hue])
+			.reverse()
+			// the trailing space in the key stops JS from re-sorting
+			// integer-like keys ascending, keeping the 900 → 100 display order
+			.map(([step, hex]): [string, string] => [
+				`${step} `,
+				hex.toUpperCase(),
+			]),
+	);
+
+const codeCard: React.CSSProperties = {
+	display: 'flex',
+	flexDirection: 'column',
+	border: '1px solid #e4e7ea',
+	borderRadius: 12,
+	overflow: 'hidden',
+	background: '#ffffff',
+};
+
+const codeHead: React.CSSProperties = {
+	display: 'flex',
+	alignItems: 'center',
+	gap: 10,
+	padding: '11px 16px',
+	borderBottom: '1px solid #eef0f2',
+	fontSize: 13,
+	fontWeight: 700,
+	color: '#212338',
+};
+
+const codeTag: React.CSSProperties = {
+	fontFamily: 'ui-monospace, "SF Mono", Menlo, monospace',
+	fontSize: 10,
+	letterSpacing: '0.08em',
+	textTransform: 'uppercase',
+	color: '#00574c',
+	background: '#e5f4ef',
+	borderRadius: 999,
+	padding: '3px 9px',
+};
+
+const codeBody: React.CSSProperties = {
+	flex: 1,
+	background: '#f6f7f9',
+	color: '#212338',
+	margin: 0,
+	padding: '16px 20px',
+	fontSize: 12.5,
+	lineHeight: 1.75,
+	overflowX: 'auto',
+	fontFamily: 'ui-monospace, "SF Mono", Menlo, Consolas, monospace',
+};
+
+/** A single colour ramp: title on the left, its shades as a strip of swatches. */
+const RampRow = ({
+	title,
+	colors,
+}: {
+	title: string;
+	colors: Record<string, string>;
+}) => (
+	<div
+		style={{
+			display: 'flex',
+			gap: 16,
+			alignItems: 'flex-start',
+			padding: '14px 0',
+			borderTop: '1px solid #eef0f2',
+		}}
+	>
+		<div style={{ flex: '0 0 96px', fontWeight: 700, fontSize: 14 }}>
+			{title}
+		</div>
+		<div
+			style={{
+				flex: 1,
+				display: 'grid',
+				gridTemplateColumns:
+					'repeat(auto-fill, minmax(72px, 1fr))',
+				gap: 8,
+			}}
+		>
+			{Object.entries(colors).map(([label, hex]) => (
+				<div key={label}>
+					<div
+						style={{
+							background: hex,
+							height: 48,
+							borderRadius: 6,
+							boxShadow: 'inset 0 0 0 1px rgba(33, 35, 56, 0.1)',
+						}}
+					/>
+					<div
+						style={{
+							fontSize: 11,
+							fontWeight: 600,
+							color: '#212338',
+							marginTop: 6,
+						}}
+					>
+						{label.trim()}
+					</div>
+					<div
+						style={{
+							fontSize: 10,
+							color: '#5c6172',
+							fontFamily:
+								'ui-monospace, "SF Mono", Menlo, monospace',
+						}}
+					>
+						{hex}
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+);
+
+const HUES = ['green', 'yellow', 'blue', 'red', 'gray'] as const;
+
+const DynamicPalette = () => {
+	const [hue, setHue] = useState<(typeof HUES)[number]>('green');
+	const steps = Object.entries(colourMapWithoutWhite[hue]);
+	return (
+		<div
+			style={{
+				background: '#ffffff',
+				border: '1px solid #e4e7ea',
+				borderRadius: 16,
+				padding: 24,
+				boxShadow:
+					'0 1px 2px rgba(33, 35, 56, 0.04), 0 8px 24px rgba(33, 35, 56, 0.06)',
+			}}
+		>
+			<div
+				style={{
+					display: 'flex',
+					alignItems: 'center',
+					gap: 10,
+					marginBottom: 20,
+				}}
+			>
+				<span
+					style={{
+						fontFamily:
+							'ui-monospace, "SF Mono", Menlo, monospace',
+						fontSize: 11,
+						letterSpacing: '0.1em',
+						textTransform: 'uppercase',
+						color: '#5c6172',
+						marginRight: 2,
+					}}
+				>
+					Colour
+				</span>
+				{HUES.map((name) => (
+					<button
+						key={name}
+						type="button"
+						title={name}
+						aria-label={name}
+						aria-pressed={name === hue}
+						onClick={() => setHue(name)}
+						style={{
+							width: 26,
+							height: 26,
+							borderRadius: '50%',
+							padding: 0,
+							border:
+								name === hue
+									? '2px solid #212338'
+									: '2px solid rgba(33, 35, 56, 0.15)',
+							background: colourMapWithoutWhite[name]['500'],
+							cursor: 'pointer',
+							boxShadow:
+								name === hue
+									? '0 0 0 3px rgba(33, 35, 56, 0.1)'
+									: 'none',
+							transition:
+								'box-shadow 120ms ease, border-color 120ms ease',
+						}}
+					/>
+				))}
+				<span
+					style={{
+						marginLeft: 'auto',
+						color: '#212338',
+						fontWeight: 700,
+						fontSize: 15,
+						textTransform: 'capitalize',
+					}}
+				>
+					{hue}
+				</span>
+			</div>
+			<div
+				style={{
+					display: 'grid',
+					gridTemplateColumns: 'repeat(9, 1fr)',
+					gap: 6,
+					margin: '0 0 20px',
+				}}
+			>
+				{steps.map(([step, hex]) => (
+					<div key={step} title={`--od-color-gamut-${hue}-${step}`}>
+						<div
+							style={{
+								background: hex,
+								borderRadius: 8,
+								height: 60,
+								boxShadow: 'inset 0 0 0 1px rgba(33, 35, 56, 0.1)',
+							}}
+						/>
+						<div
+							style={{
+								color: '#5c6172',
+								fontSize: 11,
+								textAlign: 'center',
+								marginTop: 6,
+								fontFamily:
+									'ui-monospace, "SF Mono", Menlo, monospace',
+							}}
+						>
+							{step}
+							<br />
+							{hex.toUpperCase()}
+						</div>
+					</div>
+				))}
+			</div>
+			<pre
+				style={{
+					background: '#f6f7f9',
+					color: '#212338',
+					margin: 0,
+					padding: '16px 20px',
+					borderRadius: 10,
+					fontSize: 12.5,
+					lineHeight: 1.7,
+					overflowX: 'auto',
+					fontFamily:
+						'ui-monospace, "SF Mono", Menlo, Consolas, monospace',
+				}}
+			>
+				{steps
+					.map(
+						([step, hex]) =>
+							`--od-color-gamut-${hue}-${step}: ${hex.toUpperCase()};`,
+					)
+					.join('\n')}
+			</pre>
+		</div>
+	);
+};
+
+export const ColourPalette: Story = {
+	render: () => (
+		<div>
+			<Heading>Colour Palette</Heading>
+			<p style={{ maxWidth: 720 }}>
+				The AutoGuru Design System colour ramps. Every colour ships from
+				step 100 (lightest) to 900 (darkest) as a CSS custom property.
+			</p>
+
+			<div
+				style={{
+					display: 'flex',
+					gap: 16,
+					margin: '24px 0 40px',
+				}}
+			>
+				<div
+					style={{
+						flex: '0 0 96px',
+						fontWeight: 700,
+						fontSize: 14,
+					}}
+				>
+					Core brand
+				</div>
+				<div
+					style={{
+						flex: 1,
+						display: 'grid',
+						gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+						gap: 16,
+					}}
+				>
+					{coreBrand.map(({ label, token, hex, text }) => (
+						<div key={token}>
+							<div
+								style={{
+									fontSize: 12,
+									color: '#5c6172',
+									marginBottom: 8,
+								}}
+							>
+								{label}
+							</div>
+							<div
+								style={{
+									background: hex,
+									borderRadius: 12,
+									height: 120,
+									padding: 16,
+									display: 'flex',
+									flexDirection: 'column',
+									justifyContent: 'flex-end',
+									color: text,
+								}}
+							>
+								<div style={{ fontWeight: 700, fontSize: 15 }}>
+									{token}
+								</div>
+								<div style={{ fontSize: 13, opacity: 0.85 }}>
+									{hex.toUpperCase()}
+								</div>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+
+			<div style={{ margin: '8px 0 40px' }}>
+				<RampRow title="Green" colors={ramp('green')} />
+				<RampRow title="Gray" colors={ramp('gray')} />
+				<RampRow title="Yellow" colors={ramp('yellow')} />
+				<RampRow title="Blue" colors={ramp('blue')} />
+				<RampRow title="Red" colors={ramp('red')} />
+				<RampRow
+					title="White"
+					colors={{ white: colourMap.white.toUpperCase() }}
+				/>
+			</div>
+
+			<Heading as="h2">Usage</Heading>
+			<p style={{ maxWidth: 720 }}>
+				Every ramp step ships as a CSS custom property. Pair text and
+				background steps that meet WCAG AA contrast (4.5:1 for normal
+				text).
+			</p>
+
+			<div
+				style={{
+					display: 'grid',
+					gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+					gap: 16,
+					margin: '16px 0 8px',
+					alignItems: 'stretch',
+				}}
+			>
+				<div style={codeCard}>
+					<div style={codeHead}>
+						<span style={codeTag}>Tokens</span> Custom properties
+					</div>
+					<pre style={codeBody}>
+						{[
+							'--od-color-gamut-gray-{100-900}',
+							'--od-color-gamut-green-{100-900}',
+							'--od-color-gamut-blue-{100-900}',
+							'--od-color-gamut-yellow-{100-900}',
+							'--od-color-gamut-red-{100-900}',
+							'--od-color-gamut-white',
+						].join('\n')}
+					</pre>
+				</div>
+				<div style={codeCard}>
+					<div style={codeHead}>
+						<span style={codeTag}>CSS</span> Button sample
+					</div>
+					<pre style={codeBody}>
+						{[
+							'button.green {',
+							'  color: var(--od-color-gamut-white);',
+							'  background-color: var(--od-color-gamut-green-800);',
+							'  border: 1px solid var(--od-color-gamut-green-900);',
+							'',
+							'  &:hover {',
+							'    background-color: var(--od-color-gamut-green-900);',
+							'  }',
+							'}',
+						].join('\n')}
+					</pre>
+				</div>
+			</div>
+
+			<Heading as="h2">Dynamic Palette</Heading>
+			<p style={{ maxWidth: 720 }}>
+				Pick a colour to explore its ramp and the exact custom
+				properties it ships. Every swatch and value below is a real
+				token from <code>lib/themes/base/colours.ts</code>.
+			</p>
+
+			<DynamicPalette />
+		</div>
+	),
 };
