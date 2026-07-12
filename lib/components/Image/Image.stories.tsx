@@ -41,7 +41,7 @@ const meta = {
 	component: Image,
 	args: {
 		imageWidth: '8',
-		width: '8',
+		width: '12',
 		quality: void 0,
 		eager: false,
 		unoptimised: false,
