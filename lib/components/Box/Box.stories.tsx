@@ -34,7 +34,7 @@ export const Standard: Story = {};
 export const ResponsiveProps: Story = {
 	args: {
 		children: 'Resize the viewport',
-		padding: ['3', '6', '8'],
+		padding: ['3', '6', '9'],
 	},
 };
 
