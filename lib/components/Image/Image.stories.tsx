@@ -42,6 +42,8 @@ const meta = {
 	args: {
 		imageWidth: '8',
 		width: '8',
+		// NOTE: `width`/`imageWidth` index the Image `widthMap` scale, NOT the
+		// theme `space` scale — do not renumber these with the space codemod.
 		quality: void 0,
 		eager: false,
 		unoptimised: false,
