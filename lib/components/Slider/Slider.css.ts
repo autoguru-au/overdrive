@@ -17,7 +17,7 @@ export const container = sprinkles({
 
 export const label = sprinkles({
 	fontSize: '6',
-	fontWeight: 'semiBold',
+	fontWeight: 'medium',
 	color: 'normal',
 });
 
@@ -29,7 +29,7 @@ export const valueDisplay = sprinkles({
 
 export const valueText = sprinkles({
 	fontSize: '7',
-	fontWeight: 'semiBold',
+	fontWeight: 'medium',
 	color: 'normal',
 });
 

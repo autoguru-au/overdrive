@@ -30,7 +30,7 @@ export const button = recipe({
 			alignItems: 'center',
 			borderRadius: 'md',
 			borderStyle: 'none',
-			fontWeight: 'semiBold',
+			fontWeight: 'medium',
 			gap: '1',
 			justifyContent: 'center',
 			position: 'relative',
