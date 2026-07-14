@@ -194,7 +194,7 @@ const NamedStyles = () => (
 				return (
 					<div
 						key={name}
-						style={tableRow(NAMED_COLUMNS, i === 0, 'start')}
+						style={tableRow(NAMED_COLUMNS, i === 0, 'center')}
 					>
 						<span style={chip}>{name}</span>
 						<span style={metaChip}>
@@ -202,8 +202,9 @@ const NamedStyles = () => (
 						</span>
 						<div
 							style={{
+								alignItems: 'flex-start',
 								display: 'flex',
-								flexWrap: 'wrap',
+								flexDirection: 'column',
 								gap: 6,
 							}}
 						>
