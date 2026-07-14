@@ -33,9 +33,9 @@ const compactWeightMap: Record<HeadingLevel, TypographyProps['weight']> = {
 	h1: 'bold',
 	h2: 'bold',
 	h3: 'bold',
-	h4: 'semiBold',
-	h5: 'semiBold',
-	h6: 'semiBold',
+	h4: 'medium',
+	h5: 'medium',
+	h6: 'medium',
 };
 
 function createHeadingComponent(level: HeadingLevel) {

@@ -62,7 +62,7 @@ export const TextLink = forwardRef<HTMLAnchorElement, TextLinkProps>(
 			size,
 			strong,
 			transform,
-			weight = 'semiBold',
+			weight = 'medium',
 			...props
 		},
 		ref,

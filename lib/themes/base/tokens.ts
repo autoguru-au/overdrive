@@ -434,7 +434,8 @@ export const tokens = {
 		fontFamilyMono: "'Courier New', Courier, monospace",
 		fontWeight: {
 			normal: '400',
-			semiBold: '500',
+			medium: '500',
+			semiBold: '600',
 			bold: '700',
 		},
 	},

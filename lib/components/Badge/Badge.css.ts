@@ -8,7 +8,7 @@ export const styledBadge = recipe({
 		{
 			display: 'inline-block',
 			overflow: 'hidden',
-			fontWeight: tokens.typography.fontWeight.semiBold,
+			fontWeight: tokens.typography.fontWeight.medium,
 			textOverflow: 'ellipsis',
 			textTransform: 'uppercase',
 			letterSpacing: '0.5px',

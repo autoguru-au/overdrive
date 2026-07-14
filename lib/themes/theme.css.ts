@@ -455,6 +455,7 @@ const THEME_CONTRACT = {
 		fontFamilyMono: 'font-family-mono',
 		fontWeight: {
 			normal: 'font-weight-normal',
+			medium: 'font-weight-medium',
 			semiBold: 'font-weight-semi-bold',
 			bold: 'font-weight-bold',
 		},
