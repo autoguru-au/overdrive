@@ -348,7 +348,7 @@ type Story = StoryObj;
 
 export const Borders: Story = {
 	render: () => (
-		<FlexStack gap="8">
+		<FlexStack gap="9">
 			<Heading as="h1">Borders &amp; Shadows</Heading>
 
 			<WidthSection />

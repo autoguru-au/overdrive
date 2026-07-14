@@ -82,7 +82,7 @@ export const button = recipe({
 				'@layer': {
 					[cssLayerComponent]: {
 						fontSize: vars.typography.size[4].fontSize,
-						height: vars.space['8'],
+						height: vars.space['9'],
 					},
 				},
 			},
@@ -237,7 +237,7 @@ export const button = recipe({
 			style: {
 				'@layer': {
 					[cssLayerComponent]: {
-						minWidth: vars.space['8'],
+						minWidth: vars.space['9'],
 					},
 				},
 			},
@@ -267,7 +267,7 @@ export const button = recipe({
 			style: {
 				'@layer': {
 					[cssLayerComponent]: {
-						minWidth: vars.space['9'],
+						minWidth: vars.space['12'],
 					},
 				},
 			},
@@ -277,7 +277,7 @@ export const button = recipe({
 			style: {
 				'@layer': {
 					[cssLayerComponent]: {
-						minWidth: vars.space['8'],
+						minWidth: vars.space['9'],
 					},
 				},
 			},
@@ -287,7 +287,7 @@ export const button = recipe({
 			style: {
 				'@layer': {
 					[cssLayerComponent]: {
-						width: vars.space['8'],
+						width: vars.space['9'],
 					},
 				},
 			},

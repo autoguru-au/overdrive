@@ -146,7 +146,7 @@ type Story = StoryObj;
 
 export const Typography: Story = {
 	render: () => (
-		<FlexStack gap="8">
+		<FlexStack gap="9">
 			<Heading as="h1">Typography</Heading>
 			<NamedStyles />
 			<TypeScale />

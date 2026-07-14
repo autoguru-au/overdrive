@@ -36,7 +36,7 @@ export const Standard: Story = {
 		>
 			<StickyBox {...args}>
 				<Box
-					marginTop="8"
+					marginTop="9"
 					padding="3"
 					width="full"
 					backgroundColor="yellow700"

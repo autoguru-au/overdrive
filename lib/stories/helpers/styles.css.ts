@@ -253,12 +253,12 @@ export const variantColourSwatch = recipe({
 				width: overdriveTokens.space[7],
 			},
 			md: {
-				height: overdriveTokens.space[8],
-				width: overdriveTokens.space[8],
-			},
-			lg: {
 				height: overdriveTokens.space[9],
 				width: overdriveTokens.space[9],
+			},
+			lg: {
+				height: overdriveTokens.space[12],
+				width: overdriveTokens.space[12],
 			},
 		},
 		shape: {

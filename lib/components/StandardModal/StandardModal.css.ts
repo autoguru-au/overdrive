@@ -11,8 +11,8 @@ export const modal = style({
 	alignSelf: 'flex-end',
 	borderRadius: `${vars.border.radius['2xl']} ${vars.border.radius['2xl']} 0 0`,
 	height: 'auto',
-	maxHeight: `calc(100vh - ${vars.space['8']})`,
-	minHeight: `calc(3 * ${vars.space['8']})`,
+	maxHeight: `calc(100vh - ${vars.space['9']})`,
+	minHeight: `calc(3 * ${vars.space['9']})`,
 	width: '100vw',
 	...responsiveStyle({
 		tablet: {
@@ -20,9 +20,9 @@ export const modal = style({
 			borderRadius: vars.border.radius['2xl'],
 		},
 		desktop: {
-			maxWidth: `calc(100% - ${vars.space['9']} * 2)`,
+			maxWidth: `calc(100% - ${vars.space['12']} * 2)`,
 			height: 'auto',
-			maxHeight: `calc(100vh - ${vars.space['9']} * 2)`,
+			maxHeight: `calc(100vh - ${vars.space['12']} * 2)`,
 			boxShadow:
 				'0 0 32px 0 rgba(0,0,0, 0.012), 0 24px 96px 0 rgba(0,0,0, 0.08)',
 			marginTop: 0,

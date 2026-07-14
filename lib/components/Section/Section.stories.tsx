@@ -25,7 +25,7 @@ const boxProps: ComponentProps<typeof Box> = {
 	padding: ['2', '4'],
 	backgroundColour: 'primary',
 	colour: 'primary',
-	marginBottom: ['2', '4', '5', '8'],
+	marginBottom: ['2', '4', '5', '9'],
 	marginX: ['none', '3', '5'],
 	borderRadius: 'pill',
 	boxShadow: '2', // ['none', '1', '2', '3'],

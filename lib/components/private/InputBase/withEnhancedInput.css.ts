@@ -93,12 +93,12 @@ export const inputItselfSize = {
 		root: styleVariants({
 			any: {
 				fontSize: vars.typography.size['4'].fontSize,
-				height: vars.space['8'],
+				height: vars.space['9'],
 				lineHeight: vars.typography.size['4'].lineHeight,
-				padding: `calc(((${vars.space['8']} - ${vars.typography.size['4'].fontSize}) / 2) - 3px) calc(${vars.space['4']} - 1px)`,
+				padding: `calc(((${vars.space['9']} - ${vars.typography.size['4'].fontSize}) / 2) - 3px) calc(${vars.space['4']} - 1px)`,
 			},
 			textarea: {
-				padding: `${vars.space['1']} calc(${vars.space['4']} - 1px) calc(((${vars.space['8']} - ${vars.typography.size['4'].fontSize}) / 2) - 3px)`,
+				padding: `${vars.space['1']} calc(${vars.space['4']} - 1px) calc(((${vars.space['9']} - ${vars.typography.size['4'].fontSize}) / 2) - 3px)`,
 			},
 		}),
 		prefixed: styleVariants({

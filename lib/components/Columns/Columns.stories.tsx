@@ -17,7 +17,7 @@ const meta: Meta<typeof Columns> = {
 		align: 'bottom',
 		noWrap: false,
 		space: undefined,
-		spaceX: ['1', '3', '8'],
+		spaceX: ['1', '3', '9'],
 		spaceY: ['1', '5'],
 		wrappingDirection: undefined,
 	},

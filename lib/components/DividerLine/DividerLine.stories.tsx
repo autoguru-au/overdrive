@@ -1,27 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { type ComponentProps } from 'react';
 
+import { valueArrays } from '../../styles/sprinkles.css';
 import { Box } from '../Box/Box';
 import { FlexInline } from '../Flex/FlexInline';
 import { Heading } from '../Heading/Heading';
 
 import { DividerLine } from './DividerLine';
-
-const spacingOptions: Record<
-	string,
-	ComponentProps<typeof DividerLine>['space']
-> = {
-	none: 'none',
-	1: '1',
-	2: '2',
-	3: '3',
-	4: '4',
-	5: '5',
-	6: '6',
-	7: '7',
-	8: '8',
-	9: '9',
-};
 
 const sizeOptions: ComponentProps<typeof DividerLine>['size'][] = [1, 2, 3];
 
@@ -41,7 +26,7 @@ const meta = {
 	component: DividerLine,
 	argTypes: {
 		space: {
-			options: Object.keys(spacingOptions),
+			options: valueArrays.spaceWithNone,
 			defaultValue: 1,
 			control: {
 				type: 'select',

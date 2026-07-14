@@ -25,8 +25,8 @@ const itemProps = (height: Sprinkles['height']) => ({
 	style: { minWidth: '150px' },
 });
 
-const Item1 = () => <div {...itemProps('8')}>1</div>;
-const Item2 = () => <div {...itemProps('9')}>2</div>;
+const Item1 = () => <div {...itemProps('9')}>1</div>;
+const Item2 = () => <div {...itemProps('12')}>2</div>;
 const Item3 = () => <div {...itemProps('7')}>3</div>;
 
 const meta = {
@@ -154,7 +154,7 @@ export const MoreExamples: Story = {
 						<Item1 />
 						<Item2 />
 						<Item3 />
-						<div {...itemProps('8')}>4</div>
+						<div {...itemProps('9')}>4</div>
 					</FlexInline>
 				</div>
 			</div>

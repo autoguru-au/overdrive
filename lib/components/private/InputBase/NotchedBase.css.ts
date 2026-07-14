@@ -205,7 +205,7 @@ const calcPlaceholderTranslate = (
 			? `calc(${vars.space['7']} + ${vars.space['3']})`
 			: typography.fontSize;
 
-		return `${offsetX}, calc((${vars.space['8']} - ${
+		return `${offsetX}, calc((${vars.space['9']} - ${
 			typography.fontSize
 		}) / 2)`;
 	}

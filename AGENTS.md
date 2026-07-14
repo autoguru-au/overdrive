@@ -73,7 +73,7 @@ lib/components/ComponentName/
   `mobile | tablet | desktop | largeDesktop`
 - SHOULD: Use `color` (American) for new design system tokens
 - SHOULD: Use `colour` (British) for legacy palette when needed
-- SHOULD: Use space tokens (`'1'` to `'9'`) for dimensions and spacing
+- SHOULD: Use space tokens (`'0'` to `'12'`, or `none`) for dimensions and spacing. `'0'` and `none` both = 0px; the ladder runs 0/4/8/12/16/20/24/32/40/48/64/80/96px
 
 ## Testing & Storybook
 

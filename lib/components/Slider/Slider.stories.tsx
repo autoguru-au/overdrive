@@ -61,7 +61,7 @@ export const Standard: Story = {
  */
 export const Variants: Story = {
 	render: () => (
-		<Stack space="8">
+		<Stack space="9">
 			<Slider
 				label="Value with units"
 				name="demo-distance-slider"
@@ -116,7 +116,7 @@ export const Variants: Story = {
  */
 export const Interactions: Story = {
 	render: () => (
-		<Stack space="8">
+		<Stack space="9">
 			<Stack space="3">
 				<Slider
 					label="Distance from location"

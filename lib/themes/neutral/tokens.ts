@@ -77,18 +77,8 @@ export const tokens = deepmerge(baseTokens, {
 		large: '1344px',
 		medium: '940px',
 	},
-	space: {
-		'1': '4px',
-		'2': '8px',
-		'3': '12px',
-		'4': '16px',
-		'5': '20px',
-		'6': '24px',
-		'7': '32px',
-		'8': '48px',
-		'9': '96px',
-		none: '0px',
-	},
+	// `space` intentionally omitted: inherited from baseTokens via deepmerge
+	// so the DS-2026 spacing scale lives in one place and can't drift.
 	colours: {
 		gamut: {
 			...buildColourGamut(colours),
