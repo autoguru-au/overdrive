@@ -25,6 +25,9 @@ const SAMPLE = 'Sphinx of black quartz, judge my vow';
 // ---------------------------------------------------------------------------
 // Design tokens for this page — mirror the Foundation/Colour Palette styling so
 // every Foundation page reads as one system.
+// TODO(follow-up): move these page styles into helpers/styles.css.ts +
+// overdriveTokens (vanilla-extract), like borders/space stories, so the page is
+// theme-aware (dark mode) instead of hardcoded hex. Tracked separately.
 // ---------------------------------------------------------------------------
 const INK = '#212338';
 const SOFT = '#5c6172';
