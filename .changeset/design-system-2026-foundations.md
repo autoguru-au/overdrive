@@ -2,55 +2,56 @@
 '@autoguru/overdrive': minor
 ---
 
-feat: Design System 2026 foundations (opt-in, no visual change)
+**Design System 2026 — foundations release** 🎨
 
-Lands the first wave of AutoGuru Design System 2026. Everything here is
-**additive and opt-in** — existing components and MFEs render identically, so
-teams can adopt the new tokens screen by screen.
+The first wave of AutoGuru's Design System 2026 lands in Overdrive. This release
+adds the new colour, type, spacing and elevation vocabulary — **without changing
+how anything looks today**. Every new token is opt-in, so you can move a screen
+onto DS-2026 whenever you're ready, one component at a time. Existing apps and
+MFEs render exactly as before after upgrading.
 
-**New design tokens**
+### ✨ New design tokens
 
-- **Colour ramps** rebuilt from the DS-2026 Figma palette
-  (`lib/themes/base/colours.ts` is the single source of truth), plus a contrast
-  guide exported as data (`contrastGuide`) and a spec enforcing WCAG AA. The
-  standalone `black` ramp is removed — "Tarmac Black" is now `gray/900`;
-  `backgroundColour="black900"` is retained as a deprecated alias of `gray900`
-  and will be removed in the DS-2026 major.
-- **Semantic colour tokens** — foreground / background / border / info /
-  success / warning / alert, plus **button colour tokens**.
-- **Sprinkles colour parity** — the ramp and semantic namespaces are now exposed
-  on `color` / `backgroundColor` / `border*Color` (legacy props unchanged).
-- **Typography** — new named text styles `h1`–`h4` (line-height 1.25) and
-  `p1`–`p4` (1.4), accepted by the `size` prop of `<Text>`, `<Heading>`,
-  `textStyles()` and `typography()`; exported as `TEXT_STYLES`, `NamedTextStyle`
-  and `namedTextStyleMap`. The legacy numeric size scale is unchanged.
-- **Font weights** — new `medium` (500) weight; `semiBold` now maps to 600
-  (was 500) to match Figma. Components that used `semiBold` were repointed to
-  `medium`, so they render unchanged. Scale is now `normal` 400 · `medium` 500 ·
-  `semiBold` 600 · `bold` 700. Code passing `weight="semiBold"` directly now
-  renders at 600 — use `weight="medium"` to keep 500.
-- **Space tokens** (AG-20128).
-- **Radius & shadow** — DS-2026 radius aliases, a 20px radius, and z1–z4
-  shadows. (Motion/focus tokens deferred — no Figma variables yet.)
-- New Storybook pages: `Foundation/Typography` and `Foundation/Contrast Guide`.
+- **Colour** — full DS-2026 colour ramps, sourced 1:1 from the
+  [Figma palette](https://www.figma.com/design/ZkQlQcJkF7NTnZomVrPRN5/AutoGuru-Design-System-2026)
+  (`lib/themes/base/colours.ts` is the single source of truth). Adds **semantic
+  tokens** (`foreground` · `background` · `border` · `info` · `success` ·
+  `warning` · `alert`) and **button colour tokens**, plus a machine-readable
+  **contrast guide** (`contrastGuide`) with a spec that enforces WCAG AA.
+- **Typography** — new named text styles on the `size` prop of `<Text>`,
+  `<Heading>`, `textStyles()` and `typography()`: headings `h1`–`h4`
+  (line-height 1.25) and paragraphs `p1`–`p4` (1.4). Exported as `TEXT_STYLES`,
+  `NamedTextStyle`, `namedTextStyleMap`.
+- **Font weights** — new **`medium` (500)**. Weight scale is now
+  `normal` 400 · `medium` 500 · `semiBold` 600 · `bold` 700.
+- **Spacing** — DS-2026 space tokens (AG-20128).
+- **Radius & elevation** — new radius aliases, a 20px radius, and `z1`–`z4`
+  shadow tokens.
+- **Sprinkles** — the ramp and semantic namespaces are now available on
+  `color` / `backgroundColor` / `border*Color`.
+- **Storybook** — new `Foundation/Typography` and `Foundation/Contrast Guide`
+  pages.
 
-**Internal repointing ("Track C") — pixel-identical, no API change**
+### 🔧 Under the hood (Track C)
 
-Component internals were moved off the legacy `colours.*` / `typography.colour`
-surface onto the new semantic `color.*` tokens, verified pixel-identical on the
-base theme (intent and theme-variant refs are retained until the major):
-Button, Tabs, Tooltip, Pagination, ProgressSpinner, Alert, OptionGrid,
-OptionList, SearchBar, Popover, Calendar, Table, DataTable, Meta, Modal,
-StandardModal, Flyout, StickyBox, LoadingBox, TextBubble, OrderedList,
-BulletText/BulletList, EditableText, ScrollPane, ProgressBar/ProgressBarGroup,
-SliderProgress, HorizontalAutoScroller, LinearProgressIndicator, AutoSuggest,
-DateInput, DateTimeField, and the library-wide default text-colour path. The
-semantic `color.gamut` now aliases the legacy gamut CSS vars so theme overrides
-(flat_red, tenant themes) drive both identically.
+Component internals across the library — inputs, buttons, tabs, tooltips,
+overlays & menus, tables & grids, modals & containers, progress indicators,
+text/list components and date fields — were migrated off the legacy
+`colours.*` / `typography.colour` surface onto the new semantic `color.*`
+tokens. This is **pixel-identical on every theme**: `color.gamut` aliases the
+legacy gamut CSS vars, so theme overrides (`flat_red`, tenant themes) drive the
+new tokens exactly as they drove the old ones. No public API changed.
 
-**Deprecation**
+### ⚠️ Worth knowing before you upgrade
 
-The legacy colour surface (`colours.*`, `typography.colour`, legacy sprinkles
-colour props, redundant radius keys) is deprecated — still exported and
-functional until the DS-2026 major. ESLint now warns on new internal legacy
-usage and will flip to `error` once the Track C burn-down reaches zero.
+- **`semiBold` moved 500 → 600** to match Figma. Components that used `semiBold`
+  were repointed to `medium`, so they look unchanged — but if _your_ code passes
+  `weight="semiBold"` directly, it now renders at 600. Use `weight="medium"` to
+  keep the old 500.
+- **The `black` ramp was removed** — "Tarmac Black" is now `gray/900`. Use
+  `gray900` instead. `backgroundColour="black900"` still works as a deprecated
+  alias and is removed in the DS-2026 major.
+- **Legacy colour surface is deprecated** (`colours.*`, `typography.colour`,
+  legacy sprinkles colour props, redundant radius keys) — still exported and
+  fully functional until the DS-2026 major. ESLint now _warns_ on new internal
+  legacy usage; it flips to _error_ once the Track C burn-down hits zero.
