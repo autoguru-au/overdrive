@@ -4,52 +4,53 @@
 
 **New design token foundations** 🎨
 
-A refreshed set of colour, typography, spacing and elevation tokens lands in
-Overdrive — opt-in, with **no visual change to existing apps**. Migrate a screen
-onto the new system whenever you're ready, one component at a time.
+This release brings in a fresh set of colour, typography, spacing and elevation
+tokens. Nothing looks different after you upgrade. The old tokens all still work,
+so you can move your screens over to the new ones whenever it suits you, one
+component at a time. There's no big-bang migration to plan for.
 
 ### Added
 
-- **Colour** — refreshed colour ramps (`lib/themes/base/colours.ts` is the
-  single source of truth), **semantic tokens** (`foreground` · `background` ·
-  `border` · `info` · `success` · `warning` · `alert`), **button colour
-  tokens**, and a machine-readable **contrast guide** (`contrastGuide`) with a
-  spec that enforces WCAG AA.
-- **Typography** — named text styles on the `size` prop of `<Text>`,
-  `<Heading>`, `textStyles()` and `typography()`: headings `h1`–`h4`
-  (line-height 1.25) and paragraphs `p1`–`p4` (1.4). Exported as `TEXT_STYLES`,
-  `NamedTextStyle`, `namedTextStyleMap`.
-- **Font weights** — new **`medium` (500)**. Weight scale is now
-  `normal` 400 · `medium` 500 · `semiBold` 600 · `bold` 700.
-- **Spacing** — new space scale tokens.
-- **Radius & elevation** — new radius aliases, a 20px radius, and `z1`–`z4`
-  shadow tokens.
-- **Sprinkles** — the ramp and semantic namespaces are now available on
-  `color` / `backgroundColor` / `border*Color`.
-- **Storybook** — new `Foundation/Typography` and `Foundation/Contrast Guide`
-  pages.
+- **Colour.** Refreshed colour ramps, with `lib/themes/base/colours.ts` as the
+  one place they live. Also adds semantic tokens you can reach for by meaning
+  rather than by shade (`foreground`, `background`, `border`, `info`, `success`,
+  `warning`, `alert`), button colour tokens, and a contrast guide
+  (`contrastGuide`) that's checked against WCAG AA in the tests.
+- **Typography.** New named text styles on the `size` prop of `Text`, `Heading`,
+  `textStyles()` and `typography()`: `h1`–`h4` for headings and `p1`–`p4` for
+  body copy. Also exported as `TEXT_STYLES`, `NamedTextStyle` and
+  `namedTextStyleMap`.
+- **Font weights.** Added a `medium` (500) weight. The full scale is now
+  `normal` 400, `medium` 500, `semiBold` 600, `bold` 700.
+- **Spacing.** New space scale tokens.
+- **Radius and elevation.** New radius aliases, a 20px radius, and `z1`–`z4`
+  shadows.
+- **Sprinkles.** The colour ramp and the semantic tokens are now available on
+  `color`, `backgroundColor` and the `border*Color` props.
+- **Storybook.** New Foundation pages for Typography and the Contrast Guide.
 
 ### Changed
 
-- **`semiBold` now maps to 600** (was 500). Components that used `semiBold` were
-  repointed to `medium`, so they render unchanged — but if _your_ code passes
-  `weight="semiBold"` directly, it now renders at 600. Use `weight="medium"` to
-  keep the old 500.
-- Component internals across the library — inputs, buttons, tabs, tooltips,
-  overlays & menus, tables & grids, modals & containers, progress indicators,
-  text/list components and date fields — were migrated onto the new semantic
-  `color.*` tokens. **Pixel-identical on every theme** (`color.gamut` aliases
-  the existing gamut CSS vars, so theme overrides drive the new tokens exactly
-  as before); no public API changed.
+- **`semiBold` is now 600 instead of 500.** We repointed the components that
+  used it to `medium`, so they look exactly the same as before. The only thing
+  to watch: if your own code sets `weight="semiBold"`, it'll now render heavier
+  at 600. Switch it to `weight="medium"` if you want the old 500.
+- Rewired a lot of components to use the new semantic colour tokens under the
+  hood (inputs, buttons, tabs, tooltips, menus and overlays, tables and grids,
+  modals and containers, progress indicators, text and list components, date
+  fields). It renders identically on every theme, and none of the public props
+  changed, so you shouldn't notice anything.
 
 ### Deprecated
 
-- The legacy colour surface (`colours.*`, `typography.colour`, legacy sprinkles
-  colour props, redundant radius keys) — still exported and fully functional
-  until the next major. ESLint now _warns_ on new internal legacy usage; it
-  flips to _error_ once the migration completes.
+- The old colour setup (`colours.*`, `typography.colour`, the legacy sprinkles
+  colour props, and some duplicate radius keys) is on its way out. It all still
+  works and stays until the next major version. For now ESLint just warns if you
+  reach for it in new code; that'll become an error once everything is moved
+  over.
 
 ### Removed
 
-- The `black` ramp — use `gray900` instead. `backgroundColour="black900"`
-  remains as a deprecated alias and is removed in the next major.
+- The `black` ramp is gone. Use `gray900` instead. If you're still on
+  `backgroundColour="black900"` it keeps working as an alias for now, and goes
+  away in the next major.
