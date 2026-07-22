@@ -9,11 +9,21 @@ import { getContrastRatio } from '../themes/helpers';
 import { overdriveTokens } from '../themes/theme.css';
 
 import {
-	labels,
-	tokenCard,
-	tokenCode,
-	tokenDescription,
-	tokenGrid,
+	colourTableSub,
+	eyebrow,
+	groupCount,
+	groupHeaderRow,
+	groupHeading,
+	pageLead,
+	subGloss,
+	subGlossRow,
+	swatchCard,
+	swatchCardHex,
+	swatchCardName,
+	swatchCardPalette,
+	swatchCardVar,
+	swatchCell,
+	swatchGrid,
 } from './helpers/styles.css';
 
 function spacesFromCamelCase(text: string) {
@@ -712,9 +722,22 @@ for (const [hue, steps] of Object.entries(colourMap)) {
 	}
 }
 
-// smaller inverted ratio = higher contrast
+/** Plain-language note for each sub-group, so its purpose is obvious. */
+const sectionGloss: Record<string, string> = {
+	Info: 'Informational messages and hints.',
+	Success: 'Positive confirmation messages.',
+	Warning: 'Caution messages.',
+	Alert: 'Errors and destructive warnings.',
+	'Primary — solid': 'Filled primary button — default, hover, pressed fill & label.',
+	'Primary — outlined': 'Outlined primary button — border/label, hover & pressed fills.',
+	'Critical — solid': 'Filled destructive button.',
+	'Critical — outlined': 'Outlined destructive button.',
+	Secondary: 'Neutral, low-emphasis button.',
+	'Linked text': 'Text / link-style buttons.',
+};
+
+// Pick the readable text colour for a fill (alpha values use their opaque base).
 const textOn = (value: string): string => {
-	// alpha (#RRGGBBAA) can't be measured; use its opaque base for the label.
 	const hex = value.length > 7 ? value.slice(0, 7) : value;
 	return getContrastRatio(colourMap.white, hex) <
 		getContrastRatio(colourMap.gray['900'], hex)
@@ -722,94 +745,100 @@ const textOn = (value: string): string => {
 		: colourMap.gray['900'];
 };
 
-const ThemeToken = ({ name, value, cssVar, description }: Token) => (
-	<div className={tokenCard}>
+/**
+ * One token: a colour card (like the palette "Core brand" tiles) with the
+ * name, palette step and hex inside, and the CSS variable underneath it.
+ */
+const TokenCard = ({ name, value, cssVar, description }: Token) => {
+	const palette = paletteName[value.toLowerCase()];
+	return (
 		<div
-			style={{
-				background: value,
-				borderRadius: 8,
-				boxShadow: `inset 0 0 0 1px ${colourMap.gray['300']}`,
-				height: 80,
-				padding: '10px 12px',
-				display: 'flex',
-				flexDirection: 'column',
-				justifyContent: 'flex-end',
-				color: textOn(value),
-			}}
+			className={swatchCell}
+			title={description ? `${cssVar} — ${description}` : cssVar}
 		>
-			{paletteName[value.toLowerCase()] && (
-				<div
-					style={{ fontWeight: 700, fontSize: 13, lineHeight: 1.4 }}
-				>
-					{paletteName[value.toLowerCase()]}
+			<div
+				className={swatchCard}
+				style={{ background: value, color: textOn(value) }}
+			>
+				<div className={swatchCardPalette}>
+					{palette ?? value.toUpperCase()}
 				</div>
-			)}
-			<div style={{ fontSize: 11, opacity: 0.85, lineHeight: 1.4 }}>
-				{value.toUpperCase()}
+				{palette && (
+					<div className={swatchCardHex}>{value.toUpperCase()}</div>
+				)}
 			</div>
+			<div className={swatchCardName}>{spacesFromCamelCase(name)}</div>
+			<code className={swatchCardVar} title={cssVar}>
+				{cssVar}
+			</code>
 		</div>
-		<div className={labels} style={{ fontWeight: 600, fontSize: 14 }}>
-			{spacesFromCamelCase(name)}
-		</div>
-		<div className={tokenDescription}>{description}</div>
-		<code className={tokenCode}>{cssVar}</code>
-	</div>
-);
+	);
+};
 
 export const ThemeColours: Story = {
 	render: () => (
-		<FlexStack gap="7">
+		<FlexStack gap="8">
 			<hgroup>
+				<p className={eyebrow}>AutoGuru Design System 2026</p>
 				<Heading>Theme Colours</Heading>
-				<p style={{ maxWidth: 720 }}>
-					The AutoGuru Design System 2026 semantic colour set, mirrored
-					from Figma and organised by usage.
+				<p className={pageLead}>
+					The semantic colour set, mirrored from Figma and organised
+					by how each token is used.
 				</p>
 			</hgroup>
-			<FlexStack gap="7">
-				{themeColours.map(({ group, title, blurb, sections }) => (
-					<FlexStack gap="4" key={group}>
-						<hgroup>
-							<Heading as="h2" className={labels}>
-								{title}
-							</Heading>
-							<p
-								style={{
-									margin: '4px 0 0',
-									fontSize: 14,
-									color: colourMap.gray['600'],
-								}}
-							>
-								{blurb}
-							</p>
-						</hgroup>
-						{sections.map((section, index) => (
-							<FlexStack
-								gap="3"
-								key={section.title ?? `${group}-${index}`}
-							>
-								{section.title && (
-									<div
-										style={{
-											fontSize: 13,
-											fontWeight: 700,
-											color: colourMap.gray['900'],
-											borderBottom: `1px solid ${colourMap.gray['200']}`,
-											paddingBottom: 4,
-										}}
+			<FlexStack gap="8">
+				{themeColours.map(({ group, title, sections }) => {
+					const count = sections.reduce(
+						(total, section) => total + section.tokens.length,
+						0,
+					);
+					return (
+						<section key={group}>
+							<div className={groupHeaderRow}>
+								<h2 className={groupHeading}>{title}</h2>
+								<span
+									className={groupCount}
+									aria-label={`${count} tokens`}
+								>
+									{count}
+								</span>
+							</div>
+							<FlexStack gap="5">
+								{sections.map((section, index) => (
+									<FlexStack
+										gap="3"
+										key={section.title ?? `${group}-${index}`}
 									>
-										{section.title}
-									</div>
-								)}
-								<div className={tokenGrid}>
-									{section.tokens.map((entry) => (
-										<ThemeToken key={entry.name} {...entry} />
-									))}
-								</div>
+										{section.title && (
+											<div className={subGlossRow}>
+												<span className={colourTableSub}>
+													{section.title}
+												</span>
+												{sectionGloss[section.title] && (
+													<span className={subGloss}>
+														{
+															sectionGloss[
+																section.title
+															]
+														}
+													</span>
+												)}
+											</div>
+										)}
+										<div className={swatchGrid}>
+											{section.tokens.map((entry) => (
+												<TokenCard
+													key={`${section.title ?? ''}-${entry.name}`}
+													{...entry}
+												/>
+											))}
+										</div>
+									</FlexStack>
+								))}
 							</FlexStack>
-						))}
-					</FlexStack>
-				))}
+						</section>
+					);
+				})}
 			</FlexStack>
 		</FlexStack>
 	),

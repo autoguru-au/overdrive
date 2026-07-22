@@ -113,7 +113,7 @@ const semanticColor = {
 // `backgroundColor` semantic value space
 const semanticBackgroundColor = {
 	...tokens.color.surface, // page, hard, soft, accent, success, info, danger, warning (existing)
-	...tokens.color.background, // default, reverse, inactive, emphasisInactive (W1-P1)
+	...tokens.color.background, // default, reverse, inactive, emphasisInactive, emphasisLight, modal (W1-P1)
 	infoBackground: tokens.color.info.background,
 	successBackgroundDark: tokens.color.success.backgroundDark,
 	successBackgroundLight: tokens.color.success.backgroundLight,

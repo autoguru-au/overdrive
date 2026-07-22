@@ -17,6 +17,14 @@ Storybook page to mirror Figma's groups 1:1.
 - `color.illustration`: new group (bright/dark side, fills, outline, shadow,
   white, yellow accents).
 
-All additions are additive theme CSS vars. `emphasisLight` and `modal` also
-become available as `backgroundColor` sprinkle values (component snapshots
-updated for the regenerated atom class names — no behavioural change).
+Most changes are additive theme CSS vars, and `emphasisLight`/`modal` also
+become available as `backgroundColor` sprinkle values (component snapshots were
+regenerated for the shifted atom class names — no behavioural change).
+
+Note — the `color.button` expansion renames/removes four CSS custom properties
+that shipped in v4.60.0: `--od-color-button-primary-solid-border` →
+`…-border-pressed`, `--od-color-button-primary-outlined-border` and
+`…-outlined-text` → `…-outlined-border-text`, and `--od-color-button-primary-solid-pressed`
+is removed. These button tokens have no consumers in this repo and are one
+release old, so this is shipped as a `minor`; call it out here so downstream
+MFEs that adopted them can remap.
