@@ -1,5 +1,13 @@
 # @autoguru/overdrive
 
+## 4.61.0
+
+### Minor Changes
+
+- 6c0c6a3: Add custom React content support to Tooltip while preserving the
+  standard label surface, and allow Button triggers to expose tooltip
+  descriptions.
+
 ## 4.60.0
 
 ### Minor Changes
