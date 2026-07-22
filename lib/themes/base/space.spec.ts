@@ -13,7 +13,7 @@ import { tokens as baseTokens } from './tokens';
  */
 const EXPECTED_SPACE = {
 	none: '0px',
-	'0': '0px',
+	'0': '2px',
 	'1': '4px',
 	'2': '8px',
 	'3': '12px',
@@ -33,8 +33,8 @@ describe('space token ladder', () => {
 		expect(baseTokens.space).toStrictEqual(EXPECTED_SPACE);
 	});
 
-	it('`0` and `none` both resolve to 0px (no 2px footgun)', () => {
-		expect(baseTokens.space['0']).toBe('0px');
+	it('`0` is the 2px smallest step; `none` is true zero (DS-2026)', () => {
+		expect(baseTokens.space['0']).toBe('2px');
 		expect(baseTokens.space.none).toBe('0px');
 	});
 

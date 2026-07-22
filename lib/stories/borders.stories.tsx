@@ -72,13 +72,13 @@ const RADIUS_LADDER: RadiusRow[] = [
 	{ tokenKey: 'medium', value: '12px', use: 'M' },
 	{ tokenKey: 'large', value: '16px', use: 'L' },
 	{ tokenKey: 'xlarge', value: '20px', use: 'XL' },
+	{ tokenKey: '2xl', value: '24px', use: '2XL' },
 	{ tokenKey: 'min', value: '2px', use: '', tag: TAG_DEPRECATED },
 	{ tokenKey: 'sm', value: '4px', use: '', tag: TAG_DEPRECATED },
 	{ tokenKey: '1', value: '4px', use: '', tag: TAG_DEPRECATED },
 	{ tokenKey: 'md', value: '8px', use: '', tag: TAG_DEPRECATED },
 	{ tokenKey: 'lg', value: '12px', use: '', tag: TAG_DEPRECATED },
 	{ tokenKey: 'xl', value: '16px', use: '', tag: TAG_DEPRECATED },
-	{ tokenKey: '2xl', value: '24px', use: '', tag: TAG_DEPRECATED },
 ];
 
 // ── Shadow ──────────────────────────────────────────────────────────────
@@ -250,7 +250,7 @@ const RadiusSection = () => (
 		</Heading>
 		<Text as="p">
 			The named scale (<code className={tokenCode}>xsmall</code>–
-			<code className={tokenCode}>xlarge</code>) replaces the old
+			<code className={tokenCode}>xlarge</code>, plus <code className={tokenCode}>2xl</code> at 24px for modals) replaces the old
 			abbreviated aliases, which resolve to the same px.
 		</Text>
 

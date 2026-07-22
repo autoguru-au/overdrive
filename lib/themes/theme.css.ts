@@ -380,12 +380,7 @@ const THEME_CONTRACT = {
 			md: 'border-radius-md',
 			lg: 'border-radius-lg',
 			xl: 'border-radius-xl',
-			/**
-			 * @deprecated Use radius.xlarge — removed in v5 (DS-2026 major).
-			 * Note: values differ today (2xl = 24px, xlarge = 20px); the exact
-			 * DS-2026 mapping for this key is pending design resolution
-			 * (master §6-Q2) and will be finalised at the major.
-			 */
+			/** DS-2026 Extra Large radius (24px) — used for modals. */
 			'2xl': 'border-radius-2xl',
 			/** @deprecated Use radius.xsmall (identical 4px value) — removed in v5 (DS-2026 major). */
 			'1': 'border-radius-1',

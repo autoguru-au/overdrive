@@ -22,7 +22,7 @@ export const tokens = {
 		medium: '940px',
 	},
 	space: {
-		'0': '0px',
+		'0': '2px', // DS-2026: smallest step is 2px (use `none` for true zero)
 		'1': '4px',
 		'2': '8px',
 		'3': '12px',
