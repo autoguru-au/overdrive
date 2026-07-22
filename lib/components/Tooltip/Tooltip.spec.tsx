@@ -7,7 +7,7 @@ import { Button } from '../Button';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 
-import { Tooltip } from './Tooltip';
+import { Tooltip, type TooltipProps } from './Tooltip';
 
 describe('<Tooltip />', () => {
 	const tooltipContentText = 'tooltip content';
@@ -213,6 +213,77 @@ describe('<Tooltip />', () => {
 		});
 	});
 
+	describe('custom content', () => {
+		it('should require exactly one content mode in its public props', () => {
+			type AcceptsLabel = {
+				children: React.ReactNode;
+				label: string;
+			} extends TooltipProps
+				? true
+				: false;
+			type AcceptsContent = {
+				children: React.ReactNode;
+				content: React.ReactNode;
+			} extends TooltipProps
+				? true
+				: false;
+			type AcceptsBoth = {
+				children: React.ReactNode;
+				content: React.ReactNode;
+				label: string;
+			} extends TooltipProps
+				? true
+				: false;
+			type AcceptsNeither = {
+				children: React.ReactNode;
+			} extends TooltipProps
+				? true
+				: false;
+
+			expectTypeOf<AcceptsLabel>().toEqualTypeOf<true>();
+			expectTypeOf<AcceptsContent>().toEqualTypeOf<true>();
+			expectTypeOf<AcceptsBoth>().toEqualTypeOf<false>();
+			expectTypeOf<AcceptsNeither>().toEqualTypeOf<false>();
+		});
+
+		it('should render a custom tooltip surface', () => {
+			const { getByRole, getByText } = render(
+				<Tooltip
+					content={
+						<div>
+							<strong>Custom title</strong>
+							<p>Custom body</p>
+						</div>
+					}
+					isOpen
+				>
+					<button type="button">trigger</button>
+				</Tooltip>,
+			);
+
+			expect(getByRole('tooltip')).toBeInTheDocument();
+			expect(getByText('Custom title').tagName).toBe('STRONG');
+			expect(getByText('Custom body').tagName).toBe('P');
+		});
+
+		it('should reject label and content together at runtime', () => {
+			const invalidProps = {
+				content: <div>Custom content</div>,
+				label: tooltipContentText,
+			} as unknown as TooltipProps;
+
+			expect(() => {
+				render(
+					<Tooltip {...invalidProps}>
+						<button type="button">trigger</button>
+					</Tooltip>,
+				);
+			}).toThrow(
+				'Tooltip accepts either `label` or `content`, not both',
+			);
+		});
+	});
+
 	describe('no label handling', () => {
 		it('should not render tooltip when label is empty', () => {
 			const { container } = render(
@@ -251,8 +322,9 @@ describe('<Tooltip /> with interactive child', () => {
 			expect(button).toHaveTextContent('Interactive Button');
 
 			fireEvent.mouseEnter(button);
-			// Use a more reliable way to check for tooltip content
-			expect(document.body).toHaveTextContent('Button tooltip');
+			const tooltip = getByRole('tooltip');
+			expect(tooltip).toHaveTextContent('Button tooltip');
+			expect(button).toHaveAttribute('aria-describedby', tooltip.id);
 		});
 
 		it('should preserve button functionality', () => {

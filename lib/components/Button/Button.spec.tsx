@@ -125,6 +125,19 @@ describe('<Button />', () => {
 		expect(button).toBeInTheDocument();
 	});
 
+	it('supports an accessible description', () => {
+		render(
+			<>
+				<Button aria-describedby="button-description">Button</Button>
+				<span id="button-description">Button description</span>
+			</>,
+		);
+
+		expect(
+			screen.getByRole('button', { name: 'Button' }),
+		).toHaveAccessibleDescription('Button description');
+	});
+
 	it('is keyboard accessible', async () => {
 		const user = userEvent.setup();
 		const handleClick = vi.fn();

@@ -1,4 +1,11 @@
-import React, { useCallback, useEffect, useRef, useState, useId } from 'react';
+import React, {
+	type ReactNode,
+	useCallback,
+	useEffect,
+	useId,
+	useRef,
+	useState,
+} from 'react';
 
 import { Box } from '../../Box/Box';
 import { Positioner } from '../../Positioner/Positioner';
@@ -21,6 +28,27 @@ export interface UseTooltipProps {
 	 */
 	onOpenChange?: (isOpen: boolean) => void;
 }
+
+interface PositionedTooltipBaseProps {
+	alignment?: EAlignment;
+	className?: string;
+	size?: ToolTipSize;
+}
+
+export type PositionedTooltipContentProps =
+	| {
+			/** Text rendered with the standard tooltip surface */
+			label: string;
+			content?: never;
+	  }
+	| {
+			/** Custom tooltip surface and content */
+			content: ReactNode;
+			label?: never;
+	  };
+
+export type PositionedTooltipProps = PositionedTooltipBaseProps &
+	PositionedTooltipContentProps;
 
 const sizeMap: Record<ToolTipSize, TextProps['size']> = {
 	medium: '2',
@@ -115,15 +143,12 @@ export const useTooltip = ({
 		({
 			alignment = EAlignment.RIGHT,
 			className,
+			content,
 			label,
 			size = 'medium',
-		}: {
-			alignment?: EAlignment;
-			className?: string;
-			label: string;
-			size?: ToolTipSize;
-		}) => {
+		}: PositionedTooltipProps) => {
 			const textSize = sizeMap[size];
+			const hasCustomContent = content !== undefined;
 
 			return (
 				<Positioner
@@ -135,20 +160,26 @@ export const useTooltip = ({
 						className={className}
 						id={tooltipId}
 						ref={tooltipRef}
-						width="full"
+						width={hasCustomContent ? undefined : 'full'}
 						pointerEvents="none"
 						userSelect="none"
-						overflow="hidden"
-						borderRadius="1"
-						boxShadow="4"
-						backgroundColor="gray900"
-						paddingY="2"
-						paddingX="3"
+						overflow={hasCustomContent ? undefined : 'hidden'}
+						borderRadius={hasCustomContent ? undefined : '1'}
+						boxShadow={hasCustomContent ? undefined : '4'}
+						backgroundColor={
+							hasCustomContent ? undefined : 'gray900'
+						}
+						paddingY={hasCustomContent ? undefined : '2'}
+						paddingX={hasCustomContent ? undefined : '3'}
 						role="tooltip"
 					>
-						<Text size={textSize} color="white">
-							{label}
-						</Text>
+						{hasCustomContent ? (
+							content
+						) : (
+							<Text size={textSize} color="white">
+								{label}
+							</Text>
+						)}
 					</Box>
 				</Positioner>
 			);
