@@ -35,7 +35,7 @@ interface PositionedTooltipBaseProps {
 	size?: ToolTipSize;
 }
 
-type PositionedTooltipContentProps =
+export type PositionedTooltipContentProps =
 	| {
 			/** Text rendered with the standard tooltip surface */
 			label: string;

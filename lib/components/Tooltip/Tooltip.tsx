@@ -13,7 +13,7 @@ import { EAlignment } from '../Positioner/alignment';
 import * as styles from './Tooltip.css';
 import {
 	useTooltip,
-	type PositionedTooltipProps,
+	type PositionedTooltipContentProps,
 	type ToolTipSize,
 } from './useTooltip/useTooltip';
 
@@ -32,8 +32,7 @@ interface TooltipBaseProps extends TestIdProp {
 	wrapper?: boolean | keyof React.JSX.IntrinsicElements;
 }
 
-export type TooltipProps = TooltipBaseProps &
-	Pick<PositionedTooltipProps, 'content' | 'label'>;
+export type TooltipProps = TooltipBaseProps & PositionedTooltipContentProps;
 
 /**
  * Renders a tooltip that appears when the user hovers over or focuses on the trigger element.
@@ -61,13 +60,19 @@ export const Tooltip = ({
 		closeAfter,
 	});
 
-	// return early if no label provided
-	if (!label && content === undefined) return <>{children}</>;
+	invariant(
+		label === undefined || content === undefined,
+		'Tooltip accepts either `label` or `content`, not both',
+	);
 
-	const positionedTooltipContent =
-		content === undefined
-			? { label, content: undefined }
-			: { content, label: undefined };
+	let positionedTooltipContent: PositionedTooltipContentProps;
+	if (content === undefined) {
+		// Return children unchanged when the text label is empty.
+		if (!label) return <>{children}</>;
+		positionedTooltipContent = { label };
+	} else {
+		positionedTooltipContent = { content };
+	}
 
 	// return wrapped output
 	if (wrapper) {
