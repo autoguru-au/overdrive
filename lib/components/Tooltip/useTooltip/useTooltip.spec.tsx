@@ -180,6 +180,28 @@ describe('useTooltip', () => {
 		expect(tooltip).toHaveClass('custom-class');
 	});
 
+	it('should render custom tooltip content without the standard text wrapper', () => {
+		const CustomContentTestComponent = () => {
+			const { PositionedTooltip } = useTooltip({ isOpen: true });
+			return (
+				<PositionedTooltip
+					content={
+						<div>
+							<strong>Custom title</strong>
+							<p>Custom body</p>
+						</div>
+					}
+				/>
+			);
+		};
+
+		const { getByRole, getByText } = render(<CustomContentTestComponent />);
+
+		expect(getByRole('tooltip')).toBeInTheDocument();
+		expect(getByText('Custom title').tagName).toBe('STRONG');
+		expect(getByText('Custom body').tagName).toBe('P');
+	});
+
 	it('should handle mouse leave with delay', () => {
 		vi.useFakeTimers();
 

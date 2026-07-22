@@ -2,9 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { type ComponentProps } from 'react';
 import { userEvent, within, expect, waitFor } from 'storybook/test';
 
+import { Box } from '../Box';
 import { Button } from '../Button';
 import { FlexInline } from '../Flex/FlexInline';
 import { EAlignment } from '../Positioner/alignment';
+import { Stack } from '../Stack';
 import { Text } from '../Text/Text';
 import { TextInput } from '../TextInput';
 
@@ -120,6 +122,33 @@ export const WithLongText: Story = {
 	args: {
 		label: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
 		alignment: EAlignment.TOP,
+		wrapper: true,
+	},
+};
+
+export const WithCustomContent: Story = {
+	args: {
+		content: (
+			<Box
+				backgroundColor="white"
+				borderColor="default"
+				borderRadius="md"
+				borderWidth="1"
+				boxShadow="5"
+				padding="5"
+			>
+				<Stack space="2">
+					<Text size="3" weight="bold">
+						Custom tooltip title
+					</Text>
+					<Text size="2">
+						Custom tooltip content can compose any non-interactive
+						Overdrive primitives.
+					</Text>
+				</Stack>
+			</Box>
+		),
+		alignment: EAlignment.BOTTOM,
 		wrapper: true,
 	},
 };

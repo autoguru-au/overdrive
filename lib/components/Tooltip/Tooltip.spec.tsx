@@ -213,6 +213,28 @@ describe('<Tooltip />', () => {
 		});
 	});
 
+	describe('custom content', () => {
+		it('should render a custom tooltip surface', () => {
+			const { getByRole, getByText } = render(
+				<Tooltip
+					content={
+						<div>
+							<strong>Custom title</strong>
+							<p>Custom body</p>
+						</div>
+					}
+					isOpen
+				>
+					<button type="button">trigger</button>
+				</Tooltip>,
+			);
+
+			expect(getByRole('tooltip')).toBeInTheDocument();
+			expect(getByText('Custom title').tagName).toBe('STRONG');
+			expect(getByText('Custom body').tagName).toBe('P');
+		});
+	});
+
 	describe('no label handling', () => {
 		it('should not render tooltip when label is empty', () => {
 			const { container } = render(
@@ -251,8 +273,9 @@ describe('<Tooltip /> with interactive child', () => {
 			expect(button).toHaveTextContent('Interactive Button');
 
 			fireEvent.mouseEnter(button);
-			// Use a more reliable way to check for tooltip content
-			expect(document.body).toHaveTextContent('Button tooltip');
+			const tooltip = getByRole('tooltip');
+			expect(tooltip).toHaveTextContent('Button tooltip');
+			expect(button).toHaveAttribute('aria-describedby', tooltip.id);
 		});
 
 		it('should preserve button functionality', () => {

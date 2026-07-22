@@ -11,15 +11,17 @@ import { dataAttrs } from '../../utils/dataAttrs';
 import { EAlignment } from '../Positioner/alignment';
 
 import * as styles from './Tooltip.css';
-import { useTooltip, type ToolTipSize } from './useTooltip/useTooltip';
+import {
+	useTooltip,
+	type PositionedTooltipProps,
+	type ToolTipSize,
+} from './useTooltip/useTooltip';
 
-export interface TooltipProps extends TestIdProp {
+interface TooltipBaseProps extends TestIdProp {
 	/** Size of the tooltip text */
 	size?: ToolTipSize;
 	/** Whether the tooltip is open. When provided, the tooltip becomes controlled */
 	isOpen?: boolean;
-	/** Text content displayed in the tooltip */
-	label: string;
 	/** Position of the tooltip relative to the trigger element */
 	alignment?: EAlignment;
 	/** The element(s) that trigger the tooltip on hover or focus */
@@ -29,6 +31,9 @@ export interface TooltipProps extends TestIdProp {
 	/** An HTML tag to wrap the tooltip trigger with if children do not contain a keyboard focusable element */
 	wrapper?: boolean | keyof React.JSX.IntrinsicElements;
 }
+
+export type TooltipProps = TooltipBaseProps &
+	Pick<PositionedTooltipProps, 'content' | 'label'>;
 
 /**
  * Renders a tooltip that appears when the user hovers over or focuses on the trigger element.
@@ -42,6 +47,7 @@ export interface TooltipProps extends TestIdProp {
  */
 export const Tooltip = ({
 	alignment = EAlignment.RIGHT,
+	content,
 	isOpen,
 	label,
 	children,
@@ -56,7 +62,12 @@ export const Tooltip = ({
 	});
 
 	// return early if no label provided
-	if (!label) return <>{children}</>;
+	if (!label && content === undefined) return <>{children}</>;
+
+	const positionedTooltipContent =
+		content === undefined
+			? { label, content: undefined }
+			: { content, label: undefined };
 
 	// return wrapped output
 	if (wrapper) {
@@ -75,9 +86,9 @@ export const Tooltip = ({
 					{children}
 				</TagName>
 				<PositionedTooltip
+					{...positionedTooltipContent}
 					alignment={alignment}
 					className={styles.root}
-					label={label}
 					size={size}
 				/>
 			</>
@@ -98,9 +109,9 @@ export const Tooltip = ({
 				ref: triggerRef,
 			})}
 			<PositionedTooltip
+				{...positionedTooltipContent}
 				alignment={alignment}
 				className={styles.root}
-				label={label}
 				size={size}
 			/>
 		</>

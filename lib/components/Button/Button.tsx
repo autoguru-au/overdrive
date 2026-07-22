@@ -53,7 +53,11 @@ export interface ButtonProps
 		>,
 		Pick<
 			AriaAttributes,
-			'aria-label' | 'aria-controls' | 'aria-expanded' | 'aria-haspopup'
+			| 'aria-label'
+			| 'aria-controls'
+			| 'aria-describedby'
+			| 'aria-expanded'
+			| 'aria-haspopup'
 		>,
 		StyledButtonProps,
 		TestIdProp {
@@ -146,6 +150,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
 			'aria-label': ariaLabel,
 			'aria-controls': ariaControls,
+			'aria-describedby': ariaDescribedBy,
 			'aria-expanded': ariaExpanded,
 			'aria-haspopup': ariaHasPopup,
 		},
@@ -200,6 +205,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
 			'aria-label': isLoading ? language.loading : ariaLabel,
 			'aria-controls': ariaControls,
+			'aria-describedby': ariaDescribedBy,
 			'aria-expanded': ariaExpanded,
 			'aria-haspopup': ariaHasPopup,
 			'data-loading': isLoading ? '' : undefined,
