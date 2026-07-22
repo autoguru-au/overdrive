@@ -151,6 +151,8 @@ export const tokens = {
 			reverse: colourMap.gray['900'], // #212338
 			inactive: colourMap.gray['300'], // #d4d9dd
 			emphasisInactive: colourMap.gray['200'], // #eef0f2
+			emphasisLight: colourMap.gray['100'], // #fafbfc
+			modal: '#21233840', // gray-900 @ 25% (Figma background/modal)
 		},
 		border: {
 			default: colourMap.gray['300'], // #d4d9dd
@@ -185,19 +187,54 @@ export const tokens = {
 				solid: {
 					default: colourMap.green['300'], // #71edc2
 					hover: colourMap.green['400'], // #36e5aa
-					pressed: colourMap.green['600'], // #01c68c
-					border: colourMap.green['600'], // #01c68c
+					borderPressed: colourMap.green['600'], // #01c68c
+					text: colourMap.gray['900'], // #212338
 				},
 				outlined: {
-					border: colourMap.green['800'], // #18856f
-					text: colourMap.green['800'], // #18856f
+					borderText: colourMap.green['800'], // #18856f
+					hover: colourMap.green['100'], // #f2fdf9
+					pressed: colourMap.green['200'], // #e3f8f0
 				},
 			},
 			critical: {
 				solid: {
 					default: colourMap.red['500'], // #e12e28
+					hover: colourMap.red['600'], // #d42b26
+					borderPressed: colourMap.red['800'], // #96110e
+					text: colourMap.white, // #ffffff
+				},
+				outlined: {
+					borderText: colourMap.red['800'], // #96110e
+					hover: colourMap.red['100'], // #fdf4f4
+					pressed: colourMap.red['200'], // #ffd4d4
 				},
 			},
+			secondary: {
+				border: colourMap.gray['300'], // #d4d9dd
+				hover: colourMap.gray['100'], // #fafbfc
+				pressed: colourMap.gray['200'], // #eef0f2
+				text: colourMap.gray['900'], // #212338
+			},
+			linkedText: {
+				primary: colourMap.green['800'], // #18856f
+				secondary: colourMap.gray['900'], // #212338
+				hover: colourMap.green['400'], // #36e5aa
+				pressed: colourMap.green['700'], // #03af83
+				critical: colourMap.red['700'], // #b51e1a
+				criticalHover: colourMap.red['300'], // #ef918e
+				criticalPressed: colourMap.red['500'], // #e12e28
+			},
+		},
+		illustration: {
+			brightSide: colourMap.gray['400'], // #8f95a1
+			darkSide: colourMap.gray['700'], // #484c5f
+			lightFill: colourMap.gray['300'], // #d4d9dd
+			mainFill: colourMap.gray['600'], // #5c6172
+			outline: colourMap.gray['900'], // #212338
+			shadow: '#8f95a140', // gray-400 @ 25% (Figma illustration/shadow)
+			white: colourMap.white, // #ffffff
+			yellowDarkSide: colourMap.yellow['700'], // #f9a715
+			yellowMainFill: colourMap.yellow['500'], // #ffc001
 		},
 	},
 	colours: {
