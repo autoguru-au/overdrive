@@ -96,7 +96,7 @@ const semanticGamut = buildColourGamut({
 // `color` (text/foreground) semantic value space
 const semanticColor = {
 	...tokens.color.content, // normal, soft, inverse, info, danger, success, warning (existing)
-	...tokens.color.foreground, // primary, secondary, reverse, tertiaryInactive, tertiaryInactiveLight (W1-P1)
+	...tokens.color.foreground, // primary, secondary, reverse, tertiary, placeholder (W1-P1)
 	infoText: tokens.color.info.text,
 	infoForeground: tokens.color.info.foreground,
 	successText: tokens.color.success.text,
@@ -113,13 +113,15 @@ const semanticColor = {
 // `backgroundColor` semantic value space
 const semanticBackgroundColor = {
 	...tokens.color.surface, // page, hard, soft, accent, success, info, danger, warning (existing)
-	...tokens.color.background, // default, reverse, inactive, emphasisInactive (W1-P1)
-	infoBackground: tokens.color.info.background,
-	successBackgroundDark: tokens.color.success.backgroundDark,
-	successBackgroundLight: tokens.color.success.backgroundLight,
-	warningBackgroundDark: tokens.color.warning.backgroundDark,
-	warningBackgroundLight: tokens.color.warning.backgroundLight,
-	alertBackground: tokens.color.alert.background,
+	...tokens.color.background, // default, reverse, inactive, emphasisInactive, emphasisLight, modal (W1-P1)
+	infoBackgroundStrong: tokens.color.info.backgroundStrong,
+	infoBackgroundSubtle: tokens.color.info.backgroundSubtle,
+	successBackgroundStrong: tokens.color.success.backgroundStrong,
+	successBackgroundSubtle: tokens.color.success.backgroundSubtle,
+	warningBackgroundStrong: tokens.color.warning.backgroundStrong,
+	warningBackgroundSubtle: tokens.color.warning.backgroundSubtle,
+	alertBackgroundStrong: tokens.color.alert.backgroundStrong,
+	alertBackgroundSubtle: tokens.color.alert.backgroundSubtle,
 	...semanticGamut,
 	white: tokens.color.gamut.white,
 	transparent: 'transparent',

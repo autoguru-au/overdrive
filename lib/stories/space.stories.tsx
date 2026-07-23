@@ -33,7 +33,7 @@ interface SpaceStep {
  */
 const SPACE_SCALE: SpaceStep[] = [
 	{ px: '0px', tokenKey: 'none' },
-	{ px: '0px', tokenKey: '0' },
+	{ px: '2px', tokenKey: '0' },
 	{ px: '4px', tokenKey: '1' },
 	{ px: '8px', tokenKey: '2' },
 	{ px: '12px', tokenKey: '3' },

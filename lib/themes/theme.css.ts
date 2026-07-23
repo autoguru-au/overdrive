@@ -141,14 +141,16 @@ const THEME_CONTRACT = {
 			primary: 'color-foreground-primary',
 			secondary: 'color-foreground-secondary',
 			reverse: 'color-foreground-reverse',
-			tertiaryInactive: 'color-foreground-tertiary-inactive',
-			tertiaryInactiveLight: 'color-foreground-tertiary-inactive-light',
+			tertiary: 'color-foreground-tertiary',
+			placeholder: 'color-foreground-placeholder',
 		},
 		background: {
 			default: 'color-background-default',
 			reverse: 'color-background-reverse',
 			inactive: 'color-background-inactive',
 			emphasisInactive: 'color-background-emphasis-inactive',
+			emphasisLight: 'color-background-emphasis-light',
+			modal: 'color-background-modal',
 		},
 		border: {
 			default: 'color-border-default',
@@ -156,46 +158,94 @@ const THEME_CONTRACT = {
 			selected: 'color-border-selected',
 			strong: 'color-border-strong',
 		},
+		focus: {
+			ring: 'color-focus-ring',
+		},
 		info: {
 			text: 'color-info-text',
 			foreground: 'color-info-foreground',
-			background: 'color-info-background',
+			backgroundStrong: 'color-info-background-strong',
+			backgroundSubtle: 'color-info-background-subtle',
 		},
 		success: {
 			text: 'color-success-text',
 			foreground: 'color-success-foreground',
-			backgroundDark: 'color-success-background-dark',
-			backgroundLight: 'color-success-background-light',
+			backgroundStrong: 'color-success-background-strong',
+			backgroundSubtle: 'color-success-background-subtle',
 		},
 		warning: {
 			text: 'color-warning-text',
 			foreground: 'color-warning-foreground',
-			backgroundDark: 'color-warning-background-dark',
-			backgroundLight: 'color-warning-background-light',
+			backgroundStrong: 'color-warning-background-strong',
+			backgroundSubtle: 'color-warning-background-subtle',
 		},
 		alert: {
 			text: 'color-alert-text',
 			foreground: 'color-alert-foreground',
-			background: 'color-alert-background',
+			backgroundStrong: 'color-alert-background-strong',
+			backgroundSubtle: 'color-alert-background-subtle',
 		},
 		button: {
 			primary: {
 				solid: {
 					default: 'color-button-primary-solid-default',
 					hover: 'color-button-primary-solid-hover',
-					pressed: 'color-button-primary-solid-pressed',
 					border: 'color-button-primary-solid-border',
+					pressed: 'color-button-primary-solid-pressed',
+					text: 'color-button-primary-solid-text',
 				},
 				outlined: {
 					border: 'color-button-primary-outlined-border',
 					text: 'color-button-primary-outlined-text',
+					hover: 'color-button-primary-outlined-hover',
+					pressed: 'color-button-primary-outlined-pressed',
 				},
 			},
 			critical: {
 				solid: {
 					default: 'color-button-critical-solid-default',
+					hover: 'color-button-critical-solid-hover',
+					border: 'color-button-critical-solid-border',
+					pressed: 'color-button-critical-solid-pressed',
+					text: 'color-button-critical-solid-text',
+				},
+				outlined: {
+					border: 'color-button-critical-outlined-border',
+					text: 'color-button-critical-outlined-text',
+					hover: 'color-button-critical-outlined-hover',
+					pressed: 'color-button-critical-outlined-pressed',
 				},
 			},
+			secondary: {
+				border: 'color-button-secondary-border',
+				hover: 'color-button-secondary-hover',
+				pressed: 'color-button-secondary-pressed',
+				text: 'color-button-secondary-text',
+			},
+			disabled: {
+				fill: 'color-button-disabled-fill',
+				text: 'color-button-disabled-text',
+			},
+		},
+		link: {
+			primary: 'color-link-primary',
+			secondary: 'color-link-secondary',
+			hover: 'color-link-hover',
+			pressed: 'color-link-pressed',
+			critical: 'color-link-critical',
+			criticalHover: 'color-link-critical-hover',
+			criticalPressed: 'color-link-critical-pressed',
+		},
+		illustration: {
+			brightSide: 'color-illustration-bright-side',
+			darkSide: 'color-illustration-dark-side',
+			lightFill: 'color-illustration-light-fill',
+			mainFill: 'color-illustration-main-fill',
+			outline: 'color-illustration-outline',
+			shadow: 'color-illustration-shadow',
+			white: 'color-illustration-white',
+			yellowDarkSide: 'color-illustration-yellow-dark-side',
+			yellowMainFill: 'color-illustration-yellow-main-fill',
 		},
 	},
 	// existing colours for compatability
@@ -343,12 +393,7 @@ const THEME_CONTRACT = {
 			md: 'border-radius-md',
 			lg: 'border-radius-lg',
 			xl: 'border-radius-xl',
-			/**
-			 * @deprecated Use radius.xlarge — removed in v5 (DS-2026 major).
-			 * Note: values differ today (2xl = 24px, xlarge = 20px); the exact
-			 * DS-2026 mapping for this key is pending design resolution
-			 * (master §6-Q2) and will be finalised at the major.
-			 */
+			/** DS-2026 Extra Large radius (24px) — used for modals. */
 			'2xl': 'border-radius-2xl',
 			/** @deprecated Use radius.xsmall (identical 4px value) — removed in v5 (DS-2026 major). */
 			'1': 'border-radius-1',

@@ -6,11 +6,11 @@ exports[`<Section /> > should match the snapshot for negative value 1`] = `
   data-od-component="provider"
 >
   <div
-    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_width_4_mobile__onxwjurq sprinkles_height_4_mobile__onxwjupq sprinkles_display_inline-flex_mobile__onxwjufy sprinkles_backgroundColour_gray900__onxwjucx sprinkles_borderRadius_full_mobile__onxwjumu sprinkles_alignItems_center_mobile__onxwju102 sprinkles_justifyContent_center_mobile__onxwju11q"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_width_4_mobile__onxwjuru sprinkles_height_4_mobile__onxwjupu sprinkles_display_inline-flex_mobile__onxwjug2 sprinkles_backgroundColour_gray900__onxwjud1 sprinkles_borderRadius_full_mobile__onxwjumy sprinkles_alignItems_center_mobile__onxwju106 sprinkles_justifyContent_center_mobile__onxwju11u"
     data-od-component="number-bubble"
   >
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2_mobile__onxwjujm sprinkles_lineHeight_2_mobile__onxwjuhq sprinkles_fontWeight_bold__onxwjue7 typography_color_white__yhjp336"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2_mobile__onxwjujq sprinkles_lineHeight_2_mobile__onxwjuhu sprinkles_fontWeight_bold__onxwjueb typography_color_white__yhjp336"
     >
       -3
     </span>
@@ -24,11 +24,11 @@ exports[`<Section /> > should match the snapshot for positive value 1`] = `
   data-od-component="provider"
 >
   <div
-    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_width_4_mobile__onxwjurq sprinkles_height_4_mobile__onxwjupq sprinkles_display_inline-flex_mobile__onxwjufy sprinkles_backgroundColour_gray900__onxwjucx sprinkles_borderRadius_full_mobile__onxwjumu sprinkles_alignItems_center_mobile__onxwju102 sprinkles_justifyContent_center_mobile__onxwju11q"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_width_4_mobile__onxwjuru sprinkles_height_4_mobile__onxwjupu sprinkles_display_inline-flex_mobile__onxwjug2 sprinkles_backgroundColour_gray900__onxwjud1 sprinkles_borderRadius_full_mobile__onxwjumy sprinkles_alignItems_center_mobile__onxwju106 sprinkles_justifyContent_center_mobile__onxwju11u"
     data-od-component="number-bubble"
   >
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2_mobile__onxwjujm sprinkles_lineHeight_2_mobile__onxwjuhq sprinkles_fontWeight_bold__onxwjue7 typography_color_white__yhjp336"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2_mobile__onxwjujq sprinkles_lineHeight_2_mobile__onxwjuhu sprinkles_fontWeight_bold__onxwjueb typography_color_white__yhjp336"
     >
       3
     </span>

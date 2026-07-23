@@ -14,7 +14,7 @@ export const input = {
 					cursor: 'not-allowed',
 				},
 				'&::placeholder': {
-					color: vars.color.foreground.tertiaryInactive,
+					color: vars.color.foreground.tertiary,
 					fontSize: vars.typography.size['4'].fontSize,
 					lineHeight: vars.typography.size['4'].lineHeight,
 					opacity: 1,

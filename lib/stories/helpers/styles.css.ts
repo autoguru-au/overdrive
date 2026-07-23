@@ -43,7 +43,7 @@ export const gridSwatches = style({
  */
 export const tokenGrid = style({
 	display: 'grid',
-	gap: '20px 16px',
+	gap: `${overdriveTokens.space[5]} ${overdriveTokens.space[4]}`,
 	gridTemplateColumns: 'repeat(auto-fill, minmax(230px, 1fr))',
 });
 
@@ -54,7 +54,7 @@ export const tokenGrid = style({
  */
 export const spaceLadderGrid = style({
 	alignItems: 'center',
-	columnGap: '20px',
+	columnGap: overdriveTokens.space[5],
 	display: 'grid',
 	gridTemplateColumns: 'repeat(3, auto)',
 	rowGap: '10px',
@@ -72,7 +72,7 @@ export const spaceLadderHeaderCell = style({
  */
 export const widthLadderGrid = style({
 	alignItems: 'center',
-	columnGap: '20px',
+	columnGap: overdriveTokens.space[5],
 	display: 'grid',
 	// Use column flexes so the Tag lands at the far right, aligned with the
 	// Radius/Shadow tables.
@@ -86,10 +86,10 @@ export const widthLadderGrid = style({
  */
 export const radiusLadderGrid = style({
 	alignItems: 'center',
-	columnGap: '20px',
+	columnGap: overdriveTokens.space[5],
 	display: 'grid',
 	gridTemplateColumns: 'auto auto auto minmax(0, 1fr) auto',
-	rowGap: '12px',
+	rowGap: overdriveTokens.space[3],
 });
 
 /**
@@ -102,8 +102,8 @@ export const ladderRow = style({
 	display: 'grid',
 	gridColumn: '1 / -1',
 	gridTemplateColumns: 'subgrid',
-	paddingBlock: '8px',
-	paddingInline: '12px',
+	paddingBlock: overdriveTokens.space[2],
+	paddingInline: overdriveTokens.space[3],
 });
 
 // `tokenCode` sets alignSelf: flex-start for the card layout; in a ladder row
@@ -116,7 +116,7 @@ globalStyle(`${ladderRow} code`, {
 /** Amber wash for a deprecated row (matches the Deprecated header bar). */
 export const ladderRowDeprecated = style({
 	backgroundColor: overdriveTokens.color.gamut.yellow[100],
-	borderRadius: '8px',
+	borderRadius: overdriveTokens.border.radius.md,
 });
 
 // On a deprecated (amber) row, drop the token chip's grey fill so it doesn't
@@ -133,7 +133,7 @@ globalStyle(`${ladderRowDeprecated} code`, {
  */
 export const borderLadderGrid = style({
 	alignItems: 'center',
-	columnGap: '20px',
+	columnGap: overdriveTokens.space[5],
 	display: 'grid',
 	gridTemplateColumns: 'auto auto auto minmax(0, 1fr) auto',
 	rowGap: '14px',
@@ -143,10 +143,10 @@ export const borderLadderGrid = style({
 export const tokenCard = style({
 	backgroundColor: overdriveTokens.color.gamut.white,
 	border: `1px solid ${overdriveTokens.color.gamut.gray[200]}`,
-	borderRadius: '12px',
+	borderRadius: overdriveTokens.border.radius.lg,
 	display: 'flex',
 	flexDirection: 'column',
-	gap: '8px',
+	gap: overdriveTokens.space[2],
 	padding: '10px',
 });
 
@@ -172,7 +172,150 @@ export const tokenCode = style({
 	lineHeight: 1.4,
 	maxWidth: '100%',
 	overflowWrap: 'anywhere',
-	padding: '4px 8px',
+	padding: `${overdriveTokens.space[1]} ${overdriveTokens.space[2]}`,
+});
+
+/* ---------------------------------------------------------------------------
+ * Foundation / Theme Colours — mirrors the Foundation/Colour Palette layout:
+ * a left group label beside a strip of swatches, each swatch showing the
+ * colour, its token name and hex. Minimal chrome, monospace values.
+ * ------------------------------------------------------------------------- */
+
+/** Small tracked label above the page title. */
+export const eyebrow = style({
+	color: overdriveTokens.color.gamut.gray[500],
+	fontSize: '12px',
+	fontWeight: 700,
+	letterSpacing: '0.1em',
+	textTransform: 'uppercase',
+});
+
+/** Page intro line under the title. */
+export const pageLead = style({
+	color: overdriveTokens.color.gamut.gray[600],
+	fontSize: '15px',
+	lineHeight: 1.5,
+	margin: 0,
+	maxWidth: '620px',
+});
+
+/** Group header row: name + count, with a hairline rule beneath. */
+export const groupHeaderRow = style({
+	alignItems: 'baseline',
+	borderBottom: `1px solid ${overdriveTokens.color.gamut.gray[200]}`,
+	display: 'flex',
+	gap: overdriveTokens.space[2],
+	marginBottom: overdriveTokens.space[4],
+	paddingBottom: overdriveTokens.space[2],
+});
+
+/** Group name heading (e.g. Feedback, Button). */
+export const groupHeading = style({
+	color: overdriveTokens.color.gamut.gray[900],
+	fontSize: '17px',
+	fontWeight: 700,
+	letterSpacing: '-0.01em',
+	margin: 0,
+});
+
+/** "n" token count beside a heading. */
+export const groupCount = style({
+	color: overdriveTokens.color.gamut.gray[400],
+	fontFamily: 'monospace',
+	fontSize: '12px',
+	fontWeight: 400,
+});
+
+/** Grid of colour cards, mirroring the Colour Palette "Core brand" tiles. */
+export const swatchGrid = style({
+	display: 'grid',
+	gap: overdriveTokens.space[4],
+	gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+});
+
+/** One token cell: the card plus its variable underneath. */
+export const swatchCell = style({
+	display: 'flex',
+	flexDirection: 'column',
+	gap: overdriveTokens.space[2],
+	minWidth: 0,
+});
+
+/**
+ * The colour card — like the Colour Palette core-brand tiles. Fill and a
+ * contrasting text colour are applied inline; name + palette + hex sit inside
+ * at the bottom.
+ */
+export const swatchCard = style({
+	borderRadius: overdriveTokens.border.radius.lg,
+	boxShadow: `inset 0 0 0 1px rgba(33, 35, 56, 0.1)`,
+	display: 'flex',
+	flexDirection: 'column',
+	justifyContent: 'flex-end',
+	minHeight: '104px',
+	padding: overdriveTokens.space[3],
+});
+
+/** Palette step inside the card (e.g. blue-600). */
+export const swatchCardPalette = style({
+	fontFamily: 'monospace',
+	fontSize: '15px',
+	fontWeight: 700,
+});
+
+/** Hex inside the card, under the palette step. */
+export const swatchCardHex = style({
+	fontFamily: 'monospace',
+	fontSize: '12px',
+	marginTop: overdriveTokens.space[0],
+	opacity: 0.85,
+	textTransform: 'uppercase',
+});
+
+/** Token name below the card. */
+export const swatchCardName = style({
+	color: overdriveTokens.color.gamut.gray[900],
+	fontSize: '15px',
+	fontWeight: 700,
+	textTransform: 'capitalize',
+});
+
+/** The CSS variable in a subtle chip — wraps to show the full token, no clipping. */
+export const swatchCardVar = style({
+	alignSelf: 'flex-start',
+	backgroundColor: overdriveTokens.color.gamut.gray[100],
+	borderRadius: overdriveTokens.border.radius.sm,
+	color: overdriveTokens.color.gamut.gray[700],
+	fontFamily: 'monospace',
+	fontSize: '11px',
+	lineHeight: 1.5,
+	maxWidth: '100%',
+	overflowWrap: 'anywhere',
+	padding: `${overdriveTokens.space[1]} ${overdriveTokens.space[2]}`,
+});
+
+/** Sub-group label (e.g. Button → Secondary) above a card grid. */
+export const colourTableSub = style({
+	color: overdriveTokens.color.gamut.gray[500],
+	flexShrink: 0,
+	fontSize: '11px',
+	fontWeight: 700,
+	letterSpacing: '0.05em',
+	textTransform: 'uppercase',
+});
+
+/** Row holding a sub-group label and its plain-language note. */
+export const subGlossRow = style({
+	alignItems: 'baseline',
+	display: 'flex',
+	flexWrap: 'wrap',
+	gap: overdriveTokens.space[2],
+});
+
+/** Plain-language note beside a sub-group label. */
+export const subGloss = style({
+	color: overdriveTokens.color.gamut.gray[500],
+	fontSize: '12px',
 });
 
 export const hexPill = style({

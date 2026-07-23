@@ -6,19 +6,19 @@ exports[`<BulletText /> > should match snapshot for custom bullet text 1`] = `
   data-od-component="provider"
 >
   <div
-    class="sprinkles_alignItems_center_mobile__onxwju102 sprinkles_display_flex_mobile__onxwjufa sprinkles_flexDirection_row_mobile__onxwju132 sprinkles_flexWrap_nowrap_mobile__onxwju146 sprinkles_gap_3_mobile__onxwjuue sprinkles_justifyContent_start_mobile__onxwju12a"
+    class="sprinkles_alignItems_center_mobile__onxwju106 sprinkles_display_flex_mobile__onxwjufe sprinkles_flexDirection_row_mobile__onxwju136 sprinkles_flexWrap_nowrap_mobile__onxwju14a sprinkles_gap_3_mobile__onxwjuui sprinkles_justifyContent_start_mobile__onxwju12e"
   >
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_position_relative_mobile__onxwjuh6 sprinkles_flexShrink_0_mobile__onxwju13y"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_position_relative_mobile__onxwjuha sprinkles_flexShrink_0_mobile__onxwju142"
     >
       <span>
         <span
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuf2"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuf6"
           data-od-component="icon"
         >
           <svg
             aria-hidden="true"
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuf2 sprinkles_width_full_mobile__onxwjut2 sprinkles_height_full_mobile__onxwjur2"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuf6 sprinkles_width_full_mobile__onxwjut6 sprinkles_height_full_mobile__onxwjur6"
             fill="currentColor"
             focusable="false"
             viewBox="0 0 256 256"
@@ -32,10 +32,10 @@ exports[`<BulletText /> > should match snapshot for custom bullet text 1`] = `
       </span>
     </div>
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_flexGrow_1_mobile__onxwju13q"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_flexGrow_1_mobile__onxwju13u"
     >
       <span
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuju sprinkles_lineHeight_4_mobile__onxwjuhy sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338 sprinkles_display_block_mobile__onxwjuf2"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjujy sprinkles_lineHeight_4_mobile__onxwjui2 sprinkles_fontWeight_normal__onxwjue8 typography_color_neutral__yhjp338 sprinkles_display_block_mobile__onxwjuf6"
       >
         Hello World
       </span>
@@ -50,22 +50,22 @@ exports[`<BulletText /> > should match snapshot for default bullet text 1`] = `
   data-od-component="provider"
 >
   <div
-    class="sprinkles_alignItems_center_mobile__onxwju102 sprinkles_display_flex_mobile__onxwjufa sprinkles_flexDirection_row_mobile__onxwju132 sprinkles_flexWrap_nowrap_mobile__onxwju146 sprinkles_gap_3_mobile__onxwjuue sprinkles_justifyContent_start_mobile__onxwju12a"
+    class="sprinkles_alignItems_center_mobile__onxwju106 sprinkles_display_flex_mobile__onxwjufe sprinkles_flexDirection_row_mobile__onxwju136 sprinkles_flexWrap_nowrap_mobile__onxwju14a sprinkles_gap_3_mobile__onxwjuui sprinkles_justifyContent_start_mobile__onxwju12e"
   >
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwjufa sprinkles_position_relative_mobile__onxwjuh6 sprinkles_borderRadius_pill_mobile__onxwjumq sprinkles_alignItems_center_mobile__onxwju102 sprinkles_flexShrink_0_mobile__onxwju13y sprinkles_justifyContent_center_mobile__onxwju11q BulletText_bullet__1o8gcm90 BulletText_primary__1o8gcm91"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwjufe sprinkles_position_relative_mobile__onxwjuha sprinkles_borderRadius_pill_mobile__onxwjumu sprinkles_alignItems_center_mobile__onxwju106 sprinkles_flexShrink_0_mobile__onxwju142 sprinkles_justifyContent_center_mobile__onxwju11u BulletText_bullet__1o8gcm90 BulletText_primary__1o8gcm91"
     >
       <span
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2_mobile__onxwjujm sprinkles_lineHeight_2_mobile__onxwjuhq sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338 BulletText_primaryText__1o8gcm93"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2_mobile__onxwjujq sprinkles_lineHeight_2_mobile__onxwjuhu sprinkles_fontWeight_normal__onxwjue8 typography_color_neutral__yhjp338 BulletText_primaryText__1o8gcm93"
       >
         •
       </span>
     </div>
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_flexGrow_1_mobile__onxwju13q"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_flexGrow_1_mobile__onxwju13u"
     >
       <span
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuju sprinkles_lineHeight_4_mobile__onxwjuhy sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338 sprinkles_display_block_mobile__onxwjuf2"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjujy sprinkles_lineHeight_4_mobile__onxwjui2 sprinkles_fontWeight_normal__onxwjue8 typography_color_neutral__yhjp338 sprinkles_display_block_mobile__onxwjuf6"
       >
         Hello World!
       </span>
@@ -80,22 +80,22 @@ exports[`<BulletText /> > should match snapshot for ordered bullet text 1`] = `
   data-od-component="provider"
 >
   <div
-    class="sprinkles_alignItems_center_mobile__onxwju102 sprinkles_display_flex_mobile__onxwjufa sprinkles_flexDirection_row_mobile__onxwju132 sprinkles_flexWrap_nowrap_mobile__onxwju146 sprinkles_gap_3_mobile__onxwjuue sprinkles_justifyContent_start_mobile__onxwju12a"
+    class="sprinkles_alignItems_center_mobile__onxwju106 sprinkles_display_flex_mobile__onxwjufe sprinkles_flexDirection_row_mobile__onxwju136 sprinkles_flexWrap_nowrap_mobile__onxwju14a sprinkles_gap_3_mobile__onxwjuui sprinkles_justifyContent_start_mobile__onxwju12e"
   >
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwjufa sprinkles_position_relative_mobile__onxwjuh6 sprinkles_borderRadius_pill_mobile__onxwjumq sprinkles_alignItems_center_mobile__onxwju102 sprinkles_flexShrink_0_mobile__onxwju13y sprinkles_justifyContent_center_mobile__onxwju11q BulletText_bullet__1o8gcm90 BulletText_primary__1o8gcm91"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwjufe sprinkles_position_relative_mobile__onxwjuha sprinkles_borderRadius_pill_mobile__onxwjumu sprinkles_alignItems_center_mobile__onxwju106 sprinkles_flexShrink_0_mobile__onxwju142 sprinkles_justifyContent_center_mobile__onxwju11u BulletText_bullet__1o8gcm90 BulletText_primary__1o8gcm91"
     >
       <span
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2_mobile__onxwjujm sprinkles_lineHeight_2_mobile__onxwjuhq sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338 BulletText_primaryText__1o8gcm93"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2_mobile__onxwjujq sprinkles_lineHeight_2_mobile__onxwjuhu sprinkles_fontWeight_normal__onxwjue8 typography_color_neutral__yhjp338 BulletText_primaryText__1o8gcm93"
       >
         ?
       </span>
     </div>
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_flexGrow_1_mobile__onxwju13q"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_flexGrow_1_mobile__onxwju13u"
     >
       <span
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuju sprinkles_lineHeight_4_mobile__onxwjuhy sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338 sprinkles_display_block_mobile__onxwjuf2"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjujy sprinkles_lineHeight_4_mobile__onxwjui2 sprinkles_fontWeight_normal__onxwjue8 typography_color_neutral__yhjp338 sprinkles_display_block_mobile__onxwjuf6"
       >
         Hello World!
       </span>
@@ -110,22 +110,22 @@ exports[`<BulletText /> > should match snapshot for primary bullet text with cus
   data-od-component="provider"
 >
   <div
-    class="sprinkles_alignItems_center_mobile__onxwju102 sprinkles_display_flex_mobile__onxwjufa sprinkles_flexDirection_row_mobile__onxwju132 sprinkles_flexWrap_nowrap_mobile__onxwju146 sprinkles_gap_3_mobile__onxwjuue sprinkles_justifyContent_start_mobile__onxwju12a"
+    class="sprinkles_alignItems_center_mobile__onxwju106 sprinkles_display_flex_mobile__onxwjufe sprinkles_flexDirection_row_mobile__onxwju136 sprinkles_flexWrap_nowrap_mobile__onxwju14a sprinkles_gap_3_mobile__onxwjuui sprinkles_justifyContent_start_mobile__onxwju12e"
   >
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwjufa sprinkles_position_relative_mobile__onxwjuh6 sprinkles_borderRadius_pill_mobile__onxwjumq sprinkles_alignItems_center_mobile__onxwju102 sprinkles_flexShrink_0_mobile__onxwju13y sprinkles_justifyContent_center_mobile__onxwju11q BulletText_bullet__1o8gcm90 BulletText_primary__1o8gcm91"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwjufe sprinkles_position_relative_mobile__onxwjuha sprinkles_borderRadius_pill_mobile__onxwjumu sprinkles_alignItems_center_mobile__onxwju106 sprinkles_flexShrink_0_mobile__onxwju142 sprinkles_justifyContent_center_mobile__onxwju11u BulletText_bullet__1o8gcm90 BulletText_primary__1o8gcm91"
     >
       <span
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2_mobile__onxwjujm sprinkles_lineHeight_2_mobile__onxwjuhq sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338 BulletText_primaryText__1o8gcm93"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2_mobile__onxwjujq sprinkles_lineHeight_2_mobile__onxwjuhu sprinkles_fontWeight_normal__onxwjue8 typography_color_neutral__yhjp338 BulletText_primaryText__1o8gcm93"
       >
         ?
       </span>
     </div>
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_flexGrow_1_mobile__onxwju13q"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_flexGrow_1_mobile__onxwju13u"
     >
       <span
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuju sprinkles_lineHeight_4_mobile__onxwjuhy sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338 sprinkles_display_block_mobile__onxwjuf2"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjujy sprinkles_lineHeight_4_mobile__onxwjui2 sprinkles_fontWeight_normal__onxwjue8 typography_color_neutral__yhjp338 sprinkles_display_block_mobile__onxwjuf6"
       >
         Hello World!
       </span>
@@ -140,22 +140,22 @@ exports[`<BulletText /> > should match snapshot for secondary bullet text with c
   data-od-component="provider"
 >
   <div
-    class="sprinkles_alignItems_center_mobile__onxwju102 sprinkles_display_flex_mobile__onxwjufa sprinkles_flexDirection_row_mobile__onxwju132 sprinkles_flexWrap_nowrap_mobile__onxwju146 sprinkles_gap_3_mobile__onxwjuue sprinkles_justifyContent_start_mobile__onxwju12a"
+    class="sprinkles_alignItems_center_mobile__onxwju106 sprinkles_display_flex_mobile__onxwjufe sprinkles_flexDirection_row_mobile__onxwju136 sprinkles_flexWrap_nowrap_mobile__onxwju14a sprinkles_gap_3_mobile__onxwjuui sprinkles_justifyContent_start_mobile__onxwju12e"
   >
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwjufa sprinkles_position_relative_mobile__onxwjuh6 sprinkles_borderRadius_pill_mobile__onxwjumq sprinkles_alignItems_center_mobile__onxwju102 sprinkles_flexShrink_0_mobile__onxwju13y sprinkles_justifyContent_center_mobile__onxwju11q BulletText_bullet__1o8gcm90 BulletText_secondary__1o8gcm92"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwjufe sprinkles_position_relative_mobile__onxwjuha sprinkles_borderRadius_pill_mobile__onxwjumu sprinkles_alignItems_center_mobile__onxwju106 sprinkles_flexShrink_0_mobile__onxwju142 sprinkles_justifyContent_center_mobile__onxwju11u BulletText_bullet__1o8gcm90 BulletText_secondary__1o8gcm92"
     >
       <span
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2_mobile__onxwjujm sprinkles_lineHeight_2_mobile__onxwjuhq sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338 BulletText_secondaryText__1o8gcm94"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2_mobile__onxwjujq sprinkles_lineHeight_2_mobile__onxwjuhu sprinkles_fontWeight_normal__onxwjue8 typography_color_neutral__yhjp338 BulletText_secondaryText__1o8gcm94"
       >
         ?
       </span>
     </div>
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_flexGrow_1_mobile__onxwju13q"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_flexGrow_1_mobile__onxwju13u"
     >
       <span
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjuju sprinkles_lineHeight_4_mobile__onxwjuhy sprinkles_fontWeight_normal__onxwjue4 typography_color_neutral__yhjp338 sprinkles_display_block_mobile__onxwjuf2"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjujy sprinkles_lineHeight_4_mobile__onxwjui2 sprinkles_fontWeight_normal__onxwjue8 typography_color_neutral__yhjp338 sprinkles_display_block_mobile__onxwjuf6"
       >
         Hello World!
       </span>

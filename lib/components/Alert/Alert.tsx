@@ -96,7 +96,7 @@ export const Alert = ({
 							onClick={onRequestClose}
 						>
 							<Icon
-								className={sprinkles({ color: 'tertiaryInactive' })}
+								className={sprinkles({ color: 'tertiary' })}
 								icon={XIcon}
 								size="medium"
 							/>
