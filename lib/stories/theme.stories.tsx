@@ -123,19 +123,19 @@ const themeColours: TokenGroup[] = [
 						),
 					),
 					named(
-						'tertiaryInactive',
+						'tertiary',
 						tok(
-							color.foreground.tertiaryInactive,
-							vars.foreground.tertiaryInactive,
-							'Inactive / disabled text and icons.',
+							color.foreground.tertiary,
+							vars.foreground.tertiary,
+							'Tertiary text and icons — lowest-emphasis readable step.',
 						),
 					),
 					named(
-						'tertiaryInactiveLight',
+						'placeholder',
 						tok(
-							color.foreground.tertiaryInactiveLight,
-							vars.foreground.tertiaryInactiveLight,
-							'Inactive text on lighter surfaces — the softest step.',
+							color.foreground.placeholder,
+							vars.foreground.placeholder,
+							'Placeholder text and decorative/disabled marks — not for body copy.',
 						),
 					),
 				],
@@ -245,6 +245,25 @@ const themeColours: TokenGroup[] = [
 		],
 	},
 	{
+		group: 'focus',
+		title: 'Focus',
+		blurb: 'Focus indicator for keyboard and accessibility states.',
+		sections: [
+			{
+				tokens: [
+					named(
+						'ring',
+						tok(
+							color.focus.ring,
+							vars.focus.ring,
+							'Focus ring / outline for focused interactive elements.',
+						),
+					),
+				],
+			},
+		],
+	},
+	{
 		group: 'feedback',
 		title: 'Feedback',
 		blurb: 'Status colours for info, success, warning and alert messaging.',
@@ -269,11 +288,19 @@ const themeColours: TokenGroup[] = [
 						),
 					),
 					named(
-						'background',
+						'backgroundStrong',
 						tok(
-							color.info.background,
-							vars.info.background,
-							'Informational banner / surface fill.',
+							color.info.backgroundStrong,
+							vars.info.backgroundStrong,
+							'Strong info surface — white text.',
+						),
+					),
+					named(
+						'backgroundSubtle',
+						tok(
+							color.info.backgroundSubtle,
+							vars.info.backgroundSubtle,
+							'Soft info surface / banner fill.',
 						),
 					),
 				],
@@ -298,18 +325,18 @@ const themeColours: TokenGroup[] = [
 						),
 					),
 					named(
-						'backgroundDark',
+						'backgroundStrong',
 						tok(
-							color.success.backgroundDark,
-							vars.success.backgroundDark,
+							color.success.backgroundStrong,
+							vars.success.backgroundStrong,
 							'Strong success surface — white text.',
 						),
 					),
 					named(
-						'backgroundLight',
+						'backgroundSubtle',
 						tok(
-							color.success.backgroundLight,
-							vars.success.backgroundLight,
+							color.success.backgroundSubtle,
+							vars.success.backgroundSubtle,
 							'Soft success surface / banner fill.',
 						),
 					),
@@ -335,18 +362,18 @@ const themeColours: TokenGroup[] = [
 						),
 					),
 					named(
-						'backgroundDark',
+						'backgroundStrong',
 						tok(
-							color.warning.backgroundDark,
-							vars.warning.backgroundDark,
+							color.warning.backgroundStrong,
+							vars.warning.backgroundStrong,
 							'Strong warning surface — use gray-900 text.',
 						),
 					),
 					named(
-						'backgroundLight',
+						'backgroundSubtle',
 						tok(
-							color.warning.backgroundLight,
-							vars.warning.backgroundLight,
+							color.warning.backgroundSubtle,
+							vars.warning.backgroundSubtle,
 							'Soft warning surface / banner fill.',
 						),
 					),
@@ -372,10 +399,18 @@ const themeColours: TokenGroup[] = [
 						),
 					),
 					named(
-						'background',
+						'backgroundStrong',
 						tok(
-							color.alert.background,
-							vars.alert.background,
+							color.alert.backgroundStrong,
+							vars.alert.backgroundStrong,
+							'Strong error surface — white text.',
+						),
+					),
+					named(
+						'backgroundSubtle',
+						tok(
+							color.alert.backgroundSubtle,
+							vars.alert.backgroundSubtle,
 							'Error banner / surface fill.',
 						),
 					),
@@ -408,11 +443,19 @@ const themeColours: TokenGroup[] = [
 						),
 					),
 					named(
-						'borderPressed',
+						'border',
 						tok(
-							color.button.primary.solid.borderPressed,
-							vars.button.primary.solid.borderPressed,
-							'Border, and pressed fill.',
+							color.button.primary.solid.border,
+							vars.button.primary.solid.border,
+							'Border colour.',
+						),
+					),
+					named(
+						'pressed',
+						tok(
+							color.button.primary.solid.pressed,
+							vars.button.primary.solid.pressed,
+							'Pressed fill.',
 						),
 					),
 					named(
@@ -429,11 +472,19 @@ const themeColours: TokenGroup[] = [
 				title: 'Primary — outlined',
 				tokens: [
 					named(
-						'borderText',
+						'border',
 						tok(
-							color.button.primary.outlined.borderText,
-							vars.button.primary.outlined.borderText,
-							'Border and label colour.',
+							color.button.primary.outlined.border,
+							vars.button.primary.outlined.border,
+							'Border colour.',
+						),
+					),
+					named(
+						'text',
+						tok(
+							color.button.primary.outlined.text,
+							vars.button.primary.outlined.text,
+							'Label colour.',
 						),
 					),
 					named(
@@ -474,11 +525,19 @@ const themeColours: TokenGroup[] = [
 						),
 					),
 					named(
-						'borderPressed',
+						'border',
 						tok(
-							color.button.critical.solid.borderPressed,
-							vars.button.critical.solid.borderPressed,
-							'Border, and pressed fill.',
+							color.button.critical.solid.border,
+							vars.button.critical.solid.border,
+							'Border colour.',
+						),
+					),
+					named(
+						'pressed',
+						tok(
+							color.button.critical.solid.pressed,
+							vars.button.critical.solid.pressed,
+							'Pressed fill.',
 						),
 					),
 					named(
@@ -495,11 +554,19 @@ const themeColours: TokenGroup[] = [
 				title: 'Critical — outlined',
 				tokens: [
 					named(
-						'borderText',
+						'border',
 						tok(
-							color.button.critical.outlined.borderText,
-							vars.button.critical.outlined.borderText,
-							'Border and label colour.',
+							color.button.critical.outlined.border,
+							vars.button.critical.outlined.border,
+							'Border colour.',
+						),
+					),
+					named(
+						'text',
+						tok(
+							color.button.critical.outlined.text,
+							vars.button.critical.outlined.text,
+							'Label colour.',
 						),
 					),
 					named(
@@ -558,61 +625,88 @@ const themeColours: TokenGroup[] = [
 				],
 			},
 			{
-				title: 'Linked text',
+				title: 'Disabled',
+				tokens: [
+					named(
+						'fill',
+						tok(
+							color.button.disabled.fill,
+							vars.button.disabled.fill,
+							'Disabled button fill.',
+						),
+					),
+					named(
+						'text',
+						tok(
+							color.button.disabled.text,
+							vars.button.disabled.text,
+							'Disabled button label.',
+						),
+					),
+				],
+			},
+		],
+	},
+	{
+		group: 'link',
+		title: 'Link',
+		blurb: 'Text link / anchor colours, separate from buttons.',
+		sections: [
+			{
 				tokens: [
 					named(
 						'primary',
 						tok(
-							color.button.linkedText.primary,
-							vars.button.linkedText.primary,
+							color.link.primary,
+							vars.link.primary,
 							'Default link colour.',
 						),
 					),
 					named(
 						'secondary',
 						tok(
-							color.button.linkedText.secondary,
-							vars.button.linkedText.secondary,
+							color.link.secondary,
+							vars.link.secondary,
 							'Secondary link colour.',
 						),
 					),
 					named(
 						'hover',
 						tok(
-							color.button.linkedText.hover,
-							vars.button.linkedText.hover,
-							'Hover state.',
+							color.link.hover,
+							vars.link.hover,
+							'Hover state — darkens.',
 						),
 					),
 					named(
 						'pressed',
 						tok(
-							color.button.linkedText.pressed,
-							vars.button.linkedText.pressed,
+							color.link.pressed,
+							vars.link.pressed,
 							'Pressed state.',
 						),
 					),
 					named(
 						'critical',
 						tok(
-							color.button.linkedText.critical,
-							vars.button.linkedText.critical,
+							color.link.critical,
+							vars.link.critical,
 							'Destructive link colour.',
 						),
 					),
 					named(
 						'criticalHover',
 						tok(
-							color.button.linkedText.criticalHover,
-							vars.button.linkedText.criticalHover,
-							'Destructive link — hover.',
+							color.link.criticalHover,
+							vars.link.criticalHover,
+							'Destructive link — hover (darkens).',
 						),
 					),
 					named(
 						'criticalPressed',
 						tok(
-							color.button.linkedText.criticalPressed,
-							vars.button.linkedText.criticalPressed,
+							color.link.criticalPressed,
+							vars.link.criticalPressed,
 							'Destructive link — pressed.',
 						),
 					),
@@ -733,7 +827,7 @@ const sectionGloss: Record<string, string> = {
 	'Critical — solid': 'Filled destructive button.',
 	'Critical — outlined': 'Outlined destructive button.',
 	Secondary: 'Neutral, low-emphasis button.',
-	'Linked text': 'Text / link-style buttons.',
+	Disabled: 'Disabled button fill & label.',
 };
 
 // Pick the readable text colour for a fill (alpha values use their opaque base).

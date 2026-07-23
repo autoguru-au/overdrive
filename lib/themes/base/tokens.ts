@@ -143,8 +143,8 @@ export const tokens = {
 			primary: colourMap.gray['900'], // #212338
 			secondary: colourMap.gray['700'], // #484c5f
 			reverse: colourMap.white, // #ffffff
-			tertiaryInactive: colourMap.gray['400'], // #8f95a1
-			tertiaryInactiveLight: colourMap.gray['300'], // #d4d9dd
+			tertiary: colourMap.gray['400'], // #8f95a1
+			placeholder: colourMap.gray['300'], // #d4d9dd
 		},
 		background: {
 			default: colourMap.white, // #ffffff
@@ -160,38 +160,45 @@ export const tokens = {
 			selected: colourMap.gray['600'], // #5c6172
 			strong: colourMap.gray['900'], // #212338
 		},
+		focus: {
+			ring: colourMap.green['600'], // #01c68c
+		},
 		info: {
 			text: colourMap.blue['900'], // #0d47a1
 			foreground: colourMap.blue['600'], // #0d54e5
-			background: '#e1edfe', // Figma info surface — NOT blue-200 (#bad4ff)
+			backgroundStrong: colourMap.blue['600'], // #0d54e5
+			backgroundSubtle: '#e1edfe', // Figma info surface — NOT blue-200 (#bad4ff)
 		},
 		success: {
 			text: colourMap.green['900'], // #00574c
 			foreground: colourMap.green['600'], // #01c68c
-			backgroundDark: colourMap.green['800'], // #18856f
-			backgroundLight: colourMap.green['200'], // #e3f8f0
+			backgroundStrong: colourMap.green['800'], // #18856f
+			backgroundSubtle: colourMap.green['200'], // #e3f8f0
 		},
 		warning: {
 			text: colourMap.red['800'], // #96110e (Figma warning/text is RED, not yellow)
 			foreground: colourMap.yellow['800'], // #f69a1f
-			backgroundDark: colourMap.yellow['500'], // #ffc001
-			backgroundLight: colourMap.yellow['200'], // #ffedb5
+			backgroundStrong: colourMap.yellow['500'], // #ffc001
+			backgroundSubtle: colourMap.yellow['200'], // #ffedb5
 		},
 		alert: {
 			text: colourMap.red['800'], // #96110e
 			foreground: colourMap.red['600'], // #d42b26
-			background: colourMap.red['200'], // #ffd4d4
+			backgroundStrong: colourMap.red['600'], // #d42b26
+			backgroundSubtle: colourMap.red['200'], // #ffd4d4
 		},
 		button: {
 			primary: {
 				solid: {
 					default: colourMap.green['300'], // #71edc2
 					hover: colourMap.green['400'], // #36e5aa
-					borderPressed: colourMap.green['600'], // #01c68c
+					border: colourMap.green['600'], // #01c68c
+					pressed: colourMap.green['600'], // #01c68c
 					text: colourMap.gray['900'], // #212338
 				},
 				outlined: {
-					borderText: colourMap.green['800'], // #18856f
+					border: colourMap.green['800'], // #18856f
+					text: colourMap.green['800'], // #18856f
 					hover: colourMap.green['100'], // #f2fdf9
 					pressed: colourMap.green['200'], // #e3f8f0
 				},
@@ -200,11 +207,13 @@ export const tokens = {
 				solid: {
 					default: colourMap.red['500'], // #e12e28
 					hover: colourMap.red['600'], // #d42b26
-					borderPressed: colourMap.red['800'], // #96110e
+					border: colourMap.red['800'], // #96110e
+					pressed: colourMap.red['800'], // #96110e
 					text: colourMap.white, // #ffffff
 				},
 				outlined: {
-					borderText: colourMap.red['800'], // #96110e
+					border: colourMap.red['800'], // #96110e
+					text: colourMap.red['800'], // #96110e
 					hover: colourMap.red['100'], // #fdf4f4
 					pressed: colourMap.red['200'], // #ffd4d4
 				},
@@ -215,15 +224,19 @@ export const tokens = {
 				pressed: colourMap.gray['200'], // #eef0f2
 				text: colourMap.gray['900'], // #212338
 			},
-			linkedText: {
-				primary: colourMap.green['800'], // #18856f
-				secondary: colourMap.gray['900'], // #212338
-				hover: colourMap.green['400'], // #36e5aa
-				pressed: colourMap.green['700'], // #03af83
-				critical: colourMap.red['700'], // #b51e1a
-				criticalHover: colourMap.red['300'], // #ef918e
-				criticalPressed: colourMap.red['500'], // #e12e28
+			disabled: {
+				fill: colourMap.gray['200'], // #eef0f2
+				text: colourMap.gray['400'], // #8f95a1
 			},
+		},
+		link: {
+			primary: colourMap.green['800'], // #18856f
+			secondary: colourMap.gray['900'], // #212338
+			hover: colourMap.green['700'], // #03af83
+			pressed: colourMap.green['400'], // #36e5aa
+			critical: colourMap.red['700'], // #b51e1a
+			criticalHover: colourMap.red['500'], // #e12e28
+			criticalPressed: colourMap.red['300'], // #ef918e
 		},
 		illustration: {
 			brightSide: colourMap.gray['400'], // #8f95a1

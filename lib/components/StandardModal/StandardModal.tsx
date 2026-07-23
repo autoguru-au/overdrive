@@ -139,7 +139,7 @@ export const StandardModal: FunctionComponent<StandardModalProps> = ({
 							onClick={closeButtonHandler}
 						>
 							<Icon
-								className={textStyles({ color: 'tertiaryInactive' })}
+								className={textStyles({ color: 'tertiary' })}
 								icon={XIcon}
 								size="medium"
 							/>

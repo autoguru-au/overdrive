@@ -22,7 +22,7 @@ export const disabled = styleVariants({
 export const natural = {
 	default: {
 		colour: style({
-			color: vars.color.foreground.tertiaryInactive,
+			color: vars.color.foreground.tertiary,
 		}),
 		borderColour: style({
 			borderColor: vars.border.colours.gray,

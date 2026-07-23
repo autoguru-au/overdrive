@@ -23,7 +23,7 @@ exports[`<Tooltip /> > should match snapshot when closed 1`] = `
   >
     <div
       aria-hidden="true"
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_position_fixed_mobile__onxwjuhg Positioner_root__1d54b7d0"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_position_fixed_mobile__onxwjuhi Positioner_root__1d54b7d0"
       data-od-component="positioner"
     />
   </div>
@@ -54,17 +54,17 @@ exports[`<Tooltip /> > should match snapshot when opened 1`] = `
   >
     <div
       aria-hidden="false"
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_position_fixed_mobile__onxwjuhg Positioner_root__1d54b7d0"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_position_fixed_mobile__onxwjuhi Positioner_root__1d54b7d0"
       data-od-component="positioner"
       style="position: absolute; left: 0px; top: 0px; margin: 0px;"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_paddingLeft_3_mobile__onxwju18g sprinkles_paddingRight_3_mobile__onxwju1a0 sprinkles_paddingTop_2_mobile__onxwju1bg sprinkles_paddingBottom_2_mobile__onxwju16s sprinkles_overflow_hidden_mobile__onxwjug8 sprinkles_pointerEvents_none__onxwjuev sprinkles_userSelect_none__onxwjuey sprinkles_width_full_mobile__onxwjut4 sprinkles_backgroundColor_gray900__onxwjubf sprinkles_boxShadow_4__onxwjuen sprinkles_borderRadius_1_mobile__onxwjulw Tooltip_root__1qliafn0"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_paddingLeft_3_mobile__onxwju18i sprinkles_paddingRight_3_mobile__onxwju1a2 sprinkles_paddingTop_2_mobile__onxwju1bi sprinkles_paddingBottom_2_mobile__onxwju16u sprinkles_overflow_hidden_mobile__onxwjuga sprinkles_pointerEvents_none__onxwjuex sprinkles_userSelect_none__onxwjuf0 sprinkles_width_full_mobile__onxwjut6 sprinkles_backgroundColor_gray900__onxwjubh sprinkles_boxShadow_4__onxwjuep sprinkles_borderRadius_1_mobile__onxwjuly Tooltip_root__1qliafn0"
         id="_r_3_"
         role="tooltip"
       >
         <span
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2_mobile__onxwjujo sprinkles_lineHeight_2_mobile__onxwjuhs sprinkles_color_white__onxwjua5 sprinkles_fontWeight_normal__onxwjue6"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2_mobile__onxwjujq sprinkles_lineHeight_2_mobile__onxwjuhu sprinkles_color_white__onxwjua5 sprinkles_fontWeight_normal__onxwjue8"
         >
           tooltip content
         </span>
