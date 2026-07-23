@@ -43,7 +43,7 @@ export const gridSwatches = style({
  */
 export const tokenGrid = style({
 	display: 'grid',
-	gap: '20px 16px',
+	gap: `${overdriveTokens.space[5]} ${overdriveTokens.space[4]}`,
 	gridTemplateColumns: 'repeat(auto-fill, minmax(230px, 1fr))',
 });
 
@@ -54,7 +54,7 @@ export const tokenGrid = style({
  */
 export const spaceLadderGrid = style({
 	alignItems: 'center',
-	columnGap: '20px',
+	columnGap: overdriveTokens.space[5],
 	display: 'grid',
 	gridTemplateColumns: 'repeat(3, auto)',
 	rowGap: '10px',
@@ -72,7 +72,7 @@ export const spaceLadderHeaderCell = style({
  */
 export const widthLadderGrid = style({
 	alignItems: 'center',
-	columnGap: '20px',
+	columnGap: overdriveTokens.space[5],
 	display: 'grid',
 	// Use column flexes so the Tag lands at the far right, aligned with the
 	// Radius/Shadow tables.
@@ -86,10 +86,10 @@ export const widthLadderGrid = style({
  */
 export const radiusLadderGrid = style({
 	alignItems: 'center',
-	columnGap: '20px',
+	columnGap: overdriveTokens.space[5],
 	display: 'grid',
 	gridTemplateColumns: 'auto auto auto minmax(0, 1fr) auto',
-	rowGap: '12px',
+	rowGap: overdriveTokens.space[3],
 });
 
 /**
@@ -102,8 +102,8 @@ export const ladderRow = style({
 	display: 'grid',
 	gridColumn: '1 / -1',
 	gridTemplateColumns: 'subgrid',
-	paddingBlock: '8px',
-	paddingInline: '12px',
+	paddingBlock: overdriveTokens.space[2],
+	paddingInline: overdriveTokens.space[3],
 });
 
 // `tokenCode` sets alignSelf: flex-start for the card layout; in a ladder row
@@ -116,7 +116,7 @@ globalStyle(`${ladderRow} code`, {
 /** Amber wash for a deprecated row (matches the Deprecated header bar). */
 export const ladderRowDeprecated = style({
 	backgroundColor: overdriveTokens.color.gamut.yellow[100],
-	borderRadius: '8px',
+	borderRadius: overdriveTokens.border.radius.md,
 });
 
 // On a deprecated (amber) row, drop the token chip's grey fill so it doesn't
@@ -133,7 +133,7 @@ globalStyle(`${ladderRowDeprecated} code`, {
  */
 export const borderLadderGrid = style({
 	alignItems: 'center',
-	columnGap: '20px',
+	columnGap: overdriveTokens.space[5],
 	display: 'grid',
 	gridTemplateColumns: 'auto auto auto minmax(0, 1fr) auto',
 	rowGap: '14px',
@@ -143,10 +143,10 @@ export const borderLadderGrid = style({
 export const tokenCard = style({
 	backgroundColor: overdriveTokens.color.gamut.white,
 	border: `1px solid ${overdriveTokens.color.gamut.gray[200]}`,
-	borderRadius: '12px',
+	borderRadius: overdriveTokens.border.radius.lg,
 	display: 'flex',
 	flexDirection: 'column',
-	gap: '8px',
+	gap: overdriveTokens.space[2],
 	padding: '10px',
 });
 
@@ -172,7 +172,7 @@ export const tokenCode = style({
 	lineHeight: 1.4,
 	maxWidth: '100%',
 	overflowWrap: 'anywhere',
-	padding: '4px 8px',
+	padding: `${overdriveTokens.space[1]} ${overdriveTokens.space[2]}`,
 });
 
 /* ---------------------------------------------------------------------------
@@ -237,7 +237,7 @@ export const swatchGrid = style({
 export const swatchCell = style({
 	display: 'flex',
 	flexDirection: 'column',
-	gap: '8px',
+	gap: overdriveTokens.space[2],
 	minWidth: 0,
 });
 
@@ -267,7 +267,7 @@ export const swatchCardPalette = style({
 export const swatchCardHex = style({
 	fontFamily: 'monospace',
 	fontSize: '12px',
-	marginTop: '2px',
+	marginTop: overdriveTokens.space[0],
 	opacity: 0.85,
 	textTransform: 'uppercase',
 });
@@ -291,7 +291,7 @@ export const swatchCardVar = style({
 	lineHeight: 1.5,
 	maxWidth: '100%',
 	overflowWrap: 'anywhere',
-	padding: '4px 8px',
+	padding: `${overdriveTokens.space[1]} ${overdriveTokens.space[2]}`,
 });
 
 /** Sub-group label (e.g. Button → Secondary) above a card grid. */
