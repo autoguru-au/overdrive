@@ -1,0 +1,51 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<FilterChip /> > should match the snapshot 1`] = `
+<div
+  class="theme_OD_Base__j49br80"
+  data-od-component="provider"
+>
+  <div
+    class="FilterChip_chip__1gngjae0 FilterChip_chip_variant_filter__1gngjae1 FilterChip_chip_selected_false__1gngjae4"
+    data-od-component="filter-chip"
+  >
+    <button
+      aria-pressed="false"
+      class="FilterChip_resetButton__1gngjae6 focusOutline_focusOutlineStyle__tq83zq0 FilterChip_innerButton__1gngjae7"
+      type="button"
+    >
+      <span
+        class="FilterChip_categoryLabel__1gngjaea FilterChip_categoryLabel_selected_false__1gngjaec"
+      >
+        Vehicle type:
+      </span>
+      <span>
+        Truck
+      </span>
+    </button>
+    <button
+      aria-label="Remove Vehicle type filter"
+      class="FilterChip_resetButton__1gngjae6 focusOutline_focusOutlineStyle__tq83zq0 FilterChip_innerButton__1gngjae7 FilterChip_removeButton__1gngjae8"
+      type="button"
+    >
+      <span
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuf6 Icon_makeResponsiveStyle_key_bp__1gy3ire0 FilterChip_icon__1gngjae9"
+        data-od-component="icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuf6 sprinkles_width_full_mobile__onxwjut6 sprinkles_height_full_mobile__onxwjur6"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 256 256"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M205.66 194.34a8 8 0 0 1-11.32 11.32L128 139.31l-66.34 66.35a8 8 0 0 1-11.32-11.32L116.69 128 50.34 61.66a8 8 0 0 1 11.32-11.32L128 116.69l66.34-66.35a8 8 0 0 1 11.32 11.32L139.31 128z"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</div>
+`;

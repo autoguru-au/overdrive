@@ -32,6 +32,11 @@ export { DropDown, DropDownOption } from './DropDown';
 export { EditableText } from './EditableText';
 export { FillHeightBox } from './FillHeightBox';
 export {
+	FilterChip,
+	type FilterChipProps,
+	type FilterChipType,
+} from './FilterChip';
+export {
 	FlexInline,
 	type FlexInlineComponentProps,
 	FlexStack,
