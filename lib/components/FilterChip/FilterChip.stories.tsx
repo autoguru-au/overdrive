@@ -7,6 +7,7 @@ import { FilterChip } from './FilterChip';
 const meta = {
 	title: 'Components/FilterChip',
 	component: FilterChip,
+	tags: ['new'],
 	args: {
 		label: 'Vehicle type:',
 		value: 'Truck',
