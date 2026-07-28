@@ -33,7 +33,7 @@ const MyStripe = (args: ComponentProps<typeof IntentStripe>) => (
 		width="full"
 		padding="6"
 		backgroundColour="gray200"
-		borderRadius="1"
+		borderRadius="xsmall"
 		overflow="hidden"
 	>
 		<IntentStripe {...args} />

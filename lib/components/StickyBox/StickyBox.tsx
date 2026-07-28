@@ -64,7 +64,7 @@ export const StickyBox: FunctionComponent<StickyBoxProps> = ({
 				styles.zIndex[zIndex],
 			)}
 			backgroundColour={withShadow ? backgroundColour || 'white' : void 0}
-			boxShadow={withShadow ? boxShadow || '3' : void 0}
+			boxShadow={withShadow ? boxShadow || 'z3' : void 0}
 			odComponent="sticky-box"
 			{...rest}
 		>

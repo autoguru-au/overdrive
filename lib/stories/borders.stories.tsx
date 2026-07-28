@@ -1,4 +1,3 @@
-import { WarningIcon } from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import clsx from 'clsx';
 import React from 'react';
@@ -6,7 +5,6 @@ import React from 'react';
 import { Box, type BoxProps } from '../components/Box/Box';
 import { FlexStack } from '../components/Flex/FlexStack';
 import { Heading } from '../components/Heading/Heading';
-import { Icon } from '../components/Icon';
 import { Text } from '../components/Text/Text';
 import { overdriveTokens } from '../themes';
 import { tokens } from '../themes/base/tokens';
@@ -14,7 +12,6 @@ import { tokens } from '../themes/base/tokens';
 import {
 	labels,
 	ladderRow,
-	ladderRowDeprecated,
 	radiusLadderGrid,
 	small,
 	spaceLadderHeaderCell,
@@ -26,8 +23,15 @@ import {
 
 const { gamut } = overdriveTokens.color;
 
-/** Tag values used across the ladders. */
-const TAG_DEPRECATED = 'deprecated';
+/**
+ * Tag for keys that are legacy aliases — kept for backward compatibility,
+ * but not the recommended way to reach for these values. NOT the same as
+ * deprecated: these keys have no `@deprecated` JSDoc and are not currently
+ * scheduled for removal. `radius.min` has no 2px replacement in the named
+ * scale; `radius.md/lg/xl` and `width['3']` removal (if it happens) is
+ * tracked as a separate, future ticket from the v5 (AG-20568) removals.
+ */
+const TAG_LEGACY = 'legacy alias — prefer named scale';
 
 /** Column headers, shared across the ladder tables. */
 const COL = {
@@ -44,8 +48,8 @@ const COL = {
 // ── Width ───────────────────────────────────────────────────────────────
 // Single Space-style ladder: Px · Scale (line of that thickness) · Token ·
 // Use · Shape (a rectangle with the border applied) · Tag. `1`/`2` are the
-// documented Default/Emphasis weights; `3` (4px) is deprecated (on its way
-// out — removal implied once the migration completes).
+// documented Default/Emphasis weights; `3` (4px) is a legacy alias — not
+// deprecated, not currently scheduled for removal.
 const WIDTH_LADDER: {
 	tokenKey: keyof typeof tokens.border.width;
 	use: string;
@@ -54,12 +58,12 @@ const WIDTH_LADDER: {
 	{ tokenKey: 'none', use: 'No border' },
 	{ tokenKey: '1', use: 'Default' },
 	{ tokenKey: '2', use: 'Emphasis' },
-	{ tokenKey: '3', use: '', tag: TAG_DEPRECATED },
+	{ tokenKey: '3', use: '', tag: TAG_LEGACY },
 ];
 
 // ── Radius ──────────────────────────────────────────────────────────────
-// One table: the named scale on top, then the old aliases (deprecated —
-// yellow row + warning tag) below.
+// One table: the named scale on top, then the abbreviated legacy aliases
+// (legacy tag — not deprecated, not scheduled for removal) below.
 interface RadiusRow {
 	tokenKey: keyof typeof tokens.border.radius;
 	value: string;
@@ -73,17 +77,15 @@ const RADIUS_LADDER: RadiusRow[] = [
 	{ tokenKey: 'large', value: '16px', use: 'L' },
 	{ tokenKey: 'xlarge', value: '20px', use: 'XL' },
 	{ tokenKey: '2xl', value: '24px', use: '2XL' },
-	{ tokenKey: 'min', value: '2px', use: '', tag: TAG_DEPRECATED },
-	{ tokenKey: 'sm', value: '4px', use: '', tag: TAG_DEPRECATED },
-	{ tokenKey: '1', value: '4px', use: '', tag: TAG_DEPRECATED },
-	{ tokenKey: 'md', value: '8px', use: '', tag: TAG_DEPRECATED },
-	{ tokenKey: 'lg', value: '12px', use: '', tag: TAG_DEPRECATED },
-	{ tokenKey: 'xl', value: '16px', use: '', tag: TAG_DEPRECATED },
+	{ tokenKey: 'min', value: '2px', use: '', tag: TAG_LEGACY },
+	{ tokenKey: 'md', value: '8px', use: '', tag: TAG_LEGACY },
+	{ tokenKey: 'lg', value: '12px', use: '', tag: TAG_LEGACY },
+	{ tokenKey: 'xl', value: '16px', use: '', tag: TAG_LEGACY },
 ];
 
 // ── Shadow ──────────────────────────────────────────────────────────────
-// One table: z1–z4 on top, then legacy 1–5 (deprecated). Legacy 1–4 are
-// the same values as z1–z4; 5 is dropped.
+// One table: z1–z4. Legacy numeric 1–5 aliases have been removed
+// (DS-2026 major) — z1–z4 are the only elevation levels now.
 interface ShadowRow {
 	tokenKey: keyof typeof tokens.elevation;
 	value: string;
@@ -104,11 +106,6 @@ const SHADOW_LADDER: ShadowRow[] = [
 	},
 	{ tokenKey: 'z3', value: 'Shadow 3', use: 'Popovers' },
 	{ tokenKey: 'z4', value: 'Shadow 4', use: 'Large modals' },
-	{ tokenKey: '1', value: '1', use: '', tag: TAG_DEPRECATED },
-	{ tokenKey: '2', value: '2', use: '', tag: TAG_DEPRECATED },
-	{ tokenKey: '3', value: '3', use: '', tag: TAG_DEPRECATED },
-	{ tokenKey: '4', value: '4', use: '', tag: TAG_DEPRECATED },
-	{ tokenKey: '5', value: '5', use: '', tag: TAG_DEPRECATED },
 ];
 
 // ── Swatch renderers per section ──────────────────────────────────────────
@@ -133,42 +130,15 @@ const shadowSwatch = (tokenKey: string) => (
 	/>
 );
 
-/** Small warning triangle; colour inherits unless overridden. */
-const WarningGlyph = ({ color }: { color?: string }) => (
-	<span
-		style={{ color, display: 'inline-flex', height: 15, width: 15 }}
-	>
-		<Icon icon={WarningIcon} size="100%" />
-	</span>
+/** A ladder row (subgrid). */
+const LadderRow = ({ children }: { children: React.ReactNode }) => (
+	<div className={ladderRow}>{children}</div>
 );
 
-/** A ladder row (subgrid); amber-washed when `deprecated`. */
-const LadderRow = ({
-	deprecated,
-	children,
-}: {
-	deprecated?: boolean;
-	children: React.ReactNode;
-}) => (
-	<div className={clsx(ladderRow, deprecated && ladderRowDeprecated)}>
-		{children}
-	</div>
-);
-
-/**
- * Tag cell for the single ladders. `deprecated` gets a yellow warning icon and
- * a "do not use" hint; other tags render as plain muted text.
- */
+/** Tag cell for the single ladders; renders as plain muted text. */
 const TagCell = ({ tag }: { tag?: string }) =>
 	tag ? (
-		<span style={{ alignItems: 'center', display: 'inline-flex', gap: 6 }}>
-			{tag === TAG_DEPRECATED && (
-				<WarningGlyph color={gamut.yellow[500]} />
-			)}
-			<span className={clsx(small, tokenDescription)}>
-				{tag === TAG_DEPRECATED ? 'deprecated · do not use' : tag}
-			</span>
-		</span>
+		<span className={clsx(small, tokenDescription)}>{tag}</span>
 	) : (
 		<span className={small} aria-hidden="true" />
 	);
@@ -201,10 +171,7 @@ const WidthSection = () => (
 				const px = tokens.border.width[tokenKey];
 				const thickness = Number.parseInt(px, 10);
 				return (
-					<LadderRow
-						deprecated={tag === TAG_DEPRECATED}
-						key={tokenKey}
-					>
+					<LadderRow key={tokenKey}>
 						<span className={small}>
 							{tokenKey === 'none' ? '0px' : px}
 						</span>
@@ -242,7 +209,7 @@ const WidthSection = () => (
 	</FlexStack>
 );
 
-/** Radius: one table — the named scale on top, deprecated aliases below. */
+/** Radius: one table — the named scale on top, legacy aliases below. */
 const RadiusSection = () => (
 	<FlexStack gap="5">
 		<Heading as="h2" className={titles}>
@@ -250,8 +217,14 @@ const RadiusSection = () => (
 		</Heading>
 		<Text as="p">
 			The named scale (<code className={tokenCode}>xsmall</code>–
-			<code className={tokenCode}>xlarge</code>, plus <code className={tokenCode}>2xl</code> at 24px for modals) replaces the old
-			abbreviated aliases, which resolve to the same px.
+			<code className={tokenCode}>xlarge</code>, plus <code className={tokenCode}>2xl</code> at 24px for modals) is
+			preferred for all new work. The abbreviated aliases below resolve
+			to the same px and remain as legacy names —{' '}
+			<code className={tokenCode}>min</code> has no named-scale
+			replacement, and removing{' '}
+			<code className={tokenCode}>md</code>/<code className={tokenCode}>lg</code>/
+			<code className={tokenCode}>xl</code> is tracked as a separate,
+			future ticket.
 		</Text>
 
 		<div className={radiusLadderGrid}>
@@ -272,10 +245,7 @@ const RadiusSection = () => (
 				)}
 			</LadderRow>
 			{RADIUS_LADDER.map(({ tokenKey, value, use, tag }) => (
-				<LadderRow
-					deprecated={tag === TAG_DEPRECATED}
-					key={tokenKey}
-				>
+				<LadderRow key={tokenKey}>
 					<span className={small}>{value}</span>
 					{radiusSwatch(tokenKey)}
 					<code className={tokenCode}>
@@ -289,7 +259,7 @@ const RadiusSection = () => (
 	</FlexStack>
 );
 
-/** Shadow: one table — z1–z4 on top, legacy 1–5 (deprecated) below. */
+/** Shadow: one table — z1–z4, the only elevation levels. */
 const ShadowSection = () => (
 	<FlexStack gap="5">
 		<Heading as="h2" className={titles}>
@@ -297,10 +267,10 @@ const ShadowSection = () => (
 		</Heading>
 		<Text as="p">
 			Four elevation levels <code className={tokenCode}>z1</code>–
-			<code className={tokenCode}>z4</code> replace legacy{' '}
+			<code className={tokenCode}>z4</code>. The legacy numeric{' '}
 			<code className={tokenCode}>1</code>–
-			<code className={tokenCode}>4</code> (identical values);{' '}
-			<code className={tokenCode}>5</code> is dropped.
+			<code className={tokenCode}>5</code> aliases have been removed
+			(DS-2026 major).
 		</Text>
 
 		<div className={radiusLadderGrid}>
@@ -321,10 +291,7 @@ const ShadowSection = () => (
 				)}
 			</LadderRow>
 			{SHADOW_LADDER.map(({ tokenKey, value, use, tag }) => (
-				<LadderRow
-					deprecated={tag === TAG_DEPRECATED}
-					key={tokenKey}
-				>
+				<LadderRow key={tokenKey}>
 					<span className={small}>{value}</span>
 					{shadowSwatch(tokenKey)}
 					<code className={tokenCode}>

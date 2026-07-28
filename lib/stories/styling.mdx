@@ -58,7 +58,7 @@ const MyComponent = ({ children }) => (
         bg: 'soft',
         fg: 'info',
         borderColor: 'neutral',
-        borderRadius: 'sm',
+        borderRadius: 'xsmall',
       })}
     >
       {children}
@@ -95,7 +95,7 @@ const MyCard = ({ children, className }) => {
         backgroundColor: 'white',
         borderWidth: '1',
         borderColor: 'neutral',
-        boxShadow: '1',
+        boxShadow: 'z1',
       })}
     >
       {children}
@@ -190,7 +190,14 @@ To ensure type safety, we provide several utility types for props.
 - **`StyleProps`**: Contains all possible style props available from sprinkles.
 - **`LegacyStyleProps`**: For style props that use the `colour` spelling for
   backward compatibility.
-- **`LegacyTextColours`**: A type for legacy text colour names.
+- **`LegacyTextColours`**: A type for legacy text colour names. These 14 names
+  (`dark`, `white`, `muted`, `neutral`, `danger`, `warning`, `success`,
+  `shine`, `brand`, `link`, `secondary`, `primary`, `light`, `information`)
+  no longer reference their own token contract — the underlying
+  `typography.colour.*` tokens were removed in v5 (AG-20568) — and are now
+  aliases onto non-deprecated `color.*` tokens. The `colour` prop itself
+  keeps working unchanged, but is deprecated and will be removed in a future
+  major; prefer `color` with `color.*` tokens directly in new code.
 
 By using these types, you can ensure that you're only passing valid style
 properties to the functions, leveraging TypeScript's static analysis to catch
@@ -337,13 +344,14 @@ Size tokens: (`"0"`, `"1"`, `"2"`, `"3"`, `"4"`, `"5"`, `"6"`,`"7"`, `"8"`,
 
 **Border Radius:**
 
-- **`borderRadius`** - Border radius using design tokens (`none`, `min`, `sm`,
-  `md`, `lg`, `xl`, `2xl`, `"1"`, `pill`, `full`)
+- **`borderRadius`** - Border radius using design tokens (`none`, `min`,
+  `md`, `lg`, `xl`, `2xl`, `pill`, `full`, `xsmall`, `small`, `medium`,
+  `large`, `xlarge`)
 
 ### Visual Effects
 
-- **`boxShadow`** - Box shadow from elevation tokens (`none`, `"1"`, `"2"`,
-  `"3"`, `"4"`, `"5"`)
+- **`boxShadow`** - Box shadow from elevation tokens (`none`, `z1`, `z2`,
+  `z3`, `z4`)
 - **`opacity`** - CSS opacity property (`"0"`, `"1"`)
 
 ### Interaction

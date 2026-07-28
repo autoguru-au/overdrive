@@ -30,9 +30,9 @@ export const Standard: Story = {
 			backgroundColor="white"
 			borderColor="default"
 			borderWidth="1"
-			boxShadow="1"
+			boxShadow="z1"
 			height="full"
-			borderRadius="1"
+			borderRadius="xsmall"
 		>
 			<StickyBox {...args}>
 				<Box
@@ -40,7 +40,7 @@ export const Standard: Story = {
 					padding="3"
 					width="full"
 					backgroundColor="yellow700"
-					borderRadius="1"
+					borderRadius="xsmall"
 					overflow="hidden"
 				>
 					<Heading as="h2" color="white">

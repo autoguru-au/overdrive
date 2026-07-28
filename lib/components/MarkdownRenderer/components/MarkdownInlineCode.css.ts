@@ -11,7 +11,7 @@ export const inlineCode = recipe({
 		'@layer': {
 			[cssLayerComponent]: {
 				backgroundColor: tokens.color.gamut.gray[200],
-				borderRadius: tokens.border.radius.sm,
+				borderRadius: tokens.border.radius.xsmall,
 				fontFamily: tokens.typography.fontFamilyMono,
 				padding: `${tokens.space[1]} ${tokens.space[1]}`,
 			},

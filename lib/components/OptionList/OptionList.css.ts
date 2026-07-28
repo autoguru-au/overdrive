@@ -93,7 +93,7 @@ export const checkbox = style([
 		flexShrink: '0',
 		justifyContent: 'center',
 		size: '6',
-		borderRadius: 'sm',
+		borderRadius: 'xsmall',
 		borderStyle: 'solid',
 		borderWidth: '1',
 	}),

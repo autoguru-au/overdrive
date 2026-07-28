@@ -16,7 +16,7 @@ export const fullScreenRoot = style({
 	zIndex: 1001,
 
 	':before': {
-		backgroundColor: vars.colours.intent.secondary.background.standard,
+		backgroundColor: vars.color.intent.secondary.background.standard,
 		bottom: 0,
 		content: '""',
 		left: 0,
@@ -103,9 +103,11 @@ export const suggestionHighlight = style({
 	// `color.background.emphasisInactive` is unbridged — retained on the
 	// legacy token until the major (Track C tenant-variant rule).
 	// eslint-disable-next-line no-restricted-syntax -- RETAINED: tenant-variant key (docs/ds2026-plan/track-c.md §1.5 extension).
-	backgroundColor: vars.colours.background.light,
-	// `typography.colour.information` (blue500 #0d59fc) drifts from
-	// `color.info.foreground` (Figma blue600 #0d54e5) — use the exact-value
-	// gamut fallback per Track C plan §1.6/§1.9 (C-P8).
+	backgroundColor: vars.color.background.emphasisInactive,
+	// The legacy `information` text colour was blue500 (#0d59fc), which drifts
+	// from `color.info.foreground` (Figma blue600 #0d54e5) — use the
+	// exact-value gamut fallback per Track C plan §1.6/§1.9 (C-P8). The legacy
+	// token itself was removed in v5 (AG-20568); blue500 is still the value
+	// this highlight is designed against.
 	color: vars.color.gamut.blue['500'],
 });

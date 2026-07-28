@@ -62,7 +62,7 @@ const tokenPairs = (tokens: Tokens): Array<[string, string, string]> => {
 		['content.danger on surface.page', content.danger, surface.page],
 		['content.success on surface.page', content.success, surface.page],
 		['content.warning on surface.page', content.warning, surface.page],
-		...Object.entries(tokens.colours.intent).flatMap(
+		...Object.entries(tokens.color.intent).flatMap(
 			([name, intent]): Array<[string, string, string]> => [
 				[
 					`intent.${name} foreground on background.standard`,

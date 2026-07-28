@@ -2,7 +2,6 @@ import deepmerge from 'deepmerge';
 
 import type { ColourMap } from '../';
 import { tokens as baseTokens } from '../base/tokens';
-import { buildColourGamut } from '../makeTheme';
 import type { ThemeTokens } from '../theme.css';
 
 const colours = {
@@ -66,11 +65,11 @@ const colours = {
 const flatElevation = '0 0 0 0 rgba(0, 0, 0, 0.0)';
 
 export const tokens = deepmerge(baseTokens, {
-	colours: {
+	color: {
 		gamut: {
-			...buildColourGamut(colours),
+			...colours,
 		},
-		foreground: {
+		interactive: {
 			link: colours.green['600'],
 		},
 		intent: {
@@ -100,11 +99,6 @@ export const tokens = deepmerge(baseTokens, {
 		},
 	},
 	elevation: {
-		'1': flatElevation,
-		'2': flatElevation,
-		'3': flatElevation,
-		'4': flatElevation,
-		'5': flatElevation,
 		z1: flatElevation,
 		z2: flatElevation,
 		z3: flatElevation,
@@ -113,16 +107,9 @@ export const tokens = deepmerge(baseTokens, {
 	border: {
 		radius: {
 			min: 'none',
-			sm: 'none',
 			md: 'none',
-			'1': 'none',
 			xsmall: 'none',
 			small: 'none',
-		},
-	},
-	typography: {
-		colour: {
-			primary: colours.red['600'],
 		},
 	},
 }) satisfies ThemeTokens;

@@ -30,7 +30,7 @@ export const Standard: Story = {
 						padding="3"
 						width="full"
 						backgroundColour="yellow700"
-						borderRadius="1"
+						borderRadius="xsmall"
 						overflow="hidden"
 					>
 						<Heading as="h2" colour="white">

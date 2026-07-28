@@ -43,7 +43,7 @@ export const path = style({
 
 export const colours = styleVariants({
 	danger: {
-		stroke: vars.typography.colour.danger,
+		stroke: vars.color.alert.foreground,
 	},
 	default: {
 		stroke: vars.color.foreground.primary,
@@ -52,13 +52,13 @@ export const colours = styleVariants({
 		stroke: vars.color.foreground.reverse,
 	},
 	primary: {
-		stroke: vars.typography.colour.primary,
+		stroke: vars.color.intent.primary.background.standard,
 	},
 	secondary: {
-		stroke: vars.typography.colour.secondary,
+		stroke: vars.color.foreground.secondary,
 	},
 	warning: {
-		stroke: vars.typography.colour.warning,
+		stroke: vars.color.warning.foreground,
 	},
 });
 

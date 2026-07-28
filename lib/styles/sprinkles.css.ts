@@ -7,6 +7,7 @@ import { overdriveTokens as tokens } from '../themes/theme.css';
 import { arrayFromKeys } from '../utils/object';
 
 import { cssLayerStyleprops } from './layers.css';
+import { LEGACY_TEXT_COLOURS } from './legacyTextColours';
 import { gapVar } from './vars.css';
 
 const { space } = tokens;
@@ -33,40 +34,35 @@ const flexAlignmentsWithSpace = {
 };
 
 const intentForegroundColours = mapValues(
-	tokens.colours.intent,
+	tokens.color.intent,
 	({ foreground }) => foreground,
 );
 
 const intentBackgroundColoursStandard = mapValues(
-	tokens.colours.intent,
+	tokens.color.intent,
 	({ background }) => background.standard,
 );
 
 const intentBorderColours = mapValues(
-	tokens.colours.intent,
+	tokens.color.intent,
 	({ border }) => border,
 );
 
-/**
- * Test-only: deprecated colour-value aliases retained until the DS-2026 major.
- * Exported so the R12 guard spec can assert the alias resolves to its real
- * token value; spread into `backgroundColours` so the alias and the tested
- * value are the same object.
- */
-export const __deprecatedBackgroundColourAliases = {
-	/**
-	 * @deprecated Use `gray900`. `black900` is retained only as an alias of
-	 * `gray900` (#212338 — the DS-2026 "Tarmac Black") so existing
-	 * `backgroundColour="black900"` usages keep resolving after the black ramp
-	 * was removed. Scheduled for removal in the DS-2026 major (W4-P4).
-	 */
-	black900: tokens.colours.gamut.gray900,
-};
+// --- SEMANTIC COLOUR PARITY (C-P1) ---
+// Flat semantic ramp: every legacy gamut key (gray900, green300, …) gets a
+// semantic equivalent at the IDENTICAL base value (color.gamut === colours.gamut).
+const semanticGamut = buildColourGamut({
+	gray: tokens.color.gamut.gray,
+	green: tokens.color.gamut.green,
+	blue: tokens.color.gamut.blue,
+	yellow: tokens.color.gamut.yellow,
+	red: tokens.color.gamut.red,
+});
 
 const backgroundColours = {
 	...intentBackgroundColoursStandard,
-	...tokens.colours.gamut,
-	...__deprecatedBackgroundColourAliases,
+	...semanticGamut,
+	white: tokens.color.gamut.white,
 	transparent: 'transparent',
 };
 
@@ -81,17 +77,6 @@ const borderColours = {
 	...tokens.border.colours,
 	...intentBorderColours,
 };
-
-// --- SEMANTIC COLOUR PARITY (C-P1) ---
-// Flat semantic ramp: every legacy gamut key (gray900, green300, …) gets a
-// semantic equivalent at the IDENTICAL base value (color.gamut === colours.gamut).
-const semanticGamut = buildColourGamut({
-	gray: tokens.color.gamut.gray,
-	green: tokens.color.gamut.green,
-	blue: tokens.color.gamut.blue,
-	yellow: tokens.color.gamut.yellow,
-	red: tokens.color.gamut.red,
-});
 
 // `color` (text/foreground) semantic value space
 const semanticColor = {
@@ -142,12 +127,22 @@ const semanticBorderColor = {
 	transparent: 'transparent',
 };
 
+// Preserves the legacy `colours.foreground` key order (body, link) so the
+// generated sprinkles class indices stay stable; `link` is re-set by the
+// `LEGACY_TEXT_COLOURS` spread below, exactly as it was before the migration.
+const legacyForegroundColours = {
+	body: tokens.color.foreground.primary,
+	link: tokens.color.interactive.link,
+};
+
 const colours = {
-	...tokens.colours.foreground,
-	...tokens.typography.colour,
+	...legacyForegroundColours,
+	// The `typography.colour.*` tokens were removed in v5 (AG-20568); the
+	// deprecated `colour` prop value space is preserved by this alias map.
+	...LEGACY_TEXT_COLOURS,
 	...intentForegroundColours,
 	unset: 'unset',
-	white: tokens.colours.gamut.white,
+	white: tokens.color.gamut.white,
 };
 
 const gapSizesWithVar = mapValues(space, (value) => ({

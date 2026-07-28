@@ -11,7 +11,7 @@ export const hr = style({
 		[cssLayerComponent]: {
 			borderStyle: 'none',
 			// eslint-disable-next-line no-restricted-syntax -- RETAINED: tenant-variant key (the in-repo `neutral` theme overrides colours.background.neutral to gray400, which the unbridged color.background.inactive would drift from) — docs/ds2026-plan/track-c.md §1.5 extension.
-			boxShadow: `inset 0 0 0 1px ${vars.colours.background.neutral}`,
+			boxShadow: `inset 0 0 0 1px ${vars.color.background.inactive}`,
 			height: '1px',
 			margin: 0,
 			transform: `translateY(calc(${gapVar} * -1))`,

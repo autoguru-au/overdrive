@@ -4,12 +4,13 @@ import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
 import { overdriveTokens as tokens } from '../themes/theme.css';
 
 import { cssLayerTypography } from './layers.css';
+import { LEGACY_TEXT_COLOURS } from './legacyTextColours';
 
 const legacyTextProperties = defineProperties({
 	'@layer': cssLayerTypography,
 	properties: {
 		color: {
-			...tokens.typography.colour,
+			...LEGACY_TEXT_COLOURS,
 			unset: 'unset',
 		},
 	},

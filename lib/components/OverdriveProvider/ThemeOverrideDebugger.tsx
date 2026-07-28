@@ -13,10 +13,10 @@ export const ThemeOverrideDebugger: FunctionComponent = () => {
 
 	const colorBackground =
 		colorOverrides?.primaryBackground ||
-		vars.colours.intent.primary.background.standard;
+		vars.color.intent.primary.background.standard;
 	const colorForeground =
 		colorOverrides?.primaryForeground ||
-		vars.colours.intent.primary.foreground;
+		vars.color.intent.primary.foreground;
 
 	const passesAA = useMemo(
 		() =>

@@ -345,6 +345,8 @@ STORIES: keep every existing base story rendering identically; ADD ds2026 storie
 Then run gates yourself: yarn lint; yarn test run <Scope>; yarn test:a11y. Follow the stripped-__hash snapshot procedure (master §4.0.1) — base-theme stripped diff MUST be empty. Report changes, gate results, assumptions.
 ```
 
+> **SUPERSEDED for removal (AG-20568, v5 major, 2026-07):** the TRACK C EXCEPTION / SILENT-FAILURE WARNING above ("Legacy colours.*, typography.colour, space, radius, elevation 1–5 are NEVER revalued") applied while MFEs still consumed these keys. Once AG-20567 (MFE cleanup) lands, `elevation '1'–'5'`, `typography.colour.*`, `border.radius.sm`/`['1']`, the `colours.*` contract, and the `black900` alias are removed in v5.0.0. The rule still holds for REVALUING any surviving key, and the `space` scale is untouched.
+
 **[REVIEWER-BOILERPLATE]**
 ```
 You are the adversarial Reviewer. Inspect the Builder's branch. PASS/FAIL with file:line evidence for each:

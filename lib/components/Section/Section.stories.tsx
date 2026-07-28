@@ -28,7 +28,7 @@ const boxProps: ComponentProps<typeof Box> = {
 	marginBottom: ['2', '4', '5', '9'],
 	marginX: ['none', '3', '5'],
 	borderRadius: 'pill',
-	boxShadow: '2', // ['none', '1', '2', '3'],
+	boxShadow: 'z2', // ['none', 'z1', 'z2', 'z3', 'z4'],
 };
 
 export const Standard: Story = {

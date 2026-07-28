@@ -30,6 +30,8 @@ For each component: replace every legacy token ref with the equivalent semantic 
 
 > **EXCEPTION (Track C only):** a semantic `color.*` key **introduced by Wave 1** MAY be revalued in `base/tokens.ts` per the §4.C value-split rule PROVIDED the package proves **(a)** zero MFE usage of that key (grep the mfe repo for the key path — record the grep output in the PR) and **(b)** Chromatic base-theme zero-diff. Legacy `colours.*`, `space`, `radius`, `elevation` 1–5, and typography keys are **NEVER** revalued — no exception.
 
+> **SUPERSEDED for removal (AG-20568, v5 major, 2026-07):** the never-remove rule above applied while MFEs still consumed these keys. Once AG-20567 (MFE cleanup) lands, `elevation '1'–'5'`, `typography.colour.*`, `border.radius.sm`/`['1']`, the `colours.*` contract, and the `black900` alias are removed in v5.0.0. The rule still holds for REVALUING any surviving key, and the `space` scale is untouched.
+
 Restated for the value-split (master §4.C): "revaluing `base[T]` here is the ONE sanctioned exception to the §0 Golden Rule … It applies ONLY to semantic `color.*` keys introduced by Wave 1, and ONLY with the two pieces of evidence recorded in the PR: (a) mfe-repo grep output proving zero MFE usage of the key path, and (b) Chromatic base-theme zero-diff."
 
 ### 1.4 Token-collision rule (deterministic)
@@ -557,9 +559,13 @@ Add to the repo ESLint config (flat config or `.eslintrc`), scoped to `lib/**` (
 
 Rollout: introduce as **`warn`** in G-P1 (contribution notes), flip to **`error`** once Track C burn-down reaches zero, add a scoped `eslint-disable` only on the legacy definition files. This is the guard that prevents R4 (dual-system re-contamination). Note the `Property` selector will also flag Badge/InputState recipe-variant keys named `colour` — add per-file `// eslint-disable-next-line` there (those are recipe variant names, not sprinkles props) or tighten the selector to `CallExpression[callee.name='sprinkles'] Property[key.name=...]`.
 
+> **Note (AG-20568, 2026-07):** the `colours.*` member-access and `typography.colour.*` selectors above are now largely moot — those contract keys are physically removed on this branch, so any lingering reference is a **TypeScript compile error**, not just an ESLint-flagged pattern. The legacy-sprinkles-JSX-prop and legacy-sprinkles-object-key selectors remain live and relevant, since those props/keys are intentionally retained (see the C-final status update above).
+
 ### C-final handoff (into W4-P4)
 
 Once DoD 1-4 hold, hand W4-P4 a checklist: delete (1) `colours` + `intent` + legacy `foreground`/`background` from `THEME_CONTRACT` and every `*/tokens.ts`; (2) `typography.colour` from contract + tokens + `sprinklesLegacyText` (`typography.css.ts`) + the `!color && sprinklesLegacyText(...)` fallback in `typography.ts`; (3) the legacy sprinkles properties (`colour`/`backgroundColour`/`border*Colour`), their shorthands, and `SprinklesLegacyColours`; (4) `buildColourGamut(colours)` under `colours.gamut` (keep it under `color.gamut`); (5) the black900 deprecated alias (W0-P1). Ship with the codemod (W4-P1) + changelog. This is a **major** and the only place these removals are allowed.
+
+> **Status update (AG-20568, working branch, v5, 2026-07 — SUPERSEDES "major-only" above for these specific items):** items (1), (2), and (5) are **DONE** ahead of the coordinated W4-P4 major — the `colours.*` contract (gamut/foreground/background/intent), `typography.colour.*`, and the `black900` alias are removed from `THEME_CONTRACT` and every `*/tokens.ts`. Also removed on this branch (not itemised above): `elevation '1'`–`'5'` (→ `z1`–`z4`) and `border.radius.sm`/`['1']` (→ `xsmall`). Item (3) is only **partially** done: the deprecated `colour`/`backgroundColour`/`border*Colour` sprinkles props and `sprinklesLegacyText` are intentionally **kept working** (re-pointed onto `color.*` via `lib/styles/legacyTextColours.ts`) rather than deleted — their removal remains a future major. Item (4) (`buildColourGamut`/`colours.gamut`) is untouched by AG-20568.
 
 ---
 

@@ -113,18 +113,6 @@ globalStyle(`${ladderRow} code`, {
 	alignSelf: 'center',
 });
 
-/** Amber wash for a deprecated row (matches the Deprecated header bar). */
-export const ladderRowDeprecated = style({
-	backgroundColor: overdriveTokens.color.gamut.yellow[100],
-	borderRadius: overdriveTokens.border.radius.md,
-});
-
-// On a deprecated (amber) row, drop the token chip's grey fill so it doesn't
-// clash with the amber wash — the token reads directly on the row.
-globalStyle(`${ladderRowDeprecated} code`, {
-	backgroundColor: 'transparent',
-});
-
 /**
  * Aligned columns for the Foundation/Borders ladders: swatch preview, value,
  * token-key chip, usage note and status chip. Shared by the Width, Radius and
@@ -284,7 +272,7 @@ export const swatchCardName = style({
 export const swatchCardVar = style({
 	alignSelf: 'flex-start',
 	backgroundColor: overdriveTokens.color.gamut.gray[100],
-	borderRadius: overdriveTokens.border.radius.sm,
+	borderRadius: overdriveTokens.border.radius.xsmall,
 	color: overdriveTokens.color.gamut.gray[700],
 	fontFamily: 'monospace',
 	fontSize: '11px',
@@ -376,7 +364,7 @@ export const icon = style({
 
 	selectors: {
 		'&:hover': {
-			backgroundColor: overdriveTokens.colours.gamut.gray800,
+			backgroundColor: overdriveTokens.color.gamut.gray["800"],
 			color: overdriveTokens.color.content.inverse,
 		},
 	},

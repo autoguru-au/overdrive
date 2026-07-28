@@ -1,5 +1,4 @@
-import { buildColourGamut } from '../makeTheme';
-import { overdriveTokens, type ThemeTokens } from '../theme.css';
+import { type ThemeTokens } from '../theme.css';
 
 import {
 	colourMap,
@@ -38,74 +37,92 @@ export const tokens = {
 		none: '0px',
 	},
 	color: {
-		/**
-		 * TRANSITION BRIDGE — the semantic `color.gamut` aliases the LEGACY
-		 * `colours.gamut` CSS vars instead of holding raw hex. Themes and MFE
-		 * tenants that override ONLY `colours.gamut` (flat_red, tenant custom
-		 * palettes) therefore automatically drive the semantic gamut too. In the
-		 * base theme the computed values are byte-identical to the raw hex
-		 * (`colours.gamut` resolves to `colourMap`); the only thing that changes
-		 * is that the semantic gamut now points at the legacy var rather than
-		 * inlining the hex. This alias flips back to raw values at the DS-2026
-		 * major (W4-P4), once tenants set the semantic gamut directly.
-		 */
 		gamut: {
-			gray: {
-				'900': overdriveTokens.colours.gamut.gray900,
-				'800': overdriveTokens.colours.gamut.gray800,
-				'700': overdriveTokens.colours.gamut.gray700,
-				'600': overdriveTokens.colours.gamut.gray600,
-				'500': overdriveTokens.colours.gamut.gray500,
-				'400': overdriveTokens.colours.gamut.gray400,
-				'300': overdriveTokens.colours.gamut.gray300,
-				'200': overdriveTokens.colours.gamut.gray200,
-				'100': overdriveTokens.colours.gamut.gray100,
+			...colourMapWithoutWhite,
+			white: colourMap.white,
+		},
+		intent: {
+			primary: {
+				background: {
+					standard: colourMap.green['600'],
+					mild: colourMap.green['200'],
+					strong: colourMap.green['700'],
+				},
+				foreground: colourMap.white,
+				border: colourMap.green['900'],
 			},
-			green: {
-				'900': overdriveTokens.colours.gamut.green900,
-				'800': overdriveTokens.colours.gamut.green800,
-				'700': overdriveTokens.colours.gamut.green700,
-				'600': overdriveTokens.colours.gamut.green600,
-				'500': overdriveTokens.colours.gamut.green500,
-				'400': overdriveTokens.colours.gamut.green400,
-				'300': overdriveTokens.colours.gamut.green300,
-				'200': overdriveTokens.colours.gamut.green200,
-				'100': overdriveTokens.colours.gamut.green100,
+			brand: {
+				background: {
+					standard: colourMap.green['700'],
+					mild: colourMap.green['200'],
+					strong: colourMap.green['900'],
+				},
+				foreground: colourMap.white,
+				border: colourMap.gray['900'],
 			},
-			blue: {
-				'900': overdriveTokens.colours.gamut.blue900,
-				'800': overdriveTokens.colours.gamut.blue800,
-				'700': overdriveTokens.colours.gamut.blue700,
-				'600': overdriveTokens.colours.gamut.blue600,
-				'500': overdriveTokens.colours.gamut.blue500,
-				'400': overdriveTokens.colours.gamut.blue400,
-				'300': overdriveTokens.colours.gamut.blue300,
-				'200': overdriveTokens.colours.gamut.blue200,
-				'100': overdriveTokens.colours.gamut.blue100,
+			secondary: {
+				background: {
+					standard: colourMap.white,
+					mild: colourMap.white,
+					strong: colourMap.gray['200'],
+				},
+				foreground: secondaryForeground,
+				border: colourMap.gray['300'],
 			},
-			yellow: {
-				'900': overdriveTokens.colours.gamut.yellow900,
-				'800': overdriveTokens.colours.gamut.yellow800,
-				'700': overdriveTokens.colours.gamut.yellow700,
-				'600': overdriveTokens.colours.gamut.yellow600,
-				'500': overdriveTokens.colours.gamut.yellow500,
-				'400': overdriveTokens.colours.gamut.yellow400,
-				'300': overdriveTokens.colours.gamut.yellow300,
-				'200': overdriveTokens.colours.gamut.yellow200,
-				'100': overdriveTokens.colours.gamut.yellow100,
+			shine: {
+				background: {
+					standard: colourMap.gray['200'],
+					mild: colourMap.gray['100'],
+					strong: colourMap.gray['300'],
+				},
+				foreground: colourMap.yellow['500'],
+				border: colourMap.gray['300'],
 			},
-			red: {
-				'900': overdriveTokens.colours.gamut.red900,
-				'800': overdriveTokens.colours.gamut.red800,
-				'700': overdriveTokens.colours.gamut.red700,
-				'600': overdriveTokens.colours.gamut.red600,
-				'500': overdriveTokens.colours.gamut.red500,
-				'400': overdriveTokens.colours.gamut.red400,
-				'300': overdriveTokens.colours.gamut.red300,
-				'200': overdriveTokens.colours.gamut.red200,
-				'100': overdriveTokens.colours.gamut.red100,
+			danger: {
+				background: {
+					standard: colourMap.red['600'],
+					mild: colourMap.red['100'],
+					strong: colourMap.red['800'],
+				},
+				foreground: colourMap.white,
+				border: colourMap.red['800'],
 			},
-			white: overdriveTokens.colours.gamut.white,
+			warning: {
+				background: {
+					standard: colourMap.yellow['800'],
+					mild: colourMap.yellow['100'],
+					strong: colourMap.yellow['900'],
+				},
+				foreground: colourMap.white,
+				border: colourMap.yellow['900'],
+			},
+			neutral: {
+				background: {
+					standard: colourMap.gray['700'],
+					mild: colourMap.gray['200'],
+					strong: colourMap.gray['900'],
+				},
+				foreground: colourMap.white,
+				border: colourMap.gray['900'],
+			},
+			success: {
+				background: {
+					standard: colourMap.green['700'],
+					mild: colourMap.green['200'],
+					strong: colourMap.green['900'],
+				},
+				foreground: colourMap.white,
+				border: colourMap.green['900'],
+			},
+			information: {
+				background: {
+					standard: colourMap.blue['800'],
+					mild: colourMap.blue['200'],
+					strong: colourMap.blue['900'],
+				},
+				foreground: colourMap.white,
+				border: colourMap.blue['900'],
+			},
 		},
 		surface: {
 			page: colourMap.white,
@@ -250,112 +267,8 @@ export const tokens = {
 			yellowMainFill: colourMap.yellow['500'], // #ffc001
 		},
 	},
-	colours: {
-		gamut: {
-			...buildColourGamut(colourMapWithoutWhite),
-			white: colourMap.white,
-		},
-		foreground: {
-			body: colourMap.gray['900'],
-			link: colourMap.green['600'],
-		},
-		background: {
-			body: colourMap.white,
-			light: colourMap.gray['200'],
-			neutral: colourMap.gray['300'],
-			neutralDark: colourMap.gray['800'],
-		},
-		intent: {
-			primary: {
-				background: {
-					standard: colourMap.green['600'],
-					mild: colourMap.green['200'],
-					strong: colourMap.green['700'],
-				},
-				foreground: colourMap.white,
-				border: colourMap.green['900'],
-			},
-			brand: {
-				background: {
-					standard: colourMap.green['700'],
-					mild: colourMap.green['200'],
-					strong: colourMap.green['900'],
-				},
-				foreground: colourMap.white,
-				border: colourMap.gray['900'],
-			},
-			secondary: {
-				background: {
-					standard: colourMap.white,
-					mild: colourMap.white,
-					strong: colourMap.gray['200'],
-				},
-				foreground: secondaryForeground,
-				border: colourMap.gray['300'],
-			},
-			shine: {
-				background: {
-					standard: colourMap.gray['200'],
-					mild: colourMap.gray['100'],
-					strong: colourMap.gray['300'],
-				},
-				foreground: colourMap.yellow['500'],
-				border: colourMap.gray['300'],
-			},
-			danger: {
-				background: {
-					standard: colourMap.red['600'],
-					mild: colourMap.red['100'],
-					strong: colourMap.red['800'],
-				},
-				foreground: colourMap.white,
-				border: colourMap.red['800'],
-			},
-			warning: {
-				background: {
-					standard: colourMap.yellow['800'],
-					mild: colourMap.yellow['100'],
-					strong: colourMap.yellow['900'],
-				},
-				foreground: colourMap.white,
-				border: colourMap.yellow['900'],
-			},
-			neutral: {
-				background: {
-					standard: colourMap.gray['700'],
-					mild: colourMap.gray['200'],
-					strong: colourMap.gray['900'],
-				},
-				foreground: colourMap.white,
-				border: colourMap.gray['900'],
-			},
-			success: {
-				background: {
-					standard: colourMap.green['700'],
-					mild: colourMap.green['200'],
-					strong: colourMap.green['900'],
-				},
-				foreground: colourMap.white,
-				border: colourMap.green['900'],
-			},
-			information: {
-				background: {
-					standard: colourMap.blue['800'],
-					mild: colourMap.blue['200'],
-					strong: colourMap.blue['900'],
-				},
-				foreground: colourMap.white,
-				border: colourMap.blue['900'],
-			},
-		},
-	},
 	elevation: {
 		none: 'none',
-		'1': '0 1px 5px 0 rgba(0, 0, 0, 0.03), 0 2px 2px 0 rgba(0, 0, 0, 0.03), 0 3px 1px -2px rgba(0, 0, 0, 0.05)',
-		'2': '0 1px 10px 0 rgba(0, 0, 0, 0.03),  0 4px 5px 0 rgba(0, 0, 0, 0.03),  0 2px 4px -1px rgba(0, 0, 0, 0.05)',
-		'3': '0 3px 14px 2px rgba(0, 0, 0, 0.03),  0 8px 10px 1px rgba(0, 0, 0, 0.03),  0 5px 5px -3px rgba(0, 0, 0, 0.05)',
-		'4': '0 6px 30px 5px rgba(0, 0, 0, 0.03), 0 16px 24px 2px rgba(0, 0, 0, 0.03), 0 8px 10px -5px rgba(0, 0, 0, 0.05)',
-		'5': '0 9px 46px 8px rgba(0, 0, 0, 0.03), 0 24px 38px 3px rgba(0, 0, 0, 0.03), 0 11px 15px -7px rgba(0, 0, 0, 0.05)',
 		z1: '0px 1px 5px 0px rgba(0,0,0,0.03), 0px 2px 2px 0px rgba(0,0,0,0.03), 0px 3px 1px -2px rgba(0,0,0,0.05)',
 		z2: '0px 1px 10px 0px rgba(0,0,0,0.03), 0px 4px 5px 0px rgba(0,0,0,0.03), 0px 2px 4px -1px rgba(0,0,0,0.05)',
 		z3: '0px 3px 14px 2px rgba(0,0,0,0.03), 0px 8px 10px 1px rgba(0,0,0,0.03), 0px 5px 5px -3px rgba(0,0,0,0.05)',
@@ -376,12 +289,10 @@ export const tokens = {
 		radius: {
 			none: 'none',
 			min: '2px',
-			sm: '4px',
 			md: '8px',
 			lg: '12px',
 			xl: '16px',
 			'2xl': '24px',
-			'1': '4px',
 			pill: `${1e9}px`,
 			full: '50%',
 			xsmall: '4px',
@@ -463,22 +374,6 @@ export const tokens = {
 				fontSize: '10px',
 				lineHeight: '14px',
 			},
-		},
-		colour: {
-			primary: colourMap.green['600'],
-			secondary: colourMap.gray['700'],
-			brand: colourMap.green['600'],
-			shine: colourMap.yellow['500'],
-			link: colourMap.green['600'],
-			dark: colourMap.gray['900'],
-			white: colourMap.white,
-			muted: colourMap.gray['400'],
-			neutral: colourMap.gray['700'],
-			light: colourMap.gray['600'],
-			danger: colourMap.red['600'],
-			warning: colourMap.yellow['800'],
-			success: colourMap.green['600'],
-			information: colourMap.blue['500'],
 		},
 		fontFamily: 'AvertaStandard, system-ui, sans-serif',
 		fontFamilyMono: "'Courier New', Courier, monospace",

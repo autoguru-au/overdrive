@@ -207,7 +207,7 @@ export const checkboxStyle = style([
 	sprinkles({
 		alignItems: 'center',
 		borderColor: 'default',
-		borderRadius: 'sm',
+		borderRadius: 'xsmall',
 		borderStyle: 'solid',
 		borderWidth: '1',
 		display: 'flex',

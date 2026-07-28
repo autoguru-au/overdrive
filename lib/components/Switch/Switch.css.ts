@@ -8,8 +8,8 @@ globalLayer(LAYER_ORDER);
 
 const colorAccent = vars.color.foreground.primary;
 const colorContrast = vars.color.background.default;
-const colorMid = vars.colours.background.neutral;
-const colorLight = vars.colours.background.light;
+const colorMid = vars.color.background.inactive;
+const colorLight = vars.color.background.emphasisInactive;
 const height = vars.space['6'];
 const handleSize = '24px';
 

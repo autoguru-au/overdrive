@@ -4,9 +4,9 @@ import { overdriveTokens as vars } from '../../themes/theme.css';
 
 export const star = styleVariants({
 	default: {
-		color: vars.colours.intent.shine.foreground,
+		color: vars.color.intent.shine.foreground,
 	},
 	empty: {
-		color: vars.colours.intent.shine.background.standard,
+		color: vars.color.intent.shine.background.standard,
 	},
 });

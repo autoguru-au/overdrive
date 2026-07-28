@@ -1,7 +1,6 @@
 import { createGlobalThemeContract, style } from '@vanilla-extract/css';
 
 import type { TokensFromContract } from './helpers';
-import { buildColourGamut } from './makeTheme';
 
 import type { ColourMap } from '.';
 
@@ -105,6 +104,89 @@ const THEME_CONTRACT = {
 	// new colour token structure 2025
 	color: {
 		gamut: coloursWithWhite,
+		intent: {
+			primary: {
+				background: {
+					standard: 'color-intent-primary-bg-standard',
+					mild: 'color-intent-primary-bg-mild',
+					strong: 'color-intent-primary-bg-strong',
+				},
+				foreground: 'color-intent-primary-fg',
+				border: 'color-intent-primary-border',
+			},
+			brand: {
+				background: {
+					standard: 'color-intent-brand-bg-standard',
+					mild: 'color-intent-brand-bg-mild',
+					strong: 'color-intent-brand-bg-strong',
+				},
+				foreground: 'color-intent-brand-fg',
+				border: 'color-intent-brand-border',
+			},
+			secondary: {
+				background: {
+					standard: 'color-intent-secondary-bg-standard',
+					mild: 'color-intent-secondary-bg-mild',
+					strong: 'color-intent-secondary-bg-strong',
+				},
+				foreground: 'color-intent-secondary-fg',
+				border: 'color-intent-secondary-border',
+			},
+			shine: {
+				background: {
+					standard: 'color-intent-shine-bg-standard',
+					mild: 'color-intent-shine-bg-mild',
+					strong: 'color-intent-shine-bg-strong',
+				},
+				foreground: 'color-intent-shine-fg',
+				border: 'color-intent-shine-border',
+			},
+			danger: {
+				background: {
+					standard: 'color-intent-danger-bg-standard',
+					mild: 'color-intent-danger-bg-mild',
+					strong: 'color-intent-danger-bg-strong',
+				},
+				foreground: 'color-intent-danger-fg',
+				border: 'color-intent-danger-border',
+			},
+			warning: {
+				background: {
+					standard: 'color-intent-warning-bg-standard',
+					mild: 'color-intent-warning-bg-mild',
+					strong: 'color-intent-warning-bg-strong',
+				},
+				foreground: 'color-intent-warning-fg',
+				border: 'color-intent-warning-border',
+			},
+			neutral: {
+				background: {
+					standard: 'color-intent-neutral-bg-standard',
+					mild: 'color-intent-neutral-bg-mild',
+					strong: 'color-intent-neutral-bg-strong',
+				},
+				foreground: 'color-intent-neutral-fg',
+				border: 'color-intent-neutral-border',
+			},
+			success: {
+				background: {
+					standard: 'color-intent-success-bg-standard',
+					mild: 'color-intent-success-bg-mild',
+					strong: 'color-intent-success-bg-strong',
+				},
+				foreground: 'color-intent-success-fg',
+				border: 'color-intent-success-border',
+			},
+			information: {
+				background: {
+					standard: 'color-intent-information-bg-standard',
+					mild: 'color-intent-information-bg-mild',
+					strong: 'color-intent-information-bg-strong',
+				},
+				foreground: 'color-intent-information-fg',
+				border: 'color-intent-information-border',
+			},
+		},
 		surface: {
 			page: null,
 			hard: null,
@@ -248,130 +330,12 @@ const THEME_CONTRACT = {
 			yellowMainFill: 'color-illustration-yellow-main-fill',
 		},
 	},
-	// existing colours for compatability
-	/**
-	 * @deprecated Use color.* — removed in v5 (DS-2026 major). The legacy
-	 * `colours` contract (gamut/foreground/background/intent) is retained,
-	 * exported, and fully functional for MFE compatibility until then — do
-	 * not add new internal usages (see docs/ds2026-plan/track-c.md).
-	 */
-	colours: {
-		/** @deprecated Use color.gamut.* — removed in v5 (DS-2026 major). */
-		gamut: {
-			...buildColourGamut(colours),
-			white: 'color-gamut-white',
-		},
-		/** @deprecated Use color.foreground.* — removed in v5 (DS-2026 major). */
-		foreground: {
-			body: null,
-			link: null,
-		},
-		/** @deprecated Use color.background.* — removed in v5 (DS-2026 major). */
-		background: {
-			body: null,
-			light: null,
-			neutral: null,
-			neutralDark: null,
-		},
-		/**
-		 * @deprecated Use color.{info,success,warning,alert}.* — removed in v5
-		 * (DS-2026 major).
-		 */
-		intent: {
-			primary: {
-				background: {
-					standard: null,
-					mild: null,
-					strong: null,
-				},
-				foreground: null,
-				border: null,
-			},
-			brand: {
-				background: {
-					standard: null,
-					mild: null,
-					strong: null,
-				},
-				foreground: null,
-				border: null,
-			},
-			secondary: {
-				background: {
-					standard: null,
-					mild: null,
-					strong: null,
-				},
-				foreground: null,
-				border: null,
-			},
-			shine: {
-				background: {
-					standard: null,
-					mild: null,
-					strong: null,
-				},
-				foreground: null,
-				border: null,
-			},
-			danger: {
-				background: {
-					standard: null,
-					mild: null,
-					strong: null,
-				},
-				foreground: null,
-				border: null,
-			},
-			warning: {
-				background: {
-					standard: null,
-					mild: null,
-					strong: null,
-				},
-				foreground: null,
-				border: null,
-			},
-			neutral: {
-				background: {
-					standard: null,
-					mild: null,
-					strong: null,
-				},
-				foreground: null,
-				border: null,
-			},
-			success: {
-				background: {
-					standard: null,
-					mild: null,
-					strong: null,
-				},
-				foreground: null,
-				border: null,
-			},
-			information: {
-				background: {
-					standard: null,
-					mild: null,
-					strong: null,
-				},
-				foreground: null,
-				border: null,
-			},
-		},
-	},
 	elevation: {
-		'1': 'elevation-1',
-		'2': 'elevation-2',
-		'3': 'elevation-3',
-		'4': 'elevation-4',
-		'5': 'elevation-5',
+		none: 'elevation-none',
 		z1: 'elevation-z1',
 		z2: 'elevation-z2',
 		z3: 'elevation-z3',
 		z4: 'elevation-z4',
-		none: 'elevation-none',
 	},
 	border: {
 		width: {
@@ -388,15 +352,11 @@ const THEME_CONTRACT = {
 		radius: {
 			none: 'border-radius-none',
 			min: 'border-radius-min',
-			/** @deprecated Use radius.xsmall (identical 4px value) — removed in v5 (DS-2026 major). */
-			sm: 'border-radius-sm',
 			md: 'border-radius-md',
 			lg: 'border-radius-lg',
 			xl: 'border-radius-xl',
 			/** DS-2026 Extra Large radius (24px) — used for modals. */
 			'2xl': 'border-radius-2xl',
-			/** @deprecated Use radius.xsmall (identical 4px value) — removed in v5 (DS-2026 major). */
-			'1': 'border-radius-1',
 			pill: 'border-radius-pill',
 			full: 'border-radius-full',
 			xsmall: 'border-radius-xsmall',
@@ -477,24 +437,6 @@ const THEME_CONTRACT = {
 				fontSize: 'typography-size-p4-font-size',
 				lineHeight: 'typography-size-p4-line-height',
 			},
-		},
-		// phase out: typography specific colours for backwards compatibility
-		/** @deprecated Use color.foreground.* — removed in v5 (DS-2026 major). */
-		colour: {
-			primary: null,
-			brand: null,
-			secondary: null,
-			shine: null,
-			link: null,
-			dark: null,
-			white: null,
-			muted: null,
-			neutral: null,
-			light: null,
-			danger: null,
-			warning: null,
-			success: null,
-			information: null,
 		},
 		fontFamily: 'font-family',
 		fontFamilyMono: 'font-family-mono',

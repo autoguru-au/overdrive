@@ -51,7 +51,7 @@ export const Standard: Story = {
 					borderColour="gray"
 					borderWidth="1"
 					padding="4"
-					borderRadius="1"
+					borderRadius="xsmall"
 					backgroundColour="green100"
 					style={{ width: '100%', height: '100%' }}
 				>
@@ -67,7 +67,7 @@ export const Standard: Story = {
 					borderColour="gray"
 					borderWidth="1"
 					padding="4"
-					borderRadius="1"
+					borderRadius="xsmall"
 					backgroundColour="red100"
 					style={{ width: '100%', height: '100%' }}
 				>
@@ -79,7 +79,7 @@ export const Standard: Story = {
 					borderColour="gray"
 					borderWidth="1"
 					padding="4"
-					borderRadius="1"
+					borderRadius="xsmall"
 					backgroundColour="blue100"
 					style={{ width: '100%', height: '100%' }}
 				>
@@ -91,7 +91,7 @@ export const Standard: Story = {
 					borderColour="gray"
 					borderWidth="1"
 					padding="4"
-					borderRadius="1"
+					borderRadius="xsmall"
 					backgroundColour="yellow100"
 					style={{ width: '100%', height: '500px' }}
 				>
@@ -116,7 +116,7 @@ export const StandardColumn: Story = {
 					borderColour="gray"
 					borderWidth="1"
 					padding="4"
-					borderRadius="1"
+					borderRadius="xsmall"
 					backgroundColour="green100"
 					style={{ width: '100%', height: '100%' }}
 				>
@@ -128,7 +128,7 @@ export const StandardColumn: Story = {
 					borderColour="gray"
 					borderWidth="1"
 					padding="4"
-					borderRadius="1"
+					borderRadius="xsmall"
 					backgroundColour="red100"
 					style={{ width: '100%', height: '100%' }}
 				>
@@ -140,7 +140,7 @@ export const StandardColumn: Story = {
 					borderColour="gray"
 					borderWidth="1"
 					padding="4"
-					borderRadius="1"
+					borderRadius="xsmall"
 					backgroundColour="blue100"
 					style={{ width: '100%', height: '100%' }}
 				>
@@ -152,7 +152,7 @@ export const StandardColumn: Story = {
 					borderColour="gray"
 					borderWidth="1"
 					padding="4"
-					borderRadius="1"
+					borderRadius="xsmall"
 					backgroundColour="yellow100"
 					style={{ width: '100%', height: '500px' }}
 				>
@@ -164,7 +164,7 @@ export const StandardColumn: Story = {
 					borderColour="gray"
 					borderWidth="1"
 					padding="4"
-					borderRadius="1"
+					borderRadius="xsmall"
 					backgroundColour="green100"
 					style={{
 						width: '100%',

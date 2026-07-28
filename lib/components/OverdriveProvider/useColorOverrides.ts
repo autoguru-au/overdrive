@@ -65,7 +65,7 @@ export const useColorOverrides = (
 		// slightly messy use of ts-expect-error but assignInlineVars only generates css vars to apply to a container
 		// any property that is undefined will not have an inline css var generated
 		return assignInlineVars(overdriveTokens, {
-			colours: {
+			color: {
 				intent: {
 					primary: {
 						background: {
@@ -83,12 +83,10 @@ export const useColorOverrides = (
 					},
 				},
 			},
-			typography: {
-				colour: {
-					//@ts-expect-error no undefined
-					primary: overrides.primaryBackground ?? undefined,
-				},
-			},
+			// The legacy `typography.colour.primary` override is gone with the
+			// token (AG-20568) — the deprecated `colour="primary"` value now
+			// aliases `color.intent.primary.background.standard`, which the
+			// override above already sets, so behaviour is unchanged.
 		});
 	}, [overrides, themeMode]);
 };

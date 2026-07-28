@@ -10,7 +10,7 @@ export const input = {
 			zIndex: 1,
 			selectors: {
 				'&[disabled]': {
-					color: vars.colours.background.neutral,
+					color: vars.color.background.inactive,
 					cursor: 'not-allowed',
 				},
 				'&::placeholder': {

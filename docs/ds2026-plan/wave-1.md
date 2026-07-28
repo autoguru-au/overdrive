@@ -743,6 +743,8 @@ Report the four strings, the y-offset cross-check result, and the motion/focus-v
 - **Do NOT edit `neutral/tokens.ts`** (it inherits the new keys via `deepmerge`) and **do NOT touch `sprinkles.css.ts`** (radius/shadow/space keys auto-bind).
 - **Do NOT add motion/focus tokens speculatively** — only if the Figma fetch confirms real variables.
 
+> **SUPERSEDED for removal (AG-20568, v5 major, 2026-07):** the elevation/radius "do NOT change any existing key" rules above applied while MFEs still consumed these keys. Once AG-20567 (MFE cleanup) lands, `elevation '1'–'5'`, `typography.colour.*`, `border.radius.sm`/`['1']`, the `colours.*` contract, and the `black900` alias are removed in v5.0.0. The rule still holds for REVALUING any surviving key, and the `space` scale is untouched.
+
 ### Agent prompts
 
 **BUILDER (`sonnet`)**
@@ -774,6 +776,8 @@ MOTION/FOCUS: add nothing unless the Spec agent reported real duration/focus var
 STEPS: apply edits; `yarn lint`; `yarn test run themes` (hash-strip procedure, no blanket -u); `yarn test:a11y`; minor changeset "Add DS-2026 radius aliases + 20px radius, z1–z4 shadows, missing spacing steps, motion/focus tokens (additive)."; PR to main.
 DONE: new keys present; EVERY existing space/radius/elevation key retains exact prior value+ordinal; flat_red zeroes xsmall/small/z1..z4; neutral untouched; lint clean; hash-only churn. Report gate results + the elevation strings you used.
 ```
+
+> **SUPERSEDED for removal (AG-20568, v5 major, 2026-07):** the HARD RULE above ("NEVER renumber or revalue an existing space/radius/elevation key") applied while MFEs still consumed these keys. Once AG-20567 (MFE cleanup) lands, `elevation '1'–'5'`, `typography.colour.*`, `border.radius.sm`/`['1']`, the `colours.*` contract, and the `black900` alias are removed in v5.0.0. The rule still holds for REVALUING any surviving key, and the `space` scale is untouched.
 
 **REVIEWER (`opus`)**
 ```

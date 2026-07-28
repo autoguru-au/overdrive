@@ -8,7 +8,7 @@ import { overdriveTokens as vars } from '../../themes/theme.css';
 
 globalLayer(LAYER_ORDER);
 
-const intentColors = vars.colours.intent;
+const intentColors = vars.color.intent;
 const smallHeight = '36px';
 
 const selectorFocusHoverActive =
@@ -332,7 +332,7 @@ export const button = recipe({
 					[cssLayerComponent]: {
 						selectors: {
 							[selectorFocusHoverActive]: {
-								color: vars.typography.colour.secondary,
+								color: vars.color.foreground.secondary,
 								backgroundColor:
 									intentColors.secondary.background.strong,
 							},

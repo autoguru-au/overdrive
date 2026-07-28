@@ -48,9 +48,9 @@ export const Closed: Story = {
 				</Button>
 				<Positioner {...args} triggerRef={triggerRef}>
 					<Box
-						boxShadow="1"
+						boxShadow="z1"
 						backgroundColour="white"
-						borderRadius="1"
+						borderRadius="xsmall"
 						borderWidth="1"
 						borderColour="gray"
 						padding="2"
@@ -83,9 +83,9 @@ export const Open: Story = {
 				</Button>
 				<Positioner {...args} triggerRef={triggerRef}>
 					<Box
-						boxShadow="1"
+						boxShadow="z1"
 						backgroundColour="white"
-						borderRadius="1"
+						borderRadius="xsmall"
 						borderWidth="1"
 						borderColour="gray"
 						padding="2"
@@ -136,9 +136,9 @@ export const IllustrateAScroll: Story = {
 					</div>
 					<Positioner {...args} triggerRef={triggerRef}>
 						<Box
-							boxShadow="1"
+							boxShadow="z1"
 							backgroundColour="white"
-							borderRadius="1"
+							borderRadius="xsmall"
 							borderWidth="1"
 							borderColour="gray"
 							padding="2"

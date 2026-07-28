@@ -111,7 +111,7 @@ export default [
 					selector:
 						"MemberExpression[property.name='colour'] > MemberExpression[property.name='typography']",
 					message:
-						'Legacy colours.* is frozen (Track C). Legacy typography.colour.* is frozen — use color.*.',
+						'typography.colour.* was REMOVED in v5 (AG-20568) — use color.* (or LEGACY_TEXT_COLOURS in lib/styles for the deprecated `colour` prop surface). This rule stays to catch reintroduction from stale branches.',
 				},
 				// legacy sprinkles JSX props: colour / backgroundColour / border*Colour / borderColourX / borderColourY
 				{

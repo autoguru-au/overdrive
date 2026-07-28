@@ -844,10 +844,10 @@ Columns: **Uses legacy** (direct / via-sprinkles / clean) · **Direct refs** · 
 | W3b-P1..P6 Forms & inputs | ☐ |
 | W3c-P1..P8 Data/nav/feedback | ☐ |
 | W4-P1 adoption guide + codemods | ☐ |
-| W4-P2 deprecation warnings | ◐ **Partially landed** (`cded6390`) — `@deprecated` JSDoc on legacy sprinkles props/`sprinklesLegacyText`, `warn`-level ESLint guard (flips to `error` at Track C burn-down zero), and (formerly) a deprecation banner on the "Legacy Coloursets" Storybook page. **2026-07-08:** that Storybook page was removed entirely, ahead of the major, per product-owner decision (story-only surface, not npm API — MFE-safe; the underlying `colours.*` token deprecation is unaffected). **Not yet done:** redundant radius-key (`sm`/`1`, `2xl`) deprecation, dev-time runtime `warning()` calls |
+| W4-P2 deprecation warnings | ◐ **Partially landed** (`cded6390`) — `@deprecated` JSDoc on legacy sprinkles props/`sprinklesLegacyText`, `warn`-level ESLint guard (flips to `error` at Track C burn-down zero), and (formerly) a deprecation banner on the "Legacy Coloursets" Storybook page. **2026-07-08:** that Storybook page was removed entirely, ahead of the major, per product-owner decision (story-only surface, not npm API — MFE-safe; the underlying `colours.*` token deprecation is unaffected). **Not yet done:** dev-time runtime `warning()` calls. **Superseded (AG-20568, 2026-07):** the redundant radius-key (`sm`/`1`) deprecation step is skipped — `sm`/`1` are removed outright (→ `xsmall`) rather than deprecated first; `2xl` is retained, undeprecated. |
 | W4-P3 adoption tracking | ☐ |
 | W4-P6 tenant-theme migration + path cleanup | ☐ |
-| W4-P4 THE major | ☐ |
+| W4-P4 THE major | ◐ **Partially landed early** (AG-20568, working branch, 2026-07) — legacy `colours.*` contract, `typography.colour.*`, `elevation '1'`–`'5'`, `border.radius.sm`/`['1']`, and the `black900` alias are deleted. **Still open:** Button + control `defaultVariants` flip to 2026, `ds2026` becoming base (or folded in), the legacy sprinkles properties (`colour`/`backgroundColour`/`border*Colour`) — these are intentionally KEPT working post-AG-20568, re-pointed onto `color.*` — and the remaining §6 dedupes. Gated by adoption tracking (W4-P3) and codemods (W4-P1) as originally planned for whatever remains. |
 | W4-P5 dark mode (post-major) | ☐ |
 
 ---

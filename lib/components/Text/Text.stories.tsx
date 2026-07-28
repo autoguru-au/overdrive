@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { expect, within } from 'storybook/test';
 
+import { LEGACY_TEXT_COLOURS } from '../../styles/legacyTextColours';
 import type { TextTags } from '../../styles/typography';
 import { overdriveTokens } from '../../themes';
 
@@ -90,7 +91,7 @@ export const AllColours: Story = {
 	},
 	render: ({ children, ...args }) => (
 		<>
-			{Object.keys(overdriveTokens.typography.colour).map((colour) => (
+			{Object.keys(LEGACY_TEXT_COLOURS).map((colour) => (
 				<div key={colour} style={{ marginBottom: 8 }}>
 					<Text as="p" size="3" strong>
 						{colour}

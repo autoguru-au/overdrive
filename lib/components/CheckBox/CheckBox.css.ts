@@ -8,9 +8,9 @@ import {
 
 const colorAccent = vars.color.foreground.primary;
 const colorContrast = vars.color.background.default;
-const colorMid = vars.colours.background.neutral;
+const colorMid = vars.color.background.inactive;
 const size = vars.space['6'];
-const borderRadius = vars.border.radius['sm'];
+const borderRadius = vars.border.radius['xsmall'];
 const borderWidth = vars.border.width['1'];
 const transition = `border-color 0.2s ${vars.animation.easing.decelerate} 0s, background-color 0.2s ${vars.animation.easing.decelerate} 0s`;
 

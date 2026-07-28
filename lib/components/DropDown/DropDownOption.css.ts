@@ -7,7 +7,7 @@ export const root = style({
 	transition: 'background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s',
 
 	':hover': {
-		backgroundColor: vars.colours.background.light,
+		backgroundColor: vars.color.background.emphasisInactive,
 	},
 });
 export const disabled = style({

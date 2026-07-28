@@ -181,7 +181,7 @@ export const placeholder = styleVariants({
 		transition: `color 0.2s ${vars.animation.easing.decelerate} 0s, transform 0.2s ${vars.animation.easing.decelerate} 0s`,
 	},
 	disabled: {
-		color: vars.colours.background.neutral,
+		color: vars.color.background.inactive,
 	},
 	mutedLabelStyles: {
 		color: vars.color.foreground.tertiary,

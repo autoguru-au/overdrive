@@ -9,15 +9,15 @@ export const grid = {
 	}),
 	gaps: makeResponsiveStyle(vars.space, 'gridGap'),
 	topLeft: style({
-		borderTopLeftRadius: vars.border.radius['sm'],
+		borderTopLeftRadius: vars.border.radius['xsmall'],
 	}),
 	topRight: style({
-		borderTopRightRadius: vars.border.radius['sm'],
+		borderTopRightRadius: vars.border.radius['xsmall'],
 	}),
 	bottomRight: style({
-		borderBottomRightRadius: vars.border.radius['sm'],
+		borderBottomRightRadius: vars.border.radius['xsmall'],
 	}),
 	bottomLeft: style({
-		borderBottomLeftRadius: vars.border.radius['sm'],
+		borderBottomLeftRadius: vars.border.radius['xsmall'],
 	}),
 };

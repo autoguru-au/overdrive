@@ -14,10 +14,10 @@ export const handle = styleVariants({
 		width: vars.space[6],
 		selectors: {
 			[`${root}:not(${disabled}) &:hover`]: {
-				backgroundColor: vars.colours.intent.primary.background.strong,
+				backgroundColor: vars.color.intent.primary.background.strong,
 			},
 			[`${root}:not(${disabled}) &:active`]: {
-				backgroundColor: vars.colours.intent.primary.background.strong,
+				backgroundColor: vars.color.intent.primary.background.strong,
 			},
 		},
 	},

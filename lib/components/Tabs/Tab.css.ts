@@ -64,9 +64,9 @@ export const styledTab = recipe({
 				active: true,
 			},
 			style: {
-				color: vars.colours.intent.neutral.background.strong,
+				color: vars.color.intent.neutral.background.strong,
 				borderBottomColor:
-					vars.colours.intent.neutral.background.strong,
+					vars.color.intent.neutral.background.strong,
 			},
 		},
 		{
@@ -104,7 +104,7 @@ export const item = style({
 export const indication = recipe({
 	base: [
 		{
-			backgroundColor: vars.colours.background.light,
+			backgroundColor: vars.color.background.emphasisInactive,
 			borderRadius: vars.border.radius.pill,
 			display: 'inline-block',
 			minWidth: size,
@@ -121,7 +121,7 @@ export const indication = recipe({
 				selectors: {
 					[`${styledTab.classNames.base}:not([aria-selected=true]):hover &`]:
 						{
-							backgroundColor: vars.colours.background.neutral,
+							backgroundColor: vars.color.background.inactive,
 						},
 				},
 			},
@@ -138,7 +138,7 @@ export const indication = recipe({
 				active: true,
 			},
 			style: {
-				backgroundColor: vars.colours.intent.neutral.background.strong,
+				backgroundColor: vars.color.intent.neutral.background.strong,
 			},
 		},
 		{
@@ -147,7 +147,7 @@ export const indication = recipe({
 				active: true,
 			},
 			style: {
-				backgroundColor: vars.colours.background.light,
+				backgroundColor: vars.color.background.emphasisInactive,
 				color: vars.color.foreground.primary,
 			},
 		},

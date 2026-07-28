@@ -48,7 +48,7 @@ export const ColourInput = withEnhancedInput<{}, HTMLInputElement>(
 					<Box
 						style={{ backgroundColor: field.value }}
 						padding={size === 'medium' ? '3' : '2'}
-						borderRadius="1"
+						borderRadius="xsmall"
 					/>
 				</Box>
 				<Text

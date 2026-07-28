@@ -134,7 +134,7 @@ export const WithCustomContent: Story = {
 				borderColor="default"
 				borderRadius="md"
 				borderWidth="1"
-				boxShadow="5"
+				boxShadow="z4"
 				padding="5"
 			>
 				<Stack space="2">

@@ -47,10 +47,10 @@ export const disabled = style({
 export const checkableItem = style({
 	selectors: {
 		[`${nativeInput}:focus:checked ~${checkable} &`]: {
-			boxShadow: `0 0 0 2px ${vars.colours.intent.primary.background.strong}`,
+			boxShadow: `0 0 0 2px ${vars.color.intent.primary.background.strong}`,
 		},
 		[`${nativeInput}:focus:not(:checked) ~${checkable} >&`]: {
-			borderColor: vars.colours.intent.primary.background.strong,
+			borderColor: vars.color.intent.primary.background.strong,
 		},
 	},
 });

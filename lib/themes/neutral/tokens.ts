@@ -2,7 +2,6 @@ import deepmerge from 'deepmerge';
 
 import type { ColourMap } from '../';
 import { tokens as baseTokens } from '../base/tokens';
-import { buildColourGamut } from '../makeTheme';
 import type { ThemeTokens } from '../theme.css';
 
 const colours = {
@@ -79,20 +78,21 @@ export const tokens = deepmerge(baseTokens, {
 	},
 	// `space` intentionally omitted: inherited from baseTokens via deepmerge
 	// so the DS-2026 spacing scale lives in one place and can't drift.
-	colours: {
+	color: {
 		gamut: {
-			...buildColourGamut(colours),
+			...colours,
 			white,
 		},
 		foreground: {
-			body: colours.gray['900'],
+			primary: colours.gray['900'],
+		},
+		interactive: {
 			link: colours.blue['500'],
 		},
 		background: {
-			body: white,
-			light: colours.gray['200'],
-			neutral: colours.gray['400'],
-			neutralDark: colours.gray['800'],
+			default: white,
+			emphasisInactive: colours.gray['200'],
+			inactive: colours.gray['400'],
 		},
 		intent: {
 			primary: {
@@ -178,14 +178,7 @@ export const tokens = deepmerge(baseTokens, {
 			},
 		},
 	},
-	elevation: {
-		none: 'none',
-		'1': '0 1px 5px 0 rgba(0, 0, 0, 0.03), 0 2px 2px 0 rgba(0, 0, 0, 0.03), 0 3px 1px -2px rgba(0, 0, 0, 0.05)',
-		'2': '0 1px 10px 0 rgba(0, 0, 0, 0.03),  0 4px 5px 0 rgba(0, 0, 0, 0.03),  0 2px 4px -1px rgba(0, 0, 0, 0.05)',
-		'3': '0 3px 14px 2px rgba(0, 0, 0, 0.03),  0 8px 10px 1px rgba(0, 0, 0, 0.03),  0 5px 5px -3px rgba(0, 0, 0, 0.05)',
-		'4': '0 6px 30px 5px rgba(0, 0, 0, 0.03), 0 16px 24px 2px rgba(0, 0, 0, 0.03), 0 8px 10px -5px rgba(0, 0, 0, 0.05)',
-		'5': '0 9px 46px 8px rgba(0, 0, 0, 0.03), 0 24px 38px 3px rgba(0, 0, 0, 0.03), 0 11px 15px -7px rgba(0, 0, 0, 0.05)',
-	},
+	// `elevation` intentionally omitted: inherited from baseTokens via deepmerge.
 	border: {
 		width: {
 			none: '0',
@@ -201,32 +194,12 @@ export const tokens = deepmerge(baseTokens, {
 		radius: {
 			none: 'none',
 			min: '2px',
-			sm: '4px',
 			md: '8px',
 			lg: '12px',
 			xl: '16px',
 			'2xl': '24px',
-			'1': '4px',
 			pill: `${1e9}px`,
 			full: '50%',
-		},
-	},
-	typography: {
-		colour: {
-			primary: colours.gray['800'],
-			brand: colours.green['600'],
-			secondary: colours.gray['600'],
-			shine: colours.yellow['500'],
-			link: colours.blue['500'],
-			dark: colours.gray['900'],
-			white,
-			muted: colours.gray['400'],
-			neutral: colours.gray['700'],
-			light: colours.gray['600'],
-			danger: colours.red['600'],
-			warning: colours.yellow['800'],
-			success: colours.green['600'],
-			information: colours.blue['500'],
 		},
 	},
 	animation: {

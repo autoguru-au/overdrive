@@ -164,8 +164,8 @@ export const useTooltip = ({
 						pointerEvents="none"
 						userSelect="none"
 						overflow={hasCustomContent ? undefined : 'hidden'}
-						borderRadius={hasCustomContent ? undefined : '1'}
-						boxShadow={hasCustomContent ? undefined : '4'}
+						borderRadius={hasCustomContent ? undefined : 'xsmall'}
+						boxShadow={hasCustomContent ? undefined : 'z4'}
 						backgroundColor={
 							hasCustomContent ? undefined : 'gray900'
 						}

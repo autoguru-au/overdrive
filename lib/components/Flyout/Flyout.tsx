@@ -21,8 +21,8 @@ export const Flyout = ({
 		<Box
 			overflow="hidden"
 			backgroundColor="white"
-			boxShadow="4"
-			borderRadius="1"
+			boxShadow="z4"
+			borderRadius="xsmall"
 			borderWidth="1"
 			borderColor="default"
 		>

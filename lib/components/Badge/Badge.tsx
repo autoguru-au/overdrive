@@ -53,7 +53,7 @@ export const Badge = ({
 				}),
 				className,
 			])}
-			borderRadius="1"
+			borderRadius="xsmall"
 			odComponent="badge"
 			testId={testId}
 		>

@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { expect, within } from 'storybook/test';
 
+import { LEGACY_TEXT_COLOURS } from '../../styles/legacyTextColours';
 import { HEADING_TAGS } from '../../styles/typography';
-import { overdriveTokens } from '../../themes';
 
 import { Heading, type HeadingProps } from './Heading';
 
@@ -73,7 +73,7 @@ export const AllTypes: Story = {
 export const AllColours: Story = {
 	render: (args) => (
 		<>
-			{Object.keys(overdriveTokens.typography.colour).map((colour) => (
+			{Object.keys(LEGACY_TEXT_COLOURS).map((colour) => (
 				<Heading
 					{...args}
 					colour={colour as HeadingProps['colour']}

@@ -57,8 +57,8 @@ export const Alert = ({
 			backgroundColor="white"
 			borderWidth="1"
 			borderColor="default"
-			borderRadius="1"
-			boxShadow={inline ? 'none' : '4'}
+			borderRadius="xsmall"
+			boxShadow={inline ? 'none' : 'z4'}
 			padding="2"
 			odComponent="alert"
 		>

@@ -24,9 +24,9 @@ export const Standard: Story = {
 		backgroundColour: 'white',
 		borderColour: 'gray',
 		borderWidth: '1',
-		boxShadow: '1',
+		boxShadow: 'z1',
 		height: 'full',
-		borderRadius: '1',
+		borderRadius: 'xsmall',
 		children: (
 			<Box padding="5" width="full" style={{ minHeight: '300vh' }}>
 				{Array.from({ length: 100 }).map((_, i) => (

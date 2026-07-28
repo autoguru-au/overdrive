@@ -10,8 +10,7 @@ const intentBorderColor = createGlobalVar('od-colorset-intent-border');
 const intentColor = createGlobalVar('od-colorset-intent-color');
 
 export const variantIntentionalColors = styleVariants(
-	// eslint-disable-next-line no-restricted-syntax -- RETAINED: C-P9 superseded — intent-derived shared utility stays on the legacy contract until the major (docs/ds2026-plan/track-c.md §1.9 C-P9 work order).
-	tokens.colours.intent,
+	tokens.color.intent,
 	(variant) => ({
 		'@layer': {
 			[cssColorSet]: {
@@ -26,8 +25,7 @@ export const variantIntentionalColors = styleVariants(
 );
 
 export const variantIntentionalColorsInverted = styleVariants(
-	// eslint-disable-next-line no-restricted-syntax -- RETAINED: C-P9 superseded — intent-derived shared utility stays on the legacy contract until the major (docs/ds2026-plan/track-c.md §1.9 C-P9 work order).
-	tokens.colours.intent,
+	tokens.color.intent,
 	(variant) => ({
 		'@layer': {
 			[cssColorSet]: {
@@ -41,9 +39,8 @@ export const variantIntentionalColorsInverted = styleVariants(
 	}),
 );
 
-// eslint-disable-next-line no-restricted-syntax -- RETAINED: C-P9 superseded — intent-derived shared utility stays on the legacy contract until the major (docs/ds2026-plan/track-c.md §1.9 C-P9 work order).
-const intentKeys = Object.keys(tokens.colours.intent) as Array<
-	keyof typeof tokens.colours.intent
+const intentKeys = Object.keys(tokens.color.intent) as Array<
+	keyof typeof tokens.color.intent
 >;
 
 const intentionRecipeVariants = intentKeys.reduce(
@@ -51,7 +48,7 @@ const intentionRecipeVariants = intentKeys.reduce(
 		acc[key] = {};
 		return acc;
 	},
-	{} as Record<keyof typeof tokens.colours.intent, object>,
+	{} as Record<keyof typeof tokens.color.intent, object>,
 );
 
 const generatedCompoundVariants = intentKeys.flatMap((intentionKey) => [

@@ -32,12 +32,12 @@ export const ProgressBar: FunctionComponent<ProgressBarProps> = ({
 }) => (
 	<Box
 		className={styles.container}
-		borderRadius="1"
+		borderRadius="xsmall"
 		backgroundColor="gray100"
 		odComponent="progress-bar"
 	>
 		<Box
-			borderRadius="1"
+			borderRadius="xsmall"
 			backgroundColor={backgroundColorMap[colour]}
 			className={[styles.bar, styles.container]}
 			style={{

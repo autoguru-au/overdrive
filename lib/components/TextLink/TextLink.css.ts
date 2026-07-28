@@ -4,13 +4,13 @@ import { sprinkles } from '../../styles/sprinkles.css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
 export const root = style({
-	boxShadow: `inset 0 0px 0 0 ${vars.typography.colour.link}`,
+	boxShadow: `inset 0 0px 0 0 ${vars.color.interactive.link}`,
 	transitionDelay: '0s',
 	transitionDuration: '0.2s',
 	transitionProperty: 'box-shadow',
 	transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
 	':hover': {
-		boxShadow: `inset 0 -2px 0 0 ${vars.typography.colour.link}`,
+		boxShadow: `inset 0 -2px 0 0 ${vars.color.interactive.link}`,
 	},
 });
 
@@ -29,7 +29,7 @@ export const body = sprinkles({
 
 export const muted = style({
 	':hover': {
-		boxShadow: `inset 0 -1.6em 0 0 ${vars.typography.colour.link}`,
+		boxShadow: `inset 0 -1.6em 0 0 ${vars.color.interactive.link}`,
 		color: 'white',
 	},
 });

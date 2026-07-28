@@ -5,7 +5,7 @@ import { overdriveTokens as vars } from '../../themes/theme.css';
 const paginationBubbleSize = '36px';
 
 export const disabled = style({
-	color: vars.colours.background.neutral,
+	color: vars.color.background.inactive,
 });
 
 export const selectedItem = style({
@@ -22,11 +22,11 @@ export const activeItem = style({
 	selectors: {
 		[`&:not(${selectedItem}):hover`]: {
 			backgroundColor: vars.color.background.default,
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.primary.background.strong}, ${vars.elevation['1']}`,
+			boxShadow: `inset 0 0 0 1px ${vars.color.intent.primary.background.strong}, ${vars.elevation.z1}`,
 		},
 		[`&:not(${selectedItem}):active`]: {
 			backgroundColor: vars.color.background.default,
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.primary.background.strong}, ${vars.elevation['1']}`,
+			boxShadow: `inset 0 0 0 1px ${vars.color.intent.primary.background.strong}, ${vars.elevation.z1}`,
 		},
 	},
 });
