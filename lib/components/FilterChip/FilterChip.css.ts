@@ -1,7 +1,6 @@
 import { globalLayer, style } from '@vanilla-extract/css';
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
-import { focusOutlineStyle } from '../../styles/focusOutline.css';
 import { LAYER_ORDER, cssLayerComponent } from '../../styles/layers.css';
 import { selectors } from '../../styles/selectors';
 import { overdriveTokens as vars } from '../../themes/theme.css';
@@ -10,6 +9,9 @@ globalLayer(LAYER_ORDER);
 
 /** Figma behaviour section: "Chip add/remove: 150ms ease". */
 const TRANSITION_DURATION = '150ms';
+
+/** Matches the width and offset of the shared `focusOutlineStyle`. */
+const FOCUS_RING_WIDTH = '2px';
 
 /**
  * The chip surface only. Spacing lives on `chipBody` and `removeButton` so that
@@ -216,7 +218,6 @@ export const chipBody = recipe({
  * that primitive, these declarations are what actually clear the UA button style.
  */
 export const resetButton = style([
-	focusOutlineStyle,
 	{
 		'@layer': {
 			[cssLayerComponent]: {
@@ -225,6 +226,19 @@ export const resetButton = style([
 				fontFamily: 'inherit',
 				fontWeight: 'inherit',
 				margin: 0,
+				selectors: {
+					// Points at the DS-2026 focus ring token rather than
+					// composing `focusOutlineStyle`, which still resolves the
+					// legacy `colours.foreground.link`. Same green (#01c68c) and
+					// same 2px/2px geometry, but on the semantic contract and
+					// with no lint exemption. Repointing the shared helper is
+					// the wider change (track-c.md C-P9).
+					[`&:focus-visible, &[data-focus-visible], [data-focus-visible] &`]:
+						{
+							outline: `solid ${FOCUS_RING_WIDTH} ${vars.color.focus.ring}`,
+							outlineOffset: FOCUS_RING_WIDTH,
+						},
+				},
 			},
 		},
 	},

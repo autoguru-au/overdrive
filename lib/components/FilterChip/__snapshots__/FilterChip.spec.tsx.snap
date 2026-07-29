@@ -10,7 +10,7 @@ exports[`<FilterChip /> > should match the snapshot 1`] = `
     data-od-component="filter-chip"
   >
     <button
-      class="FilterChip_resetButton__1gngjaed focusOutline_focusOutlineStyle__tq83zq0 FilterChip_chipBody__1gngjaea FilterChip_chipBody_withRemove_true__1gngjaeb FilterChip_innerButton__1gngjaee"
+      class="FilterChip_resetButton__1gngjaed FilterChip_chipBody__1gngjaea FilterChip_chipBody_withRemove_true__1gngjaeb FilterChip_innerButton__1gngjaee"
       type="button"
     >
       <span
@@ -26,7 +26,7 @@ exports[`<FilterChip /> > should match the snapshot 1`] = `
     </button>
     <button
       aria-label="Remove Vehicle type Truck filter"
-      class="FilterChip_resetButton__1gngjaed focusOutline_focusOutlineStyle__tq83zq0 FilterChip_innerButton__1gngjaee FilterChip_removeButton__1gngjaef"
+      class="FilterChip_resetButton__1gngjaed FilterChip_innerButton__1gngjaee FilterChip_removeButton__1gngjaef"
       type="button"
     >
       <span
