@@ -6,30 +6,31 @@ exports[`<FilterChip /> > should match the snapshot 1`] = `
   data-od-component="provider"
 >
   <div
-    class="FilterChip_chip__1gngjae0 FilterChip_chip_variant_filter__1gngjae1 FilterChip_chip_selected_false__1gngjae4"
+    class="FilterChip_chip__1gngjae0 FilterChip_chip_variant_filter__1gngjae1 FilterChip_chip_selected_false__1gngjae4 FilterChip_chip_interactive_true__1gngjae5 FilterChip_chip_compound_0__1gngjae7"
     data-od-component="filter-chip"
   >
     <button
-      aria-pressed="false"
-      class="FilterChip_resetButton__1gngjae6 focusOutline_focusOutlineStyle__tq83zq0 FilterChip_innerButton__1gngjae7"
+      class="FilterChip_resetButton__1gngjaed focusOutline_focusOutlineStyle__tq83zq0 FilterChip_chipBody__1gngjaea FilterChip_chipBody_withRemove_true__1gngjaeb FilterChip_innerButton__1gngjaee"
       type="button"
     >
       <span
-        class="FilterChip_categoryLabel__1gngjaea FilterChip_categoryLabel_selected_false__1gngjaec"
+        class="FilterChip_labelText__1gngjaeg FilterChip_categoryLabel__1gngjaei FilterChip_categoryLabel_selected_false__1gngjaek"
       >
         Vehicle type:
       </span>
-      <span>
+      <span
+        class="FilterChip_valueText__1gngjaeh"
+      >
         Truck
       </span>
     </button>
     <button
-      aria-label="Remove Vehicle type filter"
-      class="FilterChip_resetButton__1gngjae6 focusOutline_focusOutlineStyle__tq83zq0 FilterChip_innerButton__1gngjae7 FilterChip_removeButton__1gngjae8"
+      aria-label="Remove Vehicle type Truck filter"
+      class="FilterChip_resetButton__1gngjaed focusOutline_focusOutlineStyle__tq83zq0 FilterChip_innerButton__1gngjaee FilterChip_removeButton__1gngjaef"
       type="button"
     >
       <span
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuf6 Icon_makeResponsiveStyle_key_bp__1gy3ire0 FilterChip_icon__1gngjae9"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuf6 Icon_makeResponsiveStyle_key_bp__1gy3ire0"
         data-od-component="icon"
       >
         <svg
