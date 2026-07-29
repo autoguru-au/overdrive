@@ -39,6 +39,22 @@ export const chip = recipe({
 				transitionDuration: TRANSITION_DURATION,
 				transitionProperty: 'background-color, border-color, color',
 				transitionTimingFunction: vars.animation.easing.standard,
+				selectors: {
+					// The ring belongs to the chip, not to whichever button is
+					// focused — on a removable chip the body is only part of the
+					// pill, so ringing it drew the outline across the chip fill.
+					//
+					// `:has(:focus-visible)` rather than the `:focus-within` the
+					// review suggested: `:focus-within` also matches a pointer
+					// click, which would flash the ring on every mouse press.
+					// The first two selectors cover the chip that is itself a
+					// button, the last two a focused child.
+					[`&:focus-visible, &[data-focus-visible], &:has(:focus-visible), &:has([data-focus-visible])`]:
+						{
+							outline: `solid ${FOCUS_RING_WIDTH} ${vars.color.focus.ring}`,
+							outlineOffset: FOCUS_RING_WIDTH,
+						},
+				},
 				'@media': {
 					'(prefers-reduced-motion: reduce)': {
 						transitionDuration: '0s',
@@ -217,32 +233,20 @@ export const chipBody = recipe({
  * `as="button"` to the `resetVariants` recipe. Until this component is rebuilt on
  * that primitive, these declarations are what actually clear the UA button style.
  */
-export const resetButton = style([
-	{
-		'@layer': {
-			[cssLayerComponent]: {
-				appearance: 'none',
-				cursor: 'pointer',
-				fontFamily: 'inherit',
-				fontWeight: 'inherit',
-				margin: 0,
-				selectors: {
-					// Points at the DS-2026 focus ring token rather than
-					// composing `focusOutlineStyle`, which still resolves the
-					// legacy `colours.foreground.link`. Same green (#01c68c) and
-					// same 2px/2px geometry, but on the semantic contract and
-					// with no lint exemption. Repointing the shared helper is
-					// the wider change (track-c.md C-P9).
-					[`&:focus-visible, &[data-focus-visible], [data-focus-visible] &`]:
-						{
-							outline: `solid ${FOCUS_RING_WIDTH} ${vars.color.focus.ring}`,
-							outlineOffset: FOCUS_RING_WIDTH,
-						},
-				},
-			},
+export const resetButton = style({
+	'@layer': {
+		[cssLayerComponent]: {
+			appearance: 'none',
+			cursor: 'pointer',
+			fontFamily: 'inherit',
+			fontWeight: 'inherit',
+			margin: 0,
+			// The focus ring lives on the chip root, so the buttons must not
+			// draw one of their own — see the `chip` recipe.
+			outline: 'none',
 		},
 	},
-]);
+});
 
 /**
  * Applied to buttons nested *inside* the chip surface, which inherit their
