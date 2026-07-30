@@ -229,6 +229,17 @@ export const button = recipe({
 		isLoading: {
 			true: {},
 		},
+		/**
+		 * Transparent fill with a brand border and label.
+		 *
+		 * Empty on its own — the appearance lives in the `intent: 'primary'`
+		 * compound below, because the DS 2026 outlined token set only exists for
+		 * primary and critical, and a shared default here would put a
+		 * currentColor border on intents whose label colour is white.
+		 */
+		outlined: {
+			true: {},
+		},
 	},
 	compoundVariants: [
 		// Size and shape compound variants
@@ -406,6 +417,38 @@ export const button = recipe({
 				},
 			},
 		},
+		// Appended last on purpose: compound variant class names are index-based,
+		// so inserting above this point renumbers every later one and churns
+		// every Button snapshot in the repo.
+		{
+			variants: { intent: 'primary', outlined: true },
+			style: {
+				'@layer': {
+					[cssLayerComponent]: {
+						// Restated rather than inherited: the `intent: 'primary'`
+						// variant class also sets backgroundColor and carries the
+						// same specificity within this layer, so relying on
+						// emission order would be fragile.
+						backgroundColor: 'transparent',
+						border: `1px solid ${vars.color.button.primary.outlined.border}`,
+						color: vars.color.button.primary.outlined.text,
+						selectors: {
+							'&:focus-visible, &:not(:disabled):hover': {
+								backgroundColor:
+									vars.color.button.primary.outlined.hover,
+								borderColor:
+									vars.color.button.primary.outlined.border,
+								color: vars.color.button.primary.outlined.text,
+							},
+							'&:active:not(:disabled, [data-loading])': {
+								backgroundColor:
+									vars.color.button.primary.outlined.pressed,
+							},
+						},
+					},
+				},
+			},
+		},
 	],
 	defaultVariants: {
 		size: 'medium',
@@ -423,6 +466,7 @@ export type ButtonIntent = ButtonRecipeProps['intent'];
 export type ButtonIsFullWidth = ButtonRecipeProps['isFullWidth'];
 export type ButtonIsLoading = ButtonRecipeProps['isLoading'];
 export type ButtonMinimal = ButtonRecipeProps['minimal'];
+export type ButtonOutlined = ButtonRecipeProps['outlined'];
 export type ButtonRounded = ButtonRecipeProps['rounded'];
 
 export interface StyledButtonProps {
@@ -442,6 +486,13 @@ export interface StyledButtonProps {
 	 * Present a borderless minimal appearance
 	 */
 	minimal?: ButtonMinimal;
+	/**
+	 * Transparent fill with a brand-coloured border and label.
+	 *
+	 * Currently applies to `variant="primary"` only, and ignored when `minimal`
+	 * is set — the two are opposites.
+	 */
+	outlined?: ButtonOutlined;
 	isFullWidth?: ButtonIsFullWidth;
 	isLoading?: ButtonIsFullWidth;
 }

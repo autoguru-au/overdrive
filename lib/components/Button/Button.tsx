@@ -135,6 +135,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			isFullWidth = false,
 			localeText,
 			minimal = false,
+			outlined = false,
 			rounded = false,
 			size = 'medium',
 			testId,
@@ -160,7 +161,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			useState<boolean>(false);
 
 		const language = { ...LOCALE_TEXT_DEFAULT, ...localeText };
-		const isInverse = minimal || variant === 'secondary';
+		// `minimal` and `outlined` are opposites — borderless versus bordered —
+		// so when both are passed the borderless appearance wins and outlined is
+		// dropped before it reaches the recipe.
+		const isOutlined = outlined && !minimal;
+		// an outlined button has a transparent fill, so its spinner needs the
+		// dark treatment rather than the light one used on a solid fill
+		const isInverse = minimal || isOutlined || variant === 'secondary';
 		const isSingleIconChild = useMemo(
 			() =>
 				isValidElement(children) &&
@@ -195,6 +202,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 					isFullWidth,
 					isLoading,
 					minimal,
+					outlined: isOutlined,
 					rounded,
 					shape,
 					size,
