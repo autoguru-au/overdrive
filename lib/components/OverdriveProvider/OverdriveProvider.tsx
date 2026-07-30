@@ -57,7 +57,19 @@ export interface ProviderProps {
 	breakpoints?: BreakPoints;
 	/** When true, prevents applying theme styles at the body level */
 	noBodyLevelTheming?: boolean;
-	/** Custom colour overrides for select theme tokens */
+	/**
+	 * Custom colour overrides for select theme tokens — the runtime brand hook.
+	 *
+	 * `primaryBackground` drives the primary Button, the brand accent behind
+	 * Switch/Radio/CheckBox on-states, the outlined Button, and
+	 * `<Text colour="primary">`. `primaryForeground` is the content placed on
+	 * top of it; when omitted it is derived for contrast.
+	 *
+	 * `linkColor` is deliberately separate rather than following
+	 * `primaryBackground`: it also drives every focus ring in the library, and a
+	 * colour picked as a fill behind white text is often illegible as link text
+	 * on the page background. Pass it explicitly to brand links.
+	 */
 	colorOverrides?: Partial<ColorOverrides>;
 	/** Reference to an HTML element where portals should be mounted */
 	portalMountPoint?: PortalMountPoint;
@@ -118,7 +130,10 @@ export const Provider = ({
 		() => makeRuntimeTokens(breakpoints),
 		[breakpoints],
 	);
-	const styles = useColorOverrides(colorOverrides, String(theme.vars.mode));
+	// `theme.vars.mode` is the contract's CSS var *reference* — the string
+	// `var(--od-mode)` — so it never equalled 'light' and the light/dark
+	// branch below it was dead. `theme.tokens.mode` is the resolved value.
+	const styles = useColorOverrides(colorOverrides, String(theme.tokens.mode));
 	const themeValues = useMemo(
 		() => ({
 			themeClass: theme.themeRef,
