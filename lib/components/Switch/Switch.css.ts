@@ -6,7 +6,7 @@ import { overdriveTokens as vars } from '../../themes/theme.css';
 
 globalLayer(LAYER_ORDER);
 
-const colorAccent = vars.color.foreground.primary;
+const colorAccent = vars.color.brand.solid;
 const colorContrast = vars.color.background.default;
 const colorMid = vars.colours.background.neutral;
 const colorLight = vars.colours.background.light;
@@ -89,6 +89,10 @@ export const handle = styleVariants({
 			[cssLayerComponent]: {
 				selectors: {
 					[`${toggleOn} &`]: {
+						// the knob sits on the brand track once toggled on, so
+						// it takes the on-brand contrast colour rather than the
+						// page background it uses in the off position
+						backgroundColor: vars.color.brand.onSolid,
 						transform: handleTranslate,
 					},
 					[`${toggle}:not([data-disabled]):hover &`]: {

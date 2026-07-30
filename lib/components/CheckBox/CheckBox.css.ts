@@ -6,7 +6,7 @@ import {
 	checkable,
 } from '../private/CheckableBase/CheckableBase.css';
 
-const colorAccent = vars.color.foreground.primary;
+const colorAccent = vars.color.brand.solid;
 const colorContrast = vars.color.background.default;
 const colorMid = vars.colours.background.neutral;
 const size = vars.space['6'];
@@ -39,6 +39,12 @@ export const checkbox = styleVariants({
 	selected: {
 		backgroundColor: colorAccent,
 		borderColor: colorAccent,
+		// the tick colour belongs here, not on `default`: the Icon is rendered
+		// unconditionally and is merely invisible while unchecked (page
+		// background on page background). An on-brand colour on `default` would
+		// make the tick visible on unchecked boxes for any tenant whose brand
+		// is not the page background.
+		color: vars.color.brand.onSolid,
 	},
 });
 
