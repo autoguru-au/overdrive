@@ -130,10 +130,12 @@ export const Provider = ({
 		() => makeRuntimeTokens(breakpoints),
 		[breakpoints],
 	);
-	// `theme.vars.mode` is the contract's CSS var *reference* — the string
-	// `var(--od-mode)` — so it never equalled 'light' and the light/dark
-	// branch below it was dead. `theme.tokens.mode` is the resolved value.
-	const styles = useColorOverrides(colorOverrides, String(theme.tokens.mode));
+	// The theme's resolved tokens, not `theme.vars` — those are CSS var
+	// *references* (`var(--od-mode)`), so the mode check downstream never
+	// matched and its light/dark branch was dead. Passing the tokens also lets
+	// contrast decisions be made against this theme's own page background and
+	// body ink rather than the base theme's.
+	const styles = useColorOverrides(colorOverrides, theme.tokens);
 	const themeValues = useMemo(
 		() => ({
 			themeClass: theme.themeRef,

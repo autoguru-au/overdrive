@@ -80,6 +80,25 @@ describe('<Button />', () => {
 			expect(button.className).toContain('minimal_true');
 		});
 
+		it('is a complete no-op on intents that have no outlined tokens', () => {
+			// the fill is gated on primary in CSS, so the spinner must be gated
+			// too — otherwise a loading danger button gets a dark spinner on a
+			// solid red fill
+			const plain = render(
+				<Button variant="danger" isLoading>
+					Click me
+				</Button>,
+			).container.innerHTML;
+			cleanup();
+			const withOutlined = render(
+				<Button variant="danger" outlined isLoading>
+					Click me
+				</Button>,
+			).container.innerHTML;
+
+			expect(withOutlined).toBe(plain);
+		});
+
 		it('gives a loading outlined button the dark spinner, not the light one', () => {
 			const { container } = render(
 				<Button variant="primary" outlined isLoading>

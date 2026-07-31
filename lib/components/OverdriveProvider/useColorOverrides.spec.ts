@@ -2,6 +2,7 @@ import { renderHook } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { colourMap } from '../../themes/base/colours';
+import { tokens as baseTokens } from '../../themes/base/tokens';
 import { getColourLuminance, getRGBValues } from '../../themes/helpers';
 
 import { useColorOverrides } from './useColorOverrides';
@@ -9,8 +10,11 @@ import { useColorOverrides } from './useColorOverrides';
 const BRAND = '#6d39a8'; // Merchant Finder's purple — dark, wants white on it
 const BRIGHT = '#e5bc01'; // a bright yellow — wants dark ink on it
 
-const vars = (overrides?: Parameters<typeof useColorOverrides>[0]) =>
-	renderHook(() => useColorOverrides(overrides, 'light')).result
+const vars = (
+	overrides?: Parameters<typeof useColorOverrides>[0],
+	tokens: Parameters<typeof useColorOverrides>[1] = baseTokens,
+) =>
+	renderHook(() => useColorOverrides(overrides, tokens)).result
 		.current as Record<string, string>;
 
 const luminance = (colour: string) => getColourLuminance(getRGBValues(colour));
@@ -99,6 +103,62 @@ describe('useColorOverrides', () => {
 			});
 			expect(result['--od-color-brand-on-solid']).toBe('#123456');
 		});
+
+		it('ignores a primaryForeground that would be illegible on the brand', () => {
+			// a tenant pairing a light brand with white button text: taken
+			// verbatim this puts a white tick on a light checkbox, which is
+			// worse than the fixed dark ink these controls had before they
+			// followed the brand at all
+			const result = vars({
+				primaryBackground: '#ff6d00',
+				primaryForeground: '#ffffff',
+			});
+
+			expect(result['--od-color-brand-on-solid']).toBe(
+				colourMap.gray['900'],
+			);
+			// the button label still honours what the tenant asked for — that
+			// is their stated brand pairing, and it was already the behaviour
+			expect(result['--od-colours-intent-primary-foreground']).toBe(
+				'#ffffff',
+			);
+		});
+
+		it('derives the button label too when no primaryForeground is given', () => {
+			// otherwise a light brand keeps the theme's white label and the
+			// solid button is unreadable, which the prop docs promise against
+			const result = vars({ primaryBackground: BRIGHT });
+
+			expect(result['--od-colours-intent-primary-foreground']).toBe(
+				colourMap.gray['900'],
+			);
+			expect(result['--od-color-brand-on-solid']).toBe(
+				colourMap.gray['900'],
+			);
+		});
+
+		it('picks its contrast candidates from the active theme, not the base one', () => {
+			// the two candidates are the theme's own page background and body
+			// ink, so a theme that changes either gets decisions made against
+			// what it actually renders
+			const recoloured = {
+				...baseTokens,
+				color: {
+					...baseTokens.color,
+					background: {
+						...baseTokens.color.background,
+						default: '#fff8e1',
+					},
+					foreground: {
+						...baseTokens.color.foreground,
+						primary: '#1a0033',
+					},
+				},
+			};
+
+			const result = vars({ primaryBackground: BRIGHT }, recoloured);
+			expect(result['--od-color-brand-on-solid']).toBe('#1a0033');
+		});
 	});
 
 	describe('outlined button', () => {
@@ -163,7 +223,9 @@ describe('useColorOverrides', () => {
 	describe('contrast warning', () => {
 		it('warns when the brand is too light to read on the page background', () => {
 			const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
-			vars({ primaryBackground: BRIGHT });
+			// a colour not warned about elsewhere in this file, since the
+			// warning is deduplicated for the life of the module
+			vars({ primaryBackground: '#ffd54a' });
 			expect(warn).toHaveBeenCalledWith(
 				expect.stringContaining('does not meet WCAG AA'),
 			);
@@ -173,6 +235,31 @@ describe('useColorOverrides', () => {
 			const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
 			vars({ primaryBackground: BRAND });
 			expect(warn).not.toHaveBeenCalled();
+		});
+
+		it('warns only once for a repeated colour, since the provider re-renders freely', () => {
+			const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+			vars({ primaryBackground: '#ffe08a' });
+			vars({ primaryBackground: '#ffe08a' });
+			vars({ primaryBackground: '#ffe08a' });
+			expect(warn).toHaveBeenCalledTimes(1);
+		});
+	});
+
+	describe('server rendering', () => {
+		it('keeps overrides when the DOM colour check is unavailable', () => {
+			// `isValidColor` uses `Option`, a DOM global. Failing closed on the
+			// server stripped every override, so a branded page shipped no
+			// inline vars and only picked up the brand on hydration.
+			const original = globalThis.Option;
+			// @ts-expect-error simulating a non-DOM environment
+			delete globalThis.Option;
+			try {
+				const result = vars({ primaryBackground: BRAND });
+				expect(result['--od-color-brand-solid']).toBe(BRAND);
+			} finally {
+				globalThis.Option = original;
+			}
 		});
 	});
 });

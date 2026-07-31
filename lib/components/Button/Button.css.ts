@@ -418,8 +418,10 @@ export const button = recipe({
 			},
 		},
 		// Appended last on purpose: compound variant class names are index-based,
-		// so inserting above this point renumbers every later one and churns
-		// every Button snapshot in the repo.
+		// so INSERTING above this point would remap existing indices onto
+		// different style rules. (Adding the `outlined` variant already shifted
+		// every compound's hash suffix by one, which is the whole of the
+		// snapshot churn in this commit — the indices themselves are unmoved.)
 		{
 			variants: { intent: 'primary', outlined: true },
 			style: {
@@ -443,6 +445,18 @@ export const button = recipe({
 							'&:active:not(:disabled, [data-loading])': {
 								backgroundColor:
 									vars.color.button.primary.outlined.pressed,
+								// The label and border MUST be restated here.
+								// `intent: 'primary'` emits its hover/active
+								// group as native CSS nesting, so its
+								// `&:not(:disabled):active` is (0,3,0) and sets
+								// `color` — which out-specifies this variant's
+								// (0,2,0) `:focus-visible` rule. Without these,
+								// pressing an outlined button via keyboard or
+								// touch (`:active` with no `:hover`) paints a
+								// white label on the pale pressed wash.
+								borderColor:
+									vars.color.button.primary.outlined.border,
+								color: vars.color.button.primary.outlined.text,
 							},
 						},
 					},
@@ -494,5 +508,5 @@ export interface StyledButtonProps {
 	 */
 	outlined?: ButtonOutlined;
 	isFullWidth?: ButtonIsFullWidth;
-	isLoading?: ButtonIsFullWidth;
+	isLoading?: ButtonIsLoading;
 }

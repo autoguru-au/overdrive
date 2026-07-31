@@ -164,7 +164,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 		// `minimal` and `outlined` are opposites — borderless versus bordered —
 		// so when both are passed the borderless appearance wins and outlined is
 		// dropped before it reaches the recipe.
-		const isOutlined = outlined && !minimal;
+		//
+		// Gated on `primary` too, because only the primary intent has outlined
+		// tokens. Without that gate `outlined` would be a no-op on the fill of
+		// every other intent while still flipping the loading spinner to its
+		// inverse treatment — a dark spinner on a solid red danger button.
+		const isOutlined = outlined && !minimal && variant === 'primary';
 		// an outlined button has a transparent fill, so its spinner needs the
 		// dark treatment rather than the light one used on a solid fill
 		const isInverse = minimal || isOutlined || variant === 'secondary';
