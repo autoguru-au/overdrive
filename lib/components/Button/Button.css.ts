@@ -417,20 +417,15 @@ export const button = recipe({
 				},
 			},
 		},
-		// Appended last on purpose: compound variant class names are index-based,
-		// so INSERTING above this point would remap existing indices onto
-		// different style rules. (Adding the `outlined` variant already shifted
-		// every compound's hash suffix by one, which is the whole of the
-		// snapshot churn in this commit — the indices themselves are unmoved.)
+		// Compound class names are index-based, so append rather than insert:
+		// inserting remaps existing indices onto different style rules.
 		{
 			variants: { intent: 'primary', outlined: true },
 			style: {
 				'@layer': {
 					[cssLayerComponent]: {
-						// Restated rather than inherited: the `intent: 'primary'`
-						// variant class also sets backgroundColor and carries the
-						// same specificity within this layer, so relying on
-						// emission order would be fragile.
+						// `intent: 'primary'` sets this too, at equal specificity in
+						// the same layer, so don't lean on emission order.
 						backgroundColor: 'transparent',
 						border: `1px solid ${vars.color.button.primary.outlined.border}`,
 						color: vars.color.button.primary.outlined.text,
@@ -445,15 +440,12 @@ export const button = recipe({
 							'&:active:not(:disabled, [data-loading])': {
 								backgroundColor:
 									vars.color.button.primary.outlined.pressed,
-								// The label and border MUST be restated here.
-								// `intent: 'primary'` emits its hover/active
-								// group as native CSS nesting, so its
-								// `&:not(:disabled):active` is (0,3,0) and sets
-								// `color` — which out-specifies this variant's
-								// (0,2,0) `:focus-visible` rule. Without these,
-								// pressing an outlined button via keyboard or
-								// touch (`:active` with no `:hover`) paints a
-								// white label on the pale pressed wash.
+								// Label and border must be restated: `intent:
+								// 'primary'`'s nested `:active` is (0,3,0) and
+								// sets `color`, beating this variant's (0,2,0)
+								// `:focus-visible`. Without them a keyboard or
+								// touch press — `:active` with no `:hover` —
+								// paints a white label on the pale wash.
 								borderColor:
 									vars.color.button.primary.outlined.border,
 								color: vars.color.button.primary.outlined.text,

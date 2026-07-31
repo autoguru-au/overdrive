@@ -41,7 +41,7 @@ const BRANDS: Brand[] = [
 			primaryForeground: '#ffffff',
 			linkColor: '#6d39a8',
 		},
-		note: 'A dark brand. On-brand content resolves to white.',
+		note: 'A dark brand, with its on-brand content supplied as white.',
 	},
 	{
 		name: 'Amber',
@@ -49,7 +49,7 @@ const BRANDS: Brand[] = [
 			primaryBackground: '#e5bc01',
 			linkColor: '#8a6f00',
 		},
-		note: 'A bright brand with no primaryForeground given — on-brand content is derived as dark ink instead of white. Its linkColor is set darker on purpose, because the brand itself fails contrast as link text.',
+		note: 'A bright brand, with on-brand content derived as dark ink.',
 	},
 ];
 
@@ -71,7 +71,7 @@ const GroupLabel = ({ children }: { children: ReactNode }) => (
 const ChangesWithBrand = () => (
 	<Stack space="2">
 		<GroupLabel>Buttons</GroupLabel>
-		<FlexInline gap="3">
+		<FlexInline gap="3" justify="center">
 			<Button variant="primary">Button</Button>
 			<Button variant="primary" outlined>
 				Button
@@ -88,7 +88,8 @@ const ChangesWithBrand = () => (
 const SelectionControls = ({ idPrefix }: { idPrefix: string }) => (
 	<Stack space="2">
 		<GroupLabel>Selection controls (on / off)</GroupLabel>
-		<FlexInline gap="4">
+		{/* Switch and CheckableBase have no common baseline, so centre them. */}
+		<FlexInline gap="4" justify="center">
 			<Switch isSelected aria-label="On" />
 			<Switch aria-label="Off" />
 			<CheckBox checked value="on" aria-label="Checked" />
@@ -116,7 +117,7 @@ const SelectionControls = ({ idPrefix }: { idPrefix: string }) => (
 const OptInGroup = () => (
 	<Stack space="2">
 		<GroupLabel>Opt-in — needs linkColor</GroupLabel>
-		<FlexInline gap="4">
+		<FlexInline gap="4" justify="center">
 			<TextLink href="#branding">A link</TextLink>
 			<Text colour="primary">colour=&quot;primary&quot;</Text>
 		</FlexInline>
@@ -160,9 +161,12 @@ const BrandCard = ({ name, overrides, note }: Brand) => {
 				<Stack space="4">
 					<Stack space="1">
 						<Heading as="h3">{name}</Heading>
-						<Text size="2" colour="light">
-							{note}
-						</Text>
+						{/* Reserved so a two-line note can't shift the groups below it out of line with the next card. */}
+						<div style={{ minHeight: '2.75rem' }}>
+							<Text size="2" colour="light">
+								{note}
+							</Text>
+						</div>
 					</Stack>
 					<ChangesWithBrand />
 					<SelectionControls idPrefix={idPrefix} />
@@ -211,9 +215,6 @@ export const Branding: Story = {
 	render: () => {
 		const [control, ...brands] = BRANDS;
 
-		// Plain divs for layout, matching the convention in the other stories:
-		// the comparison columns are a story concern rather than something to
-		// express in sprinkles.
 		return (
 			<div
 				style={{ display: 'grid', gap: '24px', justifyItems: 'start' }}
@@ -224,7 +225,7 @@ export const Branding: Story = {
 						display: 'grid',
 						gap: '24px',
 						gridTemplateColumns: `repeat(${brands.length}, minmax(26rem, max-content))`,
-						alignItems: 'start',
+						alignItems: 'stretch',
 					}}
 				>
 					{brands.map((brand) => (

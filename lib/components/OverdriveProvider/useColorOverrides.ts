@@ -9,9 +9,8 @@ import {
 import { overdriveTokens, type ThemeTokens } from '../../themes/theme.css';
 
 /**
- * The active theme's own values, rather than the base theme's, so a theme that
- * changes its page background or body ink still gets contrast decisions made
- * against what it actually renders.
+ * The active theme's own values, so a theme that changes its page background or
+ * body ink gets contrast decisions made against what it actually renders.
  */
 interface ThemeContext {
 	/** `light` or `dark`, resolved — not the CSS var reference. */
@@ -41,11 +40,8 @@ const colorOverrideKeys = [
 export type ColorOverrides = Record<(typeof colorOverrideKeys)[number], string>;
 
 const isValidColor = (color: string): boolean => {
-	// `Option` is a DOM global, so this whole check throws during SSR. Failing
-	// closed there would strip every override and emit no inline vars into the
-	// server HTML — the brand would only appear on hydration. Validation is a
-	// developer convenience, so off the browser we accept the value and let the
-	// browser ignore it if it really is malformed.
+	// `Option` is a DOM global, so this throws during SSR. Failing closed there
+	// stripped every override, leaving the brand to appear only on hydration.
 	if (typeof Option === 'undefined') return true;
 
 	try {
@@ -58,12 +54,8 @@ const isValidColor = (color: string): boolean => {
 };
 
 /**
- * Emit a warning at most once per message.
- *
- * `OverdriveProvider` is memoised on a deep prop compare that includes
- * `children`, so it re-renders whenever anything below it does, and the callers
- * all pass an inline object literal. Without this the same warning would repeat
- * for the life of the page.
+ * Warn at most once per message. The provider re-renders freely and every caller
+ * passes an inline object literal, so an unguarded warning repeats forever.
  */
 const warned = new Set<string>();
 const warnOnce = (message: string) => {
@@ -73,15 +65,12 @@ const warnOnce = (message: string) => {
 };
 
 /**
- * The contrast-safe content colour to sit on top of a brand fill — the Switch
- * handle, the Radio dot, the CheckBox tick.
+ * The contrast-safe content colour for a brand fill — the Switch handle, Radio
+ * dot, CheckBox tick. Candidates come from the active theme, being the same two
+ * leaves the brand pair is seeded from.
  *
- * The two candidates come from the ACTIVE theme, not a fixed white/black pair:
- * they are the same two leaves the brand tokens are seeded from, so whatever a
- * theme uses for its page background and its body ink is what gets offered here.
- *
- * `getContrastRatio` returns `min/max` luminance, the reciprocal of the
- * conventional WCAG ratio, so the SMALLER value is the better contrast.
+ * `getContrastRatio` returns `min/max`, the reciprocal of the WCAG ratio, so the
+ * SMALLER value is the better contrast.
  */
 const onBrandColour = (brand: string, theme: ThemeContext): string =>
 	getContrastRatio(theme.pageBackground, brand) <
@@ -90,14 +79,10 @@ const onBrandColour = (brand: string, theme: ThemeContext): string =>
 		: theme.bodyInk;
 
 /**
- * Resolve the on-brand glyph colour, preferring the caller's `primaryForeground`
- * but only while it stays legible on the brand fill.
- *
- * `primaryForeground` was chosen as a *button label* colour, and a tenant
- * pairing a light brand with white text is common. Taking it verbatim here would
- * put a white tick on a light checkbox — a contrast regression on controls that
- * were a fixed dark ink before they followed the brand at all. 3:1 is the WCAG
- * threshold for graphical objects, which is what a tick, dot and knob are.
+ * Prefer the caller's `primaryForeground`, but only while it stays legible on the
+ * fill. It was chosen as a button label colour, so a tenant pairing a light brand
+ * with white text would otherwise get a white tick on a light checkbox. 3:1 is
+ * the WCAG threshold for graphical objects, which is what these glyphs are.
  */
 const resolveOnBrand = (
 	brand: string,
@@ -123,9 +108,8 @@ const resolveOnBrand = (
 };
 
 /**
- * Dev-only nudge when a supplied colour will be drawn as text or a border on
- * the theme's page background — outlined buttons, links, focus rings. Silent in
- * production, and silent for the many consumers that pass no overrides at all.
+ * Dev-only nudge when a colour will be drawn as text or a border on the page —
+ * outlined buttons, links, focus rings.
  */
 const warnOnLowContrast = (
 	colour: string | undefined,
@@ -156,9 +140,7 @@ export const useColorOverrides = (
 
 		const theme = themeContext(tokens);
 
-		// Shallow copy before pruning: the caller's prop object is frequently a
-		// stable value held in a GraphQL cache, and deleting keys off it would
-		// mutate their state.
+		// Copy before pruning — callers commonly hold this object in a cache.
 		const valid: Partial<ColorOverrides> = { ...overrides };
 
 		colorOverrideKeys.forEach((key) => {
@@ -171,8 +153,7 @@ export const useColorOverrides = (
 		});
 
 		const { primaryBackground, linkColor } = valid;
-		// unknown modes fall back to light rather than dark, so a custom theme
-		// with a missing or misspelled `mode` degrades to the common case
+		// unknown modes degrade to light, the common case
 		const isDarkTheme = theme.mode === 'dark';
 
 		let mildPrimary: string | null = null;
@@ -185,10 +166,8 @@ export const useColorOverrides = (
 		let outlinedPressed: string | null = null;
 
 		if (primaryBackground) {
-			// mild and strong must move in OPPOSITE directions — in a light
-			// theme mild is the paler wash and strong the deeper press state.
-			// They were previously derived with identical arguments, so both
-			// resolved to the same colour and hover/active looked like resting.
+			// Opposite directions: in a light theme mild is the paler wash and
+			// strong the deeper press state. These were once identical.
 			mildPrimary =
 				valid.primaryBackgroundMild ||
 				shadedColour({
@@ -206,26 +185,20 @@ export const useColorOverrides = (
 					intensity: 0.1,
 				});
 
-			// The button label honours an explicit `primaryForeground` even when
-			// it is poor — that is the tenant's stated brand pairing, and it was
-			// already the behaviour. Only the *absent* case is derived, which is
-			// what the prop docs promise.
+			// The label honours an explicit value even when it is poor — that is
+			// the tenant's stated pairing. Only the absent case is derived.
 			buttonForeground =
 				valid.primaryForeground ??
 				onBrandColour(primaryBackground, theme);
 
-			// The selection controls are stricter: a tick, dot or knob that
-			// fails 3:1 on the fill is simply invisible, so an illegible
-			// `primaryForeground` is replaced rather than honoured.
+			// Stricter: a glyph failing 3:1 on the fill is simply invisible.
 			onBrand = resolveOnBrand(
 				primaryBackground,
 				theme,
 				valid.primaryForeground,
 			);
 
-			// The pale tints behind an outlined button. These approximate the
-			// base theme's green100/green200 relationship to its green800
-			// border: hover is the paler of the two, pressed a touch deeper.
+			// Pale tints behind an outlined button, hover the paler of the two.
 			outlinedHover = shadedColour({
 				colour: primaryBackground,
 				isDarkTheme,
@@ -258,11 +231,9 @@ export const useColorOverrides = (
 				button: {
 					primary: {
 						outlined: {
-							// The border and label take the brand verbatim: a
-							// tenant supplying their brand expects to see their
-							// brand, not a derived approximation of it. The
-							// contrast risk that creates is what
-							// `warnOnLowContrast` reports above.
+							// Verbatim: a tenant expects to see their own brand,
+							// not an approximation. `warnOnLowContrast` covers
+							// the contrast risk that creates.
 							//@ts-expect-error no undefined
 							border: primaryBackground ?? undefined,
 							//@ts-expect-error no undefined
@@ -292,10 +263,8 @@ export const useColorOverrides = (
 							//@ts-expect-error no undefined
 							strong: strongPrimary ?? undefined,
 						},
-						// Falls back to the derived on-brand colour, not to the
-						// theme's own foreground: a tenant passing only
-						// `primaryBackground` would otherwise keep the theme's
-						// white label, which is unreadable on a light brand.
+						// Derived rather than the theme's own foreground, which
+						// would leave a white label on a light brand.
 						//@ts-expect-error no undefined
 						foreground: buttonForeground ?? undefined,
 						//@ts-expect-error no undefined

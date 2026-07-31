@@ -161,17 +161,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			useState<boolean>(false);
 
 		const language = { ...LOCALE_TEXT_DEFAULT, ...localeText };
-		// `minimal` and `outlined` are opposites — borderless versus bordered —
-		// so when both are passed the borderless appearance wins and outlined is
-		// dropped before it reaches the recipe.
-		//
-		// Gated on `primary` too, because only the primary intent has outlined
-		// tokens. Without that gate `outlined` would be a no-op on the fill of
-		// every other intent while still flipping the loading spinner to its
-		// inverse treatment — a dark spinner on a solid red danger button.
+		// `minimal` wins — it means borderless, the opposite of outlined. Gated
+		// on `primary` because only that intent has outlined tokens, and an
+		// ungated flag would still invert the spinner on the others.
 		const isOutlined = outlined && !minimal && variant === 'primary';
-		// an outlined button has a transparent fill, so its spinner needs the
-		// dark treatment rather than the light one used on a solid fill
 		const isInverse = minimal || isOutlined || variant === 'secondary';
 		const isSingleIconChild = useMemo(
 			() =>
