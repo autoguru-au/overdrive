@@ -89,9 +89,7 @@ export const handle = styleVariants({
 			[cssLayerComponent]: {
 				selectors: {
 					[`${toggleOn} &`]: {
-						// the knob sits on the brand track once toggled on, so
-						// it takes the on-brand contrast colour rather than the
-						// page background it uses in the off position
+						// on the brand track, so on-brand rather than page
 						backgroundColor: vars.color.brand.onSolid,
 						transform: handleTranslate,
 					},

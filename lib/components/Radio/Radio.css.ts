@@ -56,9 +56,7 @@ export const inner = style([
 ]);
 
 export const innerSelected = style({
-	// the selected dot sits on the brand fill, so it takes the on-brand
-	// contrast colour — unlike the unselected hover dot above, which sits on
-	// the page background
+	// on the brand fill, unlike the unselected hover dot above
 	backgroundColor: vars.color.brand.onSolid,
 	selectors: {
 		[`${nativeInput}:hover ~${checkable} &`]: {

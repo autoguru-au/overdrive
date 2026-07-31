@@ -39,9 +39,8 @@ export const checkbox = styleVariants({
 	selected: {
 		backgroundColor: colorAccent,
 		borderColor: colorAccent,
-		// Belongs here, not on `default`: the Icon renders unconditionally and
-		// is hidden only by matching the page background, so an on-brand colour
-		// there would show a tick on unchecked boxes.
+		// On `selected` only — the Icon always renders, hidden by matching
+		// the page background.
 		color: vars.color.brand.onSolid,
 	},
 });

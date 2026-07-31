@@ -229,14 +229,7 @@ export const button = recipe({
 		isLoading: {
 			true: {},
 		},
-		/**
-		 * Transparent fill with a brand border and label.
-		 *
-		 * Empty on its own — the appearance lives in the `intent: 'primary'`
-		 * compound below, because the DS 2026 outlined token set only exists for
-		 * primary and critical, and a shared default here would put a
-		 * currentColor border on intents whose label colour is white.
-		 */
+		/** Empty here; the appearance lives in the `intent: 'primary'` compound. */
 		outlined: {
 			true: {},
 		},
@@ -417,15 +410,13 @@ export const button = recipe({
 				},
 			},
 		},
-		// Compound class names are index-based, so append rather than insert:
-		// inserting remaps existing indices onto different style rules.
+		// Compound class names are index-based — append, never insert.
 		{
 			variants: { intent: 'primary', outlined: true },
 			style: {
 				'@layer': {
 					[cssLayerComponent]: {
-						// `intent: 'primary'` sets this too, at equal specificity in
-						// the same layer, so don't lean on emission order.
+						// intent primary sets this too, at equal specificity.
 						backgroundColor: 'transparent',
 						border: `1px solid ${vars.color.button.primary.outlined.border}`,
 						color: vars.color.button.primary.outlined.text,
@@ -440,12 +431,8 @@ export const button = recipe({
 							'&:active:not(:disabled, [data-loading])': {
 								backgroundColor:
 									vars.color.button.primary.outlined.pressed,
-								// Label and border must be restated: `intent:
-								// 'primary'`'s nested `:active` is (0,3,0) and
-								// sets `color`, beating this variant's (0,2,0)
-								// `:focus-visible`. Without them a keyboard or
-								// touch press — `:active` with no `:hover` —
-								// paints a white label on the pale wash.
+								// Restated: intent primary's nested `:active`
+								// (0,3,0) beats this variant's `:focus-visible`.
 								borderColor:
 									vars.color.button.primary.outlined.border,
 								color: vars.color.button.primary.outlined.text,

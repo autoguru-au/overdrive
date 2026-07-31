@@ -8,16 +8,10 @@ import {
 } from '../../themes/helpers';
 import { overdriveTokens, type ThemeTokens } from '../../themes/theme.css';
 
-/**
- * The active theme's own values, so a theme that changes its page background or
- * body ink gets contrast decisions made against what it actually renders.
- */
+/** The active theme's own values, so contrast decisions match what it renders. */
 interface ThemeContext {
-	/** `light` or `dark`, resolved — not the CSS var reference. */
 	mode: string;
-	/** What a control's contrast glyph sits on when it is off: the page. */
 	pageBackground: string;
-	/** The theme's darkest content colour. */
 	bodyInk: string;
 }
 
@@ -53,10 +47,7 @@ const isValidColor = (color: string): boolean => {
 	}
 };
 
-/**
- * Warn at most once per message. The provider re-renders freely and every caller
- * passes an inline object literal, so an unguarded warning repeats forever.
- */
+/** Warn once per message — the provider re-renders on every child change. */
 const warned = new Set<string>();
 const warnOnce = (message: string) => {
 	if (warned.has(message)) return;
@@ -65,12 +56,11 @@ const warnOnce = (message: string) => {
 };
 
 /**
- * The contrast-safe content colour for a brand fill — the Switch handle, Radio
- * dot, CheckBox tick. Candidates come from the active theme, being the same two
- * leaves the brand pair is seeded from.
+ * Contrast-safe content for a brand fill, chosen from the active theme's own
+ * page background and body ink.
  *
- * `getContrastRatio` returns `min/max`, the reciprocal of the WCAG ratio, so the
- * SMALLER value is the better contrast.
+ * `getContrastRatio` returns `min/max` — the reciprocal of the WCAG ratio — so
+ * the SMALLER value wins.
  */
 const onBrandColour = (brand: string, theme: ThemeContext): string =>
 	getContrastRatio(theme.pageBackground, brand) <
@@ -79,10 +69,9 @@ const onBrandColour = (brand: string, theme: ThemeContext): string =>
 		: theme.bodyInk;
 
 /**
- * Prefer the caller's `primaryForeground`, but only while it stays legible on the
- * fill. It was chosen as a button label colour, so a tenant pairing a light brand
- * with white text would otherwise get a white tick on a light checkbox. 3:1 is
- * the WCAG threshold for graphical objects, which is what these glyphs are.
+ * Prefer `primaryForeground`, but only while it clears 3:1 on the fill — it was
+ * chosen as a button label colour, and a light brand paired with white text
+ * would otherwise leave an invisible tick.
  */
 const resolveOnBrand = (
 	brand: string,
@@ -107,10 +96,7 @@ const resolveOnBrand = (
 	return derived;
 };
 
-/**
- * Dev-only nudge when a colour will be drawn as text or a border on the page —
- * outlined buttons, links, focus rings.
- */
+/** Dev-only nudge for a colour drawn as text or a border on the page. */
 const warnOnLowContrast = (
 	colour: string | undefined,
 	key: string,
@@ -158,9 +144,7 @@ export const useColorOverrides = (
 
 		let mildPrimary: string | null = null;
 		let strongPrimary: string | null = null;
-		/** Content on the brand fill for the selection controls. */
 		let onBrand: string | null = null;
-		/** Content on the brand fill for the primary button's label. */
 		let buttonForeground: string | null = null;
 		let outlinedHover: string | null = null;
 		let outlinedPressed: string | null = null;
@@ -185,13 +169,12 @@ export const useColorOverrides = (
 					intensity: 0.1,
 				});
 
-			// The label honours an explicit value even when it is poor — that is
-			// the tenant's stated pairing. Only the absent case is derived.
+			// Honours an explicit value even when poor; only derives if absent.
 			buttonForeground =
 				valid.primaryForeground ??
 				onBrandColour(primaryBackground, theme);
 
-			// Stricter: a glyph failing 3:1 on the fill is simply invisible.
+			// Stricter — a glyph failing 3:1 on the fill is invisible.
 			onBrand = resolveOnBrand(
 				primaryBackground,
 				theme,
@@ -231,9 +214,7 @@ export const useColorOverrides = (
 				button: {
 					primary: {
 						outlined: {
-							// Verbatim: a tenant expects to see their own brand,
-							// not an approximation. `warnOnLowContrast` covers
-							// the contrast risk that creates.
+							// Verbatim — tenants expect their own brand.
 							//@ts-expect-error no undefined
 							border: primaryBackground ?? undefined,
 							//@ts-expect-error no undefined
@@ -248,8 +229,7 @@ export const useColorOverrides = (
 			},
 			colours: {
 				foreground: {
-					// read by focusOutline.css.ts, so this also brands every
-					// focus ring in the library
+					// also brands every focus ring, via focusOutline.css.ts
 					//@ts-expect-error no undefined
 					link: linkColor ?? undefined,
 				},
@@ -263,8 +243,8 @@ export const useColorOverrides = (
 							//@ts-expect-error no undefined
 							strong: strongPrimary ?? undefined,
 						},
-						// Derived rather than the theme's own foreground, which
-						// would leave a white label on a light brand.
+						// Derived — the theme's own value would leave a white
+						// label on a light brand.
 						//@ts-expect-error no undefined
 						foreground: buttonForeground ?? undefined,
 						//@ts-expect-error no undefined

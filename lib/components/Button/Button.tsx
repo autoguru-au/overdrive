@@ -161,9 +161,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			useState<boolean>(false);
 
 		const language = { ...LOCALE_TEXT_DEFAULT, ...localeText };
-		// `minimal` wins — it means borderless, the opposite of outlined. Gated
-		// on `primary` because only that intent has outlined tokens, and an
-		// ungated flag would still invert the spinner on the others.
+		// `minimal` wins; primary-only because only it has outlined tokens.
 		const isOutlined = outlined && !minimal && variant === 'primary';
 		const isInverse = minimal || isOutlined || variant === 'secondary';
 		const isSingleIconChild = useMemo(
