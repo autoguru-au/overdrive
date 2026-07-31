@@ -6,7 +6,7 @@ import {
 	checkable,
 } from '../private/CheckableBase/CheckableBase.css';
 
-const colorAccent = vars.color.foreground.primary;
+const colorAccent = vars.color.brand.solid;
 const colorContrast = vars.color.background.default;
 const colorMid = vars.colours.background.neutral;
 const size = vars.space['6'];
@@ -39,6 +39,9 @@ export const checkbox = styleVariants({
 	selected: {
 		backgroundColor: colorAccent,
 		borderColor: colorAccent,
+		// On `selected` only — the Icon always renders, hidden by matching
+		// the page background.
+		color: vars.color.brand.onSolid,
 	},
 });
 

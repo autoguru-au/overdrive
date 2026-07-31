@@ -124,4 +124,43 @@ describe('<OverdriveProvider />', () => {
 			navigator.language,
 		);
 	});
+
+	describe('colour overrides', () => {
+		const providerStyle = (colorOverrides: Record<string, string>) => {
+			const { container } = render(
+				<OverdriveProvider colorOverrides={colorOverrides}>
+					<div />
+				</OverdriveProvider>,
+			);
+			// The test setup mounts its own provider, so match on the one
+			// carrying inline vars rather than the outermost. Read the attribute
+			// rather than `.style.cssText` — jsdom omits custom properties there.
+			return (
+				container
+					.querySelector<HTMLElement>(
+						'[data-od-component="provider"][style]',
+					)
+					?.getAttribute('style') ?? ''
+			);
+		};
+
+		it('brands the accent and the outlined button from the primary background', () => {
+			const style = providerStyle({ primaryBackground: '#6d39a8' });
+
+			expect(style).toContain('--od-color-brand-solid: #6d39a8');
+			expect(style).toContain(
+				'--od-color-button-primary-outlined-border: #6d39a8',
+			);
+		});
+
+		it('leaves links and focus rings alone until linkColor is passed', () => {
+			expect(
+				providerStyle({ primaryBackground: '#6d39a8' }),
+			).not.toContain('--od-colours-foreground-link');
+
+			expect(providerStyle({ linkColor: '#6d39a8' })).toContain(
+				'--od-colours-foreground-link: #6d39a8',
+			);
+		});
+	});
 });

@@ -6,7 +6,7 @@ import { overdriveTokens as vars } from '../../themes/theme.css';
 
 globalLayer(LAYER_ORDER);
 
-const colorAccent = vars.color.foreground.primary;
+const colorAccent = vars.color.brand.solid;
 const colorContrast = vars.color.background.default;
 const colorMid = vars.colours.background.neutral;
 const colorLight = vars.colours.background.light;
@@ -89,6 +89,8 @@ export const handle = styleVariants({
 			[cssLayerComponent]: {
 				selectors: {
 					[`${toggleOn} &`]: {
+						// on the brand track, so on-brand rather than page
+						backgroundColor: vars.color.brand.onSolid,
 						transform: handleTranslate,
 					},
 					[`${toggle}:not([data-disabled]):hover &`]: {

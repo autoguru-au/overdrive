@@ -229,6 +229,10 @@ export const button = recipe({
 		isLoading: {
 			true: {},
 		},
+		/** Empty here; the appearance lives in the `intent: 'primary'` compound. */
+		outlined: {
+			true: {},
+		},
 	},
 	compoundVariants: [
 		// Size and shape compound variants
@@ -406,6 +410,38 @@ export const button = recipe({
 				},
 			},
 		},
+		// Compound class names are index-based — append, never insert.
+		{
+			variants: { intent: 'primary', outlined: true },
+			style: {
+				'@layer': {
+					[cssLayerComponent]: {
+						// intent primary sets this too, at equal specificity.
+						backgroundColor: 'transparent',
+						border: `1px solid ${vars.color.button.primary.outlined.border}`,
+						color: vars.color.button.primary.outlined.text,
+						selectors: {
+							'&:focus-visible, &:not(:disabled):hover': {
+								backgroundColor:
+									vars.color.button.primary.outlined.hover,
+								borderColor:
+									vars.color.button.primary.outlined.border,
+								color: vars.color.button.primary.outlined.text,
+							},
+							'&:active:not(:disabled, [data-loading])': {
+								backgroundColor:
+									vars.color.button.primary.outlined.pressed,
+								// Restated: intent primary's nested `:active`
+								// (0,3,0) beats this variant's `:focus-visible`.
+								borderColor:
+									vars.color.button.primary.outlined.border,
+								color: vars.color.button.primary.outlined.text,
+							},
+						},
+					},
+				},
+			},
+		},
 	],
 	defaultVariants: {
 		size: 'medium',
@@ -423,6 +459,7 @@ export type ButtonIntent = ButtonRecipeProps['intent'];
 export type ButtonIsFullWidth = ButtonRecipeProps['isFullWidth'];
 export type ButtonIsLoading = ButtonRecipeProps['isLoading'];
 export type ButtonMinimal = ButtonRecipeProps['minimal'];
+export type ButtonOutlined = ButtonRecipeProps['outlined'];
 export type ButtonRounded = ButtonRecipeProps['rounded'];
 
 export interface StyledButtonProps {
@@ -442,6 +479,13 @@ export interface StyledButtonProps {
 	 * Present a borderless minimal appearance
 	 */
 	minimal?: ButtonMinimal;
+	/**
+	 * Transparent fill with a brand-coloured border and label.
+	 *
+	 * Currently applies to `variant="primary"` only, and ignored when `minimal`
+	 * is set — the two are opposites.
+	 */
+	outlined?: ButtonOutlined;
 	isFullWidth?: ButtonIsFullWidth;
-	isLoading?: ButtonIsFullWidth;
+	isLoading?: ButtonIsLoading;
 }

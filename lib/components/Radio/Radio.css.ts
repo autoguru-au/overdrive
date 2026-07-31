@@ -6,7 +6,7 @@ import {
 	nativeInput,
 } from '../private/CheckableBase/CheckableBase.css';
 
-const colorAccent = vars.color.foreground.primary;
+const colorAccent = vars.color.brand.solid;
 const colorContrast = vars.color.background.default;
 const colorMid = vars.colours.background.neutral;
 const outerSize = vars.space['6'];
@@ -56,7 +56,8 @@ export const inner = style([
 ]);
 
 export const innerSelected = style({
-	backgroundColor: colorContrast,
+	// on the brand fill, unlike the unselected hover dot above
+	backgroundColor: vars.color.brand.onSolid,
 	selectors: {
 		[`${nativeInput}:hover ~${checkable} &`]: {
 			transform: 'scale(0.85)',
