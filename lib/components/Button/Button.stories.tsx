@@ -18,6 +18,7 @@ const meta: Meta<typeof Button> = {
 		variant: 'secondary',
 		size: 'medium',
 		minimal: false,
+		outlined: false,
 		rounded: false,
 		isFullWidth: false,
 		isLoading: false,
@@ -63,6 +64,7 @@ export const ExtraSmall: Story = {
 const TemplateMulti = ({
 	children,
 	onClick,
+	outlined,
 	variant,
 }: ComponentProps<typeof Button>) => (
 	<>
@@ -70,6 +72,7 @@ const TemplateMulti = ({
 			const args = {
 				children,
 				onClick,
+				outlined,
 				size: size as ButtonProps['size'],
 				variant,
 			};
@@ -197,6 +200,22 @@ export const SuccessSet: Story = {
 	decorators: PrimarySet.decorators,
 	args: {
 		variant: 'success',
+	},
+	render: TemplateMulti,
+};
+
+/**
+ * The outlined primary button — transparent fill, brand border, brand label.
+ *
+ * Its colours come from the `color.button.primary.outlined.*` tokens, which a
+ * tenant re-brands at runtime through `OverdriveProvider`'s `colorOverrides`.
+ * The `minimal` rows below show `minimal` correctly winning over `outlined`.
+ */
+export const PrimaryOutlinedSet: Story = {
+	decorators: PrimarySet.decorators,
+	args: {
+		variant: 'primary',
+		outlined: true,
 	},
 	render: TemplateMulti,
 };

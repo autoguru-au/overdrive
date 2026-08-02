@@ -135,6 +135,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			isFullWidth = false,
 			localeText,
 			minimal = false,
+			outlined = false,
 			rounded = false,
 			size = 'medium',
 			testId,
@@ -160,7 +161,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			useState<boolean>(false);
 
 		const language = { ...LOCALE_TEXT_DEFAULT, ...localeText };
-		const isInverse = minimal || variant === 'secondary';
+		// `minimal` wins; primary-only because only it has outlined tokens.
+		const isOutlined = outlined && !minimal && variant === 'primary';
+		const isInverse = minimal || isOutlined || variant === 'secondary';
 		const isSingleIconChild = useMemo(
 			() =>
 				isValidElement(children) &&
@@ -195,6 +198,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 					isFullWidth,
 					isLoading,
 					minimal,
+					outlined: isOutlined,
 					rounded,
 					shape,
 					size,

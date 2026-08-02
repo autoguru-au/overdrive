@@ -105,6 +105,22 @@ const THEME_CONTRACT = {
 	// new colour token structure 2025
 	color: {
 		gamut: coloursWithWhite,
+		/**
+		 * The tenant brand accent — the "on" colour of a selection control and
+		 * the seed a tenant re-brands from.
+		 *
+		 * Deliberately its own pair rather than a reuse of
+		 * `color.foreground.primary`: that leaf is body-text ink shared with
+		 * nine unrelated components, so a tenant branding its checked controls
+		 * would drag every piece of primary text along with them.
+		 *
+		 * `onSolid` is the contrast-safe content placed on top of `solid` — the
+		 * Switch handle, the Radio dot, the CheckBox tick.
+		 */
+		brand: {
+			solid: 'color-brand-solid',
+			onSolid: 'color-brand-on-solid',
+		},
 		surface: {
 			page: null,
 			hard: null,

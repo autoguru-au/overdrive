@@ -10,7 +10,12 @@ import { Icon } from '../Icon';
 import { Button } from './Button';
 import * as stories from './Button.stories';
 
-const { Standard, ExtraSmall, PrimarySet } = composeStories(stories);
+const { Standard, ExtraSmall, PrimarySet, PrimaryOutlinedSet } =
+	composeStories(stories);
+
+/** The recipe emits `…outlined_true…` in the class name for the variant. */
+const isOutlined = (button: HTMLElement) =>
+	button.className.includes('outlined_true');
 
 describe('<Button />', () => {
 	afterEach(() => {
@@ -40,6 +45,69 @@ describe('<Button />', () => {
 		expect(buttons.length).toBeGreaterThan(0);
 		// Test that the story renders multiple buttons as expected
 		expect(buttons).toMatchSnapshot('primary-button-set');
+	});
+
+	it('renders the outlined primary set of buttons story', async () => {
+		render(<PrimaryOutlinedSet />);
+		const buttons = screen.getAllByRole('button');
+		expect(buttons.length).toBeGreaterThan(0);
+		expect(buttons).toMatchSnapshot('primary-outlined-button-set');
+	});
+
+	describe('outlined variant', () => {
+		it('applies the outlined styles when asked', () => {
+			render(
+				<Button variant="primary" outlined>
+					Click me
+				</Button>,
+			);
+			expect(isOutlined(screen.getByRole('button'))).toBe(true);
+		});
+
+		it('leaves a plain primary button untouched', () => {
+			render(<Button variant="primary">Click me</Button>);
+			expect(isOutlined(screen.getByRole('button'))).toBe(false);
+		});
+
+		it('lets minimal win when both are set, since they are opposites', () => {
+			render(
+				<Button variant="primary" outlined minimal>
+					Click me
+				</Button>,
+			);
+			const button = screen.getByRole('button');
+			expect(isOutlined(button)).toBe(false);
+			expect(button.className).toContain('minimal_true');
+		});
+
+		it('is a complete no-op on intents that have no outlined tokens', () => {
+			// the fill is gated on primary in CSS, so the spinner must be gated
+			// too — otherwise a loading danger button gets a dark spinner on a
+			// solid red fill
+			const plain = render(
+				<Button variant="danger" isLoading>
+					Click me
+				</Button>,
+			).container.innerHTML;
+			cleanup();
+			const withOutlined = render(
+				<Button variant="danger" outlined isLoading>
+					Click me
+				</Button>,
+			).container.innerHTML;
+
+			expect(withOutlined).toBe(plain);
+		});
+
+		it('gives a loading outlined button the dark spinner, not the light one', () => {
+			const { container } = render(
+				<Button variant="primary" outlined isLoading>
+					Click me
+				</Button>,
+			);
+			// a transparent fill needs the inverse (dark) spinner treatment
+			expect(container.innerHTML).not.toContain('light');
+		});
 	});
 
 	// Test core component behavior

@@ -65,7 +65,13 @@ const preview: Preview = {
 				order: [
 					'Overdrive',
 					'Foundation',
-					['Palette', 'Theme Colours', 'Borders', 'Space'],
+					[
+						'Palette',
+						'Theme Colours',
+						'Branding',
+						'Borders',
+						'Space',
+					],
 					'Primitives',
 					'Layout',
 					'Content',
