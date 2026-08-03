@@ -14,6 +14,20 @@ const TRANSITION_DURATION = '150ms';
 const FOCUS_RING_WIDTH = vars.border.width['2'];
 
 /**
+ * The focus indicator colour, deliberately not `color.focus.ring`.
+ *
+ * The shared ring is theme-keyed and resolves green in `base` and `flat_red`,
+ * where the DS-2026 designs call for `info.foreground` blue. Retheming the
+ * shared token moves the ring on every component at once, so it is held for the
+ * major (`docs/ds2026-plan/track-c.md` §1.9, C-P9). This component opts in
+ * early: it is the first step of that migration, not a one-off.
+ *
+ * Both the ring and the border swap use it, so the two never disagree — a blue
+ * border inside a green ring is worse than either colour on its own.
+ */
+const FOCUS_COLOUR = vars.color.info.foreground;
+
+/**
  * Hover for the chip surface, keyed on a real button being hovered rather than
  * on the pointer being anywhere over the pill.
  *
@@ -65,7 +79,12 @@ export const chip = recipe({
 					// button, the last two a focused child.
 					[`&:focus-visible, &[data-focus-visible], &:has(:focus-visible), &:has([data-focus-visible])`]:
 						{
-							outline: `solid ${FOCUS_RING_WIDTH} ${vars.color.focus.ring}`,
+							// The border swaps too, not just the ring. Set here
+							// rather than per variant so every shape picks it
+							// up; the pseudo-class outranks the variants' plain
+							// `borderColor`.
+							borderColor: FOCUS_COLOUR,
+							outline: `solid ${FOCUS_RING_WIDTH} ${FOCUS_COLOUR}`,
 							outlineOffset: FOCUS_RING_WIDTH,
 						},
 				},
@@ -150,8 +169,12 @@ export const chip = recipe({
 							// Keyboard focus only — `:focus-within` also fired
 							// on click and left the border stuck in the focused
 							// colour after the pointer moved away.
+							//
+							// Same source order as the base focus rule, so the
+							// border colour has to be repeated here or this
+							// would win and leave the add chip grey.
 							[selectors.focusVisible]: {
-								borderColor: vars.color.border.selected,
+								borderColor: FOCUS_COLOUR,
 								color: vars.color.foreground.primary,
 							},
 						},

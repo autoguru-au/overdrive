@@ -72,9 +72,13 @@ a story cannot fake that — synthetic key events do not put the browser into
 keyboard mode, so \`:focus-visible\` never matches and nothing draws.
 
 The ring appears for keyboard focus only, never on a mouse click, which is why
-the styles key off \`:focus-visible\` rather than \`:focus-within\`. Its colour comes
-from \`color.focus.ring\`, a theme token shared with every other component, so it
-follows the theme rather than being set per component.
+the styles key off \`:focus-visible\` rather than \`:focus-within\`. The border
+swaps to the same colour at the same time, so the two never disagree.
+
+Focus draws in \`color.info.foreground\` rather than the shared \`color.focus.ring\`,
+which still resolves green in some themes. This component is the first to move to
+the DS-2026 focus colour; the shared token follows later, since changing it shifts
+the ring on every component at once.
 
 There is no disabled state. Filters are added, edited or removed. If a filter
 does not apply right now, leave it out of the bar.
