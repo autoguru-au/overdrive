@@ -66,9 +66,15 @@ A chip with only a \`×\` therefore lights up over the \`×\` and not over its l
 so it never suggests a click the body cannot handle.
 
 Focus rings the whole pill rather than the button inside it, so a removable chip
-does not draw an outline through its own fill. It appears for keyboard focus
-only, never on a mouse click. The ring colour comes from \`color.focus.ring\` and
-so follows the theme. See the Focus story below.
+does not draw an outline through its own fill. Tab to a chip in any story to see
+it. There is no separate Focus story: the ring needs genuine keyboard focus, and
+a story cannot fake that — synthetic key events do not put the browser into
+keyboard mode, so \`:focus-visible\` never matches and nothing draws.
+
+The ring appears for keyboard focus only, never on a mouse click, which is why
+the styles key off \`:focus-visible\` rather than \`:focus-within\`. Its colour comes
+from \`color.focus.ring\`, a theme token shared with every other component, so it
+follows the theme rather than being set per component.
 
 There is no disabled state. Filters are added, edited or removed. If a filter
 does not apply right now, leave it out of the bar.
@@ -293,53 +299,6 @@ export const Interactivity: Story = {
 			await expect(
 				canvas.queryAllByRole('button', { name: /Fuel/ }),
 			).toHaveLength(0);
-		});
-	},
-};
-
-/**
- * Holds the chip focused so the ring stays on screen.
- *
- * A keyboard tab cannot be faked reliably: synthetic key events do not put the
- * browser into keyboard mode, so `:focus-visible` never matches and no ring is
- * drawn. The styles accept `data-focus-visible` for exactly this case, which is
- * what this stamps on. `InteractionTest` covers real keyboard focus.
- */
-const HoldFocusRing = ({ children }: { children: React.ReactNode }) => {
-	const ref = React.useRef<HTMLDivElement>(null);
-
-	React.useEffect(() => {
-		ref.current
-			?.querySelector('button')
-			?.setAttribute('data-focus-visible', '');
-	}, []);
-
-	return <div ref={ref}>{children}</div>;
-};
-
-/**
- * Keyboard focus, held open so you can see it without tabbing.
- *
- * The ring goes around the whole pill rather than the button inside it, so a
- * removable chip does not draw an outline through its own fill. It appears for
- * keyboard focus only and never on a mouse click, which is why the styles key
- * off `:focus-visible` rather than `:focus-within`.
- *
- * The colour comes from `color.focus.ring`, so it follows the theme. Change the
- * theme in the toolbar and the ring changes with it.
- */
-export const Focus: Story = {
-	decorators: [(story) => <HoldFocusRing>{story()}</HoldFocusRing>],
-	play: async ({ canvas, step }) => {
-		await step('draws a ring around the whole chip', async () => {
-			const chip = canvas
-				.getAllByRole('button', { name: /Vehicle type/ })[0]
-				.closest('[data-od-component="filter-chip"]');
-
-			const { outlineStyle, outlineWidth } = getComputedStyle(chip!);
-
-			await expect(outlineStyle).not.toBe('none');
-			await expect(Number.parseFloat(outlineWidth)).toBeGreaterThan(0);
 		});
 	},
 };
