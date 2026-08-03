@@ -35,6 +35,20 @@ const row = (story: () => React.ReactNode) => (
 	</FlexInline>
 );
 
+/**
+ * `FilterChipProps` is a discriminated union, so a story that renders several
+ * shapes at once cannot spread `args` — the spread is the whole union and does
+ * not narrow to the `type` beside it. These stories take just the handlers from
+ * `args`, which is all the interaction assertions need, and state the rest.
+ */
+const handlers = ({
+	onClick,
+	onRemove,
+}: {
+	onClick?: React.MouseEventHandler<HTMLButtonElement>;
+	onRemove?: React.MouseEventHandler<HTMLButtonElement>;
+}) => ({ onClick, onRemove });
+
 export const Standard: Story = {};
 
 /** All four chip shapes side by side. */
@@ -42,21 +56,25 @@ export const Types: Story = {
 	decorators: [row],
 	render: (args) => (
 		<>
-			<FilterChip {...args} type="select" />
 			<FilterChip
-				{...args}
+				{...handlers(args)}
+				type="select"
+				label="Vehicle type:"
+				value="Truck"
+			/>
+			<FilterChip
+				{...handlers(args)}
 				type="numeric"
 				label="Usage (km):"
 				operator="over"
 				value="100,000 km"
 			/>
+			<FilterChip {...handlers(args)} type="simple" label="Truck" />
 			<FilterChip
-				{...args}
-				type="simple"
-				label="Truck"
-				value={undefined}
+				onClick={args.onClick ?? (() => {})}
+				type="add"
+				label="Add Filter"
 			/>
-			<FilterChip {...args} type="add" label="Add Filter" />
 		</>
 	),
 };
@@ -66,9 +84,15 @@ export const Selected: Story = {
 	decorators: [row],
 	render: (args) => (
 		<>
-			<FilterChip {...args} type="select" selected />
 			<FilterChip
-				{...args}
+				{...handlers(args)}
+				type="select"
+				label="Vehicle type:"
+				value="Truck"
+				selected
+			/>
+			<FilterChip
+				{...handlers(args)}
 				type="numeric"
 				label="Usage (km):"
 				operator="over"
@@ -76,10 +100,9 @@ export const Selected: Story = {
 				selected
 			/>
 			<FilterChip
-				{...args}
+				{...handlers(args)}
 				type="simple"
 				label="Truck"
-				value={undefined}
 				selected
 			/>
 		</>
@@ -148,22 +171,32 @@ export const FilterBar: Story = {
 	decorators: [row],
 	render: (args) => (
 		<>
-			<FilterChip {...args} type="select" selected />
 			<FilterChip
-				{...args}
+				{...handlers(args)}
+				type="select"
+				label="Vehicle type:"
+				value="Truck"
+				selected
+			/>
+			<FilterChip
+				{...handlers(args)}
 				type="numeric"
 				label="Usage (km):"
 				operator="over"
 				value="100,000 km"
 			/>
+			<FilterChip {...handlers(args)} type="simple" label="Serviced" />
 			<FilterChip
-				{...args}
-				type="simple"
-				label="Serviced"
-				value={undefined}
+				{...handlers(args)}
+				type="select"
+				label="State:"
+				value="QLD"
 			/>
-			<FilterChip {...args} label="State:" value="QLD" />
-			<FilterChip {...args} type="add" label="Add Filter" />
+			<FilterChip
+				onClick={args.onClick ?? (() => {})}
+				type="add"
+				label="Add Filter"
+			/>
 		</>
 	),
 };

@@ -47,6 +47,9 @@ describe('<FilterChip />', () => {
 
 	it('should not render a remove button for the add chip', () => {
 		const { container } = render(
+			// @ts-expect-error — an `add` chip has no filter to remove, so the
+			// union rejects `onRemove`. Asserted here so the runtime stays
+			// defensive for JavaScript consumers.
 			<FilterChip
 				label="Add Filter"
 				type="add"
@@ -56,6 +59,22 @@ describe('<FilterChip />', () => {
 		);
 
 		expect(container.querySelectorAll('button')).toHaveLength(1);
+	});
+
+	it('should still warn when an add chip has no onClick', () => {
+		const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+
+		// @ts-expect-error — the union makes `onClick` required on an `add`
+		// chip, so this is unreachable from TypeScript. The runtime guard is
+		// what a JavaScript consumer gets instead.
+		render(<FilterChip label="Add Filter" type="add" />);
+
+		expect(warn).toHaveBeenCalledWith(
+			expect.stringContaining('an "add" chip needs an onClick'),
+			expect.any(String),
+		);
+
+		warn.mockRestore();
 	});
 
 	describe('content', () => {
@@ -72,6 +91,7 @@ describe('<FilterChip />', () => {
 			expect(screen.getByText('over')).toBeInTheDocument();
 
 			rerender(
+				// @ts-expect-error — only `numeric` takes an operator.
 				<FilterChip
 					label="Usage (km):"
 					operator="over"
@@ -84,14 +104,21 @@ describe('<FilterChip />', () => {
 		});
 
 		it('should not render a value for simple or add chips', () => {
-			render(<FilterChip label="Truck" type="simple" value="ignored" />);
+			render(
+				// @ts-expect-error — a `simple` chip is a bare label.
+				<FilterChip label="Truck" type="simple" value="ignored" />,
+			);
 
 			expect(screen.queryByText('ignored')).not.toBeInTheDocument();
 		});
 
 		it('should render an icon for the add chip only', () => {
 			const { container, rerender } = render(
-				<FilterChip label="Add Filter" type="add" />,
+				<FilterChip
+					label="Add Filter"
+					type="add"
+					onClick={() => {}}
+				/>,
 			);
 
 			expect(container.querySelector('svg')).not.toBeNull();

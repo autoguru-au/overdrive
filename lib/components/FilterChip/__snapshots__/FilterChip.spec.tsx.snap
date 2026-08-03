@@ -6,11 +6,11 @@ exports[`<FilterChip /> > should match the snapshot 1`] = `
   data-od-component="provider"
 >
   <div
-    class="FilterChip_chip__1gngjae0 FilterChip_chip_variant_filter__1gngjae1 FilterChip_chip_selected_false__1gngjae4 FilterChip_chip_interactive_true__1gngjae5 FilterChip_chip_compound_0__1gngjae7"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 FilterChip_chip__1gngjae0 FilterChip_chip_variant_filter__1gngjae1 FilterChip_chip_selected_false__1gngjae4 FilterChip_chip_interactive_true__1gngjae5 FilterChip_chip_compound_0__1gngjae7"
     data-od-component="filter-chip"
   >
     <button
-      class="FilterChip_resetButton__1gngjaed FilterChip_chipBody__1gngjaea FilterChip_chipBody_withRemove_true__1gngjaeb FilterChip_innerButton__1gngjaee"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 FilterChip_chipBody__1gngjaea FilterChip_chipBody_withRemove_true__1gngjaeb FilterChip_innerButtonText__1gngjaee FilterChip_buttonFont__1gngjaed"
       type="button"
     >
       <span
@@ -26,7 +26,7 @@ exports[`<FilterChip /> > should match the snapshot 1`] = `
     </button>
     <button
       aria-label="Remove Vehicle type Truck filter"
-      class="FilterChip_resetButton__1gngjaed FilterChip_innerButton__1gngjaee FilterChip_removeButton__1gngjaef"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 FilterChip_buttonFont__1gngjaed FilterChip_innerButtonText__1gngjaee FilterChip_removeButton__1gngjaef"
       type="button"
     >
       <span

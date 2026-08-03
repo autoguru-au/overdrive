@@ -9,7 +9,7 @@ import React, {
 
 import { useNullCheck } from '../../hooks/useNullCheck';
 import type { TestIdProp } from '../../types';
-import { dataAttrs } from '../../utils/dataAttrs';
+import { useBox } from '../Box/useBox/useBox';
 import { Icon } from '../Icon/Icon';
 
 import * as styles from './FilterChip.css';
@@ -43,19 +43,22 @@ type FilterChipBodyAttributes = Pick<
 	| 'onMouseLeave'
 >;
 
-export interface FilterChipProps extends FilterChipBodyAttributes, TestIdProp {
-	/** The chip shape. @default 'select' */
-	type?: FilterChipType;
+interface FilterChipBaseProps extends FilterChipBodyAttributes, TestIdProp {
 	/** The category name, or the chip's only text for `simple` and `add`. */
 	label: string;
-	/** The chosen value. Rendered by `select` and `numeric` only. */
-	value?: string;
-	/** The comparison word, e.g. `over`. Rendered by `numeric` only. */
-	operator?: string;
+	/** Override class name with additional styles */
+	className?: string;
+}
+
+/**
+ * The props every chip except `add` shares. `add` opens a filter picker and has
+ * no filter of its own, so it carries none of them.
+ */
+interface FilterChipStateProps {
 	/**
 	 * Reflects the persistent chosen state as an inverted surface. Purely
 	 * visual — the chip's own text is what tells a screen reader which filter is
-	 * applied. Use `pressed` if the chip is a toggle. Not applicable to `add`.
+	 * applied. Use `pressed` if the chip is a toggle.
 	 * @default false
 	 */
 	selected?: boolean;
@@ -77,7 +80,6 @@ export interface FilterChipProps extends FilterChipBodyAttributes, TestIdProp {
 	onClick?: MouseEventHandler<HTMLButtonElement>;
 	/**
 	 * Removes the filter. Supplying this renders the trailing `×` button.
-	 * Ignored by `add`, which has nothing to remove.
 	 */
 	onRemove?: MouseEventHandler<HTMLButtonElement>;
 	/**
@@ -86,9 +88,61 @@ export interface FilterChipProps extends FilterChipBodyAttributes, TestIdProp {
 	 * category are distinguishable. Any trailing colon is stripped.
 	 */
 	removeLabel?: string;
-	/** Override class name with additional styles */
-	className?: string;
 }
+
+/** A category and its chosen value, e.g. `Vehicle type: Truck`. */
+interface SelectChipProps extends FilterChipBaseProps, FilterChipStateProps {
+	type?: 'select';
+	/** The chosen value. */
+	value?: string;
+	operator?: never;
+}
+
+/** A category, a comparison operator and a value, e.g. `Usage (km): over 100,000 km`. */
+interface NumericChipProps extends FilterChipBaseProps, FilterChipStateProps {
+	type: 'numeric';
+	/** The chosen value. */
+	value?: string;
+	/** The comparison word, e.g. `over`. */
+	operator?: string;
+}
+
+/** A bare label with no value, e.g. `Serviced`. */
+interface SimpleChipProps extends FilterChipBaseProps, FilterChipStateProps {
+	type: 'simple';
+	value?: never;
+	operator?: never;
+}
+
+/**
+ * The dashed "Add Filter" affordance that opens a filter picker.
+ *
+ * `onClick` is required: without one the chip renders as static text that still
+ * looks like a button. It holds no filter, so it takes no value, no selected or
+ * pressed state, and nothing to remove.
+ */
+interface AddChipProps extends FilterChipBaseProps {
+	type: 'add';
+	onClick: MouseEventHandler<HTMLButtonElement>;
+	value?: never;
+	operator?: never;
+	selected?: never;
+	pressed?: never;
+	expanded?: never;
+	onRemove?: never;
+	removeLabel?: never;
+}
+
+/**
+ * A discriminated union on `type`, so combinations the component ignores at
+ * runtime — a `simple` chip with a `value`, an `add` chip with an `onRemove` —
+ * do not compile.
+ */
+export type FilterChipProps =
+	| SelectChipProps
+	| NumericChipProps
+	| SimpleChipProps
+	| AddChipProps;
 
 /**
  * A filter chip represents one active filter in a filter bar. The body opens an
@@ -97,8 +151,9 @@ export interface FilterChipProps extends FilterChipBodyAttributes, TestIdProp {
  * Distinct from `Badge`, which is a static, non-interactive label.
  *
  * The forwarded `ref` lands on the chip body, which is what a `Popover` anchors
- * to. A chip with neither `onClick` nor `onRemove` renders no button and
- * receives no ref.
+ * to. It is attached only when the body is a button — that is, when `onClick` is
+ * supplied. A chip without one has an inert `<span>` body and receives no ref,
+ * whether or not it has a `×`.
  *
  * Removal is by the `×` button only — the WAI-ARIA APG chip pattern also removes
  * a focused chip on `Backspace`/`Delete`, which this component does not
@@ -155,19 +210,65 @@ export const FilterChip = forwardRef<HTMLButtonElement, FilterChipProps>(
 			'aria-pressed': isAdd ? undefined : pressed,
 		};
 
-		const rootClassName = clsx(
-			styles.chip({
-				variant: isAdd ? 'add' : 'filter',
-				selected: isSelected,
-				interactive: isInteractive,
-			}),
-			className,
-		);
+		// The body is a button only when there is something to activate; without
+		// an `onClick` it is inert text, and the `×` carries the interaction.
+		const isBodyButton = typeof onClick === 'function';
+		const bodyInteractionProps = isBodyButton
+			? { ...stateProps, onClick, ref, type: 'button' }
+			: {};
 
-		const rootAttrs = {
-			...dataAttrs({ odComponent: 'filter-chip' }),
-			'data-testid': testId,
-		};
+		// Every slot goes through `useBox` so that `elementReset` supplies the
+		// UA reset for whichever tag it renders as. Composing the reset by hand
+		// does not work — see `buttonFont` in the stylesheet.
+		//
+		// A removable chip is a plain container holding sibling buttons, since
+		// two independent actions cannot nest inside one button. Every other
+		// chip has no second action, so its root *is* its body.
+		const bodyAs = isBodyButton ? 'button' : 'span';
+		const rootAs = showRemove ? 'div' : bodyAs;
+
+		const { Component: Root, componentProps: rootProps } = useBox({
+			as: rootAs,
+			className: [
+				styles.chip({
+					variant: isAdd ? 'add' : 'filter',
+					selected: isSelected,
+					interactive: isInteractive,
+				}),
+				!showRemove && styles.chipBody(),
+				!showRemove && isBodyButton && styles.buttonFont,
+				className,
+			],
+			odComponent: 'filter-chip',
+			testId,
+			...(showRemove ? {} : { ...bodyAttrs, ...bodyInteractionProps }),
+		});
+
+		// Built unconditionally to keep the call order stable, and rendered only
+		// by the removable branch below. On every other chip the root above has
+		// already absorbed the body's classes and attributes.
+		const { Component: Body, componentProps: bodyProps } = useBox({
+			as: bodyAs,
+			className: [
+				styles.chipBody({ withRemove: true }),
+				styles.innerButtonText,
+				isBodyButton && styles.buttonFont,
+			],
+			...bodyAttrs,
+			...bodyInteractionProps,
+		});
+
+		const { Component: Remove, componentProps: removeProps } = useBox({
+			as: 'button',
+			className: [
+				styles.buttonFont,
+				styles.innerButtonText,
+				styles.removeButton,
+			],
+			'aria-label': removeLabel ?? `Remove ${removeName} filter`,
+			onClick: onRemove,
+			type: 'button',
+		});
 
 		const content = (
 			<>
@@ -190,79 +291,18 @@ export const FilterChip = forwardRef<HTMLButtonElement, FilterChipProps>(
 			</>
 		);
 
-		// Two independent actions cannot nest inside one button, so a removable
-		// chip is a plain container holding sibling buttons.
 		if (showRemove) {
-			const bodyClassName = clsx(
-				styles.chipBody({ withRemove: true }),
-				styles.innerButton,
-			);
-
 			return (
-				<div className={rootClassName} {...rootAttrs}>
-					{onClick ? (
-						<button
-							className={clsx(styles.resetButton, bodyClassName)}
-							onClick={onClick}
-							ref={ref}
-							type="button"
-							{...bodyAttrs}
-							{...stateProps}
-						>
-							{content}
-						</button>
-					) : (
-						<span className={bodyClassName} {...bodyAttrs}>
-							{content}
-						</span>
-					)}
-					<button
-						aria-label={
-							removeLabel ?? `Remove ${removeName} filter`
-						}
-						className={clsx(
-							styles.resetButton,
-							styles.innerButton,
-							styles.removeButton,
-						)}
-						onClick={onRemove}
-						type="button"
-					>
+				<Root {...rootProps}>
+					<Body {...bodyProps}>{content}</Body>
+					<Remove {...removeProps}>
 						<Icon icon={XIcon} size="small" />
-					</button>
-				</div>
+					</Remove>
+				</Root>
 			);
 		}
 
-		if (onClick) {
-			return (
-				<button
-					className={clsx(
-						rootClassName,
-						styles.resetButton,
-						styles.chipBody(),
-					)}
-					onClick={onClick}
-					ref={ref}
-					type="button"
-					{...rootAttrs}
-					{...bodyAttrs}
-					{...stateProps}
-				>
-					{content}
-				</button>
-			);
-		}
-
-		return (
-			<span
-				className={clsx(rootClassName, styles.chipBody())}
-				{...rootAttrs}
-				{...bodyAttrs}
-			>
-				{content}
-			</span>
-		);
+		return <Root {...rootProps}>{content}</Root>;
 	},
 );
 

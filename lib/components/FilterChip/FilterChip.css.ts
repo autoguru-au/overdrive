@@ -11,7 +11,7 @@ globalLayer(LAYER_ORDER);
 const TRANSITION_DURATION = '150ms';
 
 /** Matches the width and offset of the shared `focusOutlineStyle`. */
-const FOCUS_RING_WIDTH = '2px';
+const FOCUS_RING_WIDTH = vars.border.width['2'];
 
 /**
  * The chip surface only. Spacing lives on `chipBody` and `removeButton` so that
@@ -151,15 +151,24 @@ export const chip = recipe({
 			style: {
 				'@layer': {
 					[cssLayerComponent]: {
-						backgroundColor: vars.color.background.reverse,
-						borderColor: vars.color.border.strong,
-						color: vars.color.foreground.reverse,
+						// `color.brand.*` rather than `background.reverse` /
+						// `foreground.reverse`: a selected chip is the "on"
+						// state of a selection control, which is what this pair
+						// names, and it is the seed a tenant re-brands through
+						// `colorOverrides`. Byte-identical today — both resolve
+						// to gray-900 on white in all three themes — so this
+						// changes nothing visually, it just makes the chip
+						// re-brand alongside Switch, Radio and CheckBox instead
+						// of staying gray while they change.
+						backgroundColor: vars.color.brand.solid,
+						borderColor: vars.color.brand.solid,
+						color: vars.color.brand.onSolid,
 						selectors: {
 							// Selected is a persistent state — hover must not
 							// wash it back out to the resting surface.
 							[selectors.hover]: {
-								backgroundColor: vars.color.background.reverse,
-								borderColor: vars.color.border.strong,
+								backgroundColor: vars.color.brand.solid,
+								borderColor: vars.color.brand.solid,
 							},
 						},
 					},
@@ -220,46 +229,39 @@ export const chipBody = recipe({
 });
 
 /**
- * Shared button normalisation.
+ * The part of a `<button>` reset that `elementReset.button` does not cover.
  *
- * These duplicate `elementReset.button` (`elementReset.css.ts:59`) on purpose.
- * Composing it — `style([elementReset.button, ...])` — silently contributes no
- * class, because its rules sit inside `@layer reset` and vanilla-extract drops
- * layered classes from a composition. `ToggleButtons.css.ts:67` composes it too
- * and gets nothing; it only looks correct because it redeclares `appearance` and
- * `userSelect` itself and takes its background and border from sprinkles.
+ * `appearance`, `background`, `border-style`, `cursor`, `margin`, `padding`,
+ * `outline` and `user-select` all come from that reset, which the component
+ * pulls in by rendering through `useBox({ as: 'button' })`. Going through
+ * `useBox` is the only way those rules apply: composing the export directly
+ * (`style([elementReset.button, …])`) silently contributes no class, because
+ * the rules sit inside `@layer reset` and vanilla-extract drops layered classes
+ * from a composition.
  *
- * The reset is applied properly by rendering through `useBox`, which passes
- * `as="button"` to the `resetVariants` recipe. Until this component is rebuilt on
- * that primitive, these declarations are what actually clear the UA button style.
+ * The UA font shorthand is not in the reset and a button does not inherit it,
+ * so without this the chip's type is replaced by 13.33px system Arial. Kept off
+ * `font-size` and `line-height` deliberately — the `chip` recipe sets those
+ * from tokens, and on a chip whose root *is* the button this style is applied
+ * to the same element, where an `inherit` would beat the token on source order.
  */
-export const resetButton = style({
+export const buttonFont = style({
 	'@layer': {
 		[cssLayerComponent]: {
-			appearance: 'none',
-			cursor: 'pointer',
 			fontFamily: 'inherit',
 			fontWeight: 'inherit',
-			margin: 0,
-			// The focus ring lives on the chip root, so the buttons must not
-			// draw one of their own — see the `chip` recipe.
-			outline: 'none',
 		},
 	},
 });
 
 /**
- * Applied to buttons nested *inside* the chip surface, which inherit their
- * appearance from it. Layout and spacing come from `chipBody` / `removeButton`.
- * `appearance: none` does not remove the UA `background-color` and `border`, so
- * they are cleared explicitly — without this the `×` renders as a bordered
- * circle and the selected chip's white text lands on `ButtonFace`.
+ * Applied to the buttons nested *inside* the chip surface, which take their
+ * colour and type scale from the chip root rather than from tokens of their
+ * own. Layout and spacing come from `chipBody` / `removeButton`.
  */
-export const innerButton = style({
+export const innerButtonText = style({
 	'@layer': {
 		[cssLayerComponent]: {
-			backgroundColor: 'transparent',
-			borderStyle: 'none',
 			color: 'inherit',
 			fontSize: 'inherit',
 			lineHeight: 'inherit',
@@ -336,7 +338,8 @@ export const categoryLabel = recipe({
 			true: {
 				'@layer': {
 					[cssLayerComponent]: {
-						color: vars.color.foreground.reverse,
+						// Tracks the selected surface — see the `chip` recipe.
+						color: vars.color.brand.onSolid,
 					},
 				},
 			},
