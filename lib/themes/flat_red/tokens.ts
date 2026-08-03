@@ -66,6 +66,16 @@ const colours = {
 const flatElevation = '0 0 0 0 rgba(0, 0, 0, 0.0)';
 
 export const tokens = deepmerge(baseTokens, {
+	// The only DS-2026 `color` token this theme overrides — see the same note in
+	// `neutral`. This theme redefines its own green ramp, so `green.600` here is
+	// `#00c400` rather than base's `#01c68c`; without this, a
+	// `color.focus.ring` consumer would ring base green beside every other
+	// component's flat-red green.
+	color: {
+		focus: {
+			ring: colours.green['600'],
+		},
+	},
 	colours: {
 		gamut: {
 			...buildColourGamut(colours),

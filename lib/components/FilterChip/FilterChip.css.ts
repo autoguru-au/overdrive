@@ -7,11 +7,25 @@ import { overdriveTokens as vars } from '../../themes/theme.css';
 
 globalLayer(LAYER_ORDER);
 
-/** Figma behaviour section: "Chip add/remove: 150ms ease". */
+/** Duration for the chip's colour transitions. */
 const TRANSITION_DURATION = '150ms';
 
 /** Matches the width and offset of the shared `focusOutlineStyle`. */
 const FOCUS_RING_WIDTH = vars.border.width['2'];
+
+/**
+ * Hover for the chip surface, keyed on a real button being hovered rather than
+ * on the pointer being anywhere over the pill.
+ *
+ * A plain `&:hover` is wrong here. A chip given only an `onRemove` has an inert
+ * `<span>` body, so `&:hover` lit the whole pill up — and promised a click that
+ * only the `×` delivers. The two halves cover the two shapes the chip renders
+ * as: the chip that *is* the button, and the container whose children are.
+ *
+ * Nothing here can be disabled, so this deliberately drops the `:not(:disabled)`
+ * guard that `selectors.hover` carries.
+ */
+const chipHover = '&:is(button):hover, &:has(button:hover)';
 
 /**
  * The chip surface only. Spacing lives on `chipBody` and `removeButton` so that
@@ -113,7 +127,7 @@ export const chip = recipe({
 				'@layer': {
 					[cssLayerComponent]: {
 						selectors: {
-							[selectors.hover]: {
+							[chipHover]: {
 								backgroundColor:
 									vars.color.background.emphasisLight,
 								borderColor: vars.color.border.emphasis,
@@ -129,7 +143,7 @@ export const chip = recipe({
 				'@layer': {
 					[cssLayerComponent]: {
 						selectors: {
-							[selectors.hover]: {
+							[chipHover]: {
 								borderColor: vars.color.border.selected,
 								color: vars.color.foreground.primary,
 							},
@@ -166,7 +180,7 @@ export const chip = recipe({
 						selectors: {
 							// Selected is a persistent state — hover must not
 							// wash it back out to the resting surface.
-							[selectors.hover]: {
+							[chipHover]: {
 								backgroundColor: vars.color.brand.solid,
 								borderColor: vars.color.brand.solid,
 							},

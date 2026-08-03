@@ -15,16 +15,6 @@ import { Icon } from '../Icon/Icon';
 import * as styles from './FilterChip.css';
 
 /**
- * The four filter chip shapes.
- *
- * - `select` — a category and its chosen value, e.g. `Vehicle type: Truck`
- * - `numeric` — a category, a comparison operator and a value, e.g. `Usage (km): over 100,000 km`
- * - `simple` — a bare label with no value
- * - `add` — the dashed "Add Filter" affordance that opens a filter picker
- */
-export type FilterChipType = 'select' | 'numeric' | 'simple' | 'add';
-
-/**
  * Attributes forwarded to the chip body. Typed against `HTMLElement` because the
  * body is a `<button>` when interactive and a `<span>` when it is not.
  */
@@ -145,6 +135,19 @@ export type FilterChipProps =
 	| AddChipProps;
 
 /**
+ * The four filter chip shapes.
+ *
+ * - `select` — a category and its chosen value, e.g. `Vehicle type: Truck`
+ * - `numeric` — a category, a comparison operator and a value, e.g. `Usage (km): over 100,000 km`
+ * - `simple` — a bare label with no value
+ * - `add` — the dashed "Add Filter" affordance that opens a filter picker
+ *
+ * Derived from the props union rather than declared beside it, so the two
+ * cannot drift.
+ */
+export type FilterChipType = NonNullable<FilterChipProps['type']>;
+
+/**
  * A filter chip represents one active filter in a filter bar. The body opens an
  * editor for the filter's value and the trailing `×` clears it.
  *
@@ -187,6 +190,16 @@ export const FilterChip = forwardRef<HTMLButtonElement, FilterChipProps>(
 		useNullCheck(
 			!isAdd || typeof onClick === 'function',
 			'FilterChip: an "add" chip needs an onClick — without one it renders as static text that still looks like a button.',
+		);
+
+		// `expanded` and `pressed` describe the chip body, and the body is only
+		// a button when there is an `onClick`. Without one they have nowhere
+		// valid to land — `aria-expanded` on an inert `<span>` is not a
+		// disclosure — so they are dropped, loudly rather than silently.
+		useNullCheck(
+			typeof onClick === 'function' ||
+				(expanded === undefined && pressed === undefined),
+			'FilterChip: "expanded" and "pressed" describe the chip body, which is only a button when onClick is supplied. Without one they are dropped.',
 		);
 
 		// Category labels are usually authored with a trailing colon ("Vehicle
@@ -286,7 +299,14 @@ export const FilterChip = forwardRef<HTMLButtonElement, FilterChipProps>(
 					<span className={styles.labelText}>{operator}</span>
 				) : null}
 				{(type === 'select' || type === 'numeric') && value ? (
-					<span className={styles.valueText}>{value}</span>
+					// The value is the one run that truncates. Set
+					// unconditionally because whether it has actually been cut
+					// off depends on the container, which is not knowable at
+					// render — a screen reader still gets the full text from
+					// the DOM, this is what gives a pointer user the same.
+					<span className={styles.valueText} title={value}>
+						{value}
+					</span>
 				) : null}
 			</>
 		);

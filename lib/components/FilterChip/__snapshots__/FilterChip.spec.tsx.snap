@@ -20,6 +20,7 @@ exports[`<FilterChip /> > should match the snapshot 1`] = `
       </span>
       <span
         class="FilterChip_valueText__1gngjaeh"
+        title="Truck"
       >
         Truck
       </span>

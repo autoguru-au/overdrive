@@ -45,6 +45,19 @@ describe('<FilterChip />', () => {
 		expect(container.querySelector('button button')).toBeNull();
 	});
 
+	it('should render only the remove button when given no onClick', () => {
+		const { container } = render(
+			<FilterChip label="State:" onRemove={() => {}} value="QLD" />,
+		);
+		const buttons = container.querySelectorAll('button');
+
+		// The body is inert text — the hover styling keys off a hovered button
+		// rather than the pill, so this chip must not wrap its label in one.
+		expect(buttons).toHaveLength(1);
+		expect(buttons[0]).toHaveAccessibleName('Remove State QLD filter');
+		expect(screen.getByText('QLD').closest('button')).toBeNull();
+	});
+
 	it('should not render a remove button for the add chip', () => {
 		const { container } = render(
 			// @ts-expect-error — an `add` chip has no filter to remove, so the
@@ -114,11 +127,7 @@ describe('<FilterChip />', () => {
 
 		it('should render an icon for the add chip only', () => {
 			const { container, rerender } = render(
-				<FilterChip
-					label="Add Filter"
-					type="add"
-					onClick={() => {}}
-				/>,
+				<FilterChip label="Add Filter" type="add" onClick={() => {}} />,
 			);
 
 			expect(container.querySelector('svg')).not.toBeNull();
