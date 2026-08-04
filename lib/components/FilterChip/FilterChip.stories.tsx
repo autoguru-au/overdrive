@@ -370,6 +370,7 @@ const RemovableFilterBar = ({
  * chip stays put. Clear them all and the add chip offers them back.
  */
 export const Removable: Story = {
+	tags: ['skip-themes'],
 	render: (args) => (
 		<RemovableFilterBar onClick={args.onClick} onRemove={args.onRemove} />
 	),
@@ -496,7 +497,7 @@ export const DisclosureAndToggle: Story = {
  * watch the steps run in the Interactions panel.
  */
 export const InteractionTest: Story = {
-	tags: ['!autodocs'],
+	tags: ['!autodocs', 'skip-themes'],
 	args: {
 		removeLabel: 'Remove vehicle type filter',
 	},
