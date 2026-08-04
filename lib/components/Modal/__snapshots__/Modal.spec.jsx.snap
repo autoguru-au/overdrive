@@ -3,6 +3,7 @@
 exports[`<Modal /> > should match snapshot 1`] = `
 <body
   class="theme_OD_Base__j49br80"
+  style="overflow: hidden;"
 >
   <div>
     <div
