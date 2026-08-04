@@ -79,6 +79,17 @@ export const tokens = deepmerge(baseTokens, {
 	},
 	// `space` intentionally omitted: inherited from baseTokens via deepmerge
 	// so the DS-2026 spacing scale lives in one place and can't drift.
+	//
+	// The only DS-2026 `color` token this theme overrides. Everything else in
+	// that contract is inherited from base. The ring has to be overridden
+	// because the legacy `focusOutlineStyle` every other component uses reads
+	// `colours.foreground.link`, which this theme moves to blue — leaving a
+	// `color.focus.ring` consumer ringing base green next to a blue one.
+	color: {
+		focus: {
+			ring: colours.blue['500'],
+		},
+	},
 	colours: {
 		gamut: {
 			...buildColourGamut(colours),

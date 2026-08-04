@@ -24,7 +24,7 @@ Master's suggested order (value + token coverage first, largest last):
 | 1 | W2-P1 | Avatar | sonnet | Batch A |
 | 2 | W2-P7 | NotificationBadge | sonnet | Batch A |
 | 3 | W2-P6 | ActivityBadge | sonnet | Batch A |
-| 4 | W2-P2 | Tag | sonnet | Batch B |
+| 4 | W2-P2 | ~~Tag~~ → **FilterChip** | sonnet | Batch B |
 | 5 | W2-P3 | Skeleton | sonnet | Batch B |
 | 6 | W2-P4 | Breadcrumbs | sonnet | Batch B |
 | 7 | W2-P10 | Pagination picker | **opus** | Batch C |
@@ -635,9 +635,11 @@ Verify for W2-P6. Branch ds2026/w2-activitybadge. Run + report per gate: yarn li
 
 ---
 
-### W2-P2 — Tag
+### W2-P2 — ~~Tag~~ → FilterChip
 
-**Figma:** Badges&tags frame `438:15329`; Tag `599:6080`. **OU:** OU-10/OU-11. **Depends on:** W1-P1. **Builder:** sonnet.
+> **Superseded — shipped as `FilterChip`, not `Tag` ([#1368](https://github.com/autoguru-au/overdrive/pull/1368), AG-20676).** The spec below predates the `filter-chips-new` frame ([node `3861:16458`](https://www.figma.com/design/ZkQlQcJkF7NTnZomVrPRN5/AutoGuru-Design-System-2026?node-id=3861-16458)) and is kept only as a record of what was originally planned. It is wrong in three ways: there is no `size` axis, it omits the four-way `type` axis (`select` / `numeric` / `simple` / `add`), and the Figma nodes it points at are superseded. There is no `disabled` state either — the transitions table says filters are *"added, edited, or removed — never disabled"*. What shipped is `lib/components/FilterChip/`, with the selected surface on `color.brand.solid` / `color.brand.onSolid` rather than `background.reverse` / `foreground.reverse`. Read the component and its stories, not this block.
+
+**Figma:** ~~Badges&tags frame `438:15329`; Tag `599:6080`~~ → `filter-chips-new` `3861:16458`. **OU:** OU-10/OU-11. **Depends on:** W1-P1. **Builder:** sonnet.
 **Variant axes:** `State={Default, Hover, Pressed} × Size`. **Interactive filter chip — distinct from the static `Badge`.**
 
 **Proposed props:**
@@ -1257,7 +1259,7 @@ Verify for W2-P5 — SideNav. Branch ds2026/w2-sidenav. Run + report per gate: y
 | Package | Component | OU | Depends on | Changeset (minor) summary |
 |---|---|---|---|---|
 | W2-P1 | Avatar | OU-11/OU-12 | W1-P1, W1-P3 | Add Avatar component (DS-2026): initial/icon/profilePic types, sm/md/lg sizes, circle/square shapes, optional padding. |
-| W2-P2 | Tag | OU-10/OU-11 | W1-P1 | Add Tag component (DS-2026): interactive filter chip with hover/pressed/selected states. |
+| W2-P2 | FilterChip (was Tag) | OU-10/OU-11 | W1-P1 | Add FilterChip component (DS-2026): interactive filter chip in select, numeric, simple and add shapes, with hover/selected/focus states and a removable `×`. |
 | W2-P3 | Skeleton | OU-10 | W1-P1, W1-P3 | Add Skeleton component (DS-2026): large/small/circle loading placeholders with 1–2 lines. |
 | W2-P4 | Breadcrumbs | OU-9 | W1-P1 | Add Breadcrumbs component (DS-2026): Breadcrumbs + BreadcrumbItem with large/small sizes. |
 | W2-P5 | SideNav | OU-9 | W1-P1 | Add SideNav component (DS-2026): SideNav + SideNavSection + SideNavItem, textIcon/iconOnly layouts. |
