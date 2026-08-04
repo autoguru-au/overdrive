@@ -51,8 +51,6 @@ describe('<FilterChip />', () => {
 		);
 		const buttons = container.querySelectorAll('button');
 
-		// The body is inert text — the hover styling keys off a hovered button
-		// rather than the pill, so this chip must not wrap its label in one.
 		expect(buttons).toHaveLength(1);
 		expect(buttons[0]).toHaveAccessibleName('Remove State QLD filter');
 		expect(screen.getByText('QLD').closest('button')).toBeNull();
@@ -60,9 +58,7 @@ describe('<FilterChip />', () => {
 
 	it('should not render a remove button for the add chip', () => {
 		const { container } = render(
-			// @ts-expect-error — an `add` chip has no filter to remove, so the
-			// union rejects `onRemove`. Asserted here so the runtime stays
-			// defensive for JavaScript consumers.
+			// @ts-expect-error — the union rejects `onRemove` on an `add` chip.
 			<FilterChip
 				label="Add Filter"
 				type="add"
@@ -77,9 +73,7 @@ describe('<FilterChip />', () => {
 	it('should still warn when an add chip has no onClick', () => {
 		const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
 
-		// @ts-expect-error — the union makes `onClick` required on an `add`
-		// chip, so this is unreachable from TypeScript. The runtime guard is
-		// what a JavaScript consumer gets instead.
+		// @ts-expect-error — the union requires `onClick` on an `add` chip.
 		render(<FilterChip label="Add Filter" type="add" />);
 
 		expect(warn).toHaveBeenCalledWith(
@@ -149,8 +143,6 @@ describe('<FilterChip />', () => {
 				/>,
 			);
 
-			// `selected` is a visual state — announcing an applied filter as
-			// "not pressed" would contradict the chip's own text.
 			expect(screen.getByRole('button')).not.toHaveAttribute(
 				'aria-pressed',
 			);
@@ -287,7 +279,6 @@ describe('<FilterChip />', () => {
 				/>,
 			);
 
-			// The body, not the container — this is what Popover anchors to.
 			expect(ref.current).toBeInstanceOf(HTMLButtonElement);
 			expect(ref.current).toHaveTextContent('QLD');
 		});
@@ -304,8 +295,6 @@ describe('<FilterChip />', () => {
 					value="QLD"
 				/>,
 			);
-			// The body precedes the `×` in document order, and is where these
-			// belong — the remove button has its own name and no disclosure.
 			const [body, remove] = screen.getAllByRole('button');
 
 			expect(remove).toHaveAccessibleName('Remove State QLD filter');

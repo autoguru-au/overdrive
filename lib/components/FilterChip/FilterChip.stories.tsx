@@ -129,8 +129,6 @@ const meta = {
 		onRemove: fn(),
 	},
 	argTypes: {
-		// Types, defaults and descriptions come from the props' JSDoc via
-		// react-docgen. Only what it cannot work out is listed here.
 		type: {
 			control: 'select',
 			options: ['select', 'numeric', 'simple', 'add'],
@@ -145,8 +143,6 @@ const meta = {
 		},
 		removeLabel: { if: { arg: 'type', neq: 'add' } },
 		onClick: { table: { category: 'Events' } },
-		// `value` has no condition: select and numeric both use it, and a
-		// control condition can only test one value.
 		className: { table: { disable: true } },
 		testId: { table: { disable: true } },
 	},
@@ -156,11 +152,6 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-/**
- * Props are a discriminated union, so a story showing several shapes at once
- * cannot spread `args`: the spread is the whole union and will not narrow to the
- * `type` next to it. Pulling out the handlers is all these stories need.
- */
 const handlers = ({
 	onClick,
 	onRemove,
@@ -521,8 +512,6 @@ export const InteractionTest: Story = {
 		});
 
 		await step('is announced as a plain button, not a toggle', async () => {
-			// The body opens an editor, so it is neither pressed nor unpressed.
-			// Only an explicit `pressed` prop makes it a toggle.
 			await expect(body).not.toHaveAttribute('aria-pressed');
 		});
 

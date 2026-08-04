@@ -14,10 +14,7 @@ import { Icon } from '../Icon/Icon';
 
 import * as styles from './FilterChip.css';
 
-/**
- * Attributes forwarded to the chip body. Typed against `HTMLElement` because the
- * body is a `<button>` when interactive and a `<span>` when it is not.
- */
+/** Attributes forwarded to the chip body. */
 type FilterChipBodyAttributes = Pick<
 	HTMLAttributes<HTMLElement>,
 	| 'aria-controls'
@@ -40,10 +37,7 @@ interface FilterChipBaseProps extends FilterChipBodyAttributes, TestIdProp {
 	className?: string;
 }
 
-/**
- * The props every chip except `add` shares. `add` opens a filter picker and has
- * no filter of its own, so it carries none of them.
- */
+/** The props every chip except `add` shares. */
 interface FilterChipStateProps {
 	/**
 	 * Reflects the persistent chosen state as an inverted surface. Purely
@@ -105,11 +99,9 @@ interface SimpleChipProps extends FilterChipBaseProps, FilterChipStateProps {
 }
 
 /**
- * The dashed "Add Filter" affordance that opens a filter picker.
- *
- * `onClick` is required: without one the chip renders as static text that still
- * looks like a button. It holds no filter, so it takes no value, no selected or
- * pressed state, and nothing to remove.
+ * The dashed "Add Filter" affordance that opens a filter picker. It holds no
+ * filter, so it takes no value, no state and nothing to remove, and `onClick` is
+ * required.
  */
 interface AddChipProps extends FilterChipBaseProps {
 	type: 'add';
@@ -123,11 +115,7 @@ interface AddChipProps extends FilterChipBaseProps {
 	removeLabel?: never;
 }
 
-/**
- * A discriminated union on `type`, so combinations the component ignores at
- * runtime — a `simple` chip with a `value`, an `add` chip with an `onRemove` —
- * do not compile.
- */
+/** All FilterChip props, discriminated on `type`. */
 export type FilterChipProps =
 	| SelectChipProps
 	| NumericChipProps
@@ -141,9 +129,6 @@ export type FilterChipProps =
  * - `numeric` — a category, a comparison operator and a value, e.g. `Usage (km): over 100,000 km`
  * - `simple` — a bare label with no value
  * - `add` — the dashed "Add Filter" affordance that opens a filter picker
- *
- * Derived from the props union rather than declared beside it, so the two
- * cannot drift.
  */
 export type FilterChipType = NonNullable<FilterChipProps['type']>;
 
@@ -192,30 +177,18 @@ export const FilterChip = forwardRef<HTMLButtonElement, FilterChipProps>(
 			'FilterChip: an "add" chip needs an onClick — without one it renders as static text that still looks like a button.',
 		);
 
-		// `expanded` and `pressed` describe the chip body, and the body is only
-		// a button when there is an `onClick`. Without one they have nowhere
-		// valid to land — `aria-expanded` on an inert `<span>` is not a
-		// disclosure — so they are dropped, loudly rather than silently.
 		useNullCheck(
 			typeof onClick === 'function' ||
 				(expanded === undefined && pressed === undefined),
 			'FilterChip: "expanded" and "pressed" describe the chip body, which is only a button when onClick is supplied. Without one they are dropped.',
 		);
 
-		// Category labels are usually authored with a trailing colon ("Vehicle
-		// type:"), which reads poorly in the middle of a sentence.
 		const accessibleName = label.replace(/:\s*$/, '');
 
-		// Naming the value as well keeps two chips from the same category
-		// ("State: QLD", "State: NSW") distinguishable in a list of buttons.
 		const removeName = [accessibleName, operator, value]
 			.filter(Boolean)
 			.join(' ');
 
-		// A chip whose value is edited through a popover is a disclosure, and a
-		// disclosure needs to say that it opens something. `aria-pressed` is only
-		// for a chip the consumer has declared to be a toggle — inferring it from
-		// `selected` would announce every applied filter as "not pressed".
 		const stateProps = {
 			'aria-expanded': expanded,
 			'aria-haspopup':
@@ -223,20 +196,11 @@ export const FilterChip = forwardRef<HTMLButtonElement, FilterChipProps>(
 			'aria-pressed': isAdd ? undefined : pressed,
 		};
 
-		// The body is a button only when there is something to activate; without
-		// an `onClick` it is inert text, and the `×` carries the interaction.
 		const isBodyButton = typeof onClick === 'function';
 		const bodyInteractionProps = isBodyButton
 			? { ...stateProps, onClick, ref, type: 'button' }
 			: {};
 
-		// Every slot goes through `useBox` so that `elementReset` supplies the
-		// UA reset for whichever tag it renders as. Composing the reset by hand
-		// does not work — see `buttonFont` in the stylesheet.
-		//
-		// A removable chip is a plain container holding sibling buttons, since
-		// two independent actions cannot nest inside one button. Every other
-		// chip has no second action, so its root *is* its body.
 		const bodyAs = isBodyButton ? 'button' : 'span';
 		const rootAs = showRemove ? 'div' : bodyAs;
 
@@ -257,9 +221,6 @@ export const FilterChip = forwardRef<HTMLButtonElement, FilterChipProps>(
 			...(showRemove ? {} : { ...bodyAttrs, ...bodyInteractionProps }),
 		});
 
-		// Built unconditionally to keep the call order stable, and rendered only
-		// by the removable branch below. On every other chip the root above has
-		// already absorbed the body's classes and attributes.
 		const { Component: Body, componentProps: bodyProps } = useBox({
 			as: bodyAs,
 			className: [
@@ -299,11 +260,6 @@ export const FilterChip = forwardRef<HTMLButtonElement, FilterChipProps>(
 					<span className={styles.labelText}>{operator}</span>
 				) : null}
 				{(type === 'select' || type === 'numeric') && value ? (
-					// The value is the one run that truncates. Set
-					// unconditionally because whether it has actually been cut
-					// off depends on the container, which is not knowable at
-					// render — a screen reader still gets the full text from
-					// the DOM, this is what gives a pointer user the same.
 					<span className={styles.valueText} title={value}>
 						{value}
 					</span>
