@@ -25,8 +25,8 @@ export const Standard: Story = {
 		isOpen: true,
 		onRequestClose: action('onChange'),
 		children: (
-			<Box paddingX="4" paddingY="3">
-				<Text>
+			<Box padding="7">
+				<Text size="p1" color="secondary">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 					Duis convallis neque a laoreet maximus. Vestibulum hendrerit
 					quam at mi venenatis faucibus at vel nisi. In ut risus et
@@ -40,7 +40,7 @@ export const Standard: Story = {
 					dapibus volutpat eros a volutpat.
 				</Text>
 				<br />
-				<Text>
+				<Text size="p1" color="secondary">
 					Sed ante dui, sagittis sit amet tortor nec, egestas
 					tincidunt mauris. Phasellus sed felis arcu. Etiam sit amet
 					pharetra risus, a posuere magna. Pellentesque finibus arcu
@@ -52,7 +52,7 @@ export const Standard: Story = {
 					euismod imperdiet.
 				</Text>
 				<br />
-				<Text>
+				<Text size="p1" color="secondary">
 					Nulla condimentum iaculis nisi, quis lobortis ligula. Nulla
 					tempus semper velit, id ullamcorper orci molestie vel. Sed
 					maximus nisi ac risus malesuada, quis varius purus interdum.
@@ -66,7 +66,7 @@ export const Standard: Story = {
 					convallis pulvinar nunc.
 				</Text>
 				<br />
-				<Text>
+				<Text size="p1" color="secondary">
 					Morbi mollis massa in eros tempus, ut venenatis ligula
 					posuere. Nam ut ante lectus. Integer congue risus arcu, et
 					ornare odio hendrerit eu. Mauris arcu ligula, interdum vitae
@@ -80,7 +80,7 @@ export const Standard: Story = {
 					nec congue est.
 				</Text>
 				<br />
-				<Text>
+				<Text size="p1" color="secondary">
 					Nulla quam magna, aliquet et odio non, porta condimentum
 					tellus. Maecenas fringilla sodales erat eu facilisis. Nunc
 					rutrum purus quis diam tempus laoreet. Fusce gravida arcu et
@@ -89,7 +89,7 @@ export const Standard: Story = {
 					Aenean at augue tincidunt nunc consequat porta.
 				</Text>
 				<br />
-				<Text>
+				<Text size="p1" color="secondary">
 					Nunc ac congue lacus, ac vulputate lectus. Suspendisse vel
 					malesuada tellus. In nec fringilla elit. Cras vitae metus et
 					leo convallis consectetur. Cras quis congue sapien, vitae
@@ -105,7 +105,7 @@ export const Standard: Story = {
 		(Story) => (
 			<div style={{ minHeight: '880px' }}>
 				<Story />
-				<Text>
+				<Text size="p1" color="secondary">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 					Duis convallis neque a laoreet maximus. Vestibulum hendrerit
 					quam at mi venenatis faucibus at vel nisi. In ut risus et
@@ -119,7 +119,7 @@ export const Standard: Story = {
 					dapibus volutpat eros a volutpat.
 				</Text>
 				<br />
-				<Text>
+				<Text size="p1" color="secondary">
 					Sed ante dui, sagittis sit amet tortor nec, egestas
 					tincidunt mauris. Phasellus sed felis arcu. Etiam sit amet
 					pharetra risus, a posuere magna. Pellentesque finibus arcu
@@ -131,7 +131,7 @@ export const Standard: Story = {
 					euismod imperdiet.
 				</Text>
 				<br />
-				<Text>
+				<Text size="p1" color="secondary">
 					Nulla condimentum iaculis nisi, quis lobortis ligula. Nulla
 					tempus semper velit, id ullamcorper orci molestie vel. Sed
 					maximus nisi ac risus malesuada, quis varius purus interdum.
@@ -145,7 +145,7 @@ export const Standard: Story = {
 					convallis pulvinar nunc.
 				</Text>
 				<br />
-				<Text>
+				<Text size="p1" color="secondary">
 					Morbi mollis massa in eros tempus, ut venenatis ligula
 					posuere. Nam ut ante lectus. Integer congue risus arcu, et
 					ornare odio hendrerit eu. Mauris arcu ligula, interdum vitae
@@ -159,7 +159,7 @@ export const Standard: Story = {
 					nec congue est.
 				</Text>
 				<br />
-				<Text>
+				<Text size="p1" color="secondary">
 					Nulla quam magna, aliquet et odio non, porta condimentum
 					tellus. Maecenas fringilla sodales erat eu facilisis. Nunc
 					rutrum purus quis diam tempus laoreet. Fusce gravida arcu et
@@ -168,7 +168,7 @@ export const Standard: Story = {
 					Aenean at augue tincidunt nunc consequat porta.
 				</Text>
 				<br />
-				<Text>
+				<Text size="p1" color="secondary">
 					Nunc ac congue lacus, ac vulputate lectus. Suspendisse vel
 					malesuada tellus. In nec fringilla elit. Cras vitae metus et
 					leo convallis consectetur. Cras quis congue sapien, vitae
