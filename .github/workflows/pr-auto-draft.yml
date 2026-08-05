@@ -66,6 +66,8 @@ jobs:
                     echo
                     echo "To conserve CI capacity (Chromatic snapshots, build minutes), PRs are auto-drafted. Chromatic runs when you click **Ready for review** — lint and tests still run on every push."
                     echo
+                    echo "> :warning: A green Chromatic check on this commit means the snapshot run was **skipped**, not that it passed — the real build runs once you mark the PR Ready for review."
+                    echo ">"
                     echo "> :warning: If you had enabled auto-merge, re-drafting **cancelled** it. Re-enable \"merge when ready\" after marking the PR Ready for review."
                   } > .auto-draft-notice.md
 
