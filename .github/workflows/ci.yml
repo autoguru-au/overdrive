@@ -2,7 +2,7 @@ name: CI
 
 on:
     pull_request:
-        types: [opened, reopened, ready_for_review, synchronize]
+        types: [opened, reopened, ready_for_review, synchronize, labeled]
     push:
         branches:
             - main
@@ -75,6 +75,9 @@ jobs:
     visual_test:
         name: Visual changes
         needs: setup
+        if:
+            github.event.action != 'labeled' ||
+            contains(github.event.pull_request.labels.*.name, 'visual-check')
         runs-on: ubuntu-latest
         env:
             TZ: Australia/Brisbane
@@ -101,7 +104,11 @@ jobs:
                   onlyChanged: true # enables TurboSnap behaviour
                   autoAcceptChanges: 'main'
                   exitZeroOnChanges: '!(main)'
-                  skip: 'changeset-release/**'
+                  skip:
+                      ${{ (github.event_name == 'workflow_dispatch' ||
+                      contains(github.event.pull_request.labels.*.name,
+                      'visual-check')) && 'changeset-release/**' ||
+                      '@(changeset-release|renovate)/**' }}
 
             - name: Skip Chromatic
               if: github.event.pull_request.draft == true
