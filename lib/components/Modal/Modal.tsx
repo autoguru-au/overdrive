@@ -6,10 +6,10 @@ import type {
 	Reducer,
 } from 'react';
 import * as React from 'react';
-import { ReactNode, useEffect, useLayoutEffect, useReducer } from 'react';
+import { ReactNode, useEffect, useReducer } from 'react';
 import FocusLock from 'react-focus-lock';
 
-import { isBrowser, useEventCallback } from '../../utils';
+import { useEventCallback } from '../../utils';
 import { Box } from '../Box/Box';
 import { Portal } from '../Portal/Portal';
 
@@ -99,20 +99,6 @@ export const Modal: FunctionComponent<ModalProps> = ({
 	useEffect(() => {
 		dispatch(isOpen ? 'OPEN_MODAL' : 'CLOSE_MODAL');
 	}, [isOpen]);
-
-	if (isBrowser) {
-		useLayoutEffect(() => {
-			if (!isOpen) return;
-			const prevHtml = document.documentElement.style.overflow;
-			const prevBody = document.body.style.overflow;
-			document.documentElement.style.overflow = 'hidden';
-			document.body.style.overflow = 'hidden';
-			return () => {
-				document.documentElement.style.overflow = prevHtml;
-				document.body.style.overflow = prevBody;
-			};
-		}, [isOpen]);
-	}
 
 	useEffect(() => {
 		if (state === 'CLOSING') {
