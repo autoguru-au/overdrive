@@ -12,13 +12,13 @@ export const content = style({
 });
 
 const borderRoundTop = style({
-	borderTopLeftRadius: tokens.border.radius['2xl'],
-	borderTopRightRadius: tokens.border.radius['2xl'],
+	borderTopLeftRadius: tokens.border.radius.medium,
+	borderTopRightRadius: tokens.border.radius.medium,
 });
 
 const borderRoundBottom = style({
-	borderBottomLeftRadius: tokens.border.radius['2xl'],
-	borderBottomRightRadius: tokens.border.radius['2xl'],
+	borderBottomLeftRadius: tokens.border.radius.medium,
+	borderBottomRightRadius: tokens.border.radius.medium,
 });
 
 export const borders = styleVariants({

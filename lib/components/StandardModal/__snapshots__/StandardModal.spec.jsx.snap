@@ -38,7 +38,7 @@ exports[`<StandardModal /> > should match snapshot with title and body 1`] = `
           <article
             aria-labelledby="od-4"
             aria-modal="true"
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_article__18vhvlio elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwjufe sprinkles_overflow_hidden_mobile__onxwjuga sprinkles_backgroundColor_white__onxwjuci sprinkles_flexDirection_column_mobile__onxwju13a sprinkles_marginTop_9_mobile__onxwju1iq StandardModal_modal__1trinj21 StandardModal_modalSizeStandard__1trinj24"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_article__18vhvlio elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwjufe sprinkles_overflow_hidden_mobile__onxwjuga sprinkles_backgroundColor_default__onxwjuav sprinkles_flexDirection_column_mobile__onxwju13a sprinkles_marginTop_9_mobile__onxwju1iq StandardModal_modal__1trinj21 StandardModal_modalSizeStandard__1trinj24"
             role="dialog"
           >
             <header
@@ -48,11 +48,11 @@ exports[`<StandardModal /> > should match snapshot with title and body 1`] = `
                 class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_flexGrow_0_mobile__onxwju13q"
                 id="od-4"
               >
-                <h4
-                  class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_h4__18vhvlij elementReset_trimmedElement__18vhvli0 elementReset_heading__18vhvli6 typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjujy sprinkles_lineHeight_4_mobile__onxwjui2 sprinkles_fontWeight_bold__onxwjueb typography_color_dark__yhjp335"
+                <h2
+                  class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_h2__18vhvlih elementReset_trimmedElement__18vhvli0 elementReset_heading__18vhvli6 typography_common__yhjp33f sprinkles_fontSize_7_mobile__onxwjuka sprinkles_lineHeight_7_mobile__onxwjuie sprinkles_color_primary__onxwju8j sprinkles_fontWeight_bold__onxwjueb"
                 >
                   Hello World!
-                </h4>
+                </h2>
               </div>
               <button
                 aria-label="close"
@@ -136,7 +136,7 @@ exports[`<StandardModal /> > should match snapshot without title and body 1`] = 
           <article
             aria-labelledby="od-3"
             aria-modal="true"
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_article__18vhvlio elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwjufe sprinkles_overflow_hidden_mobile__onxwjuga sprinkles_backgroundColor_white__onxwjuci sprinkles_flexDirection_column_mobile__onxwju13a sprinkles_marginTop_9_mobile__onxwju1iq StandardModal_modal__1trinj21 StandardModal_modalSizeStandard__1trinj24"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_article__18vhvlio elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwjufe sprinkles_overflow_hidden_mobile__onxwjuga sprinkles_backgroundColor_default__onxwjuav sprinkles_flexDirection_column_mobile__onxwju13a sprinkles_marginTop_9_mobile__onxwju1iq StandardModal_modal__1trinj21 StandardModal_modalSizeStandard__1trinj24"
             role="dialog"
           >
             <header
@@ -146,8 +146,8 @@ exports[`<StandardModal /> > should match snapshot without title and body 1`] = 
                 class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_flexGrow_0_mobile__onxwju13q"
                 id="od-3"
               >
-                <h4
-                  class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_h4__18vhvlij elementReset_trimmedElement__18vhvli0 elementReset_heading__18vhvli6 typography_common__yhjp33f sprinkles_fontSize_4_mobile__onxwjujy sprinkles_lineHeight_4_mobile__onxwjui2 sprinkles_fontWeight_bold__onxwjueb typography_color_dark__yhjp335"
+                <h2
+                  class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_h2__18vhvlih elementReset_trimmedElement__18vhvli0 elementReset_heading__18vhvli6 typography_common__yhjp33f sprinkles_fontSize_7_mobile__onxwjuka sprinkles_lineHeight_7_mobile__onxwjuie sprinkles_color_primary__onxwju8j sprinkles_fontWeight_bold__onxwjueb"
                 />
               </div>
               <button
