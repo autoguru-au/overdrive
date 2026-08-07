@@ -121,4 +121,6 @@ export const Alert = ({
 	);
 };
 
+Alert.displayName = 'Alert';
+
 export default Alert;
