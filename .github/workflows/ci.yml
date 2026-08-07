@@ -93,8 +93,16 @@ jobs:
             - name: Yarn install
               run: yarn --immutable
 
+            # For human PRs, Chromatic runs only on ready_for_review — pushes
+            # re-draft the PR (see pr-auto-draft.yml), so snapshots fire once
+            # per review round instead of once per push. Bot PRs (renovate)
+            # never fire ready_for_review, so they keep the old behaviour.
             - name: Chromatic
-              if: github.event.pull_request.draft == false
+              if: >-
+                  github.event_name != 'pull_request' ||
+                  (github.event.pull_request.draft == false &&
+                  (github.event.action == 'ready_for_review' ||
+                  contains(github.event.sender.login, '[bot]')))
               uses: chromaui/action@latest
               with:
                   projectToken: ${{ secrets.CHROMATIC_APP_CODE }}
@@ -104,7 +112,11 @@ jobs:
                   skip: 'changeset-release/**'
 
             - name: Skip Chromatic
-              if: github.event.pull_request.draft == true
+              if: >-
+                  github.event_name == 'pull_request' &&
+                  (github.event.pull_request.draft == true ||
+                  (github.event.action != 'ready_for_review' &&
+                  !contains(github.event.sender.login, '[bot]')))
               uses: chromaui/action@latest
               with:
                   projectToken: ${{ secrets.CHROMATIC_APP_CODE }}

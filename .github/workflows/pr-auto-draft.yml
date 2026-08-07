@@ -1,0 +1,80 @@
+name: Auto-draft PRs
+
+# Mirrors mfe's pr-auto-draft workflow. Every PR funnels through draft → ready
+# so the expensive Chromatic snapshots (see ci.yml) fire exactly once, on a
+# known-ready head SHA:
+#   - synchronize: a push to a ready PR re-drafts it.
+#   - opened/reopened: a PR opened or reopened as ready is drafted so the author
+#     re-confirms readiness with "Ready for review" before CI spends minutes.
+# A PR opened as a draft is left alone (the `draft == false` guard below).
+# Bot PRs (renovate, changesets "Version Packages") are excluded — bots never
+# click "Ready for review", so drafting them would strand them without CI.
+on:
+    pull_request:
+        types: [synchronize, opened, reopened]
+
+concurrency:
+    group: auto-draft-${{ github.event.pull_request.number }}
+    cancel-in-progress: true
+
+jobs:
+    convert-to-draft:
+        if: |
+            github.event.pull_request.draft == false &&
+            github.event.pull_request.head.repo.full_name == github.repository &&
+            !contains(github.event.sender.login, '[bot]')
+        runs-on: ubuntu-latest
+        permissions:
+            pull-requests: write
+            issues: write
+        steps:
+            - name: Convert PR to draft
+              id: convert
+              env:
+                  GH_TOKEN: ${{ secrets.AUTO_COMMIT_TOKEN }}
+                  PR_NODE_ID: ${{ github.event.pull_request.node_id }}
+              run: |
+                  if [ -z "$GH_TOKEN" ]; then
+                    echo "::warning::AUTO_COMMIT_TOKEN secret not configured; skipping draft conversion. The default GITHUB_TOKEN cannot perform convertPullRequestToDraft (FORBIDDEN). Ask an org admin to share the AUTO_COMMIT_TOKEN org secret with this repo, or provision a fine-grained PAT with 'Pull requests: Write' and store it as repo secret AUTO_COMMIT_TOKEN."
+                    echo "skipped=true" >> "$GITHUB_OUTPUT"
+                    exit 0
+                  fi
+                  gh api graphql -f query='
+                    mutation($id: ID!) {
+                      convertPullRequestToDraft(input: { pullRequestId: $id }) {
+                        pullRequest { isDraft }
+                      }
+                    }' -f id="$PR_NODE_ID"
+
+            # Sticky (header `auto-draft`): rewritten in place on every push
+            # instead of posting a fresh comment, so the thread never grows.
+            # Wording is event-aware — quieter on open/reopen than on a push.
+            - name: Build draft notice
+              if: steps.convert.outputs.skipped != 'true'
+              env:
+                  EVENT_ACTION: ${{ github.event.action }}
+                  ACTOR: ${{ github.event.sender.login }}
+              run: |
+                  set -euo pipefail
+                  if [ "$EVENT_ACTION" = "synchronize" ]; then
+                    HEADLINE="🚧 Auto-converted back to **Draft** because a new commit was pushed by @${ACTOR}."
+                  else
+                    HEADLINE="🚧 Opened as a **Draft** to conserve CI capacity."
+                  fi
+                  {
+                    echo "$HEADLINE"
+                    echo
+                    echo "To conserve CI capacity (Chromatic snapshots, build minutes), PRs are auto-drafted. Chromatic runs when you click **Ready for review** — lint and tests still run on every push."
+                    echo
+                    echo "> :warning: A green Chromatic check on this commit means the snapshot run was **skipped**, not that it passed — the real build runs once you mark the PR Ready for review."
+                    echo ">"
+                    echo "> :warning: If you had enabled auto-merge, re-drafting **cancelled** it. Re-enable \"merge when ready\" after marking the PR Ready for review."
+                  } > .auto-draft-notice.md
+
+            - name: Post sticky draft notice
+              if: steps.convert.outputs.skipped != 'true'
+              uses: marocchino/sticky-pull-request-comment@773744901bac0e8cbb5a0dc842800d45e9b2b405 # v2.9.4
+              with:
+                  header: auto-draft
+                  number: ${{ github.event.pull_request.number }}
+                  path: .auto-draft-notice.md
