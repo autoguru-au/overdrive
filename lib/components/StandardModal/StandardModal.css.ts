@@ -9,7 +9,7 @@ export const container = style({
 
 export const modal = style({
 	alignSelf: 'flex-end',
-	borderRadius: `${vars.border.radius['2xl']} ${vars.border.radius['2xl']} 0 0`,
+	borderRadius: `${vars.border.radius.medium} ${vars.border.radius.medium} 0 0`,
 	height: 'auto',
 	maxHeight: `calc(100vh - ${vars.space['9']})`,
 	minHeight: `calc(3 * ${vars.space['9']})`,
@@ -17,7 +17,7 @@ export const modal = style({
 	...responsiveStyle({
 		tablet: {
 			alignSelf: 'center',
-			borderRadius: vars.border.radius['2xl'],
+			borderRadius: vars.border.radius.medium,
 		},
 		desktop: {
 			maxWidth: `calc(100% - ${vars.space['12']} * 2)`,
