@@ -71,7 +71,7 @@ export const Alert = ({
 			borderWidth="1"
 			borderColor="default"
 			borderRadius="xsmall"
-			boxShadow={inline ? 'none' : '4'}
+			boxShadow={inline ? 'none' : 'z4'}
 			padding="2"
 			odComponent="alert"
 		>
