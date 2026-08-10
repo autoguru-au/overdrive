@@ -10,7 +10,6 @@ import clsx from 'clsx';
 import React, { type ComponentProps, type ReactNode } from 'react';
 
 import { sprinkles } from '../../styles';
-import { sprinklesLegacyText } from '../../styles/typography.css';
 import { Box } from '../Box/Box';
 import { Button } from '../Button/Button';
 import { Icon } from '../Icon/Icon';
@@ -38,6 +37,16 @@ const iconMapForIntent: Record<Intent, IconType> = {
 	warning: WarningIcon,
 };
 
+const textColorForIntent: Record<
+	Intent,
+	Parameters<typeof sprinkles>[0]['color']
+> = {
+	danger: 'alertForeground',
+	information: 'infoForeground',
+	success: 'successForeground',
+	warning: 'warningForeground',
+};
+
 export const Alert = ({
 	children,
 	className = '',
@@ -48,17 +57,21 @@ export const Alert = ({
 }: AlertProps) => {
 	return (
 		<Box
-			className={clsx(className, sprinklesLegacyText({ color: intent }), {
-				[styles.contained]: !inline,
-			})}
+			className={clsx(
+				className,
+				sprinkles({ color: textColorForIntent[intent] }),
+				{
+					[styles.contained]: !inline,
+				},
+			)}
 			role="alert"
 			overflow="hidden"
 			position="relative"
 			backgroundColor="white"
 			borderWidth="1"
 			borderColor="default"
-			borderRadius="1"
-			boxShadow={inline ? 'none' : '4'}
+			borderRadius="xsmall"
+			boxShadow={inline ? 'none' : 'z4'}
 			padding="2"
 			odComponent="alert"
 		>
@@ -107,5 +120,7 @@ export const Alert = ({
 		</Box>
 	);
 };
+
+Alert.displayName = 'Alert';
 
 export default Alert;
