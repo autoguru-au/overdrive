@@ -61,6 +61,8 @@ export const TabsContext = createContext<TabsContextValue | null>(null);
  * - `"underlined"` (default) - Tabs with bottom border indication
  * - `"pill"`
  * - `"minimal"`
+ * - `"segmented"` - Equal-width bordered segments with a filled selected segment.
+ *   Always full width; cannot be combined with `TabList`'s `scrollable`.
  */
 export interface TabsProps {
 	/** Custom ID for the tabs container. Auto-generated if not provided. */

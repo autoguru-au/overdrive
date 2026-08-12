@@ -263,6 +263,10 @@ describe('<Tabs appearance="segmented" />', () => {
 		fireEvent.keyDown(tablist, { key: 'ArrowRight' });
 		expect(tabs[0].getAttribute('aria-selected')).toBe('true');
 
+		// Move off index 0 first, so the Home assertion can actually fail
+		fireEvent.keyDown(tablist, { key: 'ArrowRight' });
+		expect(tabs[1].getAttribute('aria-selected')).toBe('true');
+
 		fireEvent.keyDown(tablist, { key: 'Home' });
 		expect(tabs[0].getAttribute('aria-selected')).toBe('true');
 	});

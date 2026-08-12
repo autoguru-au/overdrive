@@ -63,6 +63,7 @@ export const styledTab = recipe({
 				lineHeight: vars.typography.size.p2.lineHeight,
 				minHeight: vars.space['8'],
 				minWidth: 0,
+				overflow: 'hidden',
 				padding: `${vars.space['2']} ${vars.space['4']}`,
 				':focus-visible': {
 					outlineOffset: '-1px',
