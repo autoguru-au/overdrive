@@ -68,6 +68,13 @@ export const TabList: FunctionComponent<TabListProps> = ({
 	);
 	const { appearance, activeIndex, onChange } = tabsContext;
 
+	const isSegmented = appearance === 'segmented';
+
+	invariant(
+		!(scrollable && isSegmented),
+		'Tabs: `scrollable={true}` cannot be used with `appearance="segmented"`.',
+	);
+
 	const [displayScroll, setDisplayScroll] = useState({
 		start: false,
 		end: false,
@@ -196,7 +203,7 @@ export const TabList: FunctionComponent<TabListProps> = ({
 			>
 				<Box
 					ref={innerRef}
-					display={stretch ? 'flex' : 'block'}
+					display={stretch || isSegmented ? 'flex' : 'block'}
 					flexWrap="nowrap"
 					width="full"
 					role="tablist"
@@ -223,3 +230,5 @@ export const TabList: FunctionComponent<TabListProps> = ({
 		</Box>
 	);
 };
+
+TabList.displayName = 'TabList';

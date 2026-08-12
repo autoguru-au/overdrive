@@ -1,0 +1,30 @@
+---
+'@autoguru/overdrive': minor
+---
+
+Add `appearance="segmented"` to Tabs (DS-2026): an equal-width, bordered
+segmented control with a filled selected segment, per the Figma "Toggle
+navigation" component. `stretch` is implied, so the tab list always lays out as
+flex; `scrollable` is rejected with an invariant, since overlapped borders and
+end radii cannot survive scrolling.
+
+The default stays `'underlined'` and the existing `underlined`, `pill` and
+`minimal` appearances are untouched, so nothing changes for current consumers.
+
+Also completes the DS-2026 token migration for Tabs (Track C, W3c-P4). The six
+remaining legacy `colours.*` references in `Tab.css.ts` move to their semantic
+equivalents, and the idle tab colour moves off `textStyles({ colour: 'light' })`
+onto `color: 'gray600'` — passing the modern `color` prop suppresses the legacy
+colour class entirely rather than falling back to its default. Every swap
+resolves to the same hex on the base theme, so rendered output is unchanged; the
+only snapshot movement is class names.
+
+The `flat_red` theme is the one exception. Semantic `color.*` tokens are pinned
+to the base palette in every theme, whereas legacy `colours.*` resolved through
+each theme's own gray ramp — and `flat_red` ships a different one (`#263238`
+rather than `#212338`). Tab chrome therefore renders base-grey under that theme.
+Nothing consumes it: its only dependents are the unreferenced `ampolTheme` and
+`smartFleetTheme` packages.
+
+Additionally exports `TabsProps`, `TabProps`, `TabListProps` and
+`TabAppearance`, which were previously unreachable from the package root.

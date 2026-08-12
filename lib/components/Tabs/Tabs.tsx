@@ -131,3 +131,5 @@ export const Tabs: FunctionComponent<TabsProps> = ({
 		</TabsContext.Provider>
 	);
 };
+
+Tabs.displayName = 'Tabs';

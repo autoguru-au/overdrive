@@ -49,3 +49,5 @@ export const TabPanes: FunctionComponent<TabPanesProps> = ({
 		))}
 	</Box>
 );
+
+TabPanes.displayName = 'TabPanes';

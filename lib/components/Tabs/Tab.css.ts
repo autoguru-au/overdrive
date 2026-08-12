@@ -52,6 +52,38 @@ export const styledTab = recipe({
 					},
 				},
 			},
+			segmented: {
+				borderColor: vars.color.border.default,
+				borderStyle: 'solid',
+				borderWidth: vars.border.width['1'],
+				color: vars.color.foreground.secondary,
+				flex: '1 0 0',
+				fontSize: vars.typography.size.p2.fontSize,
+				fontWeight: vars.typography.fontWeight.semiBold,
+				lineHeight: vars.typography.size.p2.lineHeight,
+				minHeight: vars.space['8'],
+				minWidth: 0,
+				padding: `${vars.space['2']} ${vars.space['4']}`,
+				':focus-visible': {
+					outlineOffset: '-1px',
+				},
+				selectors: {
+					'&:first-child': {
+						borderBottomLeftRadius: vars.border.radius.small,
+						borderTopLeftRadius: vars.border.radius.small,
+					},
+					'&:last-child': {
+						borderBottomRightRadius: vars.border.radius.small,
+						borderTopRightRadius: vars.border.radius.small,
+					},
+					'&+&': {
+						marginLeft: `calc(-1 * ${vars.border.width['1']})`,
+					},
+					'&:not([aria-selected=true]):hover': {
+						backgroundColor: vars.color.background.emphasisInactive,
+					},
+				},
+			},
 		},
 		active: {
 			true: {},
@@ -64,9 +96,8 @@ export const styledTab = recipe({
 				active: true,
 			},
 			style: {
-				color: vars.colours.intent.neutral.background.strong,
-				borderBottomColor:
-					vars.colours.intent.neutral.background.strong,
+				color: vars.color.foreground.primary,
+				borderBottomColor: vars.color.border.strong,
 			},
 		},
 		{
@@ -89,6 +120,19 @@ export const styledTab = recipe({
 				borderBottomColor: vars.color.content.normal,
 			},
 		},
+		{
+			variants: {
+				appearance: 'segmented',
+				active: true,
+			},
+			style: {
+				backgroundColor: vars.color.background.reverse,
+				borderColor: vars.color.background.reverse,
+				color: vars.color.foreground.reverse,
+				position: 'relative',
+				zIndex: 1,
+			},
+		},
 	],
 	defaultVariants: {
 		appearance: 'underlined',
@@ -104,7 +148,7 @@ export const item = style({
 export const indication = recipe({
 	base: [
 		{
-			backgroundColor: vars.colours.background.light,
+			backgroundColor: vars.color.background.emphasisInactive,
 			borderRadius: vars.border.radius.pill,
 			display: 'inline-block',
 			minWidth: size,
@@ -121,11 +165,19 @@ export const indication = recipe({
 				selectors: {
 					[`${styledTab.classNames.base}:not([aria-selected=true]):hover &`]:
 						{
-							backgroundColor: vars.colours.background.neutral,
+							backgroundColor: vars.color.background.inactive,
 						},
 				},
 			},
 			minimal: {},
+			segmented: {
+				selectors: {
+					[`${styledTab.classNames.base}:not([aria-selected=true]):hover &`]:
+						{
+							backgroundColor: vars.color.background.inactive,
+						},
+				},
+			},
 		},
 		active: {
 			true: {},
@@ -138,7 +190,7 @@ export const indication = recipe({
 				active: true,
 			},
 			style: {
-				backgroundColor: vars.colours.intent.neutral.background.strong,
+				backgroundColor: vars.color.foreground.primary,
 			},
 		},
 		{
@@ -147,7 +199,17 @@ export const indication = recipe({
 				active: true,
 			},
 			style: {
-				backgroundColor: vars.colours.background.light,
+				backgroundColor: vars.color.background.emphasisInactive,
+				color: vars.color.foreground.primary,
+			},
+		},
+		{
+			variants: {
+				appearance: 'segmented',
+				active: true,
+			},
+			style: {
+				backgroundColor: vars.color.background.emphasisInactive,
 				color: vars.color.foreground.primary,
 			},
 		},

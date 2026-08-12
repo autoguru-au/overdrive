@@ -2,7 +2,7 @@ import { WarningIcon, OttoIcon } from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import isChromatic from 'chromatic/isChromatic';
 import React, { useEffect, useState } from 'react';
-import { fn } from 'storybook/test';
+import { expect, fn, userEvent, within } from 'storybook/test';
 
 import { Box } from '../Box/Box';
 import { FlexInline } from '../Flex/FlexInline';
@@ -192,6 +192,98 @@ export const WithStretch: Story = {
 		),
 	},
 	render: (args) => <StatefulTabs {...args} />,
+};
+
+export const Minimal: Story = {
+	args: {
+		...Standard.args,
+		appearance: 'minimal',
+	},
+	render: (args) => <StatefulTabs {...args} />,
+};
+
+export const Segmented: Story = {
+	args: {
+		appearance: 'segmented',
+		children: (
+			<>
+				<TabList>
+					<Tab>Registration</Tab>
+					<Tab>VIN</Tab>
+					<Tab>Serial Number</Tab>
+				</TabList>
+
+				<TabPanes>
+					<TabPane>Search by registration</TabPane>
+					<TabPane>Search by VIN</TabPane>
+					<TabPane>Search by serial number</TabPane>
+				</TabPanes>
+			</>
+		),
+	},
+	decorators: [
+		(story) => (
+			<div style={{ maxWidth: '665px', width: '100%' }}>{story()}</div>
+		),
+	],
+	render: (args) => <StatefulTabs {...args} />,
+};
+
+export const SegmentedWithIndication: Story = {
+	args: {
+		appearance: 'segmented',
+		children: (
+			<>
+				<TabList>
+					<Tab indication={3}>Open</Tab>
+					<Tab indication={12}>In Progress</Tab>
+					<Tab>Closed</Tab>
+				</TabList>
+
+				<TabPanes>
+					<TabPane>Content A</TabPane>
+					<TabPane>Content B</TabPane>
+					<TabPane>Content C</TabPane>
+				</TabPanes>
+			</>
+		),
+	},
+	render: (args) => <StatefulTabs {...args} />,
+};
+
+export const SegmentedInteractionTest: Story = {
+	...Segmented,
+	tags: ['!autodocs', 'skip-themes'],
+	play: async ({ canvasElement, step }) => {
+		const canvas = within(canvasElement);
+		const tabs = canvas.getAllByRole('tab');
+
+		await step('first segment is selected by default', async () => {
+			await expect(tabs[0]).toHaveAttribute('aria-selected', 'true');
+			await expect(tabs[1]).toHaveAttribute('aria-selected', 'false');
+		});
+
+		await step('clicking a segment selects it', async () => {
+			await userEvent.click(tabs[2]);
+			await expect(
+				canvas.getByRole('tab', { name: 'Serial Number' }),
+			).toHaveAttribute('aria-selected', 'true');
+		});
+
+		await step('ArrowRight wraps to the first segment', async () => {
+			await userEvent.keyboard('{ArrowRight}');
+			await expect(
+				canvas.getByRole('tab', { name: 'Registration' }),
+			).toHaveAttribute('aria-selected', 'true');
+		});
+
+		await step('End jumps to the last segment', async () => {
+			await userEvent.keyboard('{End}');
+			await expect(
+				canvas.getByRole('tab', { name: 'Serial Number' }),
+			).toHaveAttribute('aria-selected', 'true');
+		});
+	},
 };
 
 export const Scrollable: Story = {
