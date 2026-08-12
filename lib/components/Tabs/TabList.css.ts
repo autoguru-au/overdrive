@@ -12,6 +12,7 @@ export const styledTabList = recipe({
 			},
 			pill: {},
 			minimal: {},
+			segmented: {},
 		},
 		scroll: {
 			true: {

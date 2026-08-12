@@ -116,7 +116,17 @@ export {
 	TableRow,
 	TableRowGroup,
 } from './Table';
-export { Tabs, Tab, TabList, TabPane, TabPanes } from './Tabs';
+export {
+	Tabs,
+	Tab,
+	TabList,
+	TabPane,
+	TabPanes,
+	type TabsProps,
+	type TabProps,
+	type TabListProps,
+	type TabAppearance,
+} from './Tabs';
 export { Text } from './Text';
 export { TextAreaInput } from './TextAreaInput';
 export { TextBubble } from './TextBubble';

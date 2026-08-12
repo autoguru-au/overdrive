@@ -2,6 +2,9 @@ import { fireEvent, render } from '@testing-library/react';
 import * as React from 'react';
 import { useState } from 'react';
 
+import { textStyles } from '../../styles/typography';
+
+import * as styles from './Tab.css';
 import { Tab } from './Tab';
 import { TabList } from './TabList';
 import { TabPane } from './TabPane';
@@ -150,6 +153,19 @@ describe('<Tabs />', () => {
 		expect(container.firstChild).toMatchSnapshot();
 	});
 
+	it('should apply the secondary foreground token to idle tabs', () => {
+		const { getAllByRole } = renderTabs();
+
+		expect(getAllByRole('tab')[1]).toHaveClass(
+			textStyles({
+				color: 'secondary',
+				noWrap: true,
+				size: '3',
+				weight: 'bold',
+			}),
+		);
+	});
+
 	it('should persist state between tab changes', () => {
 		const { getAllByRole, getByTestId } = renderTabs(
 			null,
@@ -172,5 +188,92 @@ describe('<Tabs />', () => {
 		checkbox = getByTestId('checkbox-testCase-1');
 
 		expect(checkbox).toBeChecked();
+	});
+});
+
+const renderSegmented = ({ scrollable = false } = {}) =>
+	render(
+		<Tabs appearance="segmented">
+			<TabList scrollable={scrollable}>
+				{tabData.map((tab) => (
+					<Tab key={tab.title}>{tab.title}</Tab>
+				))}
+			</TabList>
+		</Tabs>,
+	);
+
+describe('<Tabs appearance="segmented" />', () => {
+	it('should match snapshot', () => {
+		const { container } = renderSegmented();
+
+		expect(container.firstChild).toMatchSnapshot();
+	});
+
+	it('should render every tab with exactly one selected', () => {
+		const { getAllByRole } = renderSegmented();
+
+		const tabs = getAllByRole('tab');
+
+		expect(tabs).toHaveLength(tabData.length);
+		expect(
+			tabs.filter((tab) => tab.getAttribute('aria-selected') === 'true'),
+		).toHaveLength(1);
+	});
+
+	it('should apply the segmented active compound style to the selected tab only', () => {
+		const { getAllByRole } = renderSegmented();
+
+		const [tab1, tab2] = getAllByRole('tab');
+		const activeClass = styles.styledTab({
+			appearance: 'segmented',
+			active: true,
+		});
+
+		expect(tab1).toHaveClass(activeClass);
+		expect(tab2).not.toHaveClass(activeClass);
+
+		fireEvent.click(tab2);
+
+		expect(tab1).not.toHaveClass(activeClass);
+		expect(tab2).toHaveClass(activeClass);
+	});
+
+	it('should imply stretch by laying the tablist out as flex', () => {
+		const { getByRole } = renderSegmented();
+
+		expect(getByRole('tablist').className).toEqual(
+			expect.stringContaining('display_flex'),
+		);
+	});
+
+	it('should support keyboard navigation', () => {
+		const { getAllByRole, getByRole } = renderSegmented();
+
+		const tablist = getByRole('tablist');
+		const tabs = getAllByRole('tab');
+
+		fireEvent.keyDown(tablist, { key: 'ArrowRight' });
+		expect(tabs[1].getAttribute('aria-selected')).toBe('true');
+
+		fireEvent.keyDown(tablist, { key: 'End' });
+		expect(tabs[tabData.length - 1].getAttribute('aria-selected')).toBe(
+			'true',
+		);
+
+		fireEvent.keyDown(tablist, { key: 'ArrowRight' });
+		expect(tabs[0].getAttribute('aria-selected')).toBe('true');
+
+		// Move off index 0 first, so the Home assertion can actually fail
+		fireEvent.keyDown(tablist, { key: 'ArrowRight' });
+		expect(tabs[1].getAttribute('aria-selected')).toBe('true');
+
+		fireEvent.keyDown(tablist, { key: 'Home' });
+		expect(tabs[0].getAttribute('aria-selected')).toBe('true');
+	});
+
+	it('should not allow scrollable together with segmented', () => {
+		expect(() => renderSegmented({ scrollable: true })).toThrow(
+			/`scrollable={true}` cannot be used with `appearance="segmented"`/,
+		);
 	});
 });
