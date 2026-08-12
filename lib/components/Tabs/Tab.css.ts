@@ -65,7 +65,7 @@ export const styledTab = recipe({
 				minWidth: 0,
 				padding: `${vars.space['2']} ${vars.space['4']}`,
 				':focus-visible': {
-					outlineOffset: `calc(-1 * ${vars.border.width['1']})`,
+					outlineOffset: '-1px',
 				},
 				selectors: {
 					'&:first-child': {
