@@ -266,21 +266,21 @@ export const SegmentedInteractionTest: Story = {
 		await step('clicking a segment selects it', async () => {
 			await userEvent.click(tabs[2]);
 			await expect(
-				canvas.getByRole('tab', { name: 'Serial Number' }),
+				canvas.getAllByRole('tab', { name: 'Serial Number' })[0],
 			).toHaveAttribute('aria-selected', 'true');
 		});
 
 		await step('ArrowRight wraps to the first segment', async () => {
 			await userEvent.keyboard('{ArrowRight}');
 			await expect(
-				canvas.getByRole('tab', { name: 'Registration' }),
+				canvas.getAllByRole('tab', { name: 'Registration' })[0],
 			).toHaveAttribute('aria-selected', 'true');
 		});
 
 		await step('End jumps to the last segment', async () => {
 			await userEvent.keyboard('{End}');
 			await expect(
-				canvas.getByRole('tab', { name: 'Serial Number' }),
+				canvas.getAllByRole('tab', { name: 'Serial Number' })[0],
 			).toHaveAttribute('aria-selected', 'true');
 		});
 	},

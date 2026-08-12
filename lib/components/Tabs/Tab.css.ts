@@ -65,7 +65,7 @@ export const styledTab = recipe({
 				minWidth: 0,
 				padding: `${vars.space['2']} ${vars.space['4']}`,
 				':focus-visible': {
-					outlineOffset: '-1px',
+					outlineOffset: `calc(-1 * ${vars.border.width['1']})`,
 				},
 				selectors: {
 					'&:first-child': {
@@ -155,7 +155,7 @@ export const indication = recipe({
 			height: size,
 			padding: `0 ${vars.space['1']}`,
 			lineHeight: size,
-			transition: `color 0.2s ${vars.animation.easing.decelerate} 0s, backgroundColor 0.2s ${vars.animation.easing.decelerate} 0s`,
+			transition: `color 0.2s ${vars.animation.easing.decelerate} 0s, background-color 0.2s ${vars.animation.easing.decelerate} 0s`,
 		},
 	],
 	variants: {
