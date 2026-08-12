@@ -153,12 +153,12 @@ describe('<Tabs />', () => {
 		expect(container.firstChild).toMatchSnapshot();
 	});
 
-	it('should apply the gray600 foreground token to idle tabs', () => {
+	it('should apply the secondary foreground token to idle tabs', () => {
 		const { getAllByRole } = renderTabs();
 
 		expect(getAllByRole('tab')[1]).toHaveClass(
 			textStyles({
-				color: 'gray600',
+				color: 'secondary',
 				noWrap: true,
 				size: '3',
 				weight: 'bold',

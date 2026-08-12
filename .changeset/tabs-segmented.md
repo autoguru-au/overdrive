@@ -14,10 +14,15 @@ The default stays `'underlined'` and the existing `underlined`, `pill` and
 Also completes the DS-2026 token migration for Tabs (Track C, W3c-P4). The six
 remaining legacy `colours.*` references in `Tab.css.ts` move to their semantic
 equivalents, and the idle tab colour moves off `textStyles({ colour: 'light' })`
-onto `color: 'gray600'` — passing the modern `color` prop suppresses the legacy
-colour class entirely rather than falling back to its default. Every swap
-resolves to the same hex on the base theme, so rendered output is unchanged; the
-only snapshot movement is class names.
+onto `color: 'secondary'` — passing the modern `color` prop suppresses the
+legacy colour class entirely rather than falling back to its default.
+
+The six `Tab.css.ts` swaps all resolve to the same hex on the base theme, so
+those are visually unchanged. **Idle tab text is the one intentional pixel
+change:** it darkens from gray600 `#5c6172` to `color.foreground.secondary`
+`#484c5f`, which lifts contrast against white from 6.4:1 to 8.6:1. This affects
+every appearance in every consumer, since it sits on the shared `Tab` element
+rather than in a variant.
 
 The `flat_red` theme is the one exception. Semantic `color.*` tokens are pinned
 to the base palette in every theme, whereas legacy `colours.*` resolved through

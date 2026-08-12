@@ -82,7 +82,7 @@ export const Tab = forwardRef<HTMLDivElement, TabProps>(
 					backgroundColor: 'transparent',
 				}),
 				textStyles({
-					color: 'gray600',
+					color: 'secondary',
 					noWrap: true,
 					size: '3',
 					weight: 'bold',
