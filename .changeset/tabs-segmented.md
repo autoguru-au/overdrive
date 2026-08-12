@@ -8,8 +8,9 @@ navigation" component. `stretch` is implied, so the tab list always lays out as
 flex; `scrollable` is rejected with an invariant, since overlapped borders and
 end radii cannot survive scrolling.
 
-The default stays `'underlined'` and the existing `underlined`, `pill` and
-`minimal` appearances are untouched, so nothing changes for current consumers.
+The default stays `'underlined'`, so no consumer picks up the new style
+implicitly. The three existing appearances keep their layout and selected-state
+styling; the one change that reaches them is the idle text colour, below.
 
 Also completes the DS-2026 token migration for Tabs (Track C, W3c-P4). The six
 remaining legacy `colours.*` references in `Tab.css.ts` move to their semantic
