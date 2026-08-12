@@ -25,6 +25,13 @@ change:** it darkens from gray600 `#5c6172` to `color.foreground.secondary`
 every appearance in every consumer, since it sits on the shared `Tab` element
 rather than in a variant.
 
+Tabs is now free of legacy `colours.*` references. Two of the repointed keys
+(`colours.background.light`, `colours.background.neutral`) are ones tenant
+themes override, and some sibling components still retain them for that reason —
+so the indication badge on a tenant-themed MFE now takes the base value rather
+than the tenant's. That is the intended direction here: the goal is a Tabs
+component with no legacy token references left, not a partial migration.
+
 The `flat_red` theme is the one exception. Semantic `color.*` tokens are pinned
 to the base palette in every theme, whereas legacy `colours.*` resolved through
 each theme's own gray ramp — and `flat_red` ships a different one (`#263238`
