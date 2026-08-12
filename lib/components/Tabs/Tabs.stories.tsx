@@ -39,8 +39,15 @@ const meta: Meta<typeof Tabs> = {
 	component: Tabs,
 	tags: [],
 	decorators: [
-		(story) => (
-			<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
+		(story, context) => (
+			<div
+				style={{
+					maxWidth: context.parameters.containerWidth ?? '500px',
+					width: '100%',
+				}}
+			>
+				{story()}
+			</div>
 		),
 	],
 	args: {
@@ -221,11 +228,7 @@ export const Segmented: Story = {
 			</>
 		),
 	},
-	decorators: [
-		(story) => (
-			<div style={{ maxWidth: '665px', width: '100%' }}>{story()}</div>
-		),
-	],
+	parameters: { containerWidth: '665px' },
 	render: (args) => <StatefulTabs {...args} />,
 };
 
