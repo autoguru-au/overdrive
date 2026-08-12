@@ -21,9 +21,11 @@ legacy colour class entirely rather than falling back to its default.
 The six `Tab.css.ts` swaps all resolve to the same hex on the base theme, so
 those are visually unchanged. **Idle tab text is the one intentional pixel
 change:** it darkens from gray600 `#5c6172` to `color.foreground.secondary`
-`#484c5f`, which lifts contrast against white from 6.4:1 to 8.6:1. This affects
-every appearance in every consumer, since it sits on the shared `Tab` element
-rather than in a variant.
+`#484c5f`, which lifts contrast against white from 6.4:1 to 8.6:1. Because the
+colour sits on the shared `Tab` element, it reaches the appearances that do not
+set their own: `underlined` (the default) and `minimal`. `pill` and `segmented`
+declare their own idle colour and are unaffected. Selected tabs are unchanged
+throughout, as is layout.
 
 Tabs is now free of legacy `colours.*` references. Two of the repointed keys
 (`colours.background.light`, `colours.background.neutral`) are ones tenant
