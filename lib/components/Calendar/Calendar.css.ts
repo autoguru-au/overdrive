@@ -31,7 +31,7 @@ export const calendarStyle = style([
 export const cellStyle = style([
 	sprinkles({
 		alignItems: 'center',
-		borderRadius: 'md',
+		borderRadius: 'small',
 		display: 'flex',
 		mx: 'auto',
 		justifyContent: 'center',
@@ -72,7 +72,7 @@ export const buttonStyle = style([
 	sprinkles({
 		alignItems: 'center',
 		borderColor: 'default',
-		borderRadius: 'md',
+		borderRadius: 'small',
 		borderStyle: 'solid',
 		borderWidth: '1',
 		display: 'flex',
@@ -95,7 +95,7 @@ export const buttonStyle = style([
 					},
 					[selectors.disabled]: {
 						background: tokens.color.background.default,
-						borderColor: tokens.border.colours.light,
+						borderColor: tokens.color.interactive.borderMuted,
 						color: tokens.color.gamut.gray['300'],
 						cursor: 'not-allowed',
 					},
