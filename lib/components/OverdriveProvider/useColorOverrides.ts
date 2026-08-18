@@ -1,6 +1,7 @@
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import { useMemo } from 'react';
 
+import { type ContrastUsage } from '../../themes/base/contrastGuide';
 import {
 	getContrastRatio,
 	passesAccessibilityContrast,
@@ -69,22 +70,19 @@ const onBrandColour = (brand: string, theme: ThemeContext): string =>
 		: theme.bodyInk;
 
 /**
- * What `primaryForeground` is drawn as, which decides the contrast floor it has
- * to clear. A `label` is text under WCAG 1.4.3 and needs 4.5:1; a `glyph` — a
- * tick, dot or knob — is a UI component under 1.4.11 and needs 3:1.
- */
-type BrandContentRole = 'label' | 'glyph';
-
-/**
  * Prefer `primaryForeground`, but only while it clears the floor for what it is
- * drawn as. The same supplied colour can legitimately be kept as a glyph and
- * replaced as a label.
+ * used as: `text` is WCAG 1.4.3 and needs 4.5:1, `icon-only` is 1.4.11 and needs
+ * 3:1. The same supplied colour can legitimately be kept for an icon and
+ * replaced for text.
+ *
+ * `usage` mirrors `ContrastUsage` in `themes/base/contrastGuide`, so the runtime
+ * check and the design system's static contrast guide speak the same language.
  */
 const resolveOnBrand = (
 	brand: string,
 	theme: ThemeContext,
 	suppliedForeground: string | undefined,
-	drawnAs: BrandContentRole,
+	usage: Extract<ContrastUsage, 'text' | 'icon-only'>,
 ): string => {
 	if (!suppliedForeground) return onBrandColour(brand, theme);
 
@@ -94,14 +92,14 @@ const resolveOnBrand = (
 		level: 'AA',
 		// WCAG's LARGE text threshold is 3:1, the same figure 1.4.11 sets for
 		// non-text UI. This is the only line that needs that equivalence.
-		textSize: drawnAs === 'label' ? 'SMALL' : 'LARGE',
+		textSize: usage === 'text' ? 'SMALL' : 'LARGE',
 	});
 
 	if (legible) return suppliedForeground;
 
 	const derived = onBrandColour(brand, theme);
 	const [floor, surface] =
-		drawnAs === 'label'
+		usage === 'text'
 			? ['4.5:1', 'the primary button label']
 			: ['3:1', 'selection control ticks, dots and knobs'];
 	warnOnce(
@@ -187,14 +185,14 @@ export const useColorOverrides = (
 				primaryBackground,
 				theme,
 				valid.primaryForeground,
-				'label',
+				'text',
 			);
 
 			onBrand = resolveOnBrand(
 				primaryBackground,
 				theme,
 				valid.primaryForeground,
-				'glyph',
+				'icon-only',
 			);
 
 			// Pale tints behind an outlined button, hover the paler of the two.
