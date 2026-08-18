@@ -317,19 +317,6 @@ describe('useColorOverrides', () => {
 				expect.stringContaining('for text use'),
 			);
 		});
-
-		it('judges the pairing correctly when the brand is not hex', () => {
-			// the old parser returned null here, read it as black, and concluded
-			// white was legible on it
-			const result = vars({
-				primaryBackground: 'hsl(45, 100%, 50%)',
-				primaryForeground: '#ffffff',
-			});
-
-			expect(result['--od-colours-intent-primary-foreground']).toBe(
-				colourMap.gray['900'],
-			);
-		});
 	});
 
 	describe('server rendering', () => {

@@ -187,10 +187,6 @@ export {
 
 // Tokens & aliases
 export { overdriveTokens as tokens } from './themes/theme.css';
-export {
-	getContrastRatio,
-	passesAccessibilityContrast,
-} from './themes/helpers';
 export { sprinkles as css } from './styles/sprinkles.css';
 export {
 	elementStyles as useBoxStyles,
