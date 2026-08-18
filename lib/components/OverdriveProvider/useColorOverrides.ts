@@ -86,24 +86,20 @@ const resolveOnBrand = (
 ): string => {
 	if (!suppliedForeground) return onBrandColour(brand, theme);
 
+	const textSize = usage === 'text' ? 'SMALL' : 'LARGE';
+
 	const legible = passesAccessibilityContrast({
 		colour1: suppliedForeground,
 		colour2: brand,
 		level: 'AA',
-		// WCAG's LARGE text threshold is 3:1, the same figure 1.4.11 sets for
-		// non-text UI. This is the only line that needs that equivalence.
-		textSize: usage === 'text' ? 'SMALL' : 'LARGE',
+		textSize,
 	});
 
 	if (legible) return suppliedForeground;
 
 	const derived = onBrandColour(brand, theme);
-	const [floor, surface] =
-		usage === 'text'
-			? ['4.5:1', 'the primary button label']
-			: ['3:1', 'selection control ticks, dots and knobs'];
 	warnOnce(
-		`Overdrive Provider: primaryForeground (${suppliedForeground}) does not meet ${floor} against primaryBackground (${brand}), so ${surface} would be illegible. Using ${derived} instead.`,
+		`Overdrive Provider: primaryForeground (${suppliedForeground}) does not have enough contrast against primaryBackground (${brand}) for ${usage} use. Using ${derived} instead.`,
 	);
 	return derived;
 };
@@ -124,7 +120,7 @@ const warnOnLowContrast = (
 		})
 	) {
 		warnOnce(
-			`Overdrive Provider: ${key} (${colour}) does not meet WCAG AA (4.5:1) against the page background. Anything drawn in it as text or a border — outlined buttons, links, focus rings — may be hard to read.`,
+			`Overdrive Provider: ${key} (${colour}) does not meet WCAG AA against the page background. Anything drawn in it as text or a border — outlined buttons, links, focus rings — may be hard to read.`,
 		);
 	}
 };

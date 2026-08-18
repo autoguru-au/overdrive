@@ -288,7 +288,7 @@ describe('useColorOverrides', () => {
 			expect(result['--od-color-brand-on-solid']).toBe('#000000');
 		});
 
-		it('splits the label from the glyph when the foreground clears 3:1 but not 4.5:1', () => {
+		it('splits text from icon-only when the foreground clears 3:1 but not 4.5:1', () => {
 			// #767676 on white is 4.54:1, so on a white brand fill it is fine for
 			// a tick (3:1) and short of the label's 4.5:1 — different criteria,
 			// so legitimately different colours
@@ -303,7 +303,7 @@ describe('useColorOverrides', () => {
 			);
 		});
 
-		it('warns once, naming the floor the label missed', () => {
+		it('warns once, naming what the colour failed for', () => {
 			const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
 
 			// a pair no other case uses — warnOnce dedupes per message for the
@@ -313,7 +313,9 @@ describe('useColorOverrides', () => {
 				primaryForeground: '#8f8f8f',
 			});
 
-			expect(warn).toHaveBeenCalledWith(expect.stringContaining('4.5:1'));
+			expect(warn).toHaveBeenCalledWith(
+				expect.stringContaining('for text use'),
+			);
 		});
 
 		it('judges the pairing correctly when the brand is not hex', () => {
