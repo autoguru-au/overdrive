@@ -1,5 +1,11 @@
 import type { CSSVarFunction } from '@vanilla-extract/private';
-import { colord } from 'colord';
+import { colord, extend } from 'colord';
+import namesPlugin from 'colord/plugins/names';
+
+// Named CSS colours are not in colord's core parser. `isValidColor` in
+// useColorOverrides accepts them, so without this they would pass validation and
+// then resolve to luminance 0.
+extend([namesPlugin]);
 
 /**
  * Utility type that extracts the raw token type from a vanilla-extract theme contract.
@@ -89,8 +95,17 @@ export const rgbStrToRGB = (rgb: string): RGBNumbers => {
 	};
 };
 
-export const getRGBValues = (hexOrRGB: string): RGBNumbers =>
-	hexOrRGB.startsWith('rgb') ? rgbStrToRGB(hexOrRGB) : hexToRGB(hexOrRGB);
+/**
+ * Parses via `colord`, so `hsl()`, named colours and 8-digit hex resolve instead
+ * of falling through to `null` — which `getColourLuminance` reads as 0, i.e. the
+ * colour is silently treated as black and every contrast check built on it
+ * returns a confident wrong answer. Invalid input still yields `null`.
+ */
+export const getRGBValues = (colour: string): RGBNumbers => {
+	if (!colord(colour).isValid()) return null;
+	const { r, g, b } = colord(colour).toRgb();
+	return { r, g, b };
+};
 
 export const getColourLuminance = (rgb: RGBNumbers) => {
 	if (!rgb) return 0;

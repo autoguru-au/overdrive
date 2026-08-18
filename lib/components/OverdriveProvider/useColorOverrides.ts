@@ -69,14 +69,16 @@ const onBrandColour = (brand: string, theme: ThemeContext): string =>
 		: theme.bodyInk;
 
 /**
- * Prefer `primaryForeground`, but only while it clears 3:1 on the fill — it was
- * chosen as a button label colour, and a light brand paired with white text
- * would otherwise leave an invisible tick.
+ * Prefer `primaryForeground`, but only while it clears the floor for the role
+ * it is drawn in: a button label is text (WCAG 1.4.3, 4.5:1) while a tick, dot
+ * or knob is a UI glyph (1.4.11, 3:1). The same supplied colour can legitimately
+ * be kept for one and replaced for the other.
  */
 const resolveOnBrand = (
 	brand: string,
 	theme: ThemeContext,
-	suppliedForeground?: string,
+	suppliedForeground: string | undefined,
+	textSize: 'SMALL' | 'LARGE',
 ): string => {
 	if (!suppliedForeground) return onBrandColour(brand, theme);
 
@@ -84,14 +86,18 @@ const resolveOnBrand = (
 		colour1: suppliedForeground,
 		colour2: brand,
 		level: 'AA',
-		textSize: 'LARGE',
+		textSize,
 	});
 
 	if (legible) return suppliedForeground;
 
 	const derived = onBrandColour(brand, theme);
+	const [floor, surface] =
+		textSize === 'SMALL'
+			? ['4.5:1', 'the primary button label']
+			: ['3:1', 'selection control ticks, dots and knobs'];
 	warnOnce(
-		`Overdrive Provider: primaryForeground (${suppliedForeground}) does not meet 3:1 against primaryBackground (${brand}), so selection controls would be illegible. Using ${derived} for their tick/dot/knob instead.`,
+		`Overdrive Provider: primaryForeground (${suppliedForeground}) does not meet ${floor} against primaryBackground (${brand}), so ${surface} would be illegible. Using ${derived} instead.`,
 	);
 	return derived;
 };
@@ -169,16 +175,20 @@ export const useColorOverrides = (
 					intensity: 0.1,
 				});
 
-			// Honours an explicit value even when poor; only derives if absent.
-			buttonForeground =
-				valid.primaryForeground ??
-				onBrandColour(primaryBackground, theme);
+			// Label text, so the 4.5:1 floor rather than the glyph's 3:1.
+			buttonForeground = resolveOnBrand(
+				primaryBackground,
+				theme,
+				valid.primaryForeground,
+				'SMALL',
+			);
 
-			// Stricter — a glyph failing 3:1 on the fill is invisible.
+			// A glyph failing 3:1 on the fill is invisible.
 			onBrand = resolveOnBrand(
 				primaryBackground,
 				theme,
 				valid.primaryForeground,
+				'LARGE',
 			);
 
 			// Pale tints behind an outlined button, hover the paler of the two.
