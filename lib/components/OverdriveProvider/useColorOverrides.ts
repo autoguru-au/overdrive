@@ -69,16 +69,22 @@ const onBrandColour = (brand: string, theme: ThemeContext): string =>
 		: theme.bodyInk;
 
 /**
- * Prefer `primaryForeground`, but only while it clears the floor for the role
- * it is drawn in: a button label is text (WCAG 1.4.3, 4.5:1) while a tick, dot
- * or knob is a UI glyph (1.4.11, 3:1). The same supplied colour can legitimately
- * be kept for one and replaced for the other.
+ * What `primaryForeground` is drawn as, which decides the contrast floor it has
+ * to clear. A `label` is text under WCAG 1.4.3 and needs 4.5:1; a `glyph` — a
+ * tick, dot or knob — is a UI component under 1.4.11 and needs 3:1.
+ */
+type BrandContentRole = 'label' | 'glyph';
+
+/**
+ * Prefer `primaryForeground`, but only while it clears the floor for what it is
+ * drawn as. The same supplied colour can legitimately be kept as a glyph and
+ * replaced as a label.
  */
 const resolveOnBrand = (
 	brand: string,
 	theme: ThemeContext,
 	suppliedForeground: string | undefined,
-	textSize: 'SMALL' | 'LARGE',
+	drawnAs: BrandContentRole,
 ): string => {
 	if (!suppliedForeground) return onBrandColour(brand, theme);
 
@@ -86,14 +92,16 @@ const resolveOnBrand = (
 		colour1: suppliedForeground,
 		colour2: brand,
 		level: 'AA',
-		textSize,
+		// WCAG's LARGE text threshold is 3:1, the same figure 1.4.11 sets for
+		// non-text UI. This is the only line that needs that equivalence.
+		textSize: drawnAs === 'label' ? 'SMALL' : 'LARGE',
 	});
 
 	if (legible) return suppliedForeground;
 
 	const derived = onBrandColour(brand, theme);
 	const [floor, surface] =
-		textSize === 'SMALL'
+		drawnAs === 'label'
 			? ['4.5:1', 'the primary button label']
 			: ['3:1', 'selection control ticks, dots and knobs'];
 	warnOnce(
@@ -175,20 +183,18 @@ export const useColorOverrides = (
 					intensity: 0.1,
 				});
 
-			// Label text, so the 4.5:1 floor rather than the glyph's 3:1.
 			buttonForeground = resolveOnBrand(
 				primaryBackground,
 				theme,
 				valid.primaryForeground,
-				'SMALL',
+				'label',
 			);
 
-			// A glyph failing 3:1 on the fill is invisible.
 			onBrand = resolveOnBrand(
 				primaryBackground,
 				theme,
 				valid.primaryForeground,
-				'LARGE',
+				'glyph',
 			);
 
 			// Pale tints behind an outlined button, hover the paler of the two.
