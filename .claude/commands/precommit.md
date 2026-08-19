@@ -1,5 +1,5 @@
 ---
-description: 'Run Overdrive precommit gates - format, lint, test, build, changeset (+ storybook/Chromatic with --visual)'
+description: 'Run Overdrive precommit gates - format, lint, test, build, changeset'
 disable-model-invocation: true
 ---
 
@@ -9,49 +9,53 @@ Run each step one at a time, in order. Stop at the first ❌.
 
 ## Arguments
 
-- `/precommit` — the default gate: Format, Lint, Test, Build, Changeset.
-- `/precommit --visual` — adds Storybook build + Chromatic (steps 6 and 7).
+- `/precommit` — the full gate: Format, Lint, Test, Build, Changeset.
 - `/precommit <base-branch>` — compare against that branch instead of the
   auto-detected PR base (used by the Changeset step).
 
-`--visual` is opt-in on purpose. Chromatic snapshots come out of a finite
-monthly OSS quota, and `ci.yml` already fires Chromatic once per review round
-(on `ready_for_review`, because `pr-auto-draft.yml` re-drafts the PR on every
-push). A local run on top of that spends the same quota twice for the same
-review. Reach for `--visual` when the diff actually moves pixels — tokens,
-sprinkles, layout, a new component — and skip it for logic, types, tests or
-docs.
-
 ## Steps
 
-| # | Step | Command | Default |
-|---|------|---------|---------|
-| 1 | Format | `yarn format:staged <changed files>` | ✅ |
-| 2 | Lint | `yarn lint` | ✅ |
-| 3 | Test | `yarn test:ci` | ✅ |
-| 4 | Build | `yarn build` | ✅ |
-| 5 | Changeset | git inspection (below) | ✅ |
-| 6 | Storybook | `yarn storybook:build` | `--visual` |
-| 7 | Chromatic | `yarn chromatic --only-changed` | `--visual` |
+| # | Step | Command |
+|---|------|---------|
+| 1 | Format | `yarn format:staged <changed files>` |
+| 2 | Lint | `yarn lint` |
+| 3 | Test | `yarn test:ci` |
+| 4 | Build | `yarn build` |
+| 5 | Changeset | git inspection (below) |
 
-Steps 4, 6 and 7 have no PR equivalent in CI — `ci.yml` runs lint and tests
-only; `yarn build` runs at publish time and `storybook:build` on release or
-manual dispatch. That means a broken Babel build or a story that fails to
-compile sails through PR CI green and detonates later. These local steps are
-the only gate on that, which is why they belong here rather than in CI.
+Step 4 has no PR equivalent in CI — `ci.yml` runs lint and tests only, and
+`yarn build` runs at publish time. A broken Babel build sails through PR CI
+green and detonates at publish, so this is the only gate on it.
+
+## Visual testing is not part of this gate
+
+**Never run Chromatic or `storybook:build` from this command.** Both were
+considered and deliberately left out:
+
+- Chromatic snapshots come out of a finite monthly OSS quota that the project
+  has exhausted in past months. `ci.yml` already runs Chromatic once per review
+  round — on `ready_for_review`, because `pr-auto-draft.yml` re-drafts the PR
+  on every push. A local run spends that quota a second time for the same
+  review and publishes an extra build into the project's history.
+- CI runs with `onlyChanged: true` (TurboSnap) and `autoAcceptChanges: 'main'`.
+  The local `yarn chromatic` script has neither, so a local run behaves
+  differently from the gate that actually decides the PR — a green locally
+  would not mean what a reviewer thinks it means.
+
+Visual regressions are CI's job, and CI is where the baseline lives. If you
+want visual coverage on a change, push and mark the PR ready for review.
+
+`yarn storybook:build` is out for the same practical reason: it costs minutes
+per run to catch a class of breakage (a story that fails a production build)
+that is rare and that the release workflow catches anyway. Run it by hand when
+you have actually touched stories.
 
 ## Step 0 — establish the base and the changed files
 
 Do this before Step 1; several steps depend on it.
 
 ```bash
-BASE_BRANCH=""
-for ARG in "$@"; do
-  case "$ARG" in
-    --visual) ;;
-    *) BASE_BRANCH="$ARG"; break ;;
-  esac
-done
+BASE_BRANCH="${1:-}"
 if [ -z "$BASE_BRANCH" ]; then
   BASE_BRANCH=$(/opt/homebrew/bin/gh pr view --json baseRefName -q '.baseRefName' 2>/dev/null || true)
 fi
@@ -146,8 +150,13 @@ after it and runs for a hundred-odd lines. Reading the tail will miss it
 entirely. Grep instead:
 
 ```bash
-yarn test:ci 2>&1 | tee /tmp/od-test.log | grep -E "Test Files|Tests  |FAIL "
+yarn test:ci 2>&1 | tee "$LOGFILE" | grep -E "Test Files|Tests  |FAIL "
 ```
+
+Use `tee`, not `>`. Under zsh's `noclobber` a plain `>` onto an existing log
+fails silently-ish, and you end up grepping the *previous* run's output while
+reading the redirect's exit code as the test result. That is a false green
+manufactured by the harness rather than the suite.
 
 All three must hold, or **Step 3 is ❌**:
 
@@ -227,57 +236,6 @@ Apply:
 `.changeset/pre.json` means a prerelease is in progress — mention it, since the
 bump lands in the prerelease line rather than a normal release.
 
-## Step 6 — Storybook build (`--visual` only)
-
-```bash
-yarn storybook:build
-```
-
-Catches stories and MDX that compile in dev but fail a production build —
-broken imports, bad args, a component that throws at module scope. Nothing in
-PR CI covers this.
-
-❌ on non-zero exit or a build error. Show the failing story file. Warnings
-about chunk size are noise, not failures.
-
-## Step 7 — Chromatic (`--visual` only, BLOCKING verification)
-
-First confirm the token, because without it the CLI fails in a way that is
-easy to misread as a build problem:
-
-```bash
-[ -n "$CHROMATIC_PROJECT_TOKEN" ] || echo "MISSING CHROMATIC_PROJECT_TOKEN"
-```
-
-If it is missing, Step 7 is **blocked, not passed**. Report it as ⚠️ with the
-fix (export the token, same value as the `CHROMATIC_APP_CODE` repo secret) and
-do not claim visual coverage.
-
-Then:
-
-```bash
-yarn chromatic --only-changed
-```
-
-`--only-changed` is not optional. The `chromatic` package script has no
-TurboSnap flag, so a bare run snapshots every story in the library; CI runs
-with `onlyChanged: true`, and matching it keeps a local run to the stories your
-diff can actually affect. On a finite OSS quota that difference is the whole
-ballgame.
-
-**The exit code is meaningless here.** The script hardcodes
-`--exit-zero-on-changes`, so a build with fifty unreviewed visual diffs exits
-0. Parse the output instead:
-
-- `Build N published` plus a **captured/changed** summary and a build URL → read
-  the change count.
-- **0 changes** → ✅. Report the snapshot count so the quota spend is visible.
-- **N > 0 changes** → ⚠️, never ✅. Print the build URL and say the diffs need
-  human review in the Chromatic UI. You cannot judge from the terminal whether
-  a visual change is intended, and reporting a green here is exactly the false
-  green this step exists to prevent.
-- No build URL, an auth error, or no parseable summary → ❌.
-
 ## Output format
 
 Show an inline status line, updated after each step:
@@ -292,26 +250,18 @@ Show an inline status line, updated after each step:
 
 ### Success
 
-Only when every step in scope is ✅, append the parsed numbers:
+Only when every step is ✅, append the parsed numbers:
 
 ```
-✅ Format ✅ Lint ✅ Test (93 files / 926 tests) ✅ Build ✅ Changeset (calendar-ds2026-tokens.md)
+✅ Format ✅ Lint ✅ Test (93 files / 926 tests) ✅ Build (456 files) ✅ Changeset (calendar-ds2026-tokens.md)
 
 🚀 Ship it!
 ```
 
-With `--visual`:
+When the changeset step was legitimately skipped, say why inline:
 
 ```
-✅ Format ✅ Lint ✅ Test (93 files / 926 tests) ✅ Build ✅ Changeset (tabs-segmented.md) ✅ Storybook ✅ Chromatic (0 changes, 84 snapshots)
-
-🚀 Ship it!
-```
-
-When a step was legitimately skipped, say why inline:
-
-```
-✅ Format ✅ Lint ✅ Test (93 files / 926 tests) ✅ Build ✅ Changeset (skipped — no publishable source changed)
+✅ Format ✅ Lint ✅ Test (93 files / 926 tests) ✅ Build (456 files) ✅ Changeset (skipped — no publishable source changed)
 
 🚀 Ship it!
 ```
@@ -320,15 +270,8 @@ The counts are mandatory. A "Ship it!" without test counts and the changeset
 name (or an explicit skip reason) is malformed — the human reading it has no
 way to spot a false green, which is the only thing this line is for.
 
-### Visual diffs pending
-
-Chromatic changes are not a failure, but they are not a pass either:
-
-```
-✅ Format ✅ Lint ✅ Test (93 files / 926 tests) ✅ Build ✅ Changeset (tabs-segmented.md) ✅ Storybook ⚠️ Chromatic (12 changes)
-
-⚠️ Review the visual diffs before pushing: <build URL>
-```
+Say plainly that visual regressions were not checked. This gate does not cover
+them, and a bare "Ship it!" can read as though it did.
 
 ### Failure
 
@@ -348,13 +291,16 @@ Then list what broke — file paths and error excerpts, not a summary — and as
 2. Update the inline status after every step.
 3. Step 1 formats changed files only. `yarn format` (repo-wide) is never
    correct here.
-4. Steps 3, 5 and 7 have verification blocks that a zero exit code does not
+4. Steps 3 and 5 have verification blocks that a zero exit code does not
    satisfy. Parse the output.
-5. Steps 6 and 7 run only with `--visual`. Never run Chromatic without
-   `--only-changed`.
-6. A missing `CHROMATIC_PROJECT_TOKEN` is ⚠️ blocked, not ✅.
-7. Chromatic reporting changes is ⚠️ with the build URL, never ✅.
-8. "🚀 Ship it!" requires every in-scope step ✅ **and** the parsed counts
-   appended. If you could not parse a summary, you do not have a pass.
-9. Never commit or push as part of this command — it reports, the human
+5. Never run Chromatic or `storybook:build` from this command, and never add
+   them back. Visual regression is CI's job and CI owns the baseline.
+6. "🚀 Ship it!" requires every step ✅ **and** the parsed counts appended. If
+   you could not parse a summary, you do not have a pass.
+7. When a step's output looks impossible — a failure that does not match the
+   code, a summary from a run you did not just do — suspect the harness (a
+   failed redirect, a stale log) before reporting the result. Re-run cleanly.
+8. Never commit or push as part of this command — it reports, the human
    decides.
+9. Never revert someone's uncommitted work to make a step pass. If the fix for
+   a red step is "undo what they were doing", say so and let them choose.
