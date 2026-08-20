@@ -7,6 +7,12 @@ import { useTheme } from '../OverdriveProvider';
 export interface PortalProps {
 	children?: React.ReactNode;
 	container?: HTMLElement;
+	/**
+	 * Renders the children with no wrapper element. The wrapper is what carries
+	 * the theme class and the provider's colour overrides, so opting out of it
+	 * also opts out of tenant branding — the portalled subtree falls back to
+	 * base-theme tokens.
+	 */
 	noThemedWrapper?: boolean;
 }
 
@@ -16,7 +22,7 @@ function Portal(
 	{ children, container, noThemedWrapper }: PortalProps,
 	ref: React.Ref<typeof container>,
 ) {
-	const { themeClass, portalMountPoint } = useTheme();
+	const { themeClass, overrideStyles, portalMountPoint } = useTheme();
 	const [mountPoint, setMountPoint] = useState<HTMLElement | null>(null);
 	const [mountNode, setMountNode] = useState<RefValue<typeof ref> | null>(
 		null,
@@ -55,9 +61,18 @@ function Portal(
 
 	if (!mountNode) return null;
 
+	// The wrapper carries the provider's colour overrides as well as its theme
+	// class: custom properties inherit down the DOM, and the portal mounts
+	// outside the provider div, so without them a branded tenant's drawers,
+	// modals, toasts and popovers fall back to base-theme tokens.
 	return noThemedWrapper
 		? createPortal(children, mountNode)
-		: createPortal(<div className={themeClass}>{children}</div>, mountNode);
+		: createPortal(
+				<div className={themeClass} style={overrideStyles}>
+					{children}
+				</div>,
+				mountNode,
+			);
 }
 
 const _Portal = forwardRef(Portal);
