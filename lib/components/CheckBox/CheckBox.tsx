@@ -2,6 +2,7 @@ import { CheckIcon, MinusIcon } from '@autoguru/icons';
 import clsx from 'clsx';
 import React, { forwardRef, ReactNode, useEffect, useRef } from 'react';
 
+import type { ControlSize } from '../../types';
 import { mergeRefs, noop } from '../../utils';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box/Box';
@@ -15,6 +16,13 @@ export interface CheckboxProps {
 	className?: string;
 	checked?: boolean;
 	disabled?: boolean;
+	/**
+	 * Box size. `standard` is the pre-2026 24px control and stays the default,
+	 * so existing usage is unaffected; `large` (20px) and `small` (16px) are the
+	 * two sizes DS-2026 publishes.
+	 * @default 'standard'
+	 */
+	size?: ControlSize;
 	/**
 	 * Used to set an individual checkbox to an inbetween state and sets `indeterminate` accordingly on the native
 	 * input control. Toggling logic is left up to the parent component
@@ -36,6 +44,7 @@ export const CheckBox = forwardRef<HTMLInputElement, CheckboxProps>(
 			disabled = false,
 			checked = false,
 			isIndeterminate = false,
+			size = 'standard',
 			onClick = noop,
 			onChange = noop,
 			children,
@@ -67,6 +76,7 @@ export const CheckBox = forwardRef<HTMLInputElement, CheckboxProps>(
 					className={clsx(
 						styles.checkbox.default,
 						checkableIndicator,
+						size !== 'standard' && styles.boxSize[size],
 						{
 							[styles.checkbox.selected]:
 								checked || isIndeterminate,

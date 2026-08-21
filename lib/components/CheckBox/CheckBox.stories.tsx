@@ -4,6 +4,7 @@ import { fn } from 'storybook/test';
 
 import { Badge } from '../Badge/Badge';
 import { Heading } from '../Heading/Heading';
+import { Stack } from '../Stack';
 import { StarRating } from '../StarRating/StarRating';
 import { Text } from '../Text/Text';
 
@@ -194,4 +195,24 @@ export const WithMultiLineComponent: Story = {
 		),
 		value: '1',
 	},
+};
+
+/**
+ * The two sizes DS-2026 publishes, next to the pre-2026 control.
+ *
+ * `standard` (24px) is the default and unchanged. `large` (20px) and `small`
+ * (16px) come from the `5` and `4` space tokens, and the tick is always the box
+ * less the 2px inset Figma specifies — which is why today's 24px box already
+ * pairs with a 20px tick.
+ */
+export const Sizes: Story = {
+	render: (args) => (
+		<Stack space="3">
+			{(['standard', 'large', 'small'] as const).map((size) => (
+				<CheckBox {...args} key={size} size={size} value={size} checked>
+					<Text>{size}</Text>
+				</CheckBox>
+			))}
+		</Stack>
+	),
 };

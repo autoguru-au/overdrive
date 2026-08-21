@@ -61,6 +61,26 @@ export const disabled = style({
 	},
 });
 
+/**
+ * Figma `462:2521` — Large 38x20, Small 30x16, each insetting the track 2px and
+ * carrying the `z2` handle shadow. See `ControlSize`.
+ *
+ * Both widths fall out of the `2 x height - 2px` formula already in `toggle`,
+ * and with the inset the handle is `height - 4px` — so the handle needs no size
+ * of its own and the travel reduces to `height - 2px`.
+ */
+const trackSizes = { large: vars.space['5'], small: vars.space['4'] } as const;
+
+export const track = styleVariants(trackSizes, (size) => ({
+	'@layer': {
+		[cssLayerComponent]: {
+			height: size,
+			padding: vars.space['0'], // 2px
+			width: `calc(2 * ${size} - 2px)`,
+		},
+	},
+}));
+
 const handleScale = 'scale(0.95)';
 const handleTranslate = `translateX(calc(${handleSize} - 4px))`;
 
@@ -96,8 +116,25 @@ export const handle = styleVariants({
 					[`${toggle}:not([data-disabled]):hover &`]: {
 						transform: `${handleScale} ${handleTranslate}`,
 					},
+					// The DS-2026 tracks are narrower, so they travel less. Both
+					// classes sit on the same element, hence no space.
+					[`${track.large}${toggleOn} &`]: {
+						transform: `translateX(calc(${trackSizes.large} - 2px))`,
+					},
+					[`${track.small}${toggleOn} &`]: {
+						transform: `translateX(calc(${trackSizes.small} - 2px))`,
+					},
 				},
 			},
+		},
+	},
+});
+
+/** `z2` is the shadow Figma binds to the DS-2026 handle. */
+export const handleElevation = style({
+	'@layer': {
+		[cssLayerComponent]: {
+			boxShadow: vars.elevation.z2,
 		},
 	},
 });

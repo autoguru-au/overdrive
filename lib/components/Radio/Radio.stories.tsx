@@ -2,6 +2,8 @@ import { StoryObj, Meta } from '@storybook/react-vite';
 import React, { type ComponentProps } from 'react';
 import { fn } from 'storybook/test';
 
+import { Stack } from '../Stack';
+
 import { Radio } from './Radio';
 import { RadioGroup as RadioGroupComponent } from './RadioGroup';
 
@@ -85,4 +87,29 @@ export const MultipleLines: Story = {
 			</>
 		),
 	},
+};
+
+/**
+ * The two sizes DS-2026 publishes, next to the pre-2026 control.
+ *
+ * Set `size` once on `RadioGroup` — a group of mixed sizes is not a design
+ * DS-2026 publishes, though an individual `Radio` can still override it. The dot
+ * stays at half the ring, the ratio the standard control already renders.
+ */
+export const Sizes: Story = {
+	render: (args) => (
+		<Stack space="3">
+			{(['standard', 'large', 'small'] as const).map((size) => (
+				<RadioGroupComponent
+					{...args}
+					key={size}
+					name={`size-${size}`}
+					size={size}
+					value={size}
+				>
+					<Radio value={size}>{size}</Radio>
+				</RadioGroupComponent>
+			))}
+		</Stack>
+	),
 };

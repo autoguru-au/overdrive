@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { style, styleVariants } from '@vanilla-extract/css';
 
 import { overdriveTokens as vars } from '../../themes/theme.css';
 import {
@@ -54,6 +54,25 @@ export const inner = style([
 		},
 	},
 ]);
+
+/**
+ * Figma `438:15441` — Large 20px, Small 16px. See `ControlSize`.
+ *
+ * The dot stays at half the ring, the ratio the standard control already
+ * renders (12px in 24px). A calc rather than a token because the ladder has no
+ * 10px step.
+ */
+const ringSizes = { large: vars.space['5'], small: vars.space['4'] } as const;
+
+export const ring = styleVariants(ringSizes, (size) => ({
+	height: size,
+	width: size,
+}));
+
+export const dot = styleVariants(ringSizes, (size) => ({
+	height: `calc(${size} / 2)`,
+	width: `calc(${size} / 2)`,
+}));
 
 export const innerSelected = style({
 	// on the brand fill, unlike the unselected hover dot above
