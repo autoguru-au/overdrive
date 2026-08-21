@@ -27,9 +27,8 @@ export interface SwitchProps extends AriaSwitchProps, TestIdProp {
 	 */
 	toggled?: boolean;
 	/**
-	 * Track size. `standard` is the pre-2026 46x24 track and stays the default,
-	 * so existing usage is unaffected; `large` (38x20) and `small` (30x16) are
-	 * the two sizes DS-2026 publishes, and carry the `z2` handle shadow.
+	 * Track size — 46x24, 38x20 or 30x16. The two smaller sizes carry the `z2`
+	 * handle shadow.
 	 * @default 'standard'
 	 */
 	size?: ControlSize;

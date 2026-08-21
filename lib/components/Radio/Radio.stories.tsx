@@ -30,7 +30,14 @@ const meta: Meta<typeof RadioGroupComponent> = {
 	args: {
 		name: undefined,
 		value: undefined,
+		size: 'standard',
 		onChange: fn(),
+	},
+	argTypes: {
+		size: {
+			control: 'select',
+			options: ['standard', 'large', 'small'],
+		},
 	},
 };
 

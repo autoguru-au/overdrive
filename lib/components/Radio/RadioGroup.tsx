@@ -14,11 +14,8 @@ export interface RadioGroupProps {
 	className?: string;
 	value: string;
 	/**
-	 * Size for every radio in the group. `standard` is the pre-2026 24px ring
-	 * and stays the default; `large` (20px) and `small` (16px) are the two sizes
-	 * DS-2026 publishes. Set it here rather than per radio — a group of mixed
-	 * sizes is not a design DS-2026 publishes — though an individual `Radio` can
-	 * still override it.
+	 * Ring size for every radio in the group — 24px, 20px or 16px. Set it here
+	 * rather than per radio; DS-2026 publishes no mixed-size group.
 	 * @default 'standard'
 	 */
 	size?: ControlSize;
@@ -42,14 +39,7 @@ export const useRadioContext = (): RadioGroupContext =>
 
 export const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>(
 	(
-		{
-			name,
-			value,
-			className = '',
-			size = 'standard',
-			onChange,
-			children,
-		},
+		{ name, value, className = '', size = 'standard', onChange, children },
 		ref,
 	) => {
 		const contextValue = useMemo(

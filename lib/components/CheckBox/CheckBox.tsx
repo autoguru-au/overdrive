@@ -17,9 +17,7 @@ export interface CheckboxProps {
 	checked?: boolean;
 	disabled?: boolean;
 	/**
-	 * Box size. `standard` is the pre-2026 24px control and stays the default,
-	 * so existing usage is unaffected; `large` (20px) and `small` (16px) are the
-	 * two sizes DS-2026 publishes.
+	 * Box size — 24px, 20px or 16px. The tick scales with it.
 	 * @default 'standard'
 	 */
 	size?: ControlSize;

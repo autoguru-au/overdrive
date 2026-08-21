@@ -14,10 +14,7 @@ export interface RadioProps {
 	value: string;
 	className?: string;
 	disabled?: boolean;
-	/**
-	 * Overrides the size set on the enclosing `RadioGroup`. Prefer setting it
-	 * once on the group; this exists for the rare mixed-size case.
-	 */
+	/** Overrides `RadioGroup`'s size, for the rare mixed-size case. */
 	size?: ControlSize;
 	children?: ReactNode;
 }
@@ -26,6 +23,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>(
 	({ value, className = '', children, disabled = false, size }, ref) => {
 		const radioContext = useRadioContext();
 		const resolvedSize = size ?? radioContext.size ?? 'standard';
+		const sized = resolvedSize !== 'standard';
 
 		const isChecked = value === radioContext.value;
 
@@ -47,20 +45,15 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>(
 					className={clsx(
 						checkableIndicator,
 						styles.radio,
-						resolvedSize !== 'standard' &&
-							styles.ring[resolvedSize],
-						{
-							[styles.radioSelected]: isChecked,
-						},
+						sized && styles.ring[resolvedSize],
+						{ [styles.radioSelected]: isChecked },
 					)}
 				/>
 				<Box
 					className={clsx(
 						styles.inner,
-						resolvedSize !== 'standard' && styles.dot[resolvedSize],
-						{
-							[styles.innerSelected]: isChecked,
-						},
+						sized && styles.dot[resolvedSize],
+						{ [styles.innerSelected]: isChecked },
 					)}
 				/>
 			</CheckableBase>

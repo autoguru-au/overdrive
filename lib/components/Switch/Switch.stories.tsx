@@ -19,10 +19,15 @@ const meta = {
 		value: 'yes',
 		isSelected: undefined,
 		isDisabled: undefined,
+		size: 'standard',
 		onChange: fn(),
 	},
 	argTypes: {
 		children: { control: false },
+		size: {
+			control: 'select',
+			options: ['standard', 'large', 'small'],
+		},
 		isSelected: {
 			control: 'boolean',
 		},

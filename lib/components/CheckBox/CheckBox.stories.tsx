@@ -35,8 +35,15 @@ const meta: Meta<typeof CheckBox> = {
 		value: '1',
 		isIndeterminate: false,
 		disabled: undefined,
+		size: 'standard',
 		onChange: fn(),
 		onClick: fn(),
+	},
+	argTypes: {
+		size: {
+			control: 'select',
+			options: ['standard', 'large', 'small'],
+		},
 	},
 	render: ({ isIndeterminate, ...args }) => {
 		const [checked, setChecked] = useState(false);
