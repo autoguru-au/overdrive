@@ -28,6 +28,16 @@ export interface OdComponentProp {
 	odComponent?: string;
 }
 
+/**
+ * The sizes a selection control (CheckBox, Radio, Switch) can render at.
+ *
+ * `standard` is the pre-DS-2026 control and stays the default; `large` and
+ * `small` come from the `5` (20px) and `4` (16px) space tokens. Each component
+ * guards its size class with `size !== 'standard'` rather than adding a
+ * `standard` variant, which would emit an extra class on every existing usage.
+ */
+export type ControlSize = 'standard' | 'large' | 'small';
+
 export interface TestIdProp {
 	/**
 	 * The test ID will be rendered as a data attribute `data-testid` on the element for use with test assertions

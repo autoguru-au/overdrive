@@ -100,7 +100,7 @@ exports[`<RadioButton /> > when nested in a RadioGroup > should match the snapsh
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 CheckableBase_checkableIndicator__y94qv4 Radio_radio__1eqx41h1 Radio_circleBase__1eqx41h0 Radio_radioSelected__1eqx41h2"
         />
         <div
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Radio_inner__1eqx41h3 Radio_circleBase__1eqx41h0 Radio_innerSelected__1eqx41h4"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Radio_inner__1eqx41h3 Radio_circleBase__1eqx41h0 Radio_innerSelected__1eqx41h8"
         />
       </div>
       <label
@@ -279,7 +279,7 @@ exports[`<RadioButton /> > when nested in a RadioGroup > should match the snapsh
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 CheckableBase_checkableIndicator__y94qv4 Radio_radio__1eqx41h1 Radio_circleBase__1eqx41h0 Radio_radioSelected__1eqx41h2"
         />
         <div
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Radio_inner__1eqx41h3 Radio_circleBase__1eqx41h0 Radio_innerSelected__1eqx41h4"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Radio_inner__1eqx41h3 Radio_circleBase__1eqx41h0 Radio_innerSelected__1eqx41h8"
         />
       </div>
       <label
