@@ -29,14 +29,17 @@ export interface OdComponentProp {
 }
 
 /**
- * The sizes a selection control (CheckBox, Radio, Switch) can render at.
+ * The sizes a selection control (CheckBox, Radio, Switch) can render at,
+ * ordered `small` < `medium` < `large` to match Badge and the rest of the
+ * library.
  *
- * `standard` is the pre-DS-2026 control and stays the default; `large` and
- * `small` come from the `5` (20px) and `4` (16px) space tokens. Each component
- * guards its size class with `size !== 'standard'` rather than adding a
- * `standard` variant, which would emit an extra class on every existing usage.
+ * `medium` and `small` are the two sizes DS-2026 publishes, from the `5` (20px)
+ * and `4` (16px) space tokens. `large` is the pre-2026 control and stays the
+ * default, so it carries no rules of its own — each component guards its size
+ * class with `size !== 'large'` rather than adding a `large` variant, which
+ * would emit an extra class on every existing usage.
  */
-export type ControlSize = 'standard' | 'large' | 'small';
+export type ControlSize = 'large' | 'medium' | 'small';
 
 export interface TestIdProp {
 	/**

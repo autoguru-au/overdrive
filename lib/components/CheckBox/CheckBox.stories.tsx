@@ -35,14 +35,14 @@ const meta: Meta<typeof CheckBox> = {
 		value: '1',
 		isIndeterminate: false,
 		disabled: undefined,
-		size: 'standard',
+		size: 'large',
 		onChange: fn(),
 		onClick: fn(),
 	},
 	argTypes: {
 		size: {
 			control: 'select',
-			options: ['standard', 'large', 'small'],
+			options: ['large', 'medium', 'small'],
 		},
 	},
 	render: ({ isIndeterminate, ...args }) => {
@@ -207,15 +207,15 @@ export const WithMultiLineComponent: Story = {
 /**
  * The two sizes DS-2026 publishes, next to the pre-2026 control.
  *
- * `standard` (24px) is the default and unchanged. `large` (20px) and `small`
- * (16px) come from the `5` and `4` space tokens, and the tick is always the box
- * less the 2px inset Figma specifies — which is why today's 24px box already
- * pairs with a 20px tick.
+ * `large` (24px) is the pre-2026 control and the unchanged default. `medium`
+ * (20px) and `small` (16px) come from the `5` and `4` space tokens, and the
+ * tick is always the box less the 2px inset Figma specifies — which is why
+ * today's 24px box already pairs with a 20px tick.
  */
 export const Sizes: Story = {
 	render: (args) => (
 		<Stack space="3">
-			{(['standard', 'large', 'small'] as const).map((size) => (
+			{(['large', 'medium', 'small'] as const).map((size) => (
 				<CheckBox {...args} key={size} size={size} value={size} checked>
 					<Text>{size}</Text>
 				</CheckBox>

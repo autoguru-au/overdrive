@@ -16,7 +16,7 @@ export interface RadioGroupProps {
 	/**
 	 * Ring size for every radio in the group — 24px, 20px or 16px. Set it here
 	 * rather than per radio; DS-2026 publishes no mixed-size group.
-	 * @default 'standard'
+	 * @default 'large'
 	 */
 	size?: ControlSize;
 	children?: ReactNode;
@@ -39,7 +39,7 @@ export const useRadioContext = (): RadioGroupContext =>
 
 export const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>(
 	(
-		{ name, value, className = '', size = 'standard', onChange, children },
+		{ name, value, className = '', size = 'large', onChange, children },
 		ref,
 	) => {
 		const contextValue = useMemo(

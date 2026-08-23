@@ -30,13 +30,13 @@ const meta: Meta<typeof RadioGroupComponent> = {
 	args: {
 		name: undefined,
 		value: undefined,
-		size: 'standard',
+		size: 'large',
 		onChange: fn(),
 	},
 	argTypes: {
 		size: {
 			control: 'select',
-			options: ['standard', 'large', 'small'],
+			options: ['large', 'medium', 'small'],
 		},
 	},
 };
@@ -101,12 +101,12 @@ export const MultipleLines: Story = {
  *
  * Set `size` once on `RadioGroup` — a group of mixed sizes is not a design
  * DS-2026 publishes, though an individual `Radio` can still override it. The dot
- * stays at half the ring, the ratio the standard control already renders.
+ * stays at half the ring, the ratio the pre-2026 control already renders.
  */
 export const Sizes: Story = {
 	render: (args) => (
 		<Stack space="3">
-			{(['standard', 'large', 'small'] as const).map((size) => (
+			{(['large', 'medium', 'small'] as const).map((size) => (
 				<RadioGroupComponent
 					{...args}
 					key={size}

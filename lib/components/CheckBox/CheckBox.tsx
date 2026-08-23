@@ -18,7 +18,7 @@ export interface CheckboxProps {
 	disabled?: boolean;
 	/**
 	 * Box size — 24px, 20px or 16px. The tick scales with it.
-	 * @default 'standard'
+	 * @default 'large'
 	 */
 	size?: ControlSize;
 	/**
@@ -42,7 +42,7 @@ export const CheckBox = forwardRef<HTMLInputElement, CheckboxProps>(
 			disabled = false,
 			checked = false,
 			isIndeterminate = false,
-			size = 'standard',
+			size = 'large',
 			onClick = noop,
 			onChange = noop,
 			children,
@@ -74,7 +74,7 @@ export const CheckBox = forwardRef<HTMLInputElement, CheckboxProps>(
 					className={clsx(
 						styles.checkbox.default,
 						checkableIndicator,
-						size !== 'standard' && styles.boxSize[size],
+						size !== 'large' && styles.boxSize[size],
 						{
 							[styles.checkbox.selected]:
 								checked || isIndeterminate,

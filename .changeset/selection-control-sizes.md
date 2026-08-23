@@ -8,14 +8,15 @@ Figma publishes each selection control at two sizes the components had no way to
 express. A new `size` prop adds them, every dimension taken from the space
 ladder rather than a literal:
 
-|              | `standard` | `large` | `small` |
-| ------------ | ---------- | ------- | ------- |
-| CheckBox box | 24px       | 20px    | 16px    |
-| Radio ring   | 24px       | 20px    | 16px    |
-| Switch track | 46x24      | 38x20   | 30x16   |
+|              | `large` | `medium` | `small` |
+| ------------ | ------- | -------- | ------- |
+| CheckBox box | 24px    | 20px     | 16px    |
+| Radio ring   | 24px    | 20px     | 16px    |
+| Switch track | 46x24   | 38x20    | 30x16   |
 
-`standard` is the pre-2026 control and stays the default, so **existing sizing
-is unchanged** — it adds no class and no rules. Set Radio's size once on
+`large` is the pre-2026 control and stays the default, so **existing sizing is
+unchanged** — it adds no class and no rules. The scale reads `small` < `medium`
+< `large`, matching Badge and the rest of the library. Set Radio's size once on
 `RadioGroup`; an individual `Radio` can still override it. The union ships as a
 shared `ControlSize` from `lib/types`. The new Switch sizes carry the `z2`
 handle shadow Figma binds.

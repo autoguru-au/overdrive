@@ -56,13 +56,13 @@ export const inner = style([
 ]);
 
 /**
- * Figma `438:15441` — Large 20px, Small 16px. See `ControlSize`.
+ * Figma `438:15441` — Medium 20px, Small 16px. See `ControlSize`.
  *
- * The dot stays at half the ring, the ratio the standard control already
+ * The dot stays at half the ring, the ratio the pre-2026 control already
  * renders (12px in 24px). A calc rather than a token because the ladder has no
  * 10px step.
  */
-const ringSizes = { large: vars.space['5'], small: vars.space['4'] } as const;
+const ringSizes = { medium: vars.space['5'], small: vars.space['4'] } as const;
 
 export const ring = styleVariants(ringSizes, (size) => ({
 	height: size,

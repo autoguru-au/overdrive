@@ -19,14 +19,14 @@ const meta = {
 		value: 'yes',
 		isSelected: undefined,
 		isDisabled: undefined,
-		size: 'standard',
+		size: 'large',
 		onChange: fn(),
 	},
 	argTypes: {
 		children: { control: false },
 		size: {
 			control: 'select',
-			options: ['standard', 'large', 'small'],
+			options: ['large', 'medium', 'small'],
 		},
 		isSelected: {
 			control: 'boolean',
@@ -76,15 +76,15 @@ export const Disabled: Story = {
 /**
  * The two sizes DS-2026 publishes, next to the pre-2026 control.
  *
- * `standard` (46x24) is the default and unchanged. `large` (38x20) and `small`
- * (30x16) take their track height from the `5` and `4` space tokens; the width
- * falls out of the existing `2 x height - 2px` formula, and the handle carries
- * the `z2` shadow.
+ * `large` (46x24) is the pre-2026 control and the unchanged default. `medium`
+ * (38x20) and `small` (30x16) take their track height from the `5` and `4`
+ * space tokens; the width falls out of the existing `2 x height - 2px`
+ * formula, and the handle carries the `z2` shadow.
  */
 export const Sizes: Story = {
 	render: (args) => (
 		<Stack space="3">
-			{(['standard', 'large', 'small'] as const).map((size) => (
+			{(['large', 'medium', 'small'] as const).map((size) => (
 				<FlexInline key={size} gap="3" justify="center">
 					<Switch {...args} size={size} aria-label={`${size} off`} />
 					<Switch

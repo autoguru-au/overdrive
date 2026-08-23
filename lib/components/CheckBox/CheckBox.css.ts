@@ -46,10 +46,10 @@ export const checkbox = styleVariants({
 });
 
 /**
- * Figma `438:15383` — Large 20px, Small 16px, each insetting the tick 2px on
- * every side. See `ControlSize` for why `standard` carries no rules.
+ * Figma `438:15383` — Medium 20px, Small 16px, each insetting the tick 2px on
+ * every side. See `ControlSize` for why `large` carries no rules.
  */
-const boxSizes = { large: vars.space['5'], small: vars.space['4'] } as const;
+const boxSizes = { medium: vars.space['5'], small: vars.space['4'] } as const;
 
 export const boxSize = styleVariants(boxSizes, (size) => ({
 	height: size,
@@ -65,7 +65,7 @@ export const icon = style({
 		// Keyed off the parent, not the icon alone: `Icon`'s size class is a
 		// single class in an unlayered sheet, so a bare override here would be
 		// decided by bundle order. Two classes win deterministically.
-		[`${boxSize.large} > &`]: {
+		[`${boxSize.medium} > &`]: {
 			height: vars.space['4'],
 			width: vars.space['4'],
 		},

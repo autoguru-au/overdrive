@@ -22,8 +22,8 @@ export interface RadioProps {
 export const Radio = forwardRef<HTMLInputElement, RadioProps>(
 	({ value, className = '', children, disabled = false, size }, ref) => {
 		const radioContext = useRadioContext();
-		const resolvedSize = size ?? radioContext.size ?? 'standard';
-		const sized = resolvedSize !== 'standard';
+		const resolvedSize = size ?? radioContext.size ?? 'large';
+		const sized = resolvedSize !== 'large';
 
 		const isChecked = value === radioContext.value;
 

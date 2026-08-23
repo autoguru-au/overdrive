@@ -29,7 +29,7 @@ export interface SwitchProps extends AriaSwitchProps, TestIdProp {
 	/**
 	 * Track size — 46x24, 38x20 or 30x16. The two smaller sizes carry the `z2`
 	 * handle shadow.
-	 * @default 'standard'
+	 * @default 'large'
 	 */
 	size?: ControlSize;
 }
@@ -45,7 +45,7 @@ export const Switch = ({
 	toggled,
 	isSelected = toggled,
 	isDisabled = disabled,
-	size = 'standard',
+	size = 'large',
 	testId,
 	...incomingProps
 }: SwitchProps) => {
@@ -68,7 +68,7 @@ export const Switch = ({
 				className={[
 					styles.toggle,
 					textStyles({ size: '5' }),
-					size !== 'standard' && styles.track[size],
+					size !== 'large' && styles.track[size],
 					{
 						[styles.disabled]: inputProps.disabled,
 						[styles.toggleOn]: state.isSelected,
@@ -83,7 +83,7 @@ export const Switch = ({
 				<Box
 					className={[
 						styles.handle.default,
-						size !== 'standard' && styles.handleElevation,
+						size !== 'large' && styles.handleElevation,
 						{
 							[styles.handle.active]: state.isSelected,
 						},
