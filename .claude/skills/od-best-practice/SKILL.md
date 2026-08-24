@@ -1,11 +1,11 @@
 ---
 name: od-best-practice
-description: Check an Overdrive component against the OD component best-practice checklist - clean DOM, props and data attributes, accessibility, and Storybook coverage - then fix the mechanical problems and report the ones needing judgement. Use when someone asks whether a component follows OD standards or best practice, wants the component checklist run over their work, asks to tidy a component up before raising it, or names a component and asks "is this right". Nothing here blocks a commit or a PR; it is a helper you run on demand, on one component or on the current diff.
+description: Check an Overdrive component against the OD component best-practice checklist - clean DOM, props and data attributes, accessibility, and Storybook coverage - then fix the mechanical problems and report the ones needing judgement. Use when someone asks whether a component follows OD standards or best practice, wants the component checklist run over their work, asks to tidy a component up before raising it, or names a component and asks "is this right". Add `fix` to the invocation to also apply the judgement calls, including breaking ones - use that when someone asks to fix everything, clean a component up properly, or says they do not just want a report. Nothing here blocks a commit or a PR; it is a helper you run on demand, on one component or on the current diff.
 ---
 
 # Overdrive Component Best Practice
 
-Runs the OD component checklist over a component, fixes what can be fixed mechanically, and reports what needs a person. Nothing here is a gate — it never blocks a commit, a push or a PR. Run it as often or as rarely as is useful.
+Runs the OD component checklist over a component, fixes what can be fixed mechanically, and reports what needs a person. Add `fix` to the invocation and it will apply the judgement calls too — see [`fix` mode](#fix-mode). Nothing here is a gate — it never blocks a commit, a push or a PR. Run it as often or as rarely as is useful.
 
 The checklist has four sections: **Code Quality & Structure**, **Props & Attributes**, **Accessibility**, **Testing**. The rules themselves live in [AGENTS.md](../../../AGENTS.md) — that is the single source of truth. Where other files in this repo restate the rules and disagree (`.claude/commands/pr.md`, `.claude/commands/component.md`, `.claude/agents/component-enhancer.md`, `.github/copilot-instructions.md`), **AGENTS.md wins**. The known conflict is story count: AGENTS.md says one Interaction Test minimum, `pr.md` says three, `component.md` says five. Use one.
 
@@ -55,7 +55,7 @@ Two buckets. Get this wrong and the skill becomes something people stop running.
 - camelCase sprinkles values where a kebab alias exists
 - unused imports
 
-**Report, never fix silently** — changes behaviour, the public API, or needs a decision:
+**Report, never fix silently** — changes behaviour, the public API, or needs a decision. An explicit `fix` request opens this bucket up; see [`fix` mode](#fix-mode):
 
 - anything that renames or removes a prop (breaking for MFEs)
 - `any` → a real type
@@ -69,6 +69,35 @@ Two buckets. Get this wrong and the skill becomes something people stop running.
 **Snapshots.** Adding `odComponent` or `testId` changes rendered markup, so committed snapshots will fail — and a red suite you didn't explain reads as if you broke something. Run `yarn test run <Name>` after the mechanical fixes. If the only difference is the attribute you just added, refresh with `yarn test run <Name> -u` and say so in the report. If anything else moved, stop and report it instead: reflexive `-u` is how a real regression gets committed as a snapshot update.
 
 Say what you fixed, as a list. Nothing should land invisibly.
+
+## `fix` mode
+
+`/od-best-practice fix <Name>` — or the word `fix` anywhere in the request, or an ask like "fix everything" / "clean this up properly" — opens the **Report, never fix silently** bucket up for editing. Default mode is unchanged; `fix` is the only way to get behaviour or API changes out of this skill.
+
+The bucket splits in two, and the halves are not treated alike.
+
+**Apply, then say so.** Changes behaviour or internal shape, but nothing an MFE names in its own source can fail on:
+
+- `any` → a real type
+- inert ARIA fixes — `no-redundant-roles`, `aria-props` typos, `anchor-has-content`, `heading-has-content`
+- hand-rolled variants → a `recipe` with `RecipeVariants`
+- Section A structural work: collapsing a single-child wrapper, hoisting a component out of a `useCallback`, lifting logic into a hook
+- adding the props type to the `lib/index.ts` / `lib/components/index.ts` barrels
+
+**Name it and wait for a yes.** Each of these breaks a consumer either at compile time or at render, and the person who finds out is an MFE author in their own PR rather than you in this one:
+
+- renaming or removing a prop, or narrowing a props type — dropping an accepted prop is the same break as renaming it, even when nothing in this repo passes it
+- adding `cssLayerComponent` to styles that don't have it — cascade priority moves, so an unlayered MFE override that used to lose now wins
+- anything that moves focus or reshapes the a11y tree — `no-autofocus`, `tabIndex` changes, adding or changing a `role`
+- changing a rendered element (`div` → `span`, `as` defaults) — MFE CSS and DOM snapshots select on these
+
+For each one: say what it breaks, who for, and what you'd do instead if the answer is no. Then wait. Applying these silently is how the skill stops being something people run — which is the whole reason the two buckets exist.
+
+**Changeset severity changes in `fix` mode.** Mechanical fixes are a `patch`. Adding a prop or an export is a `minor`. Removing or renaming a prop, narrowing a type, or moving cascade priority is a `major`. Say which and why — still don't create it.
+
+**Verify before reporting.** After behaviour changes, run `npx tsc --noEmit` and `yarn test run <Name>`, and report what you saw. A "fix" that breaks the build or the suite is not a fix, and in this mode you can no longer lean on "I only touched mechanical things" as evidence it's safe.
+
+`fix` mode does not change the hard constraints below, and it still writes no tests and creates no changeset. It also does not measure MFE blast radius — that's `od-prereview`, and after a breaking change you want it.
 
 ## Section A — Code Quality & Structure
 
@@ -140,6 +169,14 @@ D. Testing                    ✅ / ⚠️
 
 ### Needs a decision
 - <file>:<line> — what's wrong, and the option you'd take
+
+(in `fix` mode, add:)
+
+### Applied by request
+- <file>:<line> — the judgement call taken, and why that option
+
+### Waiting on you
+- <file>:<line> — what this breaks, who for, and the fallback if it's a no
 
 ### Changeset
 <needed (patch) because … | not needed — no publishable source changed>

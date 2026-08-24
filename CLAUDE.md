@@ -55,7 +55,9 @@ guidelines, accessibility requirements, and Storybook patterns see
 Run the `od-best-practice` skill to check a component against the four-section
 OD checklist (code quality, props and data attributes, accessibility, Storybook
 coverage). It fixes the mechanical problems and reports the ones needing
-judgement. It is a helper, not a gate - it blocks nothing. See
+judgement. Add `fix` to the invocation (`/od-best-practice fix Switch`) and it
+applies the judgement calls too, confirming with you first on anything breaking
+for MFEs. It is a helper, not a gate - it blocks nothing. See
 [od-best-practice](./.claude/skills/od-best-practice/SKILL.md).
 
 ## Vanilla Extract Sprinkles Reference
