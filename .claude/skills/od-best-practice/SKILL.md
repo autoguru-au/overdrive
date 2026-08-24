@@ -72,7 +72,9 @@ Say what you fixed, as a list. Nothing should land invisibly.
 
 ## `fix` mode
 
-`/od-best-practice fix <Name>` — or the word `fix` anywhere in the request, or an ask like "fix everything" / "clean this up properly" — opens the **Report, never fix silently** bucket up for editing. Default mode is unchanged; `fix` is the only way to get behaviour or API changes out of this skill.
+`/od-best-practice-fix <Name>` is the way in. The word `fix` in an ordinary request works too — `/od-best-practice fix Switch`, or an ask like "fix everything" / "clean this up properly" — but the dedicated command is explicit-invocation-only, so this mode is never entered on anyone's initiative but yours.
+
+Either route opens the **Report, never fix silently** bucket up for editing. Default mode is unchanged; this is the only way to get behaviour or API changes out of this skill.
 
 The bucket splits in two, and the halves are not treated alike.
 

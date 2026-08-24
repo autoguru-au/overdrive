@@ -9,12 +9,29 @@ C="$D/$N.tsx"
 
 hdr() { printf '\n== %s\n' "$1"; }
 
+# Components built on withEnhancedInput get odComponent and testId from the HOC,
+# one level up. Reporting them as missing here sends the author off to duplicate
+# what the wrapper already does. 8 components are in this family.
+HOC=""
+grep -q 'withEnhancedInput' "$C" && HOC="yes"
+
 hdr "B - data-od-component on the root"
-grep -nE "odComponent|'od-component'" "$C" || echo "  (none - root element is untagged)"
+if [ -n "$HOC" ]; then
+  echo "  (provided by withEnhancedInput as \"<primitiveType>-input\" - see"
+  echo "   lib/components/private/InputBase/withEnhancedInput.tsx:308. Confirm in the"
+  echo "   snapshot rather than adding a second one here.)"
+else
+  grep -nE "odComponent|'od-component'" "$C" || echo "  (none - root element is untagged)"
+fi
 
 hdr "B - testId interface + threading"
-grep -nE 'TestIdProp|WithTestId|ConsistentComponentProps' "$C" || echo "  (props extend no test-id interface)"
-grep -nE '\btestId\b' "$C" | head -5 || true
+if [ -n "$HOC" ]; then
+  echo "  (provided by withEnhancedInput, which extends TestIdProp -"
+  echo "   lib/components/private/InputBase/withEnhancedInput.tsx:62)"
+else
+  grep -nE 'TestIdProp|WithTestId|ConsistentComponentProps' "$C" || echo "  (props extend no test-id interface)"
+  grep -nE '\btestId\b' "$C" | head -5 || true
+fi
 
 hdr "B - displayName"
 grep -n 'displayName' "$C" || echo "  (none)"
@@ -39,6 +56,14 @@ grep -nE ':\s*any\b|<any[,>]|\bany\[\]' "$C" || echo "  (clean)"
 hdr "C - focus indicator"
 grep -nE 'focusVisible|:focus-visible|focusOutline' "$D"/*.css.ts "$C" 2>/dev/null \
   || echo "  (no focus styling found - only a problem if something here is focusable)"
+
+if [ -n "$HOC" ]; then
+  hdr "B - unused vars that are load-bearing"
+  echo "  withEnhancedInput components destructure validation/suffixed/prefixed/"
+  echo "  isLoading/size purely to STRIP them from ...rest so they never reach the"
+  echo "  DOM. eslint calls them unused; deleting them leaks props onto the element."
+  echo "  All 8 components in this family do it. Not a finding."
+fi
 
 hdr "D - interaction play functions"
 # 'play:' as a plain substring also matches 'display:'. Word-bound it, or a
