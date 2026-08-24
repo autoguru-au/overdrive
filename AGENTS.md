@@ -12,7 +12,9 @@ system. Use MUST/SHOULD/NEVER to guide decisions.
 - SHOULD: Extend `TestId` interface for all components to receive `testId` prop
 - SHOULD: Set `displayName` on all components for debugging
 - SHOULD: Set `odComponent` prop to component name on Box for composite
-  components
+  components. `useBox` lowercases it, so `odComponent="ProgressSpinner"` renders
+  `data-od-component="progressspinner"` - pass the kebab-case name you want in
+  the markup
 
 ## Styling
 
@@ -24,6 +26,10 @@ system. Use MUST/SHOULD/NEVER to guide decisions.
 - SHOULD: Use `dataAttrs` helper for state-based styling via data attributes
 - SHOULD: Use `sprinkles` function for responsive and utility styles
 - SHOULD: Wrap all component styles in `cssLayerComponent` CSS layer
+- SHOULD: Use a Vanilla Extract `recipe` for variant-bearing styles and derive
+  the public prop types from it, rather than hand-rolling conditionals. See
+  `lib/components/Badge/Badge.css.ts` - the recipe owns the variants and
+  `Badge.tsx` types its `colour`/`size` props off `RecipeVariants`
 
 ## Development Commands
 
@@ -73,7 +79,9 @@ lib/components/ComponentName/
   `mobile | tablet | desktop | largeDesktop`
 - SHOULD: Use `color` (American) for new design system tokens
 - SHOULD: Use `colour` (British) for legacy palette when needed
-- SHOULD: Use space tokens (`'0'` to `'12'`, or `none`) for dimensions and spacing. `'0'` and `none` both = 0px; the ladder runs 0/4/8/12/16/20/24/32/40/48/64/80/96px
+- SHOULD: Use space tokens (`'0'` to `'12'`, or `none`) for dimensions and
+  spacing. `'0'` and `none` both = 0px; the ladder runs
+  0/4/8/12/16/20/24/32/40/48/64/80/96px
 
 ## Testing & Storybook
 
@@ -101,6 +109,15 @@ lib/components/ComponentName/
 - MUST: Ensure visible focus indicators with `:focus-visible`
 - MUST: Support screen readers with proper ARIA attributes
 - MUST: Provide accessible names and hide decorative elements with `aria-hidden`
+
+## Localisation
+
+- MUST: Keep user-facing copy out of component internals - accept it as props or
+  children so a consumer can translate it
+- MUST: Format dates, times, numbers and currency with `Intl`, never by
+  concatenating or slicing strings
+- SHOULD: Avoid layouts that assume English string length or left-to-right
+  reading order
 
 ## Performance
 
