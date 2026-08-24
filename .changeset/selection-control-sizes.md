@@ -21,6 +21,10 @@ unchanged** — it adds no class and no rules. The scale reads `small` < `medium
 shared `ControlSize` from `lib/types`. The new Switch sizes carry the `z2`
 handle shadow Figma binds.
 
+The handle's hover travel is per-size too — the shared hover rule out-specified
+the resting size rules, so a hovered `medium` or `small` handle took the legacy
+20px travel and overshot its narrower track.
+
 **One visual change:** Switch's label is now centred against its track. Its
 wrapper was `inline-block`, so a label passed as children sat 32px out of line
 with the track — worse now the track can be 20px or 16px tall. Pass a

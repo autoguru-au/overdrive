@@ -86,6 +86,8 @@ export const track = styleVariants(trackSizes, (size) => ({
 
 const handleScale = 'scale(0.95)';
 const handleTranslate = `translateX(calc(${handleSize} - 4px))`;
+/** DS-2026 travel: the track height less its 2px inset. */
+const travel = (height: string) => `translateX(calc(${height} - 2px))`;
 
 export const handle = styleVariants({
 	default: {
@@ -121,11 +123,25 @@ export const handle = styleVariants({
 					},
 					// The DS-2026 tracks are narrower, so they travel less. Both
 					// classes sit on the same element, hence no space.
+					//
+					// Each size needs its hover rule as well as its resting one:
+					// the generic hover selector above scores (0,4,0) — two
+					// classes, an attribute and a pseudo-class — which outranks a
+					// resting size rule at (0,3,0), so without these the handle
+					// would take the legacy 20px travel on hover and overshoot a
+					// narrower track. Naming the size class here takes them to
+					// (0,5,0).
 					[`${track.medium}${toggleOn} &`]: {
-						transform: `translateX(calc(${trackSizes.medium} - 2px))`,
+						transform: travel(trackSizes.medium),
+					},
+					[`${track.medium}${toggle}:not([data-disabled]):hover &`]: {
+						transform: `${handleScale} ${travel(trackSizes.medium)}`,
 					},
 					[`${track.small}${toggleOn} &`]: {
-						transform: `translateX(calc(${trackSizes.small} - 2px))`,
+						transform: travel(trackSizes.small),
+					},
+					[`${track.small}${toggle}:not([data-disabled]):hover &`]: {
+						transform: `${handleScale} ${travel(trackSizes.small)}`,
 					},
 				},
 			},
