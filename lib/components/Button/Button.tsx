@@ -98,6 +98,19 @@ export const calcIconSize = (size: ButtonProps['size']) =>
  * The Button supports a variety of appearances and is one of the main interactive Overdrive
  * components. `variant`, `size` and `rounded` provide the main choices.
  *
+ * **Choosing a button** — pick by how much you want the user to take the action,
+ * not by colour. Each variant's story carries the fuller version of this.
+ *
+ * | Use | When | Prop |
+ * |---|---|---|
+ * | **Primary** | The action we want them to take. Two or three per page at most, or it stops reading as "the" action. | `variant="primary"` |
+ * | **Primary outlined** | Another important action worth promoting, when a stronger primary already owns the page. | `variant="primary" outlined` |
+ * | **Secondary** | We don't mind either way — optional, and not a path we are pushing them down. | `variant="secondary"` |
+ * | **Critical** | Not something we want them to do unless they are sure. Destructive, so pair it with a confirmation. | `variant="danger"` |
+ *
+ * `information`, `warning` and `success` are legacy status variants, not part of
+ * the DS-2026 button classes. Prefer the four above for new work.
+ *
  * By default the button will have a disabled timeout to avoid multiple rapid clicks.
  * To prevent this feature, use the `withDoubleClicks` prop.
  *
