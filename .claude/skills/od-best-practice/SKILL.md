@@ -27,19 +27,19 @@ BASE=origin/main...HEAD
 git diff --name-only $BASE -- 'lib/components/**' | cut -d/ -f1-3 | sort -u
 ```
 
-When a check needs **added lines with real file:line numbers**, use this helper — piping `git diff` into `grep -n` numbers the diff stream, not the file, which gives the author useless line numbers:
+Three helpers ship with this skill. Run them **from the repo root** — they use repo-relative paths:
 
 ```bash
-added() {  # added <base> [pathspec...]
-  git diff -U0 "$@" | awk '
-    /^\+\+\+ b\// { file = substr($0, 7); next }
-    /^@@/ { match($0, /\+[0-9]+/); ln = substr($0, RSTART+1, RLENGTH-1); next }
-    /^\+/ { print file ":" ln ":" substr($0,2); ln++ }
-  '
-}
+OD=.claude/skills/od-best-practice/scripts
+
+$OD/scan.sh <Name>     # Sections B and D — everything greppable, one pass
+$OD/a11y.sh <Name>     # Section C
+$OD/added.sh <base>    # added lines as file:line:content
 ```
 
-Read the component's `.tsx`, `.css.ts` and `.stories.tsx` before judging anything. Most of Section A cannot be grepped.
+Use `added.sh` whenever a finding needs **a real file:line**. Piping `git diff` into `grep -n` numbers the diff stream rather than the file, which hands the author line numbers pointing at nothing.
+
+Read the component's `.tsx`, `.css.ts` and `.stories.tsx` before judging anything. The scans are pointers, not verdicts, and none of Section A can be grepped at all.
 
 ## Fix policy
 
@@ -50,7 +50,7 @@ Two buckets. Get this wrong and the skill becomes something people stop running.
 - missing `displayName`
 - props type not extending `TestIdProp` / `WithTestId` / `ConsistentComponentProps`, and threading `testId` through to `Box`/`useBox`
 - missing `odComponent` on the root
-- props interface declared but not exported
+- props interface declared but not exported **from the component file**
 - missing JSDoc on props (draft it from how the prop is used)
 - camelCase sprinkles values where a kebab alias exists
 - unused imports
@@ -62,8 +62,11 @@ Two buckets. Get this wrong and the skill becomes something people stop running.
 - `no-autofocus` and any other a11y finding that alters focus or interaction
 - adding `cssLayerComponent` to styles that don't have it — this changes cascade priority and can shift which rules win in a consuming MFE. Only add a layer to styles you are authoring from scratch
 - converting hand-rolled variants to a `recipe`
+- adding the props type to `lib/index.ts` or `lib/components/index.ts`. Exporting the interface from the component file is tidying; threading it into those barrels adds to a hand-curated public API, and only 18 of 79 components are in there — so a lone addition is a new export to publish, not consistency
 - everything in Section A
 - anything in Section D — this skill does not write tests
+
+**Snapshots.** Adding `odComponent` or `testId` changes rendered markup, so committed snapshots will fail — and a red suite you didn't explain reads as if you broke something. Run `yarn test run <Name>` after the mechanical fixes. If the only difference is the attribute you just added, refresh with `yarn test run <Name> -u` and say so in the report. If anything else moved, stop and report it instead: reflexive `-u` is how a real regression gets committed as a snapshot update.
 
 Say what you fixed, as a list. Nothing should land invisibly.
 
@@ -78,37 +81,24 @@ Read the component and judge. No commands here.
 
 ## Section B — Props & Attributes
 
-```bash
-C=lib/components/<Name>/<Name>.tsx
-
-grep -n 'odComponent' "$C"                      # present on the root?
-grep -nE 'TestIdProp|WithTestId|ConsistentComponentProps' "$C"
-grep -n 'displayName' "$C"
-grep -n 'export \(interface\|type\) ' "$C"      # props type exported?
-grep -nE "['\"](flexEnd|flexStart|spaceBetween|spaceAround)['\"]" "$C" lib/components/<Name>/*.css.ts
-grep -n 'recipe(' lib/components/<Name>/<Name>.css.ts
-```
+`$OD/scan.sh <Name>` covers this section and Section D in one pass.
 
 - **`data-od-component`** — root element sets `odComponent`. `useBox` only lowercases the value (`lib/components/Box/useBox/useBox.ts:275`), so pass the kebab-case name you want in the markup: `odComponent="progress-spinner"`, not `"ProgressSpinner"`. House examples: `Badge` → `"badge"`, `ProgressSpinner` → `"progress-spinner"`.
 - **`testId`** — props extend one of the interfaces in `lib/types/index.ts:31-48` and pass `testId` down. Note AGENTS.md also says tests should use semantic queries over test IDs: the prop exists for consumers, not as an excuse for `getByTestId` in our own stories.
 - **Consistent naming** — `color` for new design-system tokens, `colour` for the legacy palette. Renaming an existing prop is breaking; report it.
-- **Clear interface** — props type exported, every prop carrying JSDoc. `Badge.tsx` is the reference shape.
+- **Clear interface** — props type exported from the component file, every prop carrying JSDoc. `Badge.tsx` is the reference shape for props, though not for the rest of the checklist: it has no `displayName`, no interaction test, and its JSDoc points consumers at a `styledBadge` recipe that no barrel exports.
+- **Barrel exports** — whether the props type also appears in `lib/index.ts` / `lib/components/index.ts` is a separate question from whether it is exported at all. Those files are hand-curated export lists and only 18 of 79 components appear in them, so report it rather than adding one.
 - **Styling props from sprinkles** — CSS-like props come from `sprinkles` (`lib/styles/sprinkles.css.ts`), with kebab-case values (`'flex-end'`, `'space-between'`). Sprinkles accepts the camelCase spelling too, but kebab is house style. Do **not** edit the alias table at `lib/styles/sprinkles.css.ts:17-33` — those aliases are public API and MFEs use them.
 
-  Match **quoted values only**, as the grep above does. Matching the bare word instead pulls in two things that are correct and must be left alone: the `spaceBetween` boolean shortcut prop on `Flex`/`FlexInline`/`inline()`, and recipe variant *keys* like `flexEnd: [borderRoundTop]` in `MinimalModal.css.ts`. Library-wide the tightened grep returns two genuine hits — `Calendar.css.ts:23` and `HorizontalAutoScroller.tsx:178` — so more than a couple per component means the pattern has drifted.
+  Match **quoted values only**, as `scan.sh` does. Matching the bare word instead pulls in two things that are correct and must be left alone: the `spaceBetween` boolean shortcut prop on `Flex`/`FlexInline`/`inline()`, and recipe variant *keys* like `flexEnd: [borderRoundTop]` in `MinimalModal.css.ts`. Library-wide the tightened grep returns two genuine hits — `Calendar.css.ts:23` and `HorizontalAutoScroller.tsx:178` — so more than a couple per component means the pattern has drifted.
 - **Variants** — variant-bearing styles use a `recipe` and the component derives its prop types from `RecipeVariants`. `lib/components/Badge/Badge.css.ts` + `Badge.tsx` is the canonical pair. About 17 components do this; the rest hand-roll, so report rather than convert.
 - **No `any`** — report with the type you would use.
 
 ## Section C — Accessibility
 
-`eslint-plugin-jsx-a11y` is registered in the shared config but extends no rules, so it catches nothing in a normal lint run. Turn the rules on **for this invocation only** — no config change, nothing left switched on afterwards:
+`eslint-plugin-jsx-a11y` is registered in the shared config but extends no rules, so a normal lint run catches none of this. `$OD/a11y.sh <Name>` switches the 16 rules on for that invocation only — no config change, nothing left switched on afterwards. Called with no argument it scans the whole library.
 
-```bash
-npx eslint "lib/components/<Name>/**/*.tsx" --format json \
-  --rule '{"jsx-a11y/alt-text":"warn","jsx-a11y/aria-props":"warn","jsx-a11y/aria-role":"warn","jsx-a11y/aria-unsupported-elements":"warn","jsx-a11y/click-events-have-key-events":"warn","jsx-a11y/no-static-element-interactions":"warn","jsx-a11y/role-has-required-aria-props":"warn","jsx-a11y/role-supports-aria-props":"warn","jsx-a11y/no-noninteractive-element-interactions":"warn","jsx-a11y/interactive-supports-focus":"warn","jsx-a11y/label-has-associated-control":"warn","jsx-a11y/no-redundant-roles":"warn","jsx-a11y/tabindex-no-positive":"warn","jsx-a11y/heading-has-content":"warn","jsx-a11y/anchor-has-content":"warn","jsx-a11y/no-autofocus":"warn"}'
-```
-
-Do not add `--fix`. For calibration, library-wide this currently returns 15 findings across 9 files, so per-component output should be short — a long list means the command is wrong, not that the component is catastrophic.
+Never add `--fix`. For calibration, library-wide the script returns 15 findings across 9 files, so per-component output should be short — a long list means the invocation is wrong, not that the component is catastrophic.
 
 - **ARIA** — fix only the inert ones: `no-redundant-roles`, `aria-props` typos, `anchor-has-content`, `heading-has-content`. Report the rest.
 - **Keyboard** — interactive element with `onClick` and no key handling, or a non-interactive element given interaction. React Aria (`@react-aria/*`) is the house fix; suggest it, don't rewrite the component unasked.
@@ -118,13 +108,12 @@ Do not add `--fix`. For calibration, library-wide this currently returns 15 find
 
 Report only, then hand off — do not write tests here.
 
-```bash
-ls lib/components/<Name>/
-grep -n 'play:' lib/components/<Name>/<Name>.stories.tsx
-```
+`$OD/scan.sh <Name>` covers the story and spec checks.
 
-- At least one story with an Interaction `play` function (AGENTS.md: one per component minimum). Play functions use `getAllByRole` and take the first item, and split into `step` calls.
-- A leftover `.spec.tsx` whose coverage a story could carry. The library is at 39 spec files against 89 story files, so this migration is live: AGENTS.md keeps unit tests only for primitives with complex internal logic.
+- At least one story with an Interaction `play` function (AGENTS.md: one per component minimum). Play functions use `getAllByRole` and take the first item, and split into `step` calls. Library-wide only 17 of 89 story files have one, so expect this to be the most common gap.
+
+  If you check by hand, word-bound the search: `grep 'play:'` also matches `display:`, so it reports phantom interaction tests on components that have none — `Badge.stories.tsx` returns two such false hits and has no `play` function at all. Same trap as the sprinkles grep above, and worth remembering whenever a short token could sit inside a longer word.
+- A leftover spec whose coverage a story could carry. Check **both** extensions: `.spec.jsx` (43 files) actually outnumbers `.spec.tsx` (39), and the untyped ones are where stale props hide, since `.jsx` skips typechecking. Against 89 story files this migration is clearly live — AGENTS.md keeps unit tests only for primitives with complex internal logic.
 - Point at `/testing` for the actual work — it owns test-case limits and the `composeStories` pattern.
 
 ## Hard constraints
