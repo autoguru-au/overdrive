@@ -395,7 +395,9 @@ grep -rIn "color\.<namespace>\.<key>" /Users/timamehro/grit/github.com/autoguru/
 - **Styling:** vanilla-extract **`recipe()`** `button` (`css.ts:27-416`) with variants `size`/`shape`/`intent`/`minimal`/`rounded`/`isFullWidth`/`isLoading` + `compoundVariants` + `defaultVariants` (`:410-415`).
 - **`shape` is internal-only** (derived `'iconOnly'|'rounded'|'default'`, `Button.tsx:166-169`); base default `borderRadius:'md'` (`css.ts:31`).
 
-**(b) Figma target axes** (node `362:2275`, frame `396:7105`; research-figma line 45): `Class{Primary,Secondary,Critical} × Style{Solid,Outlined,Ghost} × Size{Large,Small,Extra small} × Shape{Square,Round} × Icon{None,Left,Right,Icon only} × State{Default,Hover,Pressed,Disabled}`. Ships: Primary=Solid+Outlined; Secondary=Outlined+Ghost; Critical=Solid+Outlined. **No Medium size.** Button colours come from `color.button.*` (master §3.1 button table; W1-P2).
+**(b) Figma target axes** (node `362:2275`, frame `396:7105`; research-figma line 45): `Class{Primary,Secondary,Critical} × Style{Solid,Outlined,Ghost,Linked text} × Size{Large,Small,Extra small} × Shape{Square,Round,n/a} × Icon{None,Left,Right,Icon only,Split} × State{Default,Hover,Pressed,Disabled}`. Ships: Primary=Solid+Outlined+Linked text; Secondary=Outlined+Ghost+Linked text; Critical=Solid+Outlined+Linked text. **No Medium size.** Button colours come from `color.button.*` (master §3.1 button table; W1-P2).
+
+> **Corrected (AG-20713):** this list previously omitted two values that are in the file — `Style=Linked text` (72 variants; `Shape=n/a`, no `Extra small`, no `Icon only`; colours from **`color.link.*`**, not `color.button.*`) and `Icon=Split` (with its `Hover LHS/RHS` + `Pressed LHS/RHS` states, which belong to `SplitButton`). Linked text shipped on `TextLink` rather than `Button` — see `docs/ds2026-specs/TextLink.md` and the superseded note on §W3c-P2. `Icon=Split` is still unclaimed by any package.
 
 **(c) Current→Figma mapping + classification:**
 
@@ -789,7 +791,9 @@ Composes the existing CheckBox/Radio/Switch (post-W3a) — introduces no new con
 
 ### W3c-P2 — TextLink (`739:8560`) · Builder `sonnet`
 
-**(a) Current API** (`lib/components/TextLink/TextLink.tsx`): `children?`, `as?`, `muted?`(def false), `icon?`, plus typography passthroughs `color`/`colour`/`noWrap`/`size`/`strong`/`transform`/`weight`(def `'semiBold'`). Styling `style()`+`sprinkles()`; inner `<Text colour={muted?'muted':'link'}>`.
+> **Superseded — the node below is stale; the linked-text variants shipped from the Button component instead (AG-20713).** `739:8560` ("Link") carries only `State{Default,Hover-Active}` and a `Colour{Blue,Black}` axis, and binds `color/info/*` (`#0d47a1`) + `color/foreground/*` — it references **no** `color/link/*` variable. The live spec is the **`Style=Linked text`** axis of the Button component ([node `362:2275`](https://www.figma.com/design/ZkQlQcJkF7NTnZomVrPRN5/AutoGuru-Design-System-2026?node-id=362-2275)), 72 variants of `Class{Primary,Secondary,Critical} × Size{Large,Small} × Icon{None,Left,Right} × State{Default,Hover,Pressed,Disabled}`. Three ways this block is wrong: (1) the proposed `linkColour?:'blue'|'black'` is not an axis that exists — it is `Class{Primary,Secondary,Critical}`; (2) there is no `color.button.linkedText.*` namespace, the shipped family is **`color.link.*`**, which already holds correct values in `lib/themes/base/tokens.ts`; (3) §6-Q3 no longer gates it. Read `docs/ds2026-specs/TextLink.md` and the component, not this block.
+
+**(a) Current API** (`lib/components/TextLink/TextLink.tsx`): `children?`, `as?`, `muted?`(def false), `icon?`, plus typography passthroughs `color`/`colour`/`noWrap`/`size`/`strong`/`transform`/`weight`(def `'medium'` — `TextLink.tsx:65`; this block previously claimed `'semiBold'`, which was never what the code did). Styling `style()`+`sprinkles()`; inner `<Text colour={muted?'muted':'link'}>`.
 
 **(b) Figma axes** (`739:8560`): `State × Size × Icon{L,R,Only,None} × Colour{Blue,Black}`. Uses `color.button.linkedText.*` (master §3.1; NOTE those values are partly under §6-Q3 WIP — leave unconfirmed keys unassigned).
 
