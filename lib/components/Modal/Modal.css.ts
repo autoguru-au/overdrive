@@ -11,7 +11,12 @@ export const root = style({
 });
 
 export const transition = style({
-	transition: `transform .175s ${vars.animation.easing.standard}, opacity 0.3s ${vars.animation.easing.standard}`,
+	transition: `transform .2s ${vars.animation.easing.standard}, opacity .2s ${vars.animation.easing.standard}`,
+	'@media': {
+		'screen and (prefers-reduced-motion)': {
+			transition: 'none !important',
+		},
+	},
 });
 
 export const entry = style({

@@ -108,6 +108,10 @@ export { StandardModal, EStandardModalSize } from './StandardModal';
 export { StarRating, EStarRatingSize } from './StarRating';
 export { Stepper } from './Stepper';
 export { StickyBox } from './StickyBox';
+export {
+	StickyFooterModal,
+	EStickyFooterModalSize,
+} from './StickyFooterModal';
 export { Switch } from './Switch';
 export {
 	Table,

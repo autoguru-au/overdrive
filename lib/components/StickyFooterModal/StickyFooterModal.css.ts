@@ -76,3 +76,7 @@ export const content = style({
 	overflowY: 'auto',
 	overscrollBehavior: 'contain',
 });
+
+export const headerScrolled = style({
+	boxShadow: '0 4px 6px -4px rgba(0, 0, 0, 0.1)',
+});

@@ -118,12 +118,25 @@ export const Modal: FunctionComponent<ModalProps> = ({
 		if (state === 'CLOSING') {
 			const timer = setTimeout(() => {
 				dispatch('ANIMATION_COMPLETE');
-			}, 300);
+			}, 200);
 			return () => clearTimeout(timer);
 		}
 
 		return () => {};
 	}, [state]);
+
+	useEffect(() => {
+		if (!isOpen) return;
+		const handleKeyDown = (event: KeyboardEvent) => {
+			if (event.key !== 'Escape') return;
+			if (typeof onRequestClose === 'function') {
+				event.stopPropagation();
+				onRequestClose('escapeKeyDown');
+			}
+		};
+		document.addEventListener('keydown', handleKeyDown);
+		return () => document.removeEventListener('keydown', handleKeyDown);
+	}, [isOpen, onRequestClose]);
 
 	return (
 		<Portal
@@ -168,7 +181,8 @@ export const Modal: FunctionComponent<ModalProps> = ({
 						className={[
 							styles.root,
 							styles.transition,
-							state === 'OPENING' && styles.entry,
+							(state === 'OPENING' || state === 'CLOSING') &&
+								styles.entry,
 						]}
 					>
 						{children}

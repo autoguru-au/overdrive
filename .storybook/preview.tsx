@@ -82,6 +82,7 @@ const preview: Preview = {
 						'Modal',
 						'Modal: Minimal',
 						'Modal: Standard with Title',
+						'Modal: Sticky footer CTAs',
 					],
 				],
 			},
