@@ -4,6 +4,7 @@ import type {
 	ComponentProps,
 	FunctionComponent,
 	MouseEventHandler,
+	ReactNode,
 } from 'react';
 import * as React from 'react';
 import { useLayoutEffect, useRef } from 'react';
@@ -30,6 +31,13 @@ export interface StandardModalProps extends ComponentProps<typeof Modal> {
 	size?: ESize | Size;
 	className?: string;
 	title: string;
+	/**
+	 * Optional slot rendered as a sticky footer below the scrollable body.
+	 * Pass any node; use `ModalFooter` for the common right-aligned CTA layout.
+	 * The base component only provides the pinned container with a 1px top
+	 * divider — inner spacing and buttons are the consumer's.
+	 */
+	footer?: ReactNode;
 }
 
 export const StandardModal: FunctionComponent<StandardModalProps> = ({
@@ -41,6 +49,7 @@ export const StandardModal: FunctionComponent<StandardModalProps> = ({
 	noThemedWrapper,
 	ref,
 	onRequestClose,
+	footer,
 	children,
 }) => {
 	const titleId = useId();
@@ -155,6 +164,17 @@ export const StandardModal: FunctionComponent<StandardModalProps> = ({
 					>
 						{children}
 					</Box>
+					{footer ? (
+						<Box
+							as="footer"
+							flexShrink="0"
+							width="full"
+							borderWidthTop="1"
+							borderColor="muted"
+						>
+							{footer}
+						</Box>
+					) : null}
 				</Box>
 			</Box>
 		</Modal>
