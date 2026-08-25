@@ -54,7 +54,7 @@ describe('<StandardModal />', () => {
 			expect(queryByRole('contentinfo')).not.toBeInTheDocument();
 		});
 
-		it('renders the footer node in a <footer> element when provided', () => {
+		it('renders the footer node in a <footer role="contentinfo"> element when provided', () => {
 			const { getByRole, getByText } = render(
 				<StandardModal
 					isOpen
@@ -65,15 +65,19 @@ describe('<StandardModal />', () => {
 				</StandardModal>,
 			);
 
-			expect(getByRole('contentinfo')).toBeInTheDocument();
+			// role="contentinfo" is set explicitly — a <footer> inside <article>
+			// does NOT have an implicit contentinfo role per the HTML AAM.
+			const footer = getByRole('contentinfo');
+			expect(footer).toBeInTheDocument();
+			expect(footer.tagName).toBe('FOOTER');
 			expect(getByText('Save')).toBeInTheDocument();
 		});
 
-		it('does not swallow clicks inside the footer as backdrop dismisses', () => {
+		it('does not fire onRequestClose("backdrop") when a footer button is clicked, even after the backdrop has been unlocked', () => {
 			const onRequestClose = vi.fn();
 			const onSave = vi.fn();
 
-			const { getByText } = render(
+			const { getByText, baseElement } = render(
 				<StandardModal
 					isOpen
 					title={testTitle}
@@ -83,6 +87,19 @@ describe('<StandardModal />', () => {
 					<p>body</p>
 				</StandardModal>,
 			);
+
+			// Unlock the modal by mousing down directly on the backdrop container,
+			// so `locked` no longer short-circuits the backdrop handler. This makes
+			// the test actually exercise the `event.target !== event.currentTarget`
+			// guard rather than passing for the wrong reason.
+			//
+			// Modal renders via a Portal, so we query from `baseElement` (document
+			// body) rather than the render `container`. The dialog article's
+			// parent is the backdrop container with the mousedown handler.
+			const dialog = baseElement.querySelector('[role="dialog"]');
+			expect(dialog).not.toBeNull();
+			const backdrop = dialog.parentElement;
+			fireEvent.mouseDown(backdrop);
 
 			fireEvent.click(getByText('Save'));
 
