@@ -167,6 +167,7 @@ export const StandardModal: FunctionComponent<StandardModalProps> = ({
 					{footer ? (
 						<Box
 							as="footer"
+							role="contentinfo"
 							flexShrink="0"
 							width="full"
 							borderWidthTop="1"
