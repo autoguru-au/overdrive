@@ -4,9 +4,9 @@ import type {
 	MouseEventHandler,
 } from 'react';
 import * as React from 'react';
-import { ReactNode, useLayoutEffect, useRef } from 'react';
+import { ReactNode, useRef } from 'react';
 
-import { isBrowser, useEventCallback, useId } from '../../utils';
+import { useEventCallback, useId } from '../../utils';
 import { Box } from '../Box/Box';
 import { Modal } from '../Modal/Modal';
 
@@ -44,18 +44,14 @@ export const MinimalModal: FunctionComponent<MinimalModalProps> = ({
 		},
 	);
 
-	if (isBrowser) {
-		useLayoutEffect(() => {
-			document.body.style.overflow = isOpen ? 'hidden' : '';
-
-			return () => {
-				document.body.style.overflow = '';
-			};
-		}, [isOpen]);
-	}
-
 	return (
-		<Modal isOpen={isOpen} onRequestClose={onRequestClose} {...modalProps}>
+		<Modal
+			isOpen={isOpen}
+			onRequestClose={onRequestClose}
+			lockScroll
+			closeOnEscapeKeyDown
+			{...modalProps}
+		>
 			<Box
 				className={[styles.container, className]}
 				height="full"
