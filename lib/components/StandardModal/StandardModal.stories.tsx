@@ -3,6 +3,8 @@ import React from 'react';
 import { action } from 'storybook/actions';
 
 import { Box } from '../Box/Box';
+import { Button } from '../Button/Button';
+import { ModalFooter } from '../ModalFooter/ModalFooter';
 import { Text } from '../Text/Text';
 
 import { StandardModal } from './StandardModal';
@@ -180,4 +182,70 @@ export const Standard: Story = {
 			</div>
 		),
 	],
+};
+
+const shortBody = (
+	<Box padding="7">
+		<Text size="p1" color="secondary">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+			convallis neque a laoreet maximus.
+		</Text>
+	</Box>
+);
+
+/**
+ * The `footer` prop takes any node and pins it to the bottom of the modal
+ * with a 1px top divider. The body area above scrolls; the footer stays put.
+ * `ModalFooter` is a thin layout helper for the common right-aligned CTA
+ * pattern — you're not obliged to use it.
+ */
+export const WithFooter: Story = {
+	args: {
+		title: 'Add asset',
+		isOpen: true,
+		onRequestClose: action('onRequestClose'),
+		children: shortBody,
+		footer: (
+			<ModalFooter>
+				<Button
+					variant="secondary"
+					size="medium"
+					onClick={action('cancel')}
+				>
+					Cancel
+				</Button>
+				<Button
+					variant="primary"
+					size="medium"
+					onClick={action('add-asset')}
+				>
+					Add asset
+				</Button>
+			</ModalFooter>
+		),
+	},
+};
+
+/**
+ * A single-CTA variant — same slot, just one button. The layout helper still
+ * right-aligns it.
+ */
+export const WithSingleCTAFooter: Story = {
+	args: {
+		title: 'Confirm changes',
+		isOpen: true,
+		onRequestClose: action('onRequestClose'),
+		children: shortBody,
+		footer: (
+			<ModalFooter>
+				<Button
+					variant="primary"
+					size="medium"
+					onClick={action('confirm')}
+				>
+					Confirm
+				</Button>
+			</ModalFooter>
+		),
+	},
 };

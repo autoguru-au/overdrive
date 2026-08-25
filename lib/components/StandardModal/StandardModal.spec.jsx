@@ -42,4 +42,52 @@ describe('<StandardModal />', () => {
 
 		expect(mockCloseReq).toHaveBeenCalledTimes(1);
 	});
+
+	describe('footer slot', () => {
+		it('does not render a footer when the prop is omitted', () => {
+			const { queryByRole } = render(
+				<StandardModal isOpen title={testTitle}>
+					<p>body</p>
+				</StandardModal>,
+			);
+
+			expect(queryByRole('contentinfo')).not.toBeInTheDocument();
+		});
+
+		it('renders the footer node in a <footer> element when provided', () => {
+			const { getByRole, getByText } = render(
+				<StandardModal
+					isOpen
+					title={testTitle}
+					footer={<button>Save</button>}
+				>
+					<p>body</p>
+				</StandardModal>,
+			);
+
+			expect(getByRole('contentinfo')).toBeInTheDocument();
+			expect(getByText('Save')).toBeInTheDocument();
+		});
+
+		it('does not swallow clicks inside the footer as backdrop dismisses', () => {
+			const onRequestClose = vi.fn();
+			const onSave = vi.fn();
+
+			const { getByText } = render(
+				<StandardModal
+					isOpen
+					title={testTitle}
+					onRequestClose={onRequestClose}
+					footer={<button onClick={onSave}>Save</button>}
+				>
+					<p>body</p>
+				</StandardModal>,
+			);
+
+			fireEvent.click(getByText('Save'));
+
+			expect(onSave).toHaveBeenCalledTimes(1);
+			expect(onRequestClose).not.toHaveBeenCalled();
+		});
+	});
 });
