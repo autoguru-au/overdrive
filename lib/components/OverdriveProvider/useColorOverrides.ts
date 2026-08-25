@@ -150,9 +150,13 @@ const clearsAA = (colour: string, surface: string): boolean =>
 		textSize: 'SMALL',
 	});
 
+/** The ends of the luminance scale, not theme colours — the poles a surface is measured against. */
+const luminancePole = { light: '#ffffff', dark: '#000000' } as const;
+
 /** `getContrastRatio` is `min/max`, so the SMALLER value is the greater contrast. */
 const isDarkSurface = (surface: string): boolean =>
-	getContrastRatio(surface, '#ffffff') < getContrastRatio(surface, '#000000');
+	getContrastRatio(surface, luminancePole.light) <
+	getContrastRatio(surface, luminancePole.dark);
 
 /**
  * The supplied colour if it is already legible on `surface`, otherwise the same
