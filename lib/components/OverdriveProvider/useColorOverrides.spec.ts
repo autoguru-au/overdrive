@@ -1,14 +1,22 @@
 import { renderHook } from '@testing-library/react';
+import { colord } from 'colord';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { colourMap } from '../../themes/base/colours';
 import { tokens as baseTokens } from '../../themes/base/tokens';
-import { getColourLuminance, getRGBValues } from '../../themes/helpers';
+import {
+	getColourLuminance,
+	getRGBValues,
+	passesAccessibilityContrast,
+} from '../../themes/helpers';
 
 import { useColorOverrides } from './useColorOverrides';
 
 const BRAND = '#6d39a8'; // Merchant Finder's purple — dark, wants white on it
 const BRIGHT = '#e5bc01'; // a bright yellow — wants dark ink on it
+const LIGHT_BRAND = '#ffc001'; // AutoGuru yellow — 1.6:1 on white, 9.4:1 on navy
+const PALE_SURFACE = baseTokens.color.background.emphasisInactive; // gray200
+const DARK_SURFACE = baseTokens.color.background.reverse; // gray900
 
 const vars = (
 	overrides?: Parameters<typeof useColorOverrides>[0],
@@ -18,6 +26,16 @@ const vars = (
 		.current as Record<string, string>;
 
 const luminance = (colour: string) => getColourLuminance(getRGBValues(colour));
+
+const legibleOn = (colour: string, surface: string) =>
+	passesAccessibilityContrast({
+		colour1: colour,
+		colour2: surface,
+		level: 'AA',
+		textSize: 'SMALL',
+	});
+
+const hue = (colour: string) => colord(colour).toHsl().h;
 
 describe('useColorOverrides', () => {
 	beforeEach(() => {
@@ -188,6 +206,9 @@ describe('useColorOverrides', () => {
 			const result = vars({ primaryBackground: BRAND });
 			expect(result['--od-colours-foreground-link']).toBeUndefined();
 			expect(result['--od-typography-colour-link']).toBeUndefined();
+			expect(
+				result['--od-color-interactive-link-on-dark'],
+			).toBeUndefined();
 		});
 
 		it('brands them only when linkColor is passed explicitly', () => {
@@ -197,6 +218,65 @@ describe('useColorOverrides', () => {
 			});
 			expect(result['--od-colours-foreground-link']).toBe(BRAND);
 			expect(result['--od-typography-colour-link']).toBe(BRAND);
+		});
+
+		// One inline var serves every surface, so a brand legible on a white
+		// page can still be invisible on a gray-900 header, and vice versa.
+		describe('deriving one colour per surface', () => {
+			it('darkens a light brand until it clears AA on the palest card', () => {
+				const link = vars({ linkColor: LIGHT_BRAND })[
+					'--od-colours-foreground-link'
+				];
+
+				expect(link).not.toBe(LIGHT_BRAND);
+				expect(legibleOn(link, PALE_SURFACE)).toBe(true);
+				expect(hue(link)).toBeCloseTo(hue(LIGHT_BRAND), -1);
+			});
+
+			it('leaves a light brand untouched for dark surfaces', () => {
+				expect(
+					vars({ linkColor: LIGHT_BRAND })[
+						'--od-color-interactive-link-on-dark'
+					],
+				).toBe(LIGHT_BRAND);
+			});
+
+			it('lightens a dark brand until it clears AA on a dark surface', () => {
+				const link = vars({ linkColor: BRAND })[
+					'--od-color-interactive-link-on-dark'
+				];
+
+				expect(link).not.toBe(BRAND);
+				expect(legibleOn(link, DARK_SURFACE)).toBe(true);
+				expect(hue(link)).toBeCloseTo(hue(BRAND), -1);
+			});
+
+			it('leaves a dark brand untouched on pale surfaces', () => {
+				expect(
+					vars({ linkColor: BRAND })['--od-colours-foreground-link'],
+				).toBe(BRAND);
+			});
+
+			it('keeps the theme default on the side a hue cannot reach, and warns', () => {
+				const warn = vi
+					.spyOn(console, 'warn')
+					.mockImplementation(() => {});
+				// a pale pastel: no amount of darkening short of abandoning the
+				// hue clears 4.5:1 on a gray-200 card, but it is already legible
+				// on gray-900 — so only the light side falls back
+				const PASTEL = '#affff5';
+
+				const result = vars({ linkColor: PASTEL });
+
+				expect(result['--od-colours-foreground-link']).toBeUndefined();
+				expect(result['--od-typography-colour-link']).toBeUndefined();
+				expect(result['--od-color-interactive-link-on-dark']).toBe(
+					PASTEL,
+				);
+				expect(warn).toHaveBeenCalledWith(
+					expect.stringContaining('without losing the brand'),
+				);
+			});
 		});
 	});
 

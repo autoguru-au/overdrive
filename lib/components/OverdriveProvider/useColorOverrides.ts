@@ -13,12 +13,18 @@ interface ThemeContext {
 	mode: string;
 	pageBackground: string;
 	bodyInk: string;
+	lightSurface: string;
+	darkSurface: string;
 }
 
 const themeContext = (tokens: ThemeTokens): ThemeContext => ({
 	mode: String(tokens.mode),
 	pageBackground: tokens.color.background.default,
 	bodyInk: tokens.color.foreground.primary,
+	// The darkest of the pale surfaces, not the page background — a link tuned
+	// against white alone still fails on a gray-200 card.
+	lightSurface: tokens.color.background.emphasisInactive,
+	darkSurface: tokens.color.background.reverse,
 });
 
 /** valid colour override keys */
@@ -117,6 +123,91 @@ const warnOnLowContrast = (
 	}
 };
 
+/**
+ * Past this, a brand has been shaded so far it is no longer the brand; fall back
+ * to the theme's own link colour rather than ship an unrecognisable one.
+ */
+const maxShadeIntensity = 0.6;
+const shadeStep = 0.01;
+
+const shade = (
+	colour: string,
+	towards: 'darker' | 'lighter',
+	intensity: number,
+): string =>
+	shadedColour({
+		colour,
+		isDarkTheme: false,
+		direction: towards === 'darker' ? 'backward' : 'forward',
+		intensity,
+	});
+
+const clearsAA = (colour: string, surface: string): boolean =>
+	passesAccessibilityContrast({
+		colour1: colour,
+		colour2: surface,
+		level: 'AA',
+		textSize: 'SMALL',
+	});
+
+/** `getContrastRatio` is `min/max`, so the SMALLER value is the greater contrast. */
+const isDarkSurface = (surface: string): boolean =>
+	getContrastRatio(surface, '#ffffff') < getContrastRatio(surface, '#000000');
+
+/**
+ * The supplied colour if it is already legible on `surface`, otherwise the same
+ * hue shaded away from that surface until it clears 4.5:1. `null` when the hue
+ * cannot get there inside `maxShadeIntensity`.
+ */
+const deriveLinkForSurface = (
+	brand: string,
+	surface: string,
+): string | null => {
+	if (clearsAA(brand, surface)) return brand;
+
+	const towards = isDarkSurface(surface) ? 'lighter' : 'darker';
+
+	for (
+		let intensity = shadeStep;
+		intensity <= maxShadeIntensity;
+		intensity += shadeStep
+	) {
+		const candidate = shade(brand, towards, intensity);
+		if (clearsAA(candidate, surface)) return candidate;
+	}
+
+	return null;
+};
+
+const changedFrom = (supplied: string, derived: string | null): boolean =>
+	derived !== null && derived.toLowerCase() !== supplied.toLowerCase();
+
+/** Dev-only account of what the supplied link colour actually became. */
+const warnOnLinkDerivation = (
+	supplied: string,
+	onLight: string | null,
+	onDark: string | null,
+	theme: ThemeContext,
+) => {
+	if (onLight === null)
+		warnOnce(
+			`Overdrive Provider: linkColor (${supplied}) cannot reach WCAG AA (4.5:1) against ${theme.lightSurface} without losing the brand. Links and focus rings on light surfaces keep the theme's own link colour.`,
+		);
+	else if (changedFrom(supplied, onLight))
+		warnOnce(
+			`Overdrive Provider: linkColor (${supplied}) does not meet WCAG AA (4.5:1) on light surfaces. Using ${onLight} for links and focus rings there instead.`,
+		);
+
+	if (onDark === null)
+		warnOnce(
+			`Overdrive Provider: linkColor (${supplied}) cannot reach WCAG AA (4.5:1) against ${theme.darkSurface} without losing the brand. Links inside a darkSurface scope keep the theme's own link colour.`,
+		);
+	else if (changedFrom(supplied, onDark))
+		warnOnce(
+			`Overdrive Provider: linkColor (${supplied}) does not meet WCAG AA (4.5:1) on dark surfaces. Using ${onDark} inside a darkSurface scope instead.`,
+		);
+};
+
 export const useColorOverrides = (
 	overrides: Partial<ColorOverrides> | undefined,
 	tokens: ThemeTokens,
@@ -196,9 +287,20 @@ export const useColorOverrides = (
 			});
 		}
 
+		// One inline var serves every surface, so a single link colour cannot be
+		// right on both a white page and a gray-900 header. Derive one for each
+		// and let a `darkSurface` scope opt into the second.
+		const linkOnLight = linkColor
+			? deriveLinkForSurface(linkColor, theme.lightSurface)
+			: null;
+		const linkOnDark = linkColor
+			? deriveLinkForSurface(linkColor, theme.darkSurface)
+			: null;
+
 		if (process.env.NODE_ENV !== 'production') {
 			warnOnLowContrast(primaryBackground, 'primaryBackground', theme);
-			warnOnLowContrast(linkColor, 'linkColor', theme);
+			if (linkColor)
+				warnOnLinkDerivation(linkColor, linkOnLight, linkOnDark, theme);
 		}
 
 		// slightly messy use of ts-expect-error but assignInlineVars only generates css vars to apply to a container
@@ -210,6 +312,12 @@ export const useColorOverrides = (
 					solid: primaryBackground ?? undefined,
 					//@ts-expect-error no undefined
 					onSolid: onBrand ?? undefined,
+				},
+				interactive: {
+					// read by the `darkSurface` scope, which repoints the link
+					// vars to it for its subtree
+					//@ts-expect-error no undefined
+					linkOnDark: linkOnDark ?? undefined,
 				},
 				button: {
 					primary: {
@@ -231,7 +339,7 @@ export const useColorOverrides = (
 				foreground: {
 					// also brands every focus ring, via focusOutline.css.ts
 					//@ts-expect-error no undefined
-					link: linkColor ?? undefined,
+					link: linkOnLight ?? undefined,
 				},
 				intent: {
 					primary: {
@@ -258,7 +366,7 @@ export const useColorOverrides = (
 					primary: primaryBackground ?? undefined,
 					// read by TextLink and by the `colour="link"` sprinkle
 					//@ts-expect-error no undefined
-					link: linkColor ?? undefined,
+					link: linkOnLight ?? undefined,
 				},
 			},
 		});
