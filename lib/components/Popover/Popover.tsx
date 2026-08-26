@@ -12,6 +12,8 @@ import { type OverlayTriggerState } from 'react-stately';
 
 import { useMedia } from '../../hooks/useMedia/useMedia';
 import { sprinkles } from '../../styles/sprinkles.css';
+import { mergeRefs } from '../../utils';
+import { dataAttrs } from '../../utils/dataAttrs';
 import { Button } from '../Button/Button';
 import { Icon } from '../Icon/Icon';
 
@@ -43,6 +45,15 @@ export interface PopoverProps extends Omit<AriaPopoverProps, 'popoverRef'> {
 	 * Language content override
 	 */
 	lang?: Partial<PopoverTextContent>;
+	/**
+	 * Whether the popover is playing its exit animation, exposed to CSS as
+	 * `data-exiting` on the popover root
+	 */
+	isExiting?: boolean;
+	/**
+	 * Receives the popover root element, the one carrying `data-exiting`
+	 */
+	rootRef?: React.RefObject<HTMLDivElement | null>;
 }
 
 /**
@@ -69,6 +80,8 @@ export const Popover = ({
 	state,
 	triggerRef,
 	lang,
+	isExiting,
+	rootRef,
 	...props
 }: PopoverProps) => {
 	const popoverRef = useRef<HTMLDivElement>(null);
@@ -76,6 +89,8 @@ export const Popover = ({
 
 	const isFullScreen = !isTablet;
 	const textValues = { ...defaultEnglish, ...lang };
+
+	const { close } = state;
 
 	// Handle Esc manually since we have two different modes (popover vs fullscreen dialog)
 	// and react-aria would need a slightly different ModalTrigger pattern
@@ -85,13 +100,13 @@ export const Popover = ({
 		const handleKeyDown = (event: KeyboardEvent) => {
 			if (event.key === 'Escape') {
 				event.preventDefault();
-				state.close();
+				close();
 			}
 		};
 
 		document.addEventListener('keydown', handleKeyDown);
 		return () => document.removeEventListener('keydown', handleKeyDown);
-	}, [isFullScreen, state]);
+	}, [isFullScreen, close]);
 
 	const { popoverProps, underlayProps } = usePopover(
 		{
@@ -108,7 +123,11 @@ export const Popover = ({
 		return (
 			<Overlay>
 				<Dialog>
-					<div className={fullScreenStyle}>
+					<div
+						className={fullScreenStyle}
+						ref={rootRef}
+						{...dataAttrs({ exiting: isExiting })}
+					>
 						<div
 							className={sprinkles({
 								display: 'flex',
@@ -122,7 +141,7 @@ export const Popover = ({
 									variant="secondary"
 									minimal
 									rounded
-									onClick={state.close}
+									onClick={close}
 									aria-label={textValues.close}
 								>
 									<Icon icon={XIcon} />
@@ -140,9 +159,14 @@ export const Popover = ({
 	return (
 		<Overlay>
 			<div {...underlayProps} />
-			<div {...popoverProps} ref={popoverRef} className={overlayStyle}>
+			<div
+				{...popoverProps}
+				ref={mergeRefs([popoverRef, rootRef])}
+				className={overlayStyle}
+				{...dataAttrs({ exiting: isExiting })}
+			>
 				<Dialog>{children}</Dialog>
-				<DismissButton onDismiss={state.close} />
+				<DismissButton onDismiss={close} />
 			</div>
 		</Overlay>
 	);

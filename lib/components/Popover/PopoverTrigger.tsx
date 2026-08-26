@@ -5,7 +5,10 @@ import {
 	useButton,
 	type AriaPopoverProps,
 } from 'react-aria';
-import { useOverlayTriggerState } from 'react-stately';
+import {
+	useOverlayTriggerState,
+	type OverlayTriggerState,
+} from 'react-stately';
 
 import type { TestIdProp } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
@@ -13,6 +16,7 @@ import { Button } from '../Button/Button';
 
 import { Popover, type PopoverTextContent } from './Popover';
 import { triggerStyle } from './Popover.css';
+import { useExitAnimation } from './useExitAnimation';
 
 export type OnStateReadyValue = { close: () => void; isOpen: boolean };
 
@@ -59,6 +63,11 @@ export interface PopoverTriggerProps
  * Note: Button components are not supported as children due to React Aria compatibility issues,
  * use button tag, plain text, or other elements instead.
  *
+ * Closing is held open for as long as the popover root has animations running,
+ * and `data-exiting` is set on that root while they play, so consumers can
+ * animate the exit with CSS. A popover with no exit animation unmounts in the
+ * same commit it always has.
+ *
  * @example
  * ```tsx
  * <PopoverTrigger content={<Calendar />}>
@@ -82,17 +91,25 @@ export const PopoverTrigger = ({
 	const state = useOverlayTriggerState({});
 	const internalRef = useRef<HTMLButtonElement>(null);
 	const triggerRef = ref ?? internalRef;
+	const { isExiting, rootRef, requestExit } = useExitAnimation(state.close);
+
+	const exitAwareState: OverlayTriggerState = {
+		...state,
+		setOpen: (isOpen) => (isOpen ? state.open() : requestExit()),
+		close: requestExit,
+		toggle: () => (state.isOpen ? requestExit() : state.open()),
+	};
 
 	// Provide state access to parent component
 	React.useEffect(() => {
 		if (onStateReady) {
-			onStateReady({ close: state.close, isOpen: state.isOpen });
+			onStateReady({ close: requestExit, isOpen: state.isOpen });
 		}
-	}, [onStateReady, state.close, state.isOpen]);
+	}, [onStateReady, requestExit, state.isOpen]);
 
 	const { triggerProps, overlayProps } = useOverlayTrigger(
 		{ type: 'dialog' },
-		state,
+		exitAwareState,
 		triggerRef,
 	);
 
@@ -138,7 +155,9 @@ export const PopoverTrigger = ({
 			{state.isOpen && (
 				<Popover
 					{...overlayProps}
-					state={state}
+					state={exitAwareState}
+					isExiting={isExiting}
+					rootRef={rootRef}
 					triggerRef={triggerRef}
 					placement={placement}
 					offset={offset}

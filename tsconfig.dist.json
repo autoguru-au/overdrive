@@ -13,6 +13,7 @@
 		"lib/stories",
 		"lib/test",
 		"**/*.stories.tsx",
+		"**/*.stories.css.ts",
 		"**/*.stories.jsx",
 		"**/*.spec.tsx",
 		"**/*.spec.jsx"

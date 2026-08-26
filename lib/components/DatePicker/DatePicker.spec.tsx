@@ -1,13 +1,25 @@
 import { composeStories } from '@storybook/react';
-import { render, screen } from '@testing-library/react';
+import { act, render, screen, waitFor } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 import React from 'react';
-import { describe, it, expect, beforeAll, afterAll, vi } from 'vitest';
+import {
+	describe,
+	it,
+	expect,
+	beforeAll,
+	afterAll,
+	afterEach,
+	vi,
+} from 'vitest';
+
+import { deferredAnimation, stubGetAnimations } from '../../test/animations';
 
 import { DatePicker } from './DatePicker';
 import * as stories from './DatePicker.stories';
 
 const { Standard, LargeWithLabel, NativePicker } = composeStories(stories);
+
+let exitAnimations: Animation[] = [];
 
 // Mock window.matchMedia for useMedia hook
 const mockMatchMedia = (query: string) => ({
@@ -38,6 +50,11 @@ describe('DatePicker', () => {
 			writable: true,
 			value: mockMatchMedia,
 		});
+		stubGetAnimations(() => exitAnimations);
+	});
+
+	afterEach(() => {
+		exitAnimations = [];
 	});
 
 	afterAll(() => {
@@ -570,6 +587,42 @@ describe('DatePicker', () => {
 			expect(
 				screen.getByLabelText('Custom Previous'),
 			).toBeInTheDocument();
+		});
+	});
+
+	it('holds the calendar open through an exit animation after selection', async () => {
+		const user = userEvent.setup();
+		const { animation, finish } = deferredAnimation();
+		exitAnimations = [animation];
+
+		render(<DatePicker name="animated-picker" onChange={vi.fn()} />);
+
+		const { dialog } = await openCalendar(user);
+		expect(dialog).toBeInTheDocument();
+
+		const dateButton = screen
+			.getAllByRole('button')
+			.find(
+				(button) =>
+					button.textContent &&
+					/^\d{1,2}$/.test(button.textContent.trim()) &&
+					!button.hasAttribute('aria-disabled') &&
+					!button.hasAttribute('aria-pressed'),
+			);
+
+		if (!dateButton) throw new Error('No selectable date button found');
+
+		await user.click(dateButton);
+
+		expect(screen.getByRole('dialog')).toBeInTheDocument();
+		expect(document.querySelector('[data-exiting]')).not.toBeNull();
+
+		await act(async () => {
+			finish();
+		});
+
+		await waitFor(() => {
+			expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
 		});
 	});
 });

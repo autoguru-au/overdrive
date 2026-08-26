@@ -10,6 +10,7 @@ import { Stack } from '../Stack/Stack';
 import { Text } from '../Text/Text';
 import { TextInput } from '../TextInput/TextInput';
 
+import { animatedContent } from './Popover.stories.css';
 import { PopoverTrigger } from './PopoverTrigger';
 
 const buttonStyle = button({ intent: 'secondary' });
@@ -57,6 +58,25 @@ export const TopPlacement: Story = {
 		content: (
 			<Box padding="4">
 				<Text>This popover opens above the trigger button.</Text>
+			</Box>
+		),
+	},
+};
+
+export const ExitAnimation: Story = {
+	args: {
+		...Standard.args,
+		children: <button className={buttonStyle}>Animated Popover</button>,
+		content: (
+			<Box className={animatedContent} padding="4">
+				<Stack space="3">
+					<Heading size="4">Animated Popover</Heading>
+					<Text>
+						The content animates in on open, and out on close. The
+						popover root carries `data-exiting` while the exit
+						plays, and unmounts once it finishes.
+					</Text>
+				</Stack>
 			</Box>
 		),
 	},

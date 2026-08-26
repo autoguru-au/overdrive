@@ -102,7 +102,7 @@
 	},
 	"scripts": {
 		"analyse": "vite build --config vite-analyse.config.ts",
-		"build": "babel lib --out-dir dist --extensions '.ts,.tsx,.css' --ignore 'lib/stories,lib/test,lib/**/*.spec.tsx,lib/**/*.stories.tsx'",
+		"build": "babel lib --out-dir dist --extensions '.ts,.tsx,.css' --ignore 'lib/stories,lib/test,lib/**/*.spec.tsx,lib/**/*.stories.tsx,lib/**/*.stories.css.ts'",
 		"chromatic": "chromatic test --exit-zero-on-changes --build-script-name storybook:build",
 		"copy:public": "node scripts/copyPublic.js",
 		"check-deps": "npx npm-check-updates@latest --interactive --format group",

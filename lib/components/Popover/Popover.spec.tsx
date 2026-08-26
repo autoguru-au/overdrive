@@ -1,13 +1,33 @@
 import { composeStories } from '@storybook/react';
-import { render, screen } from '@testing-library/react';
+import { act, render, screen, waitFor } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 import React from 'react';
-import { describe, it, expect, beforeAll, afterAll } from 'vitest';
+import {
+	describe,
+	it,
+	expect,
+	beforeAll,
+	afterAll,
+	afterEach,
+	vi,
+} from 'vitest';
+
+import {
+	deferredAnimation,
+	endlessAnimation,
+	stalledAnimation,
+	stubGetAnimations,
+} from '../../test/animations';
 
 import * as stories from './Popover.stories';
 import { PopoverTrigger } from './PopoverTrigger';
+import { EXIT_TIMEOUT_MS } from './useExitAnimation';
 
 const { Standard, Interaction, KeyboardTest } = composeStories(stories);
+
+const openPopover = /open popover/i;
+
+let exitAnimations: Animation[] = [];
 
 // Mock window.matchMedia for useMedia hook
 const mockMatchMedia = (query: string) => ({
@@ -21,8 +41,23 @@ const mockMatchMedia = (query: string) => ({
 	dispatchEvent: () => {},
 });
 
+const RenderCounter = ({ onRender }: { onRender: () => void }) => {
+	onRender();
+	return <p>Counted content</p>;
+};
+
 describe('Popover', () => {
 	beforeAll(() => {
+		Object.defineProperty(globalThis, 'matchMedia', {
+			writable: true,
+			value: mockMatchMedia,
+		});
+		stubGetAnimations(() => exitAnimations);
+	});
+
+	afterEach(() => {
+		exitAnimations = [];
+		stubGetAnimations(() => exitAnimations);
 		Object.defineProperty(globalThis, 'matchMedia', {
 			writable: true,
 			value: mockMatchMedia,
@@ -50,7 +85,7 @@ describe('Popover', () => {
 		render(<Standard />);
 
 		const triggerButton = screen.getByRole('button', {
-			name: /open popover/i,
+			name: openPopover,
 		});
 
 		// Click to open popover
@@ -188,5 +223,217 @@ describe('Popover', () => {
 		// Escape should close and return focus to trigger
 		await user.keyboard('{Escape}');
 		expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+	});
+
+	describe('exit animations', () => {
+		it('unmounts in the same commit when nothing animates on exit', async () => {
+			const user = userEvent.setup();
+			const onRender = vi.fn();
+
+			render(
+				<PopoverTrigger content={<RenderCounter onRender={onRender} />}>
+					Same commit trigger
+				</PopoverTrigger>,
+			);
+
+			const trigger = screen.getByRole('button');
+			await user.click(trigger);
+			expect(screen.getByRole('dialog')).toBeInTheDocument();
+
+			const rendersWhileOpen = onRender.mock.calls.length;
+
+			await user.click(trigger);
+
+			expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+			expect(document.querySelector('[data-exiting]')).toBeNull();
+			expect(onRender).toHaveBeenCalledTimes(rendersWhileOpen);
+		});
+
+		it('holds the popover mounted until its exit animation finishes', async () => {
+			const user = userEvent.setup();
+			const { animation, finish } = deferredAnimation();
+			exitAnimations = [animation];
+
+			render(<Standard />);
+
+			const trigger = screen.getByRole('button', {
+				name: openPopover,
+			});
+			await user.click(trigger);
+			await user.click(trigger);
+
+			expect(screen.getByRole('dialog')).toBeInTheDocument();
+
+			await act(async () => {
+				finish();
+			});
+
+			await waitFor(() => {
+				expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+			});
+		});
+
+		it('marks the popover root with data-exiting only while it is exiting', async () => {
+			const user = userEvent.setup();
+			const { animation, finish } = deferredAnimation();
+			exitAnimations = [animation];
+
+			render(<Standard />);
+
+			const trigger = screen.getByRole('button', {
+				name: openPopover,
+			});
+			await user.click(trigger);
+
+			expect(document.querySelector('[data-exiting]')).toBeNull();
+
+			await user.click(trigger);
+
+			const exitingRoot = document.querySelector('[data-exiting]');
+			expect(exitingRoot).not.toBeNull();
+			expect(exitingRoot).toContainElement(
+				screen.getByText('Popover Content'),
+			);
+
+			await act(async () => {
+				finish();
+			});
+
+			await waitFor(() => {
+				expect(document.querySelector('[data-exiting]')).toBeNull();
+			});
+		});
+
+		it('unmounts once the safety cap elapses when an animation never finishes', async () => {
+			const user = userEvent.setup();
+			exitAnimations = [stalledAnimation()];
+
+			render(<Standard />);
+
+			const trigger = screen.getByRole('button', {
+				name: openPopover,
+			});
+			await user.click(trigger);
+			await user.click(trigger);
+
+			expect(screen.getByRole('dialog')).toBeInTheDocument();
+
+			await waitFor(
+				() => {
+					expect(
+						screen.queryByRole('dialog'),
+					).not.toBeInTheDocument();
+				},
+				{ timeout: EXIT_TIMEOUT_MS + 2000 },
+			);
+		});
+
+		it('ignores endless animations such as a loading spinner', async () => {
+			const user = userEvent.setup();
+			const onRender = vi.fn();
+			exitAnimations = [endlessAnimation()];
+
+			render(
+				<PopoverTrigger content={<RenderCounter onRender={onRender} />}>
+					Endless animation trigger
+				</PopoverTrigger>,
+			);
+
+			const trigger = screen.getByRole('button');
+			await user.click(trigger);
+
+			const rendersWhileOpen = onRender.mock.calls.length;
+
+			await user.click(trigger);
+
+			expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+			expect(onRender).toHaveBeenCalledTimes(rendersWhileOpen);
+		});
+
+		it('closes immediately where the environment has no getAnimations', async () => {
+			const user = userEvent.setup();
+			exitAnimations = [deferredAnimation().animation];
+			// @ts-expect-error deleting an optional DOM API to model older environments
+			delete Element.prototype.getAnimations;
+
+			render(<Standard />);
+
+			const trigger = screen.getByRole('button', {
+				name: openPopover,
+			});
+			await user.click(trigger);
+			await user.click(trigger);
+
+			expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+		});
+
+		it('marks the positioned popover root rather than the fullscreen one', async () => {
+			Object.defineProperty(globalThis, 'matchMedia', {
+				writable: true,
+				value: (query: string) => ({
+					...mockMatchMedia(query),
+					matches: true,
+				}),
+			});
+
+			const user = userEvent.setup();
+			const { animation, finish } = deferredAnimation();
+			exitAnimations = [animation];
+
+			render(<Standard />);
+
+			const trigger = screen.getByRole('button', {
+				name: openPopover,
+			});
+			await user.click(trigger);
+			await user.click(trigger);
+
+			const exitingRoot = document.querySelector('[data-exiting]');
+			expect(exitingRoot).toContainElement(screen.getByRole('dialog'));
+
+			await act(async () => {
+				finish();
+			});
+
+			await waitFor(() => {
+				expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+			});
+		});
+
+		it('leaves focus where a close without an animation leaves it', async () => {
+			const user = userEvent.setup();
+
+			const openThenEscape = async () => {
+				const trigger = screen.getByRole('button', {
+					name: /focus test/i,
+				});
+				trigger.focus();
+				await user.keyboard(' ');
+				expect(screen.getByRole('dialog')).toBeInTheDocument();
+				await user.keyboard('{Escape}');
+			};
+
+			const plain = render(<KeyboardTest />);
+			await openThenEscape();
+			expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+			const focusAfterPlainExit = document.activeElement;
+			plain.unmount();
+
+			const { animation, finish } = deferredAnimation();
+			exitAnimations = [animation];
+
+			render(<KeyboardTest />);
+			await openThenEscape();
+			expect(screen.getByRole('dialog')).toBeInTheDocument();
+
+			await act(async () => {
+				finish();
+			});
+
+			await waitFor(() => {
+				expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+			});
+			expect(document.activeElement).toBe(focusAfterPlainExit);
+		});
 	});
 });
