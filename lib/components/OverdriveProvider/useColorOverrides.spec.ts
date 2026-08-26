@@ -230,7 +230,7 @@ describe('useColorOverrides', () => {
 
 				expect(link).not.toBe(LIGHT_BRAND);
 				expect(legibleOn(link, PALE_SURFACE)).toBe(true);
-				expect(hue(link)).toBeCloseTo(hue(LIGHT_BRAND), -1);
+				expect(hue(link)).toBeCloseTo(hue(LIGHT_BRAND), 0);
 			});
 
 			it('leaves a light brand untouched for dark surfaces', () => {
@@ -248,7 +248,7 @@ describe('useColorOverrides', () => {
 
 				expect(link).not.toBe(BRAND);
 				expect(legibleOn(link, DARK_SURFACE)).toBe(true);
-				expect(hue(link)).toBeCloseTo(hue(BRAND), -1);
+				expect(hue(link)).toBeCloseTo(hue(BRAND), 0);
 			});
 
 			it('leaves a dark brand untouched on pale surfaces', () => {
