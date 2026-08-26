@@ -2,7 +2,14 @@ import { assignInlineVars } from '@vanilla-extract/dynamic';
 import { useMemo } from 'react';
 
 import {
+	darkSurfaceValues,
+	lightSurfaceValues,
+} from '../../styles/surfaceLinkVars';
+import {
+	canMeasureContrast,
+	darkenColour,
 	getContrastRatio,
+	lightenColour,
 	passesAccessibilityContrast,
 	shadedColour,
 } from '../../themes/helpers';
@@ -17,14 +24,76 @@ interface ThemeContext {
 	darkSurface: string;
 }
 
+/** The ends of the luminance scale, not theme colours — the poles a surface is measured against. */
+const luminancePole = { light: '#ffffff', dark: '#000000' } as const;
+
+/**
+ * The live value behind a `backgroundColor` sprinkle value name. `color.gamut`
+ * holds var() references at this point, so the ramp comes off the legacy gamut,
+ * which carries literals.
+ */
+const surfaceValue = (
+	name: string,
+	tokens: ThemeTokens,
+): string | undefined => {
+	// eslint-disable-next-line no-restricted-syntax -- RETAINED: color.gamut resolves to var() references; colours.gamut is the only gamut carrying literals, and a literal is what a contrast measurement needs.
+	const { gamut } = tokens.colours;
+	const byName: Record<string, string> = {
+		...tokens.color.surface,
+		...tokens.color.background,
+		...gamut,
+		black900: gamut.gray900,
+	};
+	return byName[name];
+};
+
+/** `getContrastRatio` is `min/max`, so the SMALLER value is the greater contrast. */
+const isDarkSurface = (surface: string): boolean =>
+	getContrastRatio(surface, luminancePole.light) <
+	getContrastRatio(surface, luminancePole.dark);
+
+/**
+ * The hardest surface in a bucket to be legible on: the darkest of the pale
+ * ones, the lightest of the dark ones. Tuning against the worst case is what
+ * lets `surfaceLinkVars` promise 4.5:1 on every surface it declares, rather
+ * than only on whichever one the derivation was pointed at.
+ */
+const worstCaseSurface = (
+	names: readonly string[],
+	tokens: ThemeTokens,
+	pole: 'light' | 'dark',
+): string => {
+	// Membership is by name, but names can lie: a theme is free to repoint
+	// `reverse` at something pale. Measure each member and keep only those
+	// actually on the bucket's side of the scale, so the target is never a
+	// colour from the wrong half.
+	const measurable = names
+		.map((name) => surfaceValue(name, tokens))
+		.filter((value): value is string => typeof value === 'string')
+		.filter((value) => canMeasureContrast(value))
+		.filter((value) => isDarkSurface(value) === (pole === 'dark'));
+
+	// A theme so inverted that a bucket has no members on its own side gets
+	// the pole itself — the strictest possible target, never a wrong one.
+	if (measurable.length === 0) return luminancePole[pole];
+
+	// `getContrastRatio` is min/max, so the SMALLEST value is the greatest
+	// contrast. The member furthest from its own pole — the darkest pale
+	// surface, the lightest dark one — is the one a link struggles most on.
+	return measurable.reduce((worst, value) =>
+		getContrastRatio(value, luminancePole[pole]) <
+		getContrastRatio(worst, luminancePole[pole])
+			? value
+			: worst,
+	);
+};
+
 const themeContext = (tokens: ThemeTokens): ThemeContext => ({
 	mode: String(tokens.mode),
 	pageBackground: tokens.color.background.default,
 	bodyInk: tokens.color.foreground.primary,
-	// The darkest of the pale surfaces, not the page background — a link tuned
-	// against white alone still fails on a gray-200 card.
-	lightSurface: tokens.color.background.emphasisInactive,
-	darkSurface: tokens.color.background.reverse,
+	lightSurface: worstCaseSurface(lightSurfaceValues, tokens, 'light'),
+	darkSurface: worstCaseSurface(darkSurfaceValues, tokens, 'dark'),
 });
 
 /** valid colour override keys */
@@ -126,8 +195,12 @@ const warnOnLowContrast = (
 /**
  * Past this, a brand has been shaded so far it is no longer the brand; fall back
  * to the theme's own link colour rather than ship an unrecognisable one.
+ *
+ * Counted in whole steps rather than accumulated as a float: `intensity += 0.01`
+ * from 0.01 drifts, and stopped at 0.59 — one step short of the cap the constant
+ * advertised.
  */
-const maxShadeIntensity = 0.6;
+const maxShadeSteps = 60;
 const shadeStep = 0.01;
 
 const shade = (
@@ -135,12 +208,9 @@ const shade = (
 	towards: 'darker' | 'lighter',
 	intensity: number,
 ): string =>
-	shadedColour({
-		colour,
-		isDarkTheme: false,
-		direction: towards === 'darker' ? 'backward' : 'forward',
-		intensity,
-	});
+	towards === 'darker'
+		? darkenColour(colour, intensity)
+		: lightenColour(colour, intensity);
 
 const clearsAA = (colour: string, surface: string): boolean =>
 	passesAccessibilityContrast({
@@ -149,14 +219,6 @@ const clearsAA = (colour: string, surface: string): boolean =>
 		level: 'AA',
 		textSize: 'SMALL',
 	});
-
-/** The ends of the luminance scale, not theme colours — the poles a surface is measured against. */
-const luminancePole = { light: '#ffffff', dark: '#000000' } as const;
-
-/** `getContrastRatio` is `min/max`, so the SMALLER value is the greater contrast. */
-const isDarkSurface = (surface: string): boolean =>
-	getContrastRatio(surface, luminancePole.light) <
-	getContrastRatio(surface, luminancePole.dark);
 
 /**
  * The supplied colour if it is already legible on `surface`, otherwise the same
@@ -167,16 +229,17 @@ const deriveLinkForSurface = (
 	brand: string,
 	surface: string,
 ): string | null => {
+	// Every branch below is a luminance comparison. On a colour we cannot parse
+	// those all resolve against black, so the brand would clear AA on sight and
+	// ship unshaded — the feature silently doing nothing.
+	if (!canMeasureContrast(brand)) return null;
+
 	if (clearsAA(brand, surface)) return brand;
 
 	const towards = isDarkSurface(surface) ? 'lighter' : 'darker';
 
-	for (
-		let intensity = shadeStep;
-		intensity <= maxShadeIntensity;
-		intensity += shadeStep
-	) {
-		const candidate = shade(brand, towards, intensity);
+	for (let step = 1; step <= maxShadeSteps; step++) {
+		const candidate = shade(brand, towards, step * shadeStep);
 		if (clearsAA(candidate, surface)) return candidate;
 	}
 
@@ -193,6 +256,13 @@ const warnOnLinkDerivation = (
 	onDark: string | null,
 	theme: ThemeContext,
 ) => {
+	if (!canMeasureContrast(supplied)) {
+		warnOnce(
+			`Overdrive Provider: linkColor (${supplied}) is not a colour this can measure — contrast against it cannot be checked, so links and focus rings keep the theme's own colour. Supply a hex, rgb(), hsl() or CSS named colour.`,
+		);
+		return;
+	}
+
 	if (onLight === null)
 		warnOnce(
 			`Overdrive Provider: linkColor (${supplied}) cannot reach WCAG AA (4.5:1) against ${theme.lightSurface} without losing the brand. Links and focus rings on light surfaces keep the theme's own link colour.`,
@@ -204,11 +274,11 @@ const warnOnLinkDerivation = (
 
 	if (onDark === null)
 		warnOnce(
-			`Overdrive Provider: linkColor (${supplied}) cannot reach WCAG AA (4.5:1) against ${theme.darkSurface} without losing the brand. Links inside a darkSurface scope keep the theme's own link colour.`,
+			`Overdrive Provider: linkColor (${supplied}) cannot reach WCAG AA (4.5:1) against ${theme.darkSurface} without losing the brand. Links on dark surfaces keep the theme's own link colour.`,
 		);
 	else if (changedFrom(supplied, onDark))
 		warnOnce(
-			`Overdrive Provider: linkColor (${supplied}) does not meet WCAG AA (4.5:1) on dark surfaces. Using ${onDark} inside a darkSurface scope instead.`,
+			`Overdrive Provider: linkColor (${supplied}) does not meet WCAG AA (4.5:1) on dark surfaces. Using ${onDark} there instead.`,
 		);
 };
 
@@ -293,7 +363,8 @@ export const useColorOverrides = (
 
 		// One inline var serves every surface, so a single link colour cannot be
 		// right on both a white page and a gray-900 header. Derive one for each
-		// and let a `darkSurface` scope opt into the second.
+		// and let each painted surface point at the one that suits its fill —
+		// see `withSurfaceLinkVars` in sprinkles.
 		const linkOnLight = linkColor
 			? deriveLinkForSurface(linkColor, theme.lightSurface)
 			: null;
@@ -318,10 +389,18 @@ export const useColorOverrides = (
 					onSolid: onBrand ?? undefined,
 				},
 				interactive: {
-					// read by the `darkSurface` scope, which repoints the link
-					// vars to it for its subtree
+					// The two surface buckets. Every painted surface points the
+					// vars links read at one of these, so the derived pair has
+					// to live somewhere a surface can reference.
+					//@ts-expect-error no undefined
+					linkOnLight: linkOnLight ?? undefined,
 					//@ts-expect-error no undefined
 					linkOnDark: linkOnDark ?? undefined,
+					// The page root is not a painted surface, so it never gets a
+					// surface class. Without this, a semantic-link consumer saw
+					// the brand only inside a Box and the theme default outside.
+					//@ts-expect-error no undefined
+					link: linkOnLight ?? undefined,
 				},
 				button: {
 					primary: {

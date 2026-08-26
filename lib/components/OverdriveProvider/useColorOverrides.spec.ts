@@ -257,6 +257,75 @@ describe('useColorOverrides', () => {
 				).toBe(BRAND);
 			});
 
+			// The notations `isValidColor` accepts and the old parser did not.
+			// Each used to measure as black: it cleared AA on sight, so the raw
+			// brand shipped unshaded and the feature no-opped without a word.
+			it.each([
+				['hsl()', 'hsl(45, 100%, 50%)'],
+				['a named colour', 'gold'],
+				['8-digit hex', '#ffc001aa'],
+			])(
+				'shades a brand supplied as %s, rather than passing it through',
+				(_label, supplied) => {
+					const link = vars({ linkColor: supplied })[
+						'--od-colours-foreground-link'
+					];
+
+					expect(link).toBeDefined();
+					expect(link).not.toBe(supplied);
+					expect(legibleOn(link, PALE_SURFACE)).toBe(true);
+				},
+			);
+
+			// Each derived value has to clear AA on the *hardest* surface its
+			// bucket covers, not merely on the one it was pointed at — otherwise
+			// `backgroundColor="gray300"` gets a colour tuned for gray200.
+			it('clears AA on every surface its bucket claims, not just one', () => {
+				const result = vars({ linkColor: LIGHT_BRAND });
+				const onLight = result['--od-colours-foreground-link'];
+				const onDark = result['--od-color-interactive-link-on-dark'];
+
+				// worst case of each list: the darkest pale, the lightest dark
+				for (const surface of ['#ffffff', '#eef0f2', '#d4d9dd'])
+					expect(legibleOn(onLight, surface)).toBe(true);
+
+				for (const surface of ['#212338', '#34384c', '#484c5f'])
+					expect(legibleOn(onDark, surface)).toBe(true);
+			});
+
+			// The loop used to accumulate `intensity += 0.01` and stop at 0.59,
+			// so the last step the cap advertised was never tried.
+			it('spends every step the cap advertises before giving up', () => {
+				// clears AA on gray300 only at step 60 of 60 — under the old
+				// float loop this fell through and lost its brand entirely
+				const EDGE = '#fff0f0';
+
+				const link = vars({ linkColor: EDGE })[
+					'--od-colours-foreground-link'
+				];
+
+				expect(link).toBeDefined();
+				expect(legibleOn(link, '#d4d9dd')).toBe(true);
+			});
+
+			it('refuses to guess about a colour it cannot measure, and warns', () => {
+				const warn = vi
+					.spyOn(console, 'warn')
+					.mockImplementation(() => {});
+
+				// `isValidColor` accepts this — the DOM does — but no contrast
+				// decision about it can be measured.
+				const result = vars({ linkColor: 'currentColor' });
+
+				expect(result['--od-colours-foreground-link']).toBeUndefined();
+				expect(
+					result['--od-color-interactive-link-on-dark'],
+				).toBeUndefined();
+				expect(warn).toHaveBeenCalledWith(
+					expect.stringContaining('not a colour this can measure'),
+				);
+			});
+
 			it('keeps the theme default on the side a hue cannot reach, and warns', () => {
 				const warn = vi
 					.spyOn(console, 'warn')

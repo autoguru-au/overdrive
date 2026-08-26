@@ -150,6 +150,8 @@ export const tokens = {
 			surfaceDisabled: colourMap.gray['400'],
 			contentDisabled: colourMap.gray['600'],
 			link: colourMap.green['600'],
+			onLink: colourMap.white,
+			linkOnLight: colourMap.green['600'],
 			linkOnDark: colourMap.green['600'],
 			linkVisited: colourMap.green['700'],
 			overlayBg: colourMap.gray['300'],

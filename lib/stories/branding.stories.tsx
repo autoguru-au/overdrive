@@ -15,7 +15,6 @@ import { Stack } from '../components/Stack';
 import { Switch } from '../components/Switch';
 import { Text } from '../components/Text/Text';
 import { TextLink } from '../components/TextLink';
-import { darkSurface } from '../styles/darkSurface.css';
 
 /* -------------------------------------------------------------------------
  * The brands shown side by side
@@ -112,8 +111,10 @@ const SelectionControls = ({ idPrefix }: { idPrefix: string }) => (
 /**
  * Only moves when `linkColor` is passed. The supplied colour is not used
  * verbatim: one inline var serves every surface, so it is shaded per surface
- * until it clears 4.5:1 — darker for the page, lighter inside a `darkSurface`
- * scope. The same token drives every focus ring in the library, so both follow.
+ * until it clears 4.5:1 — darker for a pale card, lighter for a dark fill. The
+ * dark Box below carries no extra class; `backgroundColor` picks the surface's
+ * link colour on its own. The same token drives every focus ring in the
+ * library, so both follow.
  */
 const OptInGroup = () => (
 	<Stack space="2">
@@ -122,15 +123,22 @@ const OptInGroup = () => (
 			<TextLink href="#branding">A link</TextLink>
 			<Text colour="primary">colour=&quot;primary&quot;</Text>
 		</FlexInline>
-		<Box
-			backgroundColor="gray900"
-			borderRadius="1"
-			className={darkSurface}
-			padding="3"
-		>
+		<Box backgroundColor="gray900" borderRadius="1" padding="3">
 			<FlexInline gap="4" justify="center">
 				<TextLink href="#branding">A link on a dark surface</TextLink>
 			</FlexInline>
+			<Box
+				backgroundColor="white"
+				borderRadius="1"
+				marginTop="3"
+				padding="3"
+			>
+				<FlexInline gap="4" justify="center">
+					<TextLink href="#branding">
+						A link on a card inside it
+					</TextLink>
+				</FlexInline>
+			</Box>
 		</Box>
 	</Stack>
 );

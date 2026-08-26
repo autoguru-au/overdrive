@@ -147,6 +147,8 @@ const THEME_CONTRACT = {
 			surfaceDisabled: 'color-interactive-surface-disabled',
 			contentDisabled: 'color-interactive-content-disabled',
 			link: 'color-interactive-link',
+			onLink: 'color-interactive-on-link',
+			linkOnLight: 'color-interactive-link-on-light',
 			linkOnDark: 'color-interactive-link-on-dark',
 			linkVisited: 'color-interactive-link-visited',
 			overlayBg: 'color-interactive-overlay-bg',
