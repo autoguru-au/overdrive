@@ -15,6 +15,7 @@ import {
 import {
 	deferredAnimation,
 	endlessAnimation,
+	restoreGetAnimations,
 	stalledAnimation,
 	stubGetAnimations,
 } from '../../test/animations';
@@ -64,9 +65,7 @@ describe('Popover', () => {
 		});
 	});
 
-	afterAll(() => {
-		// Cleanup if needed
-	});
+	afterAll(restoreGetAnimations);
 	it('renders with default props and expected structure', () => {
 		render(<Standard />);
 

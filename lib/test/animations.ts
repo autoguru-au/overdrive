@@ -3,7 +3,18 @@
  * exercise exit animations stub the DOM API itself and report the animations a
  * `[data-exiting]` rule would have started.
  */
+let originalGetAnimations: PropertyDescriptor | undefined;
+let isStubbed = false;
+
 export const stubGetAnimations = (exitAnimations: () => Animation[]) => {
+	if (!isStubbed) {
+		originalGetAnimations = Object.getOwnPropertyDescriptor(
+			Element.prototype,
+			'getAnimations',
+		);
+		isStubbed = true;
+	}
+
 	Object.defineProperty(Element.prototype, 'getAnimations', {
 		configurable: true,
 		writable: true,
@@ -13,6 +24,26 @@ export const stubGetAnimations = (exitAnimations: () => Animation[]) => {
 				: [];
 		},
 	});
+};
+
+/**
+ * Puts `Element.prototype.getAnimations` back the way the environment had it
+ */
+export const restoreGetAnimations = () => {
+	if (!isStubbed) return;
+	isStubbed = false;
+
+	if (originalGetAnimations) {
+		Object.defineProperty(
+			Element.prototype,
+			'getAnimations',
+			originalGetAnimations,
+		);
+	} else {
+		Reflect.deleteProperty(Element.prototype, 'getAnimations');
+	}
+
+	originalGetAnimations = undefined;
 };
 
 /**

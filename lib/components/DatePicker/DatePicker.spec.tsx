@@ -12,7 +12,11 @@ import {
 	vi,
 } from 'vitest';
 
-import { deferredAnimation, stubGetAnimations } from '../../test/animations';
+import {
+	deferredAnimation,
+	restoreGetAnimations,
+	stubGetAnimations,
+} from '../../test/animations';
 
 import { DatePicker } from './DatePicker';
 import * as stories from './DatePicker.stories';
@@ -57,9 +61,7 @@ describe('DatePicker', () => {
 		exitAnimations = [];
 	});
 
-	afterAll(() => {
-		// Cleanup if needed
-	});
+	afterAll(restoreGetAnimations);
 
 	it('renders with default props and expected structure', () => {
 		render(<Standard />);
