@@ -6,10 +6,10 @@ import type {
 	Reducer,
 } from 'react';
 import * as React from 'react';
-import { ReactNode, useEffect, useReducer } from 'react';
+import { ReactNode, useEffect, useLayoutEffect, useReducer } from 'react';
 import FocusLock from 'react-focus-lock';
 
-import { useEventCallback } from '../../utils';
+import { isBrowser, useEventCallback } from '../../utils';
 import { Box } from '../Box/Box';
 import { Portal } from '../Portal/Portal';
 
@@ -19,6 +19,18 @@ export interface ModalProps extends ComponentProps<typeof Portal> {
 	isOpen: boolean;
 	hideBackdrop?: boolean;
 	disableBackdropClick?: boolean;
+	/**
+	 * Lock page scroll while the modal is open. Compensates for the reserved
+	 * scrollbar width so the page underneath doesn't shift. Defaults to `false`
+	 * — the base `Modal` preserves prior behaviour unless the consumer opts in.
+	 */
+	lockScroll?: boolean;
+	/**
+	 * Close the modal when the user presses `Escape`. Fires
+	 * `onRequestClose('escapeKeyDown')`. Defaults to `false` — opt in per WAI-ARIA
+	 * dialog guidance.
+	 */
+	closeOnEscapeKeyDown?: boolean;
 	children?: ReactNode;
 
 	onRequestClose?(e: 'backdrop' | 'escapeKeyDown' | string): void;
@@ -83,6 +95,8 @@ export const Modal: FunctionComponent<ModalProps> = ({
 	isOpen,
 	hideBackdrop = false,
 	disableBackdropClick = false,
+	lockScroll = false,
+	closeOnEscapeKeyDown = false,
 	ref,
 	noThemedWrapper,
 	container,
@@ -110,6 +124,43 @@ export const Modal: FunctionComponent<ModalProps> = ({
 
 		return () => {};
 	}, [state]);
+
+	if (isBrowser) {
+		useLayoutEffect(() => {
+			if (!isOpen || !lockScroll) return undefined;
+
+			const { body, documentElement } = document;
+			const prevOverflow = body.style.overflow;
+			const prevPaddingRight = body.style.paddingRight;
+
+			body.style.overflow = 'hidden';
+
+			const clientWidth = documentElement.clientWidth;
+			if (clientWidth > 0) {
+				const scrollbarWidth = window.innerWidth - clientWidth;
+				if (scrollbarWidth > 0 && scrollbarWidth <= 40) {
+					body.style.paddingRight = `${scrollbarWidth}px`;
+				}
+			}
+
+			return () => {
+				body.style.overflow = prevOverflow;
+				body.style.paddingRight = prevPaddingRight;
+			};
+		}, [isOpen, lockScroll]);
+	}
+
+	useEffect(() => {
+		if (!isOpen || !closeOnEscapeKeyDown) return undefined;
+
+		const handleKeyDown = (event: KeyboardEvent) => {
+			if (event.key !== 'Escape') return;
+			if (typeof onRequestClose === 'function')
+				onRequestClose('escapeKeyDown');
+		};
+		document.addEventListener('keydown', handleKeyDown);
+		return () => document.removeEventListener('keydown', handleKeyDown);
+	}, [isOpen, closeOnEscapeKeyDown, onRequestClose]);
 
 	return (
 		<Portal
