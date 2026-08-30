@@ -80,6 +80,20 @@ export const tokens = deepmerge(baseTokens, {
 			linkOnLight: colours.green['600'],
 			linkOnDark: colours.green['600'],
 		},
+		// DS-2026 linked text reads `color.link`. Unlike `neutral`, this theme
+		// redefines every ramp it uses, so the whole set is overridden — an
+		// inherited `secondary` would be base's gray900 `#212338` rather than
+		// this theme's `#263238`, and the `critical*` trio would be base's reds
+		// rather than the flat-red ones.
+		link: {
+			primary: colours.green['600'],
+			secondary: colours.gray['900'],
+			hover: colours.green['500'],
+			pressed: colours.green['400'],
+			critical: colours.red['700'],
+			criticalHover: colours.red['500'],
+			criticalPressed: colours.red['300'],
+		},
 	},
 	colours: {
 		gamut: {
