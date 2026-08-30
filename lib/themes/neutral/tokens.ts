@@ -87,7 +87,9 @@ export const tokens = deepmerge(baseTokens, {
 	// `color.focus.ring` consumer ringing base green next to a blue one. The
 	// per-surface link pair has to follow for the same reason: a dark-surface
 	// Box repoints links at `linkOnDark`, which would otherwise inherit base
-	// green beside this theme's blue links.
+	// green beside this theme's blue links. `color.link` follows for the third
+	// time: DS-2026 linked text reads it, and would otherwise render base green
+	// beside everything else this theme paints blue.
 	color: {
 		focus: {
 			ring: colours.blue['500'],
@@ -95,6 +97,14 @@ export const tokens = deepmerge(baseTokens, {
 		interactive: {
 			linkOnLight: colours.blue['500'],
 			linkOnDark: colours.blue['500'],
+		},
+		// Only the brand-derived leaves. This theme's gray and red ramps are
+		// identical to base, so `secondary` and the `critical*` trio already
+		// resolve correctly through inheritance.
+		link: {
+			primary: colours.blue['500'],
+			hover: colours.blue['400'],
+			pressed: colours.blue['300'],
 		},
 	},
 	colours: {
