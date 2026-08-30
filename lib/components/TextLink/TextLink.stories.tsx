@@ -159,6 +159,37 @@ const linkedTextVariants = ['primary', 'secondary', 'critical'] as const;
 const iconLeft = { icon: ArrowRightIcon, iconPosition: 'left' } as const;
 const iconRight = { icon: ArrowRightIcon, iconPosition: 'right' } as const;
 
+/** Which classes move the label with the underline, per Figma. */
+const linkedTextStateBehaviour = [
+	{ variant: 'primary', labelFollowsState: true },
+	{ variant: 'secondary', labelFollowsState: false },
+	{ variant: 'critical', labelFollowsState: true },
+] as const;
+
+/**
+ * Reads the declaration block a variant emits for its hover / pressed rule.
+ *
+ * Asserted against the stylesheet rather than a simulated interaction on
+ * purpose: `userEvent.hover` dispatches mouse events without moving the real
+ * pointer, so it never engages CSS `:hover`, and the resulting assertion passes
+ * or fails on pointer position rather than on the component.
+ */
+const stateDeclarations = (variant: string, state: 'hover' | 'active') => {
+	const css = Array.from(
+		document.querySelectorAll('style'),
+		(tag) => tag.textContent ?? '',
+	).join('\n');
+	const cls = `TextLink_linkedText_variant_${variant}`;
+	const rule =
+		state === 'hover'
+			? new RegExp(
+					`\\.${cls}__[a-z\\d]+\\[data-hover\\][^{]*\\{([^}]*)\\}`,
+				)
+			: new RegExp(`\\.${cls}__[a-z\\d]+:active\\s*\\{([^}]*)\\}`);
+
+	return css.match(rule)?.[1].replaceAll(/\s+/g, ' ').trim() ?? null;
+};
+
 /**
  * Figma's linked-text axes, minus `Class` (the columns) and the hover/pressed
  * states, which need real interaction. `Large` is `size="4"`, `Small` is `"3"`,
@@ -295,35 +326,30 @@ export const LinkedText: Story = {
 			await expect(disabled[0]).toHaveStyle({ pointerEvents: 'none' });
 		});
 
-		await step('hover moves the label only where Figma does', async () => {
-			const user = userEvent.setup();
-			// Resolve each token through a probe so the comparison is
-			// `rgb(...)` on both sides — computed `color` is never raw hex.
-			const token = (name: string) => {
-				const probe = document.createElement('span');
-				probe.style.color = `var(--od-color-link-${name})`;
-				canvasElement.append(probe);
-				const value = getComputedStyle(probe).color;
-				probe.remove();
-				return value;
-			};
-			// Row 0 is Large, one link per variant, in column order.
-			const [primary, secondary] = canvas.getAllByRole('link');
+		await step(
+			'hover and pressed move the label only where Figma does',
+			async () => {
+				for (const {
+					variant,
+					labelFollowsState,
+				} of linkedTextStateBehaviour) {
+					for (const state of ['hover', 'active'] as const) {
+						const declarations = stateDeclarations(variant, state);
 
-			// primary: label follows the underline to `link.hover`.
-			await user.hover(primary);
-			await expect(getComputedStyle(primary).color).toBe(token('hover'));
-
-			// secondary: label holds while the underline moves.
-			await user.hover(secondary);
-			await expect(getComputedStyle(secondary).borderBottomColor).toBe(
-				token('hover'),
-			);
-			await expect(getComputedStyle(secondary).color).toBe(
-				token('secondary'),
-			);
-
-			await user.unhover(secondary);
-		});
+						// Fail loudly rather than silently pass if the rule
+						// cannot be read at all.
+						await expect(declarations).not.toBeNull();
+						// The underline always moves between states.
+						await expect(declarations).toContain(
+							'border-bottom-color:',
+						);
+						// The label moves with it only for primary/critical.
+						await expect(/(^|;)\s*color:/.test(declarations!)).toBe(
+							labelFollowsState,
+						);
+					}
+				}
+			},
+		);
 	},
 };
