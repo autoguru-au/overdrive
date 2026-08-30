@@ -135,10 +135,12 @@ describe('useColorOverrides', () => {
 			expect(result['--od-color-brand-on-solid']).toBe(
 				colourMap.gray['900'],
 			);
-			// the button label still honours what the tenant asked for — that
-			// is their stated brand pairing, and it was already the behaviour
+			// the label is derived too. white on #ff6d00 is 2.82:1, so the
+			// tenant asked for a pairing that cannot be rendered legibly; we
+			// honour the intent — a light label on a dark brand — rather than
+			// the literal value
 			expect(result['--od-colours-intent-primary-foreground']).toBe(
-				'#ffffff',
+				colourMap.gray['900'],
 			);
 		});
 
@@ -392,6 +394,77 @@ describe('useColorOverrides', () => {
 			vars({ primaryBackground: '#ffe08a' });
 			vars({ primaryBackground: '#ffe08a' });
 			expect(warn).toHaveBeenCalledTimes(1);
+		});
+	});
+
+	describe('label contrast floor', () => {
+		it('leaves a compliant pairing byte-identical', () => {
+			// the evidence that this guard is invisible to every tenant who is
+			// already compliant: white on #6d39a8 is 7.50:1, so nothing moves
+			const overrides = {
+				primaryBackground: BRAND,
+				primaryForeground: '#ffffff',
+				linkColor: BRAND,
+			};
+
+			expect(vars(overrides)).toEqual({
+				'--od-color-brand-solid': BRAND,
+				'--od-color-brand-on-solid': '#ffffff',
+				'--od-color-button-primary-outlined-border': BRAND,
+				'--od-color-button-primary-outlined-text': BRAND,
+				'--od-color-button-primary-outlined-hover': '#f0e9f7',
+				'--od-color-button-primary-outlined-pressed': '#dacaed',
+				'--od-colours-foreground-link': BRAND,
+				'--od-colours-intent-primary-background-standard': BRAND,
+				'--od-colours-intent-primary-background-mild': '#8650c4',
+				'--od-colours-intent-primary-background-strong': '#542c82',
+				'--od-colours-intent-primary-foreground': '#ffffff',
+				'--od-typography-colour-primary': BRAND,
+				'--od-typography-colour-link': BRAND,
+			});
+		});
+
+		it('keeps a foreground that clears 4.5:1, however dark the brand', () => {
+			// #000000 on #0e893c is 4.66:1 — compliant, so it is not "corrected"
+			const result = vars({
+				primaryBackground: '#0e893c',
+				primaryForeground: '#000000',
+			});
+
+			expect(result['--od-colours-intent-primary-foreground']).toBe(
+				'#000000',
+			);
+			expect(result['--od-color-brand-on-solid']).toBe('#000000');
+		});
+
+		it('splits text from icon-only when the foreground clears 3:1 but not 4.5:1', () => {
+			// #767676 on white is 4.54:1, so on a white brand fill it is fine for
+			// a tick (3:1) and short of the label's 4.5:1 — different criteria,
+			// so legitimately different colours
+			const result = vars({
+				primaryBackground: '#ffffff',
+				primaryForeground: '#949494',
+			});
+
+			expect(result['--od-color-brand-on-solid']).toBe('#949494');
+			expect(result['--od-colours-intent-primary-foreground']).toBe(
+				colourMap.gray['900'],
+			);
+		});
+
+		it('warns once, naming what the colour failed for', () => {
+			const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+
+			// a pair no other case uses — warnOnce dedupes per message for the
+			// lifetime of the module, not per test
+			vars({
+				primaryBackground: '#fafafa',
+				primaryForeground: '#8f8f8f',
+			});
+
+			expect(warn).toHaveBeenCalledWith(
+				expect.stringContaining('for text use'),
+			);
 		});
 	});
 

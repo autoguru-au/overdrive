@@ -1,6 +1,7 @@
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import { useMemo } from 'react';
 
+import { type ContrastUsage } from '../../themes/base/contrastGuide';
 import {
 	darkSurfaceValues,
 	lightSurfaceValues,
@@ -144,29 +145,36 @@ const onBrandColour = (brand: string, theme: ThemeContext): string =>
 		: theme.bodyInk;
 
 /**
- * Prefer `primaryForeground`, but only while it clears 3:1 on the fill — it was
- * chosen as a button label colour, and a light brand paired with white text
- * would otherwise leave an invisible tick.
+ * Prefer `primaryForeground`, but only while it clears the floor for what it is
+ * used as: `text` is WCAG 1.4.3 and needs 4.5:1, `icon-only` is 1.4.11 and needs
+ * 3:1. The same supplied colour can legitimately be kept for an icon and
+ * replaced for text.
+ *
+ * `usage` mirrors `ContrastUsage` in `themes/base/contrastGuide`, so the runtime
+ * check and the design system's static contrast guide speak the same language.
  */
 const resolveOnBrand = (
 	brand: string,
 	theme: ThemeContext,
-	suppliedForeground?: string,
+	suppliedForeground: string | undefined,
+	usage: Extract<ContrastUsage, 'text' | 'icon-only'>,
 ): string => {
 	if (!suppliedForeground) return onBrandColour(brand, theme);
+
+	const textSize = usage === 'text' ? 'SMALL' : 'LARGE';
 
 	const legible = passesAccessibilityContrast({
 		colour1: suppliedForeground,
 		colour2: brand,
 		level: 'AA',
-		textSize: 'LARGE',
+		textSize,
 	});
 
 	if (legible) return suppliedForeground;
 
 	const derived = onBrandColour(brand, theme);
 	warnOnce(
-		`Overdrive Provider: primaryForeground (${suppliedForeground}) does not meet 3:1 against primaryBackground (${brand}), so selection controls would be illegible. Using ${derived} for their tick/dot/knob instead.`,
+		`Overdrive Provider: primaryForeground (${suppliedForeground}) does not have enough contrast against primaryBackground (${brand}) for ${usage} use. Using ${derived} instead.`,
 	);
 	return derived;
 };
@@ -187,7 +195,7 @@ const warnOnLowContrast = (
 		})
 	) {
 		warnOnce(
-			`Overdrive Provider: ${key} (${colour}) does not meet WCAG AA (4.5:1) against the page background. Anything drawn in it as text or a border — outlined buttons, links, focus rings — may be hard to read.`,
+			`Overdrive Provider: ${key} (${colour}) does not meet WCAG AA against the page background. Anything drawn in it as text or a border — outlined buttons, links, focus rings — may be hard to read.`,
 		);
 	}
 };
@@ -334,16 +342,18 @@ export const useColorOverrides = (
 					intensity: 0.1,
 				});
 
-			// Honours an explicit value even when poor; only derives if absent.
-			buttonForeground =
-				valid.primaryForeground ??
-				onBrandColour(primaryBackground, theme);
+			buttonForeground = resolveOnBrand(
+				primaryBackground,
+				theme,
+				valid.primaryForeground,
+				'text',
+			);
 
-			// Stricter — a glyph failing 3:1 on the fill is invisible.
 			onBrand = resolveOnBrand(
 				primaryBackground,
 				theme,
 				valid.primaryForeground,
+				'icon-only',
 			);
 
 			// Pale tints behind an outlined button, hover the paler of the two.
