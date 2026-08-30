@@ -1,7 +1,7 @@
 import { ArrowRightIcon, CaretRightIcon } from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { type ComponentProps } from 'react';
-import { expect, userEvent, within } from 'storybook/test';
+import { expect } from 'storybook/test';
 
 import { argTypesExampleIcons } from '../../stories/shared/argTypes';
 import { Heading } from '../Heading/Heading';
@@ -67,28 +67,24 @@ const meta = {
 		},
 		noWrap: {
 			options: noWrapOptions,
-			defaultValue: false,
 			control: {
 				type: 'boolean',
 			},
 		},
 		transform: {
 			options: transformOptions,
-			defaultValue: null,
 			control: {
 				type: 'select',
 			},
 		},
 		weight: {
 			options: fontWeightOptions,
-			defaultValue: null,
 			control: {
 				type: 'select',
 			},
 		},
 		size: {
 			options: sizeScale,
-			defaultValue: void 0,
 			control: {
 				type: 'select',
 			},
@@ -101,8 +97,7 @@ export default meta;
 type Story = StoryObj<typeof TextLink>;
 
 export const Standard: Story = {
-	play: async ({ args, canvasElement, step }) => {
-		const canvas = within(canvasElement);
+	play: async ({ args, canvas, step }) => {
 		const link = canvas.getAllByRole('link')[0];
 
 		await step('<TextLink /> renders content and attributes', async () => {
@@ -129,9 +124,7 @@ export const WithIcon: Story = {
 	args: {
 		icon: CaretRightIcon,
 	},
-	play: async ({ canvasElement, step }) => {
-		const user = userEvent.setup();
-		const canvas = within(canvasElement);
+	play: async ({ canvas, step, userEvent }) => {
 		const link = canvas.getAllByRole('link')[0];
 
 		await step('<TextLink /> has SVG icon', async () => {
@@ -140,9 +133,9 @@ export const WithIcon: Story = {
 
 		await step('<TextLink /> is interactive', async () => {
 			await expect(link).toHaveStyle({ cursor: 'pointer' });
-			await user.keyboard('{Tab}');
+			await userEvent.keyboard('{Tab}');
 			await expect(link).toHaveFocus();
-			await user.hover(link);
+			await userEvent.hover(link);
 		});
 	},
 };
@@ -279,9 +272,7 @@ export const LinkedText: Story = {
 	args: {
 		children: 'View booking',
 	},
-	play: async ({ canvasElement, step }) => {
-		const canvas = within(canvasElement);
-
+	play: async ({ canvas, step }) => {
 		await step('every linked-text variation renders', async () => {
 			await expect(canvas.getAllByRole('link')).toHaveLength(
 				linkedTextRows.length * linkedTextVariants.length,
