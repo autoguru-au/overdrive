@@ -203,6 +203,16 @@ const warnOnLowContrast = (
 const maxShadeSteps = 60;
 const shadeStep = 0.01;
 
+/**
+ * How far linked text travels from its resting colour on hover and press,
+ * as a lightness delta.
+ *
+ * Taken from base's own `color.link` ramp — `primary` `#18856f` (L 31) →
+ * `hover` `#03af83` (L 35) → `pressed` `#36e5aa` (L 55) — so a tenant brand
+ * covers the same distance rather than an invented one.
+ */
+const linkStateStep = { hover: 0.04, pressed: 0.24 } as const;
+
 const shade = (
 	colour: string,
 	towards: 'darker' | 'lighter',
@@ -372,6 +382,28 @@ export const useColorOverrides = (
 			? deriveLinkForSurface(linkColor, theme.darkSurface)
 			: null;
 
+		// Linked text moves its label and underline to a lighter tint as it is
+		// hovered and pressed. Derived from the resolved link colour rather
+		// than the raw brand so the whole ramp sits on the surface-corrected
+		// value, and stepped by `linkStateStep` so a tenant's brand travels the
+		// same distance base does.
+		const linkHover = linkOnLight
+			? shadedColour({
+					colour: linkOnLight,
+					isDarkTheme,
+					direction: 'forward',
+					intensity: linkStateStep.hover,
+				})
+			: null;
+		const linkPressed = linkOnLight
+			? shadedColour({
+					colour: linkOnLight,
+					isDarkTheme,
+					direction: 'forward',
+					intensity: linkStateStep.pressed,
+				})
+			: null;
+
 		if (process.env.NODE_ENV !== 'production') {
 			warnOnLowContrast(primaryBackground, 'primaryBackground', theme);
 			if (linkColor)
@@ -401,6 +433,18 @@ export const useColorOverrides = (
 					// the brand only inside a Box and the theme default outside.
 					//@ts-expect-error no undefined
 					link: linkOnLight ?? undefined,
+				},
+				// The DS-2026 linked-text ramp. Only the three brand-derived
+				// leaves are branded: `secondary` is neutral ink and
+				// `critical`/`criticalHover`/`criticalPressed` are the semantic
+				// danger reds, which a tenant should not be able to repaint.
+				link: {
+					//@ts-expect-error no undefined
+					primary: linkOnLight ?? undefined,
+					//@ts-expect-error no undefined
+					hover: linkHover ?? undefined,
+					//@ts-expect-error no undefined
+					pressed: linkPressed ?? undefined,
 				},
 				button: {
 					primary: {
