@@ -7,12 +7,13 @@ import React, {
 
 import { resetStyles } from '../../../styles';
 import { textStyles } from '../../../styles/typography';
+import type { OdComponentProp, TestIdProp } from '../../../types';
 import { Box } from '../../Box/Box';
 import { Text } from '../../Text/Text';
 
 import * as styles from './CheckableBase.css';
 
-export interface CheckableBaseProps {
+export interface CheckableBaseProps extends OdComponentProp, TestIdProp {
 	className?: string;
 	checked?: boolean;
 	disabled?: boolean;
@@ -38,6 +39,8 @@ export const CheckableBase = forwardRef<HTMLInputElement, CheckableBaseProps>(
 			children,
 			handleClick,
 			handleChange,
+			odComponent,
+			testId,
 		},
 		ref,
 	) => {
@@ -52,6 +55,8 @@ export const CheckableBase = forwardRef<HTMLInputElement, CheckableBaseProps>(
 
 		return (
 			<Box
+				odComponent={odComponent}
+				testId={testId}
 				display="flex"
 				alignItems="center"
 				flexDirection="row"
