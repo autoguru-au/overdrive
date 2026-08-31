@@ -19,9 +19,14 @@ export const base = style({
 			// As `inline-block` the track and a label passed as children each
 			// sat on their own baseline, leaving them out of line. No prop for
 			// the override: `className` lands here, and an unlayered consumer
-			// class beats this layered rule. Spacing stays the consumer's.
+			// class beats this layered rule.
+			//
+			// The gap is not optional. Under `inline-block` the label wrapped
+			// to its own line, which separated it; as flex items the two sit
+			// flush with no space at all unless the consumer supplies one.
 			alignItems: 'center',
 			display: 'inline-flex',
+			gap: vars.space['2'],
 		},
 	},
 });
@@ -33,6 +38,11 @@ export const toggle = style([
 				backgroundColor: colorMid,
 				borderRadius: vars.border.radius.pill,
 				cursor: 'pointer',
+				// A flex item by default shrinks below its declared width. The
+				// track carries a fixed-size handle, so a squashed track slides
+				// the knob past its end — measured 46px collapsing to 22px in a
+				// constrained container. Could not happen under `inline-block`.
+				flexShrink: 0,
 				height: height,
 				padding: '3px 4px',
 				transition:
@@ -69,25 +79,33 @@ export const disabled = style({
 /**
  * Figma `462:2521` — Medium 38x20, Small 30x16, each with a 2px inset and the
  * `z2` handle shadow. Both widths fall out of `toggle`'s existing
- * `2 x height - 2px`, and the inset makes the handle `height - 4px` on its own,
- * so travel reduces to `height - 2px`. See `ControlSize`.
+ * `2 x height - inset`, and the inset makes the handle `height - 2 x inset` on
+ * its own, so it needs no size of its own. See `ControlSize`.
  */
 const trackSizes = { medium: vars.space['5'], small: vars.space['4'] } as const;
+
+/**
+ * The inset between track edge and handle. `width` and `travel` both derive
+ * from it: for the handle to sit inset by the same amount at either end,
+ * `width = 2 x height - inset` and `travel = height - inset`.
+ */
+const TRACK_INSET = vars.space['0']; // 2px
 
 export const track = styleVariants(trackSizes, (size) => ({
 	'@layer': {
 		[cssLayerComponent]: {
 			height: size,
-			padding: vars.space['0'], // 2px
-			width: `calc(2 * ${size} - 2px)`,
+			padding: TRACK_INSET,
+			width: `calc(2 * ${size} - ${TRACK_INSET})`,
 		},
 	},
 }));
 
 const handleScale = 'scale(0.95)';
 const handleTranslate = `translateX(calc(${handleSize} - 4px))`;
-/** DS-2026 travel: the track height less its 2px inset. */
-const travel = (height: string) => `translateX(calc(${height} - 2px))`;
+/** DS-2026 travel: the track height less its inset. */
+const travel = (trackHeight: string) =>
+	`translateX(calc(${trackHeight} - ${TRACK_INSET}))`;
 
 export const handle = styleVariants({
 	default: {

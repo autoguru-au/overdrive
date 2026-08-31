@@ -33,7 +33,15 @@ with the track — worse now the track can be 20px or 16px tall. Pass a
 Colour is untouched: these controls already ride `color.brand.{solid,onSolid}`,
 so the accent follows each tenant's brand.
 
-Known gap: the row height stays 48px at every size, because the hit area lives
-in the shared `private/CheckableBase` and is not yet size-aware. Every size
-clears the WCAG 2.5.5 target minimum, but `small` does not yet tighten a dense
-list.
+Known gaps, all pre-existing or deferred:
+
+- **CheckBox and Radio** keep a 48px row at every size — the hit area lives in
+  the shared `private/CheckableBase` and is not yet size-aware, so `small` does
+  not yet tighten a dense list. The whitespace between control and label drifts
+  slightly as a result (12px at `large`, 14px `medium`, 16px `small`), so a
+  column mixing sizes will not align perfectly.
+- **Switch** does not use that shared hit area; its target is the track itself.
+  At `small` that is 30x16, under the 24x24 minimum of WCAG 2.2 SC 2.5.8. It can
+  still meet that criterion through the _spacing_ exception where targets are
+  well separated, but not in a dense list — so prefer `medium` or `large` where
+  targets are tightly packed.

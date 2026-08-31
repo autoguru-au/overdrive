@@ -4,6 +4,7 @@ import * as React from 'react';
 import { Heading } from '../Heading';
 
 import { CheckBox } from './CheckBox';
+import * as styles from './CheckBox.css.ts';
 
 describe('<CheckBox />', () => {
 	it('should not throw', () => {
@@ -102,6 +103,26 @@ describe('<CheckBox />', () => {
 					</CheckBox>,
 				).container.firstChild,
 			).toMatchSnapshot();
+		});
+	});
+
+	describe('size', () => {
+		const box = ({ container }) =>
+			container.querySelector(`.${styles.checkbox.default}`);
+
+		it('adds no size class at the default, so existing usage is untouched', () => {
+			const cls = box(render(<CheckBox value="1" />)).className;
+
+			expect(cls).not.toContain(styles.boxSize.medium);
+			expect(cls).not.toContain(styles.boxSize.small);
+		});
+
+		it.each(['medium', 'small'])('adds the %s box class', (size) => {
+			const cls = box(
+				render(<CheckBox value="1" size={size} />),
+			).className;
+
+			expect(cls).toContain(styles.boxSize[size]);
 		});
 	});
 });

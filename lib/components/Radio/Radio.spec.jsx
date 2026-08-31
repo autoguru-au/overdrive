@@ -5,6 +5,7 @@ import { Heading } from '../Heading';
 
 import { Radio } from './Radio';
 import { RadioGroup } from './RadioGroup';
+import * as styles from './Radio.css.ts';
 
 const renderRadioGroup = (value = null, onChange = null) => {
 	return render(
@@ -153,6 +154,31 @@ describe('<RadioButton />', () => {
 			);
 
 			expect(getByText('Hello checkbox')).toMatchSnapshot();
+		});
+	});
+
+	describe('size', () => {
+		// `styles.radio` is a composed style, so it is several space-separated
+		// classes — only the first is usable as a selector.
+		const ring = ({ container }) =>
+			container.querySelector(`.${styles.radio.split(' ')[0]}`);
+
+		const renderAt = (size) =>
+			render(
+				<RadioGroup name="radio" value="1" size={size}>
+					<Radio children="one" value="1" />
+				</RadioGroup>,
+			);
+
+		it('adds no size class at the default, so existing usage is untouched', () => {
+			const cls = ring(renderAt(undefined)).className;
+
+			expect(cls).not.toContain(styles.ring.medium);
+			expect(cls).not.toContain(styles.ring.small);
+		});
+
+		it.each(['medium', 'small'])('adds the %s ring class', (size) => {
+			expect(ring(renderAt(size)).className).toContain(styles.ring[size]);
 		});
 	});
 });
