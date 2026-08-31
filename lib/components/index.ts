@@ -106,6 +106,15 @@ export { SplitButton, type SplitButtonProps } from './SplitButton';
 export { Stack } from './Stack';
 export { StandardModal, EStandardModalSize } from './StandardModal';
 export { StarRating, EStarRatingSize } from './StarRating';
+export {
+	StepProgress,
+	type StepProgressArrangement,
+	type StepProgressItemProps,
+	type StepProgressLayout,
+	type StepProgressProps,
+	type StepProgressSize,
+	StepProgressItem,
+} from './StepProgress';
 export { Stepper } from './Stepper';
 export { StickyBox } from './StickyBox';
 export { Switch } from './Switch';
