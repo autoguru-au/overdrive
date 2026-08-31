@@ -1,4 +1,5 @@
 export { cssLayerComponent, cssLayerTheme, LAYER_ORDER } from './layers.css';
+export { darkSurface } from './darkSurface.css';
 export { resetVariants, type ResetVariantProps } from './elementReset.css';
 export {
 	elementStyles,
