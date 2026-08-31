@@ -28,14 +28,28 @@ describe('<TextLink />', () => {
 	});
 
 	describe('DS-2026 linked text', () => {
-		it('should leave the default appearance untouched when variant is unset', () => {
-			const { container } = render(
-				<TextLink href="/test">Link text</TextLink>,
+		it('should default to the primary linked-text appearance', () => {
+			render(<TextLink href="/test">Link text</TextLink>);
+
+			// `variant` defaults to 'primary', so every link is linked text
+			// without opting in.
+			const link = screen.getByRole('link');
+			expect(link.className).toContain('linkedText');
+			expect(link.className).toContain('variant_primary');
+		});
+
+		it('should fall back to the deprecated appearance for muted', () => {
+			render(
+				<TextLink href="/test" muted>
+					Link text
+				</TextLink>,
 			);
 
-			// The legacy underline lives on the root; the linked-text recipe
-			// must not be applied unless `variant` is set.
-			expect(container.querySelector('[class*="linkedText"]')).toBeNull();
+			// `muted` is the one remaining route to the pre-DS-2026 look; it
+			// keeps working until it is removed in v5.
+			expect(screen.getByRole('link').className).not.toContain(
+				'linkedText',
+			);
 		});
 
 		it.each(['primary', 'secondary', 'critical'] as const)(
@@ -65,15 +79,16 @@ describe('<TextLink />', () => {
 			expect(link).toHaveAttribute('tabindex', '-1');
 		});
 
-		it('should not mark a disabled link unavailable without a variant', () => {
+		it('should mark a disabled link unavailable without an explicit variant', () => {
 			render(
 				<TextLink href="/test" disabled>
 					Link text
 				</TextLink>,
 			);
 
-			expect(screen.getByRole('link')).not.toHaveAttribute(
+			expect(screen.getByRole('link')).toHaveAttribute(
 				'aria-disabled',
+				'true',
 			);
 		});
 

@@ -49,37 +49,38 @@ export interface TextLinkProps
 	children?: ReactNode;
 	className?: string;
 	as?: ElementType | ReactElement;
+	/**
+	 * @deprecated The pre-DS-2026 appearance — muted label, hover floods the
+	 * line with the link colour. Setting it opts out of `variant` entirely.
+	 * Removed in v5 (DS-2026 major); no replacement is planned.
+	 */
 	muted?: boolean;
 	/**
 	 * Optional icon from the `@autoguru/icons` set — any icon in the library
 	 * works. Omit it for the no-icon appearance.
 	 *
-	 * Trails the label by default; with `variant` set, `iconPosition` moves it
-	 * to either side.
+	 * `iconPosition` moves it to either side of the label.
 	 */
 	icon?: IconType;
 	/**
 	 * DS-2026 linked-text colour class, mirroring the `Class` values of the
 	 * Figma Button component's `Style=Linked text` axis.
 	 *
-	 * Setting it opts into the DS-2026 appearance — the underline is drawn in
-	 * every state and changes colour on hover and press, and the label defaults
-	 * to Semibold at size `'4'`. Leave it unset for the established
-	 * underline-on-hover appearance, which is unchanged.
+	 * The underline is drawn in every state and changes colour on hover and
+	 * press. `primary` and `critical` move the label with it; `secondary` holds
+	 * its label and moves only the underline.
+	 *
+	 * @default 'primary'
 	 */
 	variant?: TextLinkVariant;
 	/**
 	 * Which side of the label the `icon` sits on.
-	 *
-	 * Requires `variant`; the legacy appearance always trails the icon.
 	 *
 	 * @default 'right'
 	 */
 	iconPosition?: 'left' | 'right';
 	/**
 	 * Presents the link as unavailable and stops it receiving pointer events.
-	 *
-	 * Requires `variant`.
 	 */
 	disabled?: boolean;
 }
@@ -156,7 +157,14 @@ const LegacyBody = ({
 );
 
 /**
- * TextLink component for rendering navigation links
+ * TextLink component for rendering navigation links.
+ *
+ * Renders the DS-2026 linked-text appearance — underlined in every state, and
+ * moving colour on hover and press. `variant` picks the colour class and
+ * defaults to `primary`.
+ *
+ * The pre-DS-2026 appearance is gone; the darker `link.primary` replaces it and
+ * clears WCAG AA on white, which the old `#01C68C` did not (2.22:1).
  *
  * @example
  * ```tsx
@@ -165,8 +173,8 @@ const LegacyBody = ({
  * // With an icon
  * <TextLink href="/settings" icon={GearIcon}>Settings</TextLink>
  *
- * // DS-2026 linked text
- * <TextLink href="/bookings" variant="primary">View bookings</TextLink>
+ * // Other colour classes
+ * <TextLink href="/bookings" variant="secondary">View bookings</TextLink>
  * <TextLink href="/cancel" variant="critical" icon={TrashIcon}>Cancel</TextLink>
  * ```
  */
@@ -186,7 +194,7 @@ export const TextLink = forwardRef<HTMLAnchorElement, TextLinkProps>(
 			size: incomingSize,
 			strong,
 			transform,
-			variant,
+			variant = 'primary',
 			weight: incomingWeight,
 			...props
 		},
@@ -197,9 +205,12 @@ export const TextLink = forwardRef<HTMLAnchorElement, TextLinkProps>(
 			'You cannot have both href and as defined.',
 		);
 
-		const isLinkedText = variant !== undefined;
+		// Every link is DS-2026 linked text now. The pre-DS-2026 appearance is
+		// reachable only through the deprecated `muted`, which keeps working
+		// until it is removed in v5 rather than silently becoming a no-op.
+		const isLinkedText = !muted;
 		// Figma's linked text is Semibold, Large (16px) or Small (14px); the
-		// legacy appearance keeps its medium weight and inherited size.
+		// deprecated `muted` appearance keeps its medium weight and inherited size.
 		const textProps = {
 			noWrap,
 			size: incomingSize ?? (isLinkedText ? ('4' as const) : undefined),
