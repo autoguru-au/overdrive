@@ -84,18 +84,25 @@ export const linkedText = recipe({
 	base: {
 		'@layer': {
 			[cssLayerComponent]: {
-				alignItems: 'center',
 				// Figma shows the underline in every state, including Default —
 				// unlike the legacy `root` style, which reveals it on hover.
 				borderBottomStyle: 'solid',
 				borderBottomWidth: vars.border.width['1'],
-				display: 'inline-flex',
-				gap: vars.space['1'],
+				// Deliberately `inline`, not the `inline-flex` the Figma frame
+				// implies. A flex box is atomic, so it cannot be split across
+				// lines — inside a sentence it gets pushed onto its own line
+				// instead of flowing with the text, and every markdown link
+				// renders through this component. `inline` wraps like text and
+				// draws the underline per line fragment.
+				//
+				// `border-bottom` rather than `text-decoration` because it keeps
+				// running under a trailing icon, which is how Figma draws it;
+				// `text-decoration` stops at the end of the text.
+				display: 'inline',
 				textDecoration: 'none',
 				transitionDuration: '0.2s',
 				transitionProperty: 'border-color, color',
 				transitionTimingFunction: vars.animation.easing.decelerate,
-				width: 'fit-content',
 				'@media': {
 					'(prefers-reduced-motion: reduce)': {
 						transitionDuration: '0s',
@@ -152,15 +159,33 @@ export const linkedText = recipe({
 	},
 });
 
+const linkedTextIcon = `${linkedText.classNames.base} > [data-od-component='icon']`;
+
 /**
  * Figma sizes the linked-text icon to its label — 16px at Large, 14px at Small,
  * i.e. `1em`. Deliberately unlayered: `Icon`'s own size class sets width/height
  * outside any layer, so a layered rule here would lose regardless of
  * specificity. Kept as a child selector because `Icon` owns that element.
  */
-globalStyle(`${linkedText.classNames.base} > [data-od-component='icon']`, {
+globalStyle(linkedTextIcon, {
 	height: '1em',
+	// Nudged off the baseline so the glyph centres on the label rather than
+	// sitting on it — `inline-flex` used to do this with `align-items`.
+	verticalAlign: '-0.125em',
 	width: '1em',
+});
+
+/**
+ * The gap between icon and label, which `inline-flex`'s `gap` used to own.
+ * Logical margins so the spacing follows the writing direction, and keyed off
+ * position because the icon sits on either side.
+ */
+globalStyle(`${linkedTextIcon}:first-child`, {
+	marginInlineEnd: vars.space['1'],
+});
+
+globalStyle(`${linkedTextIcon}:last-child`, {
+	marginInlineStart: vars.space['1'],
 });
 
 type LinkedTextRecipeProps = NonNullable<

@@ -105,7 +105,9 @@ const LinkedTextBody = ({
 	iconPosition,
 	textProps,
 }: BodyProps & Pick<TextLinkProps, 'iconPosition'>) => {
-	const iconEl = icon ? <Icon icon={icon} /> : null;
+	// `inline-block`, because the root is `inline` — `Icon`'s default `block`
+	// would force the icon onto its own line.
+	const iconEl = icon ? <Icon icon={icon} display="inline-block" /> : null;
 
 	return (
 		<>

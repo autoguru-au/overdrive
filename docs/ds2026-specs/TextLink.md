@@ -80,15 +80,41 @@ Notes:
 | Node height         | 22px                                   | 20px                                   |
 
 - The **underline is drawn in every state, including Default** — a 1px
-  `border-bottom` on the flex container, so it runs beneath the icon as well as
-  the label. This is the key departure from the legacy TextLink, which reveals a
-  2px inset box-shadow on hover only.
-- The icon is a **flex sibling** of the label (`display: inline-flex`,
-  `gap: 4px`), not absolutely positioned inside it.
-- **The icon is `1em`** — 16px against a 16px label, 14px against 14px. This is
-  why the root carries the label's font size in the implementation: `em` on the
-  icon resolves against its own inherited size, i.e. the flex container's.
+  `border-bottom`, so it runs beneath the icon as well as the label. This is the
+  key departure from the legacy TextLink, which reveals a 2px inset box-shadow
+  on hover only.
+- The icon is a **sibling** of the label at `1em` with a `space/4` margin — 16px
+  against a 16px label, 14px against 14px. The root carries the label's font
+  size so that `em` resolves against the right value.
 - No padding, no background, no border radius, no shadow.
+
+### The root is `display: inline`, not `inline-flex`
+
+The Figma frame implies `inline-flex` — a gap between icon and label, and a box
+sized to its content. **The implementation deliberately uses
+`display: inline`.**
+
+A flex box is atomic: it cannot be split across lines, so inside a sentence it
+is pushed onto its own line instead of flowing with the text around it. That is
+right for a standalone control and wrong for a phrase in prose — and
+`MarkdownRenderer` renders every markdown link through this component, so the
+prose case is the common one the moment linked text becomes the default.
+
+`inline` wraps like text and draws the underline once per line fragment.
+Confirmed with design (AG-20713):
+
+- **A per-line underline is accepted**, provided the `secondary` treatment still
+  holds — its label stays `link.secondary` while only the underline moves to
+  `link.hover`. It does: `border-bottom-color` and `color` are independent
+  properties, and staying inline does not change that.
+- **The icon may wrap away from its label.** The guidance is to omit the icon
+  when a link sits inside a multi-line paragraph, rather than to force the
+  phrase to break as a unit.
+
+`border-bottom` is used rather than `text-decoration: underline` for one reason:
+the border keeps running under a trailing icon, which is how Figma draws it,
+whereas `text-decoration` stops at the end of the text. The trade is that the
+border sits below the descenders instead of skipping them.
 
 ## Disabled
 
