@@ -41,7 +41,7 @@ const meta = {
 		transform: undefined,
 		href: '#link',
 		children: 'Hello',
-		variant: undefined,
+		variant: 'primary',
 		iconPosition: 'right',
 		disabled: false,
 	},
@@ -54,7 +54,7 @@ const meta = {
 			description: 'Optional icon, from the @autoguru/icons set',
 		},
 		variant: {
-			options: [undefined, 'primary', 'secondary', 'critical'],
+			options: ['primary', 'secondary', 'critical'],
 			control: {
 				type: 'select',
 			},
@@ -207,8 +207,8 @@ const linkedTextRows = [
  * ([node `362:2275`](https://www.figma.com/design/ZkQlQcJkF7NTnZomVrPRN5/AutoGuru-Design-System-2026?node-id=362-2275)) —
  * not the superseded standalone `Link` frame.
  *
- * Setting `variant` opts in. Unlike the default appearance, the underline is
- * drawn in **every** state.
+ * This is the default appearance for every link — `variant` picks the colour
+ * class and defaults to `primary`. The underline is drawn in **every** state.
  *
  * `primary` and `critical` move the **label and underline together**;
  * `secondary` **holds its label** and moves only the underline:
@@ -220,8 +220,8 @@ const linkedTextRows = [
  * | `critical` | `link.critical` | both → `link.criticalHover` | both → `link.criticalPressed` |
  *
  * Figma's Large maps to `size="4"` (16px) and Small to `size="3"` (14px), both
- * Semibold — which is what `variant` defaults to. The icon tracks the label at
- * `1em`, matching Figma's 16px/14px.
+ * Semibold — which is what the component defaults to. The icon tracks the label
+ * at `1em`, matching Figma's 16px/14px.
  *
  * Hover and pressed need real interaction to see; `disabled` is a prop, so it is
  * rendered directly at both sizes.
