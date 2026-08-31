@@ -34,7 +34,11 @@ export interface StepProgressProps extends TestIdProp {
 	 * @default 'horizontal'
 	 */
 	layout?: StepProgressLayout;
-	/** @default 'large' */
+	/**
+	 * Circle diameter and the type scale that follows it, applied to every
+	 * step. Do not mix sizes within one sequence.
+	 * @default 'large'
+	 */
 	size?: StepProgressSize;
 	/**
 	 * Restyles the sequence for a dark panel or hero.

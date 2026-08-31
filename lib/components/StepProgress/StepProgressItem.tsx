@@ -33,7 +33,11 @@ export interface StepProgressItemProps extends TestIdProp {
 	 * @default 'vertical'
 	 */
 	arrangement?: StepProgressArrangement;
-	/** @default 'large' */
+	/**
+	 * Circle diameter and the type scale that follows it — `large` is a 32px
+	 * circle, `small` a 24px one.
+	 * @default 'large'
+	 */
 	size?: StepProgressSize;
 	/**
 	 * Marks this step as the user's current position, filling the circle.
