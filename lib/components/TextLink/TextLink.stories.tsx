@@ -256,14 +256,15 @@ export const LinkedText: Story = {
 						{label}
 					</Text>
 					{linkedTextVariants.map((variant) => (
-						<TextLink
-							{...args}
-							{...row}
-							key={variant}
-							variant={variant}
-						>
-							{children}
-						</TextLink>
+						// Wrapped so the link is not itself a grid item — grid
+						// and flex items are blockified, which would render
+						// these specimens as blocks and misrepresent the
+						// component's real `display: inline`.
+						<div key={variant}>
+							<TextLink {...args} {...row} variant={variant}>
+								{children}
+							</TextLink>
+						</div>
 					))}
 				</React.Fragment>
 			))}
