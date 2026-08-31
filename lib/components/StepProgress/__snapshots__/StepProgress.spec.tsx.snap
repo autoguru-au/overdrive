@@ -1,0 +1,146 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<StepProgress /> > should match snapshot 1`] = `
+<div
+  class="theme_OD_Base__j49br80"
+  data-od-component="provider"
+>
+  <nav
+    aria-label="Progress"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_nav__18vhvlix elementReset_block__18vhvli4"
+    data-od-component="step-progress"
+  >
+    <ol
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_ol__18vhvli10 elementReset_list__18vhvli7 StepProgress_list__x41sgnl StepProgress_list_layout_horizontal__x41sgnm"
+    >
+      <li
+        class="StepProgress_item__x41sgno"
+      >
+        <span
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  StepProgress_step__x41sgn0 StepProgress_step_arrangement_vertical__x41sgn1"
+          data-od-component="step-progress-item"
+        >
+          <span
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  StepProgress_circle__x41sgn3 StepProgress_circle_size_large__x41sgn4 StepProgress_circle_selected_false__x41sgn7 StepProgress_circle_onDark_false__x41sgn9"
+          >
+            1
+          </span>
+          <span
+            class="StepProgress_label__x41sgnc StepProgress_label_size_large__x41sgnd StepProgress_label_selected_false__x41sgng StepProgress_label_onDark_false__x41sgni"
+          >
+            One
+          </span>
+        </span>
+        <span
+          aria-hidden="true"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  StepProgress_connector__x41sgnp StepProgress_connector_layout_horizontal__x41sgnq StepProgress_connector_size_large__x41sgns StepProgress_connector_compound_0__x41sgnu"
+          data-od-component="step-progress-connector"
+        >
+          <span
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuf6 Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+            data-od-component="icon"
+          >
+            <svg
+              aria-hidden="true"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuf6 sprinkles_width_full_mobile__onxwjut6 sprinkles_height_full_mobile__onxwjur6"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 256 256"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M181.66 133.66l-80 80a8 8 0 0 1-11.32-11.32L164.69 128 90.34 53.66a8 8 0 0 1 11.32-11.32l80 80a8 8 0 0 1 0 11.32z"
+              />
+            </svg>
+          </span>
+        </span>
+      </li>
+      <li
+        aria-current="step"
+        class="StepProgress_item__x41sgno"
+      >
+        <span
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  StepProgress_step__x41sgn0 StepProgress_step_arrangement_vertical__x41sgn1"
+          data-od-component="step-progress-item"
+        >
+          <span
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  StepProgress_circle__x41sgn3 StepProgress_circle_size_large__x41sgn4 StepProgress_circle_selected_true__x41sgn6 StepProgress_circle_onDark_false__x41sgn9 StepProgress_circle_compound_0__x41sgna"
+          >
+            2
+          </span>
+          <span
+            class="StepProgress_label__x41sgnc StepProgress_label_size_large__x41sgnd StepProgress_label_selected_true__x41sgnf StepProgress_label_onDark_false__x41sgni"
+          >
+            Two
+          </span>
+        </span>
+        <span
+          aria-hidden="true"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  StepProgress_connector__x41sgnp StepProgress_connector_layout_horizontal__x41sgnq StepProgress_connector_size_large__x41sgns StepProgress_connector_compound_0__x41sgnu"
+          data-od-component="step-progress-connector"
+        >
+          <span
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuf6 Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+            data-od-component="icon"
+          >
+            <svg
+              aria-hidden="true"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwjuf6 sprinkles_width_full_mobile__onxwjut6 sprinkles_height_full_mobile__onxwjur6"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 256 256"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M181.66 133.66l-80 80a8 8 0 0 1-11.32-11.32L164.69 128 90.34 53.66a8 8 0 0 1 11.32-11.32l80 80a8 8 0 0 1 0 11.32z"
+              />
+            </svg>
+          </span>
+        </span>
+      </li>
+      <li
+        class="StepProgress_item__x41sgno"
+      >
+        <span
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  StepProgress_step__x41sgn0 StepProgress_step_arrangement_vertical__x41sgn1"
+          data-od-component="step-progress-item"
+        >
+          <span
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  StepProgress_circle__x41sgn3 StepProgress_circle_size_large__x41sgn4 StepProgress_circle_selected_false__x41sgn7 StepProgress_circle_onDark_false__x41sgn9"
+          >
+            3
+          </span>
+          <span
+            class="StepProgress_label__x41sgnc StepProgress_label_size_large__x41sgnd StepProgress_label_selected_false__x41sgng StepProgress_label_onDark_false__x41sgni"
+          >
+            Three
+          </span>
+        </span>
+      </li>
+    </ol>
+  </nav>
+</div>
+`;
+
+exports[`<StepProgressItem /> > should match snapshot 1`] = `
+<div
+  class="theme_OD_Base__j49br80"
+  data-od-component="provider"
+>
+  <span
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  StepProgress_step__x41sgn0 StepProgress_step_arrangement_vertical__x41sgn1"
+    data-od-component="step-progress-item"
+  >
+    <span
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  StepProgress_circle__x41sgn3 StepProgress_circle_size_large__x41sgn4 StepProgress_circle_selected_true__x41sgn6 StepProgress_circle_onDark_false__x41sgn9 StepProgress_circle_compound_0__x41sgna"
+    >
+      1
+    </span>
+    <span
+      class="StepProgress_label__x41sgnc StepProgress_label_size_large__x41sgnd StepProgress_label_selected_true__x41sgnf StepProgress_label_onDark_false__x41sgni"
+    >
+      One
+    </span>
+  </span>
+</div>
+`;
