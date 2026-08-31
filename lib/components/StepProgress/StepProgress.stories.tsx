@@ -81,7 +81,7 @@ current-position semantics, so you have to supply those yourself.
 const STEPS = ['Your details', 'Vehicle', 'Booking', 'Payment'];
 
 const meta = {
-	title: 'Primitives/Indicators/Step Progress',
+	title: 'Components/Step Progress',
 	component: StepProgress,
 	tags: ['new'],
 	parameters: {
