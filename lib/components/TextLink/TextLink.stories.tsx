@@ -8,6 +8,7 @@ import { Heading } from '../Heading/Heading';
 import { Text } from '../Text/Text';
 
 import { TextLink } from './TextLink';
+import * as styles from './TextLink.css';
 
 const sizeScale = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 const fontWeightOptions = ['normal', 'semiBold', 'bold'];
@@ -160,27 +161,64 @@ const linkedTextStateBehaviour = [
 ] as const;
 
 /**
+ * Every style rule in the document, flattened out of `@layer` and `@media`
+ * wrappers.
+ *
+ * The recursion checks `selectorText` *before* descending: since CSS nesting
+ * shipped, a plain `CSSStyleRule` also carries a `cssRules` list, so a walker
+ * that recurses first and asks questions later skips every rule it is looking
+ * for and reports an empty stylesheet.
+ */
+const eachStyleRule = function* (rules: CSSRuleList): Generator<CSSStyleRule> {
+	// `Array.from` rather than iterating directly: `CSSRuleList` is an
+	// array-like, not a guaranteed iterable.
+	for (const rule of Array.from(rules)) {
+		if ('selectorText' in rule) yield rule as CSSStyleRule;
+		const nested = (rule as CSSGroupingRule).cssRules;
+		if (nested?.length) yield* eachStyleRule(nested);
+	}
+};
+
+/**
  * Reads the declaration block a variant emits for its hover / pressed rule.
  *
  * Asserted against the stylesheet rather than a simulated interaction on
  * purpose: `userEvent.hover` dispatches mouse events without moving the real
- * pointer, so it never engages CSS `:hover`, and the resulting assertion passes
- * or fails on pointer position rather than on the component.
+ * pointer, so it never engages CSS `:hover`, and the resulting assertion would
+ * pass or fail on pointer position rather than on the component.
+ *
+ * The class comes from the recipe rather than a name pattern. A production
+ * Storybook build strips vanilla-extract's debug names — `variant_primary`
+ * becomes `_5ax1bk5` — so matching on a readable class name passes in dev and
+ * fails in the built Storybook that Chromatic renders.
  */
-const stateDeclarations = (variant: string, state: 'hover' | 'active') => {
-	const css = Array.from(
-		document.querySelectorAll('style'),
-		(tag) => tag.textContent ?? '',
-	).join('\n');
-	const cls = `TextLink_linkedText_variant_${variant}`;
-	const rule =
-		state === 'hover'
-			? new RegExp(
-					`\\.${cls}__[a-z\\d]+\\[data-hover\\][^{]*\\{([^}]*)\\}`,
-				)
-			: new RegExp(`\\.${cls}__[a-z\\d]+:active\\s*\\{([^}]*)\\}`);
+const stateDeclarations = (
+	variant: keyof typeof styles.linkedText.classNames.variants.variant,
+	state: 'hover' | 'active',
+) => {
+	const cls = styles.linkedText.classNames.variants.variant[variant];
+	const marker = state === 'hover' ? '[data-hover]' : ':active';
 
-	return css.match(rule)?.[1].replaceAll(/\s+/g, ' ').trim() ?? null;
+	for (const sheet of Array.from(document.styleSheets)) {
+		let rules: CSSRuleList;
+		// A cross-origin stylesheet throws on access; skip rather than fail.
+		try {
+			rules = sheet.cssRules;
+		} catch {
+			continue;
+		}
+
+		for (const rule of eachStyleRule(rules)) {
+			if (
+				rule.selectorText.includes(cls) &&
+				rule.selectorText.includes(marker)
+			) {
+				return rule.style.cssText.replaceAll(/\s+/g, ' ').trim();
+			}
+		}
+	}
+
+	return null;
 };
 
 /**
