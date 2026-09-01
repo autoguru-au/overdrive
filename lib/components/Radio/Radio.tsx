@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { forwardRef, ReactNode } from 'react';
 
+import type { ControlSize } from '../../types';
 import { Box } from '../Box';
 import { CheckableBase } from '../private/CheckableBase';
 import { checkableIndicator } from '../private/CheckableBase/CheckableBase.css';
@@ -13,12 +14,16 @@ export interface RadioProps {
 	value: string;
 	className?: string;
 	disabled?: boolean;
+	/** Overrides `RadioGroup`'s size, for the rare mixed-size case. */
+	size?: ControlSize;
 	children?: ReactNode;
 }
 
 export const Radio = forwardRef<HTMLInputElement, RadioProps>(
-	({ value, className = '', children, disabled = false }, ref) => {
+	({ value, className = '', children, disabled = false, size }, ref) => {
 		const radioContext = useRadioContext();
+		const resolvedSize = size ?? radioContext.size ?? 'large';
+		const sized = resolvedSize !== 'large';
 
 		const isChecked = value === radioContext.value;
 
@@ -37,14 +42,19 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>(
 				handleClick={handleClick}
 			>
 				<Box
-					className={clsx(checkableIndicator, styles.radio, {
-						[styles.radioSelected]: isChecked,
-					})}
+					className={clsx(
+						checkableIndicator,
+						styles.radio,
+						sized && styles.ring[resolvedSize],
+						{ [styles.radioSelected]: isChecked },
+					)}
 				/>
 				<Box
-					className={clsx(styles.inner, {
-						[styles.innerSelected]: isChecked,
-					})}
+					className={clsx(
+						styles.inner,
+						sized && styles.dot[resolvedSize],
+						{ [styles.innerSelected]: isChecked },
+					)}
 				/>
 			</CheckableBase>
 		);

@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 import { useSwitch, useFocusRing, type AriaSwitchProps } from 'react-aria';
 
 import { textStyles } from '../../styles/typography';
-import type { TestIdProp } from '../../types';
+import type { ControlSize, TestIdProp } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box';
 import { VisuallyHidden } from '../VisuallyHidden';
@@ -26,6 +26,12 @@ export interface SwitchProps extends AriaSwitchProps, TestIdProp {
 	 * @deprecated use isSelected instead
 	 */
 	toggled?: boolean;
+	/**
+	 * Track size — 46x24, 38x20 or 30x16. The two smaller sizes carry the `z2`
+	 * handle shadow.
+	 * @default 'large'
+	 */
+	size?: ControlSize;
 }
 
 /**
@@ -39,6 +45,7 @@ export const Switch = ({
 	toggled,
 	isSelected = toggled,
 	isDisabled = disabled,
+	size = 'large',
 	testId,
 	...incomingProps
 }: SwitchProps) => {
@@ -61,6 +68,7 @@ export const Switch = ({
 				className={[
 					styles.toggle,
 					textStyles({ size: '5' }),
+					size !== 'large' && styles.track[size],
 					{
 						[styles.disabled]: inputProps.disabled,
 						[styles.toggleOn]: state.isSelected,
@@ -75,6 +83,7 @@ export const Switch = ({
 				<Box
 					className={[
 						styles.handle.default,
+						size !== 'large' && styles.handleElevation,
 						{
 							[styles.handle.active]: state.isSelected,
 						},
@@ -85,3 +94,5 @@ export const Switch = ({
 		</Box>
 	);
 };
+
+Switch.displayName = 'Switch';

@@ -157,4 +157,24 @@ describe('<Switch />', () => {
 			container.firstChild.firstChild.childNodes[1],
 		).not.toHaveAttribute('data-active');
 	});
+
+	describe('size', () => {
+		const track = ({ container }) =>
+			container.firstChild.firstChild.childNodes[1];
+
+		it('adds no size class at the default, so existing usage is untouched', () => {
+			const cls = track(render(<Switch aria-label="s" />)).className;
+
+			expect(cls).not.toContain(styles.track.medium);
+			expect(cls).not.toContain(styles.track.small);
+		});
+
+		it.each(['medium', 'small'])('adds the %s track class', (size) => {
+			const cls = track(
+				render(<Switch aria-label="s" size={size} />),
+			).className;
+
+			expect(cls).toContain(styles.track[size]);
+		});
+	});
 });

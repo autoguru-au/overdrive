@@ -2,6 +2,9 @@ import { StoryObj, Meta } from '@storybook/react-vite';
 import React, { type ComponentProps } from 'react';
 import { fn } from 'storybook/test';
 
+import { Column, Columns } from '../Columns';
+import { Stack } from '../Stack';
+
 import { Radio } from './Radio';
 import { RadioGroup as RadioGroupComponent } from './RadioGroup';
 
@@ -28,7 +31,14 @@ const meta: Meta<typeof RadioGroupComponent> = {
 	args: {
 		name: undefined,
 		value: undefined,
+		size: 'large',
 		onChange: fn(),
+	},
+	argTypes: {
+		size: {
+			control: 'select',
+			options: ['large', 'medium', 'small'],
+		},
 	},
 };
 
@@ -85,4 +95,42 @@ export const MultipleLines: Story = {
 			</>
 		),
 	},
+};
+
+/**
+ * One row per size — `large`, then `medium`, then `small` — with each state
+ * across the columns.
+ *
+ * Set `size` once on `RadioGroup` — a group of mixed sizes is not a design
+ * DS-2026 publishes, though an individual `Radio` can still override it. The dot
+ * stays at half the ring, the ratio the pre-2026 control already renders.
+ */
+export const Sizes: Story = {
+	render: (args) => (
+		<Stack space="3">
+			{(['large', 'medium', 'small'] as const).map((size) => (
+				<RadioGroupComponent
+					{...args}
+					key={size}
+					name={`size-${size}`}
+					size={size}
+					value="on"
+				>
+					<Columns space="4">
+						<Column width="1/3">
+							<Radio value="off">unselected</Radio>
+						</Column>
+						<Column width="1/3">
+							<Radio value="on">selected</Radio>
+						</Column>
+						<Column width="1/3">
+							<Radio value="disabled" disabled>
+								disabled
+							</Radio>
+						</Column>
+					</Columns>
+				</RadioGroupComponent>
+			))}
+		</Stack>
+	),
 };

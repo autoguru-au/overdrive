@@ -3,7 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { fn } from 'storybook/test';
 
 import { Badge } from '../Badge/Badge';
+import { Column, Columns } from '../Columns';
 import { Heading } from '../Heading/Heading';
+import { Stack } from '../Stack';
 import { StarRating } from '../StarRating/StarRating';
 import { Text } from '../Text/Text';
 
@@ -34,8 +36,15 @@ const meta: Meta<typeof CheckBox> = {
 		value: '1',
 		isIndeterminate: false,
 		disabled: undefined,
+		size: 'large',
 		onChange: fn(),
 		onClick: fn(),
+	},
+	argTypes: {
+		size: {
+			control: 'select',
+			options: ['large', 'medium', 'small'],
+		},
 	},
 	render: ({ isIndeterminate, ...args }) => {
 		const [checked, setChecked] = useState(false);
@@ -194,4 +203,49 @@ export const WithMultiLineComponent: Story = {
 		),
 		value: '1',
 	},
+};
+
+/**
+ * One row per size — `large`, then `medium`, then `small` — with each state
+ * across the columns.
+ *
+ * `large` (24px) is the pre-2026 control and the unchanged default. `medium`
+ * (20px) and `small` (16px) come from the `5` and `4` space tokens, and the
+ * tick is always the box less the 2px inset Figma specifies — which is why
+ * today's 24px box already pairs with a 20px tick.
+ */
+export const Sizes: Story = {
+	render: (args) => (
+		<Stack space="3">
+			{(['large', 'medium', 'small'] as const).map((size) => (
+				<Columns key={size} space="4">
+					<Column width="1/3">
+						<CheckBox {...args} size={size} value={`${size}-off`}>
+							<Text size="2">unchecked</Text>
+						</CheckBox>
+					</Column>
+					<Column width="1/3">
+						<CheckBox
+							{...args}
+							size={size}
+							value={`${size}-on`}
+							checked
+						>
+							<Text size="2">checked</Text>
+						</CheckBox>
+					</Column>
+					<Column width="1/3">
+						<CheckBox
+							{...args}
+							size={size}
+							value={`${size}-mixed`}
+							isIndeterminate
+						>
+							<Text size="2">mixed</Text>
+						</CheckBox>
+					</Column>
+				</Columns>
+			))}
+		</Stack>
+	),
 };
