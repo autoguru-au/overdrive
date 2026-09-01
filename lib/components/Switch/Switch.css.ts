@@ -77,8 +77,8 @@ export const disabled = style({
 });
 
 /**
- * Figma `462:2521` — Medium 38x20, Small 30x16, each with a 2px inset and the
- * `z2` handle shadow. Both widths fall out of `toggle`'s existing
+ * Medium 38x20, Small 30x16, each with a 2px inset and the `z2` handle
+ * shadow. Both widths fall out of `toggle`'s existing
  * `2 x height - inset`, and the inset makes the handle `height - 2 x inset` on
  * its own, so it needs no size of its own. See `ControlSize`.
  */
@@ -167,7 +167,7 @@ export const handle = styleVariants({
 	},
 });
 
-/** `z2` is the shadow Figma binds to the DS-2026 handle. */
+/** The DS-2026 handle carries the `z2` shadow. */
 export const handleElevation = style({
 	'@layer': {
 		[cssLayerComponent]: {

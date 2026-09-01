@@ -46,8 +46,8 @@ export const checkbox = styleVariants({
 });
 
 /**
- * Figma `438:15383` — Medium 20px, Small 16px, each insetting the tick 2px on
- * every side. See `ControlSize` for why `large` carries no rules.
+ * Medium 20px, Small 16px, each insetting the tick 2px on every side. See
+ * `ControlSize` for why `large` carries no rules.
  */
 const boxSizes = { medium: vars.space['5'], small: vars.space['4'] } as const;
 
