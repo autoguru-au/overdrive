@@ -16,17 +16,13 @@ const handleSize = '24px';
 export const base = style({
 	'@layer': {
 		[cssLayerComponent]: {
-			// As `inline-block` the track and a label passed as children each
-			// sat on their own baseline, leaving them out of line. No prop for
-			// the override: `className` lands here, and an unlayered consumer
-			// class beats this layered rule.
-			//
-			// The gap is not optional. Under `inline-block` the label wrapped
-			// to its own line, which separated it; as flex items the two sit
-			// flush with no space at all unless the consumer supplies one.
-			alignItems: 'center',
-			display: 'inline-flex',
-			gap: vars.space['2'],
+			// Deliberately `inline-block`, not `inline-flex`. Flex would let a
+			// label passed as children sit beside the track rather than below
+			// it, but it also makes the track a shrinkable flex item and shifts
+			// layout for anything that passes children — reverted after review
+			// (PR #1381). A consumer that wants them side by side supplies its
+			// own flex wrapper, as `storyLabel` does.
+			display: 'inline-block',
 		},
 	},
 });
@@ -38,11 +34,6 @@ export const toggle = style([
 				backgroundColor: colorMid,
 				borderRadius: vars.border.radius.pill,
 				cursor: 'pointer',
-				// A flex item by default shrinks below its declared width. The
-				// track carries a fixed-size handle, so a squashed track slides
-				// the knob past its end — measured 46px collapsing to 22px in a
-				// constrained container. Could not happen under `inline-block`.
-				flexShrink: 0,
 				height: height,
 				padding: '3px 4px',
 				transition:

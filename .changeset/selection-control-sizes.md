@@ -25,15 +25,14 @@ The handle's hover travel is per-size too — the shared hover rule out-specifie
 the resting size rules, so a hovered `medium` or `small` handle took the legacy
 20px travel and overshot its narrower track.
 
-**One visual change:** Switch's label is now centred against its track. Its
-wrapper was `inline-block`, so a label passed as children sat 32px out of line
-with the track — worse now the track can be 20px or 16px tall. Pass a
-`className` with your own `align-items` to override.
-
 Colour is untouched: these controls already ride `color.brand.{solid,onSolid}`,
 so the accent follows each tenant's brand.
 
 Known gaps, all pre-existing or deferred:
+
+- **Switch** keeps its `inline-block` wrapper, so a label passed as children
+  sits below the track rather than beside it. Wrap it in your own flex container
+  for a side-by-side layout.
 
 - **CheckBox and Radio** keep a 48px row at every size — the hit area lives in
   the shared `private/CheckableBase` and is not yet size-aware, so `small` does
