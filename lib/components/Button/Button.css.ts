@@ -27,6 +27,21 @@ const buttonHeight = {
 } as const;
 const smallHeight = buttonHeight.small;
 
+/**
+ * Figma labels every button `p1 semibold` or `p2 semibold`, so the sizes read
+ * the DS-2026 named text styles rather than the numeric scale — `p1`/`p2` carry
+ * the ratio-derived 22.4px and 19.6px line heights the design uses, where
+ * `size[4]`/`size[3]` round them to 22px and 20px. The weight comes from the
+ * recipe's base `fontWeight: 'semiBold'`.
+ *
+ * Extra small takes the same `p2` as Small; Figma has no smaller button label.
+ */
+const buttonText = {
+	medium: vars.typography.size.p1,
+	small: vars.typography.size.p2,
+	xsmall: vars.typography.size.p2,
+} as const;
+
 const selectorFocusHoverActive =
 	'&:focus-visible, &:not(:disabled):hover, &:not(:disabled):active';
 
@@ -183,14 +198,14 @@ export const button = recipe({
 	variants: {
 		// Size variants
 		size: {
-			// Figma `Size=Small`: `space/8` padding around a 20px line in a
+			// Figma `Size=Small`: `space/8` padding around a `p2` line in a
 			// 36px box.
 			small: {
 				'@layer': {
 					[cssLayerComponent]: {
-						fontSize: vars.typography.size[3].fontSize,
+						fontSize: buttonText.small.fontSize,
 						height: buttonHeight.small,
-						lineHeight: vars.typography.size[3].lineHeight,
+						lineHeight: buttonText.small.lineHeight,
 						padding: `0 ${vars.space[3]}`,
 					},
 				},
@@ -200,25 +215,24 @@ export const button = recipe({
 			medium: {
 				'@layer': {
 					[cssLayerComponent]: {
-						fontSize: vars.typography.size[4].fontSize,
+						fontSize: buttonText.medium.fontSize,
 						height: buttonHeight.medium,
-						lineHeight: vars.typography.size[4].lineHeight,
+						lineHeight: buttonText.medium.lineHeight,
 						padding: `0 ${vars.space[4]}`,
 					},
 				},
 			},
 			// Figma `Size=Extra small` — the one size that departs from the
 			// other two: `space/4` padding and gap, `border/radius/xsmall`, and
-			// the same 14px `p2 semibold` label as Small rather than a smaller
-			// one.
+			// the same `p2` label as Small rather than a smaller one.
 			xsmall: {
 				'@layer': {
 					[cssLayerComponent]: {
 						borderRadius: vars.border.radius.xsmall,
-						fontSize: vars.typography.size[3].fontSize,
+						fontSize: buttonText.xsmall.fontSize,
 						gap: vars.space[1],
 						height: buttonHeight.xsmall,
-						lineHeight: vars.typography.size[3].lineHeight,
+						lineHeight: buttonText.xsmall.lineHeight,
 						padding: `0 ${vars.space[2]}`,
 					},
 				},

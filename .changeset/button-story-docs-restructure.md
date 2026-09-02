@@ -43,14 +43,24 @@ Icon-only and pill `medium` buttons follow the height down to 46px so they stay
 square. Legacy variants share the recipe's geometry and move with it — the
 closest match available, as they have no Figma frame to read.
 
-**Label typography also moves**, which is worth a designer's eye on review:
+**Label typography moves onto the DS-2026 named text styles.** Figma labels
+every button `p1 semibold` or `p2 semibold`, so the sizes now read
+`typography.size.p1` / `.p2` rather than the numeric `size[4]` / `size[3]` scale
+— those carry the ratio-derived 22.4px and 19.6px line heights the design uses,
+where the numeric scale rounds them to 22px and 20px.
 
-- The label weight goes from `medium` (500) to **`semiBold` (600)** at every
-  size — Figma's button label is `p1/p2 semibold` throughout. This is the one
-  change that touches the legacy variants' appearance.
-- `xsmall`'s label goes from 12px/18px to **14px/20px**, matching `small`.
-  Figma's Extra small uses the same `p2 semibold` style, not a smaller one, and
-  it still clears the 28px box.
+| `size`   | Figma style   | before → after              |
+| -------- | ------------- | --------------------------- |
+| `medium` | `p1 semibold` | 16px/22px → 16px/**22.4px** |
+| `small`  | `p2 semibold` | 14px/20px → 14px/**19.6px** |
+| `xsmall` | `p2 semibold` | 12px/18px → **14px/19.6px** |
+
+The weight goes from `medium` (500) to **`semiBold` (600)** at every size. This
+is the one change in the release that touches the legacy variants' appearance —
+they share the recipe's base weight.
+
+`xsmall` taking the same `p2` as `small` is deliberate: Figma has no smaller
+button label, and the larger label still clears the 28px box.
 
 **`minimal` is Figma's `Style=Minimal (Ghost)`**, renamed from `Ghost`. On
 `variant="secondary"` — the only class Figma specs a Minimal for — it now takes
