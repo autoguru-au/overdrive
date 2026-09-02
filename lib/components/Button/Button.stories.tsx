@@ -234,6 +234,23 @@ export const CriticalSet: Story = {
 };
 
 /**
+ * **The same warning, when a Critical Solid would shout.** Transparent fill,
+ * critical border, critical label — for a destructive action that is on the page
+ * but is not the page's main event, or sitting beside a solid Critical.
+ *
+ * Same rules as Primary Outlined: no elevation, and the fill washes in on hover
+ * and deepens on press. Colours come from `color.button.critical.outlined.*`.
+ */
+export const CriticalOutlinedSet: Story = {
+	decorators: PrimarySet.decorators,
+	args: {
+		variant: 'danger',
+		outlined: true,
+	},
+	render: TemplateMulti,
+};
+
+/**
  * Legacy status set — kept as-is. Not part of the Figma DS-2026 button classes.
  */
 export const InformationSet: Story = {

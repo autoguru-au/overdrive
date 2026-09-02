@@ -10,7 +10,22 @@ globalLayer(LAYER_ORDER);
 
 const intentColors = vars.colours.intent;
 const buttonColors = vars.color.button;
-const smallHeight = '36px';
+
+/**
+ * Figma sizes each button by padding plus the label's line height rather than a
+ * fixed height — Large is `space/12` + 22px + `space/12` = 46px, Small is
+ * `space/8` + 20px + `space/8` = 36px. Kept as explicit heights because the
+ * icon-only and rounded compounds need a square to work from, and derived
+ * heights would leave those guessing.
+ *
+ * `medium` is Figma's Large; there is no Medium in the DS-2026 set.
+ */
+const buttonHeight = {
+	xsmall: '28px',
+	small: '36px',
+	medium: '46px',
+} as const;
+const smallHeight = buttonHeight.small;
 
 const selectorFocusHoverActive =
 	'&:focus-visible, &:not(:disabled):hover, &:not(:disabled):active';
@@ -35,6 +50,47 @@ const buttonElevation = {
 	hover: vars.elevation.z3,
 	pressed: vars.elevation.z1,
 } as const;
+
+/**
+ * A DS-2026 `Style=Outlined` intent: transparent fill, the class colour as both
+ * border and label, washing in on hover and press.
+ *
+ * Every state restates `borderColor`, `boxShadow` and `color`. The solid intent
+ * this sits on top of sets all three, and its nested `:active` (0,3,0) beats a
+ * compound's `:focus-visible` — so anything left unstated leaks the solid
+ * appearance through.
+ */
+const outlinedIntent = (outlined: {
+	border: string;
+	hover: string;
+	pressed: string;
+	text: string;
+}) => ({
+	'@layer': {
+		[cssLayerComponent]: {
+			// The solid intent sets this too, at equal specificity.
+			backgroundColor: 'transparent',
+			border: `1px solid ${outlined.border}`,
+			// Figma's Outlined carries no elevation.
+			boxShadow: 'none',
+			color: outlined.text,
+			selectors: {
+				[selectorFocusHover]: {
+					backgroundColor: outlined.hover,
+					borderColor: outlined.border,
+					boxShadow: 'none',
+					color: outlined.text,
+				},
+				[selectorPressed]: {
+					backgroundColor: outlined.pressed,
+					borderColor: outlined.border,
+					boxShadow: 'none',
+					color: outlined.text,
+				},
+			},
+		},
+	},
+});
 
 /**
  * A DS-2026 filled intent: Figma's `Style=Solid`. `hover` and `pressed` are
@@ -88,7 +144,8 @@ export const button = recipe({
 			borderRadius: 'md',
 			borderStyle: 'none',
 			fontWeight: 'medium',
-			gap: '1',
+			// Figma sets `space/8` between icon and label, not 4px.
+			gap: '2',
 			justifyContent: 'center',
 			position: 'relative',
 			width: 'fit-content',
@@ -98,7 +155,6 @@ export const button = recipe({
 				[cssLayerComponent]: {
 					cursor: 'pointer',
 					display: 'flex',
-					lineHeight: 1,
 					padding: `0 ${vars.space[4]}`,
 					transform: 'translate(0, 0) scale(1)',
 					transitionTimingFunction: vars.animation.easing.standard,
@@ -126,29 +182,40 @@ export const button = recipe({
 	variants: {
 		// Size variants
 		size: {
+			// Figma `Size=Small`: `space/8` padding around a 20px line in a
+			// 36px box.
 			small: {
 				'@layer': {
 					[cssLayerComponent]: {
 						fontSize: vars.typography.size[3].fontSize,
-						height: smallHeight,
+						height: buttonHeight.small,
+						lineHeight: vars.typography.size[3].lineHeight,
 						padding: `0 ${vars.space[3]}`,
 					},
 				},
 			},
+			// Figma `Size=Large` — the DS-2026 set has no Medium, so this is
+			// the largest. 46px, not the 48px this used to hard-code.
 			medium: {
 				'@layer': {
 					[cssLayerComponent]: {
 						fontSize: vars.typography.size[4].fontSize,
-						height: vars.space['9'],
+						height: buttonHeight.medium,
+						lineHeight: vars.typography.size[4].lineHeight,
+						padding: `0 ${vars.space[4]}`,
 					},
 				},
 			},
+			// Figma `Size=Extra small`. The label weight stays `normal`, as it
+			// was before DS-2026 — the other two take the base `medium`.
 			xsmall: {
 				'@layer': {
 					[cssLayerComponent]: {
 						fontSize: vars.typography.size[2].fontSize,
 						fontWeight: vars.typography.fontWeight.normal,
-						padding: `2px ${vars.space['2']}`,
+						height: buttonHeight.xsmall,
+						lineHeight: vars.typography.size[2].lineHeight,
+						padding: `0 ${vars.space[2]}`,
 					},
 				},
 			},
@@ -341,7 +408,7 @@ export const button = recipe({
 			style: {
 				'@layer': {
 					[cssLayerComponent]: {
-						minWidth: vars.space['9'],
+						minWidth: buttonHeight.medium,
 					},
 				},
 			},
@@ -351,7 +418,7 @@ export const button = recipe({
 			style: {
 				'@layer': {
 					[cssLayerComponent]: {
-						width: vars.space['9'],
+						width: buttonHeight.medium,
 					},
 				},
 			},
@@ -473,40 +540,11 @@ export const button = recipe({
 		// Compound class names are index-based — append, never insert.
 		{
 			variants: { intent: 'primary', outlined: true },
-			style: {
-				'@layer': {
-					[cssLayerComponent]: {
-						// intent primary sets this too, at equal specificity.
-						backgroundColor: 'transparent',
-						border: `1px solid ${vars.color.button.primary.outlined.border}`,
-						// Figma's Outlined carries no elevation, so the shadow
-						// `intent: primary` now sets has to be cleared in every
-						// state it sets one.
-						boxShadow: 'none',
-						color: vars.color.button.primary.outlined.text,
-						selectors: {
-							'&:focus-visible, &:not(:disabled):hover': {
-								backgroundColor:
-									vars.color.button.primary.outlined.hover,
-								borderColor:
-									vars.color.button.primary.outlined.border,
-								boxShadow: 'none',
-								color: vars.color.button.primary.outlined.text,
-							},
-							'&:active:not(:disabled, [data-loading])': {
-								backgroundColor:
-									vars.color.button.primary.outlined.pressed,
-								// Restated: intent primary's nested `:active`
-								// (0,3,0) beats this variant's `:focus-visible`.
-								borderColor:
-									vars.color.button.primary.outlined.border,
-								boxShadow: 'none',
-								color: vars.color.button.primary.outlined.text,
-							},
-						},
-					},
-				},
-			},
+			style: outlinedIntent(vars.color.button.primary.outlined),
+		},
+		{
+			variants: { intent: 'danger', outlined: true },
+			style: outlinedIntent(vars.color.button.critical.outlined),
 		},
 	],
 	defaultVariants: {

@@ -107,6 +107,7 @@ export const calcIconSize = (size: ButtonProps['size']) =>
  * | **Primary outlined** | Another important action worth promoting, when a stronger primary already owns the page. | `variant="primary" outlined` |
  * | **Secondary** | We don't mind either way — optional, and not a path we are pushing them down. | `variant="secondary"` |
  * | **Critical** | Not something we want them to do unless they are sure. Destructive, so pair it with a confirmation. | `variant="danger"` |
+ * | **Critical outlined** | A destructive action that isn't the page's main event, or one sitting beside a solid Critical. | `variant="danger" outlined` |
  *
  * `brand`, `information`, `warning` and `success` are legacy variants, not part
  * of the DS-2026 button classes. They keep their pre-DS-2026 colours and have no
@@ -175,8 +176,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			useState<boolean>(false);
 
 		const language = { ...LOCALE_TEXT_DEFAULT, ...localeText };
-		// `minimal` wins; primary-only because only it has outlined tokens.
-		const isOutlined = outlined && !minimal && variant === 'primary';
+		// `minimal` wins; limited to the intents that have outlined tokens.
+		const isOutlined =
+			outlined &&
+			!minimal &&
+			(variant === 'primary' || variant === 'danger');
 		// Which fills need the dark spinner. DS-2026 turned `primary` into a
 		// mint fill with a near-black label, so a light spinner on it is about
 		// 1.4:1 — `critical` keeps a white label on red and stays light.

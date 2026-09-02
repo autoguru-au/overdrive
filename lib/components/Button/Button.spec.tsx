@@ -80,18 +80,27 @@ describe('<Button />', () => {
 			expect(button.className).toContain('minimal_true');
 		});
 
+		it('applies to danger, which now has Critical Outlined tokens', () => {
+			render(
+				<Button variant="danger" outlined>
+					Click me
+				</Button>,
+			);
+			expect(isOutlined(screen.getByRole('button'))).toBe(true);
+		});
+
 		it('is a complete no-op on intents that have no outlined tokens', () => {
-			// the fill is gated on primary in CSS, so the spinner must be gated
-			// too — otherwise a loading danger button gets a dark spinner on a
-			// solid red fill
+			// the fill is gated in CSS to the intents with outlined tokens, so
+			// the spinner has to be gated the same way — otherwise a loading
+			// success button gets a dark spinner on a solid green fill
 			const plain = render(
-				<Button variant="danger" isLoading>
+				<Button variant="success" isLoading>
 					Click me
 				</Button>,
 			).container.innerHTML;
 			cleanup();
 			const withOutlined = render(
-				<Button variant="danger" outlined isLoading>
+				<Button variant="success" outlined isLoading>
 					Click me
 				</Button>,
 			).container.innerHTML;
