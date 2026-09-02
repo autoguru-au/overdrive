@@ -309,6 +309,7 @@ export const useColorOverrides = (
 
 		let mildPrimary: string | null = null;
 		let strongPrimary: string | null = null;
+		let pressedPrimary: string | null = null;
 		let onBrand: string | null = null;
 		let buttonForeground: string | null = null;
 		let outlinedHover: string | null = null;
@@ -333,6 +334,17 @@ export const useColorOverrides = (
 					direction: 'backward',
 					intensity: 0.1,
 				});
+
+			// One step deeper than `strong`, for the solid button's press
+			// state. Base steps its own ramp much further (mint L69 → L39),
+			// but that spread only works from a light starting colour — a
+			// brand that is already dark would be crushed to near-black.
+			pressedPrimary = shadedColour({
+				colour: primaryBackground,
+				isDarkTheme,
+				direction: 'backward',
+				intensity: 0.18,
+			});
 
 			// Honours an explicit value even when poor; only derives if absent.
 			buttonForeground =
@@ -404,6 +416,31 @@ export const useColorOverrides = (
 				},
 				button: {
 					primary: {
+						// `variant="primary"` is the tenant's button — it is
+						// what the branding docs demonstrate. DS-2026 repointed
+						// it off `colours.intent.primary.*` onto these, so
+						// without them a branded app would render the base mint
+						// instead of its own colour.
+						//
+						// `hover` reuses the same `strong` step the legacy
+						// intent used for its hover, so branded behaviour is
+						// unchanged by that repoint.
+						solid: {
+							// Verbatim — tenants expect their own brand.
+							//@ts-expect-error no undefined
+							default: primaryBackground ?? undefined,
+							//@ts-expect-error no undefined
+							hover: strongPrimary ?? undefined,
+							//@ts-expect-error no undefined
+							pressed: pressedPrimary ?? undefined,
+							// Figma draws the border in the pressed colour.
+							//@ts-expect-error no undefined
+							border: pressedPrimary ?? undefined,
+							// Contrast-checked against the fill, so a pale
+							// brand keeps a legible label.
+							//@ts-expect-error no undefined
+							text: buttonForeground ?? undefined,
+						},
 						outlined: {
 							// Verbatim — tenants expect their own brand.
 							//@ts-expect-error no undefined
