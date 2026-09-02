@@ -143,8 +143,9 @@ export const button = recipe({
 			alignItems: 'center',
 			borderRadius: 'md',
 			borderStyle: 'none',
-			fontWeight: 'medium',
-			// Figma sets `space/8` between icon and label, not 4px.
+			// Figma's button label is `p1/p2 semibold` (600) at every size.
+			fontWeight: 'semiBold',
+			// Figma's `space/8`. Extra small narrows this to `space/4`.
 			gap: '2',
 			justifyContent: 'center',
 			position: 'relative',
@@ -206,15 +207,18 @@ export const button = recipe({
 					},
 				},
 			},
-			// Figma `Size=Extra small`. The label weight stays `normal`, as it
-			// was before DS-2026 — the other two take the base `medium`.
+			// Figma `Size=Extra small` — the one size that departs from the
+			// other two: `space/4` padding and gap, `border/radius/xsmall`, and
+			// the same 14px `p2 semibold` label as Small rather than a smaller
+			// one.
 			xsmall: {
 				'@layer': {
 					[cssLayerComponent]: {
-						fontSize: vars.typography.size[2].fontSize,
-						fontWeight: vars.typography.fontWeight.normal,
+						borderRadius: vars.border.radius.xsmall,
+						fontSize: vars.typography.size[3].fontSize,
+						gap: vars.space[1],
 						height: buttonHeight.xsmall,
-						lineHeight: vars.typography.size[2].lineHeight,
+						lineHeight: vars.typography.size[3].lineHeight,
 						padding: `0 ${vars.space[2]}`,
 					},
 				},
@@ -326,13 +330,16 @@ export const button = recipe({
 				},
 			},
 		},
-		// Miminal appearance variant — Figma's `Style=Ghost`
+		// Minimal appearance variant — Figma's `Style=Minimal (Ghost)`
 		minimal: {
 			true: {
 				'@layer': {
 					[cssLayerComponent]: {
 						backgroundColor: 'transparent',
-						borderStyle: 'none',
+						// Transparent rather than absent: Figma's Minimal has no
+						// border at rest but grows one on hover, and reserving the
+						// 1px here keeps that from nudging the box 2px wider.
+						border: '1px solid transparent',
 						// Ghost carries no elevation. Cleared in every state
 						// the DS-2026 intents set one, or a minimal Primary
 						// would keep the solid button's shadow.
@@ -456,16 +463,25 @@ export const button = recipe({
 				},
 			},
 		},
+		// DS-2026 `Class=Secondary, Style=Minimal (Ghost)` — the only class
+		// Figma specs a Minimal for. The label colour holds through every
+		// state; only the fill and the border move.
 		{
 			variants: { intent: 'secondary', minimal: true },
 			style: {
 				'@layer': {
 					[cssLayerComponent]: {
+						color: buttonColors.secondary.text,
 						selectors: {
-							[selectorFocusHoverActive]: {
-								color: vars.typography.colour.secondary,
-								backgroundColor:
-									intentColors.secondary.background.strong,
+							[selectorFocusHover]: {
+								backgroundColor: buttonColors.secondary.hover,
+								borderColor: buttonColors.secondary.border,
+								color: buttonColors.secondary.text,
+							},
+							[selectorPressed]: {
+								backgroundColor: buttonColors.secondary.pressed,
+								borderColor: buttonColors.secondary.border,
+								color: buttonColors.secondary.text,
 							},
 						},
 					},
@@ -580,14 +596,23 @@ export interface StyledButtonProps {
 	 */
 	rounded?: ButtonRounded;
 	/**
-	 * Present a borderless minimal appearance
+	 * Borderless, fill-less appearance — Figma's `Style=Minimal (Ghost)`.
+	 *
+	 * On `variant="secondary"` this is the DS-2026 Minimal: nothing at rest, a
+	 * wash and a visible border on hover and press. The other intents keep
+	 * their pre-DS-2026 minimal colours; Figma specs a Minimal for Secondary
+	 * only.
+	 *
+	 * Wins over `outlined` — the two are opposites.
 	 */
 	minimal?: ButtonMinimal;
 	/**
-	 * Transparent fill with a brand-coloured border and label.
+	 * Transparent fill with the intent's border and label — Figma's
+	 * `Style=Outlined`.
 	 *
-	 * Currently applies to `variant="primary"` only, and ignored when `minimal`
-	 * is set — the two are opposites.
+	 * Applies to `variant="primary"` (Primary Outlined) and `variant="danger"`
+	 * (Critical Outlined); a no-op on the other intents, which have no outlined
+	 * tokens. Ignored when `minimal` is set.
 	 */
 	outlined?: ButtonOutlined;
 	isFullWidth?: ButtonIsFullWidth;

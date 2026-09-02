@@ -29,19 +29,38 @@ The loading spinner on `primary` now uses the dark treatment. On the old dark
 fill a white spinner was correct; on the new mint fill it measured about 1.4:1
 and was effectively invisible.
 
-**Geometry now matches Figma.** Every size gains an explicit height and the
-label's own line height instead of `line-height: 1`:
+**Geometry and label type now match Figma.** Every size gains an explicit height
+and the label's own line height in place of `line-height: 1`, and each value
+below was read off the Figma frame:
 
-| `size`   | Figma       | height                   | padding             |
-| -------- | ----------- | ------------------------ | ------------------- |
-| `medium` | Large       | 48px → **46px**          | `0 16px`            |
-| `small`  | Small       | 36px (unchanged)         | `0 12px`            |
-| `xsmall` | Extra small | content-sized → **28px** | `2px 8px` → `0 8px` |
+| `size`   | Figma class   | height                   | padding             | gap           | radius        |
+| -------- | ------------- | ------------------------ | ------------------- | ------------- | ------------- |
+| `medium` | `Large`       | 48px → **46px**          | `0 16px`            | 4px → **8px** | 8px           |
+| `small`  | `Small`       | 36px (unchanged)         | `0 12px`            | 4px → **8px** | 8px           |
+| `xsmall` | `Extra small` | content-sized → **28px** | `2px 8px` → `0 8px` | **4px**       | 8px → **4px** |
 
-The gap between an icon and its label moves from 4px to Figma's `space/8`
-(**8px**), and icon-only and pill `medium` buttons follow the height down to
-46px so they stay square. Legacy variants share the recipe's geometry, so they
-move with it — closest match, since they have no Figma frame to read.
+Icon-only and pill `medium` buttons follow the height down to 46px so they stay
+square. Legacy variants share the recipe's geometry and move with it — the
+closest match available, as they have no Figma frame to read.
+
+**Label typography also moves**, which is worth a designer's eye on review:
+
+- The label weight goes from `medium` (500) to **`semiBold` (600)** at every
+  size — Figma's button label is `p1/p2 semibold` throughout. This is the one
+  change that touches the legacy variants' appearance.
+- `xsmall`'s label goes from 12px/18px to **14px/20px**, matching `small`.
+  Figma's Extra small uses the same `p2 semibold` style, not a smaller one, and
+  it still clears the 28px box.
+
+**`minimal` is Figma's `Style=Minimal (Ghost)`**, renamed from `Ghost`. On
+`variant="secondary"` — the only class Figma specs a Minimal for — it now takes
+the DS-2026 tokens: no fill or border at rest, `color.button.secondary.hover`
+with a visible `…/border` on hover, `…/pressed` on press, and a label that holds
+`color.button.secondary.text` through all three. Every `minimal` button now
+carries a transparent 1px border at rest so that hover border cannot nudge the
+box 2px wider; that also brings minimal buttons to the same width as their solid
+counterparts. `minimal` on the other intents keeps its legacy colours — Figma
+has no Minimal for Primary or Critical.
 
 `variant="danger"` gains an **outlined** set (Figma's Critical Outlined),
 following the same rules as Primary Outlined. `outlined` was previously a no-op
