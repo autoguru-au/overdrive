@@ -9,10 +9,67 @@ import { overdriveTokens as vars } from '../../themes/theme.css';
 globalLayer(LAYER_ORDER);
 
 const intentColors = vars.colours.intent;
+const buttonColors = vars.color.button;
 const smallHeight = '36px';
 
 const selectorFocusHoverActive =
 	'&:focus-visible, &:not(:disabled):hover, &:not(:disabled):active';
+
+/**
+ * The DS-2026 intents split hover from press — Figma gives each its own fill
+ * and its own elevation, where the legacy intents collapse both into
+ * `selectorFocusHoverActive`.
+ */
+const selectorFocusHover = '&:focus-visible, &:not(:disabled):hover';
+const selectorPressed = '&:active:not(:disabled, [data-loading])';
+const selectorInert = '&:disabled, &[data-loading]';
+
+/**
+ * Figma lifts the button on hover and presses it in on click — `z2` at rest,
+ * `z3` hovered, `z1` pressed, and no shadow at all once disabled. These map
+ * one-to-one onto the `elevation.z*` tokens, which already carry the Figma
+ * values.
+ */
+const buttonElevation = {
+	rest: vars.elevation.z2,
+	hover: vars.elevation.z3,
+	pressed: vars.elevation.z1,
+} as const;
+
+/**
+ * A DS-2026 filled intent: Figma's `Style=Solid`. `hover` and `pressed` are
+ * passed rather than derived because the classes differ — Primary moves its
+ * fill on hover, Critical keeps the same fill and moves only the elevation.
+ */
+const solidIntent = ({
+	border,
+	fill,
+	hover,
+	pressed,
+	text,
+}: Record<'border' | 'fill' | 'hover' | 'pressed' | 'text', string>) => ({
+	'@layer': {
+		[cssLayerComponent]: {
+			backgroundColor: fill,
+			border: `1px solid ${border}`,
+			boxShadow: buttonElevation.rest,
+			color: text,
+			selectors: {
+				[selectorFocusHover]: {
+					backgroundColor: hover,
+					boxShadow: buttonElevation.hover,
+				},
+				[selectorPressed]: {
+					backgroundColor: pressed,
+					boxShadow: buttonElevation.pressed,
+				},
+				// Figma drops the shadow entirely when disabled; the base
+				// `opacity: 0.3` carries the rest of that state.
+				[selectorInert]: { boxShadow: 'none' },
+			},
+		},
+	},
+});
 
 export const hiddenContent = style({ visibility: 'hidden' });
 export const spinnerWrapper = sprinkles({
@@ -110,20 +167,15 @@ export const button = recipe({
 		},
 		// Intent (color scheme) variants
 		intent: {
-			primary: {
-				'@layer': {
-					[cssLayerComponent]: {
-						backgroundColor:
-							intentColors.primary.background.standard,
-						color: intentColors.primary.foreground,
-						[selectorFocusHoverActive]: {
-							backgroundColor:
-								intentColors.primary.background.strong,
-							color: intentColors.primary.foreground,
-						},
-					},
-				},
-			},
+			// DS-2026 `Class=Primary, Style=Solid`. The fill lightens on hover
+			// and deepens to the border colour on press.
+			primary: solidIntent({
+				border: buttonColors.primary.solid.border,
+				fill: buttonColors.primary.solid.default,
+				hover: buttonColors.primary.solid.hover,
+				pressed: buttonColors.primary.solid.pressed,
+				text: buttonColors.primary.solid.text,
+			}),
 			brand: {
 				'@layer': {
 					[cssLayerComponent]: {
@@ -136,37 +188,37 @@ export const button = recipe({
 					},
 				},
 			},
+			// DS-2026 `Class=Secondary, Style=Outlined` — transparent at rest,
+			// washing in on hover and press. Figma gives it no elevation, so
+			// the border keeps its colour throughout rather than tracking the
+			// fill the way the legacy intent did.
 			secondary: {
 				'@layer': {
 					[cssLayerComponent]: {
-						backgroundColor:
-							intentColors.secondary.background.standard,
-						border: `1px solid ${intentColors.secondary.border}`,
-						color: intentColors.secondary.foreground,
+						backgroundColor: 'transparent',
+						border: `1px solid ${buttonColors.secondary.border}`,
+						color: buttonColors.secondary.text,
 						selectors: {
-							[selectorFocusHoverActive]: {
-								backgroundColor:
-									intentColors.secondary.background.strong,
-								borderColor:
-									intentColors.secondary.background.strong,
+							[selectorFocusHover]: {
+								backgroundColor: buttonColors.secondary.hover,
+							},
+							[selectorPressed]: {
+								backgroundColor: buttonColors.secondary.pressed,
 							},
 						},
 					},
 				},
 			},
-			danger: {
-				'@layer': {
-					[cssLayerComponent]: {
-						backgroundColor:
-							intentColors.danger.background.standard,
-						color: intentColors.danger.foreground,
-						[selectorFocusHoverActive]: {
-							backgroundColor:
-								intentColors.danger.background.strong,
-						},
-					},
-				},
-			},
+			// DS-2026 `Class=Critical, Style=Solid`. Unlike Primary the fill
+			// holds on hover — Figma moves only the elevation — and deepens to
+			// the border colour on press.
+			danger: solidIntent({
+				border: buttonColors.critical.solid.border,
+				fill: buttonColors.critical.solid.default,
+				hover: buttonColors.critical.solid.default,
+				pressed: buttonColors.critical.solid.pressed,
+				text: buttonColors.critical.solid.text,
+			}),
 			information: {
 				'@layer': {
 					[cssLayerComponent]: {
@@ -207,14 +259,22 @@ export const button = recipe({
 				},
 			},
 		},
-		// Miminal appearance variant
+		// Miminal appearance variant — Figma's `Style=Ghost`
 		minimal: {
 			true: {
 				'@layer': {
 					[cssLayerComponent]: {
 						backgroundColor: 'transparent',
 						borderStyle: 'none',
+						// Ghost carries no elevation. Cleared in every state
+						// the DS-2026 intents set one, or a minimal Primary
+						// would keep the solid button's shadow.
+						boxShadow: 'none',
 						color: vars.color.foreground.secondary,
+						selectors: {
+							[selectorFocusHover]: { boxShadow: 'none' },
+							[selectorPressed]: { boxShadow: 'none' },
+						},
 					},
 				},
 			},
@@ -419,6 +479,10 @@ export const button = recipe({
 						// intent primary sets this too, at equal specificity.
 						backgroundColor: 'transparent',
 						border: `1px solid ${vars.color.button.primary.outlined.border}`,
+						// Figma's Outlined carries no elevation, so the shadow
+						// `intent: primary` now sets has to be cleared in every
+						// state it sets one.
+						boxShadow: 'none',
 						color: vars.color.button.primary.outlined.text,
 						selectors: {
 							'&:focus-visible, &:not(:disabled):hover': {
@@ -426,6 +490,7 @@ export const button = recipe({
 									vars.color.button.primary.outlined.hover,
 								borderColor:
 									vars.color.button.primary.outlined.border,
+								boxShadow: 'none',
 								color: vars.color.button.primary.outlined.text,
 							},
 							'&:active:not(:disabled, [data-loading])': {
@@ -435,6 +500,7 @@ export const button = recipe({
 								// (0,3,0) beats this variant's `:focus-visible`.
 								borderColor:
 									vars.color.button.primary.outlined.border,
+								boxShadow: 'none',
 								color: vars.color.button.primary.outlined.text,
 							},
 						},

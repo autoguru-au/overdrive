@@ -221,10 +221,9 @@ export const SecondarySet: Story = {
  * This is Figma's **Critical** class. In code the prop value is
  * `variant="danger"`, kept for backwards compatibility.
  *
- * _Colour caveat:_ this still fills from the legacy `colours.intent.danger`
- * (red600 `#d42b26`). Figma's `color.button.critical.solid.default` is red500
- * `#e12e28` — one shade lighter. Those tokens exist in the theme but Button does
- * not consume them yet; that repoint is W3a-P1's job, not a docs change.
+ * Fills from `color.button.critical.solid.*`. Unlike Primary the fill holds on
+ * hover — Figma moves only the elevation — and deepens to the border colour on
+ * press.
  */
 export const CriticalSet: Story = {
 	decorators: PrimarySet.decorators,

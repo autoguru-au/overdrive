@@ -633,7 +633,7 @@ exports[`<Button /> > renders the primary set of buttons story > primary-button-
       class="Button__p2yon51 sprinkles_justifyContent_center_mobile__onxwju11u sprinkles_alignItems_center_mobile__onxwju106 sprinkles_display_grid_mobile__onxwjufi sprinkles_position_absolute_mobile__onxwjuhe sprinkles_width_full_mobile__onxwjut6"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 ProgressSpinner_size_medium_circular__1kpufmic ProgressSpinner_colours_light__1kpufmi6"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 ProgressSpinner_size_medium_circular__1kpufmic ProgressSpinner_colours_secondary__1kpufmi8"
         data-od-component="progress-spinner"
       >
         <svg
@@ -903,7 +903,7 @@ exports[`<Button /> > renders the primary set of buttons story > primary-button-
       class="Button__p2yon51 sprinkles_justifyContent_center_mobile__onxwju11u sprinkles_alignItems_center_mobile__onxwju106 sprinkles_display_grid_mobile__onxwjufi sprinkles_position_absolute_mobile__onxwjuhe sprinkles_width_full_mobile__onxwjut6"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 ProgressSpinner_size_medium_circular__1kpufmic ProgressSpinner_colours_light__1kpufmi6"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 ProgressSpinner_size_medium_circular__1kpufmic ProgressSpinner_colours_secondary__1kpufmi8"
         data-od-component="progress-spinner"
       >
         <svg

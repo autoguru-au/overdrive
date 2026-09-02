@@ -108,8 +108,9 @@ export const calcIconSize = (size: ButtonProps['size']) =>
  * | **Secondary** | We don't mind either way — optional, and not a path we are pushing them down. | `variant="secondary"` |
  * | **Critical** | Not something we want them to do unless they are sure. Destructive, so pair it with a confirmation. | `variant="danger"` |
  *
- * `information`, `warning` and `success` are legacy status variants, not part of
- * the DS-2026 button classes. Prefer the four above for new work.
+ * `brand`, `information`, `warning` and `success` are legacy variants, not part
+ * of the DS-2026 button classes. They keep their pre-DS-2026 colours and have no
+ * Figma counterpart — prefer the four above for new work.
  *
  * By default the button will have a disabled timeout to avoid multiple rapid clicks.
  * To prevent this feature, use the `withDoubleClicks` prop.
@@ -176,7 +177,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 		const language = { ...LOCALE_TEXT_DEFAULT, ...localeText };
 		// `minimal` wins; primary-only because only it has outlined tokens.
 		const isOutlined = outlined && !minimal && variant === 'primary';
-		const isInverse = minimal || isOutlined || variant === 'secondary';
+		// Which fills need the dark spinner. DS-2026 turned `primary` into a
+		// mint fill with a near-black label, so a light spinner on it is about
+		// 1.4:1 — `critical` keeps a white label on red and stays light.
+		const hasDarkLabel = variant === 'primary' || variant === 'secondary';
+		const isInverse = minimal || isOutlined || hasDarkLabel;
 		const isSingleIconChild = useMemo(
 			() =>
 				isValidElement(children) &&
