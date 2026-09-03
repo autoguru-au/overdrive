@@ -249,36 +249,43 @@ const deriveLinkForSurface = (
 const changedFrom = (supplied: string, derived: string | null): boolean =>
 	derived !== null && derived.toLowerCase() !== supplied.toLowerCase();
 
-/** Dev-only account of what the supplied link colour actually became. */
+/**
+ * Dev-only account of what the supplied link colour actually became.
+ *
+ * `sourceKey` names the override the colour came from — it is not always
+ * `linkColor`, which defaults from `primaryBackground` when absent, and a
+ * warning naming a key the consumer never passed sends them hunting.
+ */
 const warnOnLinkDerivation = (
 	supplied: string,
 	onLight: string | null,
 	onDark: string | null,
 	theme: ThemeContext,
+	sourceKey: 'linkColor' | 'primaryBackground' = 'linkColor',
 ) => {
 	if (!canMeasureContrast(supplied)) {
 		warnOnce(
-			`Overdrive Provider: linkColor (${supplied}) is not a colour this can measure — contrast against it cannot be checked, so links and focus rings keep the theme's own colour. Supply a hex, rgb(), hsl() or CSS named colour.`,
+			`Overdrive Provider: ${sourceKey} (${supplied}) is not a colour this can measure — contrast against it cannot be checked, so links and focus rings keep the theme's own colour. Supply a hex, rgb(), hsl() or CSS named colour.`,
 		);
 		return;
 	}
 
 	if (onLight === null)
 		warnOnce(
-			`Overdrive Provider: linkColor (${supplied}) cannot reach WCAG AA (4.5:1) against ${theme.lightSurface} without losing the brand. Links and focus rings on light surfaces keep the theme's own link colour.`,
+			`Overdrive Provider: ${sourceKey} (${supplied}) cannot reach WCAG AA (4.5:1) against ${theme.lightSurface} without losing the brand. Links and focus rings on light surfaces keep the theme's own link colour.`,
 		);
 	else if (changedFrom(supplied, onLight))
 		warnOnce(
-			`Overdrive Provider: linkColor (${supplied}) does not meet WCAG AA (4.5:1) on light surfaces. Using ${onLight} for links and focus rings there instead.`,
+			`Overdrive Provider: ${sourceKey} (${supplied}) does not meet WCAG AA (4.5:1) on light surfaces. Using ${onLight} for links and focus rings there instead.`,
 		);
 
 	if (onDark === null)
 		warnOnce(
-			`Overdrive Provider: linkColor (${supplied}) cannot reach WCAG AA (4.5:1) against ${theme.darkSurface} without losing the brand. Links on dark surfaces keep the theme's own link colour.`,
+			`Overdrive Provider: ${sourceKey} (${supplied}) cannot reach WCAG AA (4.5:1) against ${theme.darkSurface} without losing the brand. Links on dark surfaces keep the theme's own link colour.`,
 		);
 	else if (changedFrom(supplied, onDark))
 		warnOnce(
-			`Overdrive Provider: linkColor (${supplied}) does not meet WCAG AA (4.5:1) on dark surfaces. Using ${onDark} there instead.`,
+			`Overdrive Provider: ${sourceKey} (${supplied}) does not meet WCAG AA (4.5:1) on dark surfaces. Using ${onDark} there instead.`,
 		);
 };
 
@@ -373,21 +380,37 @@ export const useColorOverrides = (
 			});
 		}
 
+		// Links and focus rings default to the brand. A tenant that supplies
+		// only `primaryBackground` used to get branded buttons beside
+		// base-theme green links and focus rings, which reads as a bug rather
+		// than a choice — and both documented brands pass `linkColor` equal to
+		// `primaryBackground` anyway. An explicit `linkColor` still wins, for
+		// the brands whose accent is not a legible link.
+		const linkSource = linkColor ?? primaryBackground;
+		const linkSourceKey = linkColor ? 'linkColor' : 'primaryBackground';
+
 		// One inline var serves every surface, so a single link colour cannot be
 		// right on both a white page and a gray-900 header. Derive one for each
 		// and let each painted surface point at the one that suits its fill —
-		// see `withSurfaceLinkVars` in sprinkles.
-		const linkOnLight = linkColor
-			? deriveLinkForSurface(linkColor, theme.lightSurface)
+		// see `withSurfaceLinkVars` in sprinkles. Either may come back null,
+		// which leaves that surface on the theme's own link colour.
+		const linkOnLight = linkSource
+			? deriveLinkForSurface(linkSource, theme.lightSurface)
 			: null;
-		const linkOnDark = linkColor
-			? deriveLinkForSurface(linkColor, theme.darkSurface)
+		const linkOnDark = linkSource
+			? deriveLinkForSurface(linkSource, theme.darkSurface)
 			: null;
 
 		if (process.env.NODE_ENV !== 'production') {
 			warnOnLowContrast(primaryBackground, 'primaryBackground', theme);
-			if (linkColor)
-				warnOnLinkDerivation(linkColor, linkOnLight, linkOnDark, theme);
+			if (linkSource)
+				warnOnLinkDerivation(
+					linkSource,
+					linkOnLight,
+					linkOnDark,
+					theme,
+					linkSourceKey,
+				);
 		}
 
 		// slightly messy use of ts-expect-error but assignInlineVars only generates css vars to apply to a container

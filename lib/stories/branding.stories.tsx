@@ -39,17 +39,23 @@ const BRANDS: Brand[] = [
 		overrides: {
 			primaryBackground: '#6d39a8',
 			primaryForeground: '#ffffff',
-			linkColor: '#6d39a8',
 		},
-		note: 'A dark brand, with its on-brand content supplied as white.',
+		note: 'A dark brand, with its on-brand content supplied as white. Only two values passed — links and focus rings default from the brand.',
 	},
 	{
-		name: 'Amber',
+		name: 'Amber (one colour)',
 		overrides: {
 			primaryBackground: '#e5bc01',
-			linkColor: '#e5bc01',
 		},
-		note: 'A bright brand: on-brand content derives as dark ink, and the link darkens to stay legible on pale surfaces.',
+		note: 'The whole card from a single value. On-brand content derives as dark ink, and the link darkens to #705c00 to stay legible on pale surfaces while keeping the brand on dark ones.',
+	},
+	{
+		name: 'Amber + explicit link',
+		overrides: {
+			primaryBackground: '#e5bc01',
+			linkColor: '#0b5cd5',
+		},
+		note: 'An explicit linkColor wins over the brand — for a brand whose accent does not make a legible link.',
 	},
 ];
 
@@ -114,8 +120,9 @@ const SelectionControls = ({ idPrefix }: { idPrefix: string }) => (
 );
 
 /**
- * Only moves when `linkColor` is passed. The supplied colour is not used
- * verbatim: one inline var serves every surface, so it is shaded per surface
+ * Defaults from `primaryBackground`, and `linkColor` overrides it. The colour
+ * is not used verbatim: one inline var serves every surface, so it is shaded per
+ * surface
  * until it clears 4.5:1 — darker for a pale card, lighter for a dark fill. The
  * dark Box below carries no extra class; `backgroundColor` picks the surface's
  * link colour on its own. The same token drives every focus ring in the
@@ -123,7 +130,7 @@ const SelectionControls = ({ idPrefix }: { idPrefix: string }) => (
  */
 const OptInGroup = () => (
 	<Stack space="2">
-		<GroupLabel>Opt-in — needs linkColor</GroupLabel>
+		<GroupLabel>Links — from the brand, or linkColor</GroupLabel>
 		<FlexInline gap="4" justify="center">
 			<TextLink href="#branding">A link</TextLink>
 			<Text colour="primary">colour=&quot;primary&quot;</Text>

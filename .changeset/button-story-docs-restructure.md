@@ -143,3 +143,26 @@ Because a loading button is now focusable, `[data-loading]` is excluded from the
 hover, press and `:focus-visible` fill selectors — otherwise tabbing onto one
 mid-request would light it up. The focus ring is unaffected; it comes from
 `focusOutlineStyle`, so a focused loading button still shows where focus is.
+
+## `linkColor` defaults from `primaryBackground`
+
+A tenant supplying only `primaryBackground` used to get branded buttons beside
+base-theme green links and focus rings — the DS-2026 button work made that
+mismatch more obvious, since more of the page now follows the brand. Links and
+focus rings now default from the brand, and an explicit `linkColor` still wins
+for brands whose accent does not make a legible link.
+
+The colour is still derived per surface rather than used verbatim, so it stays
+above 4.5:1 on both light and dark fills. From `primaryBackground: '#e5bc01'`:
+
+| surface | link colour                                                   |
+| ------- | ------------------------------------------------------------- |
+| light   | `#705c00` (darkened — the raw amber cannot reach AA on white) |
+| dark    | `#e5bc01` (the brand, which already clears AA there)          |
+
+If neither surface can reach AA without losing the brand, that surface keeps the
+theme's own link colour and a dev-mode warning says so — unchanged.
+
+⚠️ **Visual change for any tenant that supplies `primaryBackground` without
+`linkColor`**: links and focus rings move from the theme's green to their brand.
+Pass `linkColor` explicitly to keep the previous colour.

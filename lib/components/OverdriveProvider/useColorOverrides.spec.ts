@@ -202,22 +202,30 @@ describe('useColorOverrides', () => {
 	});
 
 	describe('links and focus rings', () => {
-		it('leaves them alone when only a brand background is supplied', () => {
+		it('defaults them from the brand when linkColor is absent', () => {
+			// A tenant supplying only `primaryBackground` used to get branded
+			// buttons beside base-theme green links and focus rings.
 			const result = vars({ primaryBackground: BRAND });
-			expect(result['--od-colours-foreground-link']).toBeUndefined();
-			expect(result['--od-typography-colour-link']).toBeUndefined();
-			expect(
-				result['--od-color-interactive-link-on-dark'],
-			).toBeUndefined();
-		});
-
-		it('brands them only when linkColor is passed explicitly', () => {
-			const result = vars({
-				primaryBackground: BRAND,
-				linkColor: BRAND,
-			});
 			expect(result['--od-colours-foreground-link']).toBe(BRAND);
 			expect(result['--od-typography-colour-link']).toBe(BRAND);
+			expect(result['--od-color-interactive-link-on-dark']).toBeDefined();
+		});
+
+		it('lets an explicit linkColor win over the brand', () => {
+			const link = '#0b5cd5';
+			const result = vars({
+				primaryBackground: BRAND,
+				linkColor: link,
+			});
+			// Derived for the light surface, so not necessarily verbatim — the
+			// point is that it tracks `linkColor`, not `primaryBackground`.
+			expect(result['--od-colours-foreground-link']).not.toBe(BRAND);
+			expect(result['--od-typography-colour-link']).not.toBe(BRAND);
+		});
+
+		it('brands them from linkColor alone, with no brand background', () => {
+			const result = vars({ linkColor: BRAND });
+			expect(result['--od-colours-foreground-link']).toBe(BRAND);
 		});
 
 		// One inline var serves every surface, so a brand legible on a white
@@ -388,10 +396,16 @@ describe('useColorOverrides', () => {
 
 		it('warns only once for a repeated colour, since the provider re-renders freely', () => {
 			const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+			// A pale brand can trip more than one warning — low contrast on the
+			// page, and the link derivation it now also feeds. What matters is
+			// that repeating the call adds nothing, so count the first call's
+			// output rather than hard-coding a number.
+			vars({ primaryBackground: '#ffe08a' });
+			const afterFirst = warn.mock.calls.length;
+			expect(afterFirst).toBeGreaterThan(0);
 			vars({ primaryBackground: '#ffe08a' });
 			vars({ primaryBackground: '#ffe08a' });
-			vars({ primaryBackground: '#ffe08a' });
-			expect(warn).toHaveBeenCalledTimes(1);
+			expect(warn).toHaveBeenCalledTimes(afterFirst);
 		});
 	});
 
