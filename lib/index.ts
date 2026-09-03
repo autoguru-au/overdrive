@@ -15,6 +15,7 @@ export {
 	Bullet,
 	BulletText,
 	Button,
+	type ButtonProps,
 	Calendar,
 	type CalendarProps,
 	CheckBox,

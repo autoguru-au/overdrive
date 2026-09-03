@@ -176,10 +176,15 @@ describe('<Button />', () => {
 	// Test loading state
 	it('shows loading state and disables button when isLoading is true', () => {
 		render(<Button isLoading>Loading button</Button>);
-		const button = screen.getByRole('button', { name: 'loading' });
+		// The label survives loading rather than being replaced by it, and
+		// `aria-busy` carries the state. Asserted as the exact name so a
+		// regression to "loading" alone, or a reordering, both fail here.
+		const button = screen.getByRole('button');
+		expect(button).toHaveAccessibleName('Loading button loading');
 		expect(button).toBeDisabled();
 		expect(button).toHaveAttribute('data-loading');
-		expect(button).toHaveAttribute('aria-label', 'loading');
+		expect(button).toHaveAttribute('aria-busy', 'true');
+		expect(button).not.toHaveAttribute('aria-label');
 	});
 
 	// Test icon-only buttons

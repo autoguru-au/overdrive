@@ -142,7 +142,12 @@ const solidIntent = ({
 	},
 });
 
-export const hiddenContent = style({ visibility: 'hidden' });
+/**
+ * Holds the button's width while the spinner is shown. `opacity` rather than
+ * `visibility: hidden`, which would drop the label out of the accessibility
+ * tree and leave the button announcing only "loading".
+ */
+export const hiddenContent = style({ opacity: 0 });
 export const spinnerWrapper = sprinkles({
 	display: 'grid',
 	placeItems: 'center',
@@ -629,6 +634,12 @@ export interface StyledButtonProps {
 	 * tokens. Ignored when `minimal` is set.
 	 */
 	outlined?: ButtonOutlined;
+	/**
+	 * Stretches the button to the full width of its container.
+	 */
 	isFullWidth?: ButtonIsFullWidth;
+	/**
+	 * Swaps the content for a progress spinner and disables the button.
+	 */
 	isLoading?: ButtonIsLoading;
 }

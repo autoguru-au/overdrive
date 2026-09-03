@@ -20,6 +20,7 @@ import type { TestIdProp } from '../../types';
 import { useBox } from '../Box/useBox/useBox';
 import { Icon, type IconProps } from '../Icon/Icon';
 import { ProgressSpinner } from '../ProgressSpinner/ProgressSpinner';
+import { VisuallyHidden } from '../VisuallyHidden/VisuallyHidden';
 
 import * as styles from './Button.css';
 import type { StyledButtonProps } from './Button.css';
@@ -65,13 +66,36 @@ export interface ButtonProps
 	 * Disabling the button will prevent it from receiving keyboard focus or click events
 	 */
 	disabled?: boolean;
+	/**
+	 * Element or component to render as, in place of `<button>`.
+	 *
+	 * Accepts a component type or an element to clone — pass an element when it
+	 * needs its own props, e.g. `as={<a href="/pricing" />}`. Cannot be an HTML
+	 * tag name; `<button>` is what carries the interactive and disabled
+	 * semantics, so reach for an interactive element rather than a `<div>`.
+	 */
 	as?: ElementType | ReactElement;
+	/**
+	 * Swaps the button's content for a progress spinner and disables it, for
+	 * on-page data handling. The label stays in the DOM but hidden, so the
+	 * button keeps its width.
+	 */
 	isLoading?: boolean;
+	/**
+	 * Stretches the button to the full width of its container.
+	 */
 	isFullWidth?: boolean;
 	/**
 	 * Pill shaped button appearance
 	 */
 	rounded?: boolean;
+	/**
+	 * Allows rapid repeat clicks.
+	 *
+	 * By default the button disables itself for 700ms after a click to swallow
+	 * accidental double submissions; set this when repeat clicks are the point,
+	 * such as a stepper or a counter.
+	 */
 	withDoubleClicks?: boolean;
 	/**
 	 * Language content overrides
@@ -81,13 +105,21 @@ export interface ButtonProps
 
 const Spinner = ({
 	isInverse,
+	label,
 	children,
-}: PropsWithChildren<{ isInverse: boolean }>) => (
+}: PropsWithChildren<{ isInverse: boolean; label: string }>) => (
 	<>
-		<div className={styles.spinnerWrapper}>
+		{/* The spinner itself is decoration; `label` is what reaches assistive
+		    technology, appended to the button's own label rather than replacing
+		    it — "Submit loading", not "loading". */}
+		<div aria-hidden className={styles.spinnerWrapper}>
 			<ProgressSpinner colour={isInverse ? 'secondary' : 'light'} />
 		</div>
+		{/* `opacity`, not `visibility: hidden` — the label has to stay in the
+		    accessibility tree while it makes room for the spinner. */}
 		<div className={styles.hiddenContent}>{children}</div>
+		{/* After the label, so the name reads "Submit loading". */}
+		<VisuallyHidden>{label}</VisuallyHidden>
 	</>
 );
 
@@ -211,6 +243,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			as,
 			disabled: disabled || isLoading,
 			id,
+			odComponent: 'button',
 			testId,
 			type: as === 'button' ? type : undefined,
 
@@ -229,7 +262,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			],
 			pointerEvents: functionallyDisabled ? 'none' : undefined,
 
-			'aria-label': isLoading ? language.loading : ariaLabel,
+			'aria-label': ariaLabel,
+			'aria-busy': isLoading || undefined,
 			'aria-controls': ariaControls,
 			'aria-describedby': ariaDescribedBy,
 			'aria-expanded': ariaExpanded,
@@ -271,7 +305,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 		}, [functionallyDisabled]);
 
 		const child = isLoading ? (
-			<Spinner isInverse={isInverse}>{buttonContents}</Spinner>
+			<Spinner isInverse={isInverse} label={language.loading}>
+				{buttonContents}
+			</Spinner>
 		) : (
 			buttonContents
 		);

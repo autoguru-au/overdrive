@@ -82,3 +82,38 @@ they have no Figma counterpart, and are not part of the DS-2026 button classes.
 Also restructures the variant stories to follow the Figma classes, adds a
 **Critical Set** story for `variant="danger"` (previously the only variant with
 no story), and documents when to reach for each.
+
+## Accessibility: the loading state keeps the button's name
+
+`isLoading` used to replace the accessible name with the `localeText.loading`
+word, and hid the label with `visibility: hidden` — which also removes it from
+the accessibility tree. A screen reader announced "loading" with no indication
+of _what_ was loading, and nothing marked the button busy.
+
+The label now survives: `aria-label` is no longer overwritten,
+`aria-busy="true"` carries the state, `hiddenContent` holds the button's width
+with `opacity: 0` instead, and the loading word rides in a `VisuallyHidden`
+after the label. The spinner is `aria-hidden`, as decoration.
+
+⚠️ **This changes the accessible name while loading** — `"Submit"` becomes
+`"Submit loading"`, where it was `"loading"` alone. Any test querying a loading
+button by exact name, or asserting `aria-label === 'loading'`, needs updating:
+
+```diff
+- screen.getByRole('button', { name: 'loading' })
++ screen.getByRole('button', { name: 'Submit loading' })
+```
+
+`localeText.loading` still supplies that word, so existing overrides keep
+working.
+
+## `ButtonProps` is now exported
+
+`Button` was already in both public barrels but its props type was not, unlike
+its siblings `SplitButtonProps` and `ToggleButtonsProps`. `type ButtonProps` is
+now exported from `@autoguru/overdrive`.
+
+## Also
+
+`Button`'s root element now carries `data-od-component="button"`, matching the
+house convention and the 38 other components that set it.
