@@ -232,16 +232,29 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
 		const onClick = useCallback<MouseEventHandler<HTMLButtonElement>>(
 			(event) => {
+				// `aria-disabled` is advisory only, so the guard the native
+				// `disabled` attribute used to give us has to live here —
+				// including for Enter and Space, which arrive as clicks.
+				if (isLoading) {
+					event.preventDefault();
+					event.stopPropagation();
+					return;
+				}
 				if (!withDoubleClicks) setFunctionallyDisabled(true);
 				if (typeof incomingOnClick === 'function')
 					incomingOnClick(event);
 			},
-			[withDoubleClicks, incomingOnClick],
+			[isLoading, withDoubleClicks, incomingOnClick],
 		);
 
 		const { Component, componentProps } = useBox({
 			as,
-			disabled: disabled || isLoading,
+			// Loading deliberately does NOT set the native attribute: a
+			// `disabled` element leaves the tab order, so focus would jump to
+			// the body the moment the button was pressed and the user would
+			// never hear the busy state. `aria-disabled` keeps it focusable and
+			// announced; `onClick` above enforces the inertness.
+			disabled,
 			id,
 			odComponent: 'button',
 			testId,
@@ -264,6 +277,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
 			'aria-label': ariaLabel,
 			'aria-busy': isLoading || undefined,
+			// Only while loading — on a genuinely `disabled` button the native
+			// attribute already conveys this, and both would be redundant.
+			'aria-disabled': isLoading || undefined,
 			'aria-controls': ariaControls,
 			'aria-describedby': ariaDescribedBy,
 			'aria-expanded': ariaExpanded,

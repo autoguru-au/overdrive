@@ -117,3 +117,29 @@ now exported from `@autoguru/overdrive`.
 
 `Button`'s root element now carries `data-od-component="button"`, matching the
 house convention and the 38 other components that set it.
+
+## Loading no longer disables the button natively
+
+`isLoading` used to set the native `disabled` attribute, which removes the
+element from the tab order — so focus jumped to the body the moment the button
+was pressed, and the busy state was never announced. It now sets `aria-disabled`
+instead and keeps the button focusable, with `onClick` enforcing the inertness
+that the attribute used to give for free (Enter and Space arrive as clicks, so
+keyboard is covered).
+
+⚠️ **`expect(button).toBeDisabled()` no longer passes for a loading button.**
+Assert the ARIA state instead:
+
+```diff
+- expect(button).toBeDisabled();
++ expect(button).toHaveAttribute('aria-disabled', 'true');
+```
+
+A genuinely `disabled` button is unchanged — still natively disabled, still
+`opacity: 0.3`, still out of the tab order, and it does _not_ gain a redundant
+`aria-disabled`.
+
+Because a loading button is now focusable, `[data-loading]` is excluded from the
+hover, press and `:focus-visible` fill selectors — otherwise tabbing onto one
+mid-request would light it up. The focus ring is unaffected; it comes from
+`focusOutlineStyle`, so a focused loading button still shows where focus is.

@@ -174,17 +174,39 @@ describe('<Button />', () => {
 	});
 
 	// Test loading state
-	it('shows loading state and disables button when isLoading is true', () => {
+	it('shows loading state and marks the button busy when isLoading is true', () => {
 		render(<Button isLoading>Loading button</Button>);
 		// The label survives loading rather than being replaced by it, and
 		// `aria-busy` carries the state. Asserted as the exact name so a
 		// regression to "loading" alone, or a reordering, both fail here.
 		const button = screen.getByRole('button');
 		expect(button).toHaveAccessibleName('Loading button loading');
-		expect(button).toBeDisabled();
 		expect(button).toHaveAttribute('data-loading');
 		expect(button).toHaveAttribute('aria-busy', 'true');
+		expect(button).toHaveAttribute('aria-disabled', 'true');
 		expect(button).not.toHaveAttribute('aria-label');
+		// Deliberately NOT natively disabled: that removes the button from the
+		// tab order, so focus would leave it and the busy state would never be
+		// announced.
+		expect(button).not.toBeDisabled();
+		button.focus();
+		expect(button).toHaveFocus();
+	});
+
+	it('swallows clicks while loading, since aria-disabled is advisory', async () => {
+		const handleClick = vi.fn();
+		render(
+			<Button isLoading onClick={handleClick}>
+				Submit
+			</Button>,
+		);
+
+		const button = screen.getByRole('button');
+		await fireEvent.click(button);
+		// Enter and Space both arrive as clicks, so this covers keyboard too.
+		await fireEvent.keyDown(button, { key: 'Enter' });
+
+		expect(handleClick).not.toHaveBeenCalled();
 	});
 
 	// Test icon-only buttons

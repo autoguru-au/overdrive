@@ -64,9 +64,14 @@ const GroupLabel = ({ children }: { children: ReactNode }) => (
 );
 
 /**
- * Driven by `primaryBackground`. The solid button rides the legacy
- * `colours.intent.primary.*` tokens; the outlined one rides the DS 2026
- * `color.button.primary.outlined.*` set.
+ * Driven by `primaryBackground` alone — everything else derives from it.
+ *
+ * Both buttons now ride the DS-2026 `color.button.primary.*` sets: the solid
+ * one `…/solid.*` (it used to read the legacy `colours.intent.primary.*`), the
+ * outlined one `…/outlined.*`. From one supplied colour, `useColorOverrides`
+ * produces nine button values — the fill verbatim, hover, pressed and border
+ * shaded from it, and the label picked for contrast, so a pale brand gets dark
+ * ink and a dark brand gets white.
  */
 const ChangesWithBrand = () => (
 	<Stack space="2">

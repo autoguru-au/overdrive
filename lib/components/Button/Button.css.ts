@@ -42,15 +42,25 @@ const buttonText = {
 	xsmall: vars.typography.size.p2,
 } as const;
 
+/**
+ * `[data-loading]` is excluded from every branch, `:focus-visible` included,
+ * because a loading button is no longer natively disabled — it stays focusable
+ * so the busy state can be announced. Without the exclusion a keyboard user
+ * tabbing onto it, or hovering it, would see the hover fill mid-request.
+ *
+ * The focus *ring* is unaffected: it comes from `focusOutlineStyle`, not from
+ * here, so a focused loading button still shows where focus is.
+ */
 const selectorFocusHoverActive =
-	'&:focus-visible, &:not(:disabled):hover, &:not(:disabled):active';
+	'&:focus-visible:not([data-loading]), &:not(:disabled, [data-loading]):hover, &:not(:disabled, [data-loading]):active';
 
 /**
  * The DS-2026 intents split hover from press — Figma gives each its own fill
  * and its own elevation, where the legacy intents collapse both into
  * `selectorFocusHoverActive`.
  */
-const selectorFocusHover = '&:focus-visible, &:not(:disabled):hover';
+const selectorFocusHover =
+	'&:focus-visible:not([data-loading]), &:not(:disabled, [data-loading]):hover';
 const selectorPressed = '&:active:not(:disabled, [data-loading])';
 const selectorInert = '&:disabled, &[data-loading]';
 
