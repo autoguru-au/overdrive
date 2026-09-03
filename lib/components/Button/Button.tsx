@@ -20,6 +20,7 @@ import type { TestIdProp } from '../../types';
 import { useBox } from '../Box/useBox/useBox';
 import { Icon, type IconProps } from '../Icon/Icon';
 import { ProgressSpinner } from '../ProgressSpinner/ProgressSpinner';
+import { VisuallyHidden } from '../VisuallyHidden/VisuallyHidden';
 
 import * as styles from './Button.css';
 import type { StyledButtonProps } from './Button.css';
@@ -65,13 +66,36 @@ export interface ButtonProps
 	 * Disabling the button will prevent it from receiving keyboard focus or click events
 	 */
 	disabled?: boolean;
+	/**
+	 * Element or component to render as, in place of `<button>`.
+	 *
+	 * Accepts a component type or an element to clone — pass an element when it
+	 * needs its own props, e.g. `as={<a href="/pricing" />}`. Cannot be an HTML
+	 * tag name; `<button>` is what carries the interactive and disabled
+	 * semantics, so reach for an interactive element rather than a `<div>`.
+	 */
 	as?: ElementType | ReactElement;
+	/**
+	 * Swaps the button's content for a progress spinner and disables it, for
+	 * on-page data handling. The label stays in the DOM but hidden, so the
+	 * button keeps its width.
+	 */
 	isLoading?: boolean;
+	/**
+	 * Stretches the button to the full width of its container.
+	 */
 	isFullWidth?: boolean;
 	/**
 	 * Pill shaped button appearance
 	 */
 	rounded?: boolean;
+	/**
+	 * Allows rapid repeat clicks.
+	 *
+	 * By default the button disables itself for 700ms after a click to swallow
+	 * accidental double submissions; set this when repeat clicks are the point,
+	 * such as a stepper or a counter.
+	 */
 	withDoubleClicks?: boolean;
 	/**
 	 * Language content overrides
@@ -81,13 +105,21 @@ export interface ButtonProps
 
 const Spinner = ({
 	isInverse,
+	label,
 	children,
-}: PropsWithChildren<{ isInverse: boolean }>) => (
+}: PropsWithChildren<{ isInverse: boolean; label: string }>) => (
 	<>
-		<div className={styles.spinnerWrapper}>
+		{/* The spinner itself is decoration; `label` is what reaches assistive
+		    technology, appended to the button's own label rather than replacing
+		    it — "Submit loading", not "loading". */}
+		<div aria-hidden className={styles.spinnerWrapper}>
 			<ProgressSpinner colour={isInverse ? 'secondary' : 'light'} />
 		</div>
+		{/* `opacity`, not `visibility: hidden` — the label has to stay in the
+		    accessibility tree while it makes room for the spinner. */}
 		<div className={styles.hiddenContent}>{children}</div>
+		{/* After the label, so the name reads "Submit loading". */}
+		<VisuallyHidden>{label}</VisuallyHidden>
 	</>
 );
 
@@ -97,6 +129,21 @@ export const calcIconSize = (size: ButtonProps['size']) =>
 /**
  * The Button supports a variety of appearances and is one of the main interactive Overdrive
  * components. `variant`, `size` and `rounded` provide the main choices.
+ *
+ * **Choosing a button** — pick by how much you want the user to take the action,
+ * not by colour. Each variant's story carries the fuller version of this.
+ *
+ * | Use | When | Prop |
+ * |---|---|---|
+ * | **Primary** | The action we want them to take. Two or three per page at most, or it stops reading as "the" action. | `variant="primary"` |
+ * | **Primary outlined** | Another important action worth promoting, when a stronger primary already owns the page. | `variant="primary" outlined` |
+ * | **Secondary** | We don't mind either way — optional, and not a path we are pushing them down. | `variant="secondary"` |
+ * | **Critical** | Not something we want them to do unless they are sure. Destructive, so pair it with a confirmation. | `variant="danger"` |
+ * | **Critical outlined** | A destructive action that isn't the page's main event, or one sitting beside a solid Critical. | `variant="danger" outlined` |
+ *
+ * `brand`, `information`, `warning` and `success` are legacy variants, not part
+ * of the DS-2026 button classes. They keep their pre-DS-2026 colours and have no
+ * Figma counterpart — prefer the four above for new work.
  *
  * By default the button will have a disabled timeout to avoid multiple rapid clicks.
  * To prevent this feature, use the `withDoubleClicks` prop.
@@ -161,9 +208,16 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			useState<boolean>(false);
 
 		const language = { ...LOCALE_TEXT_DEFAULT, ...localeText };
-		// `minimal` wins; primary-only because only it has outlined tokens.
-		const isOutlined = outlined && !minimal && variant === 'primary';
-		const isInverse = minimal || isOutlined || variant === 'secondary';
+		// `minimal` wins; limited to the intents that have outlined tokens.
+		const isOutlined =
+			outlined &&
+			!minimal &&
+			(variant === 'primary' || variant === 'danger');
+		// Which fills need the dark spinner. DS-2026 turned `primary` into a
+		// mint fill with a near-black label, so a light spinner on it is about
+		// 1.4:1 — `critical` keeps a white label on red and stays light.
+		const hasDarkLabel = variant === 'primary' || variant === 'secondary';
+		const isInverse = minimal || isOutlined || hasDarkLabel;
 		const isSingleIconChild = useMemo(
 			() =>
 				isValidElement(children) &&
@@ -178,17 +232,31 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
 		const onClick = useCallback<MouseEventHandler<HTMLButtonElement>>(
 			(event) => {
+				// `aria-disabled` is advisory only, so the guard the native
+				// `disabled` attribute used to give us has to live here —
+				// including for Enter and Space, which arrive as clicks.
+				if (isLoading) {
+					event.preventDefault();
+					event.stopPropagation();
+					return;
+				}
 				if (!withDoubleClicks) setFunctionallyDisabled(true);
 				if (typeof incomingOnClick === 'function')
 					incomingOnClick(event);
 			},
-			[withDoubleClicks, incomingOnClick],
+			[isLoading, withDoubleClicks, incomingOnClick],
 		);
 
 		const { Component, componentProps } = useBox({
 			as,
-			disabled: disabled || isLoading,
+			// Loading deliberately does NOT set the native attribute: a
+			// `disabled` element leaves the tab order, so focus would jump to
+			// the body the moment the button was pressed and the user would
+			// never hear the busy state. `aria-disabled` keeps it focusable and
+			// announced; `onClick` above enforces the inertness.
+			disabled,
 			id,
+			odComponent: 'button',
 			testId,
 			type: as === 'button' ? type : undefined,
 
@@ -207,7 +275,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			],
 			pointerEvents: functionallyDisabled ? 'none' : undefined,
 
-			'aria-label': isLoading ? language.loading : ariaLabel,
+			'aria-label': ariaLabel,
+			'aria-busy': isLoading || undefined,
+			// Only while loading — on a genuinely `disabled` button the native
+			// attribute already conveys this, and both would be redundant.
+			'aria-disabled': isLoading || undefined,
 			'aria-controls': ariaControls,
 			'aria-describedby': ariaDescribedBy,
 			'aria-expanded': ariaExpanded,
@@ -249,7 +321,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 		}, [functionallyDisabled]);
 
 		const child = isLoading ? (
-			<Spinner isInverse={isInverse}>{buttonContents}</Spinner>
+			<Spinner isInverse={isInverse} label={language.loading}>
+				{buttonContents}
+			</Spinner>
 		) : (
 			buttonContents
 		);

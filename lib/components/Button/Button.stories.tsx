@@ -152,6 +152,13 @@ const TemplateMulti = ({
 	</>
 );
 
+/**
+ * **The one action we want them to take.**
+ *
+ * Keep it to **two or three per page** at most — past that they stop reading as
+ * "the" action and the hierarchy collapses. If two primaries are competing,
+ * one of them is usually a Primary Outlined.
+ */
 export const PrimarySet: Story = {
 	decorators: [
 		(Story) => (
@@ -172,40 +179,10 @@ export const PrimarySet: Story = {
 	render: TemplateMulti,
 };
 
-export const SecondarySet: Story = {
-	decorators: PrimarySet.decorators,
-	args: {
-		variant: 'secondary',
-	},
-	render: TemplateMulti,
-};
-
-export const InformationSet: Story = {
-	decorators: PrimarySet.decorators,
-	args: {
-		variant: 'information',
-	},
-	render: TemplateMulti,
-};
-
-export const WarningSet: Story = {
-	decorators: PrimarySet.decorators,
-	args: {
-		variant: 'warning',
-	},
-	render: TemplateMulti,
-};
-
-export const SuccessSet: Story = {
-	decorators: PrimarySet.decorators,
-	args: {
-		variant: 'success',
-	},
-	render: TemplateMulti,
-};
-
 /**
- * The outlined primary button — transparent fill, brand border, brand label.
+ * **Other important actions worth promoting, when a stronger primary already
+ * owns the page.** Transparent fill, brand border, brand label — it reads as
+ * significant without competing with the solid primary next to it.
  *
  * Its colours come from the `color.button.primary.outlined.*` tokens, which a
  * tenant re-brands at runtime through `OverdriveProvider`'s `colorOverrides`.
@@ -216,6 +193,92 @@ export const PrimaryOutlinedSet: Story = {
 	args: {
 		variant: 'primary',
 		outlined: true,
+	},
+	render: TemplateMulti,
+};
+
+/**
+ * **We don't mind either way.** Optional, and not a path we are pushing them
+ * down — "Cancel", "Maybe later", "Edit details". Reach for this whenever the
+ * action genuinely carries no preference, rather than reaching for a primary out
+ * of habit.
+ */
+export const SecondarySet: Story = {
+	decorators: PrimarySet.decorators,
+	args: {
+		variant: 'secondary',
+	},
+	render: TemplateMulti,
+};
+
+/**
+ * **Not something we want them to do unless they are sure.** Destructive and
+ * hard or impossible to walk back — "Delete account", "Cancel booking".
+ *
+ * Pair it with a confirmation step; the red is a warning, not a safety net. Use
+ * it sparingly — a page full of red reads as broken rather than dangerous.
+ *
+ * This is Figma's **Critical** class. In code the prop value is
+ * `variant="danger"`, kept for backwards compatibility.
+ *
+ * Fills from `color.button.critical.solid.*`. Unlike Primary the fill holds on
+ * hover — Figma moves only the elevation — and deepens to the border colour on
+ * press.
+ */
+export const CriticalSet: Story = {
+	decorators: PrimarySet.decorators,
+	args: {
+		variant: 'danger',
+	},
+	render: TemplateMulti,
+};
+
+/**
+ * **The same warning, when a Critical Solid would shout.** Transparent fill,
+ * critical border, critical label — for a destructive action that is on the page
+ * but is not the page's main event, or sitting beside a solid Critical.
+ *
+ * Same rules as Primary Outlined: no elevation, and the fill washes in on hover
+ * and deepens on press. Colours come from `color.button.critical.outlined.*`.
+ */
+export const CriticalOutlinedSet: Story = {
+	decorators: PrimarySet.decorators,
+	args: {
+		variant: 'danger',
+		outlined: true,
+	},
+	render: TemplateMulti,
+};
+
+/**
+ * Legacy status set — kept as-is. Not part of the Figma DS-2026 button classes.
+ */
+export const InformationSet: Story = {
+	decorators: PrimarySet.decorators,
+	args: {
+		variant: 'information',
+	},
+	render: TemplateMulti,
+};
+
+/**
+ * Legacy status set — kept as-is. Not part of the Figma DS-2026 button classes.
+ */
+export const WarningSet: Story = {
+	decorators: PrimarySet.decorators,
+	args: {
+		variant: 'warning',
+	},
+	render: TemplateMulti,
+};
+
+/**
+ * Legacy status set — kept as-is. Not part of the Figma DS-2026 button classes.
+ */
+export const SuccessSet: Story = {
+	decorators: PrimarySet.decorators,
+	args: {
+		variant: 'success',
 	},
 	render: TemplateMulti,
 };

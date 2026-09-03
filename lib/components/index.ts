@@ -10,7 +10,7 @@ export { Badge } from './Badge';
 export { Box, type BoxProps, useBox, type UseBoxProps } from './Box';
 export { BulletList, Bullet } from './BulletList';
 export { BulletText } from './BulletText';
-export { Button } from './Button';
+export { Button, type ButtonProps } from './Button';
 export { Calendar, type CalendarProps } from './Calendar';
 export { CheckBox } from './CheckBox';
 export { ColourInput } from './ColourInput';

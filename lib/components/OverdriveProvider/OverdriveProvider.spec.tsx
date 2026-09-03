@@ -153,10 +153,12 @@ describe('<OverdriveProvider />', () => {
 			);
 		});
 
-		it('leaves links and focus rings alone until linkColor is passed', () => {
-			expect(
-				providerStyle({ primaryBackground: '#6d39a8' }),
-			).not.toContain('--od-colours-foreground-link');
+		it('brands links and focus rings from the brand background', () => {
+			// Defaults from `primaryBackground`, so a tenant supplying only a
+			// brand no longer gets base-theme green links beside its buttons.
+			expect(providerStyle({ primaryBackground: '#6d39a8' })).toContain(
+				'--od-colours-foreground-link: #6d39a8',
+			);
 
 			expect(providerStyle({ linkColor: '#6d39a8' })).toContain(
 				'--od-colours-foreground-link: #6d39a8',

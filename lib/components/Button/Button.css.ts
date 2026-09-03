@@ -9,12 +9,155 @@ import { overdriveTokens as vars } from '../../themes/theme.css';
 globalLayer(LAYER_ORDER);
 
 const intentColors = vars.colours.intent;
-const smallHeight = '36px';
+const buttonColors = vars.color.button;
 
+/**
+ * Figma sizes each button by padding plus the label's line height rather than a
+ * fixed height — Large is `space/12` + 22px + `space/12` = 46px, Small is
+ * `space/8` + 20px + `space/8` = 36px. Kept as explicit heights because the
+ * icon-only and rounded compounds need a square to work from, and derived
+ * heights would leave those guessing.
+ *
+ * `medium` is Figma's Large; there is no Medium in the DS-2026 set.
+ */
+const buttonHeight = {
+	xsmall: '28px',
+	small: '36px',
+	medium: '46px',
+} as const;
+const smallHeight = buttonHeight.small;
+
+/**
+ * Figma labels every button `p1 semibold` or `p2 semibold`, so the sizes read
+ * the DS-2026 named text styles rather than the numeric scale — `p1`/`p2` carry
+ * the ratio-derived 22.4px and 19.6px line heights the design uses, where
+ * `size[4]`/`size[3]` round them to 22px and 20px. The weight comes from the
+ * recipe's base `fontWeight: 'semiBold'`.
+ *
+ * Extra small takes the same `p2` as Small; Figma has no smaller button label.
+ */
+const buttonText = {
+	medium: vars.typography.size.p1,
+	small: vars.typography.size.p2,
+	xsmall: vars.typography.size.p2,
+} as const;
+
+/**
+ * `[data-loading]` is excluded from every branch, `:focus-visible` included,
+ * because a loading button is no longer natively disabled — it stays focusable
+ * so the busy state can be announced. Without the exclusion a keyboard user
+ * tabbing onto it, or hovering it, would see the hover fill mid-request.
+ *
+ * The focus *ring* is unaffected: it comes from `focusOutlineStyle`, not from
+ * here, so a focused loading button still shows where focus is.
+ */
 const selectorFocusHoverActive =
-	'&:focus-visible, &:not(:disabled):hover, &:not(:disabled):active';
+	'&:focus-visible:not([data-loading]), &:not(:disabled, [data-loading]):hover, &:not(:disabled, [data-loading]):active';
 
-export const hiddenContent = style({ visibility: 'hidden' });
+/**
+ * The DS-2026 intents split hover from press — Figma gives each its own fill
+ * and its own elevation, where the legacy intents collapse both into
+ * `selectorFocusHoverActive`.
+ */
+const selectorFocusHover =
+	'&:focus-visible:not([data-loading]), &:not(:disabled, [data-loading]):hover';
+const selectorPressed = '&:active:not(:disabled, [data-loading])';
+const selectorInert = '&:disabled, &[data-loading]';
+
+/**
+ * Figma lifts the button on hover and presses it in on click — `z2` at rest,
+ * `z3` hovered, `z1` pressed, and no shadow at all once disabled. These map
+ * one-to-one onto the `elevation.z*` tokens, which already carry the Figma
+ * values.
+ */
+const buttonElevation = {
+	rest: vars.elevation.z2,
+	hover: vars.elevation.z3,
+	pressed: vars.elevation.z1,
+} as const;
+
+/**
+ * A DS-2026 `Style=Outlined` intent: transparent fill, the class colour as both
+ * border and label, washing in on hover and press.
+ *
+ * Every state restates `borderColor`, `boxShadow` and `color`. The solid intent
+ * this sits on top of sets all three, and its nested `:active` (0,3,0) beats a
+ * compound's `:focus-visible` — so anything left unstated leaks the solid
+ * appearance through.
+ */
+const outlinedIntent = (outlined: {
+	border: string;
+	hover: string;
+	pressed: string;
+	text: string;
+}) => ({
+	'@layer': {
+		[cssLayerComponent]: {
+			// The solid intent sets this too, at equal specificity.
+			backgroundColor: 'transparent',
+			border: `1px solid ${outlined.border}`,
+			// Figma's Outlined carries no elevation.
+			boxShadow: 'none',
+			color: outlined.text,
+			selectors: {
+				[selectorFocusHover]: {
+					backgroundColor: outlined.hover,
+					borderColor: outlined.border,
+					boxShadow: 'none',
+					color: outlined.text,
+				},
+				[selectorPressed]: {
+					backgroundColor: outlined.pressed,
+					borderColor: outlined.border,
+					boxShadow: 'none',
+					color: outlined.text,
+				},
+			},
+		},
+	},
+});
+
+/**
+ * A DS-2026 filled intent: Figma's `Style=Solid`. `hover` and `pressed` are
+ * passed rather than derived because the classes differ — Primary moves its
+ * fill on hover, Critical keeps the same fill and moves only the elevation.
+ */
+const solidIntent = ({
+	border,
+	fill,
+	hover,
+	pressed,
+	text,
+}: Record<'border' | 'fill' | 'hover' | 'pressed' | 'text', string>) => ({
+	'@layer': {
+		[cssLayerComponent]: {
+			backgroundColor: fill,
+			border: `1px solid ${border}`,
+			boxShadow: buttonElevation.rest,
+			color: text,
+			selectors: {
+				[selectorFocusHover]: {
+					backgroundColor: hover,
+					boxShadow: buttonElevation.hover,
+				},
+				[selectorPressed]: {
+					backgroundColor: pressed,
+					boxShadow: buttonElevation.pressed,
+				},
+				// Figma drops the shadow entirely when disabled; the base
+				// `opacity: 0.3` carries the rest of that state.
+				[selectorInert]: { boxShadow: 'none' },
+			},
+		},
+	},
+});
+
+/**
+ * Holds the button's width while the spinner is shown. `opacity` rather than
+ * `visibility: hidden`, which would drop the label out of the accessibility
+ * tree and leave the button announcing only "loading".
+ */
+export const hiddenContent = style({ opacity: 0 });
 export const spinnerWrapper = sprinkles({
 	display: 'grid',
 	placeItems: 'center',
@@ -30,8 +173,10 @@ export const button = recipe({
 			alignItems: 'center',
 			borderRadius: 'md',
 			borderStyle: 'none',
-			fontWeight: 'medium',
-			gap: '1',
+			// Figma's button label is `p1/p2 semibold` (600) at every size.
+			fontWeight: 'semiBold',
+			// Figma's `space/8`. Extra small narrows this to `space/4`.
+			gap: '2',
 			justifyContent: 'center',
 			position: 'relative',
 			width: 'fit-content',
@@ -41,7 +186,6 @@ export const button = recipe({
 				[cssLayerComponent]: {
 					cursor: 'pointer',
 					display: 'flex',
-					lineHeight: 1,
 					padding: `0 ${vars.space[4]}`,
 					transform: 'translate(0, 0) scale(1)',
 					transitionTimingFunction: vars.animation.easing.standard,
@@ -69,29 +213,42 @@ export const button = recipe({
 	variants: {
 		// Size variants
 		size: {
+			// Figma `Size=Small`: `space/8` padding around a `p2` line in a
+			// 36px box.
 			small: {
 				'@layer': {
 					[cssLayerComponent]: {
-						fontSize: vars.typography.size[3].fontSize,
-						height: smallHeight,
+						fontSize: buttonText.small.fontSize,
+						height: buttonHeight.small,
+						lineHeight: buttonText.small.lineHeight,
 						padding: `0 ${vars.space[3]}`,
 					},
 				},
 			},
+			// Figma `Size=Large` — the DS-2026 set has no Medium, so this is
+			// the largest. 46px, not the 48px this used to hard-code.
 			medium: {
 				'@layer': {
 					[cssLayerComponent]: {
-						fontSize: vars.typography.size[4].fontSize,
-						height: vars.space['9'],
+						fontSize: buttonText.medium.fontSize,
+						height: buttonHeight.medium,
+						lineHeight: buttonText.medium.lineHeight,
+						padding: `0 ${vars.space[4]}`,
 					},
 				},
 			},
+			// Figma `Size=Extra small` — the one size that departs from the
+			// other two: `space/4` padding and gap, `border/radius/xsmall`, and
+			// the same `p2` label as Small rather than a smaller one.
 			xsmall: {
 				'@layer': {
 					[cssLayerComponent]: {
-						fontSize: vars.typography.size[2].fontSize,
-						fontWeight: vars.typography.fontWeight.normal,
-						padding: `2px ${vars.space['2']}`,
+						borderRadius: vars.border.radius.xsmall,
+						fontSize: buttonText.xsmall.fontSize,
+						gap: vars.space[1],
+						height: buttonHeight.xsmall,
+						lineHeight: buttonText.xsmall.lineHeight,
+						padding: `0 ${vars.space[2]}`,
 					},
 				},
 			},
@@ -110,20 +267,15 @@ export const button = recipe({
 		},
 		// Intent (color scheme) variants
 		intent: {
-			primary: {
-				'@layer': {
-					[cssLayerComponent]: {
-						backgroundColor:
-							intentColors.primary.background.standard,
-						color: intentColors.primary.foreground,
-						[selectorFocusHoverActive]: {
-							backgroundColor:
-								intentColors.primary.background.strong,
-							color: intentColors.primary.foreground,
-						},
-					},
-				},
-			},
+			// DS-2026 `Class=Primary, Style=Solid`. The fill lightens on hover
+			// and deepens to the border colour on press.
+			primary: solidIntent({
+				border: buttonColors.primary.solid.border,
+				fill: buttonColors.primary.solid.default,
+				hover: buttonColors.primary.solid.hover,
+				pressed: buttonColors.primary.solid.pressed,
+				text: buttonColors.primary.solid.text,
+			}),
 			brand: {
 				'@layer': {
 					[cssLayerComponent]: {
@@ -136,37 +288,37 @@ export const button = recipe({
 					},
 				},
 			},
+			// DS-2026 `Class=Secondary, Style=Outlined` — transparent at rest,
+			// washing in on hover and press. Figma gives it no elevation, so
+			// the border keeps its colour throughout rather than tracking the
+			// fill the way the legacy intent did.
 			secondary: {
 				'@layer': {
 					[cssLayerComponent]: {
-						backgroundColor:
-							intentColors.secondary.background.standard,
-						border: `1px solid ${intentColors.secondary.border}`,
-						color: intentColors.secondary.foreground,
+						backgroundColor: 'transparent',
+						border: `1px solid ${buttonColors.secondary.border}`,
+						color: buttonColors.secondary.text,
 						selectors: {
-							[selectorFocusHoverActive]: {
-								backgroundColor:
-									intentColors.secondary.background.strong,
-								borderColor:
-									intentColors.secondary.background.strong,
+							[selectorFocusHover]: {
+								backgroundColor: buttonColors.secondary.hover,
+							},
+							[selectorPressed]: {
+								backgroundColor: buttonColors.secondary.pressed,
 							},
 						},
 					},
 				},
 			},
-			danger: {
-				'@layer': {
-					[cssLayerComponent]: {
-						backgroundColor:
-							intentColors.danger.background.standard,
-						color: intentColors.danger.foreground,
-						[selectorFocusHoverActive]: {
-							backgroundColor:
-								intentColors.danger.background.strong,
-						},
-					},
-				},
-			},
+			// DS-2026 `Class=Critical, Style=Solid`. Unlike Primary the fill
+			// holds on hover — Figma moves only the elevation — and deepens to
+			// the border colour on press.
+			danger: solidIntent({
+				border: buttonColors.critical.solid.border,
+				fill: buttonColors.critical.solid.default,
+				hover: buttonColors.critical.solid.default,
+				pressed: buttonColors.critical.solid.pressed,
+				text: buttonColors.critical.solid.text,
+			}),
 			information: {
 				'@layer': {
 					[cssLayerComponent]: {
@@ -207,14 +359,25 @@ export const button = recipe({
 				},
 			},
 		},
-		// Miminal appearance variant
+		// Minimal appearance variant — Figma's `Style=Minimal (Ghost)`
 		minimal: {
 			true: {
 				'@layer': {
 					[cssLayerComponent]: {
 						backgroundColor: 'transparent',
-						borderStyle: 'none',
+						// Transparent rather than absent: Figma's Minimal has no
+						// border at rest but grows one on hover, and reserving the
+						// 1px here keeps that from nudging the box 2px wider.
+						border: '1px solid transparent',
+						// Ghost carries no elevation. Cleared in every state
+						// the DS-2026 intents set one, or a minimal Primary
+						// would keep the solid button's shadow.
+						boxShadow: 'none',
 						color: vars.color.foreground.secondary,
+						selectors: {
+							[selectorFocusHover]: { boxShadow: 'none' },
+							[selectorPressed]: { boxShadow: 'none' },
+						},
 					},
 				},
 			},
@@ -281,7 +444,7 @@ export const button = recipe({
 			style: {
 				'@layer': {
 					[cssLayerComponent]: {
-						minWidth: vars.space['9'],
+						minWidth: buttonHeight.medium,
 					},
 				},
 			},
@@ -291,7 +454,7 @@ export const button = recipe({
 			style: {
 				'@layer': {
 					[cssLayerComponent]: {
-						width: vars.space['9'],
+						width: buttonHeight.medium,
 					},
 				},
 			},
@@ -329,16 +492,25 @@ export const button = recipe({
 				},
 			},
 		},
+		// DS-2026 `Class=Secondary, Style=Minimal (Ghost)` — the only class
+		// Figma specs a Minimal for. The label colour holds through every
+		// state; only the fill and the border move.
 		{
 			variants: { intent: 'secondary', minimal: true },
 			style: {
 				'@layer': {
 					[cssLayerComponent]: {
+						color: buttonColors.secondary.text,
 						selectors: {
-							[selectorFocusHoverActive]: {
-								color: vars.typography.colour.secondary,
-								backgroundColor:
-									intentColors.secondary.background.strong,
+							[selectorFocusHover]: {
+								backgroundColor: buttonColors.secondary.hover,
+								borderColor: buttonColors.secondary.border,
+								color: buttonColors.secondary.text,
+							},
+							[selectorPressed]: {
+								backgroundColor: buttonColors.secondary.pressed,
+								borderColor: buttonColors.secondary.border,
+								color: buttonColors.secondary.text,
 							},
 						},
 					},
@@ -413,34 +585,11 @@ export const button = recipe({
 		// Compound class names are index-based — append, never insert.
 		{
 			variants: { intent: 'primary', outlined: true },
-			style: {
-				'@layer': {
-					[cssLayerComponent]: {
-						// intent primary sets this too, at equal specificity.
-						backgroundColor: 'transparent',
-						border: `1px solid ${vars.color.button.primary.outlined.border}`,
-						color: vars.color.button.primary.outlined.text,
-						selectors: {
-							'&:focus-visible, &:not(:disabled):hover': {
-								backgroundColor:
-									vars.color.button.primary.outlined.hover,
-								borderColor:
-									vars.color.button.primary.outlined.border,
-								color: vars.color.button.primary.outlined.text,
-							},
-							'&:active:not(:disabled, [data-loading])': {
-								backgroundColor:
-									vars.color.button.primary.outlined.pressed,
-								// Restated: intent primary's nested `:active`
-								// (0,3,0) beats this variant's `:focus-visible`.
-								borderColor:
-									vars.color.button.primary.outlined.border,
-								color: vars.color.button.primary.outlined.text,
-							},
-						},
-					},
-				},
-			},
+			style: outlinedIntent(vars.color.button.primary.outlined),
+		},
+		{
+			variants: { intent: 'danger', outlined: true },
+			style: outlinedIntent(vars.color.button.critical.outlined),
 		},
 	],
 	defaultVariants: {
@@ -476,16 +625,31 @@ export interface StyledButtonProps {
 	 */
 	rounded?: ButtonRounded;
 	/**
-	 * Present a borderless minimal appearance
+	 * Borderless, fill-less appearance — Figma's `Style=Minimal (Ghost)`.
+	 *
+	 * On `variant="secondary"` this is the DS-2026 Minimal: nothing at rest, a
+	 * wash and a visible border on hover and press. The other intents keep
+	 * their pre-DS-2026 minimal colours; Figma specs a Minimal for Secondary
+	 * only.
+	 *
+	 * Wins over `outlined` — the two are opposites.
 	 */
 	minimal?: ButtonMinimal;
 	/**
-	 * Transparent fill with a brand-coloured border and label.
+	 * Transparent fill with the intent's border and label — Figma's
+	 * `Style=Outlined`.
 	 *
-	 * Currently applies to `variant="primary"` only, and ignored when `minimal`
-	 * is set — the two are opposites.
+	 * Applies to `variant="primary"` (Primary Outlined) and `variant="danger"`
+	 * (Critical Outlined); a no-op on the other intents, which have no outlined
+	 * tokens. Ignored when `minimal` is set.
 	 */
 	outlined?: ButtonOutlined;
+	/**
+	 * Stretches the button to the full width of its container.
+	 */
 	isFullWidth?: ButtonIsFullWidth;
+	/**
+	 * Swaps the content for a progress spinner and disables the button.
+	 */
 	isLoading?: ButtonIsLoading;
 }

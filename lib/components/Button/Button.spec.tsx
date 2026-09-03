@@ -80,18 +80,27 @@ describe('<Button />', () => {
 			expect(button.className).toContain('minimal_true');
 		});
 
+		it('applies to danger, which now has Critical Outlined tokens', () => {
+			render(
+				<Button variant="danger" outlined>
+					Click me
+				</Button>,
+			);
+			expect(isOutlined(screen.getByRole('button'))).toBe(true);
+		});
+
 		it('is a complete no-op on intents that have no outlined tokens', () => {
-			// the fill is gated on primary in CSS, so the spinner must be gated
-			// too — otherwise a loading danger button gets a dark spinner on a
-			// solid red fill
+			// the fill is gated in CSS to the intents with outlined tokens, so
+			// the spinner has to be gated the same way — otherwise a loading
+			// success button gets a dark spinner on a solid green fill
 			const plain = render(
-				<Button variant="danger" isLoading>
+				<Button variant="success" isLoading>
 					Click me
 				</Button>,
 			).container.innerHTML;
 			cleanup();
 			const withOutlined = render(
-				<Button variant="danger" outlined isLoading>
+				<Button variant="success" outlined isLoading>
 					Click me
 				</Button>,
 			).container.innerHTML;
@@ -165,12 +174,39 @@ describe('<Button />', () => {
 	});
 
 	// Test loading state
-	it('shows loading state and disables button when isLoading is true', () => {
+	it('shows loading state and marks the button busy when isLoading is true', () => {
 		render(<Button isLoading>Loading button</Button>);
-		const button = screen.getByRole('button', { name: 'loading' });
-		expect(button).toBeDisabled();
+		// The label survives loading rather than being replaced by it, and
+		// `aria-busy` carries the state. Asserted as the exact name so a
+		// regression to "loading" alone, or a reordering, both fail here.
+		const button = screen.getByRole('button');
+		expect(button).toHaveAccessibleName('Loading button loading');
 		expect(button).toHaveAttribute('data-loading');
-		expect(button).toHaveAttribute('aria-label', 'loading');
+		expect(button).toHaveAttribute('aria-busy', 'true');
+		expect(button).toHaveAttribute('aria-disabled', 'true');
+		expect(button).not.toHaveAttribute('aria-label');
+		// Deliberately NOT natively disabled: that removes the button from the
+		// tab order, so focus would leave it and the busy state would never be
+		// announced.
+		expect(button).not.toBeDisabled();
+		button.focus();
+		expect(button).toHaveFocus();
+	});
+
+	it('swallows clicks while loading, since aria-disabled is advisory', async () => {
+		const handleClick = vi.fn();
+		render(
+			<Button isLoading onClick={handleClick}>
+				Submit
+			</Button>,
+		);
+
+		const button = screen.getByRole('button');
+		await fireEvent.click(button);
+		// Enter and Space both arrive as clicks, so this covers keyboard too.
+		await fireEvent.keyDown(button, { key: 'Enter' });
+
+		expect(handleClick).not.toHaveBeenCalled();
 	});
 
 	// Test icon-only buttons
