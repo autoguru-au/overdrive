@@ -56,6 +56,7 @@ type Story = StoryObj<typeof Switch>;
 
 /** Passes in the text label and styles for the layout */
 export const Uncontrolled: Story = {
+	tags: ['skip-themes'],
 	args: {
 		children: <Text>Text description for the switch</Text>,
 		className: inlineLabelRow,
@@ -91,6 +92,7 @@ export const Uncontrolled: Story = {
 };
 
 export const DisabledIsInert: Story = {
+	tags: ['skip-themes'],
 	args: {
 		isDisabled: true,
 		children: <Text>Text description for the switch</Text>,
