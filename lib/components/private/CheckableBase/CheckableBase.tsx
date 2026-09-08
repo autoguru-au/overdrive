@@ -2,6 +2,7 @@ import React, {
 	forwardRef,
 	useId,
 	type ChangeEvent,
+	type MouseEvent,
 	type ReactNode,
 } from 'react';
 
@@ -26,7 +27,7 @@ export interface CheckableBaseProps extends OdComponentProp, TestIdProp {
 	inputType: string;
 	value: string;
 	children?: ReactNode;
-	handleClick(event): void;
+	handleClick(event: MouseEvent<HTMLInputElement>): void;
 	handleChange?(checked: boolean): void;
 }
 

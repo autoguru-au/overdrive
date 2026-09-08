@@ -38,11 +38,16 @@ const meta: Meta<typeof CheckBox> = {
 	component: CheckBox,
 	tags: [],
 	decorators: [
-		(Story) => (
-			<div style={{ maxWidth: '500px', width: '100%' }}>
+		// The narrow well is what makes the label-wrapping stories legible; the
+		// state matrix is a six-column grid and needs the full canvas.
+		(Story, { parameters }) =>
+			parameters.fullWidth ? (
 				<Story />
-			</div>
-		),
+			) : (
+				<div style={{ maxWidth: '500px', width: '100%' }}>
+					<Story />
+				</div>
+			),
 	],
 	args: {
 		name: 'demo-checkbox',
@@ -80,9 +85,9 @@ const meta: Meta<typeof CheckBox> = {
 				{...args}
 				isIndeterminate={hasIndeterminate}
 				checked={checked}
-				onClick={() => {
+				onClick={(event) => {
 					if (isIndeterminate) setHasIndeterminate(false);
-					args.onClick?.(checked);
+					args.onClick?.(event);
 				}}
 				onChange={(checked) => {
 					setChecked(checked);
@@ -179,7 +184,7 @@ const EmptyCell = () => <span className={small} aria-hidden="true" />;
  * `small` checkbox stays above the WCAG 2.5.8 target minimum.
  */
 export const AllStates: Story = {
-	parameters: { controls: { disable: true } },
+	parameters: { controls: { disable: true }, fullWidth: true },
 	render: () => (
 		<div className={switchLadderGrid}>
 			<div className={ladderRow}>
@@ -286,22 +291,24 @@ export const Indeterminate: Story = {
 	},
 };
 
-export const List = {
+export const List: Story = {
 	render: ({ disabled, onChange }) => {
-		const [selected, setSelected] = useState(() => ({
-			avocado: true,
-			blueberries: true,
-			cherries: false,
-			coconut: true,
-			strawberries: false,
-		}));
+		const [selected, setSelected] = useState<Record<string, boolean>>(
+			() => ({
+				avocado: true,
+				blueberries: true,
+				cherries: false,
+				coconut: true,
+				strawberries: false,
+			}),
+		);
 
 		const handleChange = (checked: boolean, value: string) => {
 			setSelected((prev) => ({
 				...prev,
 				[value]: checked,
 			}));
-			onChange(value, checked);
+			onChange?.(checked);
 		};
 
 		return (
@@ -338,7 +345,7 @@ export const MultipleLines: Story = {
 	},
 };
 
-const Item = ({ label, rating }) => (
+const Item = ({ label, rating }: { label: string; rating: number }) => (
 	<div
 		style={{
 			display: 'grid',
@@ -355,7 +362,7 @@ export const WithComponent: Story = {
 	args: {
 		checked: false,
 		disabled: false,
-		children: <Item label="Avocados" rating="4.3" />,
+		children: <Item label="Avocados" rating={4.3} />,
 		value: '1',
 	},
 };

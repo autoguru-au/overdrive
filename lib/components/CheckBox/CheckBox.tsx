@@ -1,6 +1,12 @@
 import { CheckIcon, MinusIcon } from '@autoguru/icons';
 import clsx from 'clsx';
-import React, { forwardRef, ReactNode, useEffect, useRef } from 'react';
+import React, {
+	forwardRef,
+	type MouseEvent,
+	type ReactNode,
+	useEffect,
+	useRef,
+} from 'react';
 
 import type { OdComponentProp, TestIdProp } from '../../types';
 import { mergeRefs, noop } from '../../utils';
@@ -42,8 +48,11 @@ export interface CheckboxProps extends OdComponentProp, TestIdProp {
 	 * @default 'medium'
 	 */
 	size?: keyof typeof styles.size;
-	/** Fired on click, with the box's state at the time of the click */
-	onClick?(checked: boolean): void;
+	/**
+	 * Fired on click, with the click event — it is forwarded straight to the
+	 * native input. For the ticked state use `onChange`, which receives it.
+	 */
+	onClick?(event: MouseEvent<HTMLInputElement>): void;
 	/** Fired when the ticked state changes, with the new state */
 	onChange?(checked: boolean): void;
 }
