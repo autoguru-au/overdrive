@@ -122,6 +122,21 @@ const THEME_CONTRACT = {
 			onSolid: 'color-brand-on-solid',
 			subtle: 'color-brand-subtle',
 		},
+		/**
+		 * The selection accent — the fill of a checked selection control and
+		 * the pale wash behind an unchecked one on hover. Figma binds these as
+		 * `color/selection/active` and `color/selection/hover-bg`.
+		 *
+		 * Separate from `color.brand.*` because the two answer different
+		 * questions: `brand.solid` is whatever hue a tenant supplied, while
+		 * `selection.active` is the DS-2026 default a control renders when no
+		 * tenant has branded it — green, not the body-ink seed `brand.solid`
+		 * carries. A tenant's `primaryBackground` drives both.
+		 */
+		selection: {
+			active: 'color-selection-active',
+			hoverBg: 'color-selection-hover-bg',
+		},
 		surface: {
 			page: null,
 			hard: null,

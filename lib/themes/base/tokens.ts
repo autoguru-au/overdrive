@@ -119,6 +119,21 @@ export const tokens = {
 			onSolid: colourMap.white, // #ffffff
 			subtle: colourMap.green['200'], // #e3f8f0
 		},
+		/**
+		 * Figma `color/selection/active` and `color/selection/hover-bg`, seeded
+		 * to the green pair the DS-2026 selection controls render unbranded.
+		 *
+		 * Raw hex rather than a `colours.gamut.*` alias, for the same reason
+		 * `brand` is: `color.gamut.*` bridges onto the legacy gamut, which
+		 * `flat_red` repoints. A literal keeps base and `neutral` identical;
+		 * `flat_red` overrides this pair explicitly onto its own green ramp.
+		 *
+		 * A tenant re-brands both at runtime via `colorOverrides`.
+		 */
+		selection: {
+			active: colourMap.green['600'], // #01c68c
+			hoverBg: colourMap.green['200'], // #e3f8f0
+		},
 		surface: {
 			page: colourMap.white,
 			hard: colourMap.gray['900'],

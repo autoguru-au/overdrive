@@ -7,13 +7,18 @@ import React, {
 
 import { resetStyles } from '../../../styles';
 import { textStyles } from '../../../styles/typography';
+import type { OdComponentProp, TestIdProp } from '../../../types';
 import { Box } from '../../Box/Box';
 import { Text } from '../../Text/Text';
 
 import * as styles from './CheckableBase.css';
 
-export interface CheckableBaseProps {
+export interface CheckableBaseProps extends OdComponentProp, TestIdProp {
 	className?: string;
+	/** Accessible name for the control, for when there is no visible label */
+	'aria-label'?: string;
+	/** id of the element naming this control */
+	'aria-labelledby'?: string;
 	checked?: boolean;
 	disabled?: boolean;
 	label: ReactNode;
@@ -30,12 +35,16 @@ export const CheckableBase = forwardRef<HTMLInputElement, CheckableBaseProps>(
 		{
 			className = '',
 			label = '',
+			'aria-label': ariaLabel,
+			'aria-labelledby': ariaLabelledBy,
 			checked = false,
 			disabled = false,
 			inputType,
 			inputName,
 			value,
 			children,
+			odComponent,
+			testId,
 			handleClick,
 			handleChange,
 		},
@@ -52,6 +61,8 @@ export const CheckableBase = forwardRef<HTMLInputElement, CheckableBaseProps>(
 
 		return (
 			<Box
+				odComponent={odComponent}
+				testId={testId}
 				display="flex"
 				alignItems="center"
 				flexDirection="row"
@@ -76,7 +87,9 @@ export const CheckableBase = forwardRef<HTMLInputElement, CheckableBaseProps>(
 					height="full"
 					margin="none"
 					padding="none"
-					name={inputName}
+					aria-label={ariaLabel}
+				aria-labelledby={ariaLabelledBy}
+				name={inputName}
 					value={value}
 					checked={checked}
 					disabled={disabled}

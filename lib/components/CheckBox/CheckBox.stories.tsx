@@ -1,13 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { useEffect, useState } from 'react';
-import { fn } from 'storybook/test';
+import { expect, fn } from 'storybook/test';
 
 import { Badge } from '../Badge/Badge';
+import { FlexInline } from '../Flex/FlexInline';
 import { Heading } from '../Heading/Heading';
+import { Stack } from '../Stack';
 import { StarRating } from '../StarRating/StarRating';
 import { Text } from '../Text/Text';
 
-import { CheckBox } from './CheckBox';
+import { CheckBox, type CheckBoxSize } from './CheckBox';
 
 const listData: Array<{ label: string; value: string }> = [
 	{ label: 'Avocado', value: 'avocado' },
@@ -34,8 +36,18 @@ const meta: Meta<typeof CheckBox> = {
 		value: '1',
 		isIndeterminate: false,
 		disabled: undefined,
+		size: 'medium',
 		onChange: fn(),
 		onClick: fn(),
+	},
+	// This meta takes its controls from `args` rather than from docgen, so a
+	// prop absent from `args` above gets no control at all.
+	argTypes: {
+		size: {
+			control: 'select',
+			options: ['medium', 'small'],
+			description: 'Box size, per the DS-2026 selection-control spec.',
+		},
 	},
 	render: ({ isIndeterminate, ...args }) => {
 		const [checked, setChecked] = useState(false);
@@ -69,7 +81,128 @@ const meta: Meta<typeof CheckBox> = {
 export default meta;
 type Story = StoryObj<typeof CheckBox>;
 
-export const Default: Story = {};
+export const Default: Story = {
+	play: async ({ canvas, userEvent, step }) => {
+		const box = canvas.getByRole('checkbox');
+
+		await step('starts unchecked and is reachable by keyboard', async () => {
+			await expect(box).not.toBeChecked();
+			await expect(box).toBeEnabled();
+		});
+
+		await step('takes its accessible name from its children', async () => {
+			await expect(box).toHaveAccessibleName('Check me!');
+		});
+
+		await step('ticks on click and again on space', async () => {
+			await userEvent.click(box);
+			await expect(box).toBeChecked();
+
+			box.focus();
+			await userEvent.keyboard(' ');
+			await expect(box).not.toBeChecked();
+		});
+	},
+};
+
+/* -------------------------------------------------------------------------
+ * The DS-2026 state matrix
+ * ---------------------------------------------------------------------- */
+
+/** Every row Figma publishes, less Hover — which only exists under a cursor. */
+const STATES = [
+	{ label: 'Default', props: {} },
+	{ label: 'Selected', props: { checked: true } },
+	{ label: 'Disabled', props: { disabled: true } },
+	{ label: 'Disabled selected', props: { checked: true, disabled: true } },
+] as const;
+
+const SIZE_LABELS: Record<CheckBoxSize, string> = {
+	medium: 'Medium — 20px box, 16px tick (default)',
+	small: 'Small — 16px box, 12px tick',
+};
+
+const StateColumn = ({
+	label,
+	size,
+	...props
+}: {
+	label: string;
+	size: CheckBoxSize;
+	checked?: boolean;
+	disabled?: boolean;
+}) => (
+	<Stack space="2" alignItems="center">
+		<Text size="2" colour="light">
+			{label}
+		</Text>
+		{/* No children, so the box stands alone — hence the explicit name. */}
+		<CheckBox
+			{...props}
+			size={size}
+			value={label}
+			name={`matrix-${size}-${label}`}
+			aria-label={`${label} ${size}`}
+		/>
+	</Stack>
+);
+
+/**
+ * Both sizes across every state in the Figma spec, states down the columns so
+ * checked and unchecked sit side by side.
+ *
+ * **Hover is not shown** — it needs a live cursor, so it renders here only when
+ * you hover a box yourself, and Chromatic cannot snapshot it. Unselected hover
+ * fills with `color.selection.hoverBg` and borders in `color.selection.active`.
+ *
+ * Both sizes keep the same 48px row and hit area: only the box shrinks, so a
+ * `small` checkbox stays above the WCAG 2.5.8 target minimum.
+ */
+export const Sizes: Story = {
+	parameters: { controls: { disable: true } },
+	render: () => (
+		<Stack space="6">
+			{(Object.keys(SIZE_LABELS) as CheckBoxSize[]).map((size) => (
+				<Stack key={size} space="3">
+					<Heading as="h4">{SIZE_LABELS[size]}</Heading>
+					<FlexInline gap="5">
+						{STATES.map((state) => (
+							<StateColumn
+								key={state.label}
+								label={state.label}
+								size={size}
+								{...state.props}
+							/>
+						))}
+					</FlexInline>
+				</Stack>
+			))}
+		</Stack>
+	),
+	play: async ({ canvas, step }) => {
+		await step('renders every state at both sizes', async () => {
+			await expect(canvas.getAllByRole('checkbox')).toHaveLength(
+				STATES.length * 2,
+			);
+		});
+
+		const box = (name: string) =>
+			canvas
+				.getByRole('checkbox', { name })
+				.parentElement?.querySelector('[data-size]');
+
+		await step('sizes the box per the spec', async () => {
+			await expect(box('Default medium')).toHaveAttribute(
+				'data-size',
+				'medium',
+			);
+			await expect(box('Default small')).toHaveAttribute(
+				'data-size',
+				'small',
+			);
+		});
+	},
+};
 
 export const Disabled: Story = {
 	args: {

@@ -82,6 +82,17 @@ export const darkenColour = (colour: string, intensity: number): string =>
 export const lightenColour = (colour: string, intensity: number): string =>
 	colord(colour).lighten(intensity).toHex();
 
+/**
+ * The same hue at a given alpha, as 8-digit hex.
+ *
+ * Used for the selection hover wash, where a `lightenColour` cannot serve:
+ * raising HSL lightness far enough to reach Figma's pale green takes a bright
+ * brand (amber `#e5bc01`) all the way to white, leaving no visible wash. Alpha
+ * lands the same value on green and still reads on every other hue.
+ */
+export const translucentColour = (colour: string, alpha: number): string =>
+	colord(colour).alpha(alpha).toHex();
+
 type RGBNumbers = { r: number; g: number; b: number } | null;
 
 /**
