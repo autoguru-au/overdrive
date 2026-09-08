@@ -25,7 +25,8 @@ companion of `brand.solid` and derived at runtime for tenants that brand via
 `colorOverrides`.
 
 `SwitchProps` gains `odComponent`, stamping `data-od-component="switch"` on the
-root, and every prop now carries JSDoc.
+root, and is now exported from the package root alongside `Switch` so consumers
+can type their own wrappers.
 
 Switch is off the legacy `colours.*` contract: `colours.background.neutral` →
 `color.background.inactive` and `colours.background.light` →
