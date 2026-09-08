@@ -55,6 +55,35 @@ describe('<Switch />', () => {
 		).toMatchSnapshot();
 	});
 
+	it('should stamp odComponent and testId on the root element', () => {
+		const root = render(<Switch testId="my-switch" />).container.firstChild
+			.firstChild;
+
+		expect(root).toHaveAttribute('data-od-component', 'switch');
+		expect(root).toHaveAttribute('data-testid', 'my-switch');
+	});
+
+	it('should render the medium size by default', () => {
+		expect(
+			render(<Switch />).container.firstChild.firstChild.childNodes[1],
+		).toHaveClass(styles.size.medium);
+	});
+
+	it.each(['medium', 'small'])('should render the %s size', (size) => {
+		expect(
+			render(<Switch size={size} />).container.firstChild.firstChild
+				.childNodes[1],
+		).toHaveClass(styles.size[size]);
+	});
+
+	it('should carry both state attributes when disabled and selected', () => {
+		const toggle = render(<Switch isSelected isDisabled />).container
+			.firstChild.firstChild.childNodes[1];
+
+		expect(toggle).toHaveAttribute('data-active');
+		expect(toggle).toHaveAttribute('data-disabled');
+	});
+
 	it('should pass on className to dom element', () => {
 		expect(
 			render(<Switch className="toggleButton-class" value={10} />)

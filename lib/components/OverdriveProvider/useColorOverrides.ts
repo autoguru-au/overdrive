@@ -309,6 +309,7 @@ export const useColorOverrides = (
 
 		let mildPrimary: string | null = null;
 		let strongPrimary: string | null = null;
+		let brandSubtle: string | null = null;
 		let onBrand: string | null = null;
 		let buttonForeground: string | null = null;
 		let outlinedHover: string | null = null;
@@ -359,6 +360,15 @@ export const useColorOverrides = (
 				direction: 'forward',
 				intensity: 0.42,
 			});
+
+			// The same pale wash as `outlinedHover`, in its own token because a
+			// selection control hovers independently of any button.
+			brandSubtle = shadedColour({
+				colour: primaryBackground,
+				isDarkTheme,
+				direction: 'forward',
+				intensity: 0.5,
+			});
 		}
 
 		// One inline var serves every surface, so a single link colour cannot be
@@ -387,6 +397,8 @@ export const useColorOverrides = (
 					solid: primaryBackground ?? undefined,
 					//@ts-expect-error no undefined
 					onSolid: onBrand ?? undefined,
+					//@ts-expect-error no undefined
+					subtle: brandSubtle ?? undefined,
 				},
 				interactive: {
 					// The two surface buckets. Every painted surface points the

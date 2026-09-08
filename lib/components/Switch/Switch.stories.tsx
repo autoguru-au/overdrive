@@ -1,12 +1,27 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import clsx from 'clsx';
 import React from 'react';
 import { fn } from 'storybook/test';
 
+import {
+	labels,
+	ladderRow,
+	small,
+	spaceLadderHeaderCell,
+	tokenCode,
+	tokenDescription,
+} from '../../stories/helpers/styles.css';
 import { Box } from '../Box/Box';
 import { Text } from '../Text/Text';
 
-import { Switch } from './Switch';
-import { storyLabel } from './Switch.css';
+import { Switch, type SwitchProps } from './Switch';
+import {
+	storyForceHover,
+	storyGroupStart,
+	storyLabel,
+	storyLadderGrid,
+	storyPreview,
+} from './Switch.css';
 
 const meta = {
 	title: 'Forms & Input Fields/Switch',
@@ -23,6 +38,10 @@ const meta = {
 		children: { control: false },
 		isSelected: {
 			control: 'boolean',
+		},
+		size: {
+			control: 'inline-radio',
+			options: ['medium', 'small'],
 		},
 		disabled: {
 			control: false,
@@ -63,5 +82,109 @@ export const WithLabel: Story = {
 export const Disabled: Story = {
 	args: {
 		isDisabled: true,
+	},
+};
+
+const STATES: Array<{
+	label: string;
+	props: Partial<SwitchProps>;
+	code(size: NonNullable<SwitchProps['size']>): string;
+}> = [
+	{ label: 'Default', props: {}, code: (size) => `size="${size}"` },
+	{ label: 'Hover', props: {}, code: () => ':hover' },
+	{
+		label: 'Selected',
+		props: { isSelected: true },
+		code: () => 'isSelected',
+	},
+	{
+		label: 'Disabled',
+		props: { isDisabled: true },
+		code: () => 'isDisabled',
+	},
+];
+
+const SIZES: Array<{
+	size: NonNullable<SwitchProps['size']>;
+	dimensions: string;
+	tag?: string;
+}> = [
+	{ size: 'medium', dimensions: '38 × 20', tag: 'default' },
+	{ size: 'small', dimensions: '30 × 16' },
+];
+
+/** Column headers, in the order the ladder lays them out. */
+const COL = ['Size', 'Px', 'State', 'Preview', 'Props', 'Tag'];
+
+/** A cell that is intentionally empty, so the grid track still advances. */
+const EmptyCell = () => <span className={small} aria-hidden="true" />;
+
+/**
+ * Every state at every size, as a Foundation-style ladder. `Props` is what you
+ * pass to reach the row; `Hover` is forced with the same `data-hovered`
+ * attribute the component sets from `useHover`, so it renders without a
+ * pointer and reaches Chromatic.
+ */
+export const AllStates: Story = {
+	render: (args) => (
+		<div className={storyLadderGrid}>
+			<div className={ladderRow}>
+				{COL.map((heading) => (
+					<span
+						className={clsx(labels, small, spaceLadderHeaderCell)}
+						key={heading}
+					>
+						{heading}
+					</span>
+				))}
+			</div>
+			{SIZES.flatMap(({ size, dimensions, tag }, group) =>
+				STATES.map(({ label, props, code }, index) => (
+					<div
+						className={clsx(
+							ladderRow,
+							group > 0 && index === 0 && storyGroupStart,
+						)}
+						key={`${size}-${label}`}
+					>
+						{index === 0 ? (
+							<span className={clsx(small, labels)}>{size}</span>
+						) : (
+							<EmptyCell />
+						)}
+						{index === 0 ? (
+							<span className={small}>{dimensions}</span>
+						) : (
+							<EmptyCell />
+						)}
+						<span className={small}>{label}</span>
+						<Box
+							className={clsx(
+								storyPreview,
+								label === 'Hover' && storyForceHover,
+							)}
+						>
+							<Switch
+								{...args}
+								{...props}
+								size={size}
+								aria-label={`${size} ${label}`}
+							/>
+						</Box>
+						<code className={tokenCode}>{code(size)}</code>
+						{index === 0 && tag ? (
+							<span className={clsx(small, tokenDescription)}>
+								{tag}
+							</span>
+						) : (
+							<EmptyCell />
+						)}
+					</div>
+				)),
+			)}
+		</div>
+	),
+	args: {
+		children: undefined,
 	},
 };

@@ -1,4 +1,10 @@
-import { globalLayer, style, styleVariants } from '@vanilla-extract/css';
+import {
+	createVar,
+	globalLayer,
+	globalStyle,
+	style,
+	styleVariants,
+} from '@vanilla-extract/css';
 
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
 import { LAYER_ORDER, cssLayerComponent } from '../../styles/layers.css';
@@ -7,11 +13,25 @@ import { overdriveTokens as vars } from '../../themes/theme.css';
 globalLayer(LAYER_ORDER);
 
 const colorAccent = vars.color.brand.solid;
+const colorAccentSubtle = vars.color.brand.subtle;
 const colorContrast = vars.color.background.default;
-const colorMid = vars.colours.background.neutral;
-const colorLight = vars.colours.background.light;
-const height = vars.space['6'];
-const handleSize = '24px';
+const colorMid = vars.color.background.inactive;
+const colorLight = vars.color.background.emphasisInactive;
+const colorBorder = vars.color.border.default;
+const colorHandleDisabled = vars.color.foreground.placeholder;
+
+const borderWidth = vars.border.width['1'];
+const easing = vars.animation.easing.decelerate;
+const trackTransition = `background-color 0.2s ${easing} 0s, border-color 0.2s ${easing} 0s`;
+const handleTransition = `background-color 0.2s ${easing} 0s, box-shadow 0.2s ${easing} 0s, transform 0.2s ${easing} 0s`;
+
+/**
+ * The whole geometry derives from the track height: the width is two heights
+ * less the overlap, and the handle travels the width it does not occupy.
+ */
+const trackHeight = createVar();
+const trackWidth = `calc(2 * ${trackHeight} - 2px)`;
+const handleTranslate = `translateX(calc(${trackHeight} - 2px))`;
 
 export const base = style({
 	'@layer': {
@@ -21,21 +41,64 @@ export const base = style({
 	},
 });
 
+export const size = styleVariants({
+	medium: {
+		'@layer': {
+			[cssLayerComponent]: {
+				vars: {
+					[trackHeight]: vars.space['5'],
+				},
+			},
+		},
+	},
+	small: {
+		'@layer': {
+			[cssLayerComponent]: {
+				vars: {
+					[trackHeight]: vars.space['4'],
+				},
+			},
+		},
+	},
+});
+
+const hoverTrack = {
+	backgroundColor: colorAccentSubtle,
+	borderColor: colorAccent,
+};
+
+const hoverHandle = {
+	boxShadow: vars.elevation.z2,
+};
+
 export const toggle = style([
 	{
 		'@layer': {
 			[cssLayerComponent]: {
 				backgroundColor: colorMid,
+				borderColor: colorBorder,
 				borderRadius: vars.border.radius.pill,
+				borderStyle: 'solid',
+				borderWidth,
+				boxSizing: 'border-box',
 				cursor: 'pointer',
-				height: height,
-				padding: '3px 4px',
-				transition:
-					'background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s',
-				width: `calc(2 * ${height} - 2px)`,
+				height: trackHeight,
+				padding: borderWidth,
+				transition: trackTransition,
+				width: trackWidth,
 				selectors: {
-					'&:not([data-disabled]):hover': {
+					'&[data-active]': {
 						backgroundColor: colorAccent,
+						borderColor: colorAccent,
+					},
+					'&[data-hovered]:not([data-active]):not([data-disabled])':
+						hoverTrack,
+					// after the two above, so a disabled control never carries
+					// the accent no matter which state it is in
+					'&[data-disabled]': {
+						backgroundColor: colorLight,
+						borderColor: colorBorder,
+						cursor: 'not-allowed',
 					},
 				},
 			},
@@ -44,58 +107,24 @@ export const toggle = style([
 	focusOutlineStyle,
 ]);
 
-export const toggleOn = style({
+export const handle = style({
 	'@layer': {
 		[cssLayerComponent]: {
-			backgroundColor: colorAccent,
-		},
-	},
-});
-
-export const disabled = style({
-	'@layer': {
-		[cssLayerComponent]: {
-			backgroundColor: colorLight,
-			cursor: 'not-allowed',
-		},
-	},
-});
-
-const handleScale = 'scale(0.95)';
-const handleTranslate = `translateX(calc(${handleSize} - 4px))`;
-
-export const handle = styleVariants({
-	default: {
-		'@layer': {
-			[cssLayerComponent]: {
-				aspectRatio: '1',
-				backgroundColor: colorContrast,
-				borderRadius: vars.border.radius.full,
-				height: '100%',
-				transition: 'transform 0.2s cubic-bezier(0, 0, 0.2, 1) 0s',
-				willChange: 'transform',
-				selectors: {
-					[`${toggle}:not([data-disabled]):hover &`]: {
-						transform: handleScale,
-					},
+			aspectRatio: '1',
+			backgroundColor: colorContrast,
+			borderRadius: vars.border.radius.full,
+			height: '100%',
+			transition: handleTransition,
+			willChange: 'transform',
+			selectors: {
+				[`${toggle}[data-active] &`]: {
+					backgroundColor: vars.color.brand.onSolid,
+					transform: handleTranslate,
 				},
-			},
-		},
-	},
-	// active needs to come after default in compiled css
-	// eslint-disable-next-line vanilla-extract/alphabetical-order
-	active: {
-		'@layer': {
-			[cssLayerComponent]: {
-				selectors: {
-					[`${toggleOn} &`]: {
-						// on the brand track, so on-brand rather than page
-						backgroundColor: vars.color.brand.onSolid,
-						transform: handleTranslate,
-					},
-					[`${toggle}:not([data-disabled]):hover &`]: {
-						transform: `${handleScale} ${handleTranslate}`,
-					},
+				[`${toggle}[data-hovered]:not([data-disabled]) &`]: hoverHandle,
+				// keeps the translate above, replaces only the fill
+				[`${toggle}[data-disabled] &`]: {
+					backgroundColor: colorHandleDisabled,
 				},
 			},
 		},
@@ -110,3 +139,56 @@ export const storyLabel = style({
 		},
 	},
 });
+
+/**
+ * Story-only. `data-hovered` is set from a real pointer, so the hover states in
+ * the spec have no other way to reach Storybook or Chromatic.
+ */
+/**
+ * Story-only. Column tracks for the state ladder, matching the Foundation
+ * ladders in `lib/stories/helpers/styles.css.ts`:
+ * Size · Px · State · Preview · Props · Tag.
+ *
+ * Every track is `auto` over a `fit-content` grid, so the columns sit next to
+ * each other instead of a `1fr` track stranding the preview at the far edge.
+ */
+export const storyLadderGrid = style({
+	'@layer': {
+		[cssLayerComponent]: {
+			alignItems: 'center',
+			columnGap: vars.space['6'],
+			display: 'grid',
+			gridTemplateColumns: 'repeat(6, auto)',
+			padding: vars.space['4'],
+			rowGap: vars.space['1'],
+			width: 'fit-content',
+		},
+	},
+});
+
+/** Story-only. Rule above the first row of each size group after the first. */
+export const storyGroupStart = style({
+	'@layer': {
+		[cssLayerComponent]: {
+			borderTop: `${borderWidth} solid ${vars.color.border.default}`,
+			marginTop: vars.space['3'],
+			paddingTop: vars.space['4'],
+		},
+	},
+});
+
+/** Story-only. Keeps the preview column a fixed width so the rows line up. */
+export const storyPreview = style({
+	'@layer': {
+		[cssLayerComponent]: {
+			display: 'flex',
+			justifyContent: 'center',
+			width: vars.space['9'],
+		},
+	},
+});
+
+export const storyForceHover = style({});
+
+globalStyle(`${storyForceHover} ${toggle}`, hoverTrack);
+globalStyle(`${storyForceHover} ${handle}`, hoverHandle);

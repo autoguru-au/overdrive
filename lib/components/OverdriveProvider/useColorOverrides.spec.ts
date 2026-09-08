@@ -107,6 +107,14 @@ describe('useColorOverrides', () => {
 			expect(result['--od-color-brand-on-solid']).toBe(colourMap.white);
 		});
 
+		it('derives a paler subtle wash from the supplied background', () => {
+			const result = vars({ primaryBackground: BRAND });
+			const subtle = result['--od-color-brand-subtle'];
+
+			expect(subtle).toBeDefined();
+			expect(luminance(subtle)).toBeGreaterThan(luminance(BRAND));
+		});
+
 		it('picks dark ink as on-brand content for a bright brand', () => {
 			const result = vars({ primaryBackground: BRIGHT });
 			expect(result['--od-color-brand-on-solid']).toBe(

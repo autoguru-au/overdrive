@@ -123,6 +123,7 @@ export const tokens = {
 		brand: {
 			solid: colourMap.gray['900'], // #212338
 			onSolid: colourMap.white, // #ffffff
+			subtle: colourMap.gray['200'], // #eef0f2 — pale companion to `solid`
 		},
 		surface: {
 			page: colourMap.white,
