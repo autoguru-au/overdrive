@@ -153,4 +153,27 @@ describe('<CheckBox />', () => {
 			);
 		});
 	});
+
+	describe('indeterminate', () => {
+		it('sets the native indeterminate flag, so it announces as mixed', () => {
+			const { container } = render(<CheckBox isIndeterminate value="1" />);
+
+			expect(container.querySelector('input').indeterminate).toBe(true);
+		});
+
+		it('carries the accent, marked apart from a plain tick', () => {
+			const { container } = render(<CheckBox isIndeterminate value="1" />);
+			const box = container.querySelector('[data-size]');
+
+			expect(box).toHaveAttribute('data-indeterminate');
+		});
+
+		it('leaves the attribute off an ordinary box', () => {
+			const { container } = render(<CheckBox value="1" />);
+
+			expect(
+				container.querySelector('[data-size]'),
+			).not.toHaveAttribute('data-indeterminate');
+		});
+	});
 });

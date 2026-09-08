@@ -109,10 +109,18 @@ export const Default: Story = {
  * The DS-2026 state matrix
  * ---------------------------------------------------------------------- */
 
-/** Every row Figma publishes, less Hover — which only exists under a cursor. */
+/**
+ * Every row Figma publishes, less Hover — which only exists under a cursor.
+ *
+ * Indeterminate is included even though the Figma spec has no frame for it: the
+ * omission was an oversight rather than a removal, confirmed with design, and
+ * the spec is being backfilled. It renders as the selected fill carrying a minus
+ * rather than a tick.
+ */
 const STATES = [
 	{ label: 'Default', props: {} },
 	{ label: 'Selected', props: { checked: true } },
+	{ label: 'Indeterminate', props: { isIndeterminate: true } },
 	{ label: 'Disabled', props: { disabled: true } },
 	{ label: 'Disabled selected', props: { checked: true, disabled: true } },
 ] as const;
@@ -131,6 +139,7 @@ const StateColumn = ({
 	size: CheckBoxSize;
 	checked?: boolean;
 	disabled?: boolean;
+	isIndeterminate?: boolean;
 }) => (
 	<Stack space="2" alignItems="center">
 		<Text size="2" colour="light">

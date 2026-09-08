@@ -78,5 +78,16 @@ beside that theme's flat-red green everywhere else.
 - `CheckBox.css.ts` is still outside `cssLayerComponent`. Converting it shifts
   specificity for every rule in the file, which is a cascade change for MFEs, so
   it is deliberately not in this change.
-- No indeterminate state appears in the Figma spec. The current behaviour is
-  kept as-is pending confirmation from design — nothing about it changed here.
+
+### Confirmed with design
+
+- **Indeterminate has no frame in the Figma spec, and that was an oversight
+  rather than a removal.** Design confirmed the current behaviour is right and
+  is backfilling the spec, so it is retained unchanged and now appears in the
+  `Sizes` story at both sizes — the selected fill carrying a minus instead of a
+  tick. The native `indeterminate` flag is still set on the input, so it
+  announces as `mixed`.
+- **`neutral` adopts the base green for its selection accent.** It gets no
+  override of its own: its green ramp is identical to base, so nothing clashes,
+  and design prefers the green here even though that theme points `focus.ring`
+  and links at blue.
