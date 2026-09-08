@@ -18,24 +18,14 @@ export interface SwitchProps
 	extends AriaSwitchProps,
 		OdComponentProp,
 		TestIdProp {
-	/** Id of the element labelling the switch, when the label sits outside it */
 	'aria-labelledby'?: AriaSwitchProps['aria-labelledby'];
-	/** Name of the underlying native input, as submitted with its form */
 	name?: AriaSwitchProps['name'];
-	/** Value of the underlying native input, as submitted with its form */
 	value?: AriaSwitchProps['value'];
-	/** Disables the switch, preventing all interaction */
 	isDisabled?: AriaSwitchProps['isDisabled'];
-	/** Controlled on/off state of the switch */
 	isSelected?: AriaSwitchProps['isSelected'];
-	/** Called when the state changes, with the new state */
 	onChange?: AriaSwitchProps['onChange'];
-	/** Additional class name applied to the root element */
 	className?: string;
-	/**
-	 * Track size — `medium` is 38×20, `small` is 30×16
-	 * @default 'medium'
-	 */
+	/** `medium` is 38×20, `small` is 30×16 */
 	size?: keyof typeof styles.size;
 	/**
 	 * @deprecated use isDisabled instead
