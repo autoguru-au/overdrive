@@ -2,35 +2,40 @@
 '@autoguru/overdrive': major
 ---
 
-`Switch` gains a `size` prop and a restyled set of states.
+`Switch` is rebuilt to the DS 2026 spec: two sizes, and states that stop
+pretending to be "on".
 
-**Breaking — the default Switch is smaller.** `size` takes `medium` (38×20) or
-`small` (30×16) and defaults to `medium`. Every Switch that does not pass `size`
-shrinks from the previous 46×24, so layouts sized around the old track will
-re-flow. The whole geometry derives from one track-height token per size, so
-there are no hardcoded pixel values left.
+**Switches got smaller.** The new `size` prop takes `medium` (38×20) or `small`
+(30×16) and defaults to `medium`. If you never passed `size`, your switches
+shrink from the old 46×24. Anything sized around that footprint — fixed-width
+table cells, tight flex rows, alignment hand-tuned against a label — will
+re-flow, so it is worth a look at any screen with a switch in a list or a form
+row.
 
-**Breaking — hover no longer fills the track.** An unselected Switch used to
-flood its track with the accent colour and scale the handle to `0.95`, which
-read as already-on. It now takes a pale `color.brand.subtle` wash, an accent
-border and a `z2` shadow under the handle. Hover comes from react-aria's
-`useHover` as `data-hovered`, so it no longer sticks on touch devices.
+**Hover no longer looks like on.** Hovering an _off_ switch used to flood the
+track with the accent colour and shrink the handle, which was almost
+indistinguishable from selected — people toggled switches that were already
+where they wanted them. Hover is now a pale wash, an accent border and a soft
+shadow under the handle. It also comes from react-aria's `useHover` now, so it
+stops sticking after a tap on touch devices.
 
-The track carries a `border.width['1']` border in every state, and a disabled
-Switch is fully neutral — the selected-and-disabled handle used to stay white on
-a grey track.
+**Disabled finally looks disabled.** A switch that was both selected and
+disabled kept a white handle on a grey track, so it still read as live. Disabled
+is uniformly neutral in both states now.
 
-`color.brand.subtle` is added to the theme contract, seeded to the pale
-companion of `brand.solid` and derived at runtime for tenants that brand via
-`colorOverrides`.
+**There is nothing to change in your code.** Every existing `<Switch />` keeps
+working and the migration is purely visual. If a layout leaned on the old 46×24,
+give it room — no `size` value reproduces the old dimensions.
 
-`SwitchProps` gains `odComponent`, stamping `data-od-component="switch"` on the
-root, and is now exported from the package root alongside `Switch` so consumers
-can type their own wrappers.
+Also in this release:
 
-Switch is off the legacy `colours.*` contract: `colours.background.neutral` →
-`color.background.inactive` and `colours.background.light` →
-`color.background.emphasisInactive`. Both resolve to identical values in the
-base and `flat_red` themes. Under the in-repo `neutral` theme the unselected
-track moves from gray-400 to gray-300, because that theme overrides only the
-legacy key.
+- `SwitchProps` is exported from the package root, so you can type your own
+  wrappers without reaching into internals.
+- The root element carries `data-od-component="switch"` for test and analytics
+  selectors.
+- `color.brand.subtle` joins the theme contract as the pale companion to
+  `brand.solid`, derived at runtime for tenants branding via `colorOverrides`.
+- Switch is off the legacy `colours.*` tokens. Values are identical in the base
+  and `flat_red` themes; under the in-repo `neutral` theme the unselected track
+  lightens from gray-400 to gray-300, because that theme only overrode the
+  legacy key.
