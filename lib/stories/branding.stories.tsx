@@ -85,12 +85,9 @@ const ChangesWithBrand = () => (
  * "on" surface carries the brand, and the glyph on top of it flips between white
  * and dark ink for contrast.
  *
- * Mid-migration, the three read different tokens: CheckBox is on the DS-2026
- * `color.selection.active` / `hoverBg` pair, while Switch and Radio still read
- * `color.brand.solid`. A tenant brand drives all three identically, so the
- * branded cards look consistent — but **unbranded, CheckBox renders Figma's
- * green while Switch and Radio render the `brand.solid` seed (navy)**. Radio and
- * Switch move onto the same pair in their own tickets, which closes the gap.
+ * CheckBox and Switch both read `color.brand.solid` for the accent and
+ * `color.brand.subtle` for the unselected hover wash, so branded or not, the
+ * two agree. Radio still draws its own dot and joins them in its own ticket.
  */
 const SelectionControls = ({ idPrefix }: { idPrefix: string }) => (
 	<Stack space="2">

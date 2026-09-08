@@ -2,28 +2,36 @@
 '@autoguru/overdrive': major
 ---
 
-feat(CheckBox)!: adopt the DS-2026 spec, add a `small` size and brand the
-selection accent (AG-21695)
+feat(CheckBox)!: adopt the DS-2026 spec, add a `small` size and layer the styles
+(AG-21695)
 
-**Breaking: every existing CheckBox changes appearance.** No prop is removed,
-renamed or retyped — the rendered output moves onto
+**Breaking: every existing CheckBox changes appearance.** No prop is removed or
+renamed — the rendered output moves onto
 [Figma's Check box spec](https://www.figma.com/design/ZkQlQcJkF7NTnZomVrPRN5/AutoGuru-Design-System-2026?node-id=438-15383).
 
-Two things move for consumers who change nothing:
+What moves for a consumer who changes nothing:
 
-| | before | after |
-| --- | --- | --- |
-| Default box | 24px, 20px tick | **20px, 16px tick** (Figma `Medium`) |
-| Selected fill, unbranded | `#212338` navy (`color.brand.solid` seed) | **`#01c68c` green** (`color.selection.active`) |
+|                    | before                                   | after                                  |
+| ------------------ | ---------------------------------------- | -------------------------------------- |
+| Box                | 24px (`space.6`), 20px tick              | **20px (`space.5`), 16px tick**        |
+| Corner             | `border.radius.sm`                       | **`border.radius.xsmall`**             |
+| Border, unselected | `colours.background.neutral` (legacy)    | **`color.border.default`**             |
+| Hover, unselected  | grey wash (`colours.background.neutral`) | **`color.brand.subtle`, brand border** |
+| Unchecked tick     | white, hidden against the page           | **`transparent`**                      |
+| Disabled           | row opacity only                         | **fill + border of its own**           |
 
 The 48px row and 48×44 hit area are unchanged, so nothing reflows around a
 checkbox — only the box inside the well is smaller.
 
+The checked fill is **not** changing here. CheckBox already read
+`color.brand.solid`, and that token was re-seeded from navy to green `#01c68c`
+by Switch's AG-21694 — so the green fill lands with that change, not this one.
+
 ### The new `size` prop
 
 `size="small"` adds Figma's 16px box (12px tick). `medium` is the default and
-the size an unqualified CheckBox renders at, so the scale reads
-`small` < `medium`, consistent with Badge and the rest of the library.
+the size an unqualified CheckBox renders at, so the scale reads `small` <
+`medium`, consistent with Badge and the rest of the library.
 
 Every dimension comes off the space ladder rather than a literal: the box is the
 `5` (20px) and `4` (16px) tokens, and the tick steps down one token from its box
@@ -31,26 +39,40 @@ Every dimension comes off the space ladder rather than a literal: the box is the
 `border.radius.xsmall` at both sizes; the small box does not step its radius
 down.
 
-### Two new theme tokens
+### No new tokens
 
-Figma binds the selection accent as its own pair, and neither existed:
+The accent is `color.brand.solid` and the unselected hover wash is
+`color.brand.subtle` — the pair Switch already reads, seeded to Figma's
+`#01c68c` / `#e3f8f0`. Branding therefore works the same way it does for Switch:
+a tenant's `primaryBackground` drives the fill verbatim and `brand.subtle`
+derives the wash, with no CheckBox-specific derivation.
 
-- `color.selection.active` — the checked fill and its border. Seeded to
-  green-600 `#01c68c`.
-- `color.selection.hoverBg` — the wash behind an unchecked box on hover. Seeded
-  to green-200 `#e3f8f0`.
+The tick reads `color.brand.onSolid` rather than Figma's
+`color/foreground/reverse` directly. Both resolve to white unbranded, but
+`onSolid` is derived against the fill, so a tenant on a pale brand (amber) gets
+dark ink instead of an invisible white tick.
 
-Both are branded: a tenant's `primaryBackground` drives `active` verbatim, and
-`hoverBg` derives as that hue at 12% alpha. Alpha rather than a `lighten()`
-because Figma's `#e3f8f0` *is* its green at ~12% over white (within 2/255 per
-channel), and because lightening a bright brand far enough to match that value
-takes it to pure white — no wash at all. Verified in the branding story: violet
-`#6d39a8` and amber `#e5bc01` each produce their own accent and their own wash,
-and amber's tick derives as dark ink rather than an invisible white.
+### Breaking: `CheckBox.css.ts` moves into `cssLayerComponent`
 
-`flat_red` overrides the pair onto its own green ramp, for the same reason it
-already overrides `focus.ring` — base's literals would check a box in base green
-beside that theme's flat-red green everywhere else.
+Every rule in the file now sits in the `component` cascade layer, matching
+Switch. **An unlayered MFE override that used to lose to CheckBox will now
+win**, because unlayered author styles outrank every layered one. That is the
+intended direction — it is what makes the component themable without
+`!important` — but it is a cascade change, so an MFE that was fighting these
+rules may find its override suddenly taking effect.
+
+One rule is deliberately left unlayered: the glyph sizing in `icon`. `Icon`
+sizes itself through `makeResponsiveStyle`, which emits a plain unlayered
+`style`, so a layered glyph rule would lose to it and the tick would render at
+Icon's own size rather than the spec's 16/12px. There is no 12px `icon.size`
+token to pass instead.
+
+State is now expressed as data attributes on the box — `data-active`,
+`data-disabled`, `data-indeterminate`, `data-size` — rather than through
+`:checked`/`:disabled` sibling combinators. Same rendered result, and the
+specificity juggling the old selectors needed is gone:
+`[data-disabled][data-active]` outranks `[data-active]` structurally. These
+attributes are a styling and test hook, not API.
 
 ### Other fixes
 
@@ -61,7 +83,8 @@ beside that theme's flat-red green everywhere else.
 - The unchecked tick is `transparent` rather than page-background-coloured. The
   old trick painted a white tick, which became visible once hover gained a fill.
 - `testId` and `odComponent` reach the root, which now carries
-  `data-od-component="checkbox"`; the box carries `data-size`.
+  `data-od-component="checkbox"`. `odComponent` is an overridable prop
+  defaulting to `checkbox`, as it is on Switch.
 - `displayName` corrected from `Checkbox` to `CheckBox`, matching the export.
 
 ### Known limitations
@@ -71,23 +94,14 @@ beside that theme's flat-red green everywhere else.
   composites to roughly `#f5f6f7` and its `#d4d9dd` border to `#e5e8ea`. The
   fill and border tokens themselves are correct; unfading the box means changing
   a file Radio also renders through, so it belongs with Radio's own ticket.
-- **Unbranded, a checked CheckBox is now green while Switch and Radio are still
-  navy**, because those two still read `color.brand.solid`. A tenant brand
-  drives all three identically, so only the unbranded theme looks mixed. This
-  closes when Switch and Radio move onto the same pair.
-- `CheckBox.css.ts` is still outside `cssLayerComponent`. Converting it shifts
-  specificity for every rule in the file, which is a cascade change for MFEs, so
-  it is deliberately not in this change.
+- **Radio still draws its dot from its own styles**, so unbranded it does not
+  yet match CheckBox and Switch. That closes with AG-21696.
 
 ### Confirmed with design
 
 - **Indeterminate has no frame in the Figma spec, and that was an oversight
   rather than a removal.** Design confirmed the current behaviour is right and
   is backfilling the spec, so it is retained unchanged and now appears in the
-  `Sizes` story at both sizes — the selected fill carrying a minus instead of a
-  tick. The native `indeterminate` flag is still set on the input, so it
+  `AllStates` story at both sizes — the selected fill carrying a minus instead
+  of a tick. The native `indeterminate` flag is still set on the input, so it
   announces as `mixed`.
-- **`neutral` adopts the base green for its selection accent.** It gets no
-  override of its own: its green ramp is identical to base, so nothing clashes,
-  and design prefers the green here even though that theme points `focus.ring`
-  and links at blue.

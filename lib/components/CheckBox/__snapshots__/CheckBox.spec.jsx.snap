@@ -21,11 +21,12 @@ exports[`<CheckBox /> > should match the snapshot for a checked check 1`] = `
       class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwjufe sprinkles_position_relative_mobile__onxwjuha sprinkles_alignItems_center_mobile__onxwju106 sprinkles_justifyContent_center_mobile__onxwju11u CheckableBase_checkable__y94qv3 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 CheckBox_checkbox_default__1ifzuoz2 CheckBox_size_medium__1ifzuoz0 CheckableBase_checkableIndicator__y94qv4 CheckBox_checkbox_selected__1ifzuoz3"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 CheckBox_checkbox__1ifzuoz2 CheckBox_size_medium__1ifzuoz0 CheckableBase_checkableIndicator__y94qv4"
+        data-active=""
         data-size="medium"
       >
         <span
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuf6 Icon_makeResponsiveStyle_key_bp__1gy3ire0 CheckBox_icon__1ifzuoz4"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuf6 Icon_makeResponsiveStyle_key_bp__1gy3ire0 CheckBox_icon__1ifzuoz3"
           data-od-component="icon"
         >
           <svg
@@ -78,11 +79,12 @@ exports[`<CheckBox /> > should match the snapshot for a disable checkbox 1`] = `
       class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwjufe sprinkles_position_relative_mobile__onxwjuha sprinkles_alignItems_center_mobile__onxwju106 sprinkles_justifyContent_center_mobile__onxwju11u CheckableBase_checkable__y94qv3 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 CheckBox_checkbox_default__1ifzuoz2 CheckBox_size_medium__1ifzuoz0 CheckableBase_checkableIndicator__y94qv4"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 CheckBox_checkbox__1ifzuoz2 CheckBox_size_medium__1ifzuoz0 CheckableBase_checkableIndicator__y94qv4"
+        data-disabled=""
         data-size="medium"
       >
         <span
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuf6 Icon_makeResponsiveStyle_key_bp__1gy3ire0 CheckBox_icon__1ifzuoz4"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuf6 Icon_makeResponsiveStyle_key_bp__1gy3ire0 CheckBox_icon__1ifzuoz3"
           data-od-component="icon"
         >
           <svg
@@ -134,11 +136,11 @@ exports[`<CheckBox /> > should match the snapshot for a single check 1`] = `
       class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwjufe sprinkles_position_relative_mobile__onxwjuha sprinkles_alignItems_center_mobile__onxwju106 sprinkles_justifyContent_center_mobile__onxwju11u CheckableBase_checkable__y94qv3 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 CheckBox_checkbox_default__1ifzuoz2 CheckBox_size_medium__1ifzuoz0 CheckableBase_checkableIndicator__y94qv4"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 CheckBox_checkbox__1ifzuoz2 CheckBox_size_medium__1ifzuoz0 CheckableBase_checkableIndicator__y94qv4"
         data-size="medium"
       >
         <span
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuf6 Icon_makeResponsiveStyle_key_bp__1gy3ire0 CheckBox_icon__1ifzuoz4"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuf6 Icon_makeResponsiveStyle_key_bp__1gy3ire0 CheckBox_icon__1ifzuoz3"
           data-od-component="icon"
         >
           <svg
@@ -189,11 +191,11 @@ exports[`<CheckBox /> > should match the snapshot for a single check with no val
       class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwjufe sprinkles_position_relative_mobile__onxwjuha sprinkles_alignItems_center_mobile__onxwju106 sprinkles_justifyContent_center_mobile__onxwju11u CheckableBase_checkable__y94qv3 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 CheckBox_checkbox_default__1ifzuoz2 CheckBox_size_medium__1ifzuoz0 CheckableBase_checkableIndicator__y94qv4"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 CheckBox_checkbox__1ifzuoz2 CheckBox_size_medium__1ifzuoz0 CheckableBase_checkableIndicator__y94qv4"
         data-size="medium"
       >
         <span
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuf6 Icon_makeResponsiveStyle_key_bp__1gy3ire0 CheckBox_icon__1ifzuoz4"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuf6 Icon_makeResponsiveStyle_key_bp__1gy3ire0 CheckBox_icon__1ifzuoz3"
           data-od-component="icon"
         >
           <svg
@@ -243,11 +245,11 @@ exports[`<CheckBox /> > when with component child > should match the snapshot 1`
       class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwjufe sprinkles_position_relative_mobile__onxwjuha sprinkles_alignItems_center_mobile__onxwju106 sprinkles_justifyContent_center_mobile__onxwju11u CheckableBase_checkable__y94qv3 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 CheckBox_checkbox_default__1ifzuoz2 CheckBox_size_medium__1ifzuoz0 CheckableBase_checkableIndicator__y94qv4"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 CheckBox_checkbox__1ifzuoz2 CheckBox_size_medium__1ifzuoz0 CheckableBase_checkableIndicator__y94qv4"
         data-size="medium"
       >
         <span
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuf6 Icon_makeResponsiveStyle_key_bp__1gy3ire0 CheckBox_icon__1ifzuoz4"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuf6 Icon_makeResponsiveStyle_key_bp__1gy3ire0 CheckBox_icon__1ifzuoz3"
           data-od-component="icon"
         >
           <svg

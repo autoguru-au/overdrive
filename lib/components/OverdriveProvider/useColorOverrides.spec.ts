@@ -187,41 +187,6 @@ describe('useColorOverrides', () => {
 		});
 	});
 
-	describe('selection accent', () => {
-		it('checks a box in the tenant brand', () => {
-			const result = vars({ primaryBackground: BRAND });
-			expect(result['--od-color-selection-active']).toBe(BRAND);
-		});
-
-		it('washes the hover state with the brand at 12% alpha', () => {
-			const result = vars({ primaryBackground: BRAND });
-			expect(result['--od-color-selection-hover-bg']).toBe(
-				colord(BRAND).alpha(0.12).toHex(),
-			);
-		});
-
-		/**
-		 * The reason the wash is alpha rather than a lighten: raising HSL
-		 * lightness far enough to reach Figma's pale green takes a bright brand
-		 * to white, which is no wash at all.
-		 */
-		it('keeps the wash visible for a bright brand', () => {
-			const wash = vars({ primaryBackground: BRIGHT })[
-				'--od-color-selection-hover-bg'
-			];
-
-			expect(colord(wash).alpha(1).toHex()).not.toBe(colourMap.white);
-			expect(hue(wash)).toBeCloseTo(hue(BRIGHT), 0);
-		});
-
-		it('leaves the theme green in place when nothing is branded', () => {
-			const result = vars({ linkColor: BRAND });
-
-			expect(result['--od-color-selection-active']).toBeUndefined();
-			expect(result['--od-color-selection-hover-bg']).toBeUndefined();
-		});
-	});
-
 	describe('outlined button', () => {
 		it('takes the brand verbatim for border and label', () => {
 			const result = vars({ primaryBackground: BRAND });

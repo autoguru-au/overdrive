@@ -1,15 +1,29 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import React, { useEffect, useState } from 'react';
+import clsx from 'clsx';
+import React, { useState } from 'react';
 import { expect, fn } from 'storybook/test';
 
+import {
+	labels,
+	ladderGroupStart,
+	ladderPreviewCell,
+	ladderRow,
+	small,
+	spaceLadderHeaderCell,
+	switchLadderGrid,
+	tokenCode,
+	tokenDescription,
+} from '../../stories/helpers/styles.css';
 import { Badge } from '../Badge/Badge';
-import { FlexInline } from '../Flex/FlexInline';
+import { Box } from '../Box/Box';
 import { Heading } from '../Heading/Heading';
-import { Stack } from '../Stack';
 import { StarRating } from '../StarRating/StarRating';
 import { Text } from '../Text/Text';
 
-import { CheckBox, type CheckBoxSize } from './CheckBox';
+import { CheckBox, type CheckboxProps } from './CheckBox';
+import { storyForceHover } from './CheckBox.css';
+
+type CheckBoxSize = NonNullable<CheckboxProps['size']>;
 
 const listData: Array<{ label: string; value: string }> = [
 	{ label: 'Avocado', value: 'avocado' },
@@ -53,12 +67,13 @@ const meta: Meta<typeof CheckBox> = {
 		const [checked, setChecked] = useState(false);
 		const [hasIndeterminate, setHasIndeterminate] =
 			useState(isIndeterminate);
+		const [lastArg, setLastArg] = useState(isIndeterminate);
 
-		useEffect(() => {
-			if (isIndeterminate !== hasIndeterminate) {
-				setHasIndeterminate(isIndeterminate);
-			}
-		}, [isIndeterminate]);
+		// Resync when the control changes, without an effect.
+		if (lastArg !== isIndeterminate) {
+			setLastArg(isIndeterminate);
+			setHasIndeterminate(isIndeterminate);
+		}
 
 		return (
 			<CheckBox
@@ -113,105 +128,141 @@ export const Default: Story = {
  * ---------------------------------------------------------------------- */
 
 /**
- * Every row Figma publishes, less Hover — which only exists under a cursor.
+ * Every row Figma publishes.
  *
  * Indeterminate is included even though the Figma spec has no frame for it: the
  * omission was an oversight rather than a removal, confirmed with design, and
  * the spec is being backfilled. It renders as the selected fill carrying a minus
  * rather than a tick.
  */
-const STATES = [
-	{ label: 'Default', props: {} },
-	{ label: 'Selected', props: { checked: true } },
-	{ label: 'Indeterminate', props: { isIndeterminate: true } },
-	{ label: 'Disabled', props: { disabled: true } },
-	{ label: 'Disabled selected', props: { checked: true, disabled: true } },
-] as const;
-
-const SIZE_LABELS: Record<CheckBoxSize, string> = {
-	medium: 'Medium — 20px box, 16px tick (default)',
-	small: 'Small — 16px box, 12px tick',
-};
-
-const StateColumn = ({
-	label,
-	size,
-	...props
-}: {
+const STATES: Array<{
 	label: string;
+	props: Partial<CheckboxProps>;
+	code(size: CheckBoxSize): string;
+}> = [
+	{ label: 'Default', props: {}, code: (size) => `size="${size}"` },
+	{ label: 'Hover', props: {}, code: () => ':hover' },
+	{ label: 'Selected', props: { checked: true }, code: () => 'checked' },
+	{
+		label: 'Indeterminate',
+		props: { isIndeterminate: true },
+		code: () => 'isIndeterminate',
+	},
+	{ label: 'Disabled', props: { disabled: true }, code: () => 'disabled' },
+	{
+		label: 'Disabled selected',
+		props: { checked: true, disabled: true },
+		code: () => 'checked disabled',
+	},
+];
+
+const SIZES: Array<{
 	size: CheckBoxSize;
-	checked?: boolean;
-	disabled?: boolean;
-	isIndeterminate?: boolean;
-}) => (
-	<Stack space="2" alignItems="center">
-		<Text size="2" colour="light">
-			{label}
-		</Text>
-		{/* No children, so the box stands alone — hence the explicit name. */}
-		<CheckBox
-			{...props}
-			size={size}
-			value={label}
-			name={`matrix-${size}-${label}`}
-			aria-label={`${label} ${size}`}
-		/>
-	</Stack>
-);
+	dimensions: string;
+	tag?: string;
+}> = [
+	{ size: 'medium', dimensions: '20 × 20', tag: 'default' },
+	{ size: 'small', dimensions: '16 × 16' },
+];
+
+const COL = ['Size', 'Px', 'State', 'Preview', 'Props', 'Tag'];
+
+const EmptyCell = () => <span className={small} aria-hidden="true" />;
 
 /**
- * Both sizes across every state in the Figma spec, states down the columns so
- * checked and unchecked sit side by side.
+ * Both sizes across every state in the Figma spec.
  *
- * **Hover is not shown** — it needs a live cursor, so it renders here only when
- * you hover a box yourself, and Chromatic cannot snapshot it. Unselected hover
- * fills with `color.selection.hoverBg` and borders in `color.selection.active`.
+ * The Hover row forces its own appearance through `storyForceHover`, so the
+ * state Chromatic cannot otherwise reach is still snapshot.
  *
  * Both sizes keep the same 48px row and hit area: only the box shrinks, so a
  * `small` checkbox stays above the WCAG 2.5.8 target minimum.
  */
-export const Sizes: Story = {
+export const AllStates: Story = {
 	parameters: { controls: { disable: true } },
 	render: () => (
-		<Stack space="6">
-			{(Object.keys(SIZE_LABELS) as CheckBoxSize[]).map((size) => (
-				<Stack key={size} space="3">
-					<Heading as="h4">{SIZE_LABELS[size]}</Heading>
-					<FlexInline gap="5">
-						{STATES.map((state) => (
-							<StateColumn
-								key={state.label}
-								label={state.label}
+		<div className={switchLadderGrid}>
+			<div className={ladderRow}>
+				{COL.map((heading) => (
+					<span
+						className={clsx(labels, small, spaceLadderHeaderCell)}
+						key={heading}
+					>
+						{heading}
+					</span>
+				))}
+			</div>
+			{SIZES.flatMap(({ size, dimensions, tag }, group) =>
+				STATES.map(({ label, props, code }, index) => (
+					<div
+						className={clsx(
+							ladderRow,
+							group > 0 && index === 0 && ladderGroupStart,
+						)}
+						key={`${size}-${label}`}
+					>
+						{index === 0 ? (
+							<span className={clsx(small, labels)}>{size}</span>
+						) : (
+							<EmptyCell />
+						)}
+						{index === 0 ? (
+							<span className={small}>{dimensions}</span>
+						) : (
+							<EmptyCell />
+						)}
+						<span className={small}>{label}</span>
+						<Box
+							className={clsx(
+								ladderPreviewCell,
+								label === 'Hover' && storyForceHover,
+							)}
+						>
+							{/* No children, so the box stands alone — hence the explicit name. */}
+							<CheckBox
+								{...props}
 								size={size}
-								{...state.props}
+								value={label}
+								name={`matrix-${size}-${label}`}
+								aria-label={`${size} ${label}`}
 							/>
-						))}
-					</FlexInline>
-				</Stack>
-			))}
-		</Stack>
+						</Box>
+						<code className={tokenCode}>{code(size)}</code>
+						{index === 0 && tag ? (
+							<span className={clsx(small, tokenDescription)}>
+								{tag}
+							</span>
+						) : (
+							<EmptyCell />
+						)}
+					</div>
+				)),
+			)}
+		</div>
 	),
 	play: async ({ canvas, step }) => {
 		await step('renders every state at both sizes', async () => {
 			await expect(canvas.getAllByRole('checkbox')).toHaveLength(
-				STATES.length * 2,
+				STATES.length * SIZES.length,
 			);
 		});
 
-		const box = (name: string) =>
-			canvas
-				.getByRole('checkbox', { name })
-				.parentElement?.querySelector('[data-size]');
-
 		await step('sizes the box per the spec', async () => {
-			await expect(box('Default medium')).toHaveAttribute(
-				'data-size',
-				'medium',
-			);
-			await expect(box('Default small')).toHaveAttribute(
-				'data-size',
-				'small',
-			);
+			const [box] = canvas.getAllByRole('checkbox');
+
+			await expect(
+				box.parentElement?.querySelector('[data-size]'),
+			).toHaveAttribute('data-size', 'medium');
+		});
+
+		await step('marks the selected states with the accent', async () => {
+			const selected = canvas.getByRole('checkbox', {
+				name: 'medium Selected',
+			});
+
+			await expect(
+				selected.parentElement?.querySelector('[data-size]'),
+			).toHaveAttribute('data-active');
 		});
 	},
 };

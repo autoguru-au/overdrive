@@ -2,7 +2,7 @@ import { CheckIcon, MinusIcon } from '@autoguru/icons';
 import clsx from 'clsx';
 import React, { forwardRef, ReactNode, useEffect, useRef } from 'react';
 
-import type { TestIdProp } from '../../types';
+import type { OdComponentProp, TestIdProp } from '../../types';
 import { mergeRefs, noop } from '../../utils';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box/Box';
@@ -12,17 +12,7 @@ import { checkableIndicator } from '../private/CheckableBase/CheckableBase.css';
 
 import * as styles from './CheckBox.css';
 
-/**
- * The box sizes DS-2026 publishes. `medium` (20px) is the default and the size
- * every unqualified CheckBox in the library renders at; `small` (16px) is for
- * dense layouts.
- *
- * Shared in intent with Radio and Switch — promote to `lib/types` once those
- * two carry a size of their own (AG-21694, AG-21696).
- */
-export type CheckBoxSize = 'medium' | 'small';
-
-export interface CheckboxProps extends TestIdProp {
+export interface CheckboxProps extends OdComponentProp, TestIdProp {
 	/** Flexible className applied to the root element */
 	className?: string;
 	/**
@@ -51,7 +41,7 @@ export interface CheckboxProps extends TestIdProp {
 	 * Box size, per the DS-2026 selection-control spec.
 	 * @default 'medium'
 	 */
-	size?: CheckBoxSize;
+	size?: keyof typeof styles.size;
 	/** Fired on click, with the box's state at the time of the click */
 	onClick?(checked: boolean): void;
 	/** Fired when the ticked state changes, with the new state */
@@ -70,6 +60,7 @@ export const CheckBox = forwardRef<HTMLInputElement, CheckboxProps>(
 			checked = false,
 			isIndeterminate = false,
 			size = 'medium',
+			odComponent = 'checkbox',
 			testId,
 			onClick = noop,
 			onChange = noop,
@@ -97,23 +88,21 @@ export const CheckBox = forwardRef<HTMLInputElement, CheckboxProps>(
 				label={children}
 				disabled={disabled}
 				checked={checked}
-				odComponent="checkbox"
+				odComponent={odComponent}
 				testId={testId}
 				handleClick={onClick}
 				handleChange={onChange}
 			>
 				<Box
 					className={clsx(
-						styles.checkbox.default,
+						styles.checkbox,
 						styles.size[size],
 						checkableIndicator,
-						{
-							[styles.checkbox.selected]:
-								checked || isIndeterminate,
-						},
 					)}
 					{...dataAttrs({
 						size,
+						active: checked || isIndeterminate,
+						disabled,
 						indeterminate: isIndeterminate,
 					})}
 				>

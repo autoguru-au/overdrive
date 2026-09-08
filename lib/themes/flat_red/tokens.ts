@@ -80,13 +80,6 @@ export const tokens = deepmerge(baseTokens, {
 			linkOnLight: colours.green['600'],
 			linkOnDark: colours.green['600'],
 		},
-		// Same reason as `focus.ring` above: base seeds the selection pair to
-		// its own green literals, which would check a box in base green beside
-		// this theme's flat-red green everywhere else.
-		selection: {
-			active: colours.green['600'],
-			hoverBg: colours.green['200'],
-		},
 	},
 	colours: {
 		gamut: {

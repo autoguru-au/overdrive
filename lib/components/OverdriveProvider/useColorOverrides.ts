@@ -12,7 +12,6 @@ import {
 	lightenColour,
 	passesAccessibilityContrast,
 	shadedColour,
-	translucentColour,
 } from '../../themes/helpers';
 import { overdriveTokens, type ThemeTokens } from '../../themes/theme.css';
 
@@ -204,14 +203,6 @@ const warnOnLowContrast = (
 const maxShadeSteps = 60;
 const shadeStep = 0.01;
 
-/**
- * Figma's `color/selection/hover-bg` (`#e3f8f0`) is its `color/selection/active`
- * green at this alpha over white — measured per channel, it lands within 2/255.
- * Applying the alpha rather than the resolved value is what lets a tenant hue
- * produce its own wash.
- */
-const selectionHoverAlpha = 0.12;
-
 const shade = (
 	colour: string,
 	towards: 'darker' | 'lighter',
@@ -323,7 +314,6 @@ export const useColorOverrides = (
 		let buttonForeground: string | null = null;
 		let outlinedHover: string | null = null;
 		let outlinedPressed: string | null = null;
-		let selectionHover: string | null = null;
 
 		if (primaryBackground) {
 			// Opposite directions: in a light theme mild is the paler wash and
@@ -377,12 +367,6 @@ export const useColorOverrides = (
 				direction: 'forward',
 				intensity: 0.5,
 			});
-
-			// The unchecked-hover wash behind a selection control.
-			selectionHover = translucentColour(
-				primaryBackground,
-				selectionHoverAlpha,
-			);
 		}
 
 		// One inline var serves every surface, so a single link colour cannot be
@@ -413,14 +397,6 @@ export const useColorOverrides = (
 					onSolid: onBrand ?? undefined,
 					//@ts-expect-error no undefined
 					subtle: brandSubtle ?? undefined,
-				},
-				selection: {
-					// A tenant's brand checks the box, exactly as it does for
-					// `brand.solid`. Unbranded, both keep the theme's green.
-					//@ts-expect-error no undefined
-					active: primaryBackground ?? undefined,
-					//@ts-expect-error no undefined
-					hoverBg: selectionHover ?? undefined,
 				},
 				interactive: {
 					// The two surface buckets. Every painted surface points the

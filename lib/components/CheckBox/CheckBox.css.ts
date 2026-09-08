@@ -1,10 +1,18 @@
-import { style, styleVariants } from '@vanilla-extract/css';
+import {
+	globalLayer,
+	globalStyle,
+	style,
+	styleVariants,
+} from '@vanilla-extract/css';
 
+import { LAYER_ORDER, cssLayerComponent } from '../../styles/layers.css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
 import {
 	nativeInput,
 	checkable,
 } from '../private/CheckableBase/CheckableBase.css';
+
+globalLayer(LAYER_ORDER);
 
 /**
  * Figma — Selection controls / Check box (node 438:15383).
@@ -14,16 +22,34 @@ import {
  * | State                | Fill                             | Border                    | Tick                          |
  * | -------------------- | -------------------------------- | ------------------------- | ----------------------------- |
  * | Default              | `color/background/default`       | `color/border/default`    | —                             |
- * | Hover (unselected)   | `color/selection/hover-bg`       | `color/selection/active`  | —                             |
- * | Selected             | `color/selection/active`         | same                      | `color/foreground/reverse`    |
+ * | Hover (unselected)   | `color/brand/subtle`             | `color/brand/solid`       | —                             |
+ * | Selected             | `color/brand/solid`              | same                      | `color/foreground/reverse`    |
  * | Disabled unselected  | `color/background/emphasis/inactive` | `color/border/default` | —                             |
  * | Disabled selected    | `color/background/emphasis/inactive` | `color/border/default` | `color/foreground/placeholder` |
  *
  * `radius` is `border/radius/xsmall` at BOTH sizes — the small box does not
  * step its corner down.
  */
+const colorAccent = vars.color.brand.solid;
+const colorAccentSubtle = vars.color.brand.subtle;
+const colorContrast = vars.color.background.default;
+const colorLight = vars.color.background.emphasisInactive;
+const colorBorder = vars.color.border.default;
+const colorTickDisabled = vars.color.foreground.placeholder;
+
+/**
+ * The tick colour reads `brand.onSolid`, not Figma's `color/foreground/reverse`
+ * directly. Both resolve to white unbranded, but `onSolid` is the pair derived
+ * against the fill — a tenant on a pale brand (amber) gets dark ink here, where
+ * `foreground.reverse` would leave an invisible tick on its own accent.
+ */
+const colorTickOnAccent = vars.color.brand.onSolid;
+
 const radius = vars.border.radius.xsmall;
 const borderWidth = vars.border.width['1'];
+const easing = vars.animation.easing.decelerate;
+const boxTransition = `border-color 0.2s ${easing} 0s, background-color 0.2s ${easing} 0s`;
+const glyphTransition = `transform 0.2s ${vars.animation.easing.standard}`;
 
 /**
  * Figma draws the box at 20/16 with the tick inset 2px on every side, so the
@@ -38,73 +64,90 @@ const glyph = {
 	small: vars.space['3'], // 12px
 } as const;
 
-const transition = `border-color 0.2s ${vars.animation.easing.decelerate} 0s, background-color 0.2s ${vars.animation.easing.decelerate} 0s`;
-
-/**
- * The tick colour reads `brand.onSolid`, not Figma's `color/foreground/reverse`
- * directly. Both resolve to white unbranded, but `onSolid` is the pair derived
- * against the fill — a tenant on a pale brand (amber) gets dark ink here, where
- * `foreground.reverse` would leave an invisible tick on its own accent.
- */
-const tickOnActive = vars.color.brand.onSolid;
-
 export const size = styleVariants({
-	medium: { height: box.medium, width: box.medium },
-	small: { height: box.small, width: box.small },
-});
-
-export const checkbox = styleVariants({
-	default: {
-		alignItems: 'center',
-		backgroundColor: vars.color.background.default,
-		borderColor: vars.color.border.default,
-		borderRadius: radius,
-		borderStyle: 'solid',
-		borderWidth,
-		boxSizing: 'border-box',
-		// The tick is always in the DOM so it can transition; unchecked it is
-		// simply not painted. Previously it was hidden by matching the page
-		// background, which showed as a white tick once hover gained a fill.
-		color: 'transparent',
-		display: 'flex',
-		justifyContent: 'center',
-		transition,
-		zIndex: 0,
-		selectors: {
-			// Hover, unselected. An indeterminate box is not `:checked`, so
-			// without the guard the wash would strip its accent fill.
-			[`${nativeInput}:not(:checked):not(:disabled):hover ~${checkable} &:not([data-indeterminate])`]:
-				{
-					backgroundColor: vars.color.selection.hoverBg,
-					borderColor: vars.color.selection.active,
-				},
-			// Disabled outranks selected on specificity (three classes to one),
-			// so both disabled rows land whichever order the classes compose in.
-			[`${nativeInput}:disabled ~${checkable} &`]: {
-				backgroundColor: vars.color.background.emphasisInactive,
-				borderColor: vars.color.border.default,
-			},
-			[`${nativeInput}:disabled:checked ~${checkable} &`]: {
-				color: vars.color.foreground.placeholder,
+	medium: {
+		'@layer': {
+			[cssLayerComponent]: {
+				height: box.medium,
+				width: box.medium,
 			},
 		},
 	},
-	selected: {
-		backgroundColor: vars.color.selection.active,
-		borderColor: vars.color.selection.active,
-		color: tickOnActive,
+	small: {
+		'@layer': {
+			[cssLayerComponent]: {
+				height: box.small,
+				width: box.small,
+			},
+		},
 	},
 });
 
+const hoverBox = {
+	backgroundColor: colorAccentSubtle,
+	borderColor: colorAccent,
+};
+
+export const checkbox = style({
+	'@layer': {
+		[cssLayerComponent]: {
+			alignItems: 'center',
+			backgroundColor: colorContrast,
+			borderColor: colorBorder,
+			borderRadius: radius,
+			borderStyle: 'solid',
+			borderWidth,
+			boxSizing: 'border-box',
+			// The tick is always in the DOM so it can transition; unchecked it is
+			// simply not painted. Previously it was hidden by matching the page
+			// background, which showed as a white tick once hover gained a fill.
+			color: 'transparent',
+			display: 'flex',
+			justifyContent: 'center',
+			transition: boxTransition,
+			zIndex: 0,
+			selectors: {
+				'&[data-active]': {
+					backgroundColor: colorAccent,
+					borderColor: colorAccent,
+					color: colorTickOnAccent,
+				},
+				[`${nativeInput}:hover ~${checkable} &:not([data-active]):not([data-disabled])`]:
+					hoverBox,
+				'&[data-disabled]': {
+					backgroundColor: colorLight,
+					borderColor: colorBorder,
+				},
+				'&[data-disabled][data-active]': {
+					color: colorTickDisabled,
+				},
+			},
+		},
+	},
+});
+
+/**
+ * Deliberately NOT in the component layer. `Icon` sizes itself with unlayered
+ * `width`/`height` (`makeResponsiveStyle` emits a plain `style`), and an
+ * unlayered rule outranks every layered one — so a layered glyph size would
+ * lose and the tick would render at Icon's own size instead of the spec's
+ * 16/12px. There is no 12px `icon.size` token to pass instead.
+ */
 export const icon = style({
-	transition: `transform 0.2s ${vars.animation.easing.standard}`,
+	transition: glyphTransition,
 	selectors: {
-		// Two classes, so this outranks the single-class width/height Icon sets
-		// from its own `size` prop regardless of stylesheet order.
 		[`${size.medium} &`]: { height: glyph.medium, width: glyph.medium },
 		[`${size.small} &`]: { height: glyph.small, width: glyph.small },
-		[`${nativeInput}:checked:hover ~${checkable} ${checkbox.selected} &`]: {
+		[`${nativeInput}:hover ~${checkable} ${checkbox}[data-active] &`]: {
 			transform: 'scale(0.85)',
 		},
 	},
 });
+
+/** Story-only: hover cannot be snapshot, so the matrix forces its appearance. */
+export const storyForceHover = style({});
+
+globalStyle(
+	`${storyForceHover} ${checkbox}:not([data-active]):not([data-disabled])`,
+	hoverBox,
+);
