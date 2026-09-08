@@ -25,10 +25,6 @@ const easing = vars.animation.easing.decelerate;
 const trackTransition = `background-color 0.2s ${easing} 0s, border-color 0.2s ${easing} 0s`;
 const handleTransition = `background-color 0.2s ${easing} 0s, box-shadow 0.2s ${easing} 0s, transform 0.2s ${easing} 0s`;
 
-/**
- * The whole geometry derives from the track height: the width is two heights
- * less the overlap, and the handle travels the width it does not occupy.
- */
 const trackHeight = createVar();
 const trackWidth = `calc(2 * ${trackHeight} - 2px)`;
 const handleTranslate = `translateX(calc(${trackHeight} - 2px))`;
@@ -93,8 +89,6 @@ export const toggle = style([
 					},
 					'&[data-hovered]:not([data-active]):not([data-disabled])':
 						hoverTrack,
-					// after the two above, so a disabled control never carries
-					// the accent no matter which state it is in
 					'&[data-disabled]': {
 						backgroundColor: colorLight,
 						borderColor: colorBorder,
@@ -122,7 +116,6 @@ export const handle = style({
 					transform: handleTranslate,
 				},
 				[`${toggle}[data-hovered]:not([data-disabled]) &`]: hoverHandle,
-				// keeps the translate above, replaces only the fill
 				[`${toggle}[data-disabled] &`]: {
 					backgroundColor: colorHandleDisabled,
 				},
@@ -140,18 +133,6 @@ export const storyLabel = style({
 	},
 });
 
-/**
- * Story-only. `data-hovered` is set from a real pointer, so the hover states in
- * the spec have no other way to reach Storybook or Chromatic.
- */
-/**
- * Story-only. Column tracks for the state ladder, matching the Foundation
- * ladders in `lib/stories/helpers/styles.css.ts`:
- * Size · Px · State · Preview · Props · Tag.
- *
- * Every track is `auto` over a `fit-content` grid, so the columns sit next to
- * each other instead of a `1fr` track stranding the preview at the far edge.
- */
 export const storyLadderGrid = style({
 	'@layer': {
 		[cssLayerComponent]: {
@@ -166,7 +147,6 @@ export const storyLadderGrid = style({
 	},
 });
 
-/** Story-only. Rule above the first row of each size group after the first. */
 export const storyGroupStart = style({
 	'@layer': {
 		[cssLayerComponent]: {
@@ -177,7 +157,6 @@ export const storyGroupStart = style({
 	},
 });
 
-/** Story-only. Keeps the preview column a fixed width so the rows line up. */
 export const storyPreview = style({
 	'@layer': {
 		[cssLayerComponent]: {

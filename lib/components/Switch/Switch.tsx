@@ -25,7 +25,6 @@ export interface SwitchProps
 	isSelected?: AriaSwitchProps['isSelected'];
 	onChange?: AriaSwitchProps['onChange'];
 	className?: string;
-	/** `medium` is 38×20, `small` is 30×16 */
 	size?: keyof typeof styles.size;
 	/**
 	 * @deprecated use isDisabled instead

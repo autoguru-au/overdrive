@@ -361,8 +361,6 @@ export const useColorOverrides = (
 				intensity: 0.42,
 			});
 
-			// The same pale wash as `outlinedHover`, in its own token because a
-			// selection control hovers independently of any button.
 			brandSubtle = shadedColour({
 				colour: primaryBackground,
 				isDarkTheme,

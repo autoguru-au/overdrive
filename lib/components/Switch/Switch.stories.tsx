@@ -92,7 +92,6 @@ export const Uncontrolled: Story = {
 	},
 };
 
-/** A disabled switch ignores both pointer and keyboard input */
 export const DisabledIsInert: Story = {
 	args: {
 		isDisabled: true,
@@ -160,18 +159,10 @@ const SIZES: Array<{
 	{ size: 'small', dimensions: '30 × 16' },
 ];
 
-/** Column headers, in the order the ladder lays them out. */
 const COL = ['Size', 'Px', 'State', 'Preview', 'Props', 'Tag'];
 
-/** A cell that is intentionally empty, so the grid track still advances. */
 const EmptyCell = () => <span className={small} aria-hidden="true" />;
 
-/**
- * Every state at every size, as a Foundation-style ladder. `Props` is what you
- * pass to reach the row; `Hover` is forced with the same `data-hovered`
- * attribute the component sets from `useHover`, so it renders without a
- * pointer and reaches Chromatic.
- */
 export const AllStates: Story = {
 	render: (args) => (
 		<div className={storyLadderGrid}>

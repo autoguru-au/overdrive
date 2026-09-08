@@ -116,10 +116,6 @@ const THEME_CONTRACT = {
 		 *
 		 * `onSolid` is the contrast-safe content placed on top of `solid` — the
 		 * Switch handle, the Radio dot, the CheckBox tick.
-		 *
-		 * `subtle` is the pale wash of `solid`: the hover surface of a control
-		 * that is not yet selected, where a full `solid` fill would read as
-		 * already-on.
 		 */
 		brand: {
 			solid: 'color-brand-solid',
