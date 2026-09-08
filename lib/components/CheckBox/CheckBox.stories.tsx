@@ -85,10 +85,13 @@ export const Default: Story = {
 	play: async ({ canvas, userEvent, step }) => {
 		const box = canvas.getByRole('checkbox');
 
-		await step('starts unchecked and is reachable by keyboard', async () => {
-			await expect(box).not.toBeChecked();
-			await expect(box).toBeEnabled();
-		});
+		await step(
+			'starts unchecked and is reachable by keyboard',
+			async () => {
+				await expect(box).not.toBeChecked();
+				await expect(box).toBeEnabled();
+			},
+		);
 
 		await step('takes its accessible name from its children', async () => {
 			await expect(box).toHaveAccessibleName('Check me!');

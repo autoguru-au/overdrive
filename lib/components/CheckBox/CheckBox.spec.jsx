@@ -106,8 +106,7 @@ describe('<CheckBox />', () => {
 	});
 
 	describe('size', () => {
-		const indicator = (container) =>
-			container.querySelector('[data-size]');
+		const indicator = (container) => container.querySelector('[data-size]');
 
 		it('should default to medium, the DS-2026 20px box', () => {
 			const { container } = render(<CheckBox value="1" />);
@@ -156,13 +155,17 @@ describe('<CheckBox />', () => {
 
 	describe('indeterminate', () => {
 		it('sets the native indeterminate flag, so it announces as mixed', () => {
-			const { container } = render(<CheckBox isIndeterminate value="1" />);
+			const { container } = render(
+				<CheckBox isIndeterminate value="1" />,
+			);
 
 			expect(container.querySelector('input').indeterminate).toBe(true);
 		});
 
 		it('carries the accent, marked apart from a plain tick', () => {
-			const { container } = render(<CheckBox isIndeterminate value="1" />);
+			const { container } = render(
+				<CheckBox isIndeterminate value="1" />,
+			);
 			const box = container.querySelector('[data-size]');
 
 			expect(box).toHaveAttribute('data-indeterminate');
@@ -171,9 +174,9 @@ describe('<CheckBox />', () => {
 		it('leaves the attribute off an ordinary box', () => {
 			const { container } = render(<CheckBox value="1" />);
 
-			expect(
-				container.querySelector('[data-size]'),
-			).not.toHaveAttribute('data-indeterminate');
+			expect(container.querySelector('[data-size]')).not.toHaveAttribute(
+				'data-indeterminate',
+			);
 		});
 	});
 });
