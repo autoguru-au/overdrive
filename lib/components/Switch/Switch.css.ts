@@ -124,49 +124,6 @@ export const handle = style({
 	},
 });
 
-export const storyLabel = style({
-	'@layer': {
-		[cssLayerComponent]: {
-			display: 'flex',
-			gap: vars.space['2'],
-		},
-	},
-});
-
-export const storyLadderGrid = style({
-	'@layer': {
-		[cssLayerComponent]: {
-			alignItems: 'center',
-			columnGap: vars.space['6'],
-			display: 'grid',
-			gridTemplateColumns: 'repeat(6, auto)',
-			padding: vars.space['4'],
-			rowGap: vars.space['1'],
-			width: 'fit-content',
-		},
-	},
-});
-
-export const storyGroupStart = style({
-	'@layer': {
-		[cssLayerComponent]: {
-			borderTop: `${borderWidth} solid ${vars.color.border.default}`,
-			marginTop: vars.space['3'],
-			paddingTop: vars.space['4'],
-		},
-	},
-});
-
-export const storyPreview = style({
-	'@layer': {
-		[cssLayerComponent]: {
-			display: 'flex',
-			justifyContent: 'center',
-			width: vars.space['9'],
-		},
-	},
-});
-
 export const storyForceHover = style({});
 
 globalStyle(`${storyForceHover} ${toggle}`, hoverTrack);

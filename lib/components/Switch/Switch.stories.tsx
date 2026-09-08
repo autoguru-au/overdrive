@@ -4,10 +4,14 @@ import React from 'react';
 import { expect, fn, userEvent, within } from 'storybook/test';
 
 import {
+	inlineLabelRow,
 	labels,
+	ladderGroupStart,
+	ladderPreviewCell,
 	ladderRow,
 	small,
 	spaceLadderHeaderCell,
+	switchLadderGrid,
 	tokenCode,
 	tokenDescription,
 } from '../../stories/helpers/styles.css';
@@ -15,13 +19,7 @@ import { Box } from '../Box/Box';
 import { Text } from '../Text/Text';
 
 import { Switch, type SwitchProps } from './Switch';
-import {
-	storyForceHover,
-	storyGroupStart,
-	storyLabel,
-	storyLadderGrid,
-	storyPreview,
-} from './Switch.css';
+import { storyForceHover } from './Switch.css';
 
 const meta = {
 	title: 'Forms & Input Fields/Switch',
@@ -60,7 +58,7 @@ type Story = StoryObj<typeof Switch>;
 export const Uncontrolled: Story = {
 	args: {
 		children: <Text>Text description for the switch</Text>,
-		className: storyLabel,
+		className: inlineLabelRow,
 		testId: 'switch',
 	},
 	play: async ({ args, canvasElement, step }) => {
@@ -96,7 +94,7 @@ export const DisabledIsInert: Story = {
 	args: {
 		isDisabled: true,
 		children: <Text>Text description for the switch</Text>,
-		className: storyLabel,
+		className: inlineLabelRow,
 	},
 	play: async ({ args, canvasElement, step }) => {
 		const control = within(canvasElement).getByRole('switch');
@@ -165,7 +163,7 @@ const EmptyCell = () => <span className={small} aria-hidden="true" />;
 
 export const AllStates: Story = {
 	render: (args) => (
-		<div className={storyLadderGrid}>
+		<div className={switchLadderGrid}>
 			<div className={ladderRow}>
 				{COL.map((heading) => (
 					<span
@@ -181,7 +179,7 @@ export const AllStates: Story = {
 					<div
 						className={clsx(
 							ladderRow,
-							group > 0 && index === 0 && storyGroupStart,
+							group > 0 && index === 0 && ladderGroupStart,
 						)}
 						key={`${size}-${label}`}
 					>
@@ -198,7 +196,7 @@ export const AllStates: Story = {
 						<span className={small}>{label}</span>
 						<Box
 							className={clsx(
-								storyPreview,
+								ladderPreviewCell,
 								label === 'Hover' && storyForceHover,
 							)}
 						>

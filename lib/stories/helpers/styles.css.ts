@@ -423,3 +423,34 @@ export const variantColourSwatch = recipe({
 export type VariantColourSwatchProps = NonNullable<
 	RecipeVariants<typeof variantColourSwatch>
 >;
+
+/** Six-column ladder for Forms/Switch: size, px, state, preview, props, tag. */
+export const switchLadderGrid = style({
+	alignItems: 'center',
+	columnGap: overdriveTokens.space[6],
+	display: 'grid',
+	gridTemplateColumns: 'repeat(6, auto)',
+	padding: overdriveTokens.space[4],
+	rowGap: overdriveTokens.space[1],
+	width: 'fit-content',
+});
+
+/** Rule above the first row of each new group in a ladder. */
+export const ladderGroupStart = style({
+	borderTop: `${overdriveTokens.border.width[1]} solid ${overdriveTokens.color.border.default}`,
+	marginTop: overdriveTokens.space[3],
+	paddingTop: overdriveTokens.space[4],
+});
+
+/** Fixed-width centred cell so previews of differing size stay column-aligned. */
+export const ladderPreviewCell = style({
+	display: 'flex',
+	justifyContent: 'center',
+	width: overdriveTokens.space[9],
+});
+
+/** Row layout for a control sitting inline with its own text label. */
+export const inlineLabelRow = style({
+	display: 'flex',
+	gap: overdriveTokens.space[2],
+});
