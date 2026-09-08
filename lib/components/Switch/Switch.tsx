@@ -102,3 +102,5 @@ export const Switch = ({
 		</Box>
 	);
 };
+
+Switch.displayName = 'Switch';

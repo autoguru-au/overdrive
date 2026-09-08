@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import clsx from 'clsx';
 import React from 'react';
-import { fn } from 'storybook/test';
+import { expect, fn, userEvent, within } from 'storybook/test';
 
 import {
 	labels,
@@ -61,6 +61,53 @@ export const Uncontrolled: Story = {
 	args: {
 		children: <Text>Text description for the switch</Text>,
 		className: storyLabel,
+		testId: 'switch',
+	},
+	play: async ({ args, canvasElement, step }) => {
+		const canvas = within(canvasElement);
+		const control = canvas.getByRole('switch');
+
+		await step('<Switch /> renders unchecked with its label', async () => {
+			await expect(control).not.toBeChecked();
+			await expect(canvas.getByText(/Text description/)).toBeVisible();
+		});
+
+		await step('<Switch /> turns on when clicked', async () => {
+			await userEvent.click(control);
+			await expect(control).toBeChecked();
+			await expect(args.onChange).toHaveBeenCalledWith(true);
+		});
+
+		await step('<Switch /> turns off again', async () => {
+			await userEvent.click(control);
+			await expect(control).not.toBeChecked();
+			await expect(args.onChange).toHaveBeenLastCalledWith(false);
+		});
+
+		await step('<Switch /> toggles from the keyboard', async () => {
+			control.focus();
+			await userEvent.keyboard(' ');
+			await expect(control).toBeChecked();
+		});
+	},
+};
+
+/** A disabled switch ignores both pointer and keyboard input */
+export const DisabledIsInert: Story = {
+	args: {
+		isDisabled: true,
+		children: <Text>Text description for the switch</Text>,
+		className: storyLabel,
+	},
+	play: async ({ args, canvasElement, step }) => {
+		const control = within(canvasElement).getByRole('switch');
+
+		await step('<Switch /> does not respond to a click', async () => {
+			await expect(control).toBeDisabled();
+			await userEvent.click(control, { pointerEventsCheck: 0 });
+			await expect(control).not.toBeChecked();
+			await expect(args.onChange).not.toHaveBeenCalled();
+		});
 	},
 };
 
