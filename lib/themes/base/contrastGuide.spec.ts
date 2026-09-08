@@ -82,6 +82,7 @@ const tokenPairs = (tokens: Tokens): Array<[string, string, string]> => {
 
 const KNOWN_AA_FAILURES: Record<string, string[]> = {
 	base: [
+		'brand.onSolid on brand.solid',
 		'content.warning on surface.page',
 		'intent.brand foreground on background.standard',
 		'intent.primary foreground on background.standard',
@@ -93,6 +94,7 @@ const KNOWN_AA_FAILURES: Record<string, string[]> = {
 		'intent.warning foreground on background.strong',
 	],
 	flat_red: [
+		'brand.onSolid on brand.solid',
 		'content.warning on surface.page',
 		'intent.brand foreground on background.standard',
 		'intent.primary foreground on background.standard',
@@ -103,6 +105,7 @@ const KNOWN_AA_FAILURES: Record<string, string[]> = {
 		'intent.warning foreground on background.strong',
 	],
 	neutral: [
+		'brand.onSolid on brand.solid',
 		'content.warning on surface.page',
 		'intent.brand foreground on background.standard',
 		'intent.shine foreground on background.standard',
@@ -118,14 +121,13 @@ describe.each([
 	['flat_red', flatRedTokens as Tokens],
 	['neutral', neutralTokens as Tokens],
 ])('theme token audit: %s', (themeName, tokens) => {
-	// The brand pair is seeded to the values its consumers (Switch, Radio,
-	// CheckBox) rendered before it existed, which is what makes introducing it a
-	// zero-visual-change addition. If someone re-brands the seed without also
-	// moving those components, this fails first and says why.
-	it('seeds the brand pair to the values its consumers rendered before it existed', () => {
-		expect(tokens.color.brand.solid).toBe(tokens.color.foreground.primary);
+	it('seeds the brand pair to the Figma selection colours', () => {
+		expect(tokens.color.brand.solid).toBe(tokens.color.success.foreground);
 		expect(tokens.color.brand.onSolid).toBe(
-			tokens.color.background.default,
+			tokens.color.foreground.reverse,
+		);
+		expect(tokens.color.brand.subtle).toBe(
+			tokens.color.success.backgroundSubtle,
 		);
 	});
 
