@@ -113,6 +113,7 @@ export {
 	Stepper,
 	StickyBox,
 	Switch,
+	type SwitchProps,
 	Table,
 	TableCell,
 	TableHeadCell,

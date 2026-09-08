@@ -120,6 +120,7 @@ const THEME_CONTRACT = {
 		brand: {
 			solid: 'color-brand-solid',
 			onSolid: 'color-brand-on-solid',
+			subtle: 'color-brand-subtle',
 		},
 		surface: {
 			page: null,

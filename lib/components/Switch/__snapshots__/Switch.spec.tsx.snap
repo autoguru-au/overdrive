@@ -1,0 +1,162 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Switch /> > should match snapshot when toggled 1`] = `
+<div
+  class="theme_OD_Base__j49br80"
+  data-od-component="provider"
+>
+  <label
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_label__18vhvlin  Switch_base__6xc8dy1"
+    data-od-component="switch"
+  >
+    <div
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 VisuallyHidden_visuallyHidden__12d73qi0"
+      data-od-component="visually-hidden"
+    >
+      <input
+        checked=""
+        data-react-aria-pressable="true"
+        role="switch"
+        tabindex="0"
+        type="checkbox"
+      />
+    </div>
+    <div
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Switch_toggle__6xc8dy4 focusOutline_focusOutlineStyle__tq83zq0 Switch_size_medium__6xc8dy2"
+      data-active=""
+    >
+      <div
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Switch_handle__6xc8dy5"
+      />
+    </div>
+  </label>
+</div>
+`;
+
+exports[`<Switch /> > should match snapshot when toggled and disabled 1`] = `
+<div
+  class="theme_OD_Base__j49br80"
+  data-od-component="provider"
+>
+  <label
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_label__18vhvlin  Switch_base__6xc8dy1"
+    data-od-component="switch"
+  >
+    <div
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 VisuallyHidden_visuallyHidden__12d73qi0"
+      data-od-component="visually-hidden"
+    >
+      <input
+        checked=""
+        data-react-aria-pressable="true"
+        disabled=""
+        role="switch"
+        type="checkbox"
+      />
+    </div>
+    <div
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Switch_toggle__6xc8dy4 focusOutline_focusOutlineStyle__tq83zq0 Switch_size_medium__6xc8dy2"
+      data-active=""
+      data-disabled=""
+    >
+      <div
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Switch_handle__6xc8dy5"
+      />
+    </div>
+  </label>
+</div>
+`;
+
+exports[`<Switch /> > should match snapshot when un-toggled 1`] = `
+<div
+  class="theme_OD_Base__j49br80"
+  data-od-component="provider"
+>
+  <label
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_label__18vhvlin  Switch_base__6xc8dy1"
+    data-od-component="switch"
+  >
+    <div
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 VisuallyHidden_visuallyHidden__12d73qi0"
+      data-od-component="visually-hidden"
+    >
+      <input
+        data-react-aria-pressable="true"
+        role="switch"
+        tabindex="0"
+        type="checkbox"
+      />
+    </div>
+    <div
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Switch_toggle__6xc8dy4 focusOutline_focusOutlineStyle__tq83zq0 Switch_size_medium__6xc8dy2"
+    >
+      <div
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Switch_handle__6xc8dy5"
+      />
+    </div>
+  </label>
+</div>
+`;
+
+exports[`<Switch /> > should match snapshot when un-toggled and disabled 1`] = `
+<div
+  class="theme_OD_Base__j49br80"
+  data-od-component="provider"
+>
+  <label
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_label__18vhvlin  Switch_base__6xc8dy1"
+    data-od-component="switch"
+  >
+    <div
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 VisuallyHidden_visuallyHidden__12d73qi0"
+      data-od-component="visually-hidden"
+    >
+      <input
+        data-react-aria-pressable="true"
+        disabled=""
+        role="switch"
+        type="checkbox"
+      />
+    </div>
+    <div
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Switch_toggle__6xc8dy4 focusOutline_focusOutlineStyle__tq83zq0 Switch_size_medium__6xc8dy2"
+      data-disabled=""
+    >
+      <div
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Switch_handle__6xc8dy5"
+      />
+    </div>
+  </label>
+</div>
+`;
+
+exports[`<Switch /> > should match snapshot without props 1`] = `
+<div
+  class="theme_OD_Base__j49br80"
+  data-od-component="provider"
+>
+  <label
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_label__18vhvlin  Switch_base__6xc8dy1"
+    data-od-component="switch"
+  >
+    <div
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 VisuallyHidden_visuallyHidden__12d73qi0"
+      data-od-component="visually-hidden"
+    >
+      <input
+        data-react-aria-pressable="true"
+        role="switch"
+        tabindex="0"
+        type="checkbox"
+      />
+    </div>
+    <div
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Switch_toggle__6xc8dy4 focusOutline_focusOutlineStyle__tq83zq0 Switch_size_medium__6xc8dy2"
+    >
+      <div
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Switch_handle__6xc8dy5"
+      />
+    </div>
+  </label>
+</div>
+`;
