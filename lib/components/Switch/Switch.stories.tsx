@@ -56,7 +56,6 @@ type Story = StoryObj<typeof Switch>;
 
 /** Passes in the text label and styles for the layout */
 export const Uncontrolled: Story = {
-	tags: ['skip-themes'],
 	args: {
 		children: <Text>Text description for the switch</Text>,
 		className: inlineLabelRow,
@@ -64,11 +63,12 @@ export const Uncontrolled: Story = {
 	},
 	play: async ({ args, canvasElement, step }) => {
 		const canvas = within(canvasElement);
-		const control = canvas.getByRole('switch');
+		const [control] = canvas.getAllByRole('switch');
+		const [label] = canvas.getAllByText(/Text description/);
 
 		await step('<Switch /> renders unchecked with its label', async () => {
 			await expect(control).not.toBeChecked();
-			await expect(canvas.getByText(/Text description/)).toBeVisible();
+			await expect(label).toBeVisible();
 		});
 
 		await step('<Switch /> turns on when clicked', async () => {
@@ -92,14 +92,13 @@ export const Uncontrolled: Story = {
 };
 
 export const DisabledIsInert: Story = {
-	tags: ['skip-themes'],
 	args: {
 		isDisabled: true,
 		children: <Text>Text description for the switch</Text>,
 		className: inlineLabelRow,
 	},
 	play: async ({ args, canvasElement, step }) => {
-		const control = within(canvasElement).getByRole('switch');
+		const [control] = within(canvasElement).getAllByRole('switch');
 
 		await step('<Switch /> does not respond to a click', async () => {
 			await expect(control).toBeDisabled();
