@@ -1,24 +1,32 @@
-import { act, fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import * as React from 'react';
 import { useState } from 'react';
 
-import { Switch } from './Switch';
-import * as styles from './Switch.css.ts';
+import { Switch, type SwitchProps } from './Switch';
+import * as styles from './Switch.css';
+
+const trackSelector = `.${styles.toggle.trim().split(/\s+/).join('.')}`;
+
+const trackIn = (container: HTMLElement) => {
+	const track = container.querySelector<HTMLElement>(trackSelector);
+	if (!track) throw new Error('Switch track not found');
+	return track;
+};
 
 const InteractiveSwitch = ({
-	onChange: incomingOnChange = () => void 0,
-	value: incomingValue,
-	...args
-}) => {
-	const [value, setValue] = useState(incomingValue);
+	onChange,
+	isSelected: initiallySelected = false,
+	...props
+}: SwitchProps) => {
+	const [isSelected, setIsSelected] = useState(initiallySelected);
 	return (
 		<Switch
-			onChange={(stepValue) => {
-				setValue(stepValue);
-				incomingOnChange(stepValue);
+			{...props}
+			isSelected={isSelected}
+			onChange={(next) => {
+				setIsSelected(next);
+				onChange?.(next);
 			}}
-			value={value}
-			{...args}
 		/>
 	);
 };
@@ -56,134 +64,101 @@ describe('<Switch />', () => {
 	});
 
 	it('should stamp odComponent and testId on the root element', () => {
-		const root = render(<Switch testId="my-switch" />).container.firstChild
-			.firstChild;
+		const root = render(<Switch testId="my-switch" />).getByTestId(
+			'my-switch',
+		);
 
 		expect(root).toHaveAttribute('data-od-component', 'switch');
-		expect(root).toHaveAttribute('data-testid', 'my-switch');
 	});
 
-	it('should render the medium size by default', () => {
+	it('should pass on className to the root element', () => {
 		expect(
-			render(<Switch />).container.firstChild.firstChild.childNodes[1],
-		).toHaveClass(styles.size.medium);
-	});
-
-	it.each(['medium', 'small'])('should render the %s size', (size) => {
-		expect(
-			render(<Switch size={size} />).container.firstChild.firstChild
-				.childNodes[1],
-		).toHaveClass(styles.size[size]);
-	});
-
-	it('should carry both state attributes when disabled and selected', () => {
-		const toggle = render(<Switch isSelected isDisabled />).container
-			.firstChild.firstChild.childNodes[1];
-
-		expect(toggle).toHaveAttribute('data-active');
-		expect(toggle).toHaveAttribute('data-disabled');
-	});
-
-	it('should pass on className to dom element', () => {
-		expect(
-			render(<Switch className="toggleButton-class" value={10} />)
-				.container.firstChild.firstChild,
+			render(<Switch className="toggleButton-class" value="10" />)
+				.container.firstChild?.firstChild,
 		).toHaveClass('toggleButton-class');
 	});
 
-	it('should set toggle to false by default', () => {
-		expect(
-			render(<Switch />).container.firstChild.firstChild.childNodes[1],
-		).not.toHaveAttribute('data-active');
+	it('should render the medium size by default', () => {
+		const { container } = render(<Switch />);
+
+		expect(trackIn(container)).toHaveClass(styles.size.medium);
 	});
 
-	it('should be toggled on when toggled prop is set to true', () => {
-		expect(
-			render(<Switch isSelected />).container.firstChild.firstChild
-				.childNodes[1],
-		).toHaveAttribute('data-active');
+	it.each(['medium', 'small'] as const)(
+		'should render the %s size',
+		(size) => {
+			const { container } = render(<Switch size={size} />);
+
+			expect(trackIn(container)).toHaveClass(styles.size[size]);
+		},
+	);
+
+	it('should carry both state attributes when disabled and selected', () => {
+		const { container } = render(<Switch isSelected isDisabled />);
+		const track = trackIn(container);
+
+		expect(track).toHaveAttribute('data-active');
+		expect(track).toHaveAttribute('data-disabled');
+	});
+
+	it('should be un-toggled by default', () => {
+		render(<Switch />);
+
+		expect(screen.getByRole('switch')).not.toBeChecked();
+	});
+
+	it('should be toggled on when isSelected is set', () => {
+		render(<Switch isSelected />);
+
+		expect(screen.getByRole('switch')).toBeChecked();
 	});
 
 	it('should be enabled by default', () => {
-		expect(
-			render(<Switch />).container.querySelector('[data-disabled]'),
-		).not.toBeInTheDocument();
+		render(<Switch />);
+
+		expect(screen.getByRole('switch')).toBeEnabled();
 	});
 
-	it('should have aria-disabled attribute when disabled', () => {
-		const { container } = render(<Switch isDisabled />);
-		expect(container.querySelector('input')).toHaveAttribute('disabled');
+	it('should disable the input when isDisabled is set', () => {
+		render(<Switch isDisabled />);
+
+		expect(screen.getByRole('switch')).toBeDisabled();
 	});
 
-	it('should fire change with the correct changed value when clicked', () => {
-		const spyedCallback = vi.fn();
+	it('should fire change with the changed value on every click', () => {
+		const onChange = vi.fn();
+		const { container } = render(<InteractiveSwitch onChange={onChange} />);
+		const track = trackIn(container);
 
-		const { container: toggledContainer } = render(
-			<InteractiveSwitch isSelected={false} onChange={spyedCallback} />,
-		);
+		fireEvent.click(track);
+		expect(onChange).toHaveBeenCalledWith(true);
 
-		fireEvent.click(toggledContainer.firstChild.firstChild.childNodes[1]);
+		fireEvent.click(track);
+		expect(onChange).toHaveBeenLastCalledWith(false);
 
-		expect(spyedCallback).toHaveBeenCalledWith(true);
-
-		const { container: untoggledContainer } = render(
-			<InteractiveSwitch isSelected={true} onChange={spyedCallback} />,
-		);
-		fireEvent.click(untoggledContainer.firstChild.firstChild.childNodes[1]);
-
-		expect(spyedCallback).toHaveBeenCalledWith(false);
-
-		expect(spyedCallback).toHaveBeenCalledTimes(2);
+		expect(onChange).toHaveBeenCalledTimes(2);
 	});
 
 	it('should not fire change if clicked while disabled', () => {
-		const spyedCallback = vi.fn();
-
+		const onChange = vi.fn();
 		const { container } = render(
-			<InteractiveSwitch
-				isDisabled
-				isSelected={false}
-				onChange={spyedCallback}
-			/>,
+			<InteractiveSwitch isDisabled onChange={onChange} />,
 		);
 
-		fireEvent.click(container.firstChild.firstChild.childNodes[1]);
+		fireEvent.click(trackIn(container));
 
-		expect(spyedCallback).not.toHaveBeenCalled();
+		expect(onChange).not.toHaveBeenCalled();
 	});
 
-	it('should update its value when and a value prop comes in', () => {
-		const ToggleButtonWrapper = ({ setter }) => {
-			const [toggled, toggledValue] = useState(false);
+	it('should reflect a changed isSelected prop', () => {
+		const { rerender } = render(<Switch isSelected={false} />);
 
-			setter(toggledValue);
+		expect(screen.getByRole('switch')).not.toBeChecked();
 
-			return <Switch isSelected={toggled} />;
-		};
+		rerender(<Switch isSelected />);
+		expect(screen.getByRole('switch')).toBeChecked();
 
-		let setToggledValue;
-		const { container } = render(
-			<ToggleButtonWrapper
-				setter={(setter) => {
-					setToggledValue = setter;
-				}}
-			/>,
-		);
-
-		expect(
-			container.firstChild.firstChild.childNodes[1],
-		).not.toHaveAttribute('data-active');
-
-		act(() => setToggledValue(true));
-
-		expect(container.firstChild.firstChild.childNodes[1]).toHaveAttribute(
-			'data-active',
-		);
-
-		act(() => setToggledValue(false));
-
-		expect(
-			container.firstChild.firstChild.childNodes[1],
-		).not.toHaveAttribute('data-active');
+		rerender(<Switch isSelected={false} />);
+		expect(screen.getByRole('switch')).not.toBeChecked();
 	});
 });
