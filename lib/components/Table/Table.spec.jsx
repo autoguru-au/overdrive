@@ -75,6 +75,62 @@ describe('<Table />', () => {
 			expect(container.querySelectorAll('span')).toHaveLength(0);
 			expect(getByTestId('custo-child')).not.toBeNull();
 		});
+
+		it('should have data-hover attribute by default', () => {
+			const { getByRole } = render(
+				<Table columnTemplate="">
+					<TableRowGroup>
+						<TableRow>
+							<TableCell>test child</TableCell>
+						</TableRow>
+					</TableRowGroup>
+				</Table>,
+			);
+
+			expect(getByRole('gridcell')).toHaveAttribute('data-hover');
+		});
+
+		it('should not have data-hover attribute when hover is false', () => {
+			const { getByRole } = render(
+				<Table columnTemplate="">
+					<TableRowGroup>
+						<TableRow>
+							<TableCell hover={false}>test child</TableCell>
+						</TableRow>
+					</TableRowGroup>
+				</Table>,
+			);
+
+			expect(getByRole('gridcell')).not.toHaveAttribute('data-hover');
+		});
+
+		it('should inherit hover={false} from TableRow', () => {
+			const { getByRole } = render(
+				<Table columnTemplate="">
+					<TableRowGroup>
+						<TableRow hover={false}>
+							<TableCell>test child</TableCell>
+						</TableRow>
+					</TableRowGroup>
+				</Table>,
+			);
+
+			expect(getByRole('gridcell')).not.toHaveAttribute('data-hover');
+		});
+
+		it('should allow TableCell hover={true} to override TableRow hover={false}', () => {
+			const { getByRole } = render(
+				<Table columnTemplate="">
+					<TableRowGroup>
+						<TableRow hover={false}>
+							<TableCell hover>test child</TableCell>
+						</TableRow>
+					</TableRowGroup>
+				</Table>,
+			);
+
+			expect(getByRole('gridcell')).toHaveAttribute('data-hover');
+		});
 	});
 
 	describe('when <TableHeadCell />', () => {

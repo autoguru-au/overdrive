@@ -11,20 +11,19 @@ export const root = style({
 
 	@see https://caniuse.com/#feat=css-subgrid
 	 */
-	':before': {
-		bottom: 0,
-		content: '""',
-		display: 'block',
-		left: '-1000%',
-		position: 'absolute',
-		right: '-1000%',
-		top: 0,
-		transition: `background-color 0.2s ${vars.animation.easing.accelerate}`,
-		zIndex: -1,
-	},
-
 	selectors: {
-		'&:hover:before': {
+		'&[data-hover]:before': {
+			bottom: 0,
+			content: '""',
+			display: 'block',
+			left: '-1000%',
+			position: 'absolute',
+			right: '-1000%',
+			top: 0,
+			transition: `background-color 0.2s ${vars.animation.easing.accelerate}`,
+			zIndex: -1,
+		},
+		'&[data-hover]:hover:before': {
 			backgroundColor: vars.color.gamut.gray['100'],
 			transitionTimingFunction: vars.animation.easing.decelerate,
 		},

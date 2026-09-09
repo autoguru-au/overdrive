@@ -33,6 +33,15 @@ const meta: Meta<typeof TableRow> = {
 				defaultValue: { summary: 'undefined (no animation)' },
 			},
 		},
+		hover: {
+			control: 'boolean',
+			description:
+				'Controls whether cells in this row display a hover background effect. Defaults to `true`.',
+			table: {
+				type: { summary: 'boolean' },
+				defaultValue: { summary: 'true' },
+			},
+		},
 		onClick: {
 			action: 'click',
 			description: 'Click handler fired when the row is clicked.',
@@ -75,6 +84,40 @@ export const Standard: Story = {
 					<TableCell>100001</TableCell>
 					<TableCell>My Auto Service</TableCell>
 					<TableCell align="right">$99.00</TableCell>
+				</TableRow>
+			</TableRowGroup>
+		</Table>
+	),
+};
+
+/**
+ * Rows and cells have hover enabled by default (`hover={true}`).
+ * Pass `hover={false}` to `TableRow` to disable hover for the entire row,
+ * or pass `hover={false}` to individual `TableCell` components.
+ */
+export const WithoutHover: Story = {
+	args: {
+		hover: false,
+	},
+	render: (args) => (
+		<Table columnTemplate="auto 1fr auto">
+			<TableRowGroup>
+				<TableRow>
+					<TableHeadCell>ID</TableHeadCell>
+					<TableHeadCell>Name</TableHeadCell>
+					<TableHeadCell align="right">Price</TableHeadCell>
+				</TableRow>
+			</TableRowGroup>
+			<TableRowGroup>
+				<TableRow {...args}>
+					<TableCell>100001 (Row hover=false)</TableCell>
+					<TableCell>Disabled row hover</TableCell>
+					<TableCell align="right">$99.00</TableCell>
+				</TableRow>
+				<TableRow>
+					<TableCell hover={false}>100002 (Cell hover=false)</TableCell>
+					<TableCell>Cell with hover=true</TableCell>
+					<TableCell align="right">$120.00</TableCell>
 				</TableRow>
 			</TableRowGroup>
 		</Table>

@@ -11,7 +11,13 @@ export interface TableContext {
 	children?: ReactNode;
 }
 
+export interface TableRowContext {
+	hover?: boolean;
+	children?: ReactNode;
+}
+
 const tableContext = createContext<TableContext | null>(null);
+const tableRowContext = createContext<TableRowContext | null>(null);
 
 export const TableContextProvider: FunctionComponent<TableContext> = ({
 	padding,
@@ -29,6 +35,25 @@ export const TableContextProvider: FunctionComponent<TableContext> = ({
 		<tableContext.Provider value={value}>{children}</tableContext.Provider>
 	);
 };
+
+export const TableRowContextProvider: FunctionComponent<TableRowContext> = ({
+	hover = true,
+	children,
+}) => {
+	const value = useMemo(
+		() => ({
+			hover,
+		}),
+		[hover],
+	);
+	return (
+		<tableRowContext.Provider value={value}>
+			{children}
+		</tableRowContext.Provider>
+	);
+};
+
+export const useTableRowContext = () => useContext(tableRowContext);
 
 export const useTableContext = () => {
 	const ctx = useContext(tableContext);

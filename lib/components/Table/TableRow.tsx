@@ -3,16 +3,24 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { forwardRef, MouseEventHandler, ReactNode } from 'react';
 
+import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box/Box';
 
 import {
 	rowEntering,
 	staggerIndex as staggerIndexVar,
 } from './TableRow.css';
+import { TableRowContextProvider } from './context';
 
 export interface TableRowProps {
 	/** Click handler fired when any part of the row is clicked. */
 	onClick?: MouseEventHandler<HTMLTableRowElement>;
+
+	/**
+	 * Controls whether cells in this row display a hover background effect.
+	 * Defaults to `true`.
+	 */
+	hover?: boolean;
 
 	/**
 	 * Opt-in entrance animation. When set to a number, the row's cells
@@ -40,7 +48,7 @@ export interface TableRowProps {
 }
 
 export const TableRow = forwardRef<HTMLTableRowElement, TableRowProps>(
-	({ children, onClick, className, style, staggerIndex }, ref) => {
+	({ children, onClick, className, style, staggerIndex, hover = true }, ref) => {
 		const shouldAnimate = typeof staggerIndex === 'number';
 		const mergedStyle = shouldAnimate
 			? {
@@ -52,19 +60,22 @@ export const TableRow = forwardRef<HTMLTableRowElement, TableRowProps>(
 			: style;
 
 		return (
-			<Box
-				as="tr"
-				ref={ref}
-				display="contents"
-				role="row"
-				onClick={onClick}
-				className={clsx(className, {
-					[rowEntering]: shouldAnimate,
-				})}
-				style={mergedStyle}
-			>
-				{children}
-			</Box>
+			<TableRowContextProvider hover={hover}>
+				<Box
+					as="tr"
+					ref={ref}
+					display="contents"
+					role="row"
+					onClick={onClick}
+					className={clsx(className, {
+						[rowEntering]: shouldAnimate,
+					})}
+					style={mergedStyle}
+					{...dataAttrs({ hover })}
+				>
+					{children}
+				</Box>
+			</TableRowContextProvider>
 		);
 	},
 );
