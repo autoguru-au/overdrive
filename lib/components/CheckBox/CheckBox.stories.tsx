@@ -103,7 +103,9 @@ type Story = StoryObj<typeof CheckBox>;
 
 export const Default: Story = {
 	play: async ({ canvas, userEvent, step }) => {
-		const box = canvas.getByRole('checkbox');
+		// The autodocs page renders the primary story twice, so take the first
+		// match rather than asserting there is only one.
+		const [box] = canvas.getAllByRole('checkbox', { name: 'Check me!' });
 
 		await step(
 			'starts unchecked and is reachable by keyboard',
@@ -246,14 +248,18 @@ export const AllStates: Story = {
 		</div>
 	),
 	play: async ({ canvas, step }) => {
+		// Named `<size> <state>`, which no other story's box is — so these
+		// queries still find only the matrix on the combined autodocs page.
+		const boxes = canvas.getAllByRole('checkbox', {
+			name: /^(medium|small) /,
+		});
+
 		await step('renders every state at both sizes', async () => {
-			await expect(canvas.getAllByRole('checkbox')).toHaveLength(
-				STATES.length * SIZES.length,
-			);
+			await expect(boxes).toHaveLength(STATES.length * SIZES.length);
 		});
 
 		await step('sizes the box per the spec', async () => {
-			const [box] = canvas.getAllByRole('checkbox');
+			const [box] = boxes;
 
 			await expect(
 				box.parentElement?.querySelector('[data-size]'),
