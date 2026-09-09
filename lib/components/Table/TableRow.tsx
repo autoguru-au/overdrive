@@ -52,11 +52,11 @@ export const TableRow = forwardRef<HTMLTableRowElement, TableRowProps>(
 		const shouldAnimate = typeof staggerIndex === 'number';
 		const mergedStyle = shouldAnimate
 			? {
-					...style,
-					...assignInlineVars({
-						[staggerIndexVar]: String(staggerIndex),
-					}),
-				}
+				...style,
+				...assignInlineVars({
+					[staggerIndexVar]: String(staggerIndex),
+				}),
+			}
 			: style;
 
 		return (

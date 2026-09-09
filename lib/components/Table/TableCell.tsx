@@ -59,7 +59,7 @@ export const TableCell = forwardRef<HTMLTableCellElement, TableCellProps>(
 				{...dataAttrs({ hover })}
 			>
 				{typeof children === 'string' ||
-				typeof children === 'number' ? (
+					typeof children === 'number' ? (
 					<Text as="span" color="primary" display="block" size="3">
 						{children}
 					</Text>
