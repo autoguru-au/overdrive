@@ -29,8 +29,10 @@ export interface TableCellProps
 	padding?: keyof Tokens['space'];
 
 	/**
-	 * Controls whether this cell displays a hover background effect.
-	 * When omitted, inherits from parent `TableRow` (which defaults to `true`).
+	 * Controls whether hovering this cell paints the hover background.
+	 * When omitted, inherits from the parent `TableRow` (which defaults to
+	 * `true`). With the row's hover on, the wash covers the whole row; a cell
+	 * that turns hover on inside a `hover={false}` row washes just itself.
 	 */
 	hover?: boolean;
 

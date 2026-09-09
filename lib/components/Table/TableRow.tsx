@@ -15,8 +15,10 @@ export interface TableRowProps extends TestIdProp {
 	onClick?: MouseEventHandler<HTMLTableRowElement>;
 
 	/**
-	 * Controls whether cells in this row display a hover background effect.
-	 * Defaults to `true`.
+	 * Controls whether hovering a cell in this row paints the hover background
+	 * across the whole row. Defaults to `true`. Cells can override it with
+	 * their own `hover` prop; a cell that opts back in inside a `hover={false}`
+	 * row washes just that cell.
 	 */
 	hover?: boolean;
 

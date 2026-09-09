@@ -36,7 +36,7 @@ const meta: Meta<typeof TableRow> = {
 		hover: {
 			control: 'boolean',
 			description:
-				'Controls whether cells in this row display a hover background effect. Defaults to `true`.',
+				'Controls whether hovering a cell in this row paints the hover background across the whole row. Defaults to `true`. Cells can override it with their own `hover` prop.',
 			table: {
 				type: { summary: 'boolean' },
 				defaultValue: { summary: 'true' },
@@ -94,8 +94,10 @@ export const Standard: Story = {
 
 /**
  * Rows and cells have hover enabled by default (`hover={true}`).
- * Pass `hover={false}` to `TableRow` to disable hover for the entire row,
- * or pass `hover={false}` to individual `TableCell` components.
+ * Pass `hover={false}` to `TableRow` to switch the hover wash off for the
+ * whole row, or to an individual `TableCell` to stop that cell from
+ * triggering it. A cell always wins over its row: `hover` on a cell inside a
+ * `hover={false}` row paints the wash over just that cell.
  */
 export const WithoutHover: Story = {
 	args: {
@@ -122,6 +124,13 @@ export const WithoutHover: Story = {
 					</TableCell>
 					<TableCell>Cell with hover=true</TableCell>
 					<TableCell align="right">$120.00</TableCell>
+				</TableRow>
+				<TableRow hover={false}>
+					<TableCell>100003 (Row hover=false)</TableCell>
+					<TableCell hover>
+						Cell hover=true (cell-only wash)
+					</TableCell>
+					<TableCell align="right">$150.00</TableCell>
 				</TableRow>
 			</TableRowGroup>
 		</Table>

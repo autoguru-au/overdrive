@@ -201,6 +201,34 @@ describe('<Table />', () => {
 
 			expect(spyedCallback).toHaveBeenCalledTimes(1);
 		});
+
+		it('should have data-hover attribute by default', () => {
+			const { getByRole } = render(
+				<Table columnTemplate="">
+					<TableRowGroup>
+						<TableRow>
+							<TableCell>test child</TableCell>
+						</TableRow>
+					</TableRowGroup>
+				</Table>,
+			);
+
+			expect(getByRole('row')).toHaveAttribute('data-hover');
+		});
+
+		it('should not have data-hover attribute when hover is false', () => {
+			const { getByRole } = render(
+				<Table columnTemplate="">
+					<TableRowGroup>
+						<TableRow hover={false}>
+							<TableCell>test child</TableCell>
+						</TableRow>
+					</TableRowGroup>
+				</Table>,
+			);
+
+			expect(getByRole('row')).not.toHaveAttribute('data-hover');
+		});
 	});
 
 	describe('when implemented', () => {
