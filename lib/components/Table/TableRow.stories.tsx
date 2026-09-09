@@ -45,7 +45,9 @@ const meta: Meta<typeof TableRow> = {
 		onClick: {
 			action: 'click',
 			description: 'Click handler fired when the row is clicked.',
-			table: { type: { summary: 'MouseEventHandler<HTMLTableRowElement>' } },
+			table: {
+				type: { summary: 'MouseEventHandler<HTMLTableRowElement>' },
+			},
 		},
 		className: {
 			control: 'text',
@@ -115,7 +117,9 @@ export const WithoutHover: Story = {
 					<TableCell align="right">$99.00</TableCell>
 				</TableRow>
 				<TableRow>
-					<TableCell hover={false}>100002 (Cell hover=false)</TableCell>
+					<TableCell hover={false}>
+						100002 (Cell hover=false)
+					</TableCell>
 					<TableCell>Cell with hover=true</TableCell>
 					<TableCell align="right">$120.00</TableCell>
 				</TableRow>

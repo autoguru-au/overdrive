@@ -3,16 +3,14 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { forwardRef, MouseEventHandler, ReactNode } from 'react';
 
+import type { TestIdProp } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box/Box';
 
-import {
-	rowEntering,
-	staggerIndex as staggerIndexVar,
-} from './TableRow.css';
+import { rowEntering, staggerIndex as staggerIndexVar } from './TableRow.css';
 import { TableRowContextProvider } from './context';
 
-export interface TableRowProps {
+export interface TableRowProps extends TestIdProp {
 	/** Click handler fired when any part of the row is clicked. */
 	onClick?: MouseEventHandler<HTMLTableRowElement>;
 
@@ -44,19 +42,31 @@ export interface TableRowProps {
 	/** Inline style applied to the underlying `<tr>` element. */
 	style?: React.CSSProperties;
 
+	/** The cells of the row - `TableCell` or `TableHeadCell` elements. */
 	children: ReactNode | ReactNode[];
 }
 
 export const TableRow = forwardRef<HTMLTableRowElement, TableRowProps>(
-	({ children, onClick, className, style, staggerIndex, hover = true }, ref) => {
+	(
+		{
+			children,
+			onClick,
+			className,
+			style,
+			staggerIndex,
+			hover = true,
+			testId,
+		},
+		ref,
+	) => {
 		const shouldAnimate = typeof staggerIndex === 'number';
 		const mergedStyle = shouldAnimate
 			? {
-				...style,
-				...assignInlineVars({
-					[staggerIndexVar]: String(staggerIndex),
-				}),
-			}
+					...style,
+					...assignInlineVars({
+						[staggerIndexVar]: String(staggerIndex),
+					}),
+				}
 			: style;
 
 		return (
@@ -71,6 +81,8 @@ export const TableRow = forwardRef<HTMLTableRowElement, TableRowProps>(
 						[rowEntering]: shouldAnimate,
 					})}
 					style={mergedStyle}
+					odComponent="table-row"
+					testId={testId}
 					{...dataAttrs({ hover })}
 				>
 					{children}
