@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import clsx from 'clsx';
 import React, { useState } from 'react';
-import { expect, fn } from 'storybook/test';
+import { expect, fn, within } from 'storybook/test';
 
 import {
 	labels,
@@ -247,10 +247,15 @@ export const AllStates: Story = {
 			)}
 		</div>
 	),
-	play: async ({ canvas, step }) => {
-		// Named `<size> <state>`, which no other story's box is — so these
-		// queries still find only the matrix on the combined autodocs page.
-		const boxes = canvas.getAllByRole('checkbox', {
+	play: async ({ canvasElement, step }) => {
+		// Chromatic renders the story once per viewport into the same root, so
+		// the canvas holds a grid per capture. Scope to one of them, or an
+		// exact count sees every copy at once.
+		const firstGrid = canvasElement.querySelector(`.${switchLadderGrid}`);
+		const grid = within(
+			firstGrid instanceof HTMLElement ? firstGrid : canvasElement,
+		);
+		const boxes = grid.getAllByRole('checkbox', {
 			name: /^(medium|small) /,
 		});
 
@@ -267,7 +272,7 @@ export const AllStates: Story = {
 		});
 
 		await step('marks the selected states with the accent', async () => {
-			const selected = canvas.getByRole('checkbox', {
+			const selected = grid.getByRole('checkbox', {
 				name: 'medium Selected',
 			});
 
