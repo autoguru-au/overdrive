@@ -81,9 +81,13 @@ const ChangesWithBrand = () => (
 );
 
 /**
- * Driven by `color.brand.solid` / `color.brand.onSolid`. Off-states stay
- * neutral — only the "on" surface carries the brand, and the glyph on top of it
- * flips between white and dark ink for contrast.
+ * Driven by the tenant's `primaryBackground`. Off-states stay neutral — only the
+ * "on" surface carries the brand, and the glyph on top of it flips between white
+ * and dark ink for contrast.
+ *
+ * CheckBox and Switch both read `color.brand.solid` for the accent and
+ * `color.brand.subtle` for the unselected hover wash, so branded or not, the
+ * two agree. Radio still draws its own dot and joins them in its own ticket.
  */
 const SelectionControls = ({ idPrefix }: { idPrefix: string }) => (
 	<Stack space="2">
