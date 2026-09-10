@@ -15,6 +15,9 @@ const FOCUS_COLOUR = vars.color.info.foreground;
 
 const chipHover = '&:is(button):hover, &:has(button:hover)';
 
+const SELECTED_SURFACE = vars.color.foreground.primary;
+const SELECTED_ON_SURFACE = vars.color.background.default;
+
 export const chip = recipe({
 	base: {
 		'@layer': {
@@ -124,13 +127,13 @@ export const chip = recipe({
 			style: {
 				'@layer': {
 					[cssLayerComponent]: {
-						backgroundColor: vars.color.brand.solid,
-						borderColor: vars.color.brand.solid,
-						color: vars.color.brand.onSolid,
+						backgroundColor: SELECTED_SURFACE,
+						borderColor: SELECTED_SURFACE,
+						color: SELECTED_ON_SURFACE,
 						selectors: {
 							[chipHover]: {
-								backgroundColor: vars.color.brand.solid,
-								borderColor: vars.color.brand.solid,
+								backgroundColor: SELECTED_SURFACE,
+								borderColor: SELECTED_SURFACE,
 							},
 						},
 					},
@@ -247,7 +250,7 @@ export const categoryLabel = recipe({
 			true: {
 				'@layer': {
 					[cssLayerComponent]: {
-						color: vars.color.brand.onSolid,
+						color: SELECTED_ON_SURFACE,
 					},
 				},
 			},

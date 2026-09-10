@@ -319,6 +319,7 @@ export const useColorOverrides = (
 
 		let mildPrimary: string | null = null;
 		let strongPrimary: string | null = null;
+		let brandSubtle: string | null = null;
 		let onBrand: string | null = null;
 		let buttonForeground: string | null = null;
 		let outlinedHover: string | null = null;
@@ -368,6 +369,13 @@ export const useColorOverrides = (
 				isDarkTheme,
 				direction: 'forward',
 				intensity: 0.42,
+			});
+
+			brandSubtle = shadedColour({
+				colour: primaryBackground,
+				isDarkTheme,
+				direction: 'forward',
+				intensity: 0.5,
 			});
 		}
 
@@ -419,6 +427,8 @@ export const useColorOverrides = (
 					solid: primaryBackground ?? undefined,
 					//@ts-expect-error no undefined
 					onSolid: onBrand ?? undefined,
+					//@ts-expect-error no undefined
+					subtle: brandSubtle ?? undefined,
 				},
 				interactive: {
 					// The two surface buckets. Every painted surface points the
