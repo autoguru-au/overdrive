@@ -1,16 +1,23 @@
 import { useToggleState } from '@react-stately/toggle';
 import React, { useRef } from 'react';
-import { useSwitch, useFocusRing, type AriaSwitchProps } from 'react-aria';
+import {
+	useSwitch,
+	useFocusRing,
+	useHover,
+	type AriaSwitchProps,
+} from 'react-aria';
 
-import { textStyles } from '../../styles/typography';
-import type { TestIdProp } from '../../types';
+import type { OdComponentProp, TestIdProp } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box';
 import { VisuallyHidden } from '../VisuallyHidden';
 
 import * as styles from './Switch.css';
 
-export interface SwitchProps extends AriaSwitchProps, TestIdProp {
+export interface SwitchProps
+	extends AriaSwitchProps,
+		OdComponentProp,
+		TestIdProp {
 	'aria-labelledby'?: AriaSwitchProps['aria-labelledby'];
 	name?: AriaSwitchProps['name'];
 	value?: AriaSwitchProps['value'];
@@ -18,6 +25,7 @@ export interface SwitchProps extends AriaSwitchProps, TestIdProp {
 	isSelected?: AriaSwitchProps['isSelected'];
 	onChange?: AriaSwitchProps['onChange'];
 	className?: string;
+	size?: keyof typeof styles.size;
 	/**
 	 * @deprecated use isDisabled instead
 	 */
@@ -39,6 +47,8 @@ export const Switch = ({
 	toggled,
 	isSelected = toggled,
 	isDisabled = disabled,
+	size = 'medium',
+	odComponent = 'switch',
 	testId,
 	...incomingProps
 }: SwitchProps) => {
@@ -51,37 +61,35 @@ export const Switch = ({
 	const ref = useRef(null);
 	const { inputProps } = useSwitch(props, state, ref);
 	const { isFocusVisible, focusProps } = useFocusRing();
+	const { isHovered, hoverProps } = useHover({
+		isDisabled: inputProps.disabled,
+	});
 
 	return (
-		<Box as="label" className={[styles.base, className]} testId={testId}>
+		<Box
+			as="label"
+			className={[styles.base, className]}
+			odComponent={odComponent}
+			testId={testId}
+		>
 			<VisuallyHidden>
 				<input {...inputProps} {...focusProps} ref={ref} />
 			</VisuallyHidden>
 			<Box
-				className={[
-					styles.toggle,
-					textStyles({ size: '5' }),
-					{
-						[styles.disabled]: inputProps.disabled,
-						[styles.toggleOn]: state.isSelected,
-					},
-				]}
+				className={[styles.toggle, styles.size[size]]}
+				{...hoverProps}
 				{...dataAttrs({
 					disabled: inputProps.disabled,
 					active: state.isSelected,
+					hovered: isHovered,
 					'focus-visible': isFocusVisible,
 				})}
 			>
-				<Box
-					className={[
-						styles.handle.default,
-						{
-							[styles.handle.active]: state.isSelected,
-						},
-					]}
-				/>
+				<Box className={styles.handle} />
 			</Box>
 			{props.children}
 		</Box>
 	);
 };
+
+Switch.displayName = 'Switch';

@@ -104,4 +104,79 @@ describe('<CheckBox />', () => {
 			).toMatchSnapshot();
 		});
 	});
+
+	describe('size', () => {
+		const indicator = (container) => container.querySelector('[data-size]');
+
+		it('should default to medium, the DS-2026 20px box', () => {
+			const { container } = render(<CheckBox value="1" />);
+
+			expect(indicator(container)).toHaveAttribute('data-size', 'medium');
+		});
+
+		it('should render the small box when asked for it', () => {
+			const { container } = render(<CheckBox size="small" value="1" />);
+
+			expect(indicator(container)).toHaveAttribute('data-size', 'small');
+		});
+
+		it('should give each size its own class, so the box can be sized', () => {
+			const { container: medium } = render(<CheckBox value="1" />);
+			const { container: small } = render(
+				<CheckBox size="small" value="1" />,
+			);
+
+			expect(indicator(medium).className).not.toEqual(
+				indicator(small).className,
+			);
+		});
+	});
+
+	describe('root element hooks', () => {
+		it('should mark the root with its component name', () => {
+			const { container } = render(<CheckBox value="1" />);
+
+			expect(
+				container.querySelector('[data-od-component="checkbox"]'),
+			).toBeInTheDocument();
+		});
+
+		it('should put a supplied testId on the root', () => {
+			const { container } = render(
+				<CheckBox testId="terms-checkbox" value="1" />,
+			);
+
+			expect(container.querySelector('[data-testid]')).toHaveAttribute(
+				'data-testid',
+				'terms-checkbox',
+			);
+		});
+	});
+
+	describe('indeterminate', () => {
+		it('sets the native indeterminate flag, so it announces as mixed', () => {
+			const { container } = render(
+				<CheckBox isIndeterminate value="1" />,
+			);
+
+			expect(container.querySelector('input').indeterminate).toBe(true);
+		});
+
+		it('carries the accent, marked apart from a plain tick', () => {
+			const { container } = render(
+				<CheckBox isIndeterminate value="1" />,
+			);
+			const box = container.querySelector('[data-size]');
+
+			expect(box).toHaveAttribute('data-indeterminate');
+		});
+
+		it('leaves the attribute off an ordinary box', () => {
+			const { container } = render(<CheckBox value="1" />);
+
+			expect(container.querySelector('[data-size]')).not.toHaveAttribute(
+				'data-indeterminate',
+			);
+		});
+	});
 });

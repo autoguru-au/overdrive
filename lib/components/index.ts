@@ -94,7 +94,12 @@ export { EPositionerAlignment, Positioner } from './Positioner';
 export { ProgressBar } from './ProgressBar';
 export { ProgressBarGroup } from './ProgressBarGroup';
 export { ProgressSpinner } from './ProgressSpinner';
-export { Radio, RadioGroup } from './Radio';
+export {
+	Radio,
+	type RadioProps,
+	RadioGroup,
+	type RadioGroupProps,
+} from './Radio';
 export { ScrollPane } from './ScrollPane';
 export { SearchBar, type SearchBarProps } from './SearchBar';
 export { Section } from './Section';
@@ -117,7 +122,7 @@ export {
 } from './StepProgress';
 export { Stepper } from './Stepper';
 export { StickyBox } from './StickyBox';
-export { Switch } from './Switch';
+export { Switch, type SwitchProps } from './Switch';
 export {
 	Table,
 	TableCell,
