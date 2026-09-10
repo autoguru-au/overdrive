@@ -33,10 +33,21 @@ const meta: Meta<typeof TableRow> = {
 				defaultValue: { summary: 'undefined (no animation)' },
 			},
 		},
+		hover: {
+			control: 'boolean',
+			description:
+				'Controls whether hovering a cell in this row paints the hover background across the whole row. Defaults to `true`. Cells can override it with their own `hover` prop.',
+			table: {
+				type: { summary: 'boolean' },
+				defaultValue: { summary: 'true' },
+			},
+		},
 		onClick: {
 			action: 'click',
 			description: 'Click handler fired when the row is clicked.',
-			table: { type: { summary: 'MouseEventHandler<HTMLTableRowElement>' } },
+			table: {
+				type: { summary: 'MouseEventHandler<HTMLTableRowElement>' },
+			},
 		},
 		className: {
 			control: 'text',
@@ -75,6 +86,51 @@ export const Standard: Story = {
 					<TableCell>100001</TableCell>
 					<TableCell>My Auto Service</TableCell>
 					<TableCell align="right">$99.00</TableCell>
+				</TableRow>
+			</TableRowGroup>
+		</Table>
+	),
+};
+
+/**
+ * Rows and cells have hover enabled by default (`hover={true}`).
+ * Pass `hover={false}` to `TableRow` to switch the hover wash off for the
+ * whole row, or to an individual `TableCell` to stop that cell from
+ * triggering it. A cell always wins over its row: `hover` on a cell inside a
+ * `hover={false}` row paints the wash over just that cell.
+ */
+export const WithoutHover: Story = {
+	args: {
+		hover: false,
+	},
+	render: (args) => (
+		<Table columnTemplate="auto 1fr auto">
+			<TableRowGroup>
+				<TableRow>
+					<TableHeadCell>ID</TableHeadCell>
+					<TableHeadCell>Name</TableHeadCell>
+					<TableHeadCell align="right">Price</TableHeadCell>
+				</TableRow>
+			</TableRowGroup>
+			<TableRowGroup>
+				<TableRow {...args}>
+					<TableCell>100001 (Row hover=false)</TableCell>
+					<TableCell>Disabled row hover</TableCell>
+					<TableCell align="right">$99.00</TableCell>
+				</TableRow>
+				<TableRow>
+					<TableCell hover={false}>
+						100002 (Cell hover=false)
+					</TableCell>
+					<TableCell>Cell with hover=true</TableCell>
+					<TableCell align="right">$120.00</TableCell>
+				</TableRow>
+				<TableRow hover={false}>
+					<TableCell>100003 (Row hover=false)</TableCell>
+					<TableCell hover>
+						Cell hover=true (cell-only wash)
+					</TableCell>
+					<TableCell align="right">$150.00</TableCell>
 				</TableRow>
 			</TableRowGroup>
 		</Table>
