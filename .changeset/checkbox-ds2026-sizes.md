@@ -87,16 +87,6 @@ attributes are a styling and test hook, not API.
   defaulting to `checkbox`, as it is on Switch.
 - `displayName` corrected from `Checkbox` to `CheckBox`, matching the export.
 
-### Known limitations
-
-- **The two disabled states render ~60% opacity paler than Figma.** The shared
-  `CheckableBase` fades the whole disabled row, so Figma's `#eef0f2` fill
-  composites to roughly `#f5f6f7` and its `#d4d9dd` border to `#e5e8ea`. The
-  fill and border tokens themselves are correct; unfading the box means changing
-  a file Radio also renders through, so it belongs with Radio's own ticket.
-- **Radio still draws its dot from its own styles**, so unbranded it does not
-  yet match CheckBox and Switch. That closes with AG-21696.
-
 ### Confirmed with design
 
 - **Indeterminate has no frame in the Figma spec, and that was an oversight
