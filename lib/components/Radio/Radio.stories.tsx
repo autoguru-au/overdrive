@@ -1,6 +1,6 @@
 import { StoryObj, Meta } from '@storybook/react-vite';
 import clsx from 'clsx';
-import React, { type ComponentProps } from 'react';
+import React, { useId, type ComponentProps } from 'react';
 import { expect, fn, within } from 'storybook/test';
 
 import {
@@ -64,7 +64,23 @@ const meta: Meta<typeof RadioGroupComponent> = {
 				'Ring size for every radio in the group, per the DS-2026 selection-control spec. An individual `Radio` can override it.',
 		},
 	},
+	/**
+	 * Every group gets a name unique to the instance that rendered it.
+	 *
+	 * Chromatic renders each story once per theme into a single document, and
+	 * native radios group by `name` per document — so three copies sharing one
+	 * name form one 18-radio group, and the browser lets only the last of them
+	 * stay checked. Suffixing the name keeps each copy an independent group.
+	 */
+	render: (args) => <GroupWithUniqueName {...args} />,
 };
+
+const GroupWithUniqueName = ({
+	name,
+	...args
+}: ComponentProps<typeof RadioGroupComponent>) => (
+	<RadioGroupComponent {...args} name={`${name}-${useId()}`} />
+);
 
 export default meta;
 type Story = StoryObj<typeof RadioGroupComponent>;
@@ -72,6 +88,7 @@ type Story = StoryObj<typeof RadioGroupComponent>;
 export const RadioGroup: Story = {
 	render: ({ ...args }) => {
 		const [selectedValue, setSelectedValue] = React.useState(args.value);
+		const uid = useId();
 
 		const handleChange = (value: string) => {
 			setSelectedValue(value);
@@ -81,6 +98,7 @@ export const RadioGroup: Story = {
 		return (
 			<RadioGroupComponent
 				{...(args as ComponentProps<typeof RadioGroupComponent>)}
+				name={`${args.name}-${uid}`}
 				value={selectedValue}
 				onChange={handleChange}
 			>
@@ -100,12 +118,18 @@ export const RadioGroup: Story = {
 		name: 'radio-group-favourite-fruit',
 		value: 'avocado',
 	},
-	play: async ({ canvas, userEvent, step }) => {
-		// The autodocs page renders the primary story twice, so scope to the
-		// first group rather than asserting there is only one.
-		const [avocado, blueberries] = canvas.getAllByRole('radio', {
-			name: /Avocado|Blueberries/,
-		});
+	play: async ({ canvasElement, userEvent, step }) => {
+		// The story is rendered more than once per document — once per theme in
+		// Chromatic, twice on the autodocs page — so scope to one group rather
+		// than reaching into the canvas and picking up a sibling copy.
+		const firstGroup = canvasElement.querySelector(
+			'[data-od-component="radio-group"]',
+		);
+		const group = within(
+			firstGroup instanceof HTMLElement ? firstGroup : canvasElement,
+		);
+		const avocado = group.getByRole('radio', { name: 'Avocado' });
+		const blueberries = group.getByRole('radio', { name: 'Blueberries' });
 
 		await step('starts on the value the group was given', async () => {
 			await expect(avocado).toBeChecked();
@@ -173,7 +197,7 @@ const Specimen = ({
 	disabled: boolean;
 }) => (
 	<RadioGroupComponent
-		name={`matrix-${size}-${label}`}
+		name={`matrix-${size}-${label}-${useId()}`}
 		size={size}
 		value={selected ? 'on' : ''}
 	>
