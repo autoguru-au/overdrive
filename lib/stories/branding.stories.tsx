@@ -85,9 +85,9 @@ const ChangesWithBrand = () => (
  * "on" surface carries the brand, and the glyph on top of it flips between white
  * and dark ink for contrast.
  *
- * CheckBox and Switch both read `color.brand.solid` for the accent and
+ * Switch, CheckBox and Radio all read `color.brand.solid` for the accent and
  * `color.brand.subtle` for the unselected hover wash, so branded or not, the
- * two agree. Radio still draws its own dot and joins them in its own ticket.
+ * three agree.
  */
 const SelectionControls = ({ idPrefix }: { idPrefix: string }) => (
 	<Stack space="2">

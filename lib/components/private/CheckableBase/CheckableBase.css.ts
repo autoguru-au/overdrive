@@ -11,8 +11,15 @@ export const root = style({
 });
 
 export const label = styleVariants({
+	/**
+	 * The fade lives on the label, not the row. It used to sit on the root, so
+	 * the box or ring composited its own disabled fill against the page and
+	 * came out ~60% paler than the spec (`#eef0f2` reading as `#f5f6f7`). The
+	 * label looks exactly as it did; the control now paints its tokens neat.
+	 */
 	disabled: {
 		color: vars.color.foreground.primary,
+		opacity: 0.6,
 	},
 });
 
@@ -39,7 +46,6 @@ export const checkableIndicator = style({
 });
 
 export const disabled = style({
-	opacity: 0.6,
 	pointerEvents: 'none',
 });
 
