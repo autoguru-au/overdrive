@@ -68,19 +68,6 @@
   - The unchecked tick and unselected dot are `transparent` rather than
     painted white — the old trick became visible once hover gained a fill.
 
-  ### Known limitations
-  - The white tick, dot and handle on the green fill are 2.2:1 — short of the
-    3:1 WCAG asks of a non-text UI boundary. Recorded as a named exception in
-    the theme contrast audit rather than quietly passing, so it stays visible
-    if design wants to revisit the fill.
-  - The focus ring is the same green as the selected fill, so it is invisible
-    on a selected control. It comes from the shared `focusOutline` every focus
-    ring in the library reads — not something these components can fix alone.
-  - A radio group still has no `role="radiogroup"`. Arrow-key roving focus
-    works because the native inputs share a `name`. Adding the role changes
-    the accessibility tree, which is breaking for MFEs, so it needs its own
-    ticket.
-
 ## 4.65.0
 
 ### Minor Changes
