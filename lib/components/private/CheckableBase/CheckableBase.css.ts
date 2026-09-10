@@ -48,15 +48,3 @@ export const checkableIndicator = style({
 export const disabled = style({
 	pointerEvents: 'none',
 });
-
-// no longer is in use in Overdrive
-export const checkableItem = style({
-	selectors: {
-		[`${nativeInput}:focus:checked ~${checkable} &`]: {
-			boxShadow: `0 0 0 2px ${vars.colours.intent.primary.background.strong}`,
-		},
-		[`${nativeInput}:focus:not(:checked) ~${checkable} >&`]: {
-			borderColor: vars.colours.intent.primary.background.strong,
-		},
-	},
-});
