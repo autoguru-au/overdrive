@@ -1,3 +1,4 @@
+import { ArrowRightIcon } from '@autoguru/icons';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { describe, expect, it } from 'vitest';
@@ -24,5 +25,102 @@ describe('<TextLink />', () => {
 		const button = screen.getByTestId('link-button');
 		expect(button.tagName).toBe('BUTTON');
 		expect(button).toHaveTextContent('Button link');
+	});
+
+	describe('DS-2026 linked text', () => {
+		it('should default to the primary linked-text appearance', () => {
+			render(<TextLink href="/test">Link text</TextLink>);
+
+			// `variant` defaults to 'primary', so every link is linked text
+			// without opting in.
+			const link = screen.getByRole('link');
+			expect(link.className).toContain('linkedText');
+			expect(link.className).toContain('variant_primary');
+		});
+
+		it('should fall back to the deprecated appearance for muted', () => {
+			render(
+				<TextLink href="/test" muted>
+					Link text
+				</TextLink>,
+			);
+
+			// `muted` is the one remaining route to the pre-DS-2026 look; it
+			// keeps working until it is removed in v5.
+			expect(screen.getByRole('link').className).not.toContain(
+				'linkedText',
+			);
+		});
+
+		it.each(['primary', 'secondary', 'critical'] as const)(
+			'should render the %s variant',
+			(variant) => {
+				render(
+					<TextLink href="/test" variant={variant}>
+						Link text
+					</TextLink>,
+				);
+
+				const link = screen.getByRole('link');
+				expect(link).toHaveTextContent('Link text');
+				expect(link.className).toContain('linkedText');
+			},
+		);
+
+		it('should mark a disabled variant as unavailable', () => {
+			render(
+				<TextLink href="/test" variant="primary" disabled>
+					Link text
+				</TextLink>,
+			);
+
+			const link = screen.getByRole('link');
+			expect(link).toHaveAttribute('aria-disabled', 'true');
+			expect(link).toHaveAttribute('tabindex', '-1');
+		});
+
+		it('should mark a disabled link unavailable without an explicit variant', () => {
+			render(
+				<TextLink href="/test" disabled>
+					Link text
+				</TextLink>,
+			);
+
+			expect(screen.getByRole('link')).toHaveAttribute(
+				'aria-disabled',
+				'true',
+			);
+		});
+
+		it('should order the icon around the label', () => {
+			const iconSelector = '[data-od-component="icon"]';
+
+			const { rerender } = render(
+				<TextLink href="/test" variant="primary" icon={ArrowRightIcon}>
+					Link text
+				</TextLink>,
+			);
+
+			const trailing = screen.getByRole('link');
+			expect(trailing.querySelector(iconSelector)).toBe(
+				trailing.lastElementChild,
+			);
+
+			rerender(
+				<TextLink
+					href="/test"
+					variant="primary"
+					icon={ArrowRightIcon}
+					iconPosition="left"
+				>
+					Link text
+				</TextLink>,
+			);
+
+			const leading = screen.getByRole('link');
+			expect(leading.querySelector(iconSelector)).toBe(
+				leading.firstElementChild,
+			);
+		});
 	});
 });

@@ -432,6 +432,10 @@ Repeat checks 1–4 above verbatim against the real published version (skip the 
 
 ## W1-P2 — Button-scoped semantic colour tokens (`color.button.*`)
 
+> **⚠ Landed and since superseded — do NOT act on the "omit"/"absent" instructions below (verified AG-20713).** `lib/themes/base/tokens.ts` now carries the full `color.button.{primary,critical}.{solid,outlined}`, `color.button.secondary.*` and `color.button.disabled.*` sets **plus** a `color.link.*` family (`primary`/`secondary`/`hover`/`pressed`/`critical`/`criticalHover`/`criticalPressed`), all matching Figma node `362:2275` hex-for-hex. §6-Q3 is no longer gating them. Read literally, the objective and done-criteria below require those keys to be *absent* — following that now would **delete shipped, correct tokens**. Note also that the token family for linked text is **`color.link.*`**, never the `color.button.linkedText.*` name used below.
+>
+> What is still true: most of these tokens are **defined but unconsumed**. As of AG-20713 only `color.button.primary.outlined.*` (Button's `outlined` prop) and `color.link.*` (TextLink's `variant` prop) are read by a component; `color.button.primary.solid.*`, `color.button.critical.*`, `color.button.secondary.*` and `color.button.disabled.*` appear only as swatches in `lib/stories/theme.stories.tsx`. Wiring those up is W3a-P1's job, not a token task.
+
 ### Work order
 
 **Objective:** add the confirmed §3.1 button tokens as **new keys** under `THEME_CONTRACT.color.button.*` and assign base values. **Exclude** the `Theme colours (WIP)/…` namespace (§6-Q3) and **omit** every `color.button.linkedText.*` key and every `secondary`/`ghost`/`critical.outlined` key whose value §3.1 does **not** confirm — leave them **absent** until §6-Q3 resolves (adding a key later is additive; shipping a guessed value is not).
