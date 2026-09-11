@@ -68,7 +68,7 @@ jobs:
             - name: Test
               run: yarn test --run --coverage
 
-            - uses: codecov/codecov-action@v5
+            - uses: codecov/codecov-action@v7
               with:
                   token: ${{ secrets.CODECOV }}
 
