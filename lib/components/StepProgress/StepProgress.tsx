@@ -17,26 +17,41 @@ import {
 /** Which way the sequence runs. */
 export type StepProgressLayout = 'horizontal' | 'vertical';
 
+/** How each step is drawn. */
+export type StepProgressVariant = 'steps' | 'stages';
+
 export interface StepProgressProps extends TestIdProp {
+	/**
+	 * `steps` draws each step as a numbered circle with its label; `stages`
+	 * draws a flat text-only row — the current stage goes semibold and the
+	 * stages ahead of it fade until the user reaches them. `stages` is always
+	 * horizontal at one size, so `layout`, `size` and `hideLabels` have no
+	 * effect on it.
+	 * @default 'steps'
+	 */
+	variant?: StepProgressVariant;
 	/**
 	 * The step names, in order. The array's length is the number of steps —
 	 * the design covers three to five.
 	 */
 	steps: ReactNode[];
 	/**
-	 * The user's current position in the flow, 1-based. Steps behind it are
-	 * drawn the same as steps ahead of it: the design has no "completed" state.
+	 * The user's current position in the flow, 1-based. In the `steps` variant,
+	 * steps behind it are drawn the same as steps ahead of it: the design has
+	 * no "completed" state. In the `stages` variant, stages ahead of it fade.
 	 */
 	activeStep: number;
 	/**
-	 * `horizontal` runs the steps across with their labels beneath; `vertical`
-	 * runs them down with their labels beside.
+	 * `horizontal` runs the steps across with their labels beneath — for wide
+	 * containers and three to five short steps. `vertical` runs them down with
+	 * their labels beside — for narrow columns and longer labels.
 	 * @default 'horizontal'
 	 */
 	layout?: StepProgressLayout;
 	/**
-	 * Circle diameter and the type scale that follows it, applied to every
-	 * step. Do not mix sizes within one sequence.
+	 * Circle diameter — 32px at `large`, 24px at `small` — and the type scale
+	 * that follows it, applied to every step. Do not mix sizes within one
+	 * sequence.
 	 * @default 'large'
 	 */
 	size?: StepProgressSize;
@@ -97,15 +112,17 @@ Connector.displayName = 'StepProgressConnector';
  * long form — as a sequence of numbered steps joined by connectors.
  *
  * Progress is linear and driven entirely by `activeStep`; the component holds no
- * state of its own. There is no "completed" appearance, so steps the user has
- * already been through look the same as the ones ahead.
+ * state of its own. In the default `steps` variant there is no "completed"
+ * appearance, so steps the user has already been through look the same as the
+ * ones ahead. The `stages` variant is a flat text-only row instead, where the
+ * stages ahead of the current one fade.
  *
  * It renders a `nav` landmark around an ordered list, with the current step
  * marked `aria-current="step"`. The steps are not interactive — this reports
- * position, it does not navigate. For breadcrumb-style navigation where each
- * stage is a link, use `Breadcrumbs`.
+ * position, it does not navigate.
  */
 export const StepProgress: FunctionComponent<StepProgressProps> = ({
+	variant = 'steps',
 	steps,
 	activeStep,
 	layout = 'horizontal',
@@ -131,8 +148,60 @@ export const StepProgress: FunctionComponent<StepProgressProps> = ({
 
 	const { Component: List, componentProps: listProps } = useBox({
 		as: 'ol',
-		className: styles.list({ layout }),
+		className:
+			variant === 'stages' ? styles.stagesList : styles.list({ layout }),
 	});
+
+	if (variant === 'stages') {
+		return (
+			<Root {...rootProps}>
+				<List {...listProps}>
+					{steps.map((label, index) => {
+						const isCurrent = index + 1 === activeStep;
+						const isUpcoming = index + 1 > activeStep;
+
+						return (
+							<li
+								className={styles.stagesItem}
+								// The stages are a fixed, ordered sequence;
+								// there is no stable id to key on and
+								// reordering is not a case this component
+								// supports.
+								key={index}
+								{...(isCurrent
+									? { 'aria-current': 'step' }
+									: {})}
+							>
+								{index > 0 ? (
+									<span
+										aria-hidden
+										className={styles.stagesConnector({
+											upcoming: isUpcoming,
+										})}
+										data-od-component="step-progress-connector"
+									>
+										<Icon
+											icon={CaretRightIcon}
+											size="small"
+										/>
+									</span>
+								) : null}
+								<span
+									className={styles.stagesLabel({
+										selected: isCurrent,
+										upcoming: isUpcoming,
+										onDark,
+									})}
+								>
+									{label}
+								</span>
+							</li>
+						);
+					})}
+				</List>
+			</Root>
+		);
+	}
 
 	// `horizontal` stacks each step's label under its circle, and vice versa.
 	const arrangement: StepProgressItemProps['arrangement'] =

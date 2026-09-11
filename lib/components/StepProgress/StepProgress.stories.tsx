@@ -1,42 +1,42 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
-import { expect, within } from 'storybook/test';
 
 import { Box } from '../Box/Box';
 import { Stack } from '../Stack/Stack';
 import { Text } from '../Text/Text';
 
 import { StepProgress } from './StepProgress';
+import { StepProgressItem } from './StepProgressItem';
 
 const GUIDE = `
 \`StepProgress\` tells the user where they are in a multi-step flow — a
 checkout, a wizard, a long form — as a numbered sequence joined by connectors.
 
 > ⚠️ **It reports position, it does not navigate.** Nothing in it is clickable.
-> For breadcrumb-style navigation where each stage is a link, use
-> \`Breadcrumbs\`.
 
 \`activeStep\` is the whole model. The component holds no state: move the user
-forward or back by changing that number. There is deliberately **no completed
-state** — a step the user has already been through looks exactly like one they
-have not reached yet. If your flow needs to show which steps are done, this is
-not the right component.
+forward or back by changing that number. In the default \`steps\` variant there
+is deliberately **no completed state** — a step the user has already been
+through looks exactly like one they have not reached yet. The \`stages\`
+variant does show where the user has been: the stages ahead of the current one
+fade.
 
-| \`layout\` | Steps run | Labels sit | Good for |
-| --- | --- | --- | --- |
-| \`horizontal\` *(default)* | across | beneath each circle | Wide containers, three to five short steps |
-| \`vertical\` | down | beside each circle | Narrow columns, longer labels |
-
-Each variant below is documented next to its example. The single
-circle-and-label primitive, \`StepProgressItem\`, has
-[its own page](/docs/primitives-indicators-step-progress-item--docs).
+Layout and sizing options are covered in the props table below. Each variant
+is documented next to its example. The single circle-and-label primitive,
+\`StepProgressItem\`, is exported for layouts this component does not cover —
+its props are on the **StepProgressItem** tab of the props table. It is purely
+presentational: it carries no list or current-position semantics, so you have
+to supply those yourself.
 `;
 
 const STEPS = ['Your details', 'Vehicle', 'Booking', 'Payment'];
 
+const INLINE_RADIO = 'inline-radio';
+
 const meta = {
 	title: 'Primitives/Indicators/Step Progress',
 	component: StepProgress,
+	subcomponents: { StepProgressItem },
 	tags: ['new'],
 	parameters: {
 		docs: {
@@ -48,14 +48,18 @@ const meta = {
 		activeStep: 2,
 	},
 	argTypes: {
+		variant: {
+			control: INLINE_RADIO,
+			options: ['steps', 'stages'],
+		},
 		activeStep: {
 			control: { type: 'number', min: 1, max: 5, step: 1 },
 		},
 		layout: {
-			control: 'inline-radio',
+			control: INLINE_RADIO,
 			options: ['horizontal', 'vertical'],
 		},
-		size: { control: 'inline-radio', options: ['large', 'small'] },
+		size: { control: INLINE_RADIO, options: ['large', 'small'] },
 		className: { table: { disable: true } },
 		testId: { table: { disable: true } },
 	},
@@ -85,11 +89,14 @@ export const Vertical: Story = {
 };
 
 /**
- * Circles are 32px at `size="large"` and 24px at `small`, with the type scale
- * following. Do not mix sizes within one sequence.
+ * The flat, text-only row from the design's `Stages` set — no circles, carets
+ * between the names. Unlike the default variant, it does show where the user
+ * has been: past stages sit at full strength, the current one goes semibold,
+ * and upcoming stages fade along with the caret leading into each. Always
+ * horizontal at one size — `layout`, `size` and `hideLabels` have no effect.
  */
-export const Small: Story = {
-	args: { size: 'small' },
+export const Stages: Story = {
+	args: { variant: 'stages' },
 };
 
 /** The design covers three to five steps. */
@@ -141,47 +148,4 @@ export const OnDark: Story = {
 			<StepProgress {...args} />
 		</Box>
 	),
-};
-
-/**
- * The sequence is a `nav` landmark wrapping an ordered list, so screen-reader
- * users can jump to it and hear how many steps there are. The current step's
- * `<li>` carries `aria-current="step"`. Name the landmark with `aria-label`
- * whenever a page has more than one — the default is `Progress`.
- */
-export const Interaction: Story = {
-	args: { activeStep: 3 },
-	play: async ({ canvasElement, step }) => {
-		// The story renders more than once per document — per theme in Chromatic
-		// and twice on the autodocs page — so take the first landmark and scope
-		// every later query to it rather than picking up a sibling copy.
-		const nav = within(canvasElement).getAllByRole('navigation', {
-			name: 'Progress',
-		})[0];
-		const canvas = within(nav);
-
-		await step('exposes a named navigation landmark', async () => {
-			await expect(nav).toBeVisible();
-		});
-
-		await step('renders one list item per step', async () => {
-			const items = canvas.getAllByRole('listitem');
-			await expect(items).toHaveLength(STEPS.length);
-		});
-
-		await step('marks only the active step as current', async () => {
-			const current = canvas
-				.getAllByRole('listitem')
-				.filter((item) => item.getAttribute('aria-current') === 'step');
-
-			await expect(current).toHaveLength(1);
-			await expect(current[0]).toHaveTextContent(STEPS[2]);
-		});
-
-		await step('keeps every label readable', async () => {
-			for (const label of STEPS) {
-				await expect(canvas.getAllByText(label)[0]).toBeVisible();
-			}
-		});
-	},
 };

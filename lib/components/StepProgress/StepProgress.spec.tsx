@@ -50,6 +50,39 @@ describe('<StepProgress />', () => {
 	});
 });
 
+describe('<StepProgress variant="stages" />', () => {
+	const renderStages = (activeStep: number) =>
+		render(
+			<StepProgress
+				variant="stages"
+				steps={STEPS}
+				activeStep={activeStep}
+			/>,
+		);
+
+	it('should match snapshot', () => {
+		expect(renderStages(2).container.firstChild).toMatchSnapshot();
+	});
+
+	it('should mark only the active stage as current', () => {
+		const { container } = renderStages(2);
+		const current = container.querySelectorAll('[aria-current="step"]');
+
+		expect(current).toHaveLength(1);
+		expect(current[0]).toHaveTextContent('Two');
+	});
+
+	it('should draw one connector fewer than it has stages', () => {
+		const { container } = renderStages(1);
+
+		expect(
+			container.querySelectorAll(
+				'[data-od-component="step-progress-connector"]',
+			),
+		).toHaveLength(STEPS.length - 1);
+	});
+});
+
 describe('<StepProgressItem />', () => {
 	it('should not throw', () =>
 		expect(() =>

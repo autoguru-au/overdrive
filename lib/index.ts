@@ -118,6 +118,7 @@ export {
 	type StepProgressLayout,
 	type StepProgressProps,
 	type StepProgressSize,
+	type StepProgressVariant,
 	StepProgressItem,
 	Stepper,
 	StickyBox,

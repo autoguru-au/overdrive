@@ -412,3 +412,146 @@ export const connectorLine = style({
 		},
 	},
 });
+
+/*
+ * The `stages` variant — the flat, text-only row from the Figma `Stages` set.
+ */
+
+/**
+ * Stages the user has not reached yet fade to 20% — taken from the Figma
+ * `Stages` set, which dims each upcoming link and the caret leading into it
+ * with a 0.2 layer opacity. It is an opacity rather than a colour token so the
+ * same fade reads on a light and a dark surface alike.
+ */
+const UPCOMING_OPACITY = '0.2';
+
+export const stagesList = style({
+	'@layer': {
+		[cssLayerComponent]: {
+			alignItems: 'center',
+			display: 'flex',
+			gap: vars.space['3'],
+			listStyle: 'none',
+			margin: 0,
+			padding: 0,
+		},
+	},
+});
+
+export const stagesItem = style({
+	'@layer': {
+		[cssLayerComponent]: {
+			alignItems: 'center',
+			display: 'flex',
+			gap: vars.space['3'],
+		},
+	},
+});
+
+export const stagesLabel = recipe({
+	base: {
+		'@layer': {
+			[cssLayerComponent]: {
+				fontSize: vars.typography.size['4'].fontSize,
+				lineHeight: vars.typography.size['4'].lineHeight,
+				whiteSpace: 'nowrap',
+			},
+		},
+	},
+
+	variants: {
+		selected: {
+			true: {
+				'@layer': {
+					[cssLayerComponent]: {
+						fontWeight: vars.typography.fontWeight.semiBold,
+					},
+				},
+			},
+			false: {
+				'@layer': {
+					[cssLayerComponent]: {
+						fontWeight: vars.typography.fontWeight.normal,
+					},
+				},
+			},
+		},
+
+		upcoming: {
+			true: {
+				'@layer': {
+					[cssLayerComponent]: { opacity: UPCOMING_OPACITY },
+				},
+			},
+			false: {},
+		},
+
+		onDark: {
+			true: {},
+			false: {
+				'@layer': {
+					[cssLayerComponent]: {
+						color: vars.color.foreground.primary,
+					},
+				},
+			},
+		},
+	},
+
+	compoundVariants: [
+		{
+			// On a dark surface the current stage takes the accent, and the
+			// rest go white — the same treatment as the circle labels.
+			variants: { selected: false, onDark: true },
+			style: {
+				'@layer': {
+					[cssLayerComponent]: {
+						color: vars.color.foreground.reverse,
+					},
+				},
+			},
+		},
+		{
+			variants: { selected: true, onDark: true },
+			style: {
+				'@layer': {
+					[cssLayerComponent]: { color: DARK_SELECTED_FILL },
+				},
+			},
+		},
+	],
+
+	defaultVariants: {
+		selected: false,
+		upcoming: false,
+		onDark: false,
+	},
+});
+
+/** The caret between two stages. It fades along with the stage it leads to. */
+export const stagesConnector = recipe({
+	base: {
+		'@layer': {
+			[cssLayerComponent]: {
+				color: vars.color.border.default,
+				display: 'flex',
+				flexShrink: 0,
+			},
+		},
+	},
+
+	variants: {
+		upcoming: {
+			true: {
+				'@layer': {
+					[cssLayerComponent]: { opacity: UPCOMING_OPACITY },
+				},
+			},
+			false: {},
+		},
+	},
+
+	defaultVariants: {
+		upcoming: false,
+	},
+});

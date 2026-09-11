@@ -118,6 +118,7 @@ export {
 	type StepProgressLayout,
 	type StepProgressProps,
 	type StepProgressSize,
+	type StepProgressVariant,
 	StepProgressItem,
 } from './StepProgress';
 export { Stepper } from './Stepper';
