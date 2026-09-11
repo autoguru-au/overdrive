@@ -7,14 +7,19 @@ Add `StepProgress`, the DS-2026 multi-step progress indicator, and the
 
 `StepProgress` shows the user where they are in a multi-step flow as a numbered
 sequence joined by connectors. Progress is linear and driven entirely by
-`activeStep` — the component holds no state, and there is deliberately no
-"completed" appearance, so steps already visited look the same as steps ahead.
+`activeStep` — the component holds no state. In the default `steps` variant
+there is deliberately no "completed" appearance, so steps already visited look
+the same as steps ahead.
 
 - `layout` runs the sequence `horizontal` (labels beneath) or `vertical` (labels
   beside), `size` switches between 32px and 24px circles, and `onDark` restyles
   it for a dark panel or hero.
 - `hideLabels` drops the labels to assistive technology only for widths neither
   layout survives; the labels stay in the accessibility tree.
+- `variant="stages"` draws the flat text-only row from the design's Stages set
+  instead of circles: stage names separated by carets, the current one
+  semibold, and — unlike the default variant — the stages ahead of the current
+  one fade until the user reaches them.
 - Renders a `nav` landmark around an ordered list, with the current step's `<li>`
   marked `aria-current="step"`. The steps are not interactive — this reports
   position, it does not navigate.

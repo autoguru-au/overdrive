@@ -60,7 +60,7 @@ describe('<StepProgress variant="stages" />', () => {
 			/>,
 		);
 
-	it('should match snapshot', () => {
+	it('should match the stages snapshot', () => {
 		expect(renderStages(2).container.firstChild).toMatchSnapshot();
 	});
 
