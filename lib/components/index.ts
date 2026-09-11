@@ -65,6 +65,7 @@ export {
 export { Meta } from './Meta';
 export { MinimalModal } from './MinimalModal';
 export { withModal, Modal } from './Modal';
+export { ModalFooter, type ModalFooterProps } from './ModalFooter';
 export { NumberBubble } from './NumberBubble';
 export { NumberInput } from './NumberInput';
 export {
