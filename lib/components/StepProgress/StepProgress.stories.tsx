@@ -1,13 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
-import { expect } from 'storybook/test';
+import { expect, within } from 'storybook/test';
 
 import { Box } from '../Box/Box';
 import { Stack } from '../Stack/Stack';
 import { Text } from '../Text/Text';
 
 import { StepProgress } from './StepProgress';
-import { StepProgressItem } from './StepProgressItem';
 
 const GUIDE = `
 \`StepProgress\` tells the user where they are in a multi-step flow — a
@@ -73,15 +72,16 @@ default is \`Progress\`.
 
 ## StepProgressItem on its own
 
-\`StepProgressItem\` is exported for layouts this component does not cover. It is
-purely presentational: it renders one circle and label and carries no list or
+\`StepProgressItem\` — the single circle-and-label primitive — is exported for
+layouts this component does not cover, and documented on its own page under
+**Step Progress Item**. It is purely presentational: it carries no list or
 current-position semantics, so you have to supply those yourself.
 `;
 
 const STEPS = ['Your details', 'Vehicle', 'Booking', 'Payment'];
 
 const meta = {
-	title: 'Components/Step Progress',
+	title: 'Primitives/Indicators/Step Progress',
 	component: StepProgress,
 	tags: ['new'],
 	parameters: {
@@ -113,54 +113,41 @@ type Story = StoryObj<typeof meta>;
 
 export const Standard: Story = {};
 
-export const Layouts: Story = {
-	render: (args) => (
-		<Stack space="7">
-			{(['horizontal', 'vertical'] as const).map((layout) => (
-				<Stack key={layout} space="3">
-					<Text size="3" color="soft">
-						{layout}
-					</Text>
-					<StepProgress {...args} layout={layout} />
-				</Stack>
-			))}
-		</Stack>
-	),
+/**
+ * Steps run down with their labels beside — for narrow columns and labels the
+ * horizontal layout cannot fit.
+ */
+export const Vertical: Story = {
+	args: { layout: 'vertical' },
 };
 
-export const Sizes: Story = {
-	render: (args) => (
-		<Stack space="7">
-			{(['large', 'small'] as const).map((size) => (
-				<Stack key={size} space="3">
-					<Text size="3" color="soft">
-						{size}
-					</Text>
-					<StepProgress {...args} size={size} />
-				</Stack>
-			))}
-		</Stack>
-	),
+/** 24px circles with the type scale following. */
+export const Small: Story = {
+	args: { size: 'small' },
 };
 
-/** Three to five steps, which is what the design covers. */
+/** The design covers three to five steps. */
 export const StepCounts: Story = {
 	render: (args) => (
 		<Stack space="7">
 			{[3, 4, 5].map((count) => (
-				<StepProgress
-					{...args}
-					activeStep={2}
-					aria-label={`Progress with ${count} steps`}
-					key={count}
-					steps={[
-						'Your details',
-						'Vehicle',
-						'Booking',
-						'Payment',
-						'Confirm',
-					].slice(0, count)}
-				/>
+				<Stack key={count} space="3">
+					<Text size="3" color="soft">
+						{`${count} steps`}
+					</Text>
+					<StepProgress
+						{...args}
+						activeStep={2}
+						aria-label={`Progress with ${count} steps`}
+						steps={[
+							'Your details',
+							'Vehicle',
+							'Booking',
+							'Payment',
+							'Confirm',
+						].slice(0, count)}
+					/>
+				</Stack>
 			))}
 		</Stack>
 	),
@@ -181,60 +168,23 @@ export const OnDark: Story = {
 	args: { onDark: true },
 	render: (args) => (
 		<Box backgroundColor="hard" borderRadius="md" padding="6">
-			<Stack space="7">
-				<StepProgress {...args} />
-				<StepProgress {...args} layout="vertical" />
-			</Stack>
+			<StepProgress {...args} />
 		</Box>
-	),
-};
-
-/** The step primitive, outside a sequence. */
-export const StepPrimitive: Story = {
-	tags: ['!autodocs'],
-	render: () => (
-		<Stack space="6">
-			{(['large', 'small'] as const).map((size) =>
-				(['vertical', 'horizontal'] as const).map((arrangement) => (
-					<Box
-						display="flex"
-						gap="6"
-						key={`${size}-${arrangement}`}
-						alignItems="flexStart"
-					>
-						<StepProgressItem
-							arrangement={arrangement}
-							label="Step one"
-							number={1}
-							size={size}
-						/>
-						<StepProgressItem
-							arrangement={arrangement}
-							label="Step one"
-							number={1}
-							selected
-							size={size}
-						/>
-						<StepProgressItem
-							hideLabel
-							label="Step one"
-							number={1}
-							size={size}
-						/>
-					</Box>
-				)),
-			)}
-		</Stack>
 	),
 };
 
 export const Interaction: Story = {
 	args: { activeStep: 3 },
-	play: async ({ canvas, step }) => {
+	play: async ({ canvasElement, step }) => {
+		// The story renders more than once per document — per theme in Chromatic
+		// and twice on the autodocs page — so take the first landmark and scope
+		// every later query to it rather than picking up a sibling copy.
+		const nav = within(canvasElement).getAllByRole('navigation', {
+			name: 'Progress',
+		})[0];
+		const canvas = within(nav);
+
 		await step('exposes a named navigation landmark', async () => {
-			const nav = canvas.getAllByRole('navigation', {
-				name: 'Progress',
-			})[0];
 			await expect(nav).toBeVisible();
 		});
 
