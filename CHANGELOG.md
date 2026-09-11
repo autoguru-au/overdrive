@@ -1,17 +1,103 @@
 # @autoguru/overdrive
 
+## 5.1.0
+
+### Minor Changes
+
+- bf0bdd4: `StandardModal`: add optional `footer` slot rendered as a sticky
+  footer with a 1px top divider. The slot takes any node — inner spacing,
+  buttons and close-on-click semantics are the consumer's, so a Save button that
+  validates or awaits an async call never closes the modal before the work
+  finishes.
+
+  Add `ModalFooter`, the locked-down footer for the slot: one primary action and
+  an optional secondary action, right-aligned with a 12px gap and standard
+  padding. Button variant, size and ordering are fixed so every modal footer
+  looks the same — only the labels and click handlers are the consumer's.
+
+  Example:
+
+  ```tsx
+  <StandardModal
+    isOpen={open}
+    title="Add asset"
+    onRequestClose={close}
+    footer={
+      <ModalFooter
+        primaryLabel="Add asset"
+        onPrimaryClick={submit}
+        secondaryLabel="Cancel"
+        onSecondaryClick={close}
+      />
+    }
+  >
+    {body}
+  </StandardModal>
+  ```
+
+- e6b8ae0: `TableRow` and `TableCell` gain a `hover` prop to switch the hover
+  background off.
+
+  **Hover was always on.** Hovering any `TableCell` painted a grey wash across
+  its whole row, with no way to opt out. Rows that are not interactive, or
+  tables where the wash fought with a custom row background, had to override the
+  pseudo-element from outside.
+
+  **Now it is a prop.** `hover` defaults to `true`, so nothing changes unless
+  you pass it. Set `hover={false}` on a `TableRow` to turn the wash off for
+  every cell in that row, or on an individual `TableCell` to stop that one cell
+  from triggering it. A cell always wins over its row, and the wash follows
+  whoever switched it on: with the row's hover on, hovering a cell washes the
+  full row as before; with `<TableRow hover={false}>` and a single
+  `<TableCell hover>` inside, hovering that cell washes just that cell.
+
+  The hover styles are keyed on a `data-hover` attribute, present when hover is
+  enabled and absent when it is not. It is rendered on the `<tr>` (the row's own
+  setting) and on each `<td>` (the cell's resolved setting); the row attribute
+  is what widens the wash from the cell to the full row.
+
+  Also in this release:
+  - `TableRow` and `TableCell` accept `testId`, rendered as `data-testid` on the
+    `<tr>` and `<td>`.
+  - The `<tr>` carries `data-od-component="table-row"` and the `<td>`
+    `data-od-component="table-cell"` for test and analytics selectors.
+
+- 5940b1e: Add `StepProgress`, the DS-2026 multi-step progress indicator, and
+  the `StepProgressItem` primitive it composes.
+
+  `StepProgress` shows the user where they are in a multi-step flow as a
+  numbered sequence joined by connectors. Progress is linear and driven entirely
+  by `activeStep` — the component holds no state. In the default `steps` variant
+  there is deliberately no "completed" appearance, so steps already visited look
+  the same as steps ahead.
+  - `layout` runs the sequence `horizontal` (labels beneath) or `vertical`
+    (labels beside), `size` switches between 32px and 24px circles, and `onDark`
+    restyles it for a dark panel or hero.
+  - `hideLabels` drops the labels to assistive technology only for widths
+    neither layout survives; the labels stay in the accessibility tree.
+  - `variant="stages"` draws the flat text-only row from the design's Stages set
+    instead of circles: stage names separated by carets, the current one
+    semibold, and — unlike the default variant — the stages ahead of the current
+    one fade until the user reaches them.
+  - Renders a `nav` landmark around an ordered list, with the current step's
+    `<li>` marked `aria-current="step"`. The steps are not interactive — this
+    reports position, it does not navigate.
+
+  Additive: a net-new export that consumes only DS-2026 semantic tokens. Nothing
+  existing changes.
+
 ## 5.0.0
 
 ### Major Changes
 
-- a028c18, 25a7ab2, cacd72a: **Selection controls move onto Design System
-  2026** 🎨
+- a028c18, 25a7ab2, cacd72a: **Selection controls move onto Design System 2026**
+  🎨
 
   `Switch`, `CheckBox` and `Radio` are rebuilt to the DS-2026 Figma spec. No
   prop is removed or renamed and there is nothing to change in your code — but
   every switch, checkbox and radio changes appearance in one release, which is
-  why this is a major. The headline: selection controls are green now, and
-  they got a little smaller.
+  why this is a major. The headline: selection controls are green now, and they
+  got a little smaller.
 
   ### Changed
   - **Selection colour is green.** Unbranded `Switch`, `Radio` and `CheckBox`
@@ -19,54 +105,49 @@
     `colorOverrides` this doesn't affect you: `primaryBackground` still drives
     the fill, and the tick, dot and handle on top of it are still derived from
     your colour for contrast. Only the fallback changed.
-  - **Controls are smaller.** Switch goes from 46×24 to 38×20, the CheckBox
-    box from 24px to 20px and the Radio ring from 24px to 20px. The 48px row
-    and 48×44 hit area are unchanged for CheckBox and Radio, so nothing
-    reflows around them — but a layout hand-tuned around the old switch
-    footprint will re-flow, so glance at any screen with a switch in a list or
-    a form row.
+  - **Controls are smaller.** Switch goes from 46×24 to 38×20, the CheckBox box
+    from 24px to 20px and the Radio ring from 24px to 20px. The 48px row and
+    48×44 hit area are unchanged for CheckBox and Radio, so nothing reflows
+    around them — but a layout hand-tuned around the old switch footprint will
+    re-flow, so glance at any screen with a switch in a list or a form row.
   - **Hover no longer looks like "on".** Hovering an off control shows a pale
     brand wash (`color.brand.subtle`) and a brand border instead of flooding
     with the accent colour — people were toggling switches that were already
     where they wanted them. Switch hover also stops sticking after a tap on
     touch devices.
-  - **Disabled finally looks disabled.** Controls paint their own disabled
-    fill and border instead of a 60% opacity fade over the whole row; the fade
-    now sits on the label only. A selected disabled switch no longer reads as
-    live.
+  - **Disabled finally looks disabled.** Controls paint their own disabled fill
+    and border instead of a 60% opacity fade over the whole row; the fade now
+    sits on the label only. A selected disabled switch no longer reads as live.
   - **A selected `FilterChip` stops sharing the brand token.** It stays
     near-black with white text — white label text on the new green would fail
-    WCAG AA — so a tenant's `primaryBackground` no longer tints a selected
-    chip.
+    WCAG AA — so a tenant's `primaryBackground` no longer tints a selected chip.
   - **`CheckBox.css.ts` and `Radio.css.ts` move into the `component` cascade
     layer**, matching Switch. An unlayered MFE override that used to lose to
     these components will now win. That is the intended direction — it is what
     makes them themable without `!important` — but if you were fighting these
     rules, your override may suddenly take effect.
   - Radio's exported class names changed: `radio` / `radioSelected` / `inner` /
-    `innerSelected` are now `ring` / `dot` / `size`. State on CheckBox and
-    Radio is expressed as data attributes (`data-active`, `data-disabled`,
+    `innerSelected` are now `ring` / `dot` / `size`. State on CheckBox and Radio
+    is expressed as data attributes (`data-active`, `data-disabled`,
     `data-size`, `data-indeterminate`) — a styling and test hook, not API.
 
   ### Added
-  - **A `size` prop** on all three controls: `medium` (the default) and
-    `small`. For radios it sits on `RadioGroup` — a group is one size in
-    practice — and an individual `Radio` can still override it.
-  - `SwitchProps`, `RadioProps` and `RadioGroupProps` are now exported from
-    the package root (joining `CheckboxProps`), so you can type your own
-    wrappers.
+  - **A `size` prop** on all three controls: `medium` (the default) and `small`.
+    For radios it sits on `RadioGroup` — a group is one size in practice — and
+    an individual `Radio` can still override it.
+  - `SwitchProps`, `RadioProps` and `RadioGroupProps` are now exported from the
+    package root (joining `CheckboxProps`), so you can type your own wrappers.
   - `color.brand.subtle` joins the theme contract as the pale companion to
-    `brand.solid`, derived at runtime for tenants branding via
-    `colorOverrides`.
+    `brand.solid`, derived at runtime for tenants branding via `colorOverrides`.
   - The roots carry `data-od-component` (`switch`, `checkbox`, `radio`,
     `radio-group`), and `testId` / `odComponent` now reach them.
 
   ### Fixed
-  - `aria-label` and `aria-labelledby` now reach the native input on
-    `CheckBox` and `Radio`. They were silently dropped, so a control rendered
-    without `children` had no accessible name at all.
-  - The unchecked tick and unselected dot are `transparent` rather than
-    painted white — the old trick became visible once hover gained a fill.
+  - `aria-label` and `aria-labelledby` now reach the native input on `CheckBox`
+    and `Radio`. They were silently dropped, so a control rendered without
+    `children` had no accessible name at all.
+  - The unchecked tick and unselected dot are `transparent` rather than painted
+    white — the old trick became visible once hover gained a fill.
 
 ## 4.65.0
 
