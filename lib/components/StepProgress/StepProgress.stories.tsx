@@ -16,66 +16,20 @@ checkout, a wizard, a long form — as a numbered sequence joined by connectors.
 > For breadcrumb-style navigation where each stage is a link, use
 > \`Breadcrumbs\`.
 
-## Progress is linear and stateless
-
 \`activeStep\` is the whole model. The component holds no state: move the user
-forward or back by changing that number.
-
-There is deliberately **no completed state**. A step the user has already been
-through looks exactly like one they have not reached yet — only the current step
-is filled. If your flow needs to show which steps are done, this is not the
-right component.
-
-## Choosing a layout
+forward or back by changing that number. There is deliberately **no completed
+state** — a step the user has already been through looks exactly like one they
+have not reached yet. If your flow needs to show which steps are done, this is
+not the right component.
 
 | \`layout\` | Steps run | Labels sit | Good for |
 | --- | --- | --- | --- |
 | \`horizontal\` *(default)* | across | beneath each circle | Wide containers, three to five short steps |
 | \`vertical\` | down | beside each circle | Narrow columns, longer labels |
 
-Horizontal is the tighter of the two: the connectors butt straight up against
-the labels, so the sequence is only as wide as the labels make it. Keep labels
-to one to three words. When they no longer fit, switch to \`vertical\` rather
-than letting them wrap — wrapping pushes the circles out of alignment.
-
-\`hideLabels\` is the last resort for a width neither layout survives. It keeps
-the labels in the accessibility tree and drops them from the screen, so a screen
-reader still hears them. Bare numbers say nothing about the flow, so reach for
-\`vertical\` first.
-
-## Dark surfaces
-
-\`onDark\` restyles the sequence for a dark panel or hero: unselected labels turn
-white, the circles keep their white fill but take a white ring, and the current
-step's circle and label take the brand accent. It does not paint a background —
-put it on a dark surface yourself.
-
-## Anatomy
-
-Each step is a circle carrying its 1-based position, with an optional label
-beneath (horizontal) or beside it (vertical). The current step's circle fills,
-its number goes bold and its label goes semibold. Circles are 32px at
-\`size="large"\` and 24px at \`small\`, with the type scale following.
-
-Connectors are drawn between steps, never before the first or after the last: a
-caret in horizontal layout, a short rule in vertical. They are decorative and
-hidden from assistive technology.
-
-## Accessibility
-
-The sequence is a \`nav\` landmark wrapping an ordered list, so screen-reader
-users can jump to it and hear how many steps there are. The current step's
-\`<li>\` carries \`aria-current="step"\`.
-
-Name the landmark with \`aria-label\` whenever a page has more than one — the
-default is \`Progress\`.
-
-## StepProgressItem on its own
-
-\`StepProgressItem\` — the single circle-and-label primitive — is exported for
-layouts this component does not cover, and documented on its own page under
-**Step Progress Item**. It is purely presentational: it carries no list or
-current-position semantics, so you have to supply those yourself.
+Each variant below is documented next to its example. The single
+circle-and-label primitive, \`StepProgressItem\`, has
+[its own page](/docs/primitives-indicators-step-progress-item--docs).
 `;
 
 const STEPS = ['Your details', 'Vehicle', 'Booking', 'Payment'];
@@ -111,17 +65,29 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+/**
+ * Each step is a circle carrying its 1-based position, with an optional label.
+ * The current step's circle fills, its number goes bold and its label goes
+ * semibold. Connectors — a caret in horizontal layout, a short rule in
+ * vertical — are drawn between steps, never before the first or after the
+ * last, and are hidden from assistive technology.
+ */
 export const Standard: Story = {};
 
 /**
- * Steps run down with their labels beside — for narrow columns and labels the
- * horizontal layout cannot fit.
+ * Steps run down with their labels beside the circles. Horizontal is the
+ * tighter layout, but it needs labels of one to three words — when they no
+ * longer fit, switch to `vertical` rather than letting them wrap, which
+ * pushes the circles out of alignment.
  */
 export const Vertical: Story = {
 	args: { layout: 'vertical' },
 };
 
-/** 24px circles with the type scale following. */
+/**
+ * Circles are 32px at `size="large"` and 24px at `small`, with the type scale
+ * following. Do not mix sizes within one sequence.
+ */
 export const Small: Story = {
 	args: { size: 'small' },
 };
@@ -154,15 +120,19 @@ export const StepCounts: Story = {
 };
 
 /**
- * The last resort for a width neither layout survives. The labels stay in the
- * accessibility tree, so a screen reader still hears them.
+ * `hideLabels` is the last resort for a width neither layout survives. The
+ * labels stay in the accessibility tree, so a screen reader still hears them —
+ * but bare numbers say nothing about the flow, so reach for `vertical` first.
  */
 export const LabelsHidden: Story = {
 	args: { hideLabels: true },
 };
 
 /**
- * `onDark` does not paint a background — the surface is the consumer's job.
+ * `onDark` restyles the sequence for a dark panel or hero: unselected labels
+ * turn white, the circles keep their white fill but take a white ring, and the
+ * current step's circle and label take the brand accent. It does not paint a
+ * background — the surface is the consumer's job.
  */
 export const OnDark: Story = {
 	args: { onDark: true },
@@ -173,6 +143,12 @@ export const OnDark: Story = {
 	),
 };
 
+/**
+ * The sequence is a `nav` landmark wrapping an ordered list, so screen-reader
+ * users can jump to it and hear how many steps there are. The current step's
+ * `<li>` carries `aria-current="step"`. Name the landmark with `aria-label`
+ * whenever a page has more than one — the default is `Progress`.
+ */
 export const Interaction: Story = {
 	args: { activeStep: 3 },
 	play: async ({ canvasElement, step }) => {

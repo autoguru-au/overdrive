@@ -14,14 +14,6 @@ const GUIDE = `
 > semantics — no \`nav\`, no \`ol\`, no \`aria-current\`. Reach for
 > \`StepProgress\` first; use this directly only when you are building a layout
 > it does not cover, and supply those semantics yourself.
-
-## Anatomy
-
-A circle carrying the step's 1-based \`number\`, with an optional \`label\`
-beneath it (\`arrangement="vertical"\`) or beside it (\`horizontal\`). Circles
-are 32px at \`size="large"\` and 24px at \`small\`, with the type scale
-following. \`selected\` fills the circle for the user's current position, and
-\`onDark\` restyles the step for a dark surface.
 `;
 
 const meta = {
@@ -52,6 +44,10 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+/**
+ * A circle carrying the step's 1-based `number`, with an optional `label`
+ * beneath it (`arrangement="vertical"`) or beside it (`horizontal`).
+ */
 export const Standard: Story = {};
 
 /** The user's current position — the circle fills and the label goes semibold. */
