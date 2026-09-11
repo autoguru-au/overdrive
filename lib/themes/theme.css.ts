@@ -120,6 +120,7 @@ const THEME_CONTRACT = {
 		brand: {
 			solid: 'color-brand-solid',
 			onSolid: 'color-brand-on-solid',
+			subtle: 'color-brand-subtle',
 		},
 		surface: {
 			page: null,
@@ -147,6 +148,9 @@ const THEME_CONTRACT = {
 			surfaceDisabled: 'color-interactive-surface-disabled',
 			contentDisabled: 'color-interactive-content-disabled',
 			link: 'color-interactive-link',
+			onLink: 'color-interactive-on-link',
+			linkOnLight: 'color-interactive-link-on-light',
+			linkOnDark: 'color-interactive-link-on-dark',
 			linkVisited: 'color-interactive-link-visited',
 			overlayBg: 'color-interactive-overlay-bg',
 			overlayContainer: 'color-interactive-overlay-container',

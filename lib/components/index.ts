@@ -65,6 +65,7 @@ export {
 export { Meta } from './Meta';
 export { MinimalModal } from './MinimalModal';
 export { withModal, Modal } from './Modal';
+export { ModalFooter, type ModalFooterProps } from './ModalFooter';
 export { NumberBubble } from './NumberBubble';
 export { NumberInput } from './NumberInput';
 export {
@@ -94,7 +95,12 @@ export { EPositionerAlignment, Positioner } from './Positioner';
 export { ProgressBar } from './ProgressBar';
 export { ProgressBarGroup } from './ProgressBarGroup';
 export { ProgressSpinner } from './ProgressSpinner';
-export { Radio, RadioGroup } from './Radio';
+export {
+	Radio,
+	type RadioProps,
+	RadioGroup,
+	type RadioGroupProps,
+} from './Radio';
 export { ScrollPane } from './ScrollPane';
 export { SearchBar, type SearchBarProps } from './SearchBar';
 export { Section } from './Section';
@@ -106,9 +112,19 @@ export { SplitButton, type SplitButtonProps } from './SplitButton';
 export { Stack } from './Stack';
 export { StandardModal, EStandardModalSize } from './StandardModal';
 export { StarRating, EStarRatingSize } from './StarRating';
+export {
+	StepProgress,
+	type StepProgressArrangement,
+	type StepProgressItemProps,
+	type StepProgressLayout,
+	type StepProgressProps,
+	type StepProgressSize,
+	type StepProgressVariant,
+	StepProgressItem,
+} from './StepProgress';
 export { Stepper } from './Stepper';
 export { StickyBox } from './StickyBox';
-export { Switch } from './Switch';
+export { Switch, type SwitchProps } from './Switch';
 export {
 	Table,
 	TableCell,

@@ -7,6 +7,7 @@ import { overdriveTokens as tokens } from '../themes/theme.css';
 import { arrayFromKeys } from '../utils/object';
 
 import { cssLayerStyleprops } from './layers.css';
+import { withSurfaceLinkVars } from './surfaceLinkVars';
 import { gapVar } from './vars.css';
 
 const { space } = tokens;
@@ -206,7 +207,7 @@ const baseProperties = defineProperties({
 		color: semanticColor,
 		/** @deprecated Use color — removed in v5 (DS-2026 major). */
 		colour: mappedColours,
-		backgroundColor: semanticBackgroundColor,
+		backgroundColor: withSurfaceLinkVars(semanticBackgroundColor),
 		/** @deprecated Use backgroundColor — removed in v5 (DS-2026 major). */
 		backgroundColour: mappedBackgroundColours,
 		opacity: [0, '1', '0'],

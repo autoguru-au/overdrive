@@ -80,14 +80,21 @@ export const tokens = deepmerge(baseTokens, {
 	// `space` intentionally omitted: inherited from baseTokens via deepmerge
 	// so the DS-2026 spacing scale lives in one place and can't drift.
 	//
-	// The only DS-2026 `color` token this theme overrides. Everything else in
+	// The only DS-2026 `color` tokens this theme overrides. Everything else in
 	// that contract is inherited from base. The ring has to be overridden
 	// because the legacy `focusOutlineStyle` every other component uses reads
 	// `colours.foreground.link`, which this theme moves to blue — leaving a
-	// `color.focus.ring` consumer ringing base green next to a blue one.
+	// `color.focus.ring` consumer ringing base green next to a blue one. The
+	// per-surface link pair has to follow for the same reason: a dark-surface
+	// Box repoints links at `linkOnDark`, which would otherwise inherit base
+	// green beside this theme's blue links.
 	color: {
 		focus: {
 			ring: colours.blue['500'],
+		},
+		interactive: {
+			linkOnLight: colours.blue['500'],
+			linkOnDark: colours.blue['500'],
 		},
 	},
 	colours: {

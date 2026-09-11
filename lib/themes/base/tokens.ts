@@ -108,21 +108,16 @@ export const tokens = {
 			white: overdriveTokens.colours.gamut.white,
 		},
 		/**
-		 * Seeded to the values the surfaces reading it render today, so adding
-		 * this pair is byte-identical on every theme: `solid` matches
-		 * `color.foreground.primary` and `onSolid` matches
-		 * `color.background.default`.
-		 *
 		 * Raw hex, not a `colours.gamut.*` var alias — `color.gamut.*` is a
 		 * transition bridge onto the legacy gamut, which `flat_red` overrides.
-		 * Raw hex keeps the resolved value the same in all three themes, and is
-		 * how `foreground.primary` / `background.default` are already seeded.
+		 * Raw hex keeps the resolved value the same in all three themes.
 		 *
 		 * A tenant re-brands this pair at runtime via `colorOverrides`.
 		 */
 		brand: {
-			solid: colourMap.gray['900'], // #212338
+			solid: colourMap.green['600'], // #01c68c
 			onSolid: colourMap.white, // #ffffff
+			subtle: colourMap.green['200'], // #e3f8f0
 		},
 		surface: {
 			page: colourMap.white,
@@ -150,6 +145,9 @@ export const tokens = {
 			surfaceDisabled: colourMap.gray['400'],
 			contentDisabled: colourMap.gray['600'],
 			link: colourMap.green['600'],
+			onLink: colourMap.white,
+			linkOnLight: colourMap.green['600'],
+			linkOnDark: colourMap.green['600'],
 			linkVisited: colourMap.green['700'],
 			overlayBg: colourMap.gray['300'],
 			overlayContainer: colourMap.white,

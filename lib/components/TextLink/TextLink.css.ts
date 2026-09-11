@@ -30,6 +30,10 @@ export const body = sprinkles({
 export const muted = style({
 	':hover': {
 		boxShadow: `inset 0 -1.6em 0 0 ${vars.typography.colour.link}`,
-		color: 'white',
+		// The hover floods the whole line with the link colour, so the label is
+		// sitting on it. `white` was fine while the link was always dark; on a
+		// dark surface the derived link is deliberately light, and white on it
+		// is 1.64:1. This token tracks whichever the nearest surface declared.
+		color: vars.color.interactive.onLink,
 	},
 });

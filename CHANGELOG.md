@@ -1,5 +1,105 @@
 # @autoguru/overdrive
 
+## 5.0.0
+
+### Major Changes
+
+- a028c18, 25a7ab2, cacd72a: **Selection controls move onto Design System
+  2026** 🎨
+
+  `Switch`, `CheckBox` and `Radio` are rebuilt to the DS-2026 Figma spec. No
+  prop is removed or renamed and there is nothing to change in your code — but
+  every switch, checkbox and radio changes appearance in one release, which is
+  why this is a major. The headline: selection controls are green now, and
+  they got a little smaller.
+
+  ### Changed
+  - **Selection colour is green.** Unbranded `Switch`, `Radio` and `CheckBox`
+    render `#01c68c` where they used to render near-black. If you brand via
+    `colorOverrides` this doesn't affect you: `primaryBackground` still drives
+    the fill, and the tick, dot and handle on top of it are still derived from
+    your colour for contrast. Only the fallback changed.
+  - **Controls are smaller.** Switch goes from 46×24 to 38×20, the CheckBox
+    box from 24px to 20px and the Radio ring from 24px to 20px. The 48px row
+    and 48×44 hit area are unchanged for CheckBox and Radio, so nothing
+    reflows around them — but a layout hand-tuned around the old switch
+    footprint will re-flow, so glance at any screen with a switch in a list or
+    a form row.
+  - **Hover no longer looks like "on".** Hovering an off control shows a pale
+    brand wash (`color.brand.subtle`) and a brand border instead of flooding
+    with the accent colour — people were toggling switches that were already
+    where they wanted them. Switch hover also stops sticking after a tap on
+    touch devices.
+  - **Disabled finally looks disabled.** Controls paint their own disabled
+    fill and border instead of a 60% opacity fade over the whole row; the fade
+    now sits on the label only. A selected disabled switch no longer reads as
+    live.
+  - **A selected `FilterChip` stops sharing the brand token.** It stays
+    near-black with white text — white label text on the new green would fail
+    WCAG AA — so a tenant's `primaryBackground` no longer tints a selected
+    chip.
+  - **`CheckBox.css.ts` and `Radio.css.ts` move into the `component` cascade
+    layer**, matching Switch. An unlayered MFE override that used to lose to
+    these components will now win. That is the intended direction — it is what
+    makes them themable without `!important` — but if you were fighting these
+    rules, your override may suddenly take effect.
+  - Radio's exported class names changed: `radio` / `radioSelected` / `inner` /
+    `innerSelected` are now `ring` / `dot` / `size`. State on CheckBox and
+    Radio is expressed as data attributes (`data-active`, `data-disabled`,
+    `data-size`, `data-indeterminate`) — a styling and test hook, not API.
+
+  ### Added
+  - **A `size` prop** on all three controls: `medium` (the default) and
+    `small`. For radios it sits on `RadioGroup` — a group is one size in
+    practice — and an individual `Radio` can still override it.
+  - `SwitchProps`, `RadioProps` and `RadioGroupProps` are now exported from
+    the package root (joining `CheckboxProps`), so you can type your own
+    wrappers.
+  - `color.brand.subtle` joins the theme contract as the pale companion to
+    `brand.solid`, derived at runtime for tenants branding via
+    `colorOverrides`.
+  - The roots carry `data-od-component` (`switch`, `checkbox`, `radio`,
+    `radio-group`), and `testId` / `odComponent` now reach them.
+
+  ### Fixed
+  - `aria-label` and `aria-labelledby` now reach the native input on
+    `CheckBox` and `Radio`. They were silently dropped, so a control rendered
+    without `children` had no accessible name at all.
+  - The unchecked tick and unselected dot are `transparent` rather than
+    painted white — the old trick became visible once hover gained a fill.
+
+## 4.65.0
+
+### Minor Changes
+
+- 57e93e0: Derive the tenant `linkColor` per surface instead of writing it
+  verbatim.
+
+  `colorOverrides.linkColor` reaches the app as a single inline CSS var on the
+  provider, so one value had to serve both a white page and a `gray900` header —
+  and no colour clears 4.5:1 on both. A brand supplied as a button fill (a
+  colour picked to sit _behind_ white text) could land as low as 1.6:1 as link
+  text. Because `focusOutline` reads the same token, that also took every focus
+  ring in the library below WCAG 1.4.11.
+
+  `useColorOverrides` now shades the supplied colour away from each surface
+  until it clears 4.5:1, preserving hue: a light brand darkens for pale surfaces
+  and is left alone for dark ones, a dark brand does the reverse. A brand
+  already legible on a surface is passed through untouched. If a hue cannot get
+  there without ceasing to be the brand, that side keeps the theme's own link
+  colour and warns in development.
+
+  New `color.interactive.linkOnDark` token holds the dark-surface value; its
+  base value is the current link colour, so unbranded consumers are unchanged.
+
+  New `darkSurface` class (exported from `@autoguru/overdrive/styles`) opts a
+  dark-filled region into that value for its subtree — links and focus rings
+  both follow:
+
+  ```tsx
+  <Box as="header" backgroundColor="gray900" color="white" className={darkSurface}>
+  ```
+
 ## 4.64.1
 
 ### Patch Changes

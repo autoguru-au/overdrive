@@ -47,9 +47,9 @@ const BRANDS: Brand[] = [
 		name: 'Amber',
 		overrides: {
 			primaryBackground: '#e5bc01',
-			linkColor: '#8a6f00',
+			linkColor: '#e5bc01',
 		},
-		note: 'A bright brand, with on-brand content derived as dark ink.',
+		note: 'A bright brand: on-brand content derives as dark ink, and the link darkens to stay legible on pale surfaces.',
 	},
 ];
 
@@ -81,9 +81,13 @@ const ChangesWithBrand = () => (
 );
 
 /**
- * Driven by `color.brand.solid` / `color.brand.onSolid`. Off-states stay
- * neutral — only the "on" surface carries the brand, and the glyph on top of it
- * flips between white and dark ink for contrast.
+ * Driven by the tenant's `primaryBackground`. Off-states stay neutral — only the
+ * "on" surface carries the brand, and the glyph on top of it flips between white
+ * and dark ink for contrast.
+ *
+ * Switch, CheckBox and Radio all read `color.brand.solid` for the accent and
+ * `color.brand.subtle` for the unselected hover wash, so branded or not, the
+ * three agree.
  */
 const SelectionControls = ({ idPrefix }: { idPrefix: string }) => (
 	<Stack space="2">
@@ -109,10 +113,12 @@ const SelectionControls = ({ idPrefix }: { idPrefix: string }) => (
 );
 
 /**
- * Only moves when `linkColor` is passed. Deliberately not derived from
- * `primaryBackground`: this same token drives every focus ring in the library,
- * and a colour picked as a fill behind white text is often illegible as link
- * text on the page background.
+ * Only moves when `linkColor` is passed. The supplied colour is not used
+ * verbatim: one inline var serves every surface, so it is shaded per surface
+ * until it clears 4.5:1 — darker for a pale card, lighter for a dark fill. The
+ * dark Box below carries no extra class; `backgroundColor` picks the surface's
+ * link colour on its own. The same token drives every focus ring in the
+ * library, so both follow.
  */
 const OptInGroup = () => (
 	<Stack space="2">
@@ -121,6 +127,23 @@ const OptInGroup = () => (
 			<TextLink href="#branding">A link</TextLink>
 			<Text colour="primary">colour=&quot;primary&quot;</Text>
 		</FlexInline>
+		<Box backgroundColor="gray900" borderRadius="1" padding="3">
+			<FlexInline gap="4" justify="center">
+				<TextLink href="#branding">A link on a dark surface</TextLink>
+			</FlexInline>
+			<Box
+				backgroundColor="white"
+				borderRadius="1"
+				marginTop="3"
+				padding="3"
+			>
+				<FlexInline gap="4" justify="center">
+					<TextLink href="#branding">
+						A link on a card inside it
+					</TextLink>
+				</FlexInline>
+			</Box>
+		</Box>
 	</Stack>
 );
 

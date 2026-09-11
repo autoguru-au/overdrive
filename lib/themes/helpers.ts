@@ -1,5 +1,10 @@
 import type { CSSVarFunction } from '@vanilla-extract/private';
-import { colord } from 'colord';
+import { colord, extend } from 'colord';
+import namesPlugin from 'colord/plugins/names';
+
+// CSS named colours ('gold', 'navy') are a form tenants do supply. Without this
+// they parse to nothing, and an unparsed colour used to measure as black.
+extend([namesPlugin]);
 
 /**
  * Utility type that extracts the raw token type from a vanilla-extract theme contract.
@@ -64,33 +69,47 @@ export const shadedColour = ({
 		.toHex();
 };
 
+/**
+ * Shade towards black or white, said plainly.
+ *
+ * `shadedColour` expresses this as `direction` crossed with `isDarkTheme`, so a
+ * caller that just wants "darker" has to pass a theme flag it does not care
+ * about and rely on the mapping never changing. These say what they do.
+ */
+export const darkenColour = (colour: string, intensity: number): string =>
+	colord(colour).darken(intensity).toHex();
+
+export const lightenColour = (colour: string, intensity: number): string =>
+	colord(colour).lighten(intensity).toHex();
+
 type RGBNumbers = { r: number; g: number; b: number } | null;
 
-export const hexToRGB = (hex: string): RGBNumbers => {
-	const shorthandRegex = /^#?([\da-f])([\da-f])([\da-f])$/i;
-	hex = hex.replace(shorthandRegex, (_, r, g, b) => r + r + g + g + b + b);
-
-	const result = /^#?([\da-f]{2})([\da-f]{2})([\da-f]{2})$/i.exec(hex);
-	return result
-		? {
-				r: Number.parseInt(result[1], 16),
-				g: Number.parseInt(result[2], 16),
-				b: Number.parseInt(result[3], 16),
-			}
-		: null;
+/**
+ * Every CSS colour form, or `null` when the string is not a colour at all —
+ * `var(--brand)`, `currentColor`, a typo.
+ *
+ * This used to be two hand-rolled parsers that understood 3- and 6-digit hex
+ * and `rgb()` only. Anything else — `hsl()`, a named colour, 8-digit hex —
+ * returned `null`, which `getColourLuminance` reads as luminance 0, i.e. black.
+ * Every contrast decision downstream was then made about a colour nobody
+ * supplied, and made silently.
+ */
+export const getRGBValues = (colour: string): RGBNumbers => {
+	const parsed = colord(colour);
+	if (!parsed.isValid()) return null;
+	// Alpha is dropped rather than composited: contrast against a translucent
+	// colour depends on what is behind it, which is not knowable here.
+	const { r, g, b } = parsed.toRgb();
+	return { r, g, b };
 };
 
-export const rgbStrToRGB = (rgb: string): RGBNumbers => {
-	const components = rgb.replaceAll(/[^\d,]/g, '').split(',');
-	return {
-		r: Number.parseInt(components[0]),
-		g: Number.parseInt(components[1]),
-		b: Number.parseInt(components[2]),
-	};
-};
-
-export const getRGBValues = (hexOrRGB: string): RGBNumbers =>
-	hexOrRGB.startsWith('rgb') ? rgbStrToRGB(hexOrRGB) : hexToRGB(hexOrRGB);
+/**
+ * Whether a contrast decision about this colour would be measured or guessed.
+ * Callers that shade or pick a colour by luminance should check first, rather
+ * than accept the black that an unparseable string silently measures as.
+ */
+export const canMeasureContrast = (colour: string): boolean =>
+	colord(colour).isValid();
 
 export const getColourLuminance = (rgb: RGBNumbers) => {
 	if (!rgb) return 0;
