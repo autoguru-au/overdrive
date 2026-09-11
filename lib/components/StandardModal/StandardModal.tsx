@@ -7,10 +7,10 @@ import type {
 	ReactNode,
 } from 'react';
 import * as React from 'react';
-import { useLayoutEffect, useRef } from 'react';
+import { useRef } from 'react';
 
 import { textStyles } from '../../styles/typography';
-import { isBrowser, useEventCallback, useId } from '../../utils';
+import { useEventCallback, useId } from '../../utils';
 import { Box } from '../Box/Box';
 import { Button } from '../Button/Button';
 import { Heading } from '../Heading/Heading';
@@ -75,16 +75,6 @@ export const StandardModal: FunctionComponent<StandardModalProps> = ({
 		},
 	);
 
-	if (isBrowser) {
-		useLayoutEffect(() => {
-			document.body.style.overflow = isOpen ? 'hidden' : '';
-
-			return () => {
-				document.body.style.overflow = '';
-			};
-		}, [isOpen]);
-	}
-
 	return (
 		<Modal
 			isOpen={isOpen}
@@ -92,6 +82,8 @@ export const StandardModal: FunctionComponent<StandardModalProps> = ({
 			noThemedWrapper={noThemedWrapper}
 			container={container}
 			onRequestClose={onRequestClose}
+			lockScroll
+			closeOnEscapeKeyDown
 		>
 			<Box
 				className={styles.container}
