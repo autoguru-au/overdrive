@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/react-vite';
+import isChromatic from 'chromatic/isChromatic';
 
 import '../lib/styles/global/fonts.css';
 import '../lib/styles/global/reset.css';
@@ -91,6 +92,20 @@ const preview: Preview = {
 			// 'error' - fail CI on a11y violations
 			// 'off' - skip a11y checks entirely
 			test: 'todo',
+			config: {
+				rules: isChromatic()
+					? [
+							// The Chromatic decorator renders every story once
+							// per theme in a single DOM, so any story whose
+							// component exposes a landmark (e.g. a nav) always
+							// carries same-labelled duplicates there. That
+							// duplication is a harness artifact, not a
+							// component defect — the rule stays on everywhere
+							// else.
+							{ id: 'landmark-unique', enabled: false },
+						]
+					: [],
+			},
 		},
 	},
 	tags: ['autodocs'],
