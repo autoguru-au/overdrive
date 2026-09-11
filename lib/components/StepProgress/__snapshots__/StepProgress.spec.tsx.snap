@@ -122,7 +122,7 @@ exports[`<StepProgress /> > should match snapshot 1`] = `
 </div>
 `;
 
-exports[`<StepProgress variant="stages" /> > should match snapshot 1`] = `
+exports[`<StepProgress variant="stages" /> > should match the stages snapshot 1`] = `
 <div
   class="theme_OD_Base__j49br80"
   data-od-component="provider"
