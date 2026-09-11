@@ -7,10 +7,10 @@
 close-on-click semantics are the consumer's, so a Save button that validates
 or awaits an async call never closes the modal before the work finishes.
 
-Add `ModalFooter`, a thin layout helper for the common right-aligned CTA
-pattern: right-aligned row with a 12px gap and standard padding. Consumers
-that want their own layout can drop the helper and put whatever they like in
-the slot.
+Add `ModalFooter`, the locked-down footer for the slot: one primary action and
+an optional secondary action, right-aligned with a 12px gap and standard
+padding. Button variant, size and ordering are fixed so every modal footer
+looks the same — only the labels and click handlers are the consumer's.
 
 Example:
 
@@ -20,10 +20,12 @@ Example:
   title="Add asset"
   onRequestClose={close}
   footer={
-    <ModalFooter>
-      <Button variant="secondary" onClick={close}>Cancel</Button>
-      <Button variant="primary" onClick={submit}>Add asset</Button>
-    </ModalFooter>
+    <ModalFooter
+      primaryLabel="Add asset"
+      onPrimaryClick={submit}
+      secondaryLabel="Cancel"
+      onSecondaryClick={close}
+    />
   }
 >
   {body}

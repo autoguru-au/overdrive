@@ -1,27 +1,38 @@
-import type { FunctionComponent, ReactNode } from 'react';
+import type { FunctionComponent, MouseEventHandler } from 'react';
 import * as React from 'react';
 
+import type { ConsistentComponentProps } from '../../types';
 import { Box } from '../Box/Box';
+import { Button } from '../Button/Button';
 
-export interface ModalFooterProps {
+export interface ModalFooterProps extends ConsistentComponentProps {
 	/**
-	 * Buttons (or any interactive elements) to render right-aligned in the
-	 * footer. Order in source order — the last child sits on the right.
+	 * Label for the primary action button, rendered on the far right.
 	 */
-	children: ReactNode;
-	className?: string;
+	primaryLabel: string;
+	/**
+	 * Called when the primary button is clicked. Closing the modal is the
+	 * consumer's job — nothing here closes it, so a Save that validates or
+	 * awaits an async call never closes the modal before the work finishes.
+	 */
+	onPrimaryClick?: MouseEventHandler<HTMLButtonElement>;
+	/**
+	 * Label for the optional secondary button (e.g. Cancel), rendered to the
+	 * left of the primary. Omit for a single-button footer.
+	 */
+	secondaryLabel?: string;
+	/**
+	 * Called when the secondary button is clicked.
+	 */
+	onSecondaryClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 /**
- * Layout helper for the `footer` slot on `StandardModal`. Puts its children
- * in a right-aligned row with a 12px gap and standard padding, so the common
- * secondary/primary CTA pattern is one component call, not eight props on the
- * modal.
- *
- * Auto-closing on click is the consumer's job — no primary/secondary click
- * handler on this component closes the modal. That way a Save button that
- * validates or awaits an async call never closes the modal before the work
- * finishes.
+ * Locked-down footer for the `footer` slot on `StandardModal`: one primary
+ * action and an optional secondary action, right-aligned with a 12px gap and
+ * standard padding. Button variant, size and ordering are fixed so every
+ * modal footer looks the same — only the labels and click handlers are the
+ * consumer's.
  *
  * @example
  * <StandardModal
@@ -29,20 +40,28 @@ export interface ModalFooterProps {
  *   isOpen={open}
  *   onRequestClose={close}
  *   footer={
- *     <ModalFooter>
- *       <Button variant="secondary" onClick={close}>Cancel</Button>
- *       <Button variant="primary" onClick={submit}>Add asset</Button>
- *     </ModalFooter>
+ *     <ModalFooter
+ *       primaryLabel="Add asset"
+ *       onPrimaryClick={submit}
+ *       secondaryLabel="Cancel"
+ *       onSecondaryClick={close}
+ *     />
  *   }
  * >
  *   {body}
  * </StandardModal>
  */
 export const ModalFooter: FunctionComponent<ModalFooterProps> = ({
-	children,
+	primaryLabel,
+	onPrimaryClick,
+	secondaryLabel,
+	onSecondaryClick,
 	className,
+	testId,
 }) => (
 	<Box
+		odComponent="modal-footer"
+		testId={testId}
 		display="flex"
 		alignItems="center"
 		justifyContent="flexEnd"
@@ -52,6 +71,15 @@ export const ModalFooter: FunctionComponent<ModalFooterProps> = ({
 		paddingX="5"
 		className={className}
 	>
-		{children}
+		{secondaryLabel ? (
+			<Button variant="secondary" size="medium" onClick={onSecondaryClick}>
+				{secondaryLabel}
+			</Button>
+		) : null}
+		<Button variant="primary" size="medium" onClick={onPrimaryClick}>
+			{primaryLabel}
+		</Button>
 	</Box>
 );
+
+ModalFooter.displayName = 'ModalFooter';

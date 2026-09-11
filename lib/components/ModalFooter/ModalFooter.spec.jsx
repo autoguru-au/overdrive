@@ -1,31 +1,41 @@
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import * as React from 'react';
 
 import { ModalFooter } from './ModalFooter';
 
 describe('<ModalFooter />', () => {
-	it('renders its children', () => {
-		const { getByText } = render(
-			<ModalFooter>
-				<button>Cancel</button>
-				<button>Save</button>
-			</ModalFooter>,
+	it('renders only the primary button when no secondary label is given', () => {
+		const { getByText, queryAllByRole } = render(
+			<ModalFooter primaryLabel="Confirm" />,
 		);
 
-		expect(getByText('Cancel')).toBeInTheDocument();
-		expect(getByText('Save')).toBeInTheDocument();
+		expect(getByText('Confirm')).toBeInTheDocument();
+		expect(queryAllByRole('button')).toHaveLength(1);
 	});
 
-	it('renders in source order (last child on the right visually via flex)', () => {
-		const { container } = render(
-			<ModalFooter>
-				<button data-testid="a">A</button>
-				<button data-testid="b">B</button>
-			</ModalFooter>,
+	it('renders secondary before primary and wires up both click handlers', () => {
+		const onPrimaryClick = vi.fn();
+		const onSecondaryClick = vi.fn();
+
+		const { getAllByRole } = render(
+			<ModalFooter
+				primaryLabel="Confirm"
+				onPrimaryClick={onPrimaryClick}
+				secondaryLabel="Cancel"
+				onSecondaryClick={onSecondaryClick}
+			/>,
 		);
 
-		const buttons = container.querySelectorAll('button');
-		expect(buttons[0]).toHaveAttribute('data-testid', 'a');
-		expect(buttons[1]).toHaveAttribute('data-testid', 'b');
+		const buttons = getAllByRole('button');
+		expect(buttons).toHaveLength(2);
+		expect(buttons[0]).toHaveTextContent('Cancel');
+		expect(buttons[1]).toHaveTextContent('Confirm');
+
+		fireEvent.click(buttons[1]);
+		expect(onPrimaryClick).toHaveBeenCalledTimes(1);
+		expect(onSecondaryClick).not.toHaveBeenCalled();
+
+		fireEvent.click(buttons[0]);
+		expect(onSecondaryClick).toHaveBeenCalledTimes(1);
 	});
 });
