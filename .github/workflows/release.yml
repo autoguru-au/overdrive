@@ -26,6 +26,6 @@ jobs:
               run: yarn --immutable
 
             - name: Create Release Pull Request
-              uses: changesets/action@v1
+              uses: changesets/action@v2.1.2
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
