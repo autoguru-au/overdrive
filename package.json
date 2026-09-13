@@ -148,7 +148,7 @@
 		"@babel/preset-react": "7.29.7",
 		"@babel/preset-typescript": "7.29.7",
 		"@babel/runtime-corejs3": "7.29.7",
-		"@changesets/cli": "2.29.7",
+		"@changesets/cli": "3.0.2",
 		"@chromatic-com/storybook": "4.1.1",
 		"@internationalized/date": "3.12.1",
 		"@octokit/rest": "22.0.1",
