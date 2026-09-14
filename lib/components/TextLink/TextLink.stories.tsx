@@ -1,14 +1,28 @@
 import { ArrowRightIcon, CaretRightIcon } from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import clsx from 'clsx';
 import React, { type ComponentProps } from 'react';
 import { expect } from 'storybook/test';
 
+import {
+	ladderGroupStart,
+	ladderPreviewInline,
+	ladderRow,
+	labels,
+	linkSizeLadderGrid,
+	linkStateLadderGrid,
+	small,
+	spaceLadderHeaderCell,
+	tokenCode,
+	tokenDescription,
+} from '../../stories/helpers/styles.css';
 import { argTypesExampleIcons } from '../../stories/shared/argTypes';
 import { Heading } from '../Heading/Heading';
 import { Text } from '../Text/Text';
 
-import { TextLink } from './TextLink';
+import { TextLink, type TextLinkProps } from './TextLink';
 import * as styles from './TextLink.css';
+import type { TextLinkVariant } from './TextLink.css';
 
 const sizeScale = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 const fontWeightOptions = ['normal', 'semiBold', 'bold'];
@@ -27,8 +41,10 @@ const meta = {
 	title: 'Content/Text Link',
 	component: TextLink,
 	decorators: [
-		(Story) => (
-			<div style={{ maxWidth: 300 }}>
+		// The narrow column keeps the single-link stories realistic; the matrix
+		// story needs the full canvas, so it opts out via `fullWidth`.
+		(Story, { parameters }) => (
+			<div style={{ maxWidth: parameters.fullWidth ? undefined : 300 }}>
 				<Story />
 			</div>
 		),
@@ -148,18 +164,6 @@ export const WithIconInsideParagraph: Story = {
 	decorators: InsideParagraph.decorators,
 };
 
-const linkedTextVariants = ['primary', 'secondary', 'critical'] as const;
-
-const iconLeft = { icon: ArrowRightIcon, iconPosition: 'left' } as const;
-const iconRight = { icon: ArrowRightIcon, iconPosition: 'right' } as const;
-
-/** Which classes move the label with the underline, per Figma. */
-const linkedTextStateBehaviour = [
-	{ variant: 'primary', labelFollowsState: true },
-	{ variant: 'secondary', labelFollowsState: false },
-	{ variant: 'critical', labelFollowsState: true },
-] as const;
-
 /**
  * Every style rule in the document, flattened out of `@layer` and `@media`
  * wrappers.
@@ -193,7 +197,7 @@ const eachStyleRule = function* (rules: CSSRuleList): Generator<CSSStyleRule> {
  * fails in the built Storybook that Chromatic renders.
  */
 const stateDeclarations = (
-	variant: keyof typeof styles.linkedText.classNames.variants.variant,
+	variant: TextLinkVariant,
 	state: 'hover' | 'active',
 ) => {
 	const cls = styles.linkedText.classNames.variants.variant[variant];
@@ -221,23 +225,83 @@ const stateDeclarations = (
 	return null;
 };
 
+/** Which classes move the label with the underline, per Figma. */
+const CLASSES: Array<{
+	variant: TextLinkVariant;
+	labelFollowsState: boolean;
+	tag?: string;
+}> = [
+	{ variant: 'primary', labelFollowsState: true, tag: 'default' },
+	{ variant: 'secondary', labelFollowsState: false },
+	{ variant: 'critical', labelFollowsState: true },
+];
+
 /**
- * Figma's linked-text axes, minus `Class` (the columns) and the hover/pressed
- * states, which need real interaction. `Large` is `size="4"`, `Small` is `"3"`,
- * and the `Icon` axis runs `None` / `Left` / `Right` at each size.
+ * Hover is forced with `data-hover` — `selectors.hover` matches it alongside
+ * `:hover`. Pressed has no such hook, so the story class replays the `:active`
+ * declarations.
  */
-const linkedTextRows = [
-	{ label: 'Large · no icon', size: '4' },
-	{ label: 'Large · icon left', size: '4', ...iconLeft },
-	{ label: 'Large · icon right', size: '4', ...iconRight },
-	{ label: 'Large · disabled', size: '4', ...iconRight, disabled: true },
-	{ label: 'Small · no icon', size: '3' },
-	{ label: 'Small · icon left', size: '3', ...iconLeft },
-	{ label: 'Small · icon right', size: '3', ...iconRight },
-	{ label: 'Small · disabled', size: '3', ...iconRight, disabled: true },
-] as const satisfies Array<
-	{ label: string } & Partial<ComponentProps<typeof TextLink>>
->;
+const STATES: Array<{
+	label: string;
+	props: Partial<TextLinkProps> & { 'data-hover'?: boolean };
+	code(variant: TextLinkVariant): string;
+}> = [
+	{ label: 'Default', props: {}, code: (variant) => `variant="${variant}"` },
+	{ label: 'Hover', props: { 'data-hover': true }, code: () => ':hover' },
+	{
+		label: 'Pressed',
+		props: { className: styles.storyForcePressed },
+		code: () => ':active',
+	},
+	{ label: 'Disabled', props: { disabled: true }, code: () => 'disabled' },
+];
+
+/** Figma's Large is `size="4"` (16px) and Small is `size="3"` (14px). */
+const SIZES: Array<{
+	label: string;
+	size: TextLinkProps['size'];
+	px: string;
+	tag?: string;
+}> = [
+	{ label: 'Large', size: '4', px: '16', tag: 'default' },
+	{ label: 'Small', size: '3', px: '14' },
+];
+
+const ICONS: Array<{
+	label: string;
+	props: Partial<TextLinkProps>;
+	code(size: TextLinkProps['size']): string;
+}> = [
+	{ label: 'None', props: {}, code: (size) => `size="${size}"` },
+	{
+		label: 'Left',
+		props: { icon: ArrowRightIcon, iconPosition: 'left' },
+		code: () => 'iconPosition="left"',
+	},
+	{
+		label: 'Right',
+		props: { icon: ArrowRightIcon, iconPosition: 'right' },
+		code: () => 'iconPosition="right"',
+	},
+];
+
+const STATE_COL = ['Class', 'State', 'Preview', 'Props', 'Tag'];
+const SIZE_COL = ['Size', 'Px', 'Icon', 'Preview', 'Props', 'Tag'];
+
+const EmptyCell = () => <span className={small} aria-hidden="true" />;
+
+const HeaderRow = ({ columns }: { columns: string[] }) => (
+	<div className={ladderRow}>
+		{columns.map((heading) => (
+			<span
+				className={clsx(labels, small, spaceLadderHeaderCell)}
+				key={heading}
+			>
+				{heading}
+			</span>
+		))}
+	</div>
+);
 
 /**
  * The DS-2026 **linked text** appearance, from the `Style=Linked text` axis of
@@ -260,52 +324,99 @@ const linkedTextRows = [
  * Figma's Large maps to `size="4"` (16px) and Small to `size="3"` (14px), both
  * Semibold — which is what the component defaults to. The icon tracks the label
  * at `1em`, matching Figma's 16px/14px.
- *
- * Hover and pressed need real interaction to see; `disabled` is a prop, so it is
- * rendered directly at both sizes.
  */
 export const LinkedText: Story = {
-	decorators: [
-		(Story) => (
-			<div
-				style={{
-					display: 'grid',
-					gap: '20px',
-					gridTemplateColumns: 'auto repeat(3, max-content)',
-					alignItems: 'center',
-				}}
-			>
-				<Story />
-			</div>
-		),
-	],
+	parameters: { fullWidth: true },
 	render: ({ children, ...args }) => (
 		<>
-			<div />
-			{linkedTextVariants.map((variant) => (
-				<Text key={variant} weight="bold" size="3">
-					{variant}
-				</Text>
-			))}
-
-			{linkedTextRows.map(({ label, ...row }) => (
-				<React.Fragment key={label}>
-					<Text size="3" color="secondary">
-						{label}
-					</Text>
-					{linkedTextVariants.map((variant) => (
-						// Wrapped so the link is not itself a grid item — grid
-						// and flex items are blockified, which would render
-						// these specimens as blocks and misrepresent the
-						// component's real `display: inline`.
-						<div key={variant}>
-							<TextLink {...args} {...row} variant={variant}>
-								{children}
-							</TextLink>
+			<Text weight="bold" size="4">
+				Class × state
+			</Text>
+			<div className={linkStateLadderGrid}>
+				<HeaderRow columns={STATE_COL} />
+				{CLASSES.flatMap(({ variant, tag }, group) =>
+					STATES.map(({ label, props, code }, index) => (
+						<div
+							className={clsx(
+								ladderRow,
+								group > 0 && index === 0 && ladderGroupStart,
+							)}
+							key={`${variant}-${label}`}
+						>
+							{index === 0 ? (
+								<span className={clsx(small, labels)}>
+									{variant}
+								</span>
+							) : (
+								<EmptyCell />
+							)}
+							<span className={small}>{label}</span>
+							<span className={ladderPreviewInline}>
+								<TextLink
+									{...args}
+									{...props}
+									variant={variant}
+								>
+									{children}
+								</TextLink>
+							</span>
+							<code className={tokenCode}>{code(variant)}</code>
+							{index === 0 && tag ? (
+								<span className={clsx(small, tokenDescription)}>
+									{tag}
+								</span>
+							) : (
+								<EmptyCell />
+							)}
 						</div>
-					))}
-				</React.Fragment>
-			))}
+					)),
+				)}
+			</div>
+
+			<Text weight="bold" size="4">
+				Size × icon
+			</Text>
+			<div className={linkSizeLadderGrid}>
+				<HeaderRow columns={SIZE_COL} />
+				{SIZES.flatMap(({ label: sizeLabel, size, px, tag }, group) =>
+					ICONS.map(({ label, props, code }, index) => (
+						<div
+							className={clsx(
+								ladderRow,
+								group > 0 && index === 0 && ladderGroupStart,
+							)}
+							key={`${size}-${label}`}
+						>
+							{index === 0 ? (
+								<span className={clsx(small, labels)}>
+									{sizeLabel}
+								</span>
+							) : (
+								<EmptyCell />
+							)}
+							{index === 0 ? (
+								<span className={small}>{px}</span>
+							) : (
+								<EmptyCell />
+							)}
+							<span className={small}>{label}</span>
+							<span className={ladderPreviewInline}>
+								<TextLink {...args} {...props} size={size}>
+									{children}
+								</TextLink>
+							</span>
+							<code className={tokenCode}>{code(size)}</code>
+							{index === 0 && tag ? (
+								<span className={clsx(small, tokenDescription)}>
+									{tag}
+								</span>
+							) : (
+								<EmptyCell />
+							)}
+						</div>
+					)),
+				)}
+			</div>
 		</>
 	),
 	args: {
@@ -314,7 +425,7 @@ export const LinkedText: Story = {
 	play: async ({ canvas, step }) => {
 		await step('every linked-text variation renders', async () => {
 			await expect(canvas.getAllByRole('link')).toHaveLength(
-				linkedTextRows.length * linkedTextVariants.length,
+				CLASSES.length * STATES.length + SIZES.length * ICONS.length,
 			);
 		});
 
@@ -352,17 +463,14 @@ export const LinkedText: Story = {
 					(link) => link.getAttribute('aria-disabled') === 'true',
 				);
 
-			await expect(disabled).toHaveLength(linkedTextVariants.length * 2);
+			await expect(disabled).toHaveLength(CLASSES.length);
 			await expect(disabled[0]).toHaveStyle({ pointerEvents: 'none' });
 		});
 
 		await step(
 			'hover and pressed move the label only where Figma does',
 			async () => {
-				for (const {
-					variant,
-					labelFollowsState,
-				} of linkedTextStateBehaviour) {
+				for (const { variant, labelFollowsState } of CLASSES) {
 					for (const state of ['hover', 'active'] as const) {
 						const declarations = stateDeclarations(variant, state);
 

@@ -55,17 +55,43 @@ export const muted = style({
  * Secondary holds its label and moves **only the underline** (`1445:18008`/
  * `18010` keep `color/link/secondary` on the text).
  */
+interface LinkedTextClass {
+	label: string;
+	hover: string;
+	pressed: string;
+	labelFollowsState: boolean;
+}
+
+const linkedTextClasses = {
+	primary: {
+		label: vars.color.link.primary,
+		hover: vars.color.link.hover,
+		pressed: vars.color.link.pressed,
+		labelFollowsState: true,
+	},
+	// The only class that holds its label: Figma keeps the black text on the
+	// shared green hover/pressed underline. `color.link` has no
+	// secondary-specific hover/pressed pair.
+	secondary: {
+		label: vars.color.link.secondary,
+		hover: vars.color.link.hover,
+		pressed: vars.color.link.pressed,
+		labelFollowsState: false,
+	},
+	critical: {
+		label: vars.color.link.critical,
+		hover: vars.color.link.criticalHover,
+		pressed: vars.color.link.criticalPressed,
+		labelFollowsState: true,
+	},
+} as const satisfies Record<string, LinkedTextClass>;
+
 const linkedTextVariant = ({
 	label,
 	hover,
 	pressed,
 	labelFollowsState,
-}: {
-	label: string;
-	hover: string;
-	pressed: string;
-	labelFollowsState: boolean;
-}) => ({
+}: LinkedTextClass) => ({
 	'@layer': {
 		[cssLayerComponent]: {
 			borderBottomColor: label,
@@ -118,27 +144,9 @@ export const linkedText = recipe({
 
 	variants: {
 		variant: {
-			primary: linkedTextVariant({
-				label: vars.color.link.primary,
-				hover: vars.color.link.hover,
-				pressed: vars.color.link.pressed,
-				labelFollowsState: true,
-			}),
-			// The only class that holds its label: Figma keeps the black text on
-			// the shared green hover/pressed underline. `color.link` has no
-			// secondary-specific hover/pressed pair.
-			secondary: linkedTextVariant({
-				label: vars.color.link.secondary,
-				hover: vars.color.link.hover,
-				pressed: vars.color.link.pressed,
-				labelFollowsState: false,
-			}),
-			critical: linkedTextVariant({
-				label: vars.color.link.critical,
-				hover: vars.color.link.criticalHover,
-				pressed: vars.color.link.criticalPressed,
-				labelFollowsState: true,
-			}),
+			primary: linkedTextVariant(linkedTextClasses.primary),
+			secondary: linkedTextVariant(linkedTextClasses.secondary),
+			critical: linkedTextVariant(linkedTextClasses.critical),
 		},
 
 		disabled: {
@@ -162,6 +170,33 @@ export const linkedText = recipe({
 		variant: 'primary',
 	},
 });
+
+/**
+ * Story-only: replays each class's `:active` declarations so a static matrix
+ * can show the pressed state. Hover needs no equivalent — `selectors.hover`
+ * already matches `[data-hover]`, so a story forces it with an attribute.
+ *
+ * Same layer and same specificity as the rule it stands in for
+ * (`.variant.storyForcePressed` vs `.variant:active`), so it wins on source
+ * order, which is why it is declared after the recipe.
+ */
+export const storyForcePressed = style({});
+
+for (const [name, { pressed, labelFollowsState }] of Object.entries(
+	linkedTextClasses,
+) as Array<[TextLinkVariant, LinkedTextClass]>) {
+	globalStyle(
+		`${linkedText.classNames.variants.variant[name]}${storyForcePressed}`,
+		{
+			'@layer': {
+				[cssLayerComponent]: {
+					borderBottomColor: pressed,
+					...(labelFollowsState && { color: pressed }),
+				},
+			},
+		},
+	);
+}
 
 const linkedTextIcon = `${linkedText.classNames.base} > [data-od-component='icon']`;
 
