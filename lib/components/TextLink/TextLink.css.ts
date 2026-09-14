@@ -43,18 +43,6 @@ export const muted = style({
 	},
 });
 
-/**
- * DS-2026 "Linked text" — the `Style=Linked text` axis of the Figma Button
- * component (node `362:2275`), NOT the superseded standalone `Link` frame
- * (`739:8560`). Opt-in via the `variant` prop; with `variant` unset the legacy
- * styles above are used unchanged.
- *
- * `labelFollowsState` splits the two behaviours Figma uses. Primary and Critical
- * move the **label and underline together** to the state colour (nodes
- * `1445:17691`/`17687`, `1445:17846`/`17848` bind a single colour variable).
- * Secondary holds its label and moves **only the underline** (`1445:18008`/
- * `18010` keep `color/link/secondary` on the text).
- */
 interface LinkedTextClass {
 	label: string;
 	hover: string;
@@ -69,9 +57,6 @@ const linkedTextClasses = {
 		pressed: vars.color.link.pressed,
 		labelFollowsState: true,
 	},
-	// The only class that holds its label: Figma keeps the black text on the
-	// shared green hover/pressed underline. `color.link` has no
-	// secondary-specific hover/pressed pair.
 	secondary: {
 		label: vars.color.link.secondary,
 		hover: vars.color.link.hover,
@@ -114,20 +99,8 @@ export const linkedText = recipe({
 	base: {
 		'@layer': {
 			[cssLayerComponent]: {
-				// Figma shows the underline in every state, including Default —
-				// unlike the legacy `root` style, which reveals it on hover.
 				borderBottomStyle: 'solid',
 				borderBottomWidth: vars.border.width['1'],
-				// Deliberately `inline`, not the `inline-flex` the Figma frame
-				// implies. A flex box is atomic, so it cannot be split across
-				// lines — inside a sentence it gets pushed onto its own line
-				// instead of flowing with the text, and every markdown link
-				// renders through this component. `inline` wraps like text and
-				// draws the underline per line fragment.
-				//
-				// `border-bottom` rather than `text-decoration` because it keeps
-				// running under a trailing icon, which is how Figma draws it;
-				// `text-decoration` stops at the end of the text.
 				display: 'inline',
 				textDecoration: 'none',
 				transitionDuration: '0.2s',
@@ -153,8 +126,6 @@ export const linkedText = recipe({
 			true: {
 				'@layer': {
 					[cssLayerComponent]: {
-						// Figma's Disabled linked text is the Default look at
-						// 30% — the same treatment Button already uses.
 						cursor: 'not-allowed',
 						opacity: '0.3',
 						pointerEvents: 'none',
