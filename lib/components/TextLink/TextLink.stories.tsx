@@ -13,6 +13,12 @@ const sizeScale = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 const fontWeightOptions = ['normal', 'semiBold', 'bold'];
 const variantOptions = ['primary', 'secondary', 'critical'];
 
+/** `color.link.*` as the browser reports it, so the state stories can tell the rungs apart. */
+const linkColour = {
+	primary: 'rgb(24, 133, 111)', // green-800 #18856F
+	hover: 'rgb(3, 175, 131)', // green-700 #03AF83
+};
+
 const noWrapOptions: Array<ComponentProps<typeof Heading>['noWrap']> = [
 	false,
 	true,
@@ -159,7 +165,7 @@ export const Hover: Story = {
 		await step('is not the resting colour', async () => {
 			await expect(
 				getComputedStyle(canvas.getByRole('link')).borderBottomColor,
-			).not.toBe('rgb(24, 133, 111)');
+			).not.toBe(linkColour.primary);
 		});
 	},
 };
@@ -190,8 +196,8 @@ export const Pressed: Story = {
 				canvas.getByRole('link'),
 			).borderBottomColor;
 
-			await expect(colour).not.toBe('rgb(24, 133, 111)');
-			await expect(colour).not.toBe('rgb(3, 175, 131)');
+			await expect(colour).not.toBe(linkColour.primary);
+			await expect(colour).not.toBe(linkColour.hover);
 		});
 	},
 };
@@ -222,13 +228,16 @@ export const WithIcon: Story = {
 			await expect(link.querySelector('svg')).toBeInTheDocument();
 		});
 
-		await step('the default appearance uses color.link.primary', async () => {
-			// green-800 #18856F. Asserted from the emitted CSS so a regression
-			// back to the legacy `typography.colour.link` green fails here.
-			await expect(
-				getComputedStyle(link.firstElementChild!).color,
-			).toBe('rgb(24, 133, 111)');
-		});
+		await step(
+			'the default appearance uses color.link.primary',
+			async () => {
+				// green-800 #18856F. Asserted from the emitted CSS so a regression
+				// back to the legacy `typography.colour.link` green fails here.
+				await expect(
+					getComputedStyle(link.firstElementChild!).color,
+				).toBe(linkColour.primary);
+			},
+		);
 
 		await step('<TextLink /> is interactive', async () => {
 			await expect(link).toHaveStyle({ cursor: 'pointer' });

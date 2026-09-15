@@ -19,6 +19,7 @@ import {
 	type NamedTextStyle,
 	type TextStylesProps,
 } from '../../styles/typography';
+import type { TestIdProp } from '../../types';
 import { Box } from '../Box/Box';
 import { Icon } from '../Icon/Icon';
 import { Text } from '../Text/Text';
@@ -41,10 +42,25 @@ type FilteredTextStyleProps = Omit<
 
 export interface TextLinkProps
 	extends FilteredAnchorProps,
-		FilteredTextStyleProps {
+		FilteredTextStyleProps,
+		TestIdProp {
+	/** The link's label. */
 	children?: ReactNode;
+	/**
+	 * Applied to the rendered anchor. Ignored on the `as` path unless
+	 * `variant` is set, which is long-standing behaviour rather than intent.
+	 */
 	className?: string;
+	/**
+	 * Render through a different element or element instance instead of the
+	 * default anchor — a `Box as="button"`, a router link. Mutually exclusive
+	 * with `href`.
+	 */
 	as?: ElementType | ReactElement;
+	/**
+	 * Draws the label in the muted foreground, and floods the line with the
+	 * link colour on hover. Has no effect alongside `variant`.
+	 */
 	muted?: boolean;
 	/** Optional icon, displayed after the link text */
 	icon?: IconType;
@@ -159,6 +175,7 @@ export const TextLink = forwardRef<HTMLAnchorElement, TextLinkProps>(
 			noWrap,
 			size,
 			strong,
+			testId,
 			transform,
 			variant,
 			weight = 'medium',
@@ -208,6 +225,8 @@ export const TextLink = forwardRef<HTMLAnchorElement, TextLinkProps>(
 			return (
 				<Box
 					as="a"
+					odComponent="text-link"
+					testId={testId}
 					color={color}
 					colour={colour}
 					className={rootClassName}
@@ -219,6 +238,9 @@ export const TextLink = forwardRef<HTMLAnchorElement, TextLinkProps>(
 		}
 
 		const asProps = {
+			// The `as` element is the consumer's own, so it owns its
+			// `data-od-component`; only the test hook is threaded across.
+			...(testId === undefined ? {} : { 'data-testid': testId }),
 			...allProps,
 			// The established appearance has never styled the `as` path; only
 			// carry the class list across for the linked-text variants.
