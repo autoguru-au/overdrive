@@ -2,6 +2,7 @@ import deepmerge from 'deepmerge';
 
 import type { ColourMap } from '../';
 import { tokens as baseTokens } from '../base/tokens';
+import { darkenColour } from '../helpers';
 import { buildColourGamut } from '../makeTheme';
 import type { ThemeTokens } from '../theme.css';
 
@@ -86,15 +87,21 @@ export const tokens = deepmerge(baseTokens, {
 		// this theme's `#263238`, and the `critical*` trio would be base's reds
 		// rather than the flat-red ones.
 		link: {
-			primary: colours.green['600'],
-			// This theme's own green either way, matching how it already treats
-			// `linkOnLight`/`linkOnDark`.
-			primaryOnLight: colours.green['600'],
-			primaryOnDark: colours.green['600'], // 6.53:1 on gray900
+			primary: colours.green['900'], // #007800 — 5.70:1 on white
+			// This theme's brand green is a vivid #00c400, which is 2.36:1 on
+			// white — it can carry a fill but not text. The light surface gets
+			// the darkest green the palette holds; the dark surface keeps the
+			// brand value, which is already legible there.
+			primaryOnLight: colours.green['900'],
+			primaryOnDark: colours.green['600'], // #00c400 — 6.53:1 on gray900
 			secondary: colours.gray['900'],
-			hover: colours.green['500'],
-			pressed: colours.green['400'],
-			critical: colours.red['700'],
+			hover: darkenColour(colours.green['900'], 0.04), // #006400 — 7.44:1 on white
+			hoverOnLight: darkenColour(colours.green['900'], 0.04),
+			hoverOnDark: colours.green['500'], // #00d500 — 7.72:1 on gray900
+			pressed: darkenColour(colours.green['900'], 0.08), // #004f00 — 9.91:1 on white
+			pressedOnLight: darkenColour(colours.green['900'], 0.08),
+			pressedOnDark: colours.green['400'], // #52dc42 — 8.57:1 on gray900
+			critical: colours.red['900'], // #d50000 — 5.48:1 on white; red700 was 3.97:1
 			criticalHover: colours.red['500'],
 			criticalPressed: colours.red['300'],
 		},

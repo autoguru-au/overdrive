@@ -59,7 +59,9 @@ const linkVarsOf = (map: Record<string, string>) =>
 		.filter(
 			([name]) =>
 				name !== overdriveTokens.color.interactive.onLink &&
-				name !== overdriveTokens.color.link.primary,
+				name !== overdriveTokens.color.link.primary &&
+				name !== overdriveTokens.color.link.hover &&
+				name !== overdriveTokens.color.link.pressed,
 		)
 		.map(([, value]) => value);
 
@@ -89,6 +91,8 @@ describe('surface-aware link vars', () => {
 			overdriveTokens.color.interactive.link,
 			overdriveTokens.color.interactive.onLink,
 			overdriveTokens.color.link.primary,
+			overdriveTokens.color.link.hover,
+			overdriveTokens.color.link.pressed,
 		]);
 	});
 
@@ -102,6 +106,66 @@ describe('surface-aware link vars', () => {
 		expect(darkSurfaceLinkVars[link.primary]).toBe(link.primaryOnDark);
 		expect(lightSurfaceLinkVars[link.primary]).toBe(link.primaryOnLight);
 	});
+
+	// A state earns its contrast by moving away from the fill it sits on, which
+	// points opposite ways on the two surfaces. Repointing only the resting
+	// colour left the dark-surface ramp running on white, where hover and
+	// pressed measured as low as 1.62:1.
+	it('points the hovered and pressed states at the surface too', () => {
+		const { link } = overdriveTokens.color;
+
+		expect(darkSurfaceLinkVars[link.hover]).toBe(link.hoverOnDark);
+		expect(darkSurfaceLinkVars[link.pressed]).toBe(link.pressedOnDark);
+		expect(lightSurfaceLinkVars[link.hover]).toBe(link.hoverOnLight);
+		expect(lightSurfaceLinkVars[link.pressed]).toBe(link.pressedOnLight);
+	});
+
+	// The whole ramp has to clear AA, not just where it rests. Hover and
+	// pressed are states a reader actually triggers, and WCAG 1.4.3 does not
+	// exempt them.
+	it.each([
+		['base', baseTokens],
+		['neutral', neutralTokens],
+		['flat_red', flatRedTokens],
+	])(
+		'keeps every %s linked-text state above AA on both surfaces',
+		(_name, tokens) => {
+			const { link, surface } = tokens.color;
+
+			const onLight = [
+				link.primaryOnLight,
+				link.hoverOnLight,
+				link.pressedOnLight,
+			];
+			const onDark = [
+				link.primaryOnDark,
+				link.hoverOnDark,
+				link.pressedOnDark,
+			];
+
+			for (const colour1 of onLight)
+				expect({
+					colour1,
+					passes: passesAccessibilityContrast({
+						colour1,
+						colour2: surface.page,
+						level: 'AA',
+						textSize: 'SMALL',
+					}),
+				}).toEqual({ colour1, passes: true });
+
+			for (const colour1 of onDark)
+				expect({
+					colour1,
+					passes: passesAccessibilityContrast({
+						colour1,
+						colour2: surface.hard,
+						level: 'AA',
+						textSize: 'SMALL',
+					}),
+				}).toEqual({ colour1, passes: true });
+		},
+	);
 
 	// gray900 is the darkest surface in `darkSurfaceValues` and `surface.hard`
 	// resolves to it, so it is the value `primaryOnDark` has to clear.

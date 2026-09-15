@@ -105,8 +105,12 @@ export const tokens = deepmerge(baseTokens, {
 			primary: colours.blue['500'],
 			primaryOnLight: colours.blue['500'], // #0d59fc — 5.45:1 on white
 			primaryOnDark: colours.blue['300'], // #81afff — 6.98:1 on gray900
-			hover: colours.blue['400'],
-			pressed: colours.blue['300'],
+			hover: colours.blue['700'], // #0d50ce — 6.87:1 on white
+			hoverOnLight: colours.blue['700'],
+			hoverOnDark: colours.blue['400'], // #4a86ff — 4.51:1 on gray900
+			pressed: colours.blue['900'], // #0d47a1 — 8.63:1 on white
+			pressedOnLight: colours.blue['900'],
+			pressedOnDark: colours.blue['300'], // #81afff — 6.98:1 on gray900
 		},
 	},
 	colours: {

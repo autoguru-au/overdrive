@@ -1,3 +1,4 @@
+import { darkenColour } from '../helpers';
 import { buildColourGamut } from '../makeTheme';
 import { overdriveTokens, type ThemeTokens } from '../theme.css';
 
@@ -254,8 +255,18 @@ export const tokens = {
 			primaryOnLight: colourMap.green['800'], // #18856f — 4.54:1 on white
 			primaryOnDark: colourMap.green['600'], // #01c68c — 6.94:1 on gray900
 			secondary: colourMap.gray['900'], // #212338
-			hover: colourMap.green['700'], // #03af83
-			pressed: colourMap.green['400'], // #36e5aa
+			// Hover and pressed are surface-aware for the same reason `primary`
+			// is: a state has to move *away* from the surface to gain contrast,
+			// and "away" points opposite ways on a white page and a gray900
+			// header. Shading one direction for both left every hovered and
+			// pressed link on a light surface below AA — green700 is 2.81:1 on
+			// white and green400 is 1.62:1.
+			hover: darkenColour(colourMap.green['800'], 0.05), // #146f5d — 6.07:1 on white
+			hoverOnLight: darkenColour(colourMap.green['800'], 0.05),
+			hoverOnDark: colourMap.green['700'], // #03af83 — 5.48:1 on gray900
+			pressed: colourMap.green['900'], // #00574c — 8.51:1 on white
+			pressedOnLight: colourMap.green['900'],
+			pressedOnDark: colourMap.green['400'], // #36e5aa — 9.50:1 on gray900
 			critical: colourMap.red['700'], // #b51e1a
 			criticalHover: colourMap.red['500'], // #e12e28
 			criticalPressed: colourMap.red['300'], // #ef918e
