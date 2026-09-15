@@ -1,5 +1,246 @@
 # @autoguru/overdrive
 
+## 6.0.0
+
+### Major Changes
+
+- 1320069: feat(TextLink)!: drop the legacy link token
+  
+  `TextLink` no longer reads `typography.colour.link`. The label, the resting
+  underline and the `muted` hover flood all come from `color.link.primary`, and
+  the muted label from `color.foreground.tertiary`.
+  
+  **The default link colour changes from green-600 `#01C68C` to green-800
+  `#18856F`.** This affects every `TextLink` that does not pass `variant`, with no
+  opt-out — the legacy token is gone rather than deprecated.
+  
+  Why: `#01C68C` is 2.22:1 on white and fails WCAG AA (4.5:1) for body text.
+  `#18856F` clears it, and is the value `--od-color-link-primary` already holds.
+  
+  No API change — nothing to migrate, but link colour shifts wherever `TextLink`
+  is used, including every markdown link rendered through `MarkdownRenderer`.
+- 1320069: feat(TextLink)!: add linked-text variants, and move the link colour onto
+  `color.link.primary`
+  
+  `TextLink` gains two new optional props:
+  
+  - `variant?: 'primary' | 'secondary' | 'critical'` — opts into the linked-text
+    appearance, wired to the existing `color.link.*` tokens. The underline is
+    drawn in every state, including at rest. On hover and press, `primary` and
+    `critical` move the label and underline together, while `secondary` holds its
+    label and moves only the underline.
+  - `disabled?: boolean`
+  
+  `disabled` applies to the `variant` appearance only. It now also prevents
+  activation: `aria-disabled` and `tabIndex={-1}` are advisory, and the
+  stylesheet's `pointer-events: none` stops only the mouse, so a programmatic
+  click previously still navigated and still ran the handler.
+  
+  **Linked text is opt-in.** With `variant` unset, `TextLink` keeps its previous
+  shape — same hover-only underline, trailing icon, default `weight` and size
+  passthrough.
+  
+  ⚠️ **Breaking: every existing `TextLink` changes colour.** The default path no
+  longer reads `typography.colour.link`; its label, resting underline and `muted`
+  hover flood now come from `color.link.primary`:
+  
+  |        | colour              | contrast on white           |
+  | ------ | ------------------- | --------------------------- |
+  | before | green-600 `#01C68C` | 2.22:1 — **failed** WCAG AA |
+  | after  | green-800 `#18856F` | 4.54:1 — passes             |
+  
+  This is an accessibility fix rather than a restyle, but it is visible on every
+  link in every consuming app, so it ships as a major. Nothing needs to change at
+  the call site.
+  
+  Also known, and not addressed here — `color.link.*` is a single light-surface
+  ramp, so linked text inside a dark `Box` does not meet AA:
+  
+  | token          | on `#212338` |
+  | -------------- | ------------ |
+  | `link.primary` | 3.39:1       |
+  
+  The existing surface plumbing repoints `colours.foreground.link` and
+  `typography.colour.link`, but not `color.link.*`. Prefer the default appearance
+  on dark surfaces until that ramp is surface-aware.
+
+### Minor Changes
+
+- 1320069: fix(themes): make the pressed link state surface-aware
+  
+  `color.link.primary` was repointed per surface, but `hover` and `pressed` were
+  not. Both were taken from lighter rungs of the same ramp, which gains contrast
+  on a dark header and loses it on a white page — so every hovered and pressed
+  link on a light surface sat below WCAG AA. Base pressed measured 1.62:1, flat
+  red 1.80:1 and neutral 2.21:1, against the 4.5:1 the criterion asks for.
+  
+  - **New `color.link.hoverOnLight`/`hoverOnDark` and
+    `color.link.pressedOnLight`/`pressedOnDark`**, repointed by a painted surface
+    exactly as `primaryOnLight`/`primaryOnDark` already are. The dark-surface
+    values are the ones the ramp already used, so nothing on a dark fill changes.
+    On a light surface `pressed` moves from `green400` (1.62:1) to `green900`
+    (8.51:1).
+  - **Every value is a rung of the theme's own colour ramp** — no shaded hex
+    outside the palette, so every swatch carries a name that matches Figma.
+  - **`hover` keeps Figma's `green700` on both surfaces, and stays below AA on a
+    light one** (2.81:1). This is a design decision on AG-20713, not an oversight.
+    `green800` and `green900` are the only two greens in the gamut above 4.5:1 on
+    white and `primary` owns `green800`, so an AA-safe hover had to take
+    `green900` — the same value as `pressed`, which left the two states
+    indistinguishable on a pale page. Separating them needs a new rung between
+    `green800` and `green900`; until there is one, the underline carries the state
+    alongside the colour.
+  - `useColorOverrides` derives a tenant's state colours per surface rather than
+    always lightening, and checks the result rather than assuming it. The step
+    distance is still measured off base's own ramp; only the direction is now
+    decided by the surface, which is what sent every branded hover and press the
+    wrong way on light fills. A tenant's hover is AA-checked where base's is not,
+    because an arbitrary brand hex has no ramp to be read off.
+  - `flat_red`'s resting linked text moves off the brand green `#00c400`, which is
+    2.36:1 on white — it can carry a fill but not text. The light surface takes
+    `green900`, the only green in that ramp above 4.5:1 there; the dark surface
+    keeps the brand value, which is already legible. Both of its light-surface
+    _states_ stay under the line as a result: the resting colour holds the one
+    legible rung, and there is nothing darker for a state to move to. Its
+    `color.link.critical` moves from `red700` (`#fb1e0d`, 3.97:1) to `red900`.
+  - `neutral` gains the state pairs in blue, and clears AA on every one.
+  
+  `surfaceLinkVars.spec` asserts the resting colour clears AA in every theme
+  without exception, and records the expected AA result for each state per theme
+  rather than exempting them — so a rung that drifts off the recorded answer fails
+  a test in either direction, an unnoticed regression and a quiet fix alike.
+  
+  Read only by `TextLink`'s opt-in `variant` path and the surface vars, so the
+  blast radius is linked text. No token name or prop is removed.
+- 1320069: feat(themes): brand the `color.link.*` ramp per tenant and theme
+  
+  `color.link.*` was the only link token family that neither `OverdriveProvider`'s
+  `colorOverrides` nor the alternate themes reached, so anything reading it
+  rendered base green regardless of branding.
+  
+  - `useColorOverrides` now derives `color.link.{primary,hover,pressed}` from the
+    tenant's `linkColor`, falling back to `primaryBackground` when no link colour
+    is supplied — `linkColor` is the documented link override, so a brand that
+    sets one expects linked text to follow it, and `primaryBackground` covers the
+    common case where it is left unset. It is surface-corrected the same way
+    `color.interactive.link` is, then `hover` and `pressed` step lighter by the
+    same lightness deltas base uses between its own link states.
+  - **New `color.link.primaryOnLight` and `color.link.primaryOnDark`.** A link's
+    legibility is decided by the surface it sits on, and no one value clears AA on
+    both a white page and a gray900 header. A painted surface now repoints
+    `color.link.primary` at whichever of the pair suits its own fill, the same way
+    it already repoints `color.interactive.link` at `linkOnLight`/`linkOnDark`.
+    Without this, DS-2026 linked text on a dark surface renders the light value —
+    base `#18856f` is 3.39:1 on gray900, where the legacy token it replaces was
+    surface-corrected and cleared AA. Both leaves are tenant-derived.
+  - `neutral` adds the brand trio in blue. Its gray and red ramps match base, so
+    `secondary` and the `critical*` leaves stay inherited.
+  - `flat_red` adds the full set, because it redefines every ramp it uses — an
+    inherited `secondary` would be base's `#212338` rather than its own `#263238`.
+  
+  `secondary` and `critical`/`criticalHover`/`criticalPressed` are deliberately
+  not tenant-brandable: one is neutral ink, the others are semantic danger reds.
+  
+  `TextLink` reads `color.link.primary` on both paths, so the surface pair applies
+  to every link; `secondary`, `hover`, `pressed` and the `critical*` trio are read
+  only by the opt-in `variant` path. No existing token name or value changes — the
+  two new keys are additive.
+- bf0bdd4: `StandardModal`: add optional `footer` slot rendered as a sticky footer with a
+  1px top divider. The slot takes any node — inner spacing, buttons and
+  close-on-click semantics are the consumer's, so a Save button that validates
+  or awaits an async call never closes the modal before the work finishes.
+  
+  Add `ModalFooter`, the locked-down footer for the slot: one primary action and
+  an optional secondary action, right-aligned with a 12px gap and standard
+  padding. Button variant, size and ordering are fixed so every modal footer
+  looks the same — only the labels and click handlers are the consumer's.
+  
+  Example:
+  
+  ```tsx
+  <StandardModal
+    isOpen={open}
+    title="Add asset"
+    onRequestClose={close}
+    footer={
+      <ModalFooter
+        primaryLabel="Add asset"
+        onPrimaryClick={submit}
+        secondaryLabel="Cancel"
+        onSecondaryClick={close}
+      />
+    }
+  >
+    {body}
+  </StandardModal>
+  ```
+- e6b8ae0: `TableRow` and `TableCell` gain a `hover` prop to switch the hover background
+  off.
+  
+  **Hover was always on.** Hovering any `TableCell` painted a grey wash across its
+  whole row, with no way to opt out. Rows that are not interactive, or tables
+  where the wash fought with a custom row background, had to override the
+  pseudo-element from outside.
+  
+  **Now it is a prop.** `hover` defaults to `true`, so nothing changes unless you
+  pass it. Set `hover={false}` on a `TableRow` to turn the wash off for every cell
+  in that row, or on an individual `TableCell` to stop that one cell from
+  triggering it. A cell always wins over its row, and the wash follows whoever
+  switched it on: with the row's hover on, hovering a cell washes the full row as
+  before; with `<TableRow hover={false}>` and a single `<TableCell hover>` inside,
+  hovering that cell washes just that cell.
+  
+  The hover styles are keyed on a `data-hover` attribute, present when hover is
+  enabled and absent when it is not. It is rendered on the `<tr>` (the row's own
+  setting) and on each `<td>` (the cell's resolved setting); the row attribute is
+  what widens the wash from the cell to the full row.
+  
+  Also in this release:
+  
+  - `TableRow` and `TableCell` accept `testId`, rendered as `data-testid` on the
+    `<tr>` and `<td>`.
+  - The `<tr>` carries `data-od-component="table-row"` and the `<td>`
+    `data-od-component="table-cell"` for test and analytics selectors.
+- 1320069: feat(TextLink): add the standard component attributes
+  
+  `TextLink` now carries the attributes every Overdrive component is expected to
+  expose:
+  
+  - `data-od-component="text-link"` on the rendered anchor.
+  - A `testId` prop (`TestIdProp`), emitted as `data-testid`. On the `as` path it
+    is passed straight through as `data-testid`, since the consumer's own element
+    owns its `data-od-component`.
+  
+  Also adds the JSDoc that `children`, `className`, `as` and `muted` were missing.
+  The `className` entry records a long-standing limitation rather than changing
+  it: on the `as` path, `className` is only applied when `variant` is set.
+  
+  Additive — markup gains two attributes, and no existing prop changes.
+- 5940b1e: Add `StepProgress`, the DS-2026 multi-step progress indicator, and the
+  `StepProgressItem` primitive it composes.
+  
+  `StepProgress` shows the user where they are in a multi-step flow as a numbered
+  sequence joined by connectors. Progress is linear and driven entirely by
+  `activeStep` — the component holds no state. In the default `steps` variant
+  there is deliberately no "completed" appearance, so steps already visited look
+  the same as steps ahead.
+  
+  - `layout` runs the sequence `horizontal` (labels beneath) or `vertical` (labels
+    beside), `size` switches between 32px and 24px circles, and `onDark` restyles
+    it for a dark panel or hero.
+  - `hideLabels` drops the labels to assistive technology only for widths neither
+    layout survives; the labels stay in the accessibility tree.
+  - `variant="stages"` draws the flat text-only row from the design's Stages set
+    instead of circles: stage names separated by carets, the current one
+    semibold, and — unlike the default variant — the stages ahead of the current
+    one fade until the user reaches them.
+  - Renders a `nav` landmark around an ordered list, with the current step's `<li>`
+    marked `aria-current="step"`. The steps are not interactive — this reports
+    position, it does not navigate.
+  
+  Additive: a net-new export that consumes only DS-2026 semantic tokens. Nothing
+  existing changes.
+
 ## 5.0.0
 
 ### Major Changes
