@@ -5,11 +5,13 @@ import {
 	darkSurfaceValues,
 	lightSurfaceValues,
 } from '../../styles/surfaceLinkVars';
+import { tokens as baseTokens } from '../../themes/base/tokens';
 import {
 	canMeasureContrast,
 	darkenColour,
 	getContrastRatio,
 	lightenColour,
+	lightnessDelta,
 	passesAccessibilityContrast,
 	shadedColour,
 } from '../../themes/helpers';
@@ -204,14 +206,24 @@ const maxShadeSteps = 60;
 const shadeStep = 0.01;
 
 /**
- * How far linked text travels from its resting colour on hover and press,
- * as a lightness delta.
+ * How far linked text travels from its resting colour on hover and press, as a
+ * lightness delta.
  *
- * Taken from base's own `color.link` ramp — `primary` `#18856f` (L 31) →
- * `hover` `#03af83` (L 35) → `pressed` `#36e5aa` (L 55) — so a tenant brand
- * covers the same distance rather than an invented one.
+ * Measured off base's own `color.link` ramp rather than written down, so a
+ * tenant brand covers exactly the distance base does — and if the ramp is
+ * retuned, this follows it instead of silently disagreeing.
+ *
+ * Lightness only. Base's ramp also turns the hue and saturates as it steps, so
+ * a branded ramp matches base's lightness travel while keeping the tenant's own
+ * hue, rather than dragging every brand towards base green.
  */
-const linkStateStep = { hover: 0.04, pressed: 0.24 } as const;
+const linkStateStep = {
+	hover: lightnessDelta(baseTokens.color.link.primary, baseTokens.color.link.hover),
+	pressed: lightnessDelta(
+		baseTokens.color.link.primary,
+		baseTokens.color.link.pressed,
+	),
+} as const;
 
 const shade = (
 	colour: string,
