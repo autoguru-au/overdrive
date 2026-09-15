@@ -94,20 +94,22 @@ export const tokens = deepmerge(baseTokens, {
 			primaryOnLight: colours.green['900'],
 			primaryOnDark: colours.green['600'], // #00c400 — 6.53:1 on gray900
 			secondary: colours.gray['900'],
-			// Same rule as base: a state takes a value from this theme's own
-			// green ramp or it does not move at all. On the dark surface there
-			// is room to step — green500 and green400 both clear AA there. On
-			// white there is not: green900 is the only green in this ramp above
-			// 4.5:1 (5.70:1; green800 is 3.69:1), and `primary` already holds
-			// it, so the light-surface states hold it too. This theme's brand
-			// green is simply too vivid to carry three legible text steps on a
-			// pale page — adding one would take a new ramp entry from design,
-			// not a shaded hex invented here.
-			hover: colours.green['900'], // #007800 — 5.70:1 on white
-			hoverOnLight: colours.green['900'],
+			// Both states step lighter, the direction base's ramp takes on a
+			// dark surface. This theme cannot take the other one: `primary`
+			// already holds green900, the darkest green in the ramp, so there
+			// is nothing below it for a light-surface state to move to. Both
+			// therefore sit under AA on white (2.94:1 and 1.80:1) — the same
+			// trade base makes on hover, made twice, because this brand green
+			// is vivid enough that green900 is the only rung above the line
+			// there at all. Raising them takes a darker green from design, not
+			// a shaded hex invented here.
+			//
+			// The dark surface has room, and keeps values that clear AA on it.
+			hover: colours.green['700'], // #00af00 — 2.94:1 on white
+			hoverOnLight: colours.green['700'],
 			hoverOnDark: colours.green['500'], // #00d500 — 6.59:1 on gray900
-			pressed: colours.green['900'], // #007800 — 5.70:1 on white
-			pressedOnLight: colours.green['900'],
+			pressed: colours.green['400'], // #52dc42 — 1.80:1 on white
+			pressedOnLight: colours.green['400'],
 			pressedOnDark: colours.green['400'], // #52dc42 — 7.32:1 on gray900
 			critical: colours.red['900'], // #d50000 — 5.48:1 on white; red700 was 3.97:1
 			criticalHover: colours.red['500'],

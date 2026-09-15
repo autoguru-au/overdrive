@@ -254,17 +254,23 @@ export const tokens = {
 			primaryOnLight: colourMap.green['800'], // #18856f — 4.54:1 on white
 			primaryOnDark: colourMap.green['600'], // #01c68c — 6.94:1 on gray900
 			secondary: colourMap.gray['900'], // #212338
-			// Every state takes the Figma value where that value clears AA on
-			// the surface, and the nearest green from the gamut that does where
-			// it does not — never a shaded hex outside the ramp. On gray900
-			// Figma's hover and pressed hold (green700 5.48:1, green400
-			// 9.50:1); on white they do not (2.81:1 and 1.62:1), and green900
-			// is the only green left that clears 4.5:1 once `primary` has taken
-			// green800. Hover and pressed therefore share it on a light
-			// surface: the ramp has two AA-safe greens on white and the resting
-			// colour owns one of them.
-			hover: colourMap.green['900'], // #00574c — 8.51:1 on white
-			hoverOnLight: colourMap.green['900'],
+			// Every value is a rung of the gamut — never a shaded hex outside
+			// the ramp.
+			//
+			// Hover is Figma's green700 on both surfaces, by design decision
+			// (AG-20713). It measures 2.81:1 on white, below the 4.5:1 WCAG
+			// 1.4.3 asks of it, and the alternative was worse: green800 and
+			// green900 are the only two greens above the line on white, the
+			// resting colour owns green800, so an AA-safe hover had to take
+			// green900 — the same value as pressed, leaving the two states
+			// indistinguishable on a pale page. Design chose the visible ramp
+			// over the measured one. Separating them properly needs a new rung
+			// between green800 and green900, not a value invented here.
+			//
+			// Pressed stays surface-aware: Figma's green400 is 9.50:1 on
+			// gray900 and 1.62:1 on white, so the light surface takes green900.
+			hover: colourMap.green['700'], // #03af83 — 2.81:1 on white (Figma)
+			hoverOnLight: colourMap.green['700'],
 			hoverOnDark: colourMap.green['700'], // #03af83 — 5.48:1 on gray900 (Figma)
 			pressed: colourMap.green['900'], // #00574c — 8.51:1 on white
 			pressedOnLight: colourMap.green['900'],

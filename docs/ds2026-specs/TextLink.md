@@ -60,12 +60,7 @@ hex-for-hex.
 The icon follows the label — its SVG fills from `currentColor`, so it moves with
 the label on Primary/Critical and stays put on Secondary.
 
-### The shipped values deviate where Figma's fail AA
-
-The table above is the Figma file. The implementation keeps each value **on the
-surface where it clears 4.5:1**, and substitutes the nearest colour from the
-theme's own green ramp where it does not — never a shaded hex outside the
-palette.
+### Where the shipped values leave Figma, and where they leave AA
 
 Figma's Primary ramp steps _lighter_ on each state, which gains contrast on a
 `gray900` header and loses it on a white page:
@@ -77,19 +72,29 @@ Figma's Primary ramp steps _lighter_ on each state, which gains contrast on a
 | `green400 #36E5AA` | 1.62:1 ❌ | 9.50:1 ✅  |
 
 So `color.link.*` carries an `OnLight`/`OnDark` pair per state, repointed by a
-painted surface (`lib/styles/surfaceLinkVars.ts`):
+painted surface (`lib/styles/surfaceLinkVars.ts`). Every value is a rung of the
+gamut — no shaded hex outside the ramp:
 
-|         | On light (white) | On dark (gray900)       |
-| ------- | ---------------- | ----------------------- |
-| Default | `green800` 4.54  | `green600` 6.94         |
-| Hover   | `green900` 8.51  | `green700` 5.48 (Figma) |
-| Pressed | `green900` 8.51  | `green400` 9.50 (Figma) |
+|         | On light (white)        | On dark (gray900)       |
+| ------- | ----------------------- | ----------------------- |
+| Default | `green800` 4.54 (Figma) | `green600` 6.94         |
+| Hover   | `green700` 2.81 (Figma) | `green700` 5.48 (Figma) |
+| Pressed | `green900` 8.51         | `green400` 9.50 (Figma) |
 
-The dark column is Figma's, bar the resting colour. The light column is not:
-`green800` and `green900` are the **only** two greens in the gamut above 4.5:1
-on white, and Default owns the first — so Hover and Pressed share the second and
-look identical on a pale page. Closing that needs a new rung between `green800`
-and `green900` from design, not a value invented in code.
+**Hover is below AA on a light surface, and that is a decision, not a miss**
+(AG-20713). `green800` and `green900` are the only two greens in the gamut above
+4.5:1 on white, and Default owns `green800` — so an AA-safe hover had to take
+`green900`, the same value as Pressed, leaving the two states indistinguishable
+on a pale page. Design chose the visible ramp over the measured one. Separating
+them properly needs a new rung between `green800` and `green900`; until there is
+one, the underline carries the state alongside the colour.
+
+`surfaceLinkVars.spec` records this rather than exempting it — the expected AA
+result per state per theme is written into the suite, so a rung that drifts off
+the recorded answer fails in either direction.
+
+Default is surface-corrected because Figma's `green800` is 3.39:1 on `gray900`,
+and Pressed because `green400` is 1.62:1 on white.
 
 Notes:
 

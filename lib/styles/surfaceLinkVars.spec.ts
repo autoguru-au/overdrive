@@ -19,6 +19,20 @@ import {
 	withSurfaceLinkVars,
 } from './surfaceLinkVars';
 
+/**
+ * Whether `colour` clears 4.5:1 on `surface`, carrying the colour alongside the
+ * verdict so a failure names the hex rather than reporting `false !== true`.
+ */
+const passesAA = (colour: string, surface: string) => ({
+	colour,
+	passes: passesAccessibilityContrast({
+		colour1: colour,
+		colour2: surface,
+		level: 'AA' as const,
+		textSize: 'SMALL' as const,
+	}),
+});
+
 /** Mirrors `isDarkSurface` in useColorOverrides — `getContrastRatio` is min/max. */
 const isDark = (colour: string) =>
 	getContrastRatio(colour, '#ffffff') < getContrastRatio(colour, '#000000');
@@ -120,50 +134,75 @@ describe('surface-aware link vars', () => {
 		expect(lightSurfaceLinkVars[link.pressed]).toBe(link.pressedOnLight);
 	});
 
-	// The whole ramp has to clear AA, not just where it rests. Hover and
-	// pressed are states a reader actually triggers, and WCAG 1.4.3 does not
-	// exempt them.
+	// The resting colour is where a link spends its life, and it clears AA on
+	// whatever it sits on in every theme. Where it rests is the rung the whole
+	// ramp is anchored to, so it is asserted on its own and without exception.
 	it.each([
 		['base', baseTokens],
 		['neutral', neutralTokens],
 		['flat_red', flatRedTokens],
 	])(
-		'keeps every %s linked-text state above AA on both surfaces',
+		'keeps the %s resting link above AA on both surfaces',
 		(_name, tokens) => {
 			const { link, surface } = tokens.color;
 
-			const onLight = [
-				link.primaryOnLight,
-				link.hoverOnLight,
-				link.pressedOnLight,
-			];
-			const onDark = [
-				link.primaryOnDark,
-				link.hoverOnDark,
-				link.pressedOnDark,
-			];
+			expect(passesAA(link.primaryOnLight, surface.page)).toEqual({
+				colour: link.primaryOnLight,
+				passes: true,
+			});
+			expect(passesAA(link.primaryOnDark, surface.hard)).toEqual({
+				colour: link.primaryOnDark,
+				passes: true,
+			});
+		},
+	);
 
-			for (const colour1 of onLight)
-				expect({
-					colour1,
-					passes: passesAccessibilityContrast({
-						colour1,
-						colour2: surface.page,
-						level: 'AA',
-						textSize: 'SMALL',
-					}),
-				}).toEqual({ colour1, passes: true });
+	/**
+	 * The hovered and pressed rungs, and whether each clears 4.5:1 on the
+	 * surface it is pointed at.
+	 *
+	 * Two of these are `false` on purpose, and both are design decisions taken
+	 * on AG-20713 rather than oversights — which is why they are written down
+	 * as expected values instead of dropped from the suite. A state that drifts
+	 * off the recorded answer still fails, in either direction: an unnoticed
+	 * regression and a quiet fix both show up here.
+	 *
+	 * `base` hover is Figma's green700, 2.81:1 on white. The AA-safe
+	 * alternative was green900 — already taken by pressed, which left hover and
+	 * pressed identical on a pale page. Design chose the visible ramp over the
+	 * measured one; separating them properly needs a new rung between green800
+	 * and green900.
+	 *
+	 * `flat_red` is under the line on both light-surface states for a different
+	 * reason: its brand green is vivid enough that green900 is the only rung
+	 * above 4.5:1 on white, and the resting colour holds it. Nothing in that
+	 * ramp can carry a legible light-surface state.
+	 */
+	it.each([
+		['base', baseTokens, { hover: false, pressed: true }],
+		['neutral', neutralTokens, { hover: true, pressed: true }],
+		['flat_red', flatRedTokens, { hover: false, pressed: false }],
+	])(
+		'holds the recorded AA result for every %s link state',
+		(_name, tokens, expectedOnLight) => {
+			const { link, surface } = tokens.color;
 
-			for (const colour1 of onDark)
-				expect({
-					colour1,
-					passes: passesAccessibilityContrast({
-						colour1,
-						colour2: surface.hard,
-						level: 'AA',
-						textSize: 'SMALL',
-					}),
-				}).toEqual({ colour1, passes: true });
+			expect({
+				hover: passesAA(link.hoverOnLight, surface.page).passes,
+				pressed: passesAA(link.pressedOnLight, surface.page).passes,
+			}).toEqual(expectedOnLight);
+
+			// The dark surface carries no exception in any theme. It has the
+			// room the light one does not — a state gains contrast there by
+			// moving towards the light end of the ramp, where the rungs are.
+			expect(passesAA(link.hoverOnDark, surface.hard)).toEqual({
+				colour: link.hoverOnDark,
+				passes: true,
+			});
+			expect(passesAA(link.pressedOnDark, surface.hard)).toEqual({
+				colour: link.pressedOnDark,
+				passes: true,
+			});
 		},
 	);
 
