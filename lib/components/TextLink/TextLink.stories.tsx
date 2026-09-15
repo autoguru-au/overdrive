@@ -6,31 +6,12 @@ import { expect, userEvent, within } from 'storybook/test';
 import { Heading } from '../Heading/Heading';
 import { Text } from '../Text/Text';
 
-import { TextLink, type TextLinkProps } from './TextLink';
+import { TextLink } from './TextLink';
 import * as styles from './TextLink.css';
 
 const sizeScale = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 const fontWeightOptions = ['normal', 'semiBold', 'bold'];
 const variantOptions = ['primary', 'secondary', 'critical'];
-
-/**
- * `disabled` is a real prop; `hover` and `pressed` are CSS states a static
- * story cannot enter on its own. Exposing all three through one control lets a
- * reviewer step a single link through all four states.
- */
-const stateProps = {
-	default: {},
-	disabled: { disabled: true },
-	hover: { 'data-hover': true },
-	pressed: { className: styles.storyForcePressed },
-} satisfies Record<string, Partial<TextLinkProps> & { 'data-hover'?: boolean }>;
-
-type LinkState = keyof typeof stateProps;
-
-interface StoryArgs extends TextLinkProps {
-	/** Story-only: which visual state to draw the link in. */
-	state?: LinkState;
-}
 
 const noWrapOptions: Array<ComponentProps<typeof Heading>['noWrap']> = [
 	false,
@@ -42,18 +23,9 @@ const transformOptions: Array<ComponentProps<typeof Text>['transform']> = [
 	undefined,
 ];
 
-const renderWithState = ({ state = 'default', children, ...args }: StoryArgs) => (
-	<TextLink {...args} {...stateProps[state]}>
-		{children}
-	</TextLink>
-);
-
 const meta = {
 	title: 'Content/Text Link',
 	component: TextLink,
-	// Meta-level so the `state` control drives every story, not just the three
-	// colour-class ones.
-	render: renderWithState,
 	decorators: [
 		(Story) => (
 			<div style={{ maxWidth: 300 }}>
@@ -62,7 +34,6 @@ const meta = {
 		),
 	],
 	args: {
-		state: 'default',
 		size: '4',
 		weight: 'semiBold',
 		icon: undefined,
@@ -110,14 +81,6 @@ const meta = {
 				type: 'select',
 			},
 		},
-		state: {
-			options: Object.keys(stateProps),
-			control: {
-				type: 'inline-radio',
-			},
-			description:
-				'Story-only. Draws the link in one of its four visual states.',
-		},
 		variant: {
 			options: variantOptions,
 			defaultValue: void 0,
@@ -128,15 +91,15 @@ const meta = {
 				'Opts into the linked-text appearance and picks its colour class. Omit for the established appearance.',
 		},
 	},
-} satisfies Meta<StoryArgs>;
+} satisfies Meta<typeof TextLink>;
 
 export default meta;
 
-type Story = StoryObj<StoryArgs>;
+type Story = StoryObj<typeof TextLink>;
 
 /**
- * Linked text, `primary` class — underlined in every state, and the
- * label moves colour with the underline on hover and press.
+ * Linked text, `primary` class — underlined in every state, and the label moves
+ * colour with the underline on hover and press.
  */
 export const Primary: Story = {
 	args: { variant: 'primary', children: 'Button' },
@@ -156,20 +119,81 @@ export const Primary: Story = {
 };
 
 /**
- * Linked text, `secondary` class — the label holds its colour and only
- * the underline moves on hover and press.
+ * Linked text, `secondary` class — the label holds its colour and only the
+ * underline moves on hover and press.
  */
 export const Secondary: Story = {
-	args: { variant: 'secondary', children: 'Button' },
-	play: Primary.play,
+	args: { ...Primary.args, variant: 'secondary' },
+};
+
+/** Linked text, `critical` class — for destructive navigation. */
+export const Critical: Story = {
+	args: { ...Primary.args, variant: 'critical' },
 };
 
 /**
- * Linked text, `critical` class — for destructive navigation.
+ * Unavailable and not focusable. `disabled` is a real prop, so this story needs
+ * nothing beyond an arg.
  */
-export const Critical: Story = {
-	args: { variant: 'critical', children: 'Button' },
-	play: Primary.play,
+export const Disabled: Story = {
+	args: { ...Primary.args, disabled: true },
+	play: async ({ canvas, step }) => {
+		await step('is marked unavailable', async () => {
+			const link = canvas.getByRole('link');
+
+			await expect(link).toHaveAttribute('aria-disabled', 'true');
+			await expect(link).toHaveAttribute('tabindex', '-1');
+		});
+	},
+};
+
+/**
+ * The hover state, held open. `:hover` cannot be set from an arg, so the story
+ * sets `data-hover` — the attribute the shared `selectors.hover` pattern
+ * already matches, the same way `Radio` and `CheckBox` hold their hover state.
+ */
+export const Hover: Story = {
+	args: Primary.args,
+	render: (args) => <TextLink {...args} data-hover />,
+	play: async ({ canvas, step }) => {
+		await step('is not the resting colour', async () => {
+			await expect(
+				getComputedStyle(canvas.getByRole('link')).borderBottomColor,
+			).not.toBe('rgb(24, 133, 111)');
+		});
+	},
+};
+
+/**
+ * The pressed state, held open. `:active` cannot be set from an arg either, so
+ * the story replays the class's own `:active` declarations through
+ * `storyForcePressed` — driven off the same colour map the recipe uses, so the
+ * forced state cannot drift from the real one.
+ */
+export const Pressed: Story = {
+	args: Primary.args,
+	parameters: {
+		// `storyForcePressed` is a story-only class and its name is a build
+		// hash, so the generated snippet is neither stable nor copy-pasteable.
+		docs: {
+			source: {
+				code: '<TextLink href="#link" variant="primary">Button</TextLink>',
+			},
+		},
+	},
+	render: (args) => (
+		<TextLink {...args} className={styles.storyForcePressed} />
+	),
+	play: async ({ canvas, step }) => {
+		await step('is neither the resting nor the hover colour', async () => {
+			const colour = getComputedStyle(
+				canvas.getByRole('link'),
+			).borderBottomColor;
+
+			await expect(colour).not.toBe('rgb(24, 133, 111)');
+			await expect(colour).not.toBe('rgb(3, 175, 131)');
+		});
+	},
 };
 
 export const InsideParagraph: Story = {
