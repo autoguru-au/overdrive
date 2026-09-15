@@ -34,6 +34,11 @@ Class{Primary, Secondary, Critical}
 **no** `Icon only` — unlike the Solid/Outlined/Ghost styles on the same
 component.
 
+Of the three `Icon` values only `Right` ships; see "Deliberately not done here".
+`Size` is not implemented as an axis at all — the `size` prop stays the full
+`Text` scale, and the Large/Small rows below are the geometry a caller opts into
+rather than something `variant` selects.
+
 **`Extra small` is deliberately absent** (confirmed by design, AG-20713). Linked
 text ships at Large and Small only, so `variant` intentionally has no third size
 and none should be added — its absence is a decision, not a hole in the file.
@@ -132,12 +137,14 @@ appearance is unchanged (`display: inline`, legacy `typography.colour.link`
 
 ```ts
 variant?: 'primary' | 'secondary' | 'critical';  // opts into linked text
-iconPosition?: 'left' | 'right';                 // default 'right'; requires `variant`
 disabled?: boolean;                              // requires `variant`
 ```
 
-When `variant` is set and no `size`/`weight` is given, they default to `'4'` and
-`'semiBold'` — Figma's Large. Pass `size="3"` for Small.
+`size` and `weight` are untouched passthroughs on both paths — same scale and
+same `'medium'` default as before. Figma's Large is `size="4"` and Small is
+`size="3"`; neither is applied automatically, so a caller that wants the Figma
+geometry passes it (confirmed with design, AG-20713: the linked-text sizes are
+not a new default).
 
 ### Deliberately not done here
 
@@ -148,8 +155,11 @@ When `variant` is set and no `size`/`weight` is given, they default to `'4'` and
 - **The base link colour is not flipped** from legacy green `#01C68C` to
   `color.link.primary` `#18856F`. That is the major-only change `wave-3.md`
   §W3c-P2 already flags.
-- `iconPosition` is not wired into the legacy appearance, which would require
-  restyling its absolutely-positioned icon.
+- **No `iconPosition`.** Figma draws `Icon{None, Left, Right}`, but only the
+  trailing icon ships (confirmed with design, AG-20713) — it matches the
+  established appearance, so neither path needs a position prop.
+- **No size or weight defaults.** Linked text does not force Figma's Large;
+  `size`/`weight` behave identically with and without `variant`.
 
 ## Open question for design
 

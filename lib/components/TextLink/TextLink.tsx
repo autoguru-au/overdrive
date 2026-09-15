@@ -26,10 +26,6 @@ import { Text } from '../Text/Text';
 import * as styles from './TextLink.css';
 import type { TextLinkVariant } from './TextLink.css';
 
-/**
- * Resolves a `size` — a scale value or a DS-2026 named text style — to the
- * `text` sprinkle value, the same way `typography()` does internally.
- */
 const rootTextSize = (
 	size: TextStylesProps['size'],
 ): Sprinkles['text'] | undefined =>
@@ -49,38 +45,23 @@ export interface TextLinkProps
 	children?: ReactNode;
 	className?: string;
 	as?: ElementType | ReactElement;
-	/**
-	 * @deprecated The pre-DS-2026 appearance — muted label, hover floods the
-	 * line with the link colour. Setting it opts out of `variant` entirely.
-	 * Removed in v5 (DS-2026 major); no replacement is planned.
-	 */
 	muted?: boolean;
-	/**
-	 * Optional icon from the `@autoguru/icons` set — any icon in the library
-	 * works. Omit it for the no-icon appearance.
-	 *
-	 * `iconPosition` moves it to either side of the label.
-	 */
+	/** Optional icon, displayed after the link text */
 	icon?: IconType;
 	/**
-	 * DS-2026 linked-text colour class, mirroring the `Class` values of the
-	 * Figma Button component's `Style=Linked text` axis.
+	 * Opts the link into the linked-text appearance and picks its colour
+	 * class.
 	 *
 	 * The underline is drawn in every state and changes colour on hover and
-	 * press. `primary` and `critical` move the label with it; `secondary` holds
-	 * its label and moves only the underline.
+	 * press. `primary` and `critical` move the label with it; `secondary`
+	 * holds its label and moves only the underline.
 	 *
-	 * @default 'primary'
+	 * Omit it to keep the established appearance.
 	 */
 	variant?: TextLinkVariant;
 	/**
-	 * Which side of the label the `icon` sits on.
-	 *
-	 * @default 'right'
-	 */
-	iconPosition?: 'left' | 'right';
-	/**
 	 * Presents the link as unavailable and stops it receiving pointer events.
+	 * Applies to the linked-text appearance only — it needs `variant`.
 	 */
 	disabled?: boolean;
 }
@@ -97,34 +78,26 @@ interface BodyProps {
 }
 
 /**
- * DS-2026 linked text: the icon is a flex sibling of the label so the underline
+ * Linked text: the icon is a flex sibling of the label so the underline
  * runs beneath both, and the label inherits its colour from the root.
  */
-const LinkedTextBody = ({
-	children,
-	icon,
-	iconPosition,
-	textProps,
-}: BodyProps & Pick<TextLinkProps, 'iconPosition'>) => {
-	// `inline-block`, because the root is `inline` — `Icon`'s default `block`
-	// would force the icon onto its own line.
-	const iconEl = icon ? <Icon icon={icon} display="inline-block" /> : null;
-
-	return (
-		<>
-			{iconPosition === 'left' ? iconEl : null}
-			{/*
-			 * `color="unset"` is load-bearing: given no colour, `typography()`
-			 * falls back to the `neutral` text colour, which would sit on the
-			 * label and beat the variant colour inherited from the root.
-			 */}
-			<Text {...textProps} color="unset">
-				{children}
-			</Text>
-			{iconPosition === 'right' ? iconEl : null}
-		</>
-	);
-};
+const LinkedTextBody = ({ children, icon, textProps }: BodyProps) => (
+	<>
+		{/*
+		 * `color="unset"` is load-bearing: given no colour, `typography()`
+		 * falls back to the `neutral` text colour, which would sit on the
+		 * label and beat the variant colour inherited from the root.
+		 */}
+		<Text {...textProps} color="unset">
+			{children}
+		</Text>
+		{icon ? (
+			// `inline-block`, because the root is `inline` — `Icon`'s default
+			// `block` would force the icon onto its own line.
+			<Icon icon={icon} display="inline-block" />
+		) : null}
+	</>
+);
 
 /** The established appearance: icon absolutely positioned inside the label. */
 const LegacyBody = ({
@@ -135,11 +108,12 @@ const LegacyBody = ({
 }: BodyProps & Pick<TextLinkProps, 'muted'>) => (
 	<Text
 		{...textProps}
-		colour={muted ? 'muted' : 'link'}
+		color={muted ? 'tertiary' : 'unset'}
 		pr={icon ? '5' : undefined}
 		className={[
 			styles.body,
 			{
+				[styles.legacyLabel]: !muted,
 				[styles.muted]: Boolean(muted),
 			},
 		]}
@@ -157,14 +131,7 @@ const LegacyBody = ({
 );
 
 /**
- * TextLink component for rendering navigation links.
- *
- * Renders the DS-2026 linked-text appearance — underlined in every state, and
- * moving colour on hover and press. `variant` picks the colour class and
- * defaults to `primary`.
- *
- * The pre-DS-2026 appearance is gone; the darker `link.primary` replaces it and
- * clears WCAG AA on white, which the old `#01C68C` did not (2.22:1).
+ * TextLink component for rendering navigation links
  *
  * @example
  * ```tsx
@@ -173,7 +140,7 @@ const LegacyBody = ({
  * // With an icon
  * <TextLink href="/settings" icon={GearIcon}>Settings</TextLink>
  *
- * // Other colour classes
+ * // Linked text — opt in with `variant`
  * <TextLink href="/bookings" variant="secondary">View bookings</TextLink>
  * <TextLink href="/cancel" variant="critical" icon={TrashIcon}>Cancel</TextLink>
  * ```
@@ -188,14 +155,13 @@ export const TextLink = forwardRef<HTMLAnchorElement, TextLinkProps>(
 			colour,
 			disabled = false,
 			icon,
-			iconPosition = 'right',
 			muted = false,
 			noWrap,
-			size: incomingSize,
+			size,
 			strong,
 			transform,
-			variant = 'primary',
-			weight: incomingWeight,
+			variant,
+			weight = 'medium',
 			...props
 		},
 		ref,
@@ -205,26 +171,11 @@ export const TextLink = forwardRef<HTMLAnchorElement, TextLinkProps>(
 			'You cannot have both href and as defined.',
 		);
 
-		// Every link is DS-2026 linked text now. The pre-DS-2026 appearance is
-		// reachable only through the deprecated `muted`, which keeps working
-		// until it is removed in v5 rather than silently becoming a no-op.
-		const isLinkedText = !muted;
-		// Figma's linked text is Semibold, Large (16px) or Small (14px); the
-		// deprecated `muted` appearance keeps its medium weight and inherited size.
-		const textProps = {
-			noWrap,
-			size: incomingSize ?? (isLinkedText ? ('4' as const) : undefined),
-			strong,
-			transform,
-			weight: incomingWeight ?? (isLinkedText ? 'semiBold' : 'medium'),
-		};
+		const isLinkedText = variant !== undefined;
+		const textProps = { noWrap, size, strong, transform, weight };
 
 		const body = isLinkedText ? (
-			<LinkedTextBody
-				icon={icon}
-				iconPosition={iconPosition}
-				textProps={textProps}
-			>
+			<LinkedTextBody icon={icon} textProps={textProps}>
 				{children}
 			</LinkedTextBody>
 		) : (
@@ -238,9 +189,8 @@ export const TextLink = forwardRef<HTMLAnchorElement, TextLinkProps>(
 					className,
 					styles.linkedText({ disabled, variant }),
 					// The root carries the label's font size so the icon's `1em`
-					// tracks it — Figma pairs a 16px label with a 16px icon and a
-					// 14px label with a 14px one.
-					sprinkles({ text: rootTextSize(textProps.size) }),
+					// tracks it.
+					sprinkles({ text: rootTextSize(size) }),
 					focusOutlineStyle,
 				]
 			: [className, styles.root];
@@ -270,8 +220,8 @@ export const TextLink = forwardRef<HTMLAnchorElement, TextLinkProps>(
 
 		const asProps = {
 			...allProps,
-			// The legacy appearance has never styled the `as` path; only carry
-			// the class list across for the DS-2026 variants.
+			// The established appearance has never styled the `as` path; only
+			// carry the class list across for the linked-text variants.
 			...(isLinkedText ? { className: clsx(rootClassName) } : {}),
 		};
 

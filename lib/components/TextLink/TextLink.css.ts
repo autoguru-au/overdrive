@@ -9,13 +9,13 @@ import { overdriveTokens as vars } from '../../themes/theme.css';
 globalLayer(LAYER_ORDER);
 
 export const root = style({
-	boxShadow: `inset 0 0px 0 0 ${vars.typography.colour.link}`,
+	boxShadow: `inset 0 0px 0 0 ${vars.color.link.primary}`,
 	transitionDelay: '0s',
 	transitionDuration: '0.2s',
 	transitionProperty: 'box-shadow',
 	transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
 	':hover': {
-		boxShadow: `inset 0 -2px 0 0 ${vars.typography.colour.link}`,
+		boxShadow: `inset 0 -2px 0 0 ${vars.color.link.primary}`,
 	},
 });
 
@@ -32,9 +32,26 @@ export const body = sprinkles({
 	position: 'relative',
 });
 
+/**
+ * The established link colour, on the label rather than the root — the `as`
+ * path never receives the root class, so the label is the only element both
+ * paths share.
+ *
+ * `&&` doubles the class to 0-2-0 so it beats the single-class `color` atom
+ * `Text` sets. The alternative, a semantic `link` value in `sprinkles`, renumbers
+ * every atom after it and churns 136 snapshots for one colour.
+ */
+export const legacyLabel = style({
+	selectors: {
+		'&&': {
+			color: vars.color.link.primary,
+		},
+	},
+});
+
 export const muted = style({
 	':hover': {
-		boxShadow: `inset 0 -1.6em 0 0 ${vars.typography.colour.link}`,
+		boxShadow: `inset 0 -1.6em 0 0 ${vars.color.link.primary}`,
 		// The hover floods the whole line with the link colour, so the label is
 		// sitting on it. `white` was fine while the link was always dark; on a
 		// dark surface the derived link is deliberately light, and white on it
@@ -143,9 +160,9 @@ export const linkedText = recipe({
 });
 
 /**
- * Story-only: replays each class's `:active` declarations so a static matrix
- * can show the pressed state. Hover needs no equivalent — `selectors.hover`
- * already matches `[data-hover]`, so a story forces it with an attribute.
+ * Story-only: replays each class's `:active` declarations so a static story can
+ * show the pressed state. Hover needs no equivalent — `selectors.hover` already
+ * matches `[data-hover]`, so a story forces it with an attribute.
  *
  * Same layer and same specificity as the rule it stands in for
  * (`.variant.storyForcePressed` vs `.variant:active`), so it wins on source
@@ -172,35 +189,23 @@ for (const [name, { pressed, labelFollowsState }] of Object.entries(
 const linkedTextIcon = `${linkedText.classNames.base} > [data-od-component='icon']`;
 
 /**
- * Figma sizes the linked-text icon to its label — 16px at Large, 14px at Small,
- * i.e. `1em`. Deliberately unlayered: `Icon`'s own size class sets width/height
- * outside any layer, so a layered rule here would lose regardless of
- * specificity. Kept as a child selector because `Icon` owns that element.
+ * Sizes the linked-text icon to its label, i.e. `1em`. Deliberately unlayered:
+ * `Icon`'s own size class sets width/height outside any layer, so a layered
+ * rule here would lose regardless of specificity. Kept as a child selector
+ * because `Icon` owns that element.
  */
 globalStyle(linkedTextIcon, {
 	height: '1em',
 	// Nudged off the baseline so the glyph centres on the label rather than
 	// sitting on it — `inline-flex` used to do this with `align-items`.
+	marginInlineStart: vars.space['1'],
 	verticalAlign: '-0.125em',
 	width: '1em',
-});
-
-/**
- * The gap between icon and label, which `inline-flex`'s `gap` used to own.
- * Logical margins so the spacing follows the writing direction, and keyed off
- * position because the icon sits on either side.
- */
-globalStyle(`${linkedTextIcon}:first-child`, {
-	marginInlineEnd: vars.space['1'],
-});
-
-globalStyle(`${linkedTextIcon}:last-child`, {
-	marginInlineStart: vars.space['1'],
 });
 
 type LinkedTextRecipeProps = NonNullable<
 	Required<RecipeVariants<typeof linkedText>>
 >;
 
-/** DS-2026 linked-text colour class, per Figma's `Class` axis. */
+/** Linked-text colour class. */
 export type TextLinkVariant = LinkedTextRecipeProps['variant'];

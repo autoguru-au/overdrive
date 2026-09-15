@@ -454,35 +454,3 @@ export const inlineLabelRow = style({
 	display: 'flex',
 	gap: overdriveTokens.space[2],
 });
-
-/** Five-column ladder for Content/Text Link: class, state, preview, props, tag. */
-export const linkStateLadderGrid = style({
-	alignItems: 'center',
-	columnGap: overdriveTokens.space[6],
-	display: 'grid',
-	gridTemplateColumns: 'repeat(5, auto)',
-	padding: overdriveTokens.space[4],
-	rowGap: overdriveTokens.space[1],
-	width: 'fit-content',
-});
-
-/** Six-column ladder for Content/Text Link: size, px, icon, preview, props, tag. */
-export const linkSizeLadderGrid = style({
-	alignItems: 'center',
-	columnGap: overdriveTokens.space[6],
-	display: 'grid',
-	gridTemplateColumns: 'repeat(6, auto)',
-	padding: overdriveTokens.space[4],
-	rowGap: overdriveTokens.space[1],
-	width: 'fit-content',
-});
-
-/**
- * Preview cell for an inline specimen. `block` rather than the `flex` of
- * `ladderPreviewCell`: flex and grid blockify their children, so a flex cell
- * would render an `inline` component as a block and misrepresent it.
- */
-export const ladderPreviewInline = style({
-	display: 'block',
-	minWidth: '140px',
-});
