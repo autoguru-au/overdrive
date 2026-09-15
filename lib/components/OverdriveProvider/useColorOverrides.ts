@@ -203,6 +203,16 @@ const warnOnLowContrast = (
 const maxShadeSteps = 60;
 const shadeStep = 0.01;
 
+/**
+ * How far linked text travels from its resting colour on hover and press,
+ * as a lightness delta.
+ *
+ * Taken from base's own `color.link` ramp — `primary` `#18856f` (L 31) →
+ * `hover` `#03af83` (L 35) → `pressed` `#36e5aa` (L 55) — so a tenant brand
+ * covers the same distance rather than an invented one.
+ */
+const linkStateStep = { hover: 0.04, pressed: 0.24 } as const;
+
 const shade = (
 	colour: string,
 	towards: 'darker' | 'lighter',
@@ -380,6 +390,35 @@ export const useColorOverrides = (
 			? deriveLinkForSurface(linkColor, theme.darkSurface)
 			: null;
 
+		// Linked text is branded from the tenant's *primary* colour,
+		// not `linkColor`: a brand's identity colour is the one it expects to
+		// see on its links, and `linkColor` is optional where a brand primary
+		// is always supplied. Surface-corrected first so the whole ramp sits on
+		// a value that clears AA on the page.
+		const linkedTextBase = primaryBackground
+			? deriveLinkForSurface(primaryBackground, theme.lightSurface)
+			: null;
+
+		// Linked text moves its label and underline to a lighter tint as it is
+		// hovered and pressed, stepped by `linkStateStep` so a tenant's brand
+		// travels the same distance base does.
+		const linkedTextHover = linkedTextBase
+			? shadedColour({
+					colour: linkedTextBase,
+					isDarkTheme,
+					direction: 'forward',
+					intensity: linkStateStep.hover,
+				})
+			: null;
+		const linkedTextPressed = linkedTextBase
+			? shadedColour({
+					colour: linkedTextBase,
+					isDarkTheme,
+					direction: 'forward',
+					intensity: linkStateStep.pressed,
+				})
+			: null;
+
 		if (process.env.NODE_ENV !== 'production') {
 			warnOnLowContrast(primaryBackground, 'primaryBackground', theme);
 			if (linkColor)
@@ -411,6 +450,18 @@ export const useColorOverrides = (
 					// the brand only inside a Box and the theme default outside.
 					//@ts-expect-error no undefined
 					link: linkOnLight ?? undefined,
+				},
+				// The linked-text ramp. Only the three brand-derived
+				// leaves are branded: `secondary` is neutral ink and
+				// `critical`/`criticalHover`/`criticalPressed` are the semantic
+				// danger reds, which a tenant should not be able to repaint.
+				link: {
+					//@ts-expect-error no undefined
+					primary: linkedTextBase ?? undefined,
+					//@ts-expect-error no undefined
+					hover: linkedTextHover ?? undefined,
+					//@ts-expect-error no undefined
+					pressed: linkedTextPressed ?? undefined,
 				},
 				button: {
 					primary: {
