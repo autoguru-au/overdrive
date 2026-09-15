@@ -82,6 +82,14 @@ export const darkenColour = (colour: string, intensity: number): string =>
 export const lightenColour = (colour: string, intensity: number): string =>
 	colord(colour).lighten(intensity).toHex();
 
+/**
+ * The lightness distance between two colours, in the units `lighten` and
+ * `darken` take. Lets a ramp be measured off the theme that defines it rather
+ * than written down as a number nobody can check.
+ */
+export const lightnessDelta = (from: string, to: string): number =>
+	colord(to).toHsl().l / 100 - colord(from).toHsl().l / 100;
+
 type RGBNumbers = { r: number; g: number; b: number } | null;
 
 /**

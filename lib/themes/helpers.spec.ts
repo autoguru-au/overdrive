@@ -1,9 +1,12 @@
+import { colord } from 'colord';
 import { describe, expect, it } from 'vitest';
 
 import {
 	canMeasureContrast,
 	getContrastRatio,
 	getRGBValues,
+	lightenColour,
+	lightnessDelta,
 	passesAccessibilityContrast,
 } from './helpers';
 
@@ -77,5 +80,28 @@ describe('contrast on notations that used to measure as black', () => {
 			asHex,
 			5,
 		);
+	});
+});
+
+describe('lightnessDelta', () => {
+	it('measures the distance lighten() would travel', () => {
+		expect(lightnessDelta('#18856f', '#03af83')).toBeCloseTo(0.04, 4);
+		expect(lightnessDelta('#18856f', '#36e5aa')).toBeCloseTo(0.24, 4);
+	});
+
+	it('is signed, so a darker target reads negative', () => {
+		expect(lightnessDelta('#36e5aa', '#18856f')).toBeCloseTo(-0.24, 4);
+	});
+
+	it('measures lightness only, leaving hue and saturation alone', () => {
+		// base's link ramp also turns the hue (168 -> 165) and saturates
+		// (69 -> 97), so stepping by this delta lands on the target's
+		// lightness while keeping the source's hue — which is the point when
+		// the source is a tenant's brand colour.
+		const delta = lightnessDelta('#18856f', '#03af83');
+		const stepped = colord(lightenColour('#18856f', delta)).toHsl();
+
+		expect(stepped.l).toBeCloseTo(colord('#03af83').toHsl().l, 0);
+		expect(stepped.h).toBeCloseTo(colord('#18856f').toHsl().h, 0);
 	});
 });

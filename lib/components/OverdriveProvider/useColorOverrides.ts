@@ -5,11 +5,13 @@ import {
 	darkSurfaceValues,
 	lightSurfaceValues,
 } from '../../styles/surfaceLinkVars';
+import { tokens as baseTokens } from '../../themes/base/tokens';
 import {
 	canMeasureContrast,
 	darkenColour,
 	getContrastRatio,
 	lightenColour,
+	lightnessDelta,
 	passesAccessibilityContrast,
 	shadedColour,
 } from '../../themes/helpers';
@@ -203,6 +205,39 @@ const warnOnLowContrast = (
 const maxShadeSteps = 60;
 const shadeStep = 0.01;
 
+/**
+ * How far linked text travels from its resting colour on hover and press, as a
+ * lightness distance.
+ *
+ * Measured off base's own on-light `color.link` ramp rather than written down,
+ * so a tenant brand covers exactly the distance base does — and if the ramp is
+ * retuned, this follows it instead of silently disagreeing.
+ *
+ * Distance only, never direction. Which way a state moves is decided per
+ * surface by `deriveLinkStateForSurface`, because a state gains contrast by
+ * moving away from what it sits on: darker on a pale page, lighter on a dark
+ * one. Carrying base's *signed* delta here is what previously sent every
+ * branded hover and press the wrong way on light surfaces.
+ *
+ * Lightness only. Base's ramp also turns the hue and saturates as it steps, so
+ * a branded ramp matches base's lightness travel while keeping the tenant's own
+ * hue, rather than dragging every brand towards base green.
+ */
+const linkStateStep = {
+	hover: Math.abs(
+		lightnessDelta(
+			baseTokens.color.link.primaryOnLight,
+			baseTokens.color.link.hoverOnLight,
+		),
+	),
+	pressed: Math.abs(
+		lightnessDelta(
+			baseTokens.color.link.primaryOnLight,
+			baseTokens.color.link.pressedOnLight,
+		),
+	),
+} as const;
+
 const shade = (
 	colour: string,
 	towards: 'darker' | 'lighter',
@@ -244,6 +279,30 @@ const deriveLinkForSurface = (
 	}
 
 	return null;
+};
+
+/**
+ * A resting link colour moved `intensity` further from its surface, for the
+ * hovered and pressed states.
+ *
+ * Shading away from the surface can only raise contrast, so a resting colour
+ * that already cleared AA keeps clearing it — but the result is checked rather
+ * than assumed, because a hue that has bottomed out clips instead of moving and
+ * `intensity` then buys nothing. On a value that cannot be measured or cannot
+ * clear, the resting colour stands: a state that is merely indistinguishable is
+ * a better failure than one that is illegible.
+ */
+const deriveLinkStateForSurface = (
+	resting: string | null,
+	surface: string,
+	intensity: number,
+): string | null => {
+	if (resting === null || !canMeasureContrast(resting)) return null;
+
+	const away = isDarkSurface(surface) ? 'lighter' : 'darker';
+	const candidate = shade(resting, away, intensity);
+
+	return clearsAA(candidate, surface) ? candidate : resting;
 };
 
 const changedFrom = (supplied: string, derived: string | null): boolean =>
@@ -380,6 +439,56 @@ export const useColorOverrides = (
 			? deriveLinkForSurface(linkColor, theme.darkSurface)
 			: null;
 
+		// Linked text is branded from the tenant's *primary* colour,
+		// not `linkColor`: a brand's identity colour is the one it expects to
+		// see on its links, and `linkColor` is optional where a brand primary
+		// is always supplied. Surface-corrected first so the whole ramp sits on
+		// a value that clears AA on the page.
+		//
+		// `linkColor` wins when a tenant supplies it: it is the documented link
+		// override, so a brand that has bothered to set one expects its links —
+		// linked text included — to use it. `primaryBackground` is the
+		// fallback, which is the common case since `linkColor` is optional and
+		// a brand primary is always supplied.
+		const linkedTextSource = linkColor ?? primaryBackground;
+
+		const linkedTextBase = linkedTextSource
+			? deriveLinkForSurface(linkedTextSource, theme.lightSurface)
+			: null;
+
+		// The dark-surface counterpart. A painted surface points
+		// `color.link.primary` at whichever of the pair suits its own fill, so
+		// both have to be derived or a branded link regresses on dark.
+		const linkedTextOnDark = linkedTextSource
+			? deriveLinkForSurface(linkedTextSource, theme.darkSurface)
+			: null;
+
+		// Linked text deepens its label and underline as it is hovered and
+		// pressed, stepped by `linkStateStep` so a tenant's brand travels the
+		// same distance base does. Each surface gets its own pair: the states
+		// move away from the fill they sit on, so the light ramp darkens and
+		// the dark ramp lightens, and both stay above 4.5:1.
+		const linkedTextHover = deriveLinkStateForSurface(
+			linkedTextBase,
+			theme.lightSurface,
+			linkStateStep.hover,
+		);
+		const linkedTextPressed = deriveLinkStateForSurface(
+			linkedTextBase,
+			theme.lightSurface,
+			linkStateStep.pressed,
+		);
+		const linkedTextHoverOnDark = deriveLinkStateForSurface(
+			linkedTextOnDark,
+			theme.darkSurface,
+			linkStateStep.hover,
+		);
+		const linkedTextPressedOnDark = deriveLinkStateForSurface(
+			linkedTextOnDark,
+			theme.darkSurface,
+			linkStateStep.pressed,
+		);
+
 		if (process.env.NODE_ENV !== 'production') {
 			warnOnLowContrast(primaryBackground, 'primaryBackground', theme);
 			if (linkColor)
@@ -411,6 +520,30 @@ export const useColorOverrides = (
 					// the brand only inside a Box and the theme default outside.
 					//@ts-expect-error no undefined
 					link: linkOnLight ?? undefined,
+				},
+				// The linked-text ramp. Only the three brand-derived
+				// leaves are branded: `secondary` is neutral ink and
+				// `critical`/`criticalHover`/`criticalPressed` are the semantic
+				// danger reds, which a tenant should not be able to repaint.
+				link: {
+					//@ts-expect-error no undefined
+					primary: linkedTextBase ?? undefined,
+					//@ts-expect-error no undefined
+					primaryOnLight: linkedTextBase ?? undefined,
+					//@ts-expect-error no undefined
+					primaryOnDark: linkedTextOnDark ?? undefined,
+					//@ts-expect-error no undefined
+					hover: linkedTextHover ?? undefined,
+					//@ts-expect-error no undefined
+					hoverOnLight: linkedTextHover ?? undefined,
+					//@ts-expect-error no undefined
+					hoverOnDark: linkedTextHoverOnDark ?? undefined,
+					//@ts-expect-error no undefined
+					pressed: linkedTextPressed ?? undefined,
+					//@ts-expect-error no undefined
+					pressedOnLight: linkedTextPressed ?? undefined,
+					//@ts-expect-error no undefined
+					pressedOnDark: linkedTextPressedOnDark ?? undefined,
 				},
 				button: {
 					primary: {

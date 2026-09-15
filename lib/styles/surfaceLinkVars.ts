@@ -12,7 +12,13 @@ import { overdriveTokens as tokens } from '../themes/theme.css';
  * Both directions are declared, not just the dark one: a pale card nested
  * inside a dark header has to reset, or it inherits the header's link colour.
  */
-const linkVarsPointingAt = (link: string, onLink: string) => ({
+const linkVarsPointingAt = (
+	link: string,
+	onLink: string,
+	linkedText: string,
+	linkedTextHover: string,
+	linkedTextPressed: string,
+) => ({
 	// eslint-disable-next-line no-restricted-syntax -- RETAINED: these are the vars today's links and `focusOutline` actually read; a surface has to redeclare them until C-final deletes the legacy contract (docs/ds2026-plan/track-c.md §1.9).
 	[tokens.colours.foreground.link]: link,
 	// eslint-disable-next-line no-restricted-syntax -- RETAINED: same as above; read by TextLink and the `colour="link"` sprinkle.
@@ -23,16 +29,35 @@ const linkVarsPointingAt = (link: string, onLink: string) => ({
 	// surface, so on a pale surface it is dark and wants pale content, and on a
 	// dark surface it is light and wants dark content.
 	[tokens.color.interactive.onLink]: onLink,
+	// DS-2026 linked text reads its own family, which the four vars above do
+	// not cover. Without this a `TextLink` on a gray900 fill keeps the light
+	// green — `color.link.primary` is 3.39:1 there, where the legacy token it
+	// replaced was surface-corrected and cleared AA.
+	[tokens.color.link.primary]: linkedText,
+	// The states have to follow the surface for the same reason the resting
+	// colour does. A state gains contrast by moving away from what it sits on,
+	// and "away" is darker on a pale page and lighter on a dark one — so a
+	// single pair of values cannot serve both. Left unrepointed, the ramp that
+	// reads correctly on gray900 runs the wrong way on white: hover and pressed
+	// both land under 4.5:1 in every theme.
+	[tokens.color.link.hover]: linkedTextHover,
+	[tokens.color.link.pressed]: linkedTextPressed,
 });
 
 export const darkSurfaceLinkVars = linkVarsPointingAt(
 	tokens.color.interactive.linkOnDark,
 	tokens.color.foreground.primary,
+	tokens.color.link.primaryOnDark,
+	tokens.color.link.hoverOnDark,
+	tokens.color.link.pressedOnDark,
 );
 
 export const lightSurfaceLinkVars = linkVarsPointingAt(
 	tokens.color.interactive.linkOnLight,
 	tokens.color.foreground.reverse,
+	tokens.color.link.primaryOnLight,
+	tokens.color.link.hoverOnLight,
+	tokens.color.link.pressedOnLight,
 );
 
 /**

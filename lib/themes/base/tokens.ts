@@ -246,9 +246,35 @@ export const tokens = {
 		},
 		link: {
 			primary: colourMap.green['800'], // #18856f
+			// A link's legibility is decided by the surface it sits on, and no
+			// one green clears AA on both a white page and a gray900 header.
+			// `primary` holds the light value; a painted surface repoints it at
+			// whichever of the pair suits its own fill, the same way
+			// `interactive.link` follows `linkOnLight`/`linkOnDark`.
+			primaryOnLight: colourMap.green['800'], // #18856f — 4.54:1 on white
+			primaryOnDark: colourMap.green['600'], // #01c68c — 6.94:1 on gray900
 			secondary: colourMap.gray['900'], // #212338
-			hover: colourMap.green['700'], // #03af83
-			pressed: colourMap.green['400'], // #36e5aa
+			// Every value is a rung of the gamut — never a shaded hex outside
+			// the ramp.
+			//
+			// Hover is Figma's green700 on both surfaces, by design decision
+			// (AG-20713). It measures 2.81:1 on white, below the 4.5:1 WCAG
+			// 1.4.3 asks of it, and the alternative was worse: green800 and
+			// green900 are the only two greens above the line on white, the
+			// resting colour owns green800, so an AA-safe hover had to take
+			// green900 — the same value as pressed, leaving the two states
+			// indistinguishable on a pale page. Design chose the visible ramp
+			// over the measured one. Separating them properly needs a new rung
+			// between green800 and green900, not a value invented here.
+			//
+			// Pressed stays surface-aware: Figma's green400 is 9.50:1 on
+			// gray900 and 1.62:1 on white, so the light surface takes green900.
+			hover: colourMap.green['700'], // #03af83 — 2.81:1 on white (Figma)
+			hoverOnLight: colourMap.green['700'],
+			hoverOnDark: colourMap.green['700'], // #03af83 — 5.48:1 on gray900 (Figma)
+			pressed: colourMap.green['900'], // #00574c — 8.51:1 on white
+			pressedOnLight: colourMap.green['900'],
+			pressedOnDark: colourMap.green['400'], // #36e5aa — 9.50:1 on gray900 (Figma)
 			critical: colourMap.red['700'], // #b51e1a
 			criticalHover: colourMap.red['500'], // #e12e28
 			criticalPressed: colourMap.red['300'], // #ef918e

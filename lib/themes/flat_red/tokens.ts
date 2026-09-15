@@ -80,6 +80,41 @@ export const tokens = deepmerge(baseTokens, {
 			linkOnLight: colours.green['600'],
 			linkOnDark: colours.green['600'],
 		},
+		// DS-2026 linked text reads `color.link`. Unlike `neutral`, this theme
+		// redefines every ramp it uses, so the whole set is overridden — an
+		// inherited `secondary` would be base's gray900 `#212338` rather than
+		// this theme's `#263238`, and the `critical*` trio would be base's reds
+		// rather than the flat-red ones.
+		link: {
+			primary: colours.green['900'], // #007800 — 5.70:1 on white
+			// This theme's brand green is a vivid #00c400, which is 2.36:1 on
+			// white — it can carry a fill but not text. The light surface gets
+			// the darkest green the palette holds; the dark surface keeps the
+			// brand value, which is already legible there.
+			primaryOnLight: colours.green['900'],
+			primaryOnDark: colours.green['600'], // #00c400 — 6.53:1 on gray900
+			secondary: colours.gray['900'],
+			// Both states step lighter, the direction base's ramp takes on a
+			// dark surface. This theme cannot take the other one: `primary`
+			// already holds green900, the darkest green in the ramp, so there
+			// is nothing below it for a light-surface state to move to. Both
+			// therefore sit under AA on white (2.94:1 and 1.80:1) — the same
+			// trade base makes on hover, made twice, because this brand green
+			// is vivid enough that green900 is the only rung above the line
+			// there at all. Raising them takes a darker green from design, not
+			// a shaded hex invented here.
+			//
+			// The dark surface has room, and keeps values that clear AA on it.
+			hover: colours.green['700'], // #00af00 — 2.94:1 on white
+			hoverOnLight: colours.green['700'],
+			hoverOnDark: colours.green['500'], // #00d500 — 6.59:1 on gray900
+			pressed: colours.green['400'], // #52dc42 — 1.80:1 on white
+			pressedOnLight: colours.green['400'],
+			pressedOnDark: colours.green['400'], // #52dc42 — 7.32:1 on gray900
+			critical: colours.red['900'], // #d50000 — 5.48:1 on white; red700 was 3.97:1
+			criticalHover: colours.red['500'],
+			criticalPressed: colours.red['300'],
+		},
 	},
 	colours: {
 		gamut: {

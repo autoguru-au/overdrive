@@ -3,7 +3,12 @@ import { describe, expect, it } from 'vitest';
 import { themes } from '../themes';
 import { colourMap } from '../themes/base/colours';
 import { tokens as baseTokens } from '../themes/base/tokens';
-import { getContrastRatio } from '../themes/helpers';
+import { tokens as flatRedTokens } from '../themes/flat_red/tokens';
+import {
+	getContrastRatio,
+	passesAccessibilityContrast,
+} from '../themes/helpers';
+import { tokens as neutralTokens } from '../themes/neutral/tokens';
 import { overdriveTokens } from '../themes/theme.css';
 
 import {
@@ -13,6 +18,20 @@ import {
 	lightSurfaceValues,
 	withSurfaceLinkVars,
 } from './surfaceLinkVars';
+
+/**
+ * Whether `colour` clears 4.5:1 on `surface`, carrying the colour alongside the
+ * verdict so a failure names the hex rather than reporting `false !== true`.
+ */
+const passesAA = (colour: string, surface: string) => ({
+	colour,
+	passes: passesAccessibilityContrast({
+		colour1: colour,
+		colour2: surface,
+		level: 'AA' as const,
+		textSize: 'SMALL' as const,
+	}),
+});
 
 /** Mirrors `isDarkSurface` in useColorOverrides — `getContrastRatio` is min/max. */
 const isDark = (colour: string) =>
@@ -43,9 +62,21 @@ const resolve = (name: string): string => {
 	return hex;
 };
 
+/**
+ * The legacy link vars a surface repoints, in declaration order. `onLink` is
+ * excluded because it holds the colour drawn *on* a link rather than the link
+ * itself, and `color.link.primary` because it follows its own
+ * `primaryOnLight`/`primaryOnDark` pair rather than `interactive.link*`.
+ */
 const linkVarsOf = (map: Record<string, string>) =>
 	Object.entries(map)
-		.filter(([name]) => name !== overdriveTokens.color.interactive.onLink)
+		.filter(
+			([name]) =>
+				name !== overdriveTokens.color.interactive.onLink &&
+				name !== overdriveTokens.color.link.primary &&
+				name !== overdriveTokens.color.link.hover &&
+				name !== overdriveTokens.color.link.pressed,
+		)
 		.map(([, value]) => value);
 
 describe('surface-aware link vars', () => {
@@ -73,8 +104,127 @@ describe('surface-aware link vars', () => {
 			overdriveTokens.typography.colour.link,
 			overdriveTokens.color.interactive.link,
 			overdriveTokens.color.interactive.onLink,
+			overdriveTokens.color.link.primary,
+			overdriveTokens.color.link.hover,
+			overdriveTokens.color.link.pressed,
 		]);
 	});
+
+	// DS-2026 linked text reads `color.link.*`, which the legacy pair does not
+	// cover. Without a surface repointing it, `TextLink` renders the light
+	// green on a gray900 fill — 3.39:1, where the legacy token it replaced was
+	// surface-corrected and cleared AA.
+	it('points linked text at the surface-appropriate value', () => {
+		const { link } = overdriveTokens.color;
+
+		expect(darkSurfaceLinkVars[link.primary]).toBe(link.primaryOnDark);
+		expect(lightSurfaceLinkVars[link.primary]).toBe(link.primaryOnLight);
+	});
+
+	// A state earns its contrast by moving away from the fill it sits on, which
+	// points opposite ways on the two surfaces. Repointing only the resting
+	// colour left the dark-surface ramp running on white, where hover and
+	// pressed measured as low as 1.62:1.
+	it('points the hovered and pressed states at the surface too', () => {
+		const { link } = overdriveTokens.color;
+
+		expect(darkSurfaceLinkVars[link.hover]).toBe(link.hoverOnDark);
+		expect(darkSurfaceLinkVars[link.pressed]).toBe(link.pressedOnDark);
+		expect(lightSurfaceLinkVars[link.hover]).toBe(link.hoverOnLight);
+		expect(lightSurfaceLinkVars[link.pressed]).toBe(link.pressedOnLight);
+	});
+
+	// The resting colour is where a link spends its life, and it clears AA on
+	// whatever it sits on in every theme. Where it rests is the rung the whole
+	// ramp is anchored to, so it is asserted on its own and without exception.
+	it.each([
+		['base', baseTokens],
+		['neutral', neutralTokens],
+		['flat_red', flatRedTokens],
+	])(
+		'keeps the %s resting link above AA on both surfaces',
+		(_name, tokens) => {
+			const { link, surface } = tokens.color;
+
+			expect(passesAA(link.primaryOnLight, surface.page)).toEqual({
+				colour: link.primaryOnLight,
+				passes: true,
+			});
+			expect(passesAA(link.primaryOnDark, surface.hard)).toEqual({
+				colour: link.primaryOnDark,
+				passes: true,
+			});
+		},
+	);
+
+	/**
+	 * The hovered and pressed rungs, and whether each clears 4.5:1 on the
+	 * surface it is pointed at.
+	 *
+	 * Two of these are `false` on purpose, and both are design decisions taken
+	 * on AG-20713 rather than oversights — which is why they are written down
+	 * as expected values instead of dropped from the suite. A state that drifts
+	 * off the recorded answer still fails, in either direction: an unnoticed
+	 * regression and a quiet fix both show up here.
+	 *
+	 * `base` hover is Figma's green700, 2.81:1 on white. The AA-safe
+	 * alternative was green900 — already taken by pressed, which left hover and
+	 * pressed identical on a pale page. Design chose the visible ramp over the
+	 * measured one; separating them properly needs a new rung between green800
+	 * and green900.
+	 *
+	 * `flat_red` is under the line on both light-surface states for a different
+	 * reason: its brand green is vivid enough that green900 is the only rung
+	 * above 4.5:1 on white, and the resting colour holds it. Nothing in that
+	 * ramp can carry a legible light-surface state.
+	 */
+	it.each([
+		['base', baseTokens, { hover: false, pressed: true }],
+		['neutral', neutralTokens, { hover: true, pressed: true }],
+		['flat_red', flatRedTokens, { hover: false, pressed: false }],
+	])(
+		'holds the recorded AA result for every %s link state',
+		(_name, tokens, expectedOnLight) => {
+			const { link, surface } = tokens.color;
+
+			expect({
+				hover: passesAA(link.hoverOnLight, surface.page).passes,
+				pressed: passesAA(link.pressedOnLight, surface.page).passes,
+			}).toEqual(expectedOnLight);
+
+			// The dark surface carries no exception in any theme. It has the
+			// room the light one does not — a state gains contrast there by
+			// moving towards the light end of the ramp, where the rungs are.
+			expect(passesAA(link.hoverOnDark, surface.hard)).toEqual({
+				colour: link.hoverOnDark,
+				passes: true,
+			});
+			expect(passesAA(link.pressedOnDark, surface.hard)).toEqual({
+				colour: link.pressedOnDark,
+				passes: true,
+			});
+		},
+	);
+
+	// gray900 is the darkest surface in `darkSurfaceValues` and `surface.hard`
+	// resolves to it, so it is the value `primaryOnDark` has to clear.
+	it.each([
+		['base', baseTokens],
+		['neutral', neutralTokens],
+		['flat_red', flatRedTokens],
+	])(
+		'gives %s a linked-text primary that clears AA on a dark fill',
+		(_name, tokens) => {
+			expect(
+				passesAccessibilityContrast({
+					colour1: tokens.color.link.primaryOnDark,
+					colour2: tokens.color.surface.hard,
+					level: 'AA',
+					textSize: 'SMALL',
+				}),
+			).toBe(true);
+		},
+	);
 
 	// TextLink `muted` floods its line with the link colour and draws the label
 	// on top. The link is shaded away from its surface, so the label has to be
