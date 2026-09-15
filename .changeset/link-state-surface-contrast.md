@@ -16,6 +16,13 @@ red 1.80:1 and neutral 2.21:1, against the 4.5:1 the criterion asks for.
   deepens as a link is hovered and pressed, the dark ramp lightens, and both
   ends clear AA. The dark-surface values are the ones the ramp already used, so
   nothing on a dark fill changes.
+- **Every value is a rung of the theme's own colour ramp.** A state keeps the
+  Figma value wherever that value clears AA on the surface it sits on, and takes
+  the nearest gamut colour that does where it does not — no shaded hex outside
+  the palette. On white that leaves base with two AA-safe greens, `green800`
+  (4.54:1) and `green900` (8.51:1); `primary` holds the first, so hover and
+  pressed share the second. A light-surface press is therefore the same green as
+  a light-surface hover until the ramp gains a rung between the two.
 - `useColorOverrides` derives a tenant's state colours per surface rather than
   always lightening, and checks the result rather than assuming it. The step
   distance is still measured off base's own ramp; only the direction is now
@@ -23,9 +30,11 @@ red 1.80:1 and neutral 2.21:1, against the 4.5:1 the criterion asks for.
   wrong way on light fills.
 - `flat_red`'s linked text moves off the brand green `#00c400`, which is 2.36:1
   on white — it can carry a fill but not text. The light surface takes the
-  palette's darkest green; the dark surface keeps the brand value, which is
-  already legible there. Its `color.link.critical` moves from `red700`
-  (`#fb1e0d`, 3.97:1) to `red900` for the same reason.
+  palette's darkest green for all three states, since `green900` (5.70:1) is the
+  only green in that ramp above 4.5:1 on white; the dark surface keeps the brand
+  value, which is already legible there, and still steps through `green500` and
+  `green400`. Its `color.link.critical` moves from `red700` (`#fb1e0d`, 3.97:1)
+  to `red900` for the same reason.
 - `neutral` gains the state pairs in blue.
 
 `surfaceLinkVars.spec` now asserts that every linked-text state in every theme

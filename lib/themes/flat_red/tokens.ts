@@ -2,7 +2,6 @@ import deepmerge from 'deepmerge';
 
 import type { ColourMap } from '../';
 import { tokens as baseTokens } from '../base/tokens';
-import { darkenColour } from '../helpers';
 import { buildColourGamut } from '../makeTheme';
 import type { ThemeTokens } from '../theme.css';
 
@@ -95,12 +94,21 @@ export const tokens = deepmerge(baseTokens, {
 			primaryOnLight: colours.green['900'],
 			primaryOnDark: colours.green['600'], // #00c400 — 6.53:1 on gray900
 			secondary: colours.gray['900'],
-			hover: darkenColour(colours.green['900'], 0.04), // #006400 — 7.44:1 on white
-			hoverOnLight: darkenColour(colours.green['900'], 0.04),
-			hoverOnDark: colours.green['500'], // #00d500 — 7.72:1 on gray900
-			pressed: darkenColour(colours.green['900'], 0.08), // #004f00 — 9.91:1 on white
-			pressedOnLight: darkenColour(colours.green['900'], 0.08),
-			pressedOnDark: colours.green['400'], // #52dc42 — 8.57:1 on gray900
+			// Same rule as base: a state takes a value from this theme's own
+			// green ramp or it does not move at all. On the dark surface there
+			// is room to step — green500 and green400 both clear AA there. On
+			// white there is not: green900 is the only green in this ramp above
+			// 4.5:1 (5.70:1; green800 is 3.69:1), and `primary` already holds
+			// it, so the light-surface states hold it too. This theme's brand
+			// green is simply too vivid to carry three legible text steps on a
+			// pale page — adding one would take a new ramp entry from design,
+			// not a shaded hex invented here.
+			hover: colours.green['900'], // #007800 — 5.70:1 on white
+			hoverOnLight: colours.green['900'],
+			hoverOnDark: colours.green['500'], // #00d500 — 6.59:1 on gray900
+			pressed: colours.green['900'], // #007800 — 5.70:1 on white
+			pressedOnLight: colours.green['900'],
+			pressedOnDark: colours.green['400'], // #52dc42 — 7.32:1 on gray900
 			critical: colours.red['900'], // #d50000 — 5.48:1 on white; red700 was 3.97:1
 			criticalHover: colours.red['500'],
 			criticalPressed: colours.red['300'],

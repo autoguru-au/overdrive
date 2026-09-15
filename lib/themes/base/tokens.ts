@@ -1,4 +1,3 @@
-import { darkenColour } from '../helpers';
 import { buildColourGamut } from '../makeTheme';
 import { overdriveTokens, type ThemeTokens } from '../theme.css';
 
@@ -255,18 +254,21 @@ export const tokens = {
 			primaryOnLight: colourMap.green['800'], // #18856f — 4.54:1 on white
 			primaryOnDark: colourMap.green['600'], // #01c68c — 6.94:1 on gray900
 			secondary: colourMap.gray['900'], // #212338
-			// Hover and pressed are surface-aware for the same reason `primary`
-			// is: a state has to move *away* from the surface to gain contrast,
-			// and "away" points opposite ways on a white page and a gray900
-			// header. Shading one direction for both left every hovered and
-			// pressed link on a light surface below AA — green700 is 2.81:1 on
-			// white and green400 is 1.62:1.
-			hover: darkenColour(colourMap.green['800'], 0.05), // #146f5d — 6.07:1 on white
-			hoverOnLight: darkenColour(colourMap.green['800'], 0.05),
-			hoverOnDark: colourMap.green['700'], // #03af83 — 5.48:1 on gray900
+			// Every state takes the Figma value where that value clears AA on
+			// the surface, and the nearest green from the gamut that does where
+			// it does not — never a shaded hex outside the ramp. On gray900
+			// Figma's hover and pressed hold (green700 5.48:1, green400
+			// 9.50:1); on white they do not (2.81:1 and 1.62:1), and green900
+			// is the only green left that clears 4.5:1 once `primary` has taken
+			// green800. Hover and pressed therefore share it on a light
+			// surface: the ramp has two AA-safe greens on white and the resting
+			// colour owns one of them.
+			hover: colourMap.green['900'], // #00574c — 8.51:1 on white
+			hoverOnLight: colourMap.green['900'],
+			hoverOnDark: colourMap.green['700'], // #03af83 — 5.48:1 on gray900 (Figma)
 			pressed: colourMap.green['900'], // #00574c — 8.51:1 on white
 			pressedOnLight: colourMap.green['900'],
-			pressedOnDark: colourMap.green['400'], // #36e5aa — 9.50:1 on gray900
+			pressedOnDark: colourMap.green['400'], // #36e5aa — 9.50:1 on gray900 (Figma)
 			critical: colourMap.red['700'], // #b51e1a
 			criticalHover: colourMap.red['500'], // #e12e28
 			criticalPressed: colourMap.red['300'], // #ef918e

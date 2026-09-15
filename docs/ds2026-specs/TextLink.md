@@ -60,6 +60,37 @@ hex-for-hex.
 The icon follows the label — its SVG fills from `currentColor`, so it moves with
 the label on Primary/Critical and stays put on Secondary.
 
+### The shipped values deviate where Figma's fail AA
+
+The table above is the Figma file. The implementation keeps each value **on the
+surface where it clears 4.5:1**, and substitutes the nearest colour from the
+theme's own green ramp where it does not — never a shaded hex outside the
+palette.
+
+Figma's Primary ramp steps _lighter_ on each state, which gains contrast on a
+`gray900` header and loses it on a white page:
+
+| Value              | on white  | on gray900 |
+| ------------------ | --------- | ---------- |
+| `green800 #18856F` | 4.54:1 ✅ | 3.39:1 ❌  |
+| `green700 #03AF83` | 2.81:1 ❌ | 5.48:1 ✅  |
+| `green400 #36E5AA` | 1.62:1 ❌ | 9.50:1 ✅  |
+
+So `color.link.*` carries an `OnLight`/`OnDark` pair per state, repointed by a
+painted surface (`lib/styles/surfaceLinkVars.ts`):
+
+|         | On light (white) | On dark (gray900)       |
+| ------- | ---------------- | ----------------------- |
+| Default | `green800` 4.54  | `green600` 6.94         |
+| Hover   | `green900` 8.51  | `green700` 5.48 (Figma) |
+| Pressed | `green900` 8.51  | `green400` 9.50 (Figma) |
+
+The dark column is Figma's, bar the resting colour. The light column is not:
+`green800` and `green900` are the **only** two greens in the gamut above 4.5:1
+on white, and Default owns the first — so Hover and Pressed share the second and
+look identical on a pale page. Closing that needs a new rung between `green800`
+and `green900` from design, not a value invented in code.
+
 Notes:
 
 - **Primary and Critical hover/pressed nodes bind a single colour variable**
