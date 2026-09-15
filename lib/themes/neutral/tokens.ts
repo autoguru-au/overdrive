@@ -103,6 +103,8 @@ export const tokens = deepmerge(baseTokens, {
 		// resolve correctly through inheritance.
 		link: {
 			primary: colours.blue['500'],
+			primaryOnLight: colours.blue['500'], // #0d59fc — 5.45:1 on white
+			primaryOnDark: colours.blue['300'], // #81afff — 6.98:1 on gray900
 			hover: colours.blue['400'],
 			pressed: colours.blue['300'],
 		},

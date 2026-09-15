@@ -249,6 +249,8 @@ const THEME_CONTRACT = {
 		},
 		link: {
 			primary: 'color-link-primary',
+			primaryOnLight: 'color-link-primary-on-light',
+			primaryOnDark: 'color-link-primary-on-dark',
 			secondary: 'color-link-secondary',
 			hover: 'color-link-hover',
 			pressed: 'color-link-pressed',

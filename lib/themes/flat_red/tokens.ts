@@ -87,6 +87,10 @@ export const tokens = deepmerge(baseTokens, {
 		// rather than the flat-red ones.
 		link: {
 			primary: colours.green['600'],
+			// This theme's own green either way, matching how it already treats
+			// `linkOnLight`/`linkOnDark`.
+			primaryOnLight: colours.green['600'],
+			primaryOnDark: colours.green['600'], // 6.53:1 on gray900
 			secondary: colours.gray['900'],
 			hover: colours.green['500'],
 			pressed: colours.green['400'],

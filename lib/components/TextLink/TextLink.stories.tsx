@@ -242,8 +242,16 @@ export const WithIcon: Story = {
 
 		await step('<TextLink /> is interactive', async () => {
 			await expect(link).toHaveStyle({ cursor: 'pointer' });
-			await user.keyboard('{Tab}');
+
+			// Focusability is asserted as tab-order membership plus a direct
+			// `focus()`, not by pressing Tab. A capture environment that renders
+			// the story in a frame without OS focus never moves focus on a
+			// keypress, so `{Tab}` would fail on where the story is running
+			// rather than on the component.
+			await expect(link).not.toHaveAttribute('tabindex', '-1');
+			link.focus();
 			await expect(link).toHaveFocus();
+
 			await user.hover(link);
 		});
 	},

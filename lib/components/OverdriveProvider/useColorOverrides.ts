@@ -218,7 +218,10 @@ const shadeStep = 0.01;
  * hue, rather than dragging every brand towards base green.
  */
 const linkStateStep = {
-	hover: lightnessDelta(baseTokens.color.link.primary, baseTokens.color.link.hover),
+	hover: lightnessDelta(
+		baseTokens.color.link.primary,
+		baseTokens.color.link.hover,
+	),
 	pressed: lightnessDelta(
 		baseTokens.color.link.primary,
 		baseTokens.color.link.pressed,
@@ -407,8 +410,23 @@ export const useColorOverrides = (
 		// see on its links, and `linkColor` is optional where a brand primary
 		// is always supplied. Surface-corrected first so the whole ramp sits on
 		// a value that clears AA on the page.
-		const linkedTextBase = primaryBackground
-			? deriveLinkForSurface(primaryBackground, theme.lightSurface)
+		//
+		// `linkColor` wins when a tenant supplies it: it is the documented link
+		// override, so a brand that has bothered to set one expects its links —
+		// linked text included — to use it. `primaryBackground` is the
+		// fallback, which is the common case since `linkColor` is optional and
+		// a brand primary is always supplied.
+		const linkedTextSource = linkColor ?? primaryBackground;
+
+		const linkedTextBase = linkedTextSource
+			? deriveLinkForSurface(linkedTextSource, theme.lightSurface)
+			: null;
+
+		// The dark-surface counterpart. A painted surface points
+		// `color.link.primary` at whichever of the pair suits its own fill, so
+		// both have to be derived or a branded link regresses on dark.
+		const linkedTextOnDark = linkedTextSource
+			? deriveLinkForSurface(linkedTextSource, theme.darkSurface)
 			: null;
 
 		// Linked text moves its label and underline to a lighter tint as it is
@@ -470,6 +488,10 @@ export const useColorOverrides = (
 				link: {
 					//@ts-expect-error no undefined
 					primary: linkedTextBase ?? undefined,
+					//@ts-expect-error no undefined
+					primaryOnLight: linkedTextBase ?? undefined,
+					//@ts-expect-error no undefined
+					primaryOnDark: linkedTextOnDark ?? undefined,
 					//@ts-expect-error no undefined
 					hover: linkedTextHover ?? undefined,
 					//@ts-expect-error no undefined

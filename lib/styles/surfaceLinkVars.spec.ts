@@ -3,7 +3,12 @@ import { describe, expect, it } from 'vitest';
 import { themes } from '../themes';
 import { colourMap } from '../themes/base/colours';
 import { tokens as baseTokens } from '../themes/base/tokens';
-import { getContrastRatio } from '../themes/helpers';
+import { tokens as flatRedTokens } from '../themes/flat_red/tokens';
+import {
+	getContrastRatio,
+	passesAccessibilityContrast,
+} from '../themes/helpers';
+import { tokens as neutralTokens } from '../themes/neutral/tokens';
 import { overdriveTokens } from '../themes/theme.css';
 
 import {
@@ -43,9 +48,19 @@ const resolve = (name: string): string => {
 	return hex;
 };
 
+/**
+ * The legacy link vars a surface repoints, in declaration order. `onLink` is
+ * excluded because it holds the colour drawn *on* a link rather than the link
+ * itself, and `color.link.primary` because it follows its own
+ * `primaryOnLight`/`primaryOnDark` pair rather than `interactive.link*`.
+ */
 const linkVarsOf = (map: Record<string, string>) =>
 	Object.entries(map)
-		.filter(([name]) => name !== overdriveTokens.color.interactive.onLink)
+		.filter(
+			([name]) =>
+				name !== overdriveTokens.color.interactive.onLink &&
+				name !== overdriveTokens.color.link.primary,
+		)
 		.map(([, value]) => value);
 
 describe('surface-aware link vars', () => {
@@ -73,8 +88,40 @@ describe('surface-aware link vars', () => {
 			overdriveTokens.typography.colour.link,
 			overdriveTokens.color.interactive.link,
 			overdriveTokens.color.interactive.onLink,
+			overdriveTokens.color.link.primary,
 		]);
 	});
+
+	// DS-2026 linked text reads `color.link.*`, which the legacy pair does not
+	// cover. Without a surface repointing it, `TextLink` renders the light
+	// green on a gray900 fill — 3.39:1, where the legacy token it replaced was
+	// surface-corrected and cleared AA.
+	it('points linked text at the surface-appropriate value', () => {
+		const { link } = overdriveTokens.color;
+
+		expect(darkSurfaceLinkVars[link.primary]).toBe(link.primaryOnDark);
+		expect(lightSurfaceLinkVars[link.primary]).toBe(link.primaryOnLight);
+	});
+
+	// gray900 is the darkest surface in `darkSurfaceValues` and `surface.hard`
+	// resolves to it, so it is the value `primaryOnDark` has to clear.
+	it.each([
+		['base', baseTokens],
+		['neutral', neutralTokens],
+		['flat_red', flatRedTokens],
+	])(
+		'gives %s a linked-text primary that clears AA on a dark fill',
+		(_name, tokens) => {
+			expect(
+				passesAccessibilityContrast({
+					colour1: tokens.color.link.primaryOnDark,
+					colour2: tokens.color.surface.hard,
+					level: 'AA',
+					textSize: 'SMALL',
+				}),
+			).toBe(true);
+		},
+	);
 
 	// TextLink `muted` floods its line with the link colour and draws the label
 	// on top. The link is shaded away from its surface, so the label has to be

@@ -152,20 +152,67 @@ not a new default).
 
 ### Deliberately not done here
 
-- **No token changes.** `color.link.*` already existed with correct values; this
-  only starts consuming it. The legacy `typography.colour.link` references in
-  `TextLink.css.ts` (`root`, `muted`) are left in place — repointing them would
-  change the default appearance for every existing consumer.
-- **The base link colour is not flipped** from legacy green `#01C68C` to
-  `color.link.primary` `#18856F`. That is the major-only change `wave-3.md`
-  §W3c-P2 already flags.
+- **No `variant` default.** Linked text stays opt-in; a link with no `variant`
+  keeps the established shape. Only its colour moves — see below.
+- **No dark value for `secondary` or the `critical*` trio.** Only `primary` gets
+  a surface pair; see the open question at the end.
 - **No `iconPosition`.** Figma draws `Icon{None, Left, Right}`, but only the
   trailing icon ships (confirmed with design, AG-20713) — it matches the
   established appearance, so neither path needs a position prop.
 - **No size or weight defaults.** Linked text does not force Figma's Large;
   `size`/`weight` behave identically with and without `variant`.
 
-## Open question for design
+## Surfaces
+
+`color.link.*` is a single light-surface ramp, and the plumbing added in 4.65.0
+(`lib/styles/surfaceLinkVars.ts`) repoints `typography.colour.link` — the token
+`TextLink` _used_ to read — but not this family. Moving to it without more would
+mean a link on a painted dark fill losing its correction: base `#18856f` is
+**3.39:1** on gray900, where the `#01C68C` it replaced was corrected and sat at
+6.94:1.
+
+So the two-surface pattern extends to linked text:
+
+- **`color.link.primaryOnLight` and `color.link.primaryOnDark`.** A painted
+  surface repoints `color.link.primary` at whichever suits its own fill, exactly
+  as it already does for `color.interactive.link` via
+  `linkOnLight`/`linkOnDark`. Both directions are declared, so a pale card
+  nested inside a dark header resets rather than inheriting.
+- Base is green-800 `#18856f` (4.54:1 on white) / green-600 `#01c68c` (6.94:1 on
+  gray900). The dark value is what the legacy token already resolved to, so this
+  is parity rather than a new design value. `neutral` is blue-500 / blue-300,
+  `flat_red` its own green either way.
+- `hover` and `pressed` need no pair: base `#03af83` is 5.47:1 and `#36e5aa`
+  9.50:1 on gray900, so both already clear AA there.
+
+`surfaceLinkVars.spec.ts` asserts the repoint in both directions and that every
+theme's `primaryOnDark` clears AA on its own `surface.hard`.
+
+## Tenant branding
+
+`color.link.{primary,hover,pressed}` was the one link family that neither
+`OverdriveProvider`'s `colorOverrides` nor the alternate themes reached, so a
+branded app rendered base green on its links. `useColorOverrides` now derives
+the ramp from the tenant's `linkColor`, falling back to `primaryBackground` when
+none is supplied — `linkColor` is the documented link override, and
+`primaryBackground` covers the common case where it is left unset.
+
+The source is surface-corrected the same way `color.interactive.link` is, for
+both surfaces, then `hover` and `pressed` step lighter by lightness deltas
+**measured off base's own ramp** via the `lightnessDelta` helper rather than
+hardcoded — so a brand travels exactly as far as base does while keeping its own
+hue.
+
+`secondary` and the `critical*` trio are deliberately not tenant-brandable: one
+is neutral ink, the others are semantic danger reds.
+
+## Open questions for design
+
+**`secondary` on a dark surface.** `link.secondary` is gray900, so on a gray900
+fill it is 1:1 — invisible. `critical` is 2.32:1 there, also below AA. Neither
+is a regression (the `variant` path is new and nothing consumes it yet), but
+both need a dark value before anyone puts them on a painted dark surface. Only
+`primary` has a pair today.
 
 `Icon only` exists for Solid/Outlined/Ghost but not for `Linked text`. If an
 icon-only link is ever needed it has no Figma source yet — unlike `Extra small`,

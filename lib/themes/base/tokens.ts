@@ -246,6 +246,13 @@ export const tokens = {
 		},
 		link: {
 			primary: colourMap.green['800'], // #18856f
+			// A link's legibility is decided by the surface it sits on, and no
+			// one green clears AA on both a white page and a gray900 header.
+			// `primary` holds the light value; a painted surface repoints it at
+			// whichever of the pair suits its own fill, the same way
+			// `interactive.link` follows `linkOnLight`/`linkOnDark`.
+			primaryOnLight: colourMap.green['800'], // #18856f — 4.54:1 on white
+			primaryOnDark: colourMap.green['600'], // #01c68c — 6.94:1 on gray900
 			secondary: colourMap.gray['900'], // #212338
 			hover: colourMap.green['700'], // #03af83
 			pressed: colourMap.green['400'], // #36e5aa
