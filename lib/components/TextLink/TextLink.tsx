@@ -212,11 +212,27 @@ export const TextLink = forwardRef<HTMLAnchorElement, TextLinkProps>(
 				]
 			: [className, styles.root];
 
+		const isDisabled = isLinkedText && disabled;
+
 		const allProps = {
 			rel: props.rel ?? 'noopener noreferrer',
 			...props,
-			...(isLinkedText && disabled
-				? { 'aria-disabled': true, tabIndex: -1 }
+			...(isDisabled
+				? {
+						'aria-disabled': true as const,
+						tabIndex: -1,
+						// `aria-disabled` and `tabIndex` are advisory, and the
+						// stylesheet's `pointer-events: none` only stops the
+						// mouse. Without this the anchor still navigates from a
+						// programmatic `.click()`, and a custom `as` component
+						// still runs its own handler.
+						onClick: (
+							event: React.MouseEvent<HTMLAnchorElement>,
+						) => {
+							event.preventDefault();
+							event.stopPropagation();
+						},
+					}
 				: {}),
 			ref,
 		};

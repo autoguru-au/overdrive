@@ -1,7 +1,7 @@
 import { ArrowRightIcon } from '@autoguru/icons';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 
 import { Box } from '../Box/Box';
 
@@ -89,6 +89,27 @@ describe('<TextLink />', () => {
 			const link = screen.getByRole('link');
 			expect(link).toHaveAttribute('aria-disabled', 'true');
 			expect(link).toHaveAttribute('tabindex', '-1');
+		});
+
+		it('should not activate when disabled, even programmatically', () => {
+			const onClick = vi.fn();
+			render(
+				<TextLink
+					href="/test"
+					variant="primary"
+					disabled
+					onClick={onClick}
+				>
+					Link text
+				</TextLink>,
+			);
+
+			const link = screen.getByRole('link');
+			// `aria-disabled` and `tabIndex` are advisory, and the stylesheet's
+			// `pointer-events: none` only stops the mouse — a programmatic
+			// click would otherwise still navigate and still run the handler.
+			fireEvent.click(link);
+			expect(onClick).not.toHaveBeenCalled();
 		});
 
 		it('should ignore disabled without a variant', () => {

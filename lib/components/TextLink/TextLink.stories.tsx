@@ -111,14 +111,14 @@ export const Primary: Story = {
 	args: { variant: 'primary', children: 'Button' },
 	play: async ({ canvas, step }) => {
 		await step('renders the linked-text appearance', async () => {
-			await expect(canvas.getByRole('link')).toHaveStyle({
+			await expect(canvas.getAllByRole('link')[0]).toHaveStyle({
 				borderBottomStyle: 'solid',
 			});
 		});
 
 		await step('draws no icon — `With Icon` owns that', async () => {
 			await expect(
-				canvas.getByRole('link').querySelector('svg'),
+				canvas.getAllByRole('link')[0].querySelector('svg'),
 			).toBeNull();
 		});
 	},
@@ -145,7 +145,7 @@ export const Disabled: Story = {
 	args: { ...Primary.args, disabled: true },
 	play: async ({ canvas, step }) => {
 		await step('is marked unavailable', async () => {
-			const link = canvas.getByRole('link');
+			const link = canvas.getAllByRole('link')[0];
 
 			await expect(link).toHaveAttribute('aria-disabled', 'true');
 			await expect(link).toHaveAttribute('tabindex', '-1');
@@ -164,7 +164,8 @@ export const Hover: Story = {
 	play: async ({ canvas, step }) => {
 		await step('is not the resting colour', async () => {
 			await expect(
-				getComputedStyle(canvas.getByRole('link')).borderBottomColor,
+				getComputedStyle(canvas.getAllByRole('link')[0])
+					.borderBottomColor,
 			).not.toBe(linkColour.primary);
 		});
 	},
@@ -193,7 +194,7 @@ export const Pressed: Story = {
 	play: async ({ canvas, step }) => {
 		await step('is neither the resting nor the hover colour', async () => {
 			const colour = getComputedStyle(
-				canvas.getByRole('link'),
+				canvas.getAllByRole('link')[0],
 			).borderBottomColor;
 
 			await expect(colour).not.toBe(linkColour.primary);

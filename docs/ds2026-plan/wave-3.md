@@ -793,6 +793,15 @@ Composes the existing CheckBox/Radio/Switch (post-W3a) — introduces no new con
 
 > **Superseded — the node below is stale; the linked-text variants shipped from the Button component instead (AG-20713).** `739:8560` ("Link") carries only `State{Default,Hover-Active}` and a `Colour{Blue,Black}` axis, and binds `color/info/*` (`#0d47a1`) + `color/foreground/*` — it references **no** `color/link/*` variable. The live spec is the **`Style=Linked text`** axis of the Button component ([node `362:2275`](https://www.figma.com/design/ZkQlQcJkF7NTnZomVrPRN5/AutoGuru-Design-System-2026?node-id=362-2275)), 72 variants of `Class{Primary,Secondary,Critical} × Size{Large,Small} × Icon{None,Left,Right} × State{Default,Hover,Pressed,Disabled}`. Three ways this block is wrong: (1) the proposed `linkColour?:'blue'|'black'` is not an axis that exists — it is `Class{Primary,Secondary,Critical}`; (2) there is no `color.button.linkedText.*` namespace, the shipped family is **`color.link.*`**, which already holds correct values in `lib/themes/base/tokens.ts`; (3) §6-Q3 no longer gates it. Read `docs/ds2026-specs/TextLink.md` and the component, not this block.
 
+<details>
+<summary><strong>ARCHIVED — the original W3c-P2 block (a)–(g). Do not follow.</strong></summary>
+
+> Kept only as a record of what was planned. Every instruction below is superseded
+> by the note above and by `docs/ds2026-specs/TextLink.md`: the `Colour{Blue,Black}`
+> axis, the `color.button.linkedText.*` namespace, the `linkColour`/`iconPosition`
+> props and the unchanged-default assumption were all either wrong or overtaken.
+> What shipped is the `color.link.*` ramp behind an opt-in `variant` prop.
+
 **(a) Current API** (`lib/components/TextLink/TextLink.tsx`): `children?`, `as?`, `muted?`(def false), `icon?`, plus typography passthroughs `color`/`colour`/`noWrap`/`size`/`strong`/`transform`/`weight`(def `'medium'` — `TextLink.tsx:65`; this block previously claimed `'semiBold'`, which was never what the code did). Styling `style()`+`sprinkles()`; inner `<Text colour={muted?'muted':'link'}>`.
 
 **(b) Figma axes** (`739:8560`): `State × Size × Icon{L,R,Only,None} × Colour{Blue,Black}`. Uses `color.button.linkedText.*` (master §3.1; NOTE those values are partly under §6-Q3 WIP — leave unconfirmed keys unassigned).
@@ -816,6 +825,9 @@ Composes the existing CheckBox/Radio/Switch (post-W3a) — introduces no new con
 **(g) Done-criteria:** additive linkColour/icon; base zero-diff; ds2026 link look; repoint gated on §6-Q3 (documented).
 
 **Prompts:** SPEC `[SPEC-BOILERPLATE]` + `Node 739:8560. Capture State×Size×Icon{L,R,Only,None}×Colour{Blue,Black}. Map to color.button.linkedText.* (§3.1) — FLAG that linkedText values are under §6-Q3; do not invent. docs/ds2026-specs/TextLink.md.` · BUILDER `[BUILDER-BOILERPLATE]` + `Package W3c-P2. Branch feature/ds2026-w3c-p2-textlink. Scope=TextLink. Add linkColour/iconPosition additively (defaults=current). Repoint typography.colour.link → color.button.linkedText.primary ONLY IF §6-Q3 has confirmed linkedText values in W1-P2; else keep legacy ref and note the block in the PR. INLINE_DATA=§3.1 + docs/ds2026-specs/TextLink.md.` · REVIEWER `[REVIEWER-BOILERPLATE]` + `Package-specific: default link look unchanged; linkedText repoint only if §6-Q3 resolved; no invented tokens.` · VERIFY `[VERIFY-BOILERPLATE]` (Scope=TextLink).
+
+
+</details>
 
 ### W3c-P3 — Tooltip (`798:3655`/`798:3461`) · Builder `sonnet`
 

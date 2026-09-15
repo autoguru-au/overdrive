@@ -131,9 +131,13 @@ already uses for its disabled state, so no new token is involved.
 
 ## Implemented API
 
-Additive on `lib/components/TextLink/`; with `variant` unset the established
-appearance is unchanged (`display: inline`, legacy `typography.colour.link`
-`#01C68C`, hover-only box-shadow underline, absolutely positioned icon).
+Linked text is opt-in on `lib/components/TextLink/`. With `variant` unset the
+established _shape_ is unchanged — `display: inline`, hover-only box-shadow
+underline, absolutely positioned icon — but the colour is not: the legacy label,
+resting underline and `muted` hover flood moved from `typography.colour.link`
+green600 `#01C68C` onto `color.link.primary` green800 `#18856F`. That takes the
+default link from 2.22:1 to 4.54:1 on white, clearing AA, and is why the change
+ships as a major.
 
 ```ts
 variant?: 'primary' | 'secondary' | 'critical';  // opts into linked text
