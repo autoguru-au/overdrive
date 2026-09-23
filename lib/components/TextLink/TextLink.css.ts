@@ -8,6 +8,15 @@ import { overdriveTokens as vars } from '../../themes/theme.css';
 
 globalLayer(LAYER_ORDER);
 
+export const focusRing = style({
+	selectors: {
+		'&:focus-visible, &[data-focus-visible], [data-focus-visible] &': {
+			outline: `solid ${vars.border.width['2']} ${vars.color.link.primary}`,
+			outlineOffset: vars.space['0'],
+		},
+	},
+});
+
 export const root = style({
 	boxShadow: `inset 0 0px 0 0 ${vars.color.link.primary}`,
 	transitionDelay: '0s',

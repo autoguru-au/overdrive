@@ -12,7 +12,6 @@ import React, {
 	type ReactNode,
 } from 'react';
 
-import { focusOutlineStyle } from '../../styles/focusOutline.css';
 import { sprinkles, type Sprinkles } from '../../styles/sprinkles.css';
 import {
 	namedTextStyleMap,
@@ -208,15 +207,40 @@ export const TextLink = forwardRef<HTMLAnchorElement, TextLinkProps>(
 					// The root carries the label's font size so the icon's `1em`
 					// tracks it.
 					sprinkles({ text: rootTextSize(size) }),
-					focusOutlineStyle,
+					styles.focusRing,
 				]
-			: [className, styles.root];
+			: [className, styles.root, styles.focusRing];
 
 		const isDisabled = isLinkedText && disabled;
+
+		const isActionOnly =
+			Component === undefined &&
+			props.href === undefined &&
+			props.onClick !== undefined;
+
+		const actionProps =
+			isActionOnly && !isDisabled
+				? {
+						role: props.role ?? 'button',
+						tabIndex: props.tabIndex ?? 0,
+						onKeyDown:
+							props.onKeyDown ??
+							((
+								event: React.KeyboardEvent<HTMLAnchorElement>,
+							) => {
+								if (event.key !== 'Enter' && event.key !== ' ')
+									return;
+
+								event.preventDefault();
+								event.currentTarget.click();
+							}),
+					}
+				: {};
 
 		const allProps = {
 			rel: props.rel ?? 'noopener noreferrer',
 			...props,
+			...actionProps,
 			...(isDisabled
 				? {
 						'aria-disabled': true as const,

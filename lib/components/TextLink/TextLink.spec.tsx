@@ -6,6 +6,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { Box } from '../Box/Box';
 
 import { TextLink } from './TextLink';
+import * as styles from './TextLink.css';
 
 describe('<TextLink />', () => {
 	it('should render as anchor by default', () => {
@@ -135,6 +136,68 @@ describe('<TextLink />', () => {
 			expect(link.querySelector('[data-od-component="icon"]')).toBe(
 				link.lastElementChild,
 			);
+		});
+	});
+
+	it.each([undefined, 'primary'] as const)(
+		'should carry the focus ring with variant=%s',
+		(variant) => {
+			render(
+				<TextLink href="/test" variant={variant}>
+					Link text
+				</TextLink>,
+			);
+
+			expect(screen.getByRole('link')).toHaveClass(styles.focusRing);
+		},
+	);
+
+	describe('without an href', () => {
+		it('should expose an action-only link as an operable button', () => {
+			render(<TextLink onClick={vi.fn()}>Terms</TextLink>);
+
+			const trigger = screen.getByRole('button');
+			expect(trigger.tagName).toBe('A');
+			expect(trigger).toHaveAttribute('tabindex', '0');
+		});
+
+		it.each(['Enter', ' '])('should activate on %s', (key) => {
+			const onClick = vi.fn();
+			render(<TextLink onClick={onClick}>Terms</TextLink>);
+
+			fireEvent.keyDown(screen.getByRole('button'), { key });
+			expect(onClick).toHaveBeenCalledTimes(1);
+		});
+
+		it('should ignore unrelated keys', () => {
+			const onClick = vi.fn();
+			render(<TextLink onClick={onClick}>Terms</TextLink>);
+
+			fireEvent.keyDown(screen.getByRole('button'), { key: 'a' });
+			expect(onClick).not.toHaveBeenCalled();
+		});
+
+		it('should keep a role the consumer already declared', () => {
+			render(
+				<TextLink
+					role="combobox"
+					aria-expanded={false}
+					onClick={vi.fn()}
+				>
+					2 tyres
+				</TextLink>,
+			);
+
+			const trigger = screen.getByRole('combobox');
+			expect(trigger).toHaveAttribute('tabindex', '0');
+		});
+
+		it('should leave a plain anchor alone when there is nothing to activate', () => {
+			render(<TextLink href="/test">Link text</TextLink>);
+
+			const link = screen.getByRole('link');
+			expect(link).not.toHaveAttribute('role');
+			expect(link).not.toHaveAttribute('tabindex');
 		});
 	});
 });
