@@ -26,6 +26,17 @@ the JS used a strict `< 640`; and the component JSDoc described the breakpoint
 as a tablet viewport width, when it is neither tablet (768px) nor a viewport
 query.
 
+`ToggleButton` also picks up the standard component attributes it was missing:
+`data-od-component="toggle-button"`, a `testId` prop emitted as `data-testid`,
+and an exported `ToggleButtonProps` type alongside `ToggleButtonsProps` in the
+barrels. Its inherited react-aria props are unchanged - nothing was redeclared
+or narrowed.
+
+Internally, react-aria's group ref now points at the element that actually
+carries `groupProps` rather than the outer container. The container element is
+still what `useContainerWidth` measures and still what a forwarded ref resolves
+to, so `data-od-component` and ref forwarding are unaffected.
+
 Additive and opt-in - the `auto` default reproduces current rendering, so no
 consumer changes. Downstream, `fleet-booking-tickets-edit` can drop the
 `globalStyle` rules in `onChargeLineControl.css.ts` that reach into this

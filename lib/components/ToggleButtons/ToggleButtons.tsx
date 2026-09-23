@@ -175,6 +175,7 @@ export const ToggleButtons = forwardRef<HTMLDivElement, ToggleButtonsProps>(
 		);
 
 		const internalRef = useRef<HTMLDivElement>(null);
+		const groupRef = useRef<HTMLDivElement>(null);
 		const containerWidth = useContainerWidth({
 			containerRef: internalRef as RefObject<HTMLElement>,
 		});
@@ -205,11 +206,7 @@ export const ToggleButtons = forwardRef<HTMLDivElement, ToggleButtonsProps>(
 		};
 
 		const state = useToggleGroupState(ariaProps);
-		const { groupProps } = useToggleButtonGroup(
-			ariaProps,
-			state,
-			internalRef,
-		);
+		const { groupProps } = useToggleButtonGroup(ariaProps, state, groupRef);
 
 		const { Component, componentProps } = useBox({
 			...boxProps,
@@ -230,6 +227,7 @@ export const ToggleButtons = forwardRef<HTMLDivElement, ToggleButtonsProps>(
 					})}
 					{...groupProps}
 					{...dataAttrs({ iconOnly, orientation })}
+					ref={groupRef}
 				>
 					<ToggleButtonGroupContext.Provider value={state}>
 						{children}
@@ -242,44 +240,57 @@ export const ToggleButtons = forwardRef<HTMLDivElement, ToggleButtonsProps>(
 
 ToggleButtons.displayName = 'ToggleButtons';
 
-export const ToggleButton = forwardRef<
-	HTMLButtonElement,
-	AriaToggleButtonGroupItemProps
->(({ children, ...props }, forwardedRef) => {
-	const internalRef = useRef<HTMLButtonElement>(null);
-	const state = React.useContext(ToggleButtonGroupContext);
+/**
+ * A single button within a {@link ToggleButtons} group. Must be rendered inside
+ * `ToggleButtons`, and must carry an `id` - the group uses it for default
+ * selection and reports it through `onSelectionChange`.
+ *
+ * Accepts every prop from react-aria's `AriaToggleButtonGroupItemProps`,
+ * notably `id`, `isDisabled` and `aria-label`.
+ */
+export interface ToggleButtonProps
+	extends AriaToggleButtonGroupItemProps,
+		TestIdProp {}
 
-	invariant(
-		state !== null,
-		'ToggleButton: Must be used within ToggleButtons component',
-	);
+export const ToggleButton = forwardRef<HTMLButtonElement, ToggleButtonProps>(
+	({ children, testId, ...props }, forwardedRef) => {
+		const internalRef = useRef<HTMLButtonElement>(null);
+		const state = React.useContext(ToggleButtonGroupContext);
 
-	invariant(
-		props.id !== undefined,
-		'ToggleButton: Missing required "id" prop',
-	);
+		invariant(
+			state !== null,
+			'ToggleButton: Must be used within ToggleButtons component',
+		);
 
-	const { buttonProps, isSelected } = useToggleButtonGroupItem(
-		props,
-		state,
-		internalRef,
-	);
+		invariant(
+			props.id !== undefined,
+			'ToggleButton: Missing required "id" prop',
+		);
 
-	const { isDisabled } = props;
+		const { buttonProps, isSelected } = useToggleButtonGroupItem(
+			props,
+			state,
+			internalRef,
+		);
 
-	return (
-		<button
-			{...buttonProps}
-			className={styles.toggleButton}
-			{...dataAttrs({
-				selected: isSelected,
-				disabled: isDisabled,
-			})}
-			ref={mergeRefs([internalRef, forwardedRef])}
-		>
-			{children}
-		</button>
-	);
-});
+		const { isDisabled } = props;
+
+		return (
+			<button
+				{...buttonProps}
+				className={styles.toggleButton}
+				{...dataAttrs({
+					odComponent: 'toggle-button',
+					selected: isSelected,
+					disabled: isDisabled,
+				})}
+				data-testid={testId}
+				ref={mergeRefs([internalRef, forwardedRef])}
+			>
+				{children}
+			</button>
+		);
+	},
+);
 
 ToggleButton.displayName = 'ToggleButton';

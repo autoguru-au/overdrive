@@ -153,6 +153,7 @@ export { useToast, ToastProvider } from './Toaster';
 export {
 	ToggleButtons,
 	ToggleButton,
+	type ToggleButtonProps,
 	type ToggleButtonsProps,
 } from './ToggleButtons';
 export {

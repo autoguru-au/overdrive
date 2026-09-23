@@ -206,6 +206,9 @@ describe('ToggleButtons', () => {
 	});
 
 	describe('orientation', () => {
+		const ariaOrientation = 'aria-orientation';
+		const dataOrientation = 'data-orientation';
+
 		const renderGroup = (props: Partial<ToggleButtonsProps> = {}) => {
 			render(
 				<ToggleButtons defaultSelectedKeys={['none']} {...props}>
@@ -220,22 +223,22 @@ describe('ToggleButtons', () => {
 		it('defaults to auto and exposes it as a data attribute', () => {
 			const group = renderGroup();
 
-			expect(group).toHaveAttribute('data-orientation', 'auto');
-			expect(group).toHaveAttribute('aria-orientation', 'horizontal');
+			expect(group).toHaveAttribute(dataOrientation, 'auto');
+			expect(group).toHaveAttribute(ariaOrientation, 'horizontal');
 		});
 
 		it('honours an explicit horizontal orientation', () => {
 			const group = renderGroup({ orientation: 'horizontal' });
 
-			expect(group).toHaveAttribute('data-orientation', 'horizontal');
-			expect(group).toHaveAttribute('aria-orientation', 'horizontal');
+			expect(group).toHaveAttribute(dataOrientation, 'horizontal');
+			expect(group).toHaveAttribute(ariaOrientation, 'horizontal');
 		});
 
 		it('honours an explicit vertical orientation', () => {
 			const group = renderGroup({ orientation: 'vertical' });
 
-			expect(group).toHaveAttribute('data-orientation', 'vertical');
-			expect(group).toHaveAttribute('aria-orientation', 'vertical');
+			expect(group).toHaveAttribute(dataOrientation, 'vertical');
+			expect(group).toHaveAttribute(ariaOrientation, 'vertical');
 		});
 
 		it('navigates with up and down arrows when vertical', async () => {
@@ -259,7 +262,7 @@ describe('ToggleButtons', () => {
 
 			try {
 				expect(renderGroup()).toHaveAttribute(
-					'aria-orientation',
+					ariaOrientation,
 					'vertical',
 				);
 			} finally {
@@ -273,8 +276,8 @@ describe('ToggleButtons', () => {
 			try {
 				const group = renderGroup({ orientation: 'horizontal' });
 
-				expect(group).toHaveAttribute('data-orientation', 'horizontal');
-				expect(group).toHaveAttribute('aria-orientation', 'horizontal');
+				expect(group).toHaveAttribute(dataOrientation, 'horizontal');
+				expect(group).toHaveAttribute(ariaOrientation, 'horizontal');
 			} finally {
 				restore();
 			}
@@ -290,7 +293,7 @@ describe('ToggleButtons', () => {
 				});
 
 				expect(group).toHaveAttribute('data-icon-only', '');
-				expect(group).toHaveAttribute('aria-orientation', 'horizontal');
+				expect(group).toHaveAttribute(ariaOrientation, 'horizontal');
 			} finally {
 				restore();
 			}
