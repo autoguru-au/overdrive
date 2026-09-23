@@ -1,4 +1,9 @@
-import { createContainer, globalLayer, style } from '@vanilla-extract/css';
+import {
+	createContainer,
+	globalLayer,
+	style,
+	type StyleRule,
+} from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 import { elementReset } from '../../styles/elementReset.css';
@@ -24,6 +29,9 @@ export const toggleButtonsContainerStyle = style({
 	},
 });
 
+const COLUMNS_ROW = 'repeat(auto-fit, minmax(0, 1fr))';
+const COLUMNS_STACKED = '1fr';
+
 export const toggleButtonGroup = recipe({
 	base: [
 		{
@@ -31,19 +39,40 @@ export const toggleButtonGroup = recipe({
 				[cssLayerComponent]: {
 					color: vars.color.gamut.gray[500],
 					display: 'grid',
-					gridTemplateColumns: '1fr',
-					'@container': {
-						[`${toggleButtonsContainer} (min-width: ${WIDTH_COMPACT_ORIENTATION}px)`]:
-							{
-								gridTemplateColumns:
-									'repeat(auto-fit, minmax(0, 1fr))',
-							},
-					},
 				},
 			},
 		},
 	],
 	variants: {
+		orientation: {
+			auto: {
+				'@layer': {
+					[cssLayerComponent]: {
+						gridTemplateColumns: COLUMNS_STACKED,
+						'@container': {
+							[`${toggleButtonsContainer} (min-width: ${WIDTH_COMPACT_ORIENTATION}px)`]:
+								{
+									gridTemplateColumns: COLUMNS_ROW,
+								},
+						},
+					},
+				},
+			},
+			horizontal: {
+				'@layer': {
+					[cssLayerComponent]: {
+						gridTemplateColumns: COLUMNS_ROW,
+					},
+				},
+			},
+			vertical: {
+				'@layer': {
+					[cssLayerComponent]: {
+						gridTemplateColumns: COLUMNS_STACKED,
+					},
+				},
+			},
+		},
 		iconOnly: {
 			true: {
 				'@layer': {
@@ -58,10 +87,32 @@ export const toggleButtonGroup = recipe({
 	},
 	defaultVariants: {
 		iconOnly: false,
+		orientation: 'auto',
 	},
 });
 
-const selectorNotIconOnly = `${toggleButtonGroup.classNames.base}:not([data-icon-only])`;
+const groupNotIconOnly = `${toggleButtonGroup.classNames.base}:not([data-icon-only])`;
+const selectorAuto = `${groupNotIconOnly}[data-orientation='auto']`;
+const selectorVertical = `${groupNotIconOnly}[data-orientation='vertical']`;
+
+const stackedBorders = (groupSelector: string): StyleRule['selectors'] => ({
+	[`${groupSelector} &`]: {
+		borderLeftStyle: 'solid',
+	},
+	[`${groupSelector} &+&`]: {
+		borderTopStyle: 'none',
+	},
+	[`${groupSelector} &:first-child`]: {
+		borderBottomLeftRadius: 0,
+		borderTopLeftRadius: vars.border.radius.md,
+		borderTopRightRadius: vars.border.radius.md,
+	},
+	[`${groupSelector} &:last-child`]: {
+		borderBottomLeftRadius: vars.border.radius.md,
+		borderBottomRightRadius: vars.border.radius.md,
+		borderTopRightRadius: 0,
+	},
+});
 
 export const toggleButton = style([
 	elementReset.button,
@@ -123,31 +174,12 @@ export const toggleButton = style([
 						cursor: 'not-allowed',
 						opacity: 0.6,
 					},
+					...stackedBorders(selectorVertical),
 				},
-				// Container-based responsive styles for mobile stacking (only for non-iconOnly)
 				'@container': {
-					[`${toggleButtonsContainer} (max-width: ${WIDTH_COMPACT_ORIENTATION}px)`]:
+					[`${toggleButtonsContainer} (max-width: ${WIDTH_COMPACT_ORIENTATION - 0.02}px)`]:
 						{
-							selectors: {
-								[`${selectorNotIconOnly} &`]: {
-									borderLeftStyle: 'solid',
-								},
-								[`${selectorNotIconOnly} &+&`]: {
-									borderTopStyle: 'none',
-								},
-								[`${selectorNotIconOnly} &:first-child`]: {
-									borderBottomLeftRadius: 0,
-									borderTopLeftRadius: vars.border.radius.md,
-									borderTopRightRadius: vars.border.radius.md,
-								},
-								[`${selectorNotIconOnly} &:last-child`]: {
-									borderBottomLeftRadius:
-										vars.border.radius.md,
-									borderBottomRightRadius:
-										vars.border.radius.md,
-									borderTopRightRadius: 0,
-								},
-							},
+							selectors: stackedBorders(selectorAuto),
 						},
 				},
 			},

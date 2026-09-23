@@ -4,10 +4,22 @@ import { userEvent } from '@testing-library/user-event';
 import React, { createRef } from 'react';
 import { describe, it, expect, vi } from 'vitest';
 
-import { ToggleButtons, ToggleButton } from './ToggleButtons';
+import {
+	ToggleButtons,
+	ToggleButton,
+	type ToggleButtonsProps,
+} from './ToggleButtons';
 import * as stories from './ToggleButtons.stories';
 
 const { Standard, IconOnly, InteractionTest } = composeStories(stories);
+
+const mockContainerWidth = (width: number) => {
+	const spy = vi
+		.spyOn(HTMLElement.prototype, 'getBoundingClientRect')
+		.mockReturnValue({ width } as DOMRect);
+
+	return () => spy.mockRestore();
+};
 
 describe('ToggleButtons', () => {
 	it('renders with default props and expected structure', () => {
@@ -191,6 +203,98 @@ describe('ToggleButtons', () => {
 
 		// Should remain selected due to disallowEmptySelection
 		expect(buttons[0]).toHaveAttribute('aria-checked', 'true');
+	});
+
+	describe('orientation', () => {
+		const renderGroup = (props: Partial<ToggleButtonsProps> = {}) => {
+			render(
+				<ToggleButtons defaultSelectedKeys={['none']} {...props}>
+					<ToggleButton id="none">None</ToggleButton>
+					<ToggleButton id="full">Full</ToggleButton>
+				</ToggleButtons>,
+			);
+
+			return screen.getByRole('radiogroup');
+		};
+
+		it('defaults to auto and exposes it as a data attribute', () => {
+			const group = renderGroup();
+
+			expect(group).toHaveAttribute('data-orientation', 'auto');
+			expect(group).toHaveAttribute('aria-orientation', 'horizontal');
+		});
+
+		it('honours an explicit horizontal orientation', () => {
+			const group = renderGroup({ orientation: 'horizontal' });
+
+			expect(group).toHaveAttribute('data-orientation', 'horizontal');
+			expect(group).toHaveAttribute('aria-orientation', 'horizontal');
+		});
+
+		it('honours an explicit vertical orientation', () => {
+			const group = renderGroup({ orientation: 'vertical' });
+
+			expect(group).toHaveAttribute('data-orientation', 'vertical');
+			expect(group).toHaveAttribute('aria-orientation', 'vertical');
+		});
+
+		it('navigates with up and down arrows when vertical', async () => {
+			const user = userEvent.setup();
+			renderGroup({ orientation: 'vertical' });
+
+			const buttons = screen.getAllByRole('radio');
+
+			await user.tab();
+			expect(buttons[0]).toHaveFocus();
+
+			await user.keyboard('{ArrowDown}');
+			expect(buttons[1]).toHaveFocus();
+
+			await user.keyboard('{ArrowUp}');
+			expect(buttons[0]).toHaveFocus();
+		});
+
+		it('stacks under a narrow container when auto', () => {
+			const restore = mockContainerWidth(300);
+
+			try {
+				expect(renderGroup()).toHaveAttribute(
+					'aria-orientation',
+					'vertical',
+				);
+			} finally {
+				restore();
+			}
+		});
+
+		it('stays horizontal under a narrow container when explicitly set', () => {
+			const restore = mockContainerWidth(300);
+
+			try {
+				const group = renderGroup({ orientation: 'horizontal' });
+
+				expect(group).toHaveAttribute('data-orientation', 'horizontal');
+				expect(group).toHaveAttribute('aria-orientation', 'horizontal');
+			} finally {
+				restore();
+			}
+		});
+
+		it('ignores the compact breakpoint for iconOnly groups', () => {
+			const restore = mockContainerWidth(300);
+
+			try {
+				const group = renderGroup({
+					'aria-label': 'view',
+					iconOnly: true,
+				});
+
+				expect(group).toHaveAttribute('data-icon-only', '');
+				expect(group).toHaveAttribute('aria-orientation', 'horizontal');
+			} finally {
+				restore();
+			}
+		});
 	});
 
 	describe('ref forwarding', () => {

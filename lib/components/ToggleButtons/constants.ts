@@ -1,10 +1,12 @@
 /**
- * Breakpoint width (in pixels) for ToggleButtons responsive layout.
+ * Container width (in pixels) at which `ToggleButtons` switches layout when
+ * `orientation` is `auto`.
  *
- * Below this width, toggle buttons stack vertically in a single column.
- * Above this width, toggle buttons are laid out horizontally in a row.
+ * Below this width the buttons stack vertically in a single column; at or above
+ * it they are laid out horizontally in a row.
  *
- * **Note:** This breakpoint only applies to non-iconOnly layouts. When `iconOnly` is true,
- * buttons are always displayed in a horizontal inline layout regardless of container width.
+ * **Note:** This only applies to `orientation="auto"` on non-iconOnly layouts.
+ * An explicit `orientation` of `horizontal` or `vertical` is honoured at every
+ * container width, and `iconOnly` groups are always laid out inline.
  */
 export const WIDTH_COMPACT_ORIENTATION = 640;

@@ -25,7 +25,7 @@ import * as styles from './ToggleButtons.css';
 import { WIDTH_COMPACT_ORIENTATION } from './constants';
 
 export interface ToggleButtonsProps
-	extends AriaToggleButtonGroupProps,
+	extends Omit<AriaToggleButtonGroupProps, 'orientation'>,
 		UseBoxProps,
 		TestIdProp {
 	/**
@@ -50,8 +50,14 @@ export interface ToggleButtonsProps
 	onSelectionChange?: (keys: Set<Key>) => void;
 	/** Whether all toggle buttons are disabled. */
 	isDisabled?: boolean;
-	/** (_Not in use_) The orientation of the toggle button group. @default 'horizontal' */
-	orientation?: 'horizontal' | 'vertical';
+	/**
+	 * Layout direction of the button group.
+	 * - `auto` - horizontal, stacking vertically when the container is narrower
+	 *   than 640px. Not applied when `iconOnly`.
+	 * - `horizontal` / `vertical` - always that direction, at any container width.
+	 * @default 'auto'
+	 */
+	orientation?: 'auto' | 'horizontal' | 'vertical';
 }
 
 const ToggleButtonGroupContext = React.createContext<ToggleGroupState | null>(
@@ -75,7 +81,9 @@ const ToggleButtonGroupContext = React.createContext<ToggleGroupState | null>(
  * - `isDisabled`: Disables the entire group
  *
  * ### Responsive Behaviour
- * - For toggle buttons that are not `iconOnly` the layout will be vertical below tablet viewport width
+ * - `orientation` (**default**: `auto`) - with `auto`, a group that is not `iconOnly` stacks
+ *   vertically once its own container is narrower than 640px. Pass `horizontal` or `vertical`
+ *   to pin the direction at any container width.
  *
  * ### Accessibility
  * - **Group Label**: When the button group has a label, associate it with `aria-labelledby` to and `id` on the heading text.
@@ -141,7 +149,7 @@ export const ToggleButtons = forwardRef<HTMLDivElement, ToggleButtonsProps>(
 			children,
 			disallowEmptySelection = true,
 			iconOnly = false,
-			orientation: incomingOrientation,
+			orientation = 'auto',
 			selectionMode = 'single',
 
 			...withBoxProps
@@ -171,14 +179,16 @@ export const ToggleButtons = forwardRef<HTMLDivElement, ToggleButtonsProps>(
 			containerRef: internalRef as RefObject<HTMLElement>,
 		});
 
-		// Determine orientation based on container width (not iconOnly)
+		const isAutoOrientation = orientation === 'auto';
 		const hasCompactLayout =
+			isAutoOrientation &&
 			!iconOnly &&
 			containerWidth > 0 &&
 			containerWidth < WIDTH_COMPACT_ORIENTATION;
-		const orientation = hasCompactLayout
-			? 'vertical'
-			: (incomingOrientation ?? 'horizontal');
+		const autoOrientation = hasCompactLayout ? 'vertical' : 'horizontal';
+		const ariaOrientation = isAutoOrientation
+			? autoOrientation
+			: orientation;
 
 		const ariaProps: AriaToggleButtonGroupProps = {
 			disallowEmptySelection,
@@ -186,7 +196,7 @@ export const ToggleButtons = forwardRef<HTMLDivElement, ToggleButtonsProps>(
 			isDisabled,
 			selectionMode,
 			onSelectionChange,
-			orientation,
+			orientation: ariaOrientation,
 			selectedKeys,
 			'aria-describedby': ariaDescribedBy,
 			'aria-details': ariaDetails,
@@ -214,9 +224,12 @@ export const ToggleButtons = forwardRef<HTMLDivElement, ToggleButtonsProps>(
 				ref={mergeRefs([internalRef, forwardedRef])}
 			>
 				<div
-					className={styles.toggleButtonGroup({ iconOnly })}
+					className={styles.toggleButtonGroup({
+						iconOnly,
+						orientation,
+					})}
 					{...groupProps}
-					{...dataAttrs({ iconOnly })}
+					{...dataAttrs({ iconOnly, orientation })}
 				>
 					<ToggleButtonGroupContext.Provider value={state}>
 						{children}

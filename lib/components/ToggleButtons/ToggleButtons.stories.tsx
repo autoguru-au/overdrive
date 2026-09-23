@@ -10,6 +10,7 @@ import { VisuallyHidden } from '../VisuallyHidden/VisuallyHidden';
 import { ToggleButtons, ToggleButton } from './ToggleButtons';
 
 const ICON_SIZE = 'medium';
+const NARROW_CONTAINER = { maxWidth: 180, width: '100%' } as const;
 
 const meta = {
 	title: 'Primitives/Toggle Buttons',
@@ -22,6 +23,7 @@ const meta = {
 		iconOnly: false,
 		isDisabled: false,
 		onSelectionChange: fn(),
+		orientation: 'auto',
 		selectedKeys: undefined,
 		testId: 'demo-toggle-buttons',
 	},
@@ -30,7 +32,8 @@ const meta = {
 			control: false,
 		},
 		orientation: {
-			control: false,
+			control: 'inline-radio',
+			options: ['auto', 'horizontal', 'vertical'],
 		},
 		selectionMode: {
 			control: false,
@@ -146,8 +149,88 @@ export const ExampleUse: Story = {
 	},
 };
 
+/**
+ * `orientation` defaults to `auto`: a group stacks vertically once its own container is
+ * narrower than 640px, and sits in a row above that. Pass `horizontal` or `vertical` to pin
+ * the direction at any container width - useful for a compact two-option toggle in a narrow
+ * column, where `auto` would otherwise stack it.
+ */
+export const Orientation: Story = {
+	args: {
+		testId: undefined,
+	},
+	argTypes: {
+		orientation: {
+			control: false,
+		},
+	},
+	render: (args) => {
+		return (
+			<div>
+				<Heading as="h3" size="5" mb="3" id="orientation-auto">
+					auto, in a 180px container - stacks
+				</Heading>
+				<div style={NARROW_CONTAINER}>
+					<ToggleButtons
+						{...args}
+						aria-labelledby="orientation-auto"
+						defaultSelectedKeys={['none']}
+						orientation="auto"
+					>
+						<ToggleButton id="none">None</ToggleButton>
+						<ToggleButton id="full">Full</ToggleButton>
+					</ToggleButtons>
+				</div>
+
+				<Heading
+					as="h3"
+					size="5"
+					mt="7"
+					mb="3"
+					id="orientation-horizontal"
+				>
+					horizontal, in the same 180px container - stays a row
+				</Heading>
+				<div style={NARROW_CONTAINER}>
+					<ToggleButtons
+						{...args}
+						aria-labelledby="orientation-horizontal"
+						defaultSelectedKeys={['none']}
+						orientation="horizontal"
+					>
+						<ToggleButton id="none">None</ToggleButton>
+						<ToggleButton id="full">Full</ToggleButton>
+					</ToggleButtons>
+				</div>
+
+				<Heading
+					as="h3"
+					size="5"
+					mt="7"
+					mb="3"
+					id="orientation-vertical"
+				>
+					vertical, in a wide container - stays stacked
+				</Heading>
+				<ToggleButtons
+					{...args}
+					aria-labelledby="orientation-vertical"
+					defaultSelectedKeys={['weekly']}
+					orientation="vertical"
+				>
+					<ToggleButton id="daily">Daily</ToggleButton>
+					<ToggleButton id="weekly">Weekly</ToggleButton>
+					<ToggleButton id="monthly">Monthly</ToggleButton>
+				</ToggleButtons>
+			</div>
+		);
+	},
+};
+
 export const InteractionTest: Story = {
-	args: {},
+	args: {
+		orientation: 'horizontal',
+	},
 	render: (args) => {
 		return (
 			<ToggleButtons
@@ -195,36 +278,19 @@ export const InteractionTest: Story = {
 		});
 
 		await step('Test keyboard navigation', async () => {
-			// Test tab navigation to focus first button
 			await expect(buttons[1]).toHaveFocus();
 
-			// Detect orientation to use appropriate arrow keys
-			const orientation = radiogroup.getAttribute('aria-orientation');
-			const isVertical = orientation === 'vertical';
+			await user.keyboard('{ArrowRight}');
+			await expect(buttons[2]).toHaveFocus();
 
-			if (isVertical) {
-				// Vertical layout: use up/down arrows
-				await user.keyboard('{ArrowDown}');
-				await expect(buttons[2]).toHaveFocus();
-
-				await user.keyboard('{ArrowUp}{ArrowUp}');
-				await expect(buttons[0]).toHaveFocus();
-			} else {
-				// Horizontal layout: use left/right arrows
-				await user.keyboard('{ArrowRight}');
-				await expect(buttons[2]).toHaveFocus();
-
-				await user.keyboard('{ArrowLeft}{ArrowLeft}');
-				await expect(buttons[0]).toHaveFocus();
-			}
+			await user.keyboard('{ArrowLeft}{ArrowLeft}');
+			await expect(buttons[0]).toHaveFocus();
 		});
 
 		await step('Verify accessibility attributes', async () => {
-			// Verify radiogroup structure
-			const orientation = radiogroup.getAttribute('aria-orientation');
 			await expect(radiogroup).toHaveAttribute(
 				'aria-orientation',
-				orientation, // Will be 'horizontal' or 'vertical' depending on viewport
+				'horizontal',
 			);
 			await expect(radiogroup).toHaveAttribute(
 				'aria-label',
