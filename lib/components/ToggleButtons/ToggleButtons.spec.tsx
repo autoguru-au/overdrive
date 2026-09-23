@@ -302,6 +302,43 @@ describe('ToggleButtons', () => {
 		});
 	});
 
+	describe('ToggleButton attributes', () => {
+		it('stamps each button with its component attribute', () => {
+			render(
+				<ToggleButtons defaultSelectedKeys={['none']}>
+					<ToggleButton id="none">None</ToggleButton>
+					<ToggleButton id="full">Full</ToggleButton>
+				</ToggleButtons>,
+			);
+
+			for (const button of screen.getAllByRole('radio')) {
+				expect(button).toHaveAttribute(
+					'data-od-component',
+					'toggle-button',
+				);
+			}
+		});
+
+		it('renders testId as a data-testid on the button', () => {
+			render(
+				<ToggleButtons defaultSelectedKeys={['none']}>
+					<ToggleButton id="none" testId="none-toggle">
+						None
+					</ToggleButton>
+					<ToggleButton id="full">Full</ToggleButton>
+				</ToggleButtons>,
+			);
+
+			expect(screen.getByTestId('none-toggle')).toHaveAttribute(
+				'data-od-component',
+				'toggle-button',
+			);
+			expect(screen.getAllByRole('radio')[1]).not.toHaveAttribute(
+				'data-testid',
+			);
+		});
+	});
+
 	describe('ref forwarding', () => {
 		it('forwards ref correctly for ToggleButtons container', () => {
 			const ref = createRef<HTMLDivElement>();

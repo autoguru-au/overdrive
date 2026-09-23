@@ -12,6 +12,21 @@ import { ToggleButtons, ToggleButton } from './ToggleButtons';
 const ICON_SIZE = 'medium';
 const NARROW_CONTAINER = { maxWidth: 180, width: '100%' } as const;
 
+// compare the first two buttons' boxes: a row shares a top edge, a stack shares
+// a left edge
+const DATA_ORIENTATION = 'data-orientation';
+const ARIA_ORIENTATION = 'aria-orientation';
+
+const laysOutAs = (group: HTMLElement) => {
+	const buttons = group.querySelectorAll('button');
+	const first = buttons[0].getBoundingClientRect();
+	const second = buttons[1].getBoundingClientRect();
+
+	return Math.abs(first.top - second.top) < 1 && second.left > first.left
+		? 'row'
+		: 'column';
+};
+
 const meta = {
 	title: 'Primitives/Toggle Buttons',
 	tags: ['new'],
@@ -224,6 +239,43 @@ export const Orientation: Story = {
 				</ToggleButtons>
 			</div>
 		);
+	},
+	play: async ({ canvasElement, step }) => {
+		const canvas = within(canvasElement);
+		const groups = canvas.getAllByRole('radiogroup');
+
+		await step('auto stacks in a narrow container', async () => {
+			await expect(groups[0]).toHaveAttribute(DATA_ORIENTATION, 'auto');
+			await expect(groups[0]).toHaveAttribute(
+				ARIA_ORIENTATION,
+				'vertical',
+			);
+			await expect(laysOutAs(groups[0])).toBe('column');
+		});
+
+		await step('horizontal stays a row at the same width', async () => {
+			await expect(groups[1]).toHaveAttribute(
+				DATA_ORIENTATION,
+				'horizontal',
+			);
+			await expect(groups[1]).toHaveAttribute(
+				ARIA_ORIENTATION,
+				'horizontal',
+			);
+			await expect(laysOutAs(groups[1])).toBe('row');
+		});
+
+		await step('vertical stays stacked in a wide container', async () => {
+			await expect(groups[2]).toHaveAttribute(
+				DATA_ORIENTATION,
+				'vertical',
+			);
+			await expect(groups[2]).toHaveAttribute(
+				ARIA_ORIENTATION,
+				'vertical',
+			);
+			await expect(laysOutAs(groups[2])).toBe('column');
+		});
 	},
 };
 

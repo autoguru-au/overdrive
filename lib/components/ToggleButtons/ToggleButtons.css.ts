@@ -4,7 +4,7 @@ import {
 	style,
 	type StyleRule,
 } from '@vanilla-extract/css';
-import { recipe } from '@vanilla-extract/recipes';
+import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
 import { elementReset } from '../../styles/elementReset.css';
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
@@ -50,7 +50,7 @@ export const toggleButtonGroup = recipe({
 					[cssLayerComponent]: {
 						gridTemplateColumns: COLUMNS_STACKED,
 						'@container': {
-							[`${toggleButtonsContainer} (min-width: ${WIDTH_COMPACT_ORIENTATION}px)`]:
+							[`${toggleButtonsContainer} (width >= ${WIDTH_COMPACT_ORIENTATION}px)`]:
 								{
 									gridTemplateColumns: COLUMNS_ROW,
 								},
@@ -90,6 +90,18 @@ export const toggleButtonGroup = recipe({
 		orientation: 'auto',
 	},
 });
+
+type ToggleButtonGroupVariants = NonNullable<
+	RecipeVariants<typeof toggleButtonGroup>
+>;
+
+/**
+ * Layout direction of a `ToggleButtons` group: `auto`, `horizontal` or
+ * `vertical`. Derived from the recipe, so adding a variant widens this too.
+ */
+export type ToggleButtonsOrientation = NonNullable<
+	ToggleButtonGroupVariants['orientation']
+>;
 
 const groupNotIconOnly = `${toggleButtonGroup.classNames.base}:not([data-icon-only])`;
 const selectorAuto = `${groupNotIconOnly}[data-orientation='auto']`;
@@ -177,7 +189,7 @@ export const toggleButton = style([
 					...stackedBorders(selectorVertical),
 				},
 				'@container': {
-					[`${toggleButtonsContainer} (max-width: ${WIDTH_COMPACT_ORIENTATION - 0.02}px)`]:
+					[`${toggleButtonsContainer} (width < ${WIDTH_COMPACT_ORIENTATION}px)`]:
 						{
 							selectors: stackedBorders(selectorAuto),
 						},
