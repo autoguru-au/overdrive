@@ -65,8 +65,8 @@ const resolve = (name: string): string => {
 /**
  * The legacy link vars a surface repoints, in declaration order. `onLink` is
  * excluded because it holds the colour drawn *on* a link rather than the link
- * itself, and `color.link.primary` because it follows its own
- * `primaryOnLight`/`primaryOnDark` pair rather than `interactive.link*`.
+ * itself, and the `color.link.*` family because each of those follows its own
+ * `*OnLight`/`*OnDark` pair rather than `interactive.link*`.
  */
 const linkVarsOf = (map: Record<string, string>) =>
 	Object.entries(map)
@@ -74,6 +74,7 @@ const linkVarsOf = (map: Record<string, string>) =>
 			([name]) =>
 				name !== overdriveTokens.color.interactive.onLink &&
 				name !== overdriveTokens.color.link.primary &&
+				name !== overdriveTokens.color.link.secondary &&
 				name !== overdriveTokens.color.link.hover &&
 				name !== overdriveTokens.color.link.pressed,
 		)
@@ -105,6 +106,7 @@ describe('surface-aware link vars', () => {
 			overdriveTokens.color.interactive.link,
 			overdriveTokens.color.interactive.onLink,
 			overdriveTokens.color.link.primary,
+			overdriveTokens.color.link.secondary,
 			overdriveTokens.color.link.hover,
 			overdriveTokens.color.link.pressed,
 		]);
@@ -119,6 +121,17 @@ describe('surface-aware link vars', () => {
 
 		expect(darkSurfaceLinkVars[link.primary]).toBe(link.primaryOnDark);
 		expect(lightSurfaceLinkVars[link.primary]).toBe(link.primaryOnLight);
+	});
+
+	// `secondary` is body ink, and body ink is gray900 on a pale page and the
+	// fill itself on a dark one — unrepointed it measured 1:1 on gray900.
+	it('points secondary linked text at the surface too', () => {
+		const { link } = overdriveTokens.color;
+
+		expect(darkSurfaceLinkVars[link.secondary]).toBe(link.secondaryOnDark);
+		expect(lightSurfaceLinkVars[link.secondary]).toBe(
+			link.secondaryOnLight,
+		);
 	});
 
 	// A state earns its contrast by moving away from the fill it sits on, which
@@ -152,6 +165,15 @@ describe('surface-aware link vars', () => {
 			});
 			expect(passesAA(link.primaryOnDark, surface.hard)).toEqual({
 				colour: link.primaryOnDark,
+				passes: true,
+			});
+
+			expect(passesAA(link.secondaryOnLight, surface.page)).toEqual({
+				colour: link.secondaryOnLight,
+				passes: true,
+			});
+			expect(passesAA(link.secondaryOnDark, surface.hard)).toEqual({
+				colour: link.secondaryOnDark,
 				passes: true,
 			});
 		},

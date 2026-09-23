@@ -36,13 +36,10 @@ This is an accessibility fix rather than a restyle, but it is visible on every
 link in every consuming app, so it ships as a major. Nothing needs to change at
 the call site.
 
-Also known, and not addressed here — `color.link.*` is a single light-surface
-ramp, so linked text inside a dark `Box` does not meet AA:
+`color.link.primary`, `secondary`, `hover` and `pressed` are surface-aware: a
+painted `Box` repoints each at the value that suits its own fill, so linked text
+inside a dark `Box` clears AA without an opt-in.
 
-| token          | on `#212338` |
-| -------------- | ------------ |
-| `link.primary` | 3.39:1       |
-
-The existing surface plumbing repoints `colours.foreground.link` and
-`typography.colour.link`, but not `color.link.*`. Prefer the default appearance
-on dark surfaces until that ramp is surface-aware.
+`critical` is the exception — red-700 `#B51E1A` is 2.32:1 on `#212338`, and it
+has no dark counterpart yet. Prefer `primary` or the default appearance for a
+destructive link on a painted dark surface.

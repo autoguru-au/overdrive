@@ -16,6 +16,7 @@ const linkVarsPointingAt = (
 	link: string,
 	onLink: string,
 	linkedText: string,
+	linkedTextSecondary: string,
 	linkedTextHover: string,
 	linkedTextPressed: string,
 ) => ({
@@ -34,6 +35,10 @@ const linkVarsPointingAt = (
 	// green — `color.link.primary` is 3.39:1 there, where the legacy token it
 	// replaced was surface-corrected and cleared AA.
 	[tokens.color.link.primary]: linkedText,
+	// `secondary` is body ink rather than a brand colour, and body ink flips
+	// with the surface: gray900 is the label on a pale page and the fill on a
+	// dark one, where it measures 1:1 and the link disappears.
+	[tokens.color.link.secondary]: linkedTextSecondary,
 	// The states have to follow the surface for the same reason the resting
 	// colour does. A state gains contrast by moving away from what it sits on,
 	// and "away" is darker on a pale page and lighter on a dark one — so a
@@ -48,6 +53,7 @@ export const darkSurfaceLinkVars = linkVarsPointingAt(
 	tokens.color.interactive.linkOnDark,
 	tokens.color.foreground.primary,
 	tokens.color.link.primaryOnDark,
+	tokens.color.link.secondaryOnDark,
 	tokens.color.link.hoverOnDark,
 	tokens.color.link.pressedOnDark,
 );
@@ -56,6 +62,7 @@ export const lightSurfaceLinkVars = linkVarsPointingAt(
 	tokens.color.interactive.linkOnLight,
 	tokens.color.foreground.reverse,
 	tokens.color.link.primaryOnLight,
+	tokens.color.link.secondaryOnLight,
 	tokens.color.link.hoverOnLight,
 	tokens.color.link.pressedOnLight,
 );
