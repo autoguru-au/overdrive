@@ -14,9 +14,15 @@ a control that no keyboard user could operate. Where there is no `href` and an
 `onClick` is present, the anchor now carries `role="button"`, `tabIndex={0}` and
 an Enter/Space keydown handler.
 
-Each default defers to whatever the consumer already set, so a trigger declaring
-its own `role` keeps it and gains only the tab stop it was missing. An `href`
-link is untouched, and a disabled link keeps `tabIndex={-1}`.
+`role` and `tabIndex` defer to whatever the consumer already set, so a trigger
+declaring its own `role` keeps it and gains only the tab stop it was missing.
+`onKeyDown` **composes** rather than defers: the consumer's handler runs first
+and Enter/Space activation follows unless that handler calls `preventDefault`.
+Deferring would have reintroduced the defect for exactly the consumers most
+likely to hit it — a combobox handling arrow keys, a flyout handling Escape —
+leaving a control that announces as a button and does nothing.
+
+An `href` link is untouched, and a disabled link keeps `tabIndex={-1}`.
 
 **The focus ring reached only the linked-text variants.** `focusOutlineStyle`
 was applied in the `variant` branch alone, leaving every link using the

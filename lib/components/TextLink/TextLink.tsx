@@ -223,17 +223,23 @@ export const TextLink = forwardRef<HTMLAnchorElement, TextLinkProps>(
 				? {
 						role: props.role ?? 'button',
 						tabIndex: props.tabIndex ?? 0,
-						onKeyDown:
-							props.onKeyDown ??
-							((
-								event: React.KeyboardEvent<HTMLAnchorElement>,
-							) => {
-								if (event.key !== 'Enter' && event.key !== ' ')
-									return;
+						// Composed rather than deferred to: a consumer handling
+						// its own keys — arrows on a combobox, Escape on a
+						// flyout — would otherwise silence Enter and Space and
+						// leave a control that announces as a button and does
+						// nothing. `preventDefault` is the opt-out.
+						onKeyDown: (
+							event: React.KeyboardEvent<HTMLAnchorElement>,
+						) => {
+							props.onKeyDown?.(event);
 
-								event.preventDefault();
-								event.currentTarget.click();
-							}),
+							if (event.defaultPrevented) return;
+							if (event.key !== 'Enter' && event.key !== ' ')
+								return;
+
+							event.preventDefault();
+							event.currentTarget.click();
+						},
 					}
 				: {};
 

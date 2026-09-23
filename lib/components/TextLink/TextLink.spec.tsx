@@ -177,6 +177,36 @@ describe('<TextLink />', () => {
 			expect(onClick).not.toHaveBeenCalled();
 		});
 
+		it('should run the consumer keydown handler and still activate', () => {
+			const onClick = vi.fn();
+			const onKeyDown = vi.fn();
+			render(
+				<TextLink onClick={onClick} onKeyDown={onKeyDown}>
+					Terms
+				</TextLink>,
+			);
+
+			fireEvent.keyDown(screen.getByRole('button'), { key: 'Enter' });
+
+			expect(onKeyDown).toHaveBeenCalledTimes(1);
+			expect(onClick).toHaveBeenCalledTimes(1);
+		});
+
+		it('should let the consumer opt out with preventDefault', () => {
+			const onClick = vi.fn();
+			render(
+				<TextLink
+					onClick={onClick}
+					onKeyDown={(event) => event.preventDefault()}
+				>
+					Terms
+				</TextLink>,
+			);
+
+			fireEvent.keyDown(screen.getByRole('button'), { key: 'Enter' });
+			expect(onClick).not.toHaveBeenCalled();
+		});
+
 		it('should keep a role the consumer already declared', () => {
 			render(
 				<TextLink
