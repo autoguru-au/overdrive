@@ -218,11 +218,19 @@ So the two-surface pattern extends to linked text:
   gray900). The dark value is what the legacy token already resolved to, so this
   is parity rather than a new design value. `neutral` is blue-500 / blue-300,
   `flat_red` its own green either way.
+- **`color.link.secondaryOnLight` and `color.link.secondaryOnDark`.**
+  `secondary` holds its label in body ink rather than a brand colour, and body
+  ink flips with the surface: base gray900 `#212338` is 15.42:1 on white and
+  **1:1** on a gray900 fill — the link is the fill. The dark value is white,
+  15.42:1 on gray900, which is the ink a dark surface already draws its body
+  text in. `flat_red` is its own gray900 `#263238` / white; `neutral` inherits
+  base, its grays being identical.
 - `hover` and `pressed` need no pair: base `#03af83` is 5.47:1 and `#36e5aa`
   9.50:1 on gray900, so both already clear AA there.
 
 `surfaceLinkVars.spec.ts` asserts the repoint in both directions and that every
-theme's `primaryOnDark` clears AA on its own `surface.hard`.
+theme's `primaryOnDark` and `secondaryOnDark` clear AA on its own
+`surface.hard`.
 
 ## Tenant branding
 
@@ -244,11 +252,12 @@ is neutral ink, the others are semantic danger reds.
 
 ## Open questions for design
 
-**`secondary` on a dark surface.** `link.secondary` is gray900, so on a gray900
-fill it is 1:1 — invisible. `critical` is 2.32:1 there, also below AA. Neither
-is a regression (the `variant` path is new and nothing consumes it yet), but
-both need a dark value before anyone puts them on a painted dark surface. Only
-`primary` has a pair today.
+**`critical` on a dark surface.** `link.critical` is red-700 `#b51e1a`, 2.32:1
+on a gray900 fill — below AA. It is not a regression (the `variant` path is new
+and nothing consumes it yet), but it needs a dark value before anyone puts a
+critical link on a painted dark surface. `primary` and `secondary` have pairs;
+`critical` does not, and picking one is a design call on the red ramp rather
+than a value to invent here.
 
 `Icon only` exists for Solid/Outlined/Ghost but not for `Linked text`. If an
 icon-only link is ever needed it has no Figma source yet — unlike `Extra small`,

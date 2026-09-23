@@ -12,7 +12,6 @@ import React, {
 	type ReactNode,
 } from 'react';
 
-import { focusOutlineStyle } from '../../styles/focusOutline.css';
 import { sprinkles, type Sprinkles } from '../../styles/sprinkles.css';
 import {
 	namedTextStyleMap,
@@ -208,15 +207,46 @@ export const TextLink = forwardRef<HTMLAnchorElement, TextLinkProps>(
 					// The root carries the label's font size so the icon's `1em`
 					// tracks it.
 					sprinkles({ text: rootTextSize(size) }),
-					focusOutlineStyle,
+					styles.focusRing,
 				]
-			: [className, styles.root];
+			: [className, styles.root, styles.focusRing];
 
 		const isDisabled = isLinkedText && disabled;
+
+		const isActionOnly =
+			Component === undefined &&
+			props.href === undefined &&
+			props.onClick !== undefined;
+
+		const actionProps =
+			isActionOnly && !isDisabled
+				? {
+						role: props.role ?? 'button',
+						tabIndex: props.tabIndex ?? 0,
+						// Composed rather than deferred to: a consumer handling
+						// its own keys — arrows on a combobox, Escape on a
+						// flyout — would otherwise silence Enter and Space and
+						// leave a control that announces as a button and does
+						// nothing. `preventDefault` is the opt-out.
+						onKeyDown: (
+							event: React.KeyboardEvent<HTMLAnchorElement>,
+						) => {
+							props.onKeyDown?.(event);
+
+							if (event.defaultPrevented) return;
+							if (event.key !== 'Enter' && event.key !== ' ')
+								return;
+
+							event.preventDefault();
+							event.currentTarget.click();
+						},
+					}
+				: {};
 
 		const allProps = {
 			rel: props.rel ?? 'noopener noreferrer',
 			...props,
+			...actionProps,
 			...(isDisabled
 				? {
 						'aria-disabled': true as const,

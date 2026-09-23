@@ -8,14 +8,28 @@ import { overdriveTokens as vars } from '../../themes/theme.css';
 
 globalLayer(LAYER_ORDER);
 
+export const focusRing = style({
+	selectors: {
+		'&:focus-visible, &[data-focus-visible], [data-focus-visible] &': {
+			outline: `solid ${vars.border.width['2']} ${vars.color.link.primary}`,
+			outlineOffset: vars.space['0'],
+		},
+	},
+});
+
 export const root = style({
 	boxShadow: `inset 0 0px 0 0 ${vars.color.link.primary}`,
 	transitionDelay: '0s',
 	transitionDuration: '0.2s',
 	transitionProperty: 'box-shadow',
 	transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
-	':hover': {
-		boxShadow: `inset 0 -2px 0 0 ${vars.color.link.primary}`,
+	selectors: {
+		// Focus draws the same underline hover does. Colour alone identifies
+		// this link in prose, which WCAG technique F73 allows only where a
+		// non-colour cue reaches the keyboard as well as the pointer.
+		[`${selectors.hover}, ${selectors.focusVisible}`]: {
+			boxShadow: `inset 0 -2px 0 0 ${vars.color.link.primary}`,
+		},
 	},
 });
 

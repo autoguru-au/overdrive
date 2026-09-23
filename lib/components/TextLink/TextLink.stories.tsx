@@ -203,6 +203,36 @@ export const Pressed: Story = {
 	},
 };
 
+/**
+ * The established appearance draws its underline on focus as well as on hover,
+ * so a keyboard user gets the same non-colour cue a pointer user does.
+ * `:focus-visible` cannot be set from an arg, so the story sets
+ * `data-focus-visible` — the attribute the shared `selectors.focusVisible`
+ * pattern already matches, the same way `Hover` sets `data-hover`.
+ */
+export const FocusUnderline: Story = {
+	args: { variant: undefined, children: 'supported vehicles' },
+	render: (args) => (
+		<>
+			<TextLink {...args} />
+			<TextLink {...args} data-focus-visible />
+		</>
+	),
+	play: async ({ canvas, step }) => {
+		await step('rests without an underline', async () => {
+			await expect(
+				getComputedStyle(canvas.getAllByRole('link')[0]).boxShadow,
+			).not.toContain('-2px');
+		});
+
+		await step('draws the underline on focus', async () => {
+			await expect(
+				getComputedStyle(canvas.getAllByRole('link')[1]).boxShadow,
+			).toContain('-2px');
+		});
+	},
+};
+
 export const InsideParagraph: Story = {
 	decorators: [
 		(Story) => (

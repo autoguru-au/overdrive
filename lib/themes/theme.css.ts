@@ -252,6 +252,8 @@ const THEME_CONTRACT = {
 			primaryOnLight: 'color-link-primary-on-light',
 			primaryOnDark: 'color-link-primary-on-dark',
 			secondary: 'color-link-secondary',
+			secondaryOnLight: 'color-link-secondary-on-light',
+			secondaryOnDark: 'color-link-secondary-on-dark',
 			hover: 'color-link-hover',
 			hoverOnLight: 'color-link-hover-on-light',
 			hoverOnDark: 'color-link-hover-on-dark',

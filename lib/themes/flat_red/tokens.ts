@@ -63,6 +63,8 @@ const colours = {
 	},
 } satisfies ColourMap;
 
+const white = '#ffffff';
+
 const flatElevation = '0 0 0 0 rgba(0, 0, 0, 0.0)';
 
 export const tokens = deepmerge(baseTokens, {
@@ -93,7 +95,9 @@ export const tokens = deepmerge(baseTokens, {
 			// brand value, which is already legible there.
 			primaryOnLight: colours.green['900'],
 			primaryOnDark: colours.green['600'], // #00c400 — 6.53:1 on gray900
-			secondary: colours.gray['900'],
+			secondary: colours.gray['900'], // #263238
+			secondaryOnLight: colours.gray['900'], // #263238 — 13.16:1 on white
+			secondaryOnDark: white, // #ffffff — 13.16:1 on gray900
 			// Both states step lighter, the direction base's ramp takes on a
 			// dark surface. This theme cannot take the other one: `primary`
 			// already holds green900, the darkest green in the ramp, so there

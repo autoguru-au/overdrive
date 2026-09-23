@@ -254,6 +254,10 @@ export const tokens = {
 			primaryOnLight: colourMap.green['800'], // #18856f — 4.54:1 on white
 			primaryOnDark: colourMap.green['600'], // #01c68c — 6.94:1 on gray900
 			secondary: colourMap.gray['900'], // #212338
+			// `secondary` holds its label in body ink, so its pair is the body
+			// ink of each surface rather than a rung of the brand ramp.
+			secondaryOnLight: colourMap.gray['900'], // #212338 — 15.42:1 on white
+			secondaryOnDark: colourMap.white, // #ffffff — 15.42:1 on gray900
 			// Every value is a rung of the gamut — never a shaded hex outside
 			// the ramp.
 			//
