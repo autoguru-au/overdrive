@@ -1,6 +1,7 @@
 import { invariant } from '@autoguru/utilities';
 import type { AriaToggleButtonGroupItemProps } from '@react-types/button';
 import type { Key } from '@react-types/shared';
+import type { RecipeVariants } from '@vanilla-extract/recipes';
 import React, {
 	Children,
 	forwardRef,
@@ -24,6 +25,10 @@ import { useBox, type UseBoxProps } from '../Box/useBox/useBox';
 import * as styles from './ToggleButtons.css';
 import { WIDTH_COMPACT_ORIENTATION } from './constants';
 
+type ToggleButtonGroupVariants = NonNullable<
+	RecipeVariants<typeof styles.toggleButtonGroup>
+>;
+
 export interface ToggleButtonsProps
 	extends Omit<AriaToggleButtonGroupProps, 'orientation'>,
 		UseBoxProps,
@@ -37,7 +42,7 @@ export interface ToggleButtonsProps
 	 */
 	children: ReactNode;
 	/** Whether the buttons contain only icons (affects layout styling) */
-	iconOnly?: boolean;
+	iconOnly?: ToggleButtonGroupVariants['iconOnly'];
 	/** Whether single or multiple selection is enabled. @default 'single' */
 	selectionMode?: 'single' | 'multiple';
 	/** Whether the collection allows empty selection. @default true */
@@ -57,7 +62,7 @@ export interface ToggleButtonsProps
 	 * - `horizontal` / `vertical` - always that direction, at any container width.
 	 * @default 'auto'
 	 */
-	orientation?: 'auto' | 'horizontal' | 'vertical';
+	orientation?: ToggleButtonGroupVariants['orientation'];
 }
 
 const ToggleButtonGroupContext = React.createContext<ToggleGroupState | null>(

@@ -13,6 +13,8 @@ import * as stories from './ToggleButtons.stories';
 
 const { Standard, IconOnly, InteractionTest } = composeStories(stories);
 
+const ariaChecked = 'aria-checked';
+
 const mockContainerWidth = (width: number) => {
 	const spy = vi
 		.spyOn(HTMLElement.prototype, 'getBoundingClientRect')
@@ -31,7 +33,7 @@ describe('ToggleButtons', () => {
 
 		// Verify initial selection state from story
 		const selectedButtons = buttons.filter(
-			(button) => button.getAttribute('aria-checked') === 'true',
+			(button) => button.getAttribute(ariaChecked) === 'true',
 		);
 		expect(selectedButtons.length).toBe(1);
 		expect(selectedButtons[0]).toHaveTextContent('Option 2');
@@ -55,7 +57,7 @@ describe('ToggleButtons', () => {
 
 		// Verify callback was called with correct selection
 		expect(mockCallback).toHaveBeenCalled();
-		expect(buttons[0]).toHaveAttribute('aria-checked', 'true');
+		expect(buttons[0]).toHaveAttribute(ariaChecked, 'true');
 	});
 
 	it('supports keyboard navigation and accessibility features', async () => {
@@ -77,7 +79,7 @@ describe('ToggleButtons', () => {
 		expect(buttons[2]).toHaveFocus();
 
 		// Verify ARIA attributes and structure
-		expect(buttons[0]).toHaveAttribute('aria-checked');
+		expect(buttons[0]).toHaveAttribute(ariaChecked);
 		expect(screen.getByRole('radiogroup')).toBeInTheDocument();
 		expect(screen.getByRole('radiogroup')).toHaveAttribute(
 			'aria-orientation',
@@ -133,7 +135,7 @@ describe('ToggleButtons', () => {
 		);
 
 		const buttons = screen.getAllByRole('radio');
-		expect(buttons[1]).toHaveAttribute('aria-checked', 'true');
+		expect(buttons[1]).toHaveAttribute(ariaChecked, 'true');
 
 		// Test controlled mode
 		const selectedKeys = new Set(['option1']);
@@ -147,8 +149,8 @@ describe('ToggleButtons', () => {
 			</ToggleButtons>,
 		);
 
-		expect(buttons[0]).toHaveAttribute('aria-checked', 'true');
-		expect(buttons[1]).toHaveAttribute('aria-checked', 'false');
+		expect(buttons[0]).toHaveAttribute(ariaChecked, 'true');
+		expect(buttons[1]).toHaveAttribute(ariaChecked, 'false');
 	});
 
 	it('supports multiple selection mode', async () => {
@@ -196,13 +198,13 @@ describe('ToggleButtons', () => {
 		);
 
 		const buttons = screen.getAllByRole('radio');
-		expect(buttons[0]).toHaveAttribute('aria-checked', 'true');
+		expect(buttons[0]).toHaveAttribute(ariaChecked, 'true');
 
 		// Try to deselect the only selected button
 		await user.click(buttons[0]);
 
 		// Should remain selected due to disallowEmptySelection
-		expect(buttons[0]).toHaveAttribute('aria-checked', 'true');
+		expect(buttons[0]).toHaveAttribute(ariaChecked, 'true');
 	});
 
 	describe('orientation', () => {
