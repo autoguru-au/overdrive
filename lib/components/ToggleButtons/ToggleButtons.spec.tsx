@@ -4,10 +4,24 @@ import { userEvent } from '@testing-library/user-event';
 import React, { createRef } from 'react';
 import { describe, it, expect, vi } from 'vitest';
 
-import { ToggleButtons, ToggleButton } from './ToggleButtons';
+import {
+	ToggleButtons,
+	ToggleButton,
+	type ToggleButtonsProps,
+} from './ToggleButtons';
 import * as stories from './ToggleButtons.stories';
 
 const { Standard, IconOnly, InteractionTest } = composeStories(stories);
+
+const ariaChecked = 'aria-checked';
+
+const mockContainerWidth = (width: number) => {
+	const spy = vi
+		.spyOn(HTMLElement.prototype, 'getBoundingClientRect')
+		.mockReturnValue({ width } as DOMRect);
+
+	return () => spy.mockRestore();
+};
 
 describe('ToggleButtons', () => {
 	it('renders with default props and expected structure', () => {
@@ -19,7 +33,7 @@ describe('ToggleButtons', () => {
 
 		// Verify initial selection state from story
 		const selectedButtons = buttons.filter(
-			(button) => button.getAttribute('aria-checked') === 'true',
+			(button) => button.getAttribute(ariaChecked) === 'true',
 		);
 		expect(selectedButtons.length).toBe(1);
 		expect(selectedButtons[0]).toHaveTextContent('Option 2');
@@ -43,7 +57,7 @@ describe('ToggleButtons', () => {
 
 		// Verify callback was called with correct selection
 		expect(mockCallback).toHaveBeenCalled();
-		expect(buttons[0]).toHaveAttribute('aria-checked', 'true');
+		expect(buttons[0]).toHaveAttribute(ariaChecked, 'true');
 	});
 
 	it('supports keyboard navigation and accessibility features', async () => {
@@ -65,7 +79,7 @@ describe('ToggleButtons', () => {
 		expect(buttons[2]).toHaveFocus();
 
 		// Verify ARIA attributes and structure
-		expect(buttons[0]).toHaveAttribute('aria-checked');
+		expect(buttons[0]).toHaveAttribute(ariaChecked);
 		expect(screen.getByRole('radiogroup')).toBeInTheDocument();
 		expect(screen.getByRole('radiogroup')).toHaveAttribute(
 			'aria-orientation',
@@ -121,7 +135,7 @@ describe('ToggleButtons', () => {
 		);
 
 		const buttons = screen.getAllByRole('radio');
-		expect(buttons[1]).toHaveAttribute('aria-checked', 'true');
+		expect(buttons[1]).toHaveAttribute(ariaChecked, 'true');
 
 		// Test controlled mode
 		const selectedKeys = new Set(['option1']);
@@ -135,8 +149,8 @@ describe('ToggleButtons', () => {
 			</ToggleButtons>,
 		);
 
-		expect(buttons[0]).toHaveAttribute('aria-checked', 'true');
-		expect(buttons[1]).toHaveAttribute('aria-checked', 'false');
+		expect(buttons[0]).toHaveAttribute(ariaChecked, 'true');
+		expect(buttons[1]).toHaveAttribute(ariaChecked, 'false');
 	});
 
 	it('supports multiple selection mode', async () => {
@@ -184,13 +198,156 @@ describe('ToggleButtons', () => {
 		);
 
 		const buttons = screen.getAllByRole('radio');
-		expect(buttons[0]).toHaveAttribute('aria-checked', 'true');
+		expect(buttons[0]).toHaveAttribute(ariaChecked, 'true');
 
 		// Try to deselect the only selected button
 		await user.click(buttons[0]);
 
 		// Should remain selected due to disallowEmptySelection
-		expect(buttons[0]).toHaveAttribute('aria-checked', 'true');
+		expect(buttons[0]).toHaveAttribute(ariaChecked, 'true');
+	});
+
+	describe('orientation', () => {
+		const ariaOrientation = 'aria-orientation';
+		const dataOrientation = 'data-orientation';
+
+		const renderGroup = (props: Partial<ToggleButtonsProps> = {}) => {
+			render(
+				<ToggleButtons defaultSelectedKeys={['none']} {...props}>
+					<ToggleButton id="none">None</ToggleButton>
+					<ToggleButton id="full">Full</ToggleButton>
+				</ToggleButtons>,
+			);
+
+			return screen.getByRole('radiogroup');
+		};
+
+		it('defaults to auto and exposes it as a data attribute', () => {
+			const group = renderGroup();
+
+			expect(group).toHaveAttribute(dataOrientation, 'auto');
+			expect(group).toHaveAttribute(ariaOrientation, 'horizontal');
+		});
+
+		it('honours an explicit horizontal orientation', () => {
+			const group = renderGroup({ orientation: 'horizontal' });
+
+			expect(group).toHaveAttribute(dataOrientation, 'horizontal');
+			expect(group).toHaveAttribute(ariaOrientation, 'horizontal');
+		});
+
+		it('honours an explicit vertical orientation', () => {
+			const group = renderGroup({ orientation: 'vertical' });
+
+			expect(group).toHaveAttribute(dataOrientation, 'vertical');
+			expect(group).toHaveAttribute(ariaOrientation, 'vertical');
+		});
+
+		it('navigates with up and down arrows when vertical', async () => {
+			const user = userEvent.setup();
+			renderGroup({ orientation: 'vertical' });
+
+			const buttons = screen.getAllByRole('radio');
+
+			await user.tab();
+			expect(buttons[0]).toHaveFocus();
+
+			await user.keyboard('{ArrowDown}');
+			expect(buttons[1]).toHaveFocus();
+
+			await user.keyboard('{ArrowUp}');
+			expect(buttons[0]).toHaveFocus();
+		});
+
+		it('stacks under a narrow container when auto', () => {
+			const restore = mockContainerWidth(300);
+
+			try {
+				expect(renderGroup()).toHaveAttribute(
+					ariaOrientation,
+					'vertical',
+				);
+			} finally {
+				restore();
+			}
+		});
+
+		it('stays horizontal under a narrow container when explicitly set', () => {
+			const restore = mockContainerWidth(300);
+
+			try {
+				const group = renderGroup({ orientation: 'horizontal' });
+
+				expect(group).toHaveAttribute(dataOrientation, 'horizontal');
+				expect(group).toHaveAttribute(ariaOrientation, 'horizontal');
+			} finally {
+				restore();
+			}
+		});
+
+		it('keeps the axis horizontal for iconOnly, whatever is asked for', () => {
+			const group = renderGroup({
+				'aria-label': 'view',
+				iconOnly: true,
+				orientation: 'vertical',
+			});
+
+			// iconOnly renders inline, so a vertical axis would contradict it
+			expect(group).toHaveAttribute(ariaOrientation, 'horizontal');
+		});
+
+		it('ignores the compact breakpoint for iconOnly groups', () => {
+			const restore = mockContainerWidth(300);
+
+			try {
+				const group = renderGroup({
+					'aria-label': 'view',
+					iconOnly: true,
+				});
+
+				expect(group).toHaveAttribute('data-icon-only', '');
+				expect(group).toHaveAttribute(ariaOrientation, 'horizontal');
+			} finally {
+				restore();
+			}
+		});
+	});
+
+	describe('ToggleButton attributes', () => {
+		it('stamps each button with its component attribute', () => {
+			render(
+				<ToggleButtons defaultSelectedKeys={['none']}>
+					<ToggleButton id="none">None</ToggleButton>
+					<ToggleButton id="full">Full</ToggleButton>
+				</ToggleButtons>,
+			);
+
+			for (const button of screen.getAllByRole('radio')) {
+				expect(button).toHaveAttribute(
+					'data-od-component',
+					'toggle-button',
+				);
+			}
+		});
+
+		it('renders testId as a data-testid on the button', () => {
+			render(
+				<ToggleButtons defaultSelectedKeys={['none']}>
+					<ToggleButton id="none" testId="none-toggle">
+						None
+					</ToggleButton>
+					<ToggleButton id="full">Full</ToggleButton>
+				</ToggleButtons>,
+			);
+
+			expect(screen.getByTestId('none-toggle')).toHaveAttribute(
+				'data-od-component',
+				'toggle-button',
+			);
+			expect(screen.getAllByRole('radio')[1]).not.toHaveAttribute(
+				'data-testid',
+			);
+		});
 	});
 
 	describe('ref forwarding', () => {

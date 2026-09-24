@@ -3,18 +3,54 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { expect, fn, userEvent, within } from 'storybook/test';
 
+import { Box } from '../Box';
 import { Heading } from '../Heading/Heading';
 import { Icon } from '../Icon/Icon';
+import { Stack } from '../Stack';
+import { Text } from '../Text';
 import { VisuallyHidden } from '../VisuallyHidden/VisuallyHidden';
 
 import { ToggleButtons, ToggleButton } from './ToggleButtons';
 
 const ICON_SIZE = 'medium';
+const narrowColumn = { maxWidth: 180, width: '100%' } as const;
+const wideContainer = { maxWidth: 720, width: '100%' } as const;
+
+const dataOrientation = 'data-orientation';
+const ariaOrientation = 'aria-orientation';
+
+const laysOutAs = (group: HTMLElement) => {
+	const buttons = group.querySelectorAll('button');
+	const first = buttons[0].getBoundingClientRect();
+	const second = buttons[1].getBoundingClientRect();
+
+	return Math.abs(first.top - second.top) < 1 && second.left > first.left
+		? 'row'
+		: 'column';
+};
 
 const meta = {
 	title: 'Primitives/Toggle Buttons',
 	tags: ['new'],
 	component: ToggleButtons,
+	parameters: {
+		// ToggleButtons accepts every Box style prop through `UseBoxProps`, which
+		// buries its own API under ~50 inherited rows in the docs table
+		controls: {
+			include: [
+				'children',
+				'defaultSelectedKeys',
+				'disallowEmptySelection',
+				'iconOnly',
+				'isDisabled',
+				'onSelectionChange',
+				'orientation',
+				'selectedKeys',
+				'selectionMode',
+				'testId',
+			],
+		},
+	},
 	args: {
 		children: undefined,
 		defaultSelectedKeys: undefined,
@@ -22,6 +58,7 @@ const meta = {
 		iconOnly: false,
 		isDisabled: false,
 		onSelectionChange: fn(),
+		orientation: 'auto',
 		selectedKeys: undefined,
 		testId: 'demo-toggle-buttons',
 	},
@@ -30,7 +67,8 @@ const meta = {
 			control: false,
 		},
 		orientation: {
-			control: false,
+			control: 'inline-radio',
+			options: ['auto', 'horizontal', 'vertical'],
 		},
 		selectionMode: {
 			control: false,
@@ -146,6 +184,134 @@ export const ExampleUse: Story = {
 	},
 };
 
+/**
+ * `orientation` defaults to `auto`: a group stacks vertically once its own container is
+ * narrower than 640px, and sits in a row above that. Pass `horizontal` or `vertical` to pin
+ * the direction at any container width - useful for a compact two-option toggle in a narrow
+ * column, where `auto` would otherwise stack it.
+ */
+export const Orientation: Story = {
+	args: {
+		testId: undefined,
+	},
+	argTypes: {
+		orientation: {
+			control: false,
+		},
+	},
+	render: (args) => {
+		return (
+			<Stack space="7">
+				<div>
+					<Heading as="h6" size="5" mb="2" id="orientation-auto">
+						auto
+					</Heading>
+					<Text size="3" colour="light">
+						The default. A container narrower than 640px stacks on
+						its own, so a column this size needs no prop at all.
+					</Text>
+					<Box style={narrowColumn} mt="3">
+						<ToggleButtons
+							{...args}
+							aria-labelledby="orientation-auto"
+							defaultSelectedKeys={['none']}
+							orientation="auto"
+						>
+							<ToggleButton id="none">None</ToggleButton>
+							<ToggleButton id="full">Full</ToggleButton>
+						</ToggleButtons>
+					</Box>
+				</div>
+
+				<div>
+					<Heading
+						as="h6"
+						size="5"
+						mb="2"
+						id="orientation-horizontal"
+					>
+						horizontal
+					</Heading>
+					<Text size="3" colour="light">
+						The same 180px column, told to stay a row. This is the
+						compact None and Full toggle the prop was added for.
+					</Text>
+					<Box style={narrowColumn} mt="3">
+						<ToggleButtons
+							{...args}
+							aria-labelledby="orientation-horizontal"
+							defaultSelectedKeys={['none']}
+							orientation="horizontal"
+						>
+							<ToggleButton id="none">None</ToggleButton>
+							<ToggleButton id="full">Full</ToggleButton>
+						</ToggleButtons>
+					</Box>
+				</div>
+
+				<div>
+					<Heading as="h6" size="5" mb="2" id="orientation-vertical">
+						vertical
+					</Heading>
+					<Text size="3" colour="light">
+						There is room to spare at 720px, but it stays stacked
+						because that is what it was asked to do.
+					</Text>
+					<Box style={wideContainer} mt="3">
+						<ToggleButtons
+							{...args}
+							aria-labelledby="orientation-vertical"
+							defaultSelectedKeys={['weekly']}
+							orientation="vertical"
+						>
+							<ToggleButton id="daily">Daily</ToggleButton>
+							<ToggleButton id="weekly">Weekly</ToggleButton>
+							<ToggleButton id="monthly">Monthly</ToggleButton>
+						</ToggleButtons>
+					</Box>
+				</div>
+			</Stack>
+		);
+	},
+	play: async ({ canvasElement, step }) => {
+		const canvas = within(canvasElement);
+		const groups = canvas.getAllByRole('radiogroup');
+
+		await step('auto stacks in a narrow container', async () => {
+			await expect(groups[0]).toHaveAttribute(dataOrientation, 'auto');
+			await expect(groups[0]).toHaveAttribute(
+				ariaOrientation,
+				'vertical',
+			);
+			await expect(laysOutAs(groups[0])).toBe('column');
+		});
+
+		await step('horizontal stays a row at the same width', async () => {
+			await expect(groups[1]).toHaveAttribute(
+				dataOrientation,
+				'horizontal',
+			);
+			await expect(groups[1]).toHaveAttribute(
+				ariaOrientation,
+				'horizontal',
+			);
+			await expect(laysOutAs(groups[1])).toBe('row');
+		});
+
+		await step('vertical stays stacked in a wide container', async () => {
+			await expect(groups[2]).toHaveAttribute(
+				dataOrientation,
+				'vertical',
+			);
+			await expect(groups[2]).toHaveAttribute(
+				ariaOrientation,
+				'vertical',
+			);
+			await expect(laysOutAs(groups[2])).toBe('column');
+		});
+	},
+};
+
 export const InteractionTest: Story = {
 	args: {},
 	render: (args) => {
@@ -194,42 +360,29 @@ export const InteractionTest: Story = {
 			await expect(buttons[0]).toHaveAttribute(ariaChecked, 'false');
 		});
 
-		await step('Test keyboard navigation', async () => {
-			// Test tab navigation to focus first button
-			await expect(buttons[1]).toHaveFocus();
+		const isRow = laysOutAs(radiogroup) === 'row';
 
-			// Detect orientation to use appropriate arrow keys
-			const orientation = radiogroup.getAttribute('aria-orientation');
-			const isVertical = orientation === 'vertical';
-
-			if (isVertical) {
-				// Vertical layout: use up/down arrows
-				await user.keyboard('{ArrowDown}');
-				await expect(buttons[2]).toHaveFocus();
-
-				await user.keyboard('{ArrowUp}{ArrowUp}');
-				await expect(buttons[0]).toHaveFocus();
-			} else {
-				// Horizontal layout: use left/right arrows
-				await user.keyboard('{ArrowRight}');
-				await expect(buttons[2]).toHaveFocus();
-
-				await user.keyboard('{ArrowLeft}{ArrowLeft}');
-				await expect(buttons[0]).toHaveFocus();
-			}
-		});
-
-		await step('Verify accessibility attributes', async () => {
-			// Verify radiogroup structure
-			const orientation = radiogroup.getAttribute('aria-orientation');
+		await step('Announced axis matches the rendered one', async () => {
 			await expect(radiogroup).toHaveAttribute(
-				'aria-orientation',
-				orientation, // Will be 'horizontal' or 'vertical' depending on viewport
+				ariaOrientation,
+				isRow ? 'horizontal' : 'vertical',
 			);
 			await expect(radiogroup).toHaveAttribute(
 				'aria-label',
 				'Navigation',
 			);
+		});
+
+		await step('Test keyboard navigation', async () => {
+			await expect(buttons[1]).toHaveFocus();
+
+			await user.keyboard(isRow ? '{ArrowRight}' : '{ArrowDown}');
+			await expect(buttons[2]).toHaveFocus();
+
+			await user.keyboard(
+				isRow ? '{ArrowLeft}{ArrowLeft}' : '{ArrowUp}{ArrowUp}',
+			);
+			await expect(buttons[0]).toHaveFocus();
 		});
 	},
 };

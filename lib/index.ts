@@ -148,6 +148,7 @@ export {
 	ToastProvider,
 	ToggleButtons,
 	ToggleButton,
+	type ToggleButtonProps,
 	type ToggleButtonsProps,
 	Tooltip,
 	type TooltipProps,

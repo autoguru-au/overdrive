@@ -22,10 +22,11 @@ import { dataAttrs } from '../../utils/dataAttrs';
 import { useBox, type UseBoxProps } from '../Box/useBox/useBox';
 
 import * as styles from './ToggleButtons.css';
+import type { ToggleButtonsOrientation } from './ToggleButtons.css';
 import { WIDTH_COMPACT_ORIENTATION } from './constants';
 
 export interface ToggleButtonsProps
-	extends AriaToggleButtonGroupProps,
+	extends Omit<AriaToggleButtonGroupProps, 'orientation'>,
 		UseBoxProps,
 		TestIdProp {
 	/**
@@ -50,8 +51,16 @@ export interface ToggleButtonsProps
 	onSelectionChange?: (keys: Set<Key>) => void;
 	/** Whether all toggle buttons are disabled. */
 	isDisabled?: boolean;
-	/** (_Not in use_) The orientation of the toggle button group. @default 'horizontal' */
-	orientation?: 'horizontal' | 'vertical';
+	/**
+	 * Layout direction of the button group.
+	 * - `auto` - horizontal, stacking vertically when the container is narrower
+	 *   than 640px. Not applied when `iconOnly`.
+	 * - `horizontal` / `vertical` - always that direction, at any container width.
+	 *
+	 * Ignored entirely when `iconOnly`, which always lays the buttons out inline.
+	 * @default 'auto'
+	 */
+	orientation?: ToggleButtonsOrientation;
 }
 
 const ToggleButtonGroupContext = React.createContext<ToggleGroupState | null>(
@@ -75,7 +84,9 @@ const ToggleButtonGroupContext = React.createContext<ToggleGroupState | null>(
  * - `isDisabled`: Disables the entire group
  *
  * ### Responsive Behaviour
- * - For toggle buttons that are not `iconOnly` the layout will be vertical below tablet viewport width
+ * - `orientation` (**default**: `auto`) - with `auto`, a group that is not `iconOnly` stacks
+ *   vertically once its own container is narrower than 640px. Pass `horizontal` or `vertical`
+ *   to pin the direction at any container width.
  *
  * ### Accessibility
  * - **Group Label**: When the button group has a label, associate it with `aria-labelledby` to and `id` on the heading text.
@@ -141,7 +152,7 @@ export const ToggleButtons = forwardRef<HTMLDivElement, ToggleButtonsProps>(
 			children,
 			disallowEmptySelection = true,
 			iconOnly = false,
-			orientation: incomingOrientation,
+			orientation = 'auto',
 			selectionMode = 'single',
 
 			...withBoxProps
@@ -167,18 +178,23 @@ export const ToggleButtons = forwardRef<HTMLDivElement, ToggleButtonsProps>(
 		);
 
 		const internalRef = useRef<HTMLDivElement>(null);
+		const groupRef = useRef<HTMLDivElement>(null);
 		const containerWidth = useContainerWidth({
 			containerRef: internalRef as RefObject<HTMLElement>,
 		});
 
-		// Determine orientation based on container width (not iconOnly)
+		const isAutoOrientation = orientation === 'auto';
 		const hasCompactLayout =
+			isAutoOrientation &&
 			!iconOnly &&
 			containerWidth > 0 &&
 			containerWidth < WIDTH_COMPACT_ORIENTATION;
-		const orientation = hasCompactLayout
-			? 'vertical'
-			: (incomingOrientation ?? 'horizontal');
+		// iconOnly lays the buttons out inline whatever the recipe says, so the
+		// axis is always horizontal - otherwise the a11y tree and the arrow-key
+		// axis would contradict what is on screen
+		const autoOrientation = hasCompactLayout ? 'vertical' : 'horizontal';
+		const ariaOrientation =
+			iconOnly || isAutoOrientation ? autoOrientation : orientation;
 
 		const ariaProps: AriaToggleButtonGroupProps = {
 			disallowEmptySelection,
@@ -186,7 +202,7 @@ export const ToggleButtons = forwardRef<HTMLDivElement, ToggleButtonsProps>(
 			isDisabled,
 			selectionMode,
 			onSelectionChange,
-			orientation,
+			orientation: ariaOrientation,
 			selectedKeys,
 			'aria-describedby': ariaDescribedBy,
 			'aria-details': ariaDetails,
@@ -195,11 +211,7 @@ export const ToggleButtons = forwardRef<HTMLDivElement, ToggleButtonsProps>(
 		};
 
 		const state = useToggleGroupState(ariaProps);
-		const { groupProps } = useToggleButtonGroup(
-			ariaProps,
-			state,
-			internalRef,
-		);
+		const { groupProps } = useToggleButtonGroup(ariaProps, state, groupRef);
 
 		const { Component, componentProps } = useBox({
 			...boxProps,
@@ -214,9 +226,13 @@ export const ToggleButtons = forwardRef<HTMLDivElement, ToggleButtonsProps>(
 				ref={mergeRefs([internalRef, forwardedRef])}
 			>
 				<div
-					className={styles.toggleButtonGroup({ iconOnly })}
+					className={styles.toggleButtonGroup({
+						iconOnly,
+						orientation,
+					})}
 					{...groupProps}
-					{...dataAttrs({ iconOnly })}
+					{...dataAttrs({ iconOnly, orientation })}
+					ref={groupRef}
 				>
 					<ToggleButtonGroupContext.Provider value={state}>
 						{children}
@@ -229,44 +245,57 @@ export const ToggleButtons = forwardRef<HTMLDivElement, ToggleButtonsProps>(
 
 ToggleButtons.displayName = 'ToggleButtons';
 
-export const ToggleButton = forwardRef<
-	HTMLButtonElement,
-	AriaToggleButtonGroupItemProps
->(({ children, ...props }, forwardedRef) => {
-	const internalRef = useRef<HTMLButtonElement>(null);
-	const state = React.useContext(ToggleButtonGroupContext);
+/**
+ * A single button within a {@link ToggleButtons} group. Must be rendered inside
+ * `ToggleButtons`, and must carry an `id` - the group uses it for default
+ * selection and reports it through `onSelectionChange`.
+ *
+ * Accepts every prop from react-aria's `AriaToggleButtonGroupItemProps`,
+ * notably `id`, `isDisabled` and `aria-label`.
+ */
+export interface ToggleButtonProps
+	extends AriaToggleButtonGroupItemProps,
+		TestIdProp {}
 
-	invariant(
-		state !== null,
-		'ToggleButton: Must be used within ToggleButtons component',
-	);
+export const ToggleButton = forwardRef<HTMLButtonElement, ToggleButtonProps>(
+	({ children, testId, ...props }, forwardedRef) => {
+		const internalRef = useRef<HTMLButtonElement>(null);
+		const state = React.useContext(ToggleButtonGroupContext);
 
-	invariant(
-		props.id !== undefined,
-		'ToggleButton: Missing required "id" prop',
-	);
+		invariant(
+			state !== null,
+			'ToggleButton: Must be used within ToggleButtons component',
+		);
 
-	const { buttonProps, isSelected } = useToggleButtonGroupItem(
-		props,
-		state,
-		internalRef,
-	);
+		invariant(
+			props.id !== undefined,
+			'ToggleButton: Missing required "id" prop',
+		);
 
-	const { isDisabled } = props;
+		const { buttonProps, isSelected } = useToggleButtonGroupItem(
+			props,
+			state,
+			internalRef,
+		);
 
-	return (
-		<button
-			{...buttonProps}
-			className={styles.toggleButton}
-			{...dataAttrs({
-				selected: isSelected,
-				disabled: isDisabled,
-			})}
-			ref={mergeRefs([internalRef, forwardedRef])}
-		>
-			{children}
-		</button>
-	);
-});
+		const { isDisabled } = props;
+
+		return (
+			<button
+				{...buttonProps}
+				className={styles.toggleButton}
+				{...dataAttrs({
+					odComponent: 'toggle-button',
+					selected: isSelected,
+					disabled: isDisabled,
+				})}
+				data-testid={testId}
+				ref={mergeRefs([internalRef, forwardedRef])}
+			>
+				{children}
+			</button>
+		);
+	},
+);
 
 ToggleButton.displayName = 'ToggleButton';
