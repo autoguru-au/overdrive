@@ -2,7 +2,7 @@
 '@autoguru/overdrive': minor
 ---
 
-Add `StepProgress`, the DS-2026 multi-step progress indicator, and the
+Add `StepProgress`, the multi-step progress indicator, and the
 `StepProgressItem` primitive it composes.
 
 `StepProgress` shows the user where they are in a multi-step flow as a numbered
@@ -24,5 +24,5 @@ the same as steps ahead.
   marked `aria-current="step"`. The steps are not interactive — this reports
   position, it does not navigate.
 
-Additive: a net-new export that consumes only DS-2026 semantic tokens. Nothing
+Additive: a net-new export that consumes only semantic tokens. Nothing
 existing changes.

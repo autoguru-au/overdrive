@@ -1,5 +1,5 @@
 ---
-'@autoguru/overdrive': major
+'@autoguru/overdrive': minor
 ---
 
 feat(TextLink)!: drop the legacy link token

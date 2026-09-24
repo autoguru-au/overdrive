@@ -20,8 +20,8 @@ rendered base green regardless of branding.
   both a white page and a gray900 header. A painted surface now repoints
   `color.link.primary` at whichever of the pair suits its own fill, the same way
   it already repoints `color.interactive.link` at `linkOnLight`/`linkOnDark`.
-  Without this, DS-2026 linked text on a dark surface renders the light value —
-  base `#18856f` is 3.39:1 on gray900, where the legacy token it replaces was
+  Without this, linked text on a dark surface renders the light value — base
+  `#18856f` is 3.39:1 on gray900, where the legacy token it replaces was
   surface-corrected and cleared AA. Both leaves are tenant-derived.
 - `neutral` adds the brand trio in blue. Its gray and red ramps match base, so
   `secondary` and the `critical*` leaves stay inherited.

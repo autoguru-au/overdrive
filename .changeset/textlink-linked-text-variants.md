@@ -1,5 +1,5 @@
 ---
-'@autoguru/overdrive': major
+'@autoguru/overdrive': minor
 ---
 
 feat(TextLink)!: add linked-text variants, and move the link colour onto
