@@ -285,6 +285,17 @@ describe('ToggleButtons', () => {
 			}
 		});
 
+		it('keeps the axis horizontal for iconOnly, whatever is asked for', () => {
+			const group = renderGroup({
+				'aria-label': 'view',
+				iconOnly: true,
+				orientation: 'vertical',
+			});
+
+			// iconOnly renders inline, so a vertical axis would contradict it
+			expect(group).toHaveAttribute(ariaOrientation, 'horizontal');
+		});
+
 		it('ignores the compact breakpoint for iconOnly groups', () => {
 			const restore = mockContainerWidth(300);
 

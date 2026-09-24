@@ -56,6 +56,8 @@ export interface ToggleButtonsProps
 	 * - `auto` - horizontal, stacking vertically when the container is narrower
 	 *   than 640px. Not applied when `iconOnly`.
 	 * - `horizontal` / `vertical` - always that direction, at any container width.
+	 *
+	 * Ignored entirely when `iconOnly`, which always lays the buttons out inline.
 	 * @default 'auto'
 	 */
 	orientation?: ToggleButtonsOrientation;
@@ -187,10 +189,12 @@ export const ToggleButtons = forwardRef<HTMLDivElement, ToggleButtonsProps>(
 			!iconOnly &&
 			containerWidth > 0 &&
 			containerWidth < WIDTH_COMPACT_ORIENTATION;
+		// iconOnly lays the buttons out inline whatever the recipe says, so the
+		// axis is always horizontal - otherwise the a11y tree and the arrow-key
+		// axis would contradict what is on screen
 		const autoOrientation = hasCompactLayout ? 'vertical' : 'horizontal';
-		const ariaOrientation = isAutoOrientation
-			? autoOrientation
-			: orientation;
+		const ariaOrientation =
+			iconOnly || isAutoOrientation ? autoOrientation : orientation;
 
 		const ariaProps: AriaToggleButtonGroupProps = {
 			disallowEmptySelection,
