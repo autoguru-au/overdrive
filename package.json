@@ -108,7 +108,7 @@
 		"check-deps": "npx npm-check-updates@latest --interactive --format group",
 		"format": "prettier --list-different --write \"**/*.+(js|jsx|ts|tsx|json|yml|md|mdx|html)\"",
 		"format:staged": "prettier --write",
-		"prepublishOnly": "yarn dlx rimraf ./dist && yarn run build && yarn run typeEmit",
+		"prepack": "yarn dlx rimraf ./dist && yarn run build && yarn run typeEmit",
 		"lint:tsc": "tsc --noEmit --skipLibCheck",
 		"lint:eslint": "eslint \"lib/**/*.+(ts|tsx)\" --fix --quiet",
 		"lint": "yarn run lint:eslint && yarn run lint:tsc",
