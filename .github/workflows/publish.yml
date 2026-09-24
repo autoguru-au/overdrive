@@ -64,6 +64,20 @@ jobs:
             - name: Save existing tags
               run: git tag -l | sort > /tmp/tags-before
 
+            # changesets publishes via `yarn npm publish`, which only builds
+            # through the `prepack` script. Fail before publishing if the
+            # packed tarball would ship without its build output.
+            - name: Verify package contents
+              run: |
+                  yarn pack --dry-run --json > /tmp/pack.json
+                  for entry in dist/index.js dist/index.d.ts; do
+                    if ! grep -q "\"location\":\"$entry\"" /tmp/pack.json; then
+                      echo "::error::Packed tarball is missing $entry — refusing to publish"
+                      exit 1
+                    fi
+                  done
+                  echo "Packed $(grep -c '"location":"dist/' /tmp/pack.json) files under dist/"
+
             - name: Publish to npm
               run: yarn changeset publish
               env:
