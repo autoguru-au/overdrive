@@ -3,19 +3,21 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { expect, fn, userEvent, within } from 'storybook/test';
 
+import { Box } from '../Box';
 import { Heading } from '../Heading/Heading';
 import { Icon } from '../Icon/Icon';
+import { Stack } from '../Stack';
+import { Text } from '../Text';
 import { VisuallyHidden } from '../VisuallyHidden/VisuallyHidden';
 
 import { ToggleButtons, ToggleButton } from './ToggleButtons';
 
 const ICON_SIZE = 'medium';
-const NARROW_CONTAINER = { maxWidth: 180, width: '100%' } as const;
+const narrowColumn = { maxWidth: 180, width: '100%' } as const;
+const wideContainer = { maxWidth: 720, width: '100%' } as const;
 
-// compare the first two buttons' boxes: a row shares a top edge, a stack shares
-// a left edge
-const DATA_ORIENTATION = 'data-orientation';
-const ARIA_ORIENTATION = 'aria-orientation';
+const dataOrientation = 'data-orientation';
+const ariaOrientation = 'aria-orientation';
 
 const laysOutAs = (group: HTMLElement) => {
 	const buttons = group.querySelectorAll('button');
@@ -31,6 +33,24 @@ const meta = {
 	title: 'Primitives/Toggle Buttons',
 	tags: ['new'],
 	component: ToggleButtons,
+	parameters: {
+		// ToggleButtons accepts every Box style prop through `UseBoxProps`, which
+		// buries its own API under ~50 inherited rows in the docs table
+		controls: {
+			include: [
+				'children',
+				'defaultSelectedKeys',
+				'disallowEmptySelection',
+				'iconOnly',
+				'isDisabled',
+				'onSelectionChange',
+				'orientation',
+				'selectedKeys',
+				'selectionMode',
+				'testId',
+			],
+		},
+	},
 	args: {
 		children: undefined,
 		defaultSelectedKeys: undefined,
@@ -181,63 +201,76 @@ export const Orientation: Story = {
 	},
 	render: (args) => {
 		return (
-			<div>
-				<Heading as="h3" size="5" mb="3" id="orientation-auto">
-					auto, in a 180px container - stacks
-				</Heading>
-				<div style={NARROW_CONTAINER}>
-					<ToggleButtons
-						{...args}
-						aria-labelledby="orientation-auto"
-						defaultSelectedKeys={['none']}
-						orientation="auto"
-					>
-						<ToggleButton id="none">None</ToggleButton>
-						<ToggleButton id="full">Full</ToggleButton>
-					</ToggleButtons>
+			<Stack space="7">
+				<div>
+					<Heading as="h3" size="5" mb="2" id="orientation-auto">
+						auto
+					</Heading>
+					<Text size="3" colour="light">
+						The default. A container narrower than 640px stacks on
+						its own, so a column this size needs no prop at all.
+					</Text>
+					<Box style={narrowColumn} mt="3">
+						<ToggleButtons
+							{...args}
+							aria-labelledby="orientation-auto"
+							defaultSelectedKeys={['none']}
+							orientation="auto"
+						>
+							<ToggleButton id="none">None</ToggleButton>
+							<ToggleButton id="full">Full</ToggleButton>
+						</ToggleButtons>
+					</Box>
 				</div>
 
-				<Heading
-					as="h3"
-					size="5"
-					mt="7"
-					mb="3"
-					id="orientation-horizontal"
-				>
-					horizontal, in the same 180px container - stays a row
-				</Heading>
-				<div style={NARROW_CONTAINER}>
-					<ToggleButtons
-						{...args}
-						aria-labelledby="orientation-horizontal"
-						defaultSelectedKeys={['none']}
-						orientation="horizontal"
+				<div>
+					<Heading
+						as="h3"
+						size="5"
+						mb="2"
+						id="orientation-horizontal"
 					>
-						<ToggleButton id="none">None</ToggleButton>
-						<ToggleButton id="full">Full</ToggleButton>
-					</ToggleButtons>
+						horizontal
+					</Heading>
+					<Text size="3" colour="light">
+						The same 180px column, told to stay a row. This is the
+						compact None and Full toggle the prop was added for.
+					</Text>
+					<Box style={narrowColumn} mt="3">
+						<ToggleButtons
+							{...args}
+							aria-labelledby="orientation-horizontal"
+							defaultSelectedKeys={['none']}
+							orientation="horizontal"
+						>
+							<ToggleButton id="none">None</ToggleButton>
+							<ToggleButton id="full">Full</ToggleButton>
+						</ToggleButtons>
+					</Box>
 				</div>
 
-				<Heading
-					as="h3"
-					size="5"
-					mt="7"
-					mb="3"
-					id="orientation-vertical"
-				>
-					vertical, in a wide container - stays stacked
-				</Heading>
-				<ToggleButtons
-					{...args}
-					aria-labelledby="orientation-vertical"
-					defaultSelectedKeys={['weekly']}
-					orientation="vertical"
-				>
-					<ToggleButton id="daily">Daily</ToggleButton>
-					<ToggleButton id="weekly">Weekly</ToggleButton>
-					<ToggleButton id="monthly">Monthly</ToggleButton>
-				</ToggleButtons>
-			</div>
+				<div>
+					<Heading as="h3" size="5" mb="2" id="orientation-vertical">
+						vertical
+					</Heading>
+					<Text size="3" colour="light">
+						There is room to spare at 720px, but it stays stacked
+						because that is what it was asked to do.
+					</Text>
+					<Box style={wideContainer} mt="3">
+						<ToggleButtons
+							{...args}
+							aria-labelledby="orientation-vertical"
+							defaultSelectedKeys={['weekly']}
+							orientation="vertical"
+						>
+							<ToggleButton id="daily">Daily</ToggleButton>
+							<ToggleButton id="weekly">Weekly</ToggleButton>
+							<ToggleButton id="monthly">Monthly</ToggleButton>
+						</ToggleButtons>
+					</Box>
+				</div>
+			</Stack>
 		);
 	},
 	play: async ({ canvasElement, step }) => {
@@ -245,9 +278,9 @@ export const Orientation: Story = {
 		const groups = canvas.getAllByRole('radiogroup');
 
 		await step('auto stacks in a narrow container', async () => {
-			await expect(groups[0]).toHaveAttribute(DATA_ORIENTATION, 'auto');
+			await expect(groups[0]).toHaveAttribute(dataOrientation, 'auto');
 			await expect(groups[0]).toHaveAttribute(
-				ARIA_ORIENTATION,
+				ariaOrientation,
 				'vertical',
 			);
 			await expect(laysOutAs(groups[0])).toBe('column');
@@ -255,11 +288,11 @@ export const Orientation: Story = {
 
 		await step('horizontal stays a row at the same width', async () => {
 			await expect(groups[1]).toHaveAttribute(
-				DATA_ORIENTATION,
+				dataOrientation,
 				'horizontal',
 			);
 			await expect(groups[1]).toHaveAttribute(
-				ARIA_ORIENTATION,
+				ariaOrientation,
 				'horizontal',
 			);
 			await expect(laysOutAs(groups[1])).toBe('row');
@@ -267,11 +300,11 @@ export const Orientation: Story = {
 
 		await step('vertical stays stacked in a wide container', async () => {
 			await expect(groups[2]).toHaveAttribute(
-				DATA_ORIENTATION,
+				dataOrientation,
 				'vertical',
 			);
 			await expect(groups[2]).toHaveAttribute(
-				ARIA_ORIENTATION,
+				ariaOrientation,
 				'vertical',
 			);
 			await expect(laysOutAs(groups[2])).toBe('column');
