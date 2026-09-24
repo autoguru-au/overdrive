@@ -203,7 +203,7 @@ export const Orientation: Story = {
 		return (
 			<Stack space="7">
 				<div>
-					<Heading as="h3" size="5" mb="2" id="orientation-auto">
+					<Heading as="h6" size="5" mb="2" id="orientation-auto">
 						auto
 					</Heading>
 					<Text size="3" colour="light">
@@ -225,7 +225,7 @@ export const Orientation: Story = {
 
 				<div>
 					<Heading
-						as="h3"
+						as="h6"
 						size="5"
 						mb="2"
 						id="orientation-horizontal"
@@ -250,7 +250,7 @@ export const Orientation: Story = {
 				</div>
 
 				<div>
-					<Heading as="h3" size="5" mb="2" id="orientation-vertical">
+					<Heading as="h6" size="5" mb="2" id="orientation-vertical">
 						vertical
 					</Heading>
 					<Text size="3" colour="light">
@@ -313,9 +313,7 @@ export const Orientation: Story = {
 };
 
 export const InteractionTest: Story = {
-	args: {
-		orientation: 'horizontal',
-	},
+	args: {},
 	render: (args) => {
 		return (
 			<ToggleButtons
@@ -362,25 +360,29 @@ export const InteractionTest: Story = {
 			await expect(buttons[0]).toHaveAttribute(ariaChecked, 'false');
 		});
 
-		await step('Test keyboard navigation', async () => {
-			await expect(buttons[1]).toHaveFocus();
+		const isRow = laysOutAs(radiogroup) === 'row';
 
-			await user.keyboard('{ArrowRight}');
-			await expect(buttons[2]).toHaveFocus();
-
-			await user.keyboard('{ArrowLeft}{ArrowLeft}');
-			await expect(buttons[0]).toHaveFocus();
-		});
-
-		await step('Verify accessibility attributes', async () => {
+		await step('Announced axis matches the rendered one', async () => {
 			await expect(radiogroup).toHaveAttribute(
-				'aria-orientation',
-				'horizontal',
+				ariaOrientation,
+				isRow ? 'horizontal' : 'vertical',
 			);
 			await expect(radiogroup).toHaveAttribute(
 				'aria-label',
 				'Navigation',
 			);
+		});
+
+		await step('Test keyboard navigation', async () => {
+			await expect(buttons[1]).toHaveFocus();
+
+			await user.keyboard(isRow ? '{ArrowRight}' : '{ArrowDown}');
+			await expect(buttons[2]).toHaveFocus();
+
+			await user.keyboard(
+				isRow ? '{ArrowLeft}{ArrowLeft}' : '{ArrowUp}{ArrowUp}',
+			);
+			await expect(buttons[0]).toHaveFocus();
 		});
 	},
 };
