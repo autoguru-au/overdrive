@@ -43,8 +43,11 @@ export interface StepProgressProps extends TestIdProp {
 	activeStep: number;
 	/**
 	 * `horizontal` runs the steps across with their labels beneath — for wide
-	 * containers and three to five short steps. `vertical` runs them down with
-	 * their labels beside — for narrow columns and longer labels.
+	 * containers and three to five short steps. Every step takes the same
+	 * width, set by the longest label in the sequence, so the circles keep an
+	 * even pitch whatever the copy says; the row is still only as wide as it
+	 * needs to be. `vertical` runs them down with their labels beside — for
+	 * narrow columns and longer labels.
 	 * @default 'horizontal'
 	 */
 	layout?: StepProgressLayout;
@@ -215,7 +218,7 @@ export const StepProgress: FunctionComponent<StepProgressProps> = ({
 
 					return (
 						<li
-							className={styles.item}
+							className={styles.item({ layout })}
 							// The steps are a fixed, ordered sequence; there is
 							// no stable id to key on and reordering is not a
 							// case this component supports.
@@ -224,6 +227,11 @@ export const StepProgress: FunctionComponent<StepProgressProps> = ({
 						>
 							<StepProgressItem
 								arrangement={arrangement}
+								className={
+									layout === 'horizontal'
+										? styles.horizontalStep
+										: undefined
+								}
 								hideLabel={hideLabels}
 								label={label}
 								number={index + 1}

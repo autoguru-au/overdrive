@@ -14,10 +14,10 @@ exports[`<StepProgress /> > should match snapshot 1`] = `
       class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_ol__18vhvli10 elementReset_list__18vhvli7 StepProgress_list__x41sgnl StepProgress_list_layout_horizontal__x41sgnm"
     >
       <li
-        class="StepProgress_item__x41sgno"
+        class="StepProgress_item__x41sgno StepProgress_item_layout_horizontal__x41sgnp"
       >
         <span
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  StepProgress_step__x41sgn0 StepProgress_step_arrangement_vertical__x41sgn1"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  StepProgress_step__x41sgn0 StepProgress_step_arrangement_vertical__x41sgn1 StepProgress_horizontalStep__x41sgnr"
           data-od-component="step-progress-item"
         >
           <span
@@ -33,7 +33,7 @@ exports[`<StepProgress /> > should match snapshot 1`] = `
         </span>
         <span
           aria-hidden="true"
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  StepProgress_connector__x41sgnp StepProgress_connector_layout_horizontal__x41sgnq StepProgress_connector_size_large__x41sgns StepProgress_connector_compound_0__x41sgnu"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  StepProgress_connector__x41sgns StepProgress_connector_layout_horizontal__x41sgnt StepProgress_connector_size_large__x41sgnv StepProgress_connector_compound_0__x41sgnx"
           data-od-component="step-progress-connector"
         >
           <span
@@ -57,10 +57,10 @@ exports[`<StepProgress /> > should match snapshot 1`] = `
       </li>
       <li
         aria-current="step"
-        class="StepProgress_item__x41sgno"
+        class="StepProgress_item__x41sgno StepProgress_item_layout_horizontal__x41sgnp"
       >
         <span
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  StepProgress_step__x41sgn0 StepProgress_step_arrangement_vertical__x41sgn1"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  StepProgress_step__x41sgn0 StepProgress_step_arrangement_vertical__x41sgn1 StepProgress_horizontalStep__x41sgnr"
           data-od-component="step-progress-item"
         >
           <span
@@ -76,7 +76,7 @@ exports[`<StepProgress /> > should match snapshot 1`] = `
         </span>
         <span
           aria-hidden="true"
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  StepProgress_connector__x41sgnp StepProgress_connector_layout_horizontal__x41sgnq StepProgress_connector_size_large__x41sgns StepProgress_connector_compound_0__x41sgnu"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  StepProgress_connector__x41sgns StepProgress_connector_layout_horizontal__x41sgnt StepProgress_connector_size_large__x41sgnv StepProgress_connector_compound_0__x41sgnx"
           data-od-component="step-progress-connector"
         >
           <span
@@ -99,10 +99,10 @@ exports[`<StepProgress /> > should match snapshot 1`] = `
         </span>
       </li>
       <li
-        class="StepProgress_item__x41sgno"
+        class="StepProgress_item__x41sgno StepProgress_item_layout_horizontal__x41sgnp"
       >
         <span
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  StepProgress_step__x41sgn0 StepProgress_step_arrangement_vertical__x41sgn1"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  StepProgress_step__x41sgn0 StepProgress_step_arrangement_vertical__x41sgn1 StepProgress_horizontalStep__x41sgnr"
           data-od-component="step-progress-item"
         >
           <span
@@ -133,24 +133,24 @@ exports[`<StepProgress variant="stages" /> > should match the stages snapshot 1`
     data-od-component="step-progress"
   >
     <ol
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_ol__18vhvli10 elementReset_list__18vhvli7 StepProgress_stagesList__x41sgnz"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_ol__18vhvli10 elementReset_list__18vhvli7 StepProgress_stagesList__x41sgn12"
     >
       <li
-        class="StepProgress_stagesItem__x41sgn10"
+        class="StepProgress_stagesItem__x41sgn13"
       >
         <span
-          class="StepProgress_stagesLabel__x41sgn11 StepProgress_stagesLabel_selected_false__x41sgn13 StepProgress_stagesLabel_upcoming_false__x41sgn15 StepProgress_stagesLabel_onDark_false__x41sgn17"
+          class="StepProgress_stagesLabel__x41sgn14 StepProgress_stagesLabel_selected_false__x41sgn16 StepProgress_stagesLabel_upcoming_false__x41sgn18 StepProgress_stagesLabel_onDark_false__x41sgn1a"
         >
           One
         </span>
       </li>
       <li
         aria-current="step"
-        class="StepProgress_stagesItem__x41sgn10"
+        class="StepProgress_stagesItem__x41sgn13"
       >
         <span
           aria-hidden="true"
-          class="StepProgress_stagesConnector__x41sgn1a StepProgress_stagesConnector_upcoming_false__x41sgn1c"
+          class="StepProgress_stagesConnector__x41sgn1d StepProgress_stagesConnector_upcoming_false__x41sgn1f"
           data-od-component="step-progress-connector"
         >
           <span
@@ -172,17 +172,17 @@ exports[`<StepProgress variant="stages" /> > should match the stages snapshot 1`
           </span>
         </span>
         <span
-          class="StepProgress_stagesLabel__x41sgn11 StepProgress_stagesLabel_selected_true__x41sgn12 StepProgress_stagesLabel_upcoming_false__x41sgn15 StepProgress_stagesLabel_onDark_false__x41sgn17"
+          class="StepProgress_stagesLabel__x41sgn14 StepProgress_stagesLabel_selected_true__x41sgn15 StepProgress_stagesLabel_upcoming_false__x41sgn18 StepProgress_stagesLabel_onDark_false__x41sgn1a"
         >
           Two
         </span>
       </li>
       <li
-        class="StepProgress_stagesItem__x41sgn10"
+        class="StepProgress_stagesItem__x41sgn13"
       >
         <span
           aria-hidden="true"
-          class="StepProgress_stagesConnector__x41sgn1a StepProgress_stagesConnector_upcoming_true__x41sgn1b"
+          class="StepProgress_stagesConnector__x41sgn1d StepProgress_stagesConnector_upcoming_true__x41sgn1e"
           data-od-component="step-progress-connector"
         >
           <span
@@ -204,7 +204,7 @@ exports[`<StepProgress variant="stages" /> > should match the stages snapshot 1`
           </span>
         </span>
         <span
-          class="StepProgress_stagesLabel__x41sgn11 StepProgress_stagesLabel_selected_false__x41sgn13 StepProgress_stagesLabel_upcoming_true__x41sgn14 StepProgress_stagesLabel_onDark_false__x41sgn17"
+          class="StepProgress_stagesLabel__x41sgn14 StepProgress_stagesLabel_selected_false__x41sgn16 StepProgress_stagesLabel_upcoming_true__x41sgn17 StepProgress_stagesLabel_onDark_false__x41sgn1a"
         >
           Three
         </span>

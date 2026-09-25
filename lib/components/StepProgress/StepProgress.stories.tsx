@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
+import { expect } from 'storybook/test';
 
 import { Box } from '../Box/Box';
 import { Stack } from '../Stack/Stack';
@@ -148,4 +149,90 @@ export const OnDark: Story = {
 			<StepProgress {...args} />
 		</Box>
 	),
+};
+
+/** The x co-ordinate an element is centred on, in viewport pixels. */
+const horizontalCentre = (element: Element) => {
+	const { left, width } = element.getBoundingClientRect();
+	return left + width / 2;
+};
+
+/**
+ * A regression guard, not a usage example. The labels are deliberately
+ * mismatched — `Fleet` against `Payment authorisation` — because that is the
+ * case the component used to get wrong: the caret sat in a fixed cell at the
+ * end of each label, so the distance between two circles followed the copy
+ * rather than the layout. Every other story here uses labels of a similar
+ * length, which is why the defect survived review.
+ *
+ * It is covered twice over, because neither mechanism alone is enough. The
+ * `play` function measures the geometry, which no unit test can reach — jsdom
+ * has neither layout nor stylesheets — but it runs under `yarn test:a11y`
+ * (`--project=storybook`, real Chromium) and CI runs only `--project=
+ * unit-tests`, so it is a local and future check rather than a gate today. The
+ * Chromatic snapshot is the half that does run on every review, and uneven
+ * spacing is exactly the kind of regression a picture catches.
+ */
+export const EvenSpacing: Story = {
+	tags: ['test', '!autodocs'],
+	args: {
+		steps: ['Fleet', 'Account', 'Payment authorisation', 'MIC Setup'],
+		activeStep: 3,
+	},
+	play: async ({ canvasElement, step }) => {
+		await document.fonts.ready;
+
+		const list = canvasElement.querySelector('ol');
+		/* eslint-disable unicorn/prefer-spread -- the build target does not
+		   down-level NodeList iteration, so spreading one fails typecheck. */
+		const circles = Array.from(
+			canvasElement.querySelectorAll(
+				'[data-od-component="step-progress-item"]',
+			),
+			(item) => item.firstElementChild as HTMLElement,
+		);
+		const carets = Array.from(
+			canvasElement.querySelectorAll(
+				'[data-od-component="step-progress-connector"]',
+			),
+		);
+		/* eslint-enable unicorn/prefer-spread */
+
+		const circleCentres = circles.map((circle) => horizontalCentre(circle));
+		const gaps = circleCentres
+			.slice(1)
+			.map((position, index) => position - circleCentres[index]);
+
+		await step('every step sits at the same pitch', async () => {
+			await expect(gaps).toHaveLength(3);
+			// Sub-pixel layout means these land a fraction apart rather than
+			// exactly equal, so compare the spread against a 1px tolerance.
+			const spread = Math.max(...gaps) - Math.min(...gaps);
+			await expect(spread).toBeLessThan(1);
+		});
+
+		await step('each caret sits between the pair it joins', async () => {
+			await expect(carets).toHaveLength(3);
+
+			carets.forEach((caret, index) => {
+				const midpoint =
+					(circleCentres[index] + circleCentres[index + 1]) / 2;
+				expect(
+					Math.abs(horizontalCentre(caret) - midpoint),
+				).toBeLessThan(1);
+			});
+		});
+
+		await step(
+			'the row is sized by its labels, not its container',
+			async () => {
+				const parent = list?.parentElement;
+				await expect(list).not.toBeNull();
+				await expect(parent).not.toBeNull();
+				await expect(list!.getBoundingClientRect().width).toBeLessThan(
+					parent!.getBoundingClientRect().width,
+				);
+			},
+		);
+	},
 };
