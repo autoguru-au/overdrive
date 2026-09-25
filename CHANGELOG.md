@@ -1,5 +1,67 @@
 # @autoguru/overdrive
 
+## 6.0.2
+
+### Patch Changes
+
+- 8372906: fix(StepProgress): space the horizontal steps evenly instead of by label width
+  
+  The horizontal `steps` layout was a flex row where each step was as wide as its
+  own label and the caret sat in a fixed 20px cell glued to the end of it. The
+  distance between two circles therefore came out as `½ labelA + 20 + ½ labelB` -
+  a different number at every joint, and no caret at the midpoint of the pair it
+  joined. On a five-step row reading
+  `Account / Business / Fleet / Payment / MIC Setup` the gaps measured 84 / 72 /
+  71 / 90.
+  
+  The list is now a `grid` with `grid-auto-columns: 1fr` at `width: max-content`.
+  Because the container is intrinsically sized, equal `fr` tracks resolve to the
+  widest step's content rather than to a share of the container, so every column
+  comes out the same width and the row still hugs its labels exactly as it did
+  before. The caret keeps its own box but pulls back half its width either side,
+  so its cell nets to nothing: the step takes the whole column, and the caret is
+  drawn straddling the seam between two columns - which is the midpoint of the two
+  circles either side of it. The same five steps now measure 116 / 116 / 116
+  / 116.
+  
+  Nothing is hardcoded and nothing is configured - the spacing is derived from the
+  copy, so it follows a translation or a content change on its own. The one floor
+  is structural: each step reserves the connector's own width either side of
+  itself, which stops a row of one-word labels collapsing onto the circle and
+  tucking the caret underneath it. A row labelled `A B C D` comes out at a 72px
+  pitch; a row with `Payment authorisation` in it comes out wider, still even.
+  
+  No prop, type or DOM change - `layout`, `size`, `hideLabels` and the `stages`
+  variant are untouched, and the `vertical` layout still lays out in flow. The
+  rendered markup is identical; only the class names moved.
+  
+  Downstream, a horizontal sequence gets wider by the reserved connector width at
+  each end and its steps redistribute. Anything that measured the component's box
+  or leaned on the old uneven pitch will shift; anything that just drops it into a
+  container will not.
+- 8372906: fix(StepProgress): make the current step's number readable on a dark surface
+  
+  In the `onDark` variant the selected circle fills with `green-500` (`#00dda5`)
+  and sets its number to `color.foreground.reverse` - white. That pair measures
+  1.77:1, well under the 4.5:1 AA floor for text, and on a 32px circle it is the
+  one glyph in the sequence a user cannot read.
+  
+  The contrast guide already in the repo names the answer:
+  `lib/themes/base/contrastGuide.ts` lists `gray-900` as the only approved
+  foreground on `green-500`, `green-600`, `green-400` and `green-300`. The
+  selected circle now takes `color.foreground.primary`, which resolves to that
+  same `gray-900` and measures 8.73:1.
+  
+  Nothing else moves. The light-mode selected circle is unchanged - white on
+  `background.reverse`, around 15:1 - as are the unselected circles, the labels,
+  the connectors and the `stages` variant. `neutral` and `flat_red` override
+  neither token, so the fix carries to every theme.
+  
+  Visual only - no prop, type or DOM change. Any MFE rendering
+  `StepProgress onDark` picks it up on upgrade with no code change; the one
+  visible difference is that the current step's number goes from white to dark
+  navy.
+
 ## 6.0.1
 
 ### Patch Changes
