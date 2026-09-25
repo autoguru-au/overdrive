@@ -28,6 +28,12 @@ const VERTICAL_CONNECTOR_LENGTH = vars.space['7']; // 32px
 const CONNECTOR_GLYPH_LENGTH = vars.space['5']; // 20px
 
 /**
+ * Steps and connectors align to the top of the row so the circles line up with
+ * each other rather than with labels of differing height.
+ */
+const CROSS_AXIS_START = 'flex-start';
+
+/**
  * The accent the current step takes on a dark surface. Figma binds it to
  * `primary/500`, whose swatch label reads #00dd95 while its variable reads
  * #00DDA5 — the master plan's open question Q1 records that mismatch and rules
@@ -272,6 +278,7 @@ export const list = recipe({
 	base: {
 		'@layer': {
 			[cssLayerComponent]: {
+				alignItems: CROSS_AXIS_START,
 				display: 'flex',
 				listStyle: 'none',
 				margin: 0,
@@ -294,7 +301,6 @@ export const list = recipe({
 			horizontal: {
 				'@layer': {
 					[cssLayerComponent]: {
-						alignItems: 'flex-start',
 						display: 'grid',
 						gridAutoColumns: '1fr',
 						gridAutoFlow: 'column',
@@ -305,10 +311,7 @@ export const list = recipe({
 			},
 			vertical: {
 				'@layer': {
-					[cssLayerComponent]: {
-						alignItems: 'flex-start',
-						flexDirection: 'column',
-					},
+					[cssLayerComponent]: { flexDirection: 'column' },
 				},
 			},
 		},
@@ -323,7 +326,7 @@ export const item = recipe({
 	base: {
 		'@layer': {
 			[cssLayerComponent]: {
-				alignItems: 'flex-start',
+				alignItems: CROSS_AXIS_START,
 				display: 'flex',
 			},
 		},
