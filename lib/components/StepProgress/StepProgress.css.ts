@@ -164,7 +164,7 @@ export const circle = recipe({
 					[cssLayerComponent]: {
 						backgroundColor: DARK_SELECTED_FILL,
 						borderColor: DARK_SELECTED_FILL,
-						color: vars.color.foreground.reverse,
+						color: vars.color.foreground.primary,
 					},
 				},
 			},
