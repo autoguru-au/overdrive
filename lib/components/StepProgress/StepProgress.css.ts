@@ -282,14 +282,24 @@ export const list = recipe({
 
 	variants: {
 		layout: {
-			// Figma butts the connector cells straight up against the steps —
-			// the glyph's own bearing supplies the breathing room — so neither
-			// axis carries a gap.
+			/**
+			 * Equal-width columns, each sized to the widest step in the
+			 * sequence. `1fr` under an intrinsic (`max-content`) container
+			 * resolves every track to the largest track's content rather than
+			 * to a share of the container, so the row still hugs its labels
+			 * while the circles sit at an even pitch. A flex row cannot do
+			 * this: it sizes each step to its own label, which is what made
+			 * the gaps follow the copy.
+			 */
 			horizontal: {
 				'@layer': {
 					[cssLayerComponent]: {
 						alignItems: 'flex-start',
-						flexDirection: 'row',
+						display: 'grid',
+						gridAutoColumns: '1fr',
+						gridAutoFlow: 'column',
+						maxWidth: '100%',
+						width: 'max-content',
 					},
 				},
 			},
@@ -309,12 +319,48 @@ export const list = recipe({
 	},
 });
 
-export const item = style({
+export const item = recipe({
+	base: {
+		'@layer': {
+			[cssLayerComponent]: {
+				alignItems: 'flex-start',
+				display: 'flex',
+			},
+		},
+	},
+
+	variants: {
+		layout: {
+			horizontal: {
+				'@layer': {
+					[cssLayerComponent]: { flexDirection: 'row' },
+				},
+			},
+			vertical: {
+				'@layer': {
+					[cssLayerComponent]: { flexDirection: 'column' },
+				},
+			},
+		},
+	},
+
+	defaultVariants: {
+		layout: 'horizontal',
+	},
+});
+
+/**
+ * Applied to the step inside a horizontal column. It fills the column so the
+ * circle centres on it, and reserves the connector's own width either side —
+ * which is what keeps a row of one-word labels from collapsing onto the circle,
+ * and is why the minimum gap tracks the glyph rather than a magic number.
+ */
+export const horizontalStep = style({
 	'@layer': {
 		[cssLayerComponent]: {
-			alignItems: 'inherit',
-			display: 'flex',
-			flexDirection: 'inherit',
+			flex: 1,
+			minWidth: 0,
+			paddingInline: CONNECTOR_GLYPH_LENGTH,
 		},
 	},
 });
@@ -339,9 +385,20 @@ export const connector = recipe({
 
 	variants: {
 		layout: {
+			/**
+			 * The negative inline margins are half its own width either side,
+			 * so the cell nets to nothing: the step takes the whole column and
+			 * the caret is drawn straddling the seam between two of them —
+			 * which, the columns being equal and each circle centred in its
+			 * own, is exactly the midpoint of the pair it joins. A caret that
+			 * claimed width would sit at the end of its own label again, and
+			 * the last column, having no caret, would fall out of step with
+			 * the rest.
+			 */
 			horizontal: {
 				'@layer': {
 					[cssLayerComponent]: {
+						marginInline: `calc(${CONNECTOR_GLYPH_LENGTH} / -2)`,
 						width: CONNECTOR_GLYPH_LENGTH,
 					},
 				},
