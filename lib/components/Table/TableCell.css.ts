@@ -29,6 +29,14 @@ export const root = style({
 			pseudo-element across the whole row and let the table clip it. Once
 			subgrid is supported across browsers we can revisit this approach.
 
+		This rests on `z-index: -1` escaping the cell and resolving against the
+			`<table>`, whose stacking context and clip come from `clip-path:
+			inset(0)` in Table.css.ts. Nothing in between may form a stacking
+			context of its own, so a cell must never carry a computed `transform`,
+			`opacity` below 1, `filter` or `will-change` at rest — any of those
+			traps the wash in the cell, where its ±1000% width paints it over
+			every column to the left. See TableRow.css.ts and AG-22173.
+
 		@see https://caniuse.com/#feat=css-subgrid
 		 */
 		'tr[data-hover] > &[data-hover]:before': {

@@ -1,5 +1,6 @@
 import { Meta, type StoryObj } from '@storybook/react-vite';
 import React from 'react';
+import { expect } from 'storybook/test';
 
 import { DataTable } from '../DataTable/DataTable';
 
@@ -7,6 +8,7 @@ import { Table } from './Table';
 import { TableCell } from './TableCell';
 import { TableHeadCell } from './TableHeadCell';
 import { TableRow } from './TableRow';
+import { rowEntering } from './TableRow.css';
 import { TableRowGroup } from './TableRowGroup';
 
 const meta: Meta<typeof TableRow> = {
@@ -180,4 +182,117 @@ export const Animated: Story = {
 			</TableRowGroup>
 		</DataTable>
 	),
+};
+
+/**
+ * Regression guard for AG-22173: `staggerIndex` and the row hover wash in the
+ * same table.
+ *
+ * The wash lives on the hovered cell's `::before` at `z-index: -1`, stretched
+ * across the row and resolved against the `<table>`. That only works while no
+ * cell forms a stacking context of its own, so the entrance animation has to
+ * rest on `transform: none` rather than `translateY(0)` — an identity transform
+ * still computes to a matrix, which traps the wash in the cell and paints it
+ * over every column to its left.
+ *
+ * Hover a right-hand cell: every column left of the pointer must stay readable.
+ */
+export const StaggeredWithHover: Story = {
+	tags: ['skip-themes'],
+	parameters: { chromatic: { disable: true } },
+	render: () => (
+		<Table columnTemplate="1.4fr auto auto auto 1.4fr auto">
+			<TableRowGroup>
+				<TableRow>
+					<TableHeadCell>Asset</TableHeadCell>
+					<TableHeadCell>Rego</TableHeadCell>
+					<TableHeadCell>Year</TableHeadCell>
+					<TableHeadCell>Booking ID</TableHeadCell>
+					<TableHeadCell>Supplier</TableHeadCell>
+					<TableHeadCell align="right">Price</TableHeadCell>
+				</TableRow>
+			</TableRowGroup>
+			<TableRowGroup>
+				{[
+					{
+						asset: 'Mitsubishi Triton',
+						rego: 'DB40ZI',
+						year: 2021,
+						id: 1_523_036,
+						supplier: 'Ultra Tune Beenleigh',
+						price: '1,284.00',
+					},
+					{
+						asset: 'Mitsubishi Outlander',
+						rego: 'CX72RM',
+						year: 2019,
+						id: 1_522_939,
+						supplier: 'Kmart Tyre & Auto Slacks Creek',
+						price: '642.50',
+					},
+					{
+						asset: 'Toyota HiLux',
+						rego: 'FA18PQ',
+						year: 2022,
+						id: 1_522_871,
+						supplier: 'Midas Underwood',
+						price: '918.25',
+					},
+				].map((row, i) => (
+					<TableRow key={row.id} staggerIndex={i}>
+						<TableCell>{row.asset}</TableCell>
+						<TableCell>{row.rego}</TableCell>
+						<TableCell>{row.year}</TableCell>
+						<TableCell>#{row.id}</TableCell>
+						<TableCell>{row.supplier}</TableCell>
+						<TableCell align="right">${row.price}</TableCell>
+					</TableRow>
+				))}
+			</TableRowGroup>
+		</Table>
+	),
+	play: async ({ canvasElement, step }) => {
+		const cells = Array.from(
+			canvasElement.querySelectorAll<HTMLElement>(
+				`.${rowEntering} > [role="gridcell"]`,
+			),
+		);
+
+		await step(
+			'rows stay hidden until their turn, then settle',
+			async () => {
+				await expect(cells.length).toBe(18);
+
+				const animations = cells.flatMap((cell) =>
+					cell.getAnimations(),
+				);
+				await expect(animations.length).toBe(cells.length);
+
+				// `backwards`, not `both` — see TableRow.css.ts. It holds the
+				// `from` frame through the stagger delay without retaining the
+				// `to` frame, which is what keeps the cell free of a transform.
+				for (const animation of animations) {
+					await expect(animation.effect?.getTiming().fill).toBe(
+						'backwards',
+					);
+				}
+
+				await Promise.all(animations.map(({ finished }) => finished));
+			},
+		);
+
+		await step('cells rest without a stacking context', async () => {
+			for (const cell of cells) {
+				await expect(getComputedStyle(cell).transform).toBe('none');
+			}
+		});
+
+		await step('the hover wash can still escape the cell', async () => {
+			for (const cell of cells) {
+				await expect(getComputedStyle(cell, '::before').zIndex).toBe(
+					'-1',
+				);
+			}
+		});
+	},
 };
