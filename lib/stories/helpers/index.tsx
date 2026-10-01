@@ -39,3 +39,27 @@ export const ColourSwatch = ({
 		{children}
 	</div>
 );
+
+/**
+ * Drives a story modal's `isOpen` from local state seeded by the arg, so the
+ * modal really closes when it asks to — Escape, the backdrop, a close button.
+ * Flip `isOpen` in the controls panel to reopen it.
+ */
+export const useModalOpenState = (
+	isOpen: boolean,
+	onRequestClose?: (reason: string) => void,
+) => {
+	const [open, setOpen] = React.useState(isOpen);
+
+	React.useEffect(() => {
+		setOpen(isOpen);
+	}, [isOpen]);
+
+	return {
+		isOpen: open,
+		onRequestClose: (reason: string) => {
+			onRequestClose?.(reason);
+			setOpen(false);
+		},
+	};
+};

@@ -27,7 +27,7 @@ describe('<MinimalModal />', () => {
 	// Guards the `...modalProps` spread: the base Modal suite stays green even
 	// if this wrapper stops forwarding the prop.
 	describe('closeOnEscapeKeyDown', () => {
-		it('should not close on Escape by default', async () => {
+		it('should close on Escape by default', async () => {
 			const user = userEvent.setup();
 			const onRequestClose = vi.fn();
 
@@ -39,17 +39,17 @@ describe('<MinimalModal />', () => {
 
 			await user.keyboard('{Escape}');
 
-			expect(onRequestClose).not.toHaveBeenCalled();
+			expect(onRequestClose).toHaveBeenCalledWith('escapeKeyDown');
 		});
 
-		it('should forward the opt-in to Modal', async () => {
+		it('should forward the opt-out to Modal', async () => {
 			const user = userEvent.setup();
 			const onRequestClose = vi.fn();
 
 			render(
 				<MinimalModal
 					isOpen
-					closeOnEscapeKeyDown
+					closeOnEscapeKeyDown={false}
 					onRequestClose={onRequestClose}
 				>
 					<p>{testBodyText}</p>
@@ -58,7 +58,7 @@ describe('<MinimalModal />', () => {
 
 			await user.keyboard('{Escape}');
 
-			expect(onRequestClose).toHaveBeenCalledWith('escapeKeyDown');
+			expect(onRequestClose).not.toHaveBeenCalled();
 		});
 	});
 });

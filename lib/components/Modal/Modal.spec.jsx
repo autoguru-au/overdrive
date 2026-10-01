@@ -67,7 +67,7 @@ describe('<Modal />', () => {
 	});
 
 	describe('closeOnEscapeKeyDown', () => {
-		it('should not close on Escape by default', async () => {
+		it('should close with the escapeKeyDown reason by default', async () => {
 			const user = userEvent.setup();
 			const onRequestClose = vi.fn();
 
@@ -79,57 +79,18 @@ describe('<Modal />', () => {
 
 			await user.keyboard('{Escape}');
 
-			expect(onRequestClose).not.toHaveBeenCalled();
-		});
-
-		it('should close with the escapeKeyDown reason when opted in', async () => {
-			const user = userEvent.setup();
-			const onRequestClose = vi.fn();
-
-			render(
-				<Modal
-					isOpen
-					closeOnEscapeKeyDown
-					onRequestClose={onRequestClose}
-				>
-					Hello World!
-				</Modal>,
-			);
-
-			await user.keyboard('{Escape}');
-
 			expect(onRequestClose).toHaveBeenCalledTimes(1);
 			expect(onRequestClose).toHaveBeenCalledWith('escapeKeyDown');
 		});
 
-		it('should ignore keys other than Escape', async () => {
+		it('should stay open when opted out', async () => {
 			const user = userEvent.setup();
 			const onRequestClose = vi.fn();
 
 			render(
 				<Modal
 					isOpen
-					closeOnEscapeKeyDown
-					onRequestClose={onRequestClose}
-				>
-					Hello World!
-				</Modal>,
-			);
-
-			await user.keyboard('{Enter}');
-			await user.keyboard('{Tab}');
-
-			expect(onRequestClose).not.toHaveBeenCalled();
-		});
-
-		it('should do nothing while closed', async () => {
-			const user = userEvent.setup();
-			const onRequestClose = vi.fn();
-
-			render(
-				<Modal
-					isOpen={false}
-					closeOnEscapeKeyDown
+					closeOnEscapeKeyDown={false}
 					onRequestClose={onRequestClose}
 				>
 					Hello World!
@@ -146,21 +107,13 @@ describe('<Modal />', () => {
 			const onRequestClose = vi.fn();
 
 			const { rerender } = render(
-				<Modal
-					isOpen
-					closeOnEscapeKeyDown
-					onRequestClose={onRequestClose}
-				>
+				<Modal isOpen onRequestClose={onRequestClose}>
 					Hello World!
 				</Modal>,
 			);
 
 			rerender(
-				<Modal
-					isOpen={false}
-					closeOnEscapeKeyDown
-					onRequestClose={onRequestClose}
-				>
+				<Modal isOpen={false} onRequestClose={onRequestClose}>
 					Hello World!
 				</Modal>,
 			);
@@ -175,11 +128,7 @@ describe('<Modal />', () => {
 			const onRequestClose = vi.fn();
 
 			const { unmount } = render(
-				<Modal
-					isOpen
-					closeOnEscapeKeyDown
-					onRequestClose={onRequestClose}
-				>
+				<Modal isOpen onRequestClose={onRequestClose}>
 					Hello World!
 				</Modal>,
 			);
@@ -198,18 +147,10 @@ describe('<Modal />', () => {
 
 			const Stack = ({ secondOpen }) => (
 				<>
-					<Modal
-						isOpen
-						closeOnEscapeKeyDown
-						onRequestClose={closeFirst}
-					>
+					<Modal isOpen onRequestClose={closeFirst}>
 						First
 					</Modal>
-					<Modal
-						isOpen={secondOpen}
-						closeOnEscapeKeyDown
-						onRequestClose={closeSecond}
-					>
+					<Modal isOpen={secondOpen} onRequestClose={closeSecond}>
 						Second
 					</Modal>
 				</>

@@ -22,8 +22,8 @@ export interface ModalProps extends ComponentProps<typeof Portal> {
 	/**
 	 * Close the modal when the user presses `Escape`, firing
 	 * `onRequestClose('escapeKeyDown')`. Only the top-most open modal responds,
-	 * so one keypress can't dismiss a stack. Defaults to `false` — existing
-	 * consumers keep their current behaviour until they opt in.
+	 * so one keypress can't dismiss a stack. Defaults to `true` — set `false`
+	 * on a modal the user must not be able to dismiss with the keyboard.
 	 */
 	closeOnEscapeKeyDown?: boolean;
 	children?: ReactNode;
@@ -92,7 +92,7 @@ export const Modal: FunctionComponent<ModalProps> = ({
 	isOpen,
 	hideBackdrop = false,
 	disableBackdropClick = false,
-	closeOnEscapeKeyDown = false,
+	closeOnEscapeKeyDown = true,
 	ref,
 	noThemedWrapper,
 	container,

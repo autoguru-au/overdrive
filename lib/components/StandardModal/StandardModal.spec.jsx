@@ -110,35 +110,15 @@ describe('<StandardModal />', () => {
 	});
 	// Guards the explicit prop forwarding: StandardModal destructures every prop
 	// it passes down, so a dropped `closeOnEscapeKeyDown` would leave the base
-	// Modal suite green while this wrapper silently ignored the opt-in.
+	// Modal suite green while this wrapper silently ignored the opt-out.
 	describe('closeOnEscapeKeyDown', () => {
-		it('should not close on Escape by default', async () => {
+		it('should close on Escape by default', async () => {
 			const user = userEvent.setup();
 			const onRequestClose = vi.fn();
 
 			render(
 				<StandardModal
 					isOpen
-					title={testTitle}
-					onRequestClose={onRequestClose}
-				>
-					<p>{testBodyText}</p>
-				</StandardModal>,
-			);
-
-			await user.keyboard('{Escape}');
-
-			expect(onRequestClose).not.toHaveBeenCalled();
-		});
-
-		it('should forward the opt-in to Modal', async () => {
-			const user = userEvent.setup();
-			const onRequestClose = vi.fn();
-
-			render(
-				<StandardModal
-					isOpen
-					closeOnEscapeKeyDown
 					title={testTitle}
 					onRequestClose={onRequestClose}
 				>
@@ -149,6 +129,26 @@ describe('<StandardModal />', () => {
 			await user.keyboard('{Escape}');
 
 			expect(onRequestClose).toHaveBeenCalledWith('escapeKeyDown');
+		});
+
+		it('should forward the opt-out to Modal', async () => {
+			const user = userEvent.setup();
+			const onRequestClose = vi.fn();
+
+			render(
+				<StandardModal
+					isOpen
+					closeOnEscapeKeyDown={false}
+					title={testTitle}
+					onRequestClose={onRequestClose}
+				>
+					<p>{testBodyText}</p>
+				</StandardModal>,
+			);
+
+			await user.keyboard('{Escape}');
+
+			expect(onRequestClose).not.toHaveBeenCalled();
 		});
 	});
 });
