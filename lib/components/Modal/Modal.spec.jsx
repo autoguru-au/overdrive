@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import * as React from 'react';
 import { useState } from 'react';
 
@@ -62,6 +63,173 @@ describe('<Modal />', () => {
 			const { getByRole } = render(<Modal isOpen>Hello World!</Modal>);
 
 			expect(getByRole('presentation')).toHaveTextContent('Hello World!');
+		});
+	});
+
+	describe('closeOnEscapeKeyDown', () => {
+		it('should not close on Escape by default', async () => {
+			const user = userEvent.setup();
+			const onRequestClose = vi.fn();
+
+			render(
+				<Modal isOpen onRequestClose={onRequestClose}>
+					Hello World!
+				</Modal>,
+			);
+
+			await user.keyboard('{Escape}');
+
+			expect(onRequestClose).not.toHaveBeenCalled();
+		});
+
+		it('should close with the escapeKeyDown reason when opted in', async () => {
+			const user = userEvent.setup();
+			const onRequestClose = vi.fn();
+
+			render(
+				<Modal
+					isOpen
+					closeOnEscapeKeyDown
+					onRequestClose={onRequestClose}
+				>
+					Hello World!
+				</Modal>,
+			);
+
+			await user.keyboard('{Escape}');
+
+			expect(onRequestClose).toHaveBeenCalledTimes(1);
+			expect(onRequestClose).toHaveBeenCalledWith('escapeKeyDown');
+		});
+
+		it('should ignore keys other than Escape', async () => {
+			const user = userEvent.setup();
+			const onRequestClose = vi.fn();
+
+			render(
+				<Modal
+					isOpen
+					closeOnEscapeKeyDown
+					onRequestClose={onRequestClose}
+				>
+					Hello World!
+				</Modal>,
+			);
+
+			await user.keyboard('{Enter}');
+			await user.keyboard('{Tab}');
+
+			expect(onRequestClose).not.toHaveBeenCalled();
+		});
+
+		it('should do nothing while closed', async () => {
+			const user = userEvent.setup();
+			const onRequestClose = vi.fn();
+
+			render(
+				<Modal
+					isOpen={false}
+					closeOnEscapeKeyDown
+					onRequestClose={onRequestClose}
+				>
+					Hello World!
+				</Modal>,
+			);
+
+			await user.keyboard('{Escape}');
+
+			expect(onRequestClose).not.toHaveBeenCalled();
+		});
+
+		it('should detach the listener once closed', async () => {
+			const user = userEvent.setup();
+			const onRequestClose = vi.fn();
+
+			const { rerender } = render(
+				<Modal
+					isOpen
+					closeOnEscapeKeyDown
+					onRequestClose={onRequestClose}
+				>
+					Hello World!
+				</Modal>,
+			);
+
+			rerender(
+				<Modal
+					isOpen={false}
+					closeOnEscapeKeyDown
+					onRequestClose={onRequestClose}
+				>
+					Hello World!
+				</Modal>,
+			);
+
+			await user.keyboard('{Escape}');
+
+			expect(onRequestClose).not.toHaveBeenCalled();
+		});
+
+		it('should detach the listener on unmount', async () => {
+			const user = userEvent.setup();
+			const onRequestClose = vi.fn();
+
+			const { unmount } = render(
+				<Modal
+					isOpen
+					closeOnEscapeKeyDown
+					onRequestClose={onRequestClose}
+				>
+					Hello World!
+				</Modal>,
+			);
+
+			unmount();
+
+			await user.keyboard('{Escape}');
+
+			expect(onRequestClose).not.toHaveBeenCalled();
+		});
+
+		it('should only close the top-most modal of a stack', async () => {
+			const user = userEvent.setup();
+			const closeFirst = vi.fn();
+			const closeSecond = vi.fn();
+
+			const Stack = ({ secondOpen }) => (
+				<>
+					<Modal
+						isOpen
+						closeOnEscapeKeyDown
+						onRequestClose={closeFirst}
+					>
+						First
+					</Modal>
+					<Modal
+						isOpen={secondOpen}
+						closeOnEscapeKeyDown
+						onRequestClose={closeSecond}
+					>
+						Second
+					</Modal>
+				</>
+			);
+
+			const { rerender } = render(<Stack secondOpen={false} />);
+
+			rerender(<Stack secondOpen />);
+
+			await user.keyboard('{Escape}');
+
+			expect(closeSecond).toHaveBeenCalledWith('escapeKeyDown');
+			expect(closeFirst).not.toHaveBeenCalled();
+
+			rerender(<Stack secondOpen={false} />);
+
+			await user.keyboard('{Escape}');
+
+			expect(closeFirst).toHaveBeenCalledWith('escapeKeyDown');
+			expect(closeSecond).toHaveBeenCalledTimes(1);
 		});
 	});
 });

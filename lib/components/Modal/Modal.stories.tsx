@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import * as React from 'react';
+import { useState } from 'react';
 import { action } from 'storybook/actions';
+import { expect, screen, userEvent, waitFor } from 'storybook/test';
 
 import { Box } from '../Box/Box';
 import { Text } from '../Text/Text';
@@ -102,5 +104,39 @@ export const Standard: Story = {
 		isOpen: true,
 		onRequestClose: action('onRequestClose'),
 		children: <ModalContent />,
+	},
+};
+
+export const CloseOnEscapeKeyDown: Story = {
+	tags: ['test'],
+	args: {
+		isOpen: true,
+		children: <ModalContent />,
+	},
+	render: (args) => {
+		const [isOpen, setIsOpen] = useState(true);
+
+		return (
+			<Modal
+				{...args}
+				isOpen={isOpen}
+				closeOnEscapeKeyDown
+				onRequestClose={(reason) => {
+					action('onRequestClose')(reason);
+					setIsOpen(false);
+				}}
+			/>
+		);
+	},
+	play: async () => {
+		await waitFor(() => {
+			expect(screen.getByRole('presentation')).toBeInTheDocument();
+		});
+
+		await userEvent.keyboard('{Escape}');
+
+		await waitFor(() => {
+			expect(screen.queryByRole('presentation')).not.toBeInTheDocument();
+		});
 	},
 };
