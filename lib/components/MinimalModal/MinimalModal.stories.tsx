@@ -2,6 +2,7 @@ import { ArgTypes, Meta, StoryObj } from '@storybook/react-vite';
 import React, { type ComponentProps } from 'react';
 import { action } from 'storybook/actions';
 
+import { useModalOpenState } from '../../stories/helpers';
 import { Box } from '../Box/Box';
 import { Text } from '../Text/Text';
 
@@ -153,9 +154,16 @@ const additionalContent = (
 	</>
 );
 
-const renderStory = (args: ComponentProps<typeof MinimalModal>) => (
+const renderStory = ({
+	isOpen,
+	onRequestClose,
+	...args
+}: ComponentProps<typeof MinimalModal>) => (
 	<>
-		<MinimalModal {...args} />
+		<MinimalModal
+			{...args}
+			{...useModalOpenState(isOpen, onRequestClose)}
+		/>
 		{additionalContent}
 	</>
 );

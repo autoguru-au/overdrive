@@ -2,6 +2,7 @@ import type { Decorator, Meta, StoryObj } from '@storybook/react-vite';
 import React, { type ComponentProps } from 'react';
 import { action } from 'storybook/actions';
 
+import { useModalOpenState } from '../../stories/helpers';
 import { Box } from '../Box/Box';
 import { ModalFooter } from '../ModalFooter/ModalFooter';
 import { Text } from '../Text/Text';
@@ -15,6 +16,12 @@ const meta = {
 	argTypes: {
 		children: { control: false },
 	},
+	render: ({ isOpen, onRequestClose, ...args }) => (
+		<StandardModal
+			{...args}
+			{...useModalOpenState(isOpen, onRequestClose)}
+		/>
+	),
 } satisfies Meta<typeof StandardModal>;
 
 export default meta;
@@ -215,9 +222,10 @@ export const WithFooterActions: StoryObj<WithFooterArgs> = {
 		footer: { control: false },
 		children: { control: false },
 	},
-	render: ({ buttonCount, ...args }) => (
+	render: ({ buttonCount, isOpen, onRequestClose, ...args }) => (
 		<StandardModal
 			{...args}
+			{...useModalOpenState(isOpen, onRequestClose)}
 			footer={
 				<ModalFooter
 					primaryLabel="Confirm"

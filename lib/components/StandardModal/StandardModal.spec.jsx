@@ -1,4 +1,5 @@
 import { fireEvent, render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import * as React from 'react';
 
 import { StandardModal } from './StandardModal';
@@ -104,6 +105,49 @@ describe('<StandardModal />', () => {
 			fireEvent.click(getByText('Save'));
 
 			expect(onSave).toHaveBeenCalledTimes(1);
+			expect(onRequestClose).not.toHaveBeenCalled();
+		});
+	});
+	// Guards the explicit prop forwarding: StandardModal destructures every prop
+	// it passes down, so a dropped `closeOnEscapeKeyDown` would leave the base
+	// Modal suite green while this wrapper silently ignored the opt-out.
+	describe('closeOnEscapeKeyDown', () => {
+		it('should close on Escape by default', async () => {
+			const user = userEvent.setup();
+			const onRequestClose = vi.fn();
+
+			render(
+				<StandardModal
+					isOpen
+					title={testTitle}
+					onRequestClose={onRequestClose}
+				>
+					<p>{testBodyText}</p>
+				</StandardModal>,
+			);
+
+			await user.keyboard('{Escape}');
+
+			expect(onRequestClose).toHaveBeenCalledWith('escapeKeyDown');
+		});
+
+		it('should forward the opt-out to Modal', async () => {
+			const user = userEvent.setup();
+			const onRequestClose = vi.fn();
+
+			render(
+				<StandardModal
+					isOpen
+					closeOnEscapeKeyDown={false}
+					title={testTitle}
+					onRequestClose={onRequestClose}
+				>
+					<p>{testBodyText}</p>
+				</StandardModal>,
+			);
+
+			await user.keyboard('{Escape}');
+
 			expect(onRequestClose).not.toHaveBeenCalled();
 		});
 	});

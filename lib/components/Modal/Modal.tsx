@@ -6,7 +6,7 @@ import type {
 	Reducer,
 } from 'react';
 import * as React from 'react';
-import { ReactNode, useEffect, useReducer } from 'react';
+import { ReactNode, useEffect, useReducer, useRef } from 'react';
 import FocusLock from 'react-focus-lock';
 
 import { useEventCallback } from '../../utils';
@@ -19,6 +19,15 @@ export interface ModalProps extends ComponentProps<typeof Portal> {
 	isOpen: boolean;
 	hideBackdrop?: boolean;
 	disableBackdropClick?: boolean;
+	/**
+	 * Close the modal when the user presses `Escape`, firing
+	 * `onRequestClose('escapeKeyDown')`. Only the top-most open modal responds,
+	 * so one keypress can't dismiss a stack, and a modal that opts out absorbs
+	 * `Escape` rather than passing it to the one beneath. Defaults to `true` —
+	 * set `false` on a modal the user must not be able to dismiss with the
+	 * keyboard.
+	 */
+	closeOnEscapeKeyDown?: boolean;
 	children?: ReactNode;
 
 	onRequestClose?(e: 'backdrop' | 'escapeKeyDown' | string): void;
@@ -79,10 +88,13 @@ const reducer: Reducer<State, Action> = (prevState, action) => {
 	}
 };
 
+const openEscapeModals: object[] = [];
+
 export const Modal: FunctionComponent<ModalProps> = ({
 	isOpen,
 	hideBackdrop = false,
 	disableBackdropClick = false,
+	closeOnEscapeKeyDown = true,
 	ref,
 	noThemedWrapper,
 	container,
@@ -110,6 +122,37 @@ export const Modal: FunctionComponent<ModalProps> = ({
 
 		return () => {};
 	}, [state]);
+
+	const handleEscapeKeyDown = useEventCallback(() => {
+		if (!closeOnEscapeKeyDown) return;
+		if (typeof onRequestClose === 'function')
+			onRequestClose('escapeKeyDown');
+	});
+
+	const escapeId = useRef({}).current;
+
+	useEffect(() => {
+		if (!isOpen) return;
+
+		// Effects run child-before-parent, so two modals opening in the same
+		// commit register inner-first. Stacked modals open on separate user
+		// actions in practice, which registers them in opening order.
+		openEscapeModals.push(escapeId);
+
+		const onKeyDown = (event: KeyboardEvent) => {
+			if (event.key !== 'Escape') return;
+			if (openEscapeModals.at(-1) !== escapeId) return;
+			handleEscapeKeyDown();
+		};
+
+		document.addEventListener('keydown', onKeyDown);
+
+		return () => {
+			document.removeEventListener('keydown', onKeyDown);
+			const index = openEscapeModals.indexOf(escapeId);
+			if (index !== -1) openEscapeModals.splice(index, 1);
+		};
+	}, [isOpen, handleEscapeKeyDown, escapeId]);
 
 	return (
 		<Portal
@@ -169,17 +212,22 @@ export const withModal =
 	<TIncomingProps extends {} = {}>(
 		WrappedComponent: ComponentType<ModalProps & TIncomingProps>,
 	): FunctionComponent<ModalProps & TIncomingProps> =>
-	({ onRequestClose, isOpen, ...rest }) => {
+	({ onRequestClose, isOpen, closeOnEscapeKeyDown, ...rest }) => {
 		// TODO: Deprecate me
 		warning(
 			false,
 			'Using withModal is now an anti-pattern. Use <Modal /> instead',
 		);
 		return (
-			<Modal isOpen={isOpen} onRequestClose={onRequestClose}>
+			<Modal
+				isOpen={isOpen}
+				onRequestClose={onRequestClose}
+				closeOnEscapeKeyDown={closeOnEscapeKeyDown}
+			>
 				<WrappedComponent
 					isOpen={isOpen}
 					onRequestClose={onRequestClose}
+					closeOnEscapeKeyDown={closeOnEscapeKeyDown}
 					{...(rest as TIncomingProps)}
 				/>
 			</Modal>

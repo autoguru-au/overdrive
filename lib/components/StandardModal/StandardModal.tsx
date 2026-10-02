@@ -49,6 +49,7 @@ export const StandardModal: FunctionComponent<StandardModalProps> = ({
 	noThemedWrapper,
 	ref,
 	onRequestClose,
+	closeOnEscapeKeyDown,
 	footer,
 	children,
 }) => {
@@ -92,6 +93,7 @@ export const StandardModal: FunctionComponent<StandardModalProps> = ({
 			noThemedWrapper={noThemedWrapper}
 			container={container}
 			onRequestClose={onRequestClose}
+			closeOnEscapeKeyDown={closeOnEscapeKeyDown}
 		>
 			<Box
 				className={styles.container}

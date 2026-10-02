@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import * as React from 'react';
 import { action } from 'storybook/actions';
+import { expect, fn, waitFor, within } from 'storybook/test';
 
+import { useModalOpenState } from '../../stories/helpers';
 import { Box } from '../Box/Box';
 import { Text } from '../Text/Text';
 
@@ -16,6 +18,9 @@ const meta = {
 	argTypes: {
 		children: { control: false },
 	},
+	render: ({ isOpen, onRequestClose, ...args }) => (
+		<Modal {...args} {...useModalOpenState(isOpen, onRequestClose)} />
+	),
 } satisfies Meta<typeof Modal>;
 
 export default meta;
@@ -102,5 +107,46 @@ export const Standard: Story = {
 		isOpen: true,
 		onRequestClose: action('onRequestClose'),
 		children: <ModalContent />,
+	},
+};
+
+/**
+ * Keyboard behaviour for `closeOnEscapeKeyDown`. Kept off the docs page but
+ * left in the sidebar, so you can watch the steps run in the Interactions
+ * panel.
+ */
+export const KeyboardTest: Story = {
+	tags: ['test', '!autodocs', 'skip-themes'],
+	args: {
+		isOpen: true,
+		onRequestClose: fn(),
+		children: <ModalContent />,
+	},
+	play: async ({ args, userEvent, step }) => {
+		// The modal renders through a Portal, so it sits outside `canvasElement`
+		// — scope queries to the document body rather than the story canvas.
+		const portal = within(document.body);
+
+		await step('other keys leave the modal open', async () => {
+			await userEvent.keyboard('{Enter}');
+			await expect(
+				portal.getAllByRole('presentation')[0],
+			).toBeInTheDocument();
+		});
+
+		await step('Escape closes the modal', async () => {
+			await userEvent.keyboard('{Escape}');
+			await waitFor(async () => {
+				await expect(
+					portal.queryAllByRole('presentation'),
+				).toHaveLength(0);
+			});
+		});
+
+		await step('reports the escapeKeyDown reason', async () => {
+			await expect(args.onRequestClose).toHaveBeenCalledWith(
+				'escapeKeyDown',
+			);
+		});
 	},
 };
