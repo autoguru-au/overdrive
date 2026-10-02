@@ -22,8 +22,10 @@ export interface ModalProps extends ComponentProps<typeof Portal> {
 	/**
 	 * Close the modal when the user presses `Escape`, firing
 	 * `onRequestClose('escapeKeyDown')`. Only the top-most open modal responds,
-	 * so one keypress can't dismiss a stack. Defaults to `true` — set `false`
-	 * on a modal the user must not be able to dismiss with the keyboard.
+	 * so one keypress can't dismiss a stack, and a modal that opts out absorbs
+	 * `Escape` rather than passing it to the one beneath. Defaults to `true` —
+	 * set `false` on a modal the user must not be able to dismiss with the
+	 * keyboard.
 	 */
 	closeOnEscapeKeyDown?: boolean;
 	children?: ReactNode;
@@ -122,6 +124,7 @@ export const Modal: FunctionComponent<ModalProps> = ({
 	}, [state]);
 
 	const handleEscapeKeyDown = useEventCallback(() => {
+		if (!closeOnEscapeKeyDown) return;
 		if (typeof onRequestClose === 'function')
 			onRequestClose('escapeKeyDown');
 	});
@@ -129,7 +132,7 @@ export const Modal: FunctionComponent<ModalProps> = ({
 	const escapeId = useRef({}).current;
 
 	useEffect(() => {
-		if (!isOpen || !closeOnEscapeKeyDown) return;
+		if (!isOpen) return;
 
 		// Effects run child-before-parent, so two modals opening in the same
 		// commit register inner-first. Stacked modals open on separate user
@@ -149,7 +152,7 @@ export const Modal: FunctionComponent<ModalProps> = ({
 			const index = openEscapeModals.indexOf(escapeId);
 			if (index !== -1) openEscapeModals.splice(index, 1);
 		};
-	}, [isOpen, closeOnEscapeKeyDown, handleEscapeKeyDown, escapeId]);
+	}, [isOpen, handleEscapeKeyDown, escapeId]);
 
 	return (
 		<Portal
@@ -209,17 +212,22 @@ export const withModal =
 	<TIncomingProps extends {} = {}>(
 		WrappedComponent: ComponentType<ModalProps & TIncomingProps>,
 	): FunctionComponent<ModalProps & TIncomingProps> =>
-	({ onRequestClose, isOpen, ...rest }) => {
+	({ onRequestClose, isOpen, closeOnEscapeKeyDown, ...rest }) => {
 		// TODO: Deprecate me
 		warning(
 			false,
 			'Using withModal is now an anti-pattern. Use <Modal /> instead',
 		);
 		return (
-			<Modal isOpen={isOpen} onRequestClose={onRequestClose}>
+			<Modal
+				isOpen={isOpen}
+				onRequestClose={onRequestClose}
+				closeOnEscapeKeyDown={closeOnEscapeKeyDown}
+			>
 				<WrappedComponent
 					isOpen={isOpen}
 					onRequestClose={onRequestClose}
+					closeOnEscapeKeyDown={closeOnEscapeKeyDown}
 					{...(rest as TIncomingProps)}
 				/>
 			</Modal>
