@@ -151,6 +151,12 @@ export const OnDark: Story = {
 	),
 };
 
+/**
+ * Wide enough for the four labels below at their natural width, so the row is
+ * never squeezed by the viewport the story happens to be rendered at.
+ */
+const ROW_MEASURING_WIDTH = 900;
+
 /** The x co-ordinate an element is centred on, in viewport pixels. */
 const horizontalCentre = (element: Element) => {
 	const { left, width } = element.getBoundingClientRect();
@@ -172,9 +178,26 @@ const horizontalCentre = (element: Element) => {
  * unit-tests`, so it is a local and future check rather than a gate today. The
  * Chromatic snapshot is the half that does run on every review, and uneven
  * spacing is exactly the kind of regression a picture catches.
+ *
+ * It measures one row in a container with room for it, which is the only place
+ * the even pitch holds: squeeze the row and the columns hit their min-content
+ * floor at different widths. So it fixes its own width rather than inheriting
+ * the viewport's, takes the wide Chromatic viewport only, and opts out of the
+ * per-theme Chromatic decorator — three stacked copies of the row put nine
+ * extra circles in the canvas and the geometry is read off all of them.
  */
 export const EvenSpacing: Story = {
-	tags: ['test', '!autodocs'],
+	tags: ['test', '!autodocs', 'skip-themes'],
+	parameters: {
+		chromatic: { viewports: [1024] },
+	},
+	decorators: [
+		(Story) => (
+			<div style={{ width: ROW_MEASURING_WIDTH }}>
+				<Story />
+			</div>
+		),
+	],
 	args: {
 		steps: ['Fleet', 'Account', 'Payment authorisation', 'MIC Setup'],
 		activeStep: 3,
@@ -182,17 +205,22 @@ export const EvenSpacing: Story = {
 	play: async ({ canvasElement, step }) => {
 		await document.fonts.ready;
 
-		const list = canvasElement.querySelector('ol');
+		// A decorator may render the story more than once in the one canvas,
+		// so the geometry is read off a single sequence rather than the canvas.
+		const row = canvasElement.querySelector(
+			'[data-od-component="step-progress"]',
+		);
+		await expect(row).not.toBeNull();
+
+		const list = row!.querySelector('ol');
 		/* eslint-disable unicorn/prefer-spread -- the build target does not
 		   down-level NodeList iteration, so spreading one fails typecheck. */
 		const circles = Array.from(
-			canvasElement.querySelectorAll(
-				'[data-od-component="step-progress-item"]',
-			),
+			row!.querySelectorAll('[data-od-component="step-progress-item"]'),
 			(item) => item.firstElementChild as HTMLElement,
 		);
 		const carets = Array.from(
-			canvasElement.querySelectorAll(
+			row!.querySelectorAll(
 				'[data-od-component="step-progress-connector"]',
 			),
 		);
