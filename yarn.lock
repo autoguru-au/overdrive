@@ -196,12 +196,12 @@ __metadata:
     "@babel/plugin-syntax-dynamic-import": "npm:7.8.3"
     "@babel/plugin-transform-classes": "npm:7.29.7"
     "@babel/plugin-transform-runtime": "npm:7.29.7"
-    "@babel/plugin-transform-spread": "npm:7.29.7"
+    "@babel/plugin-transform-spread": "npm:7.29.8"
     "@babel/plugin-transform-strict-mode": "npm:7.29.7"
     "@babel/preset-env": "npm:7.29.7"
     "@babel/preset-react": "npm:7.29.7"
     "@babel/preset-typescript": "npm:7.29.7"
-    "@babel/runtime-corejs3": "npm:7.29.7"
+    "@babel/runtime-corejs3": "npm:7.29.10"
     "@changesets/cli": "npm:3.0.2"
     "@chromatic-com/storybook": "npm:4.1.1"
     "@internationalized/date": "npm:3.12.1"
@@ -1447,15 +1447,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-spread@npm:7.29.7, @babel/plugin-transform-spread@npm:^7.24.1, @babel/plugin-transform-spread@npm:^7.29.7":
-  version: 7.29.7
-  resolution: "@babel/plugin-transform-spread@npm:7.29.7"
+"@babel/plugin-transform-spread@npm:7.29.8, @babel/plugin-transform-spread@npm:^7.24.1, @babel/plugin-transform-spread@npm:^7.29.7":
+  version: 7.29.8
+  resolution: "@babel/plugin-transform-spread@npm:7.29.8"
   dependencies:
     "@babel/helper-plugin-utils": "npm:^7.29.7"
     "@babel/helper-skip-transparent-expression-wrappers": "npm:^7.29.7"
   peerDependencies:
     "@babel/core": ^7.0.0-0
-  checksum: 10/c1a12c24de3c330010901b36d48b49e83288951fd92691111e09c93bdae17b1b6b52c13b0e85bcbb9f5d4c72f61648ea8432af332c7049a67d504892122e5f85
+  checksum: 10/bcb0d92a87a534ff2ea46bfc9bd3190ca6f18cf7791ca291f7cfa856a9d74d8f4d930e53bd4a44c1d40e513039d133b08082233e9373b51b9e07406bc1d7720f
   languageName: node
   linkType: hard
 
@@ -1690,12 +1690,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime-corejs3@npm:7.29.7, @babel/runtime-corejs3@npm:^7.24.5":
-  version: 7.29.7
-  resolution: "@babel/runtime-corejs3@npm:7.29.7"
+"@babel/runtime-corejs3@npm:7.29.10, @babel/runtime-corejs3@npm:^7.24.5":
+  version: 7.29.10
+  resolution: "@babel/runtime-corejs3@npm:7.29.10"
   dependencies:
     core-js-pure: "npm:^3.48.0"
-  checksum: 10/982cc2b085c9d2885bc1682a0e581c21b72e93a2c7e87793da00596851ac65cf2cce16906edcee62e155f581ae7ef4aa9e1f8e3ffde35c8cb2c390abb99164c6
+  checksum: 10/9b82595ec6b4c6544a4d047e6efc1faa24d1f5b349b590bd2a5b6c2065f0c1e84dfa5f0d39ebf7a910e6e5edcb5858a43c2009aaa8c12c7e96265e607ece33df
   languageName: node
   linkType: hard
 
