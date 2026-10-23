@@ -127,10 +127,15 @@ export { StickyBox } from './StickyBox';
 export { Switch, type SwitchProps } from './Switch';
 export {
 	Table,
+	type TableProps,
 	TableCell,
+	type TableCellProps,
 	TableHeadCell,
+	type TableHeadCellProps,
 	TableRow,
+	type TableRowProps,
 	TableRowGroup,
+	type TableRowGroupProps,
 } from './Table';
 export {
 	Tabs,

@@ -1,12 +1,15 @@
 import { Meta, type StoryObj } from '@storybook/react-vite';
 import React from 'react';
+import { expect } from 'storybook/test';
 
 import { DataTable } from '../DataTable/DataTable';
 
 import { Table } from './Table';
 import { TableCell } from './TableCell';
+import { root as tableCellRoot } from './TableCell.css';
 import { TableHeadCell } from './TableHeadCell';
 import { TableRow } from './TableRow';
+import { rowEntering } from './TableRow.css';
 import { TableRowGroup } from './TableRowGroup';
 
 const meta: Meta<typeof TableRow> = {
@@ -147,6 +150,10 @@ export const WithoutHover: Story = {
  * a different delay. Change the value and re-render the story from the
  * toolbar to replay the animation.
  */
+const animatedRows = [100_001, 100_002, 100_003, 100_004, 100_005].map(
+	(id) => ({ id }),
+);
+
 export const Animated: Story = {
 	args: {
 		staggerIndex: 0,
@@ -161,16 +168,16 @@ export const Animated: Story = {
 				</TableRow>
 			</TableRowGroup>
 			<TableRowGroup>
-				{Array.from({ length: 5 }).map((_, i) => (
+				{animatedRows.map(({ id }, i) => (
 					<TableRow
-						key={i}
+						key={id}
 						staggerIndex={
 							typeof args.staggerIndex === 'number'
 								? args.staggerIndex + i
 								: undefined
 						}
 					>
-						<TableCell>{100_001 + i}</TableCell>
+						<TableCell>{id}</TableCell>
 						<TableCell>Row {i + 1}</TableCell>
 						<TableCell align="right">
 							${(99 + i * 10).toFixed(2)}
@@ -180,4 +187,259 @@ export const Animated: Story = {
 			</TableRowGroup>
 		</DataTable>
 	),
+};
+
+const hoverRows = [
+	{
+		asset: 'Mitsubishi Triton',
+		rego: 'DB40ZI',
+		year: 2021,
+		id: 1_523_036,
+		supplier: 'Ultra Tune Beenleigh',
+		price: '1,284.00',
+	},
+	{
+		asset: 'Mitsubishi Outlander',
+		rego: 'CX72RM',
+		year: 2019,
+		id: 1_522_939,
+		supplier: 'Kmart Tyre & Auto Slacks Creek',
+		price: '642.50',
+	},
+	{
+		asset: 'Toyota HiLux',
+		rego: 'FA18PQ',
+		year: 2022,
+		id: 1_522_871,
+		supplier: 'Midas Underwood',
+		price: '918.25',
+	},
+];
+
+const gridcells = (row: HTMLElement) =>
+	Array.from(row.querySelectorAll<HTMLElement>('[role="gridcell"]'));
+
+const cellAtCentreOf = (cell: HTMLElement) => {
+	const { left, top, width, height } = cell.getBoundingClientRect();
+	return document
+		.elementFromPoint(left + width / 2, top + height / 2)
+		?.closest('[role="gridcell"]');
+};
+
+/**
+ * Regression guard: no cell may cover its neighbours.
+ *
+ * The wash used to be a `z-index: -1` pseudo-element stretched to
+ * `left/right: -1000%`, painted unconditionally on every cell of a hover row.
+ * A cell that formed a stacking context trapped it, and it then covered the
+ * columns beside it — blanking their text and swallowing their pointer events.
+ *
+ * Hit-testing is the assertion because it catches the bug without needing a
+ * real pointer: the covering element was there whether or not anything was
+ * hovered. Hover the right-hand cells by hand to check the wash itself.
+ */
+export const StaggeredWithHover: Story = {
+	tags: ['test', '!autodocs', 'skip-themes'],
+	parameters: { chromatic: { disable: true } },
+	render: () => (
+		<Table columnTemplate="1.4fr auto auto auto 1.4fr auto">
+			<TableRowGroup>
+				<TableRow>
+					<TableHeadCell>Asset</TableHeadCell>
+					<TableHeadCell>Rego</TableHeadCell>
+					<TableHeadCell>Year</TableHeadCell>
+					<TableHeadCell>Booking ID</TableHeadCell>
+					<TableHeadCell>Supplier</TableHeadCell>
+					<TableHeadCell align="right">Price</TableHeadCell>
+				</TableRow>
+			</TableRowGroup>
+			<TableRowGroup>
+				{hoverRows.map((row, i) => (
+					<TableRow key={row.id} staggerIndex={i}>
+						<TableCell>{row.asset}</TableCell>
+						<TableCell>{row.rego}</TableCell>
+						<TableCell>{row.year}</TableCell>
+						<TableCell>#{row.id}</TableCell>
+						<TableCell>{row.supplier}</TableCell>
+						<TableCell align="right">${row.price}</TableCell>
+					</TableRow>
+				))}
+			</TableRowGroup>
+		</Table>
+	),
+	play: async ({ canvasElement, step }) => {
+		const rows = Array.from(
+			canvasElement.querySelectorAll<HTMLElement>(`.${rowEntering}`),
+		);
+		const cells = gridcells(rows[0]);
+		const lastCell = cells.at(-1)!;
+
+		await step('the entrance animation settles', async () => {
+			await expect(rows.length).toBe(hoverRows.length);
+			await Promise.all(
+				rows
+					.flatMap((row) => gridcells(row))
+					.flatMap((cell) => cell.getAnimations())
+					.map(({ finished }) => finished),
+			);
+		});
+
+		await step('every cell owns its own area', async () => {
+			for (const cell of cells) {
+				await expect(cellAtCentreOf(cell)).toBe(cell);
+			}
+		});
+
+		await step('a sticky cell does not cover its row', async () => {
+			lastCell.style.position = 'sticky';
+			lastCell.style.right = '0';
+			lastCell.style.zIndex = '1';
+
+			for (const cell of cells) {
+				await expect(cellAtCentreOf(cell)).toBe(cell);
+			}
+
+			lastCell.removeAttribute('style');
+		});
+	},
+};
+
+/**
+ * Regression guard: the wash must stay inside the table.
+ *
+ * It used to be a pseudo-element stretched to `left/right: -1000%`, which
+ * inflated the scroll container's `scrollWidth` by thousands of pixels and
+ * produced phantom horizontal scroll.
+ */
+export const HoverStaysWithinTable: Story = {
+	tags: ['test', '!autodocs', 'skip-themes'],
+	parameters: { chromatic: { disable: true } },
+	render: () => (
+		<DataTable columnTemplate="1fr auto auto" aria-label="Containment">
+			<TableRowGroup>
+				<TableRow>
+					<TableHeadCell>Supplier</TableHeadCell>
+					<TableHeadCell>Rego</TableHeadCell>
+					<TableHeadCell align="right">Price</TableHeadCell>
+				</TableRow>
+			</TableRowGroup>
+			<TableRowGroup>
+				{hoverRows.map((row) => (
+					<TableRow key={row.id}>
+						<TableCell>{row.supplier}</TableCell>
+						<TableCell>{row.rego}</TableCell>
+						<TableCell align="right">${row.price}</TableCell>
+					</TableRow>
+				))}
+			</TableRowGroup>
+		</DataTable>
+	),
+	play: async ({ canvasElement, step }) => {
+		const pane = canvasElement.querySelector<HTMLElement>(
+			'[data-od-component="data-table"]',
+		)!;
+
+		await step('the wash adds no scrollable overflow', async () => {
+			await expect(pane.scrollWidth).toBe(pane.clientWidth);
+		});
+	},
+};
+
+const SELECTED_BACKGROUND = 'rgb(255, 235, 200)';
+
+/*
+A stand-in for an MFE's own stylesheet: an ordinary unlayered rule, written the
+	way a consuming app writes one. `.selected > td` is (0,1,1), far below the
+	(0,6,1) of the row-wide wash selector, so this only wins because the wash
+	sits in the `component` layer.
+ */
+const consumerStylesheet = `
+	.selected > td {
+		background-color: ${SELECTED_BACKGROUND};
+	}
+`;
+
+/**
+ * Regression guard: a consumer's own cell background outranks the wash.
+ *
+ * The wash sets `background-color` on the cell itself, replacing whatever the
+ * cell already had — the old `::before` painted behind it and never did. A
+ * selected or status row styled from an MFE stylesheet would therefore turn
+ * gray on hover, because the row-wide selector is (0,6,1) and an ordinary
+ * `.selected > td` is (0,1,1).
+ *
+ * The fix is layer order, not specificity: the wash lives in `component`, and
+ * unlayered consumer CSS beats every layer regardless of how specific either
+ * side is.
+ *
+ * The assertion checks the cascade rather than the painted hover state —
+ * `userEvent.hover` dispatches pointer events but never triggers CSS `:hover`,
+ * so hover paint cannot be read back in a play function. Hover the selected
+ * row by hand to see it hold its colour.
+ */
+export const ConsumerBackgroundBeatsWash: Story = {
+	tags: ['test', '!autodocs', 'skip-themes'],
+	parameters: { chromatic: { disable: true } },
+	render: () => (
+		<>
+			<style>{consumerStylesheet}</style>
+			<Table columnTemplate="1fr auto auto">
+				<TableRowGroup>
+					<TableRow>
+						<TableHeadCell>Supplier</TableHeadCell>
+						<TableHeadCell>Rego</TableHeadCell>
+						<TableHeadCell align="right">Price</TableHeadCell>
+					</TableRow>
+				</TableRowGroup>
+				<TableRowGroup>
+					{hoverRows.map((row, i) => (
+						<TableRow
+							key={row.id}
+							className={i === 1 ? 'selected' : undefined}
+						>
+							<TableCell>{row.supplier}</TableCell>
+							<TableCell>{row.rego}</TableCell>
+							<TableCell align="right">${row.price}</TableCell>
+						</TableRow>
+					))}
+				</TableRowGroup>
+			</Table>
+		</>
+	),
+	play: async ({ canvasElement, step }) => {
+		const selectedCells = gridcells(
+			canvasElement.querySelector<HTMLElement>('tr.selected')!,
+		);
+
+		await step('the consumer background applies', async () => {
+			for (const cell of selectedCells) {
+				await expect(getComputedStyle(cell).backgroundColor).toBe(
+					SELECTED_BACKGROUND,
+				);
+			}
+		});
+
+		await step('the wash is confined to the component layer', async () => {
+			const layersHoldingTheWash = Array.from(document.styleSheets)
+				.flatMap((sheet) => Array.from(sheet.cssRules))
+				.filter(
+					(rule): rule is CSSLayerBlockRule =>
+						rule instanceof CSSLayerBlockRule,
+				)
+				.filter((layer) =>
+					Array.from(layer.cssRules).some(
+						(rule) =>
+							rule instanceof CSSStyleRule &&
+							rule.selectorText.includes(tableCellRoot) &&
+							rule.selectorText.includes(':hover'),
+					),
+				)
+				.map((layer) => layer.name);
+
+			await expect(layersHoldingTheWash.length).toBeGreaterThan(0);
+			await expect(Array.from(new Set(layersHoldingTheWash))).toEqual([
+				'component',
+			]);
+		});
+	},
 };

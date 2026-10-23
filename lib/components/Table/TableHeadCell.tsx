@@ -2,8 +2,9 @@ import { ArrowsDownUpIcon } from '@autoguru/icons';
 import clsx from 'clsx';
 import type { AriaAttributes, MouseEventHandler, ReactNode } from 'react';
 import * as React from 'react';
-import { forwardRef, useCallback } from 'react';
+import { forwardRef } from 'react';
 
+import type { TestIdProp } from '../../types';
 import { Alignment, alignmentToFlexAlignment } from '../../utils';
 import { Box, type BoxProps } from '../Box/Box';
 import { inline } from '../Flex/flex';
@@ -17,12 +18,24 @@ type Sort = 'asc' | 'desc' | 'none';
 
 export interface TableHeadCellProps
 	extends Partial<Pick<AriaAttributes, 'aria-label'>>,
-		Pick<BoxProps, 'padding'> {
+		Pick<BoxProps, 'padding'>,
+		TestIdProp {
+	/**
+	 * Horizontal alignment of the header content.
+	 * Defaults to `'left'`.
+	 */
 	align?: Alignment;
 
+	/**
+	 * Current sort state of this column. Passing any value turns the header
+	 * into a sort control and sets `aria-sort`; omit it for a plain header.
+	 */
 	sort?: Sort;
+
+	/** Click handler fired when a sortable header is activated. */
 	onSort?: MouseEventHandler<HTMLTableCellElement>;
 
+	/** Header content. Rendered inside a `Text` element. */
 	children?: ReactNode;
 }
 
@@ -45,6 +58,7 @@ export const TableHeadCell = forwardRef<
 			sort,
 			padding: incomingPadding,
 			'aria-label': ariaLabel,
+			testId,
 			children,
 		},
 		ref,
@@ -52,17 +66,6 @@ export const TableHeadCell = forwardRef<
 		const tableContext = useTableContext();
 
 		const padding = incomingPadding ?? tableContext?.padding ?? 'none';
-
-		const sortClickHandler = useCallback<
-			MouseEventHandler<HTMLTableCellElement>
-		>(
-			(event) => {
-				if (typeof onSort === 'function') {
-					onSort(event);
-				}
-			},
-			[onSort],
-		);
 
 		const shouldSort = typeof sort === 'string';
 
@@ -111,12 +114,14 @@ export const TableHeadCell = forwardRef<
 				alignItems="center"
 				justifyContent={alignmentToFlexAlignment(align)}
 				padding={sort ? undefined : padding}
-				borderBottomColour="dark"
+				borderBottomColor="strong"
 				borderBottomWidth="1"
 				aria-sort={shouldSort ? sortToAria(sort!) : undefined}
 				aria-label={ariaLabel}
-				className={tableContext.stickyHead && styles.sticky}
-				onClick={sort ? sortClickHandler : undefined}
+				className={tableContext.stickyHead ? styles.sticky : undefined}
+				onClick={sort ? onSort : undefined}
+				odComponent="table-head-cell"
+				testId={testId}
 			>
 				{sort ? (
 					<Box
