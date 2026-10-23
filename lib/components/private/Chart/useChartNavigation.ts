@@ -1,4 +1,4 @@
-import { type KeyboardEvent, type PointerEvent, useRef, useState } from 'react';
+import { type KeyboardEvent, type PointerEvent, useState } from 'react';
 
 /** Arrow keys and the index step that each one applies. */
 const STEP_KEYS: Record<string, number> = {
@@ -8,8 +8,11 @@ const STEP_KEYS: Record<string, number> = {
 	ArrowUp: -1,
 };
 
+/** Marks the items, so that the key handler can find them in order. */
+const ITEM_SELECTOR = '[data-chart-item]';
+
 export interface ChartItemProps {
-	ref: (element: Element | null) => void;
+	'data-chart-item': '';
 	tabIndex: number;
 	onFocus: () => void;
 	onBlur: () => void;
@@ -23,10 +26,14 @@ export interface ChartNavigation {
 	/** The item that has focus, or `null` when focus is outside the chart. */
 	focusedIndex: number | null;
 	/** Spread on the element that contains the items. */
-	containerProps: { onKeyDown: (event: KeyboardEvent) => void };
-	/** Spread on each item. */
+	containerProps: { onKeyDown: (event: KeyboardEvent<Element>) => void };
+	/** Spread on each item, in display order. */
 	getItemProps: (index: number) => ChartItemProps;
 }
+
+/** Gives the index if an item has that index, else `null`. */
+const inRange = (index: number | null, count: number): number | null =>
+	index !== null && index < count ? index : null;
 
 /**
  * Keyboard and pointer behaviour for the marks of a chart (columns or slices).
@@ -36,6 +43,7 @@ export interface ChartNavigation {
  *   the last item.
  * - A hovered item is active. If no item is hovered, the focused item is
  *   active. A touch does not hover, so a tap activates the item through focus.
+ *   A key that moves focus clears the hover, so the last input wins.
  * - Escape closes the details of the active item until the next hover or
  *   focus change.
  */
@@ -44,12 +52,21 @@ export const useChartNavigation = (count: number): ChartNavigation => {
 	const [focusedIndex, setFocusedIndex] = useState<number | null>(null);
 	const [tabStop, setTabStop] = useState(0);
 	const [dismissed, setDismissed] = useState(false);
-	const items = useRef<Array<Element | null>>([]);
+	const [itemCount, setItemCount] = useState(count);
 
-	const activeIndex = dismissed ? null : (hoveredIndex ?? focusedIndex);
+	// A removed item does not send `pointerleave`, so a new data set clears
+	// the hover. Until that render, the indexes stay in the range of the items.
+	if (itemCount !== count) {
+		setItemCount(count);
+		setHoveredIndex(null);
+	}
+	const hovered = inRange(hoveredIndex, count);
+	const focused = inRange(focusedIndex, count);
+
+	const activeIndex = dismissed ? null : (hovered ?? focused);
 	const currentStop = Math.min(tabStop, Math.max(0, count - 1));
 
-	const onKeyDown = (event: KeyboardEvent) => {
+	const onKeyDown = (event: KeyboardEvent<Element>) => {
 		if (count === 0) return;
 
 		if (event.key === 'Escape') {
@@ -59,6 +76,9 @@ export const useChartNavigation = (count: number): ChartNavigation => {
 			setDismissed(true);
 			return;
 		}
+
+		// Keep the browser and screen reader shortcuts, for example Alt+ArrowLeft.
+		if (event.altKey || event.ctrlKey || event.metaKey) return;
 
 		let next: number | undefined;
 		if (event.key in STEP_KEYS) {
@@ -71,14 +91,15 @@ export const useChartNavigation = (count: number): ChartNavigation => {
 
 		if (next === undefined) return;
 		event.preventDefault();
+		setHoveredIndex(null);
 		setTabStop(next);
-		(items.current[next] as HTMLElement | SVGElement | null)?.focus();
+		event.currentTarget
+			.querySelectorAll<HTMLElement | SVGElement>(ITEM_SELECTOR)
+			[next]?.focus();
 	};
 
 	const getItemProps = (index: number): ChartItemProps => ({
-		ref: (element) => {
-			items.current[index] = element;
-		},
+		'data-chart-item': '',
 		tabIndex: index === currentStop ? 0 : -1,
 		onFocus: () => {
 			setFocusedIndex(index);
@@ -96,7 +117,7 @@ export const useChartNavigation = (count: number): ChartNavigation => {
 
 	return {
 		activeIndex,
-		focusedIndex,
+		focusedIndex: focused,
 		containerProps: { onKeyDown },
 		getItemProps,
 	};

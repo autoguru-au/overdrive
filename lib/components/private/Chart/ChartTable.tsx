@@ -20,15 +20,42 @@ export interface ChartTableProps {
 	columns: string[];
 	/** The body rows, in display order. */
 	rows: ChartTableRow[];
+	/**
+	 * A row after the body, for example the totals: the row header first, then
+	 * one formatted value for each other column.
+	 */
+	footer?: string[];
 	/** Keeps the table for screen readers only. */
 	hidden?: boolean;
 }
+
+const renderCells = (cells: string[]) => (
+	<>
+		<th
+			className={clsx(
+				styles.tableCell,
+				typography({ size: '3', weight: 'normal' }),
+			)}
+			scope="row"
+		>
+			{cells[0]}
+		</th>
+		{cells.slice(1).map((value, index) => (
+			// A row has a fixed column order, so the position is a stable key.
+			// eslint-disable-next-line react/no-array-index-key
+			<td key={index} className={styles.tableCell}>
+				{value}
+			</td>
+		))}
+	</>
+);
 
 /** The chart data as a plain data table: the table view, or the screen reader alternative of the graphic. */
 export const ChartTable: FunctionComponent<ChartTableProps> = ({
 	'aria-label': ariaLabel,
 	columns,
 	rows,
+	footer,
 	hidden = false,
 }) => {
 	const table = (
@@ -41,9 +68,12 @@ export const ChartTable: FunctionComponent<ChartTableProps> = ({
 		>
 			<thead>
 				<tr>
-					{columns.map((column) => (
+					{columns.map((column, index) => (
 						<th
-							key={column}
+							// Header text can repeat, for example a series label and
+							// the total label. The column order is fixed.
+							// eslint-disable-next-line react/no-array-index-key
+							key={index}
 							className={clsx(
 								styles.tableHeadCell,
 								typography({ size: '3', weight: 'semiBold' }),
@@ -57,26 +87,14 @@ export const ChartTable: FunctionComponent<ChartTableProps> = ({
 			</thead>
 			<tbody>
 				{rows.map(({ id, cells }) => (
-					<tr key={id}>
-						<th
-							className={clsx(
-								styles.tableCell,
-								typography({ size: '3', weight: 'normal' }),
-							)}
-							scope="row"
-						>
-							{cells[0]}
-						</th>
-						{cells.slice(1).map((value, index) => (
-							// A row has a fixed column order, so the position is a stable key.
-							// eslint-disable-next-line react/no-array-index-key
-							<td key={index} className={styles.tableCell}>
-								{value}
-							</td>
-						))}
-					</tr>
+					<tr key={id}>{renderCells(cells)}</tr>
 				))}
 			</tbody>
+			{footer ? (
+				<tfoot>
+					<tr>{renderCells(footer)}</tr>
+				</tfoot>
+			) : null}
 		</table>
 	);
 

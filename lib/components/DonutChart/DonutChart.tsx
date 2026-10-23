@@ -12,6 +12,7 @@ import {
 	arcPath,
 	pie,
 	sum,
+	toDrawable,
 	useChartNavigation,
 	type ChartFormatter,
 	type ChartSeries,
@@ -91,48 +92,73 @@ export const DonutChart = <Key extends string = string>({
 	className,
 	testId,
 }: DonutChartProps<Key>) => {
-	const { values, total, arcs } = useMemo(() => {
-		const sliceValues = data.map((datum) => Math.max(0, datum.value));
+	// The values and the text change only with the data, not with each hover.
+	const { slices, marks, total, formattedTotal } = useMemo(() => {
+		const values = data.map((datum) => toDrawable(datum.value));
+		const arcs = pie(values);
+		const grandTotal = sum(values);
+		const items = data.map((datum, index) => {
+			const value = formatValue(values[index]);
+			const share = formatPercent(
+				grandTotal > 0 ? values[index] / grandTotal : 0,
+			);
+			return {
+				datum,
+				value,
+				share,
+				path: arcPath(arcs[index], INNER_RADIUS, OUTER_RADIUS),
+				description: `${datum.label}, ${value}, ${share}`,
+			};
+		});
 		return {
-			values: sliceValues,
-			total: sum(sliceValues),
-			arcs: pie(sliceValues),
+			slices: items,
+			// A slice of 0 has no area, so it gets no mark and no tab stop. The
+			// legend and the table still show it.
+			marks: items.filter((_, index) => values[index] > 0),
+			total: grandTotal,
+			formattedTotal: formatValue(grandTotal),
 		};
-	}, [data]);
+	}, [data, formatValue, formatPercent]);
+
+	const table = useMemo(
+		() => (
+			<ChartTable
+				aria-label={ariaLabel}
+				columns={[categoryLabel, valueLabel, shareLabel]}
+				rows={slices.map((slice) => ({
+					id: slice.datum.key,
+					cells: [slice.datum.label, slice.value, slice.share],
+				}))}
+				footer={[
+					totalLabel,
+					formattedTotal,
+					formatPercent(total > 0 ? 1 : 0),
+				]}
+				hidden={view === 'chart'}
+			/>
+		),
+		[
+			ariaLabel,
+			categoryLabel,
+			formatPercent,
+			formattedTotal,
+			shareLabel,
+			slices,
+			total,
+			totalLabel,
+			valueLabel,
+			view,
+		],
+	);
 
 	const { activeIndex, focusedIndex, containerProps, getItemProps } =
-		useChartNavigation(data.length);
+		useChartNavigation(marks.length);
 
 	const { Component: Root, componentProps: rootProps } = useBox({
 		className: clsx(styles.root, className),
 		odComponent: 'donut-chart',
 		testId,
 	});
-
-	const shareOf = (value: number) =>
-		formatPercent(total > 0 ? value / total : 0);
-
-	const table = (
-		<ChartTable
-			aria-label={ariaLabel}
-			columns={[categoryLabel, valueLabel, shareLabel]}
-			rows={[
-				...data.map((datum, index) => ({
-					id: datum.key,
-					cells: [
-						datum.label,
-						formatValue(values[index]),
-						shareOf(values[index]),
-					],
-				})),
-				{
-					id: 'total',
-					cells: [totalLabel, formatValue(total), shareOf(total)],
-				},
-			]}
-			hidden={view === 'chart'}
-		/>
-	);
 
 	if (view === 'table') {
 		return <Root {...rootProps}>{table}</Root>;
@@ -150,7 +176,7 @@ export const DonutChart = <Key extends string = string>({
 	}
 
 	// CSS shows this ring only for keyboard focus (`:focus-visible`).
-	const focusedArc = focusedIndex === null ? null : arcs[focusedIndex];
+	const focusedMark = focusedIndex === null ? null : marks[focusedIndex];
 
 	return (
 		<Root {...rootProps}>
@@ -163,33 +189,33 @@ export const DonutChart = <Key extends string = string>({
 					{...dataAttrs({ hasActive: activeIndex !== null })}
 					{...containerProps}
 				>
-					{data.map((datum, index) => (
+					{marks.map((mark, index) => (
 						<path
-							key={datum.key}
-							aria-label={`${datum.label}, ${formatValue(values[index])}, ${shareOf(values[index])}`}
+							key={mark.datum.key}
+							aria-label={mark.description}
 							className={styles.slice}
-							d={arcPath(arcs[index], INNER_RADIUS, OUTER_RADIUS)}
+							d={mark.path}
 							fillRule="evenodd"
 							role="graphics-symbol"
 							style={assignInlineVars({
-								[styles.sliceColor]: datum.color,
+								[styles.sliceColor]: mark.datum.color,
 							})}
 							{...getItemProps(index)}
 							{...dataAttrs({ active: index === activeIndex })}
 						/>
 					))}
-					{focusedArc ? (
+					{focusedMark ? (
 						<path
 							aria-hidden
 							className={styles.focusRing}
-							d={arcPath(focusedArc, INNER_RADIUS, OUTER_RADIUS)}
+							d={focusedMark.path}
 							fillRule="evenodd"
 						/>
 					) : null}
 				</svg>
 				<div aria-hidden className={styles.centre}>
 					<Text size="8" weight="bold" color="primary">
-						{formatValue(total)}
+						{formattedTotal}
 					</Text>
 					<Text size="3" weight="bold" color="secondary">
 						{totalLabel}
@@ -198,13 +224,15 @@ export const DonutChart = <Key extends string = string>({
 			</div>
 			<ChartLegend
 				activeKey={
-					activeIndex === null ? undefined : data[activeIndex].key
+					activeIndex === null
+						? undefined
+						: marks[activeIndex].datum.key
 				}
-				items={data.map((datum, index) => ({
-					key: datum.key,
-					label: datum.label,
-					color: datum.color,
-					detail: `${formatValue(values[index])} (${shareOf(values[index])})`,
+				items={slices.map((slice) => ({
+					key: slice.datum.key,
+					label: slice.datum.label,
+					color: slice.datum.color,
+					detail: `${slice.value} (${slice.share})`,
 				}))}
 				layout="vertical"
 			/>

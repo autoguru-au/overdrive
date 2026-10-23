@@ -181,6 +181,10 @@ export const column = style({
 				[`${root}[data-has-active] &:not([data-active])`]: {
 					opacity: DIMMED_OPACITY,
 				},
+				// Each bar area is a query container, and so a stacking context.
+				// The active column goes on top, so its tooltip covers the next
+				// columns.
+				'&[data-active]': { zIndex: 1 },
 			},
 			'@media': {
 				'(prefers-reduced-motion: reduce)': { transition: 'none' },

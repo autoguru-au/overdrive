@@ -1,9 +1,10 @@
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import clsx from 'clsx';
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef } from 'react';
 
 import { typography } from '../../styles/typography';
 import type { TestIdProp } from '../../types';
+import { isomorphicLayoutEffect } from '../../utils';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { useBox } from '../Box/useBox/useBox';
 import {
@@ -12,6 +13,7 @@ import {
 	ChartTooltip,
 	niceTicks,
 	sum,
+	toDrawable,
 	toPercent,
 	useChartNavigation,
 	type ChartFormatter,
@@ -74,10 +76,20 @@ export interface StackedBarChartProps<Key extends string = string>
 	className?: string;
 }
 
-const valueOf = <Key extends string>(
-	datum: StackedBarChartDatum<Key>,
-	key: Key,
-): number => Math.max(0, datum.values[key] ?? 0);
+/**
+ * Keeps the tooltip rail inside the chart body, for example with one column
+ * or on a narrow screen. The rail moves only on the horizontal axis.
+ */
+const keepInside = (rail: HTMLElement, bounds: HTMLElement) => {
+	rail.style.removeProperty('translate');
+	const area = bounds.getBoundingClientRect();
+	const card = rail.getBoundingClientRect();
+	const shift = Math.max(
+		Math.min(0, area.right - card.right),
+		area.left - card.left,
+	);
+	if (shift !== 0) rail.style.setProperty('translate', `${shift}px 0`);
+};
 
 /**
  * A column chart that stacks the values of each series, for example spend by
@@ -105,58 +117,78 @@ export const StackedBarChart = <Key extends string = string>({
 	className,
 	testId,
 }: StackedBarChartProps<Key>) => {
-	const { totals, max, ticks } = useMemo(() => {
-		const columnTotals = data.map((datum) =>
-			sum(series.map((item) => valueOf(datum, item.key))),
-		);
+	// The values and the text change only with the data, not with each hover.
+	const { columns, max, ticks } = useMemo(() => {
+		const items = data.map((datum) => {
+			const values = series.map((item) =>
+				toDrawable(datum.values[item.key] ?? 0),
+			);
+			const total = sum(values);
+			const formattedValues = values.map((value) => formatValue(value));
+			const formattedTotal = formatValue(total);
+			return {
+				datum,
+				values,
+				total,
+				formattedValues,
+				formattedTotal,
+				description: [
+					datum.label,
+					`${totalLabel} ${formattedTotal}`,
+					...series.map(
+						(item, layer) =>
+							`${item.label} ${formattedValues[layer]}`,
+					),
+				].join(', '),
+			};
+		});
 		const axis = niceTicks(
-			columnTotals.reduce((top, total) => Math.max(top, total), 0),
+			items.reduce((top, item) => Math.max(top, item.total), 0),
 			tickCount,
 		);
-		return { totals: columnTotals, max: axis.max, ticks: axis.ticks };
-	}, [data, series, tickCount]);
+		return { columns: items, max: axis.max, ticks: axis.ticks };
+	}, [data, series, formatValue, totalLabel, tickCount]);
+
+	const table = useMemo(
+		() => (
+			<ChartTable
+				aria-label={ariaLabel}
+				columns={[
+					categoryLabel,
+					...series.map((item) => item.label),
+					totalLabel,
+				]}
+				rows={columns.map((column) => ({
+					id: column.datum.id,
+					cells: [
+						column.datum.label,
+						...column.formattedValues,
+						column.formattedTotal,
+					],
+				}))}
+				hidden={view === 'chart'}
+			/>
+		),
+		[ariaLabel, categoryLabel, columns, series, totalLabel, view],
+	);
 
 	const { activeIndex, containerProps, getItemProps } = useChartNavigation(
-		data.length,
+		columns.length,
 	);
+
+	const bodyRef = useRef<HTMLDivElement>(null);
+	const railRef = useRef<HTMLSpanElement>(null);
+	isomorphicLayoutEffect(() => {
+		if (railRef.current && bodyRef.current) {
+			keepInside(railRef.current, bodyRef.current);
+		}
+	}, [activeIndex, columns]);
 
 	const { Component: Root, componentProps: rootProps } = useBox({
 		className: clsx(styles.root, className),
 		odComponent: 'stacked-bar-chart',
 		testId,
 	});
-
-	const describe = (datum: StackedBarChartDatum<Key>, index: number) =>
-		[
-			datum.label,
-			`${totalLabel} ${formatValue(totals[index])}`,
-			...series.map(
-				(item) =>
-					`${item.label} ${formatValue(valueOf(datum, item.key))}`,
-			),
-		].join(', ');
-
-	const table = (
-		<ChartTable
-			aria-label={ariaLabel}
-			columns={[
-				categoryLabel,
-				...series.map((item) => item.label),
-				totalLabel,
-			]}
-			rows={data.map((datum, index) => ({
-				id: datum.id,
-				cells: [
-					datum.label,
-					...series.map((item) =>
-						formatValue(valueOf(datum, item.key)),
-					),
-					formatValue(totals[index]),
-				],
-			}))}
-			hidden={view === 'chart'}
-		/>
-	);
 
 	if (view === 'table') {
 		return <Root {...rootProps}>{table}</Root>;
@@ -168,7 +200,7 @@ export const StackedBarChart = <Key extends string = string>({
 			{...dataAttrs({ hasActive: activeIndex !== null })}
 		>
 			<ChartLegend items={series} layout="horizontal" />
-			<div className={styles.body}>
+			<div ref={bodyRef} className={styles.body}>
 				<div aria-hidden className={styles.gridLines}>
 					{ticks.map((tick) => (
 						<span
@@ -207,21 +239,20 @@ export const StackedBarChart = <Key extends string = string>({
 					role="graphics-document"
 					{...containerProps}
 				>
-					{data.map((datum, index) => {
+					{columns.map((column, index) => {
 						const isActive = index === activeIndex;
-						const total = totals[index];
-						const values = series.map((item) =>
-							valueOf(datum, item.key),
-						);
 
 						return (
 							<div
-								key={datum.id}
-								aria-label={describe(datum, index)}
+								key={column.datum.id}
+								aria-label={column.description}
 								className={styles.column}
 								role="graphics-symbol"
 								style={assignInlineVars({
-									[styles.columnSize]: toPercent(total, max),
+									[styles.columnSize]: toPercent(
+										column.total,
+										max,
+									),
 								})}
 								{...getItemProps(index)}
 								{...dataAttrs({ active: isActive })}
@@ -238,7 +269,7 @@ export const StackedBarChart = <Key extends string = string>({
 											}),
 										)}
 									>
-										{formatValue(total)}
+										{column.formattedTotal}
 									</span>
 									<span aria-hidden className={styles.stack}>
 										{series.map((item, layer) => (
@@ -250,8 +281,10 @@ export const StackedBarChart = <Key extends string = string>({
 														item.color,
 													[styles.segmentSize]:
 														toPercent(
-															values[layer],
-															total,
+															column.values[
+																layer
+															],
+															column.total,
 														),
 												})}
 											/>
@@ -259,30 +292,32 @@ export const StackedBarChart = <Key extends string = string>({
 									</span>
 									{isActive ? (
 										<span
+											ref={railRef}
 											className={styles.tooltipRail({
 												side:
-													index < data.length / 2
+													index < columns.length / 2
 														? 'end'
 														: 'start',
 											})}
 										>
 											<ChartTooltip
 												className={styles.tooltip}
-												title={datum.label}
+												title={column.datum.label}
 												// The top segment first, as in the column.
 												rows={series
 													.map((item, layer) => ({
 														key: item.key,
 														label: item.label,
 														color: item.color,
-														value: formatValue(
-															values[layer],
-														),
+														value: column
+															.formattedValues[
+															layer
+														],
 													}))
 													.reverse()}
 												total={{
 													label: totalLabel,
-													value: formatValue(total),
+													value: column.formattedTotal,
 												}}
 											/>
 										</span>
@@ -306,7 +341,7 @@ export const StackedBarChart = <Key extends string = string>({
 										),
 									)}
 								>
-									{datum.label}
+									{column.datum.label}
 								</span>
 							</div>
 						);

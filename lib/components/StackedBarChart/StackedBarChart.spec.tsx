@@ -74,12 +74,16 @@ describe('<StackedBarChart />', () => {
 		).toEqual(['$3,560', '$1,900', '$760', '$6,220']);
 	});
 
-	it('counts missing and negative values as 0', () => {
+	it('counts missing, negative and NaN values as 0', () => {
 		render(
 			<StackedBarChart
 				{...props}
 				data={[
-					{ id: 'a', label: 'A', values: { maintenance: 10 } },
+					{
+						id: 'a',
+						label: 'A',
+						values: { maintenance: 10, fuel: Number.NaN },
+					},
 					{ id: 'b', label: 'B', values: { fuel: -5, tolls: 4 } },
 				]}
 			/>,
@@ -116,18 +120,63 @@ describe('<StackedBarChart />', () => {
 		// A modal listens on the document, so the chart must stop the key there.
 		const onKeyDown = vi.fn();
 		document.addEventListener('keydown', onKeyDown);
+		try {
+			render(<StackedBarChart {...props} />);
+			const [first] = screen.getAllByRole('graphics-symbol');
+
+			act(() => first.focus());
+			fireEvent.keyDown(first, { key: 'Escape' });
+			expect(tooltipIn(first)).toBeNull();
+			expect(onKeyDown).not.toHaveBeenCalled();
+
+			// With no tooltip open, Escape goes on to the document.
+			fireEvent.keyDown(first, { key: 'Escape' });
+			expect(onKeyDown).toHaveBeenCalledTimes(1);
+		} finally {
+			document.removeEventListener('keydown', onKeyDown);
+		}
+	});
+
+	it('shows the focused column after a key, also with the pointer on another column', () => {
+		render(<StackedBarChart {...props} />);
+		const columns = screen.getAllByRole('graphics-symbol');
+
+		fireEvent.pointerEnter(columns[2], { pointerType: 'mouse' });
+		act(() => columns[2].focus());
+		fireEvent.keyDown(columns[2], { key: 'ArrowRight' });
+
+		expect(columns[3]).toHaveFocus();
+		expect(tooltipIn(columns[3])).not.toBeNull();
+		expect(tooltipIn(columns[2])).toBeNull();
+	});
+
+	it('keeps the browser shortcuts for arrow keys with a modifier key', () => {
 		render(<StackedBarChart {...props} />);
 		const [first] = screen.getAllByRole('graphics-symbol');
 
 		act(() => first.focus());
-		fireEvent.keyDown(first, { key: 'Escape' });
-		expect(tooltipIn(first)).toBeNull();
-		expect(onKeyDown).not.toHaveBeenCalled();
+		const notPrevented = fireEvent.keyDown(first, {
+			key: 'ArrowLeft',
+			altKey: true,
+		});
 
-		// With no tooltip open, Escape goes on to the document.
-		fireEvent.keyDown(first, { key: 'Escape' });
-		expect(onKeyDown).toHaveBeenCalledTimes(1);
-		document.removeEventListener('keydown', onKeyDown);
+		expect(notPrevented).toBe(true);
+		expect(first).toHaveFocus();
+	});
+
+	it('does not fail when the data gets shorter while a column is active', () => {
+		const { container, rerender } = render(<StackedBarChart {...props} />);
+		const columns = screen.getAllByRole('graphics-symbol');
+
+		fireEvent.pointerEnter(columns[7], { pointerType: 'mouse' });
+		rerender(
+			<StackedBarChart {...props} data={weeklyExpenses.slice(0, 3)} />,
+		);
+
+		expect(screen.getAllByRole('graphics-symbol')).toHaveLength(3);
+		expect(
+			container.querySelector('[data-od-component="stacked-bar-chart"]'),
+		).not.toHaveAttribute('data-has-active');
 	});
 
 	it('shows the tooltip of the hovered column, but not for a touch', () => {

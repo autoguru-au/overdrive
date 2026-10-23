@@ -96,6 +96,41 @@ describe('<DonutChart />', () => {
 		expect(items[0]).not.toHaveAttribute('data-dimmed');
 	});
 
+	it('gives no mark and no tab stop to a slice of 0, NaN or less', () => {
+		render(
+			<DonutChart
+				{...props}
+				data={[
+					{ ...expensesByCategory[0], value: 0 },
+					{ ...expensesByCategory[1], value: Number.NaN },
+					expensesByCategory[2],
+				]}
+			/>,
+		);
+
+		const slices = screen.getAllByRole('graphics-symbol');
+		expect(slices).toHaveLength(1);
+		expect(slices[0]).toHaveAccessibleName('Tolls, $4.2K, 100%');
+		// The legend still shows all categories.
+		expect(screen.getAllByRole('listitem')).toHaveLength(3);
+	});
+
+	it('does not fail when the data gets shorter while a slice is active', () => {
+		const { rerender } = render(<DonutChart {...props} />);
+		const slices = screen.getAllByRole('graphics-symbol');
+
+		fireEvent.pointerEnter(slices[2], { pointerType: 'mouse' });
+		act(() => slices[2].focus());
+		rerender(
+			<DonutChart {...props} data={expensesByCategory.slice(0, 2)} />,
+		);
+
+		expect(screen.getAllByRole('graphics-symbol')).toHaveLength(2);
+		for (const item of screen.getAllByRole('listitem')) {
+			expect(item).not.toHaveAttribute('data-dimmed');
+		}
+	});
+
 	it('passes testId and className to the root', () => {
 		const { container } = render(
 			<DonutChart {...props} className="custom" testId="donut" />,

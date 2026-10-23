@@ -1,4 +1,12 @@
-import { arcPath, clean, niceTicks, pie, sum, toPercent } from './chartMath';
+import {
+	arcPath,
+	clean,
+	niceTicks,
+	pie,
+	sum,
+	toDrawable,
+	toPercent,
+} from './chartMath';
 
 describe('niceTicks', () => {
 	it('gives 0, 2.5K, 5K, 7.5K for a maximum of 7,500 and 3 intervals', () => {
@@ -66,6 +74,16 @@ describe('clean', () => {
 	});
 });
 
+describe('toDrawable', () => {
+	it('keeps a positive value and gives 0 for any other value', () => {
+		expect(
+			[12.5, 0, -3, Number.NaN, Infinity, -Infinity].map((value) =>
+				toDrawable(value),
+			),
+		).toEqual([12.5, 0, 0, 0, 0, 0]);
+	});
+});
+
 describe('sum', () => {
 	it('adds the values', () => {
 		expect(sum([1, 2, 3.5])).toBe(6.5);
@@ -100,6 +118,13 @@ describe('pie', () => {
 		expect(arcs[2].endAngle - arcs[2].startAngle).toBeCloseTo(2 * Math.PI);
 	});
 
+	it('gives empty arcs for NaN and infinite values', () => {
+		const arcs = pie([Number.NaN, Infinity, 4]);
+		expect(arcs[0].endAngle - arcs[0].startAngle).toBe(0);
+		expect(arcs[1].endAngle - arcs[1].startAngle).toBe(0);
+		expect(arcs[2].endAngle - arcs[2].startAngle).toBeCloseTo(2 * Math.PI);
+	});
+
 	it('gives empty arcs when all values are 0', () => {
 		expect(pie([0, 0])).toEqual([
 			{ startAngle: 0, endAngle: 0 },
@@ -109,16 +134,18 @@ describe('pie', () => {
 });
 
 describe('arcPath', () => {
-	it('draws a quarter ring segment', () => {
+	it('draws a quarter ring segment, with each edge in two arcs', () => {
 		expect(arcPath({ startAngle: 0, endAngle: Math.PI / 2 }, 0.75, 1)).toBe(
-			'M0,-1A1,1 0 0 1 1,0L0.75,0A0.75,0.75 0 0 0 0,-0.75Z',
+			'M0,-1A1,1 0 0 1 0.7071,-0.7071A1,1 0 0 1 1,0' +
+				'L0.75,0A0.75,0.75 0 0 0 0.5303,-0.5303A0.75,0.75 0 0 0 0,-0.75Z',
 		);
 	});
 
-	it('sets the large arc flag for more than half a turn', () => {
-		expect(
-			arcPath({ startAngle: 0, endAngle: Math.PI * 1.5 }, 0.75, 1),
-		).toContain('A1,1 0 1 1');
+	it('draws a slice of almost a full turn', () => {
+		// One arc would start and end on the same rounded point, and SVG
+		// skips such an arc. The first half arc goes to the 6 o'clock point.
+		const [, large] = pie([1, 200_000]);
+		expect(arcPath(large, 0.75, 1)).toContain('A1,1 0 0 1 0,1A');
 	});
 
 	it('draws a full ring as two circles', () => {

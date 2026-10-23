@@ -28,6 +28,13 @@ const PATH_DECIMALS = 4;
 export const clean = (value: number): number =>
 	Number(value.toPrecision(CLEAN_PRECISION));
 
+/**
+ * Gives a value that a chart can draw: a negative value, `NaN` or an infinite
+ * value gives 0. One bad value then changes one mark, not the full chart.
+ */
+export const toDrawable = (value: number): number =>
+	Number.isFinite(value) ? Math.max(0, value) : 0;
+
 /** Adds the values. */
 export const sum = (values: number[]): number =>
 	values.reduce((total, value) => total + value, 0);
@@ -84,10 +91,10 @@ export interface Arc {
 
 /**
  * Divides a full turn between the values, in order and clockwise from the
- * 12 o'clock position. Values of 0 or less get an empty arc.
+ * 12 o'clock position. Values that `toDrawable` makes 0 get an empty arc.
  */
 export const pie = (values: number[]): Arc[] => {
-	const positive = values.map((value) => Math.max(0, value));
+	const positive = values.map((value) => toDrawable(value));
 	const total = sum(positive);
 	let angle = 0;
 
@@ -123,13 +130,19 @@ export const arcPath = (
 		return outer + inner;
 	}
 
-	const largeArc = span > Math.PI ? 1 : 0;
+	// Each edge is two arcs of half the span. With one arc, a span near a full
+	// turn starts and ends on the same rounded point, and SVG skips that arc.
+	const midAngle = startAngle + span / 2;
+	const outerArc = `A${outerRadius},${outerRadius} 0 0 1`;
+	const innerArc = `A${innerRadius},${innerRadius} 0 0 0`;
 
 	return [
 		`M${pointAt(outerRadius, startAngle)}`,
-		`A${outerRadius},${outerRadius} 0 ${largeArc} 1 ${pointAt(outerRadius, endAngle)}`,
+		`${outerArc} ${pointAt(outerRadius, midAngle)}`,
+		`${outerArc} ${pointAt(outerRadius, endAngle)}`,
 		`L${pointAt(innerRadius, endAngle)}`,
-		`A${innerRadius},${innerRadius} 0 ${largeArc} 0 ${pointAt(innerRadius, startAngle)}`,
+		`${innerArc} ${pointAt(innerRadius, midAngle)}`,
+		`${innerArc} ${pointAt(innerRadius, startAngle)}`,
 		'Z',
 	].join('');
 };
