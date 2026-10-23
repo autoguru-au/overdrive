@@ -10,21 +10,16 @@ import { overdriveTokens as vars } from '../../themes/theme.css';
  * TableRow uses `display: contents` so we can't animate the row box
  * itself — the global selector targets the row's gridcell children.
  *
- * Because the animation lands on the cells, it has to leave them with no
- * stacking context of their own: the row hover wash in TableCell.css.ts is a
- * `z-index: -1` pseudo-element that must escape its cell to reach the table,
- * and any computed transform other than the `none` keyword traps it.
- *
- * Hence `backwards` rather than `both`. `backwards` still holds the `from`
- * frame through the stagger delay, so rows stay hidden until their turn, but
- * retains nothing afterwards — the cell falls back to its base style, where
- * `transform` is genuinely the `none` keyword. `both` would retain the `to`
+ * Hence `backwards` rather than `both`. `backwards` holds the `from` frame
+ * through the stagger delay, so rows stay hidden until their turn, then retains
+ * nothing — the cell falls back to its base style. `both` would retain the `to`
  * frame forever, and a retained frame is an animated value: the interpolation
  * stack normalises even `transform: none` to the identity transform list, so
- * it computes to `matrix(1, 0, 0, 1, 0, 0)` and the stacking context survives.
- * The `to` frame matches the base style, so nothing moves when the fill drops.
+ * every cell computes to `matrix(1, 0, 0, 1, 0, 0)` and becomes a stacking
+ * context for the life of the page. The `to` frame matches the base style, so
+ * nothing moves when the fill drops.
  *
- * @see AG-22173
+ * @see AG-22173, AG-22531
  */
 
 export const staggerIndex = createVar();

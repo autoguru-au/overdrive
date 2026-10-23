@@ -184,21 +184,57 @@ export const Animated: Story = {
 	),
 };
 
+const hoverRows = [
+	{
+		asset: 'Mitsubishi Triton',
+		rego: 'DB40ZI',
+		year: 2021,
+		id: 1_523_036,
+		supplier: 'Ultra Tune Beenleigh',
+		price: '1,284.00',
+	},
+	{
+		asset: 'Mitsubishi Outlander',
+		rego: 'CX72RM',
+		year: 2019,
+		id: 1_522_939,
+		supplier: 'Kmart Tyre & Auto Slacks Creek',
+		price: '642.50',
+	},
+	{
+		asset: 'Toyota HiLux',
+		rego: 'FA18PQ',
+		year: 2022,
+		id: 1_522_871,
+		supplier: 'Midas Underwood',
+		price: '918.25',
+	},
+];
+
+const gridcells = (row: HTMLElement) =>
+	Array.from(row.querySelectorAll<HTMLElement>('[role="gridcell"]'));
+
+const cellAtCentreOf = (cell: HTMLElement) => {
+	const { left, top, width, height } = cell.getBoundingClientRect();
+	return document
+		.elementFromPoint(left + width / 2, top + height / 2)
+		?.closest('[role="gridcell"]');
+};
+
 /**
- * Regression guard for AG-22173: `staggerIndex` and the row hover wash in the
- * same table.
+ * Regression guard for AG-22531: no cell may cover its neighbours.
  *
- * The wash lives on the hovered cell's `::before` at `z-index: -1`, stretched
- * across the row and resolved against the `<table>`. That only works while no
- * cell forms a stacking context of its own, so the entrance animation has to
- * rest on `transform: none` rather than `translateY(0)` — an identity transform
- * still computes to a matrix, which traps the wash in the cell and paints it
- * over every column to its left.
+ * The wash used to be a `z-index: -1` pseudo-element stretched to
+ * `left/right: -1000%`, painted unconditionally on every cell of a hover row.
+ * A cell that formed a stacking context trapped it, and it then covered the
+ * columns beside it — blanking their text and swallowing their pointer events.
  *
- * Hover a right-hand cell: every column left of the pointer must stay readable.
+ * Hit-testing is the assertion because it catches the bug without needing a
+ * real pointer: the covering element was there whether or not anything was
+ * hovered. Hover the right-hand cells by hand to check the wash itself.
  */
 export const StaggeredWithHover: Story = {
-	tags: ['skip-themes'],
+	tags: ['test', '!autodocs', 'skip-themes'],
 	parameters: { chromatic: { disable: true } },
 	render: () => (
 		<Table columnTemplate="1.4fr auto auto auto 1.4fr auto">
@@ -213,32 +249,7 @@ export const StaggeredWithHover: Story = {
 				</TableRow>
 			</TableRowGroup>
 			<TableRowGroup>
-				{[
-					{
-						asset: 'Mitsubishi Triton',
-						rego: 'DB40ZI',
-						year: 2021,
-						id: 1_523_036,
-						supplier: 'Ultra Tune Beenleigh',
-						price: '1,284.00',
-					},
-					{
-						asset: 'Mitsubishi Outlander',
-						rego: 'CX72RM',
-						year: 2019,
-						id: 1_522_939,
-						supplier: 'Kmart Tyre & Auto Slacks Creek',
-						price: '642.50',
-					},
-					{
-						asset: 'Toyota HiLux',
-						rego: 'FA18PQ',
-						year: 2022,
-						id: 1_522_871,
-						supplier: 'Midas Underwood',
-						price: '918.25',
-					},
-				].map((row, i) => (
+				{hoverRows.map((row, i) => (
 					<TableRow key={row.id} staggerIndex={i}>
 						<TableCell>{row.asset}</TableCell>
 						<TableCell>{row.rego}</TableCell>
@@ -252,47 +263,80 @@ export const StaggeredWithHover: Story = {
 		</Table>
 	),
 	play: async ({ canvasElement, step }) => {
-		const cells = Array.from(
-			canvasElement.querySelectorAll<HTMLElement>(
-				`.${rowEntering} > [role="gridcell"]`,
-			),
+		const rows = Array.from(
+			canvasElement.querySelectorAll<HTMLElement>(`.${rowEntering}`),
 		);
+		const cells = gridcells(rows[0]);
+		const lastCell = cells.at(-1)!;
 
-		await step(
-			'rows stay hidden until their turn, then settle',
-			async () => {
-				await expect(cells.length).toBe(18);
+		await step('the entrance animation settles', async () => {
+			await expect(rows.length).toBe(hoverRows.length);
+			await Promise.all(
+				rows
+					.flatMap((row) => gridcells(row))
+					.flatMap((cell) => cell.getAnimations())
+					.map(({ finished }) => finished),
+			);
+		});
 
-				const animations = cells.flatMap((cell) =>
-					cell.getAnimations(),
-				);
-				await expect(animations.length).toBe(cells.length);
-
-				// `backwards`, not `both` — see TableRow.css.ts. It holds the
-				// `from` frame through the stagger delay without retaining the
-				// `to` frame, which is what keeps the cell free of a transform.
-				for (const animation of animations) {
-					await expect(animation.effect?.getTiming().fill).toBe(
-						'backwards',
-					);
-				}
-
-				await Promise.all(animations.map(({ finished }) => finished));
-			},
-		);
-
-		await step('cells rest without a stacking context', async () => {
+		await step('every cell owns its own area', async () => {
 			for (const cell of cells) {
-				await expect(getComputedStyle(cell).transform).toBe('none');
+				await expect(cellAtCentreOf(cell)).toBe(cell);
 			}
 		});
 
-		await step('the hover wash can still escape the cell', async () => {
+		await step('a sticky cell does not cover its row', async () => {
+			lastCell.style.position = 'sticky';
+			lastCell.style.right = '0';
+			lastCell.style.zIndex = '1';
+
 			for (const cell of cells) {
-				await expect(getComputedStyle(cell, '::before').zIndex).toBe(
-					'-1',
-				);
+				await expect(cellAtCentreOf(cell)).toBe(cell);
 			}
+
+			lastCell.removeAttribute('style');
 		});
 	},
 };
+
+/**
+ * Regression guard for AG-22531: the wash must stay inside the table.
+ *
+ * It used to be a pseudo-element stretched to `left/right: -1000%`, which
+ * inflated the scroll container's `scrollWidth` by thousands of pixels and
+ * produced phantom horizontal scroll.
+ */
+export const HoverStaysWithinTable: Story = {
+	tags: ['test', '!autodocs', 'skip-themes'],
+	parameters: { chromatic: { disable: true } },
+	render: () => (
+		<DataTable columnTemplate="1fr auto auto" aria-label="Containment">
+			<TableRowGroup>
+				<TableRow>
+					<TableHeadCell>Supplier</TableHeadCell>
+					<TableHeadCell>Rego</TableHeadCell>
+					<TableHeadCell align="right">Price</TableHeadCell>
+				</TableRow>
+			</TableRowGroup>
+			<TableRowGroup>
+				{hoverRows.map((row) => (
+					<TableRow key={row.id}>
+						<TableCell>{row.supplier}</TableCell>
+						<TableCell>{row.rego}</TableCell>
+						<TableCell align="right">${row.price}</TableCell>
+					</TableRow>
+				))}
+			</TableRowGroup>
+		</DataTable>
+	),
+	play: async ({ canvasElement, step }) => {
+		const pane = canvasElement.querySelector<HTMLElement>(
+			'[data-od-component="data-table"]',
+		)!;
+
+		await step('the wash adds no scrollable overflow', async () => {
+			await expect(pane.scrollWidth).toBe(pane.clientWidth);
+		});
+	},
+};
+

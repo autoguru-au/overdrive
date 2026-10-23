@@ -2,51 +2,29 @@ import { style } from '@vanilla-extract/css';
 
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
+const wash = {
+	backgroundColor: vars.color.gamut.gray['100'],
+	transitionTimingFunction: vars.animation.easing.decelerate,
+};
+
 export const root = style({
 	borderBottomColor: vars.color.border.default,
+	transition: `background-color 0.2s ${vars.animation.easing.accelerate}`,
 
 	selectors: {
 		/*
-		Hover wash. On its own the pseudo-element covers just this cell, which is
-			what a cell gets when it opts in to hover inside a row that has it
-			switched off.
+		The wash is painted by the cells themselves rather than by one cell's
+			pseudo-element stretched across the row. Our rows have no box of
+			their own (the `<tr>` is display: contents), and anything that has to
+			escape a cell to paint — a `z-index: -1` pseudo-element, say — is
+			trapped the moment any cell forms a stacking context. A cell's own
+			background cannot be.
+
+		@see AG-22531
 		 */
-		'&[data-hover]:before': {
-			bottom: 0,
-			content: '""',
-			display: 'block',
-			left: 0,
-			position: 'absolute',
-			right: 0,
-			top: 0,
-			transition: `background-color 0.2s ${vars.animation.easing.accelerate}`,
-			zIndex: -1,
-		},
+		'tr[data-hover]:has(> &[data-hover]:hover) > &[data-hover]': wash,
 
-		/*
-		Row wash. Our rows have no box of their own (the `<tr>` is display:
-			contents), so when the row has hover on we stretch the hovered cell's
-			pseudo-element across the whole row and let the table clip it. Once
-			subgrid is supported across browsers we can revisit this approach.
-
-		This rests on `z-index: -1` escaping the cell and resolving against the
-			`<table>`, whose stacking context and clip come from `clip-path:
-			inset(0)` in Table.css.ts. Nothing in between may form a stacking
-			context of its own, so a cell must never carry a computed `transform`,
-			`opacity` below 1, `filter` or `will-change` at rest — any of those
-			traps the wash in the cell, where its ±1000% width paints it over
-			every column to the left. See TableRow.css.ts and AG-22173.
-
-		@see https://caniuse.com/#feat=css-subgrid
-		 */
-		'tr[data-hover] > &[data-hover]:before': {
-			left: '-1000%',
-			right: '-1000%',
-		},
-
-		'&[data-hover]:hover:before': {
-			backgroundColor: vars.color.gamut.gray['100'],
-			transitionTimingFunction: vars.animation.easing.decelerate,
-		},
+		/* A cell that opts back in inside a `hover={false}` row washes alone. */
+		'&[data-hover]:hover': wash,
 	},
 });
