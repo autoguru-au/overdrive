@@ -1,0 +1,123 @@
+name: Gitleaks
+
+# Secret scan (COM-116). This repository is public, so it cannot call the private
+# devsecops reusable workflow; the scan is self-contained instead. gitleaks comes
+# from its pinned GitHub release and the tarball is sha256-verified before it runs.
+#
+#   - scan-pr  : runs when a pull request is not a draft. Scans only the PR
+#                commit range (merge-base..head), so a secret elsewhere in history
+#                never blocks an unrelated PR, and a NEW secret fails the check.
+#   - scan-push: full-history scan on push to main, a backstop for anything that
+#                lands without a pull request.
+#
+# Both jobs pass a redacted JSON report to report-findings.sh, which names each
+# finding (rule, file, line, commit, fingerprint) and never prints a secret value.
+# A test fixture is allowlisted by its fingerprint in .gitleaksignore.
+#
+# To bump gitleaks: update GITLEAKS_VERSION and GITLEAKS_SHA256 together. The
+# checksum comes from the release's gitleaks_<version>_checksums.txt asset.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  push:
+    branches: [main]
+
+concurrency:
+  group: gitleaks-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  GITLEAKS_VERSION: '8.30.1'
+  GITLEAKS_SHA256: '551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb'
+
+jobs:
+  scan-pr:
+    name: Secret scan (PR range)
+    if: github.event_name == 'pull_request' && github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Install gitleaks
+        run: |
+          set -euo pipefail
+          tarball="gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          url="https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/${tarball}"
+          curl --fail --silent --show-error --location --retry 3 --output "$tarball" "$url"
+          echo "${GITLEAKS_SHA256}  ${tarball}" | sha256sum --check --strict -
+          tar -xzf "$tarball" gitleaks
+          install -m 0755 gitleaks /usr/local/bin/gitleaks
+          rm -f "$tarball" gitleaks
+          gitleaks version
+
+      - name: Scan PR commit range
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          if ! git fetch --no-tags origin "$BASE_REF"; then
+            echo "::error::Failed to fetch origin/$BASE_REF for the scan range."
+            exit 1
+          fi
+          MERGE_BASE="$(git merge-base "origin/$BASE_REF" "$HEAD_SHA")"
+          echo "Scanning ${MERGE_BASE}..${HEAD_SHA} for newly introduced secrets."
+          REPORT="${RUNNER_TEMP}/gitleaks-pr-range.json"
+          SCAN_EXIT=0
+          gitleaks git . \
+            --log-opts="${MERGE_BASE}..${HEAD_SHA}" \
+            --redact \
+            --no-banner \
+            --exit-code 1 \
+            --report-format json \
+            --report-path "$REPORT" || SCAN_EXIT=$?
+          .github/scripts/gitleaks/report-findings.sh "$REPORT" "$SCAN_EXIT" "PR-range secret scan"
+
+  scan-push:
+    name: Secret scan (full history)
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
+        with:
+          fetch-depth: 0
+
+      - name: Install gitleaks
+        run: |
+          set -euo pipefail
+          tarball="gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          url="https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/${tarball}"
+          curl --fail --silent --show-error --location --retry 3 --output "$tarball" "$url"
+          echo "${GITLEAKS_SHA256}  ${tarball}" | sha256sum --check --strict -
+          tar -xzf "$tarball" gitleaks
+          install -m 0755 gitleaks /usr/local/bin/gitleaks
+          rm -f "$tarball" gitleaks
+          gitleaks version
+
+      - name: Scan full history
+        run: |
+          set -euo pipefail
+          REPORT="${RUNNER_TEMP}/gitleaks-full-history.json"
+          SCAN_EXIT=0
+          gitleaks git . \
+            --redact \
+            --no-banner \
+            --exit-code 1 \
+            --report-format json \
+            --report-path "$REPORT" || SCAN_EXIT=$?
+          .github/scripts/gitleaks/report-findings.sh "$REPORT" "$SCAN_EXIT" "full-history secret scan"
