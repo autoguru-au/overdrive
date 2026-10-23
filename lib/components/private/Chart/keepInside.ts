@@ -15,13 +15,17 @@ const shiftInto = (start: number, end: number, min: number, max: number) =>
 
 /**
  * Moves a tooltip so that it stays inside the bounds. Call it after each
- * render that shows or moves the tooltip.
+ * render that shows, moves or changes the tooltip.
+ *
+ * The tooltip gets the width of the bounds as its maximum width. Thus long
+ * text wraps and the tooltip fits, for example on a narrow screen.
  */
 export const keepInside = (
 	element: HTMLElement,
 	{ left, right, top, bottom }: Bounds,
 ) => {
 	element.style.removeProperty('transform');
+	element.style.setProperty('max-width', `${right - left}px`);
 	const box = element.getBoundingClientRect();
 	const x = shiftInto(box.left, box.right, left, right);
 	const y =

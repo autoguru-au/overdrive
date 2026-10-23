@@ -160,11 +160,12 @@ export const DonutChart = <Key extends string = string>({
 	}, [data, formatValue, formatPercent]);
 
 	const { activeIndex, focusedIndex, containerProps, getItemProps } =
-		useChartNavigation(marks.length);
+		useChartNavigation(marks.map((mark) => mark.datum.key));
 	const activeMark = activeIndex === null ? null : marks[activeIndex];
 
 	// Keeps the tooltip in the viewport, for example on a narrow screen or when
-	// the chart is at the top of the page.
+	// the chart is at the top of the page. The tooltip shows only with
+	// `hideLegend`, and its size changes with the labels.
 	const tooltipRef = useRef<HTMLDivElement>(null);
 	isomorphicLayoutEffect(() => {
 		if (tooltipRef.current) {
@@ -176,7 +177,7 @@ export const DonutChart = <Key extends string = string>({
 				bottom: clientHeight,
 			});
 		}
-	}, [activeMark]);
+	}, [activeMark, hideLegend, valueLabel, shareLabel]);
 
 	const { Component: Root, componentProps: rootProps } = useBox({
 		className: clsx(styles.root, className),
@@ -192,12 +193,21 @@ export const DonutChart = <Key extends string = string>({
 		/>
 	) : null;
 
+	// The centre is hidden from screen readers, so the name gives the total.
+	const chartLabel = `${ariaLabel}, ${totalLabel} ${formattedTotal}`;
+
 	if (total === 0) {
-		// The skeleton disc is the body, and the empty text is the footer.
+		// The skeleton disc is the body, and the empty text is the footer. The
+		// disc keeps the chart name, so that a screen reader can tell empty
+		// charts apart without a title.
 		return (
 			<Root {...rootProps}>
 				{header}
-				<div aria-hidden className={styles.emptyDisc} />
+				<div
+					aria-label={chartLabel}
+					className={styles.emptyDisc}
+					role="img"
+				/>
 				<Text align="center" as="p" color="secondary" size="3">
 					{emptyLabel}
 				</Text>
@@ -213,9 +223,7 @@ export const DonutChart = <Key extends string = string>({
 			{header}
 			<div className={styles.ring}>
 				<svg
-					// The centre is hidden from screen readers, so the name
-					// gives the total.
-					aria-label={`${ariaLabel}, ${totalLabel} ${formattedTotal}`}
+					aria-label={chartLabel}
 					className={styles.svg}
 					role="graphics-document"
 					viewBox={VIEW_BOX}

@@ -128,6 +128,35 @@ describe('<StackedBarChart />', () => {
 		expect(tooltipIn(columns[2])).toBeNull();
 	});
 
+	it('shows the focused column after Tab, also with the pointer on another column', () => {
+		render(<StackedBarChart {...props} />);
+		const columns = screen.getAllByRole('graphics-symbol');
+
+		fireEvent.pointerEnter(columns[2], { pointerType: 'mouse' });
+		act(() => columns[5].focus());
+
+		expect(tooltipIn(columns[5])).not.toBeNull();
+		expect(tooltipIn(columns[2])).toBeNull();
+	});
+
+	it('keeps the focused column active when the data removes a column before it', () => {
+		const { rerender } = render(<StackedBarChart {...props} />);
+		const columns = screen.getAllByRole('graphics-symbol');
+
+		act(() => columns[1].focus());
+		rerender(<StackedBarChart {...props} data={weeklyExpenses.slice(1)} />);
+
+		const after = screen.getAllByRole('graphics-symbol');
+		expect(after[0]).toBe(columns[1]);
+		expect(after[0]).toHaveFocus();
+		expect(after[0].tabIndex).toBe(0);
+		expect(tooltipIn(after[0])).not.toBeNull();
+		expect(tooltipIn(after[1])).toBeNull();
+
+		fireEvent.keyDown(after[0], { key: 'ArrowRight' });
+		expect(after[1]).toHaveFocus();
+	});
+
 	it('keeps the browser shortcuts for arrow keys with a modifier key', () => {
 		render(<StackedBarChart {...props} />);
 		const [first] = screen.getAllByRole('graphics-symbol');

@@ -46,6 +46,12 @@ describe('keepInside', () => {
 		expect(element.style.transform).toBe('');
 	});
 
+	it('limits the width to the bounds, so that long text wraps', () => {
+		const element = elementAt(10, 10);
+		keepInside(element, { left: 40, right: 360 });
+		expect(element.style.maxWidth).toBe('320px');
+	});
+
 	it('clears the earlier move before it measures again', () => {
 		const element = elementAt(10, 10);
 		element.style.transform = 'translate(-50px, 0px)';

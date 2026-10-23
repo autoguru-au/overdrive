@@ -131,6 +131,7 @@ export const tooltip = style({
 			gap: vars.space['2'],
 			padding: vars.space['4'],
 			pointerEvents: 'none',
+			// `keepInside` sets the maximum width from the space of the chart.
 			width: 'max-content',
 		},
 	},

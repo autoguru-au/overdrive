@@ -31,9 +31,14 @@ export interface ChartNavigation {
 	getItemProps: (index: number) => ChartItemProps;
 }
 
-/** Gives the index if an item has that index, else `null`. */
-const inRange = (index: number | null, count: number): number | null =>
-	index !== null && index < count ? index : null;
+/** Gives the index of the item with the key, or `null` if no item has it. */
+const indexOf = (
+	keys: readonly string[],
+	key: string | null,
+): number | null => {
+	const index = key === null ? -1 : keys.indexOf(key);
+	return index === -1 ? null : index;
+};
 
 /**
  * Keyboard and pointer behaviour for the marks of a chart (columns or slices).
@@ -43,28 +48,35 @@ const inRange = (index: number | null, count: number): number | null =>
  *   the last item.
  * - A hovered item is active. If no item is hovered, the focused item is
  *   active. A touch does not hover, so a tap activates the item through focus.
- *   A key that moves focus clears the hover, so the last input wins.
+ *   Focus clears the hover, so the last input wins.
  * - Escape closes the details of the active item until the next hover or
  *   focus change.
+ *
+ * The state keeps the item keys, not the indexes, because the charts keep the
+ * DOM items by key. If the data adds, removes or moves items, the state stays
+ * on the same item.
  */
-export const useChartNavigation = (count: number): ChartNavigation => {
-	const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-	const [focusedIndex, setFocusedIndex] = useState<number | null>(null);
-	const [tabStop, setTabStop] = useState(0);
+export const useChartNavigation = (
+	keys: readonly string[],
+): ChartNavigation => {
+	const [hoveredKey, setHoveredKey] = useState<string | null>(null);
+	const [focusedKey, setFocusedKey] = useState<string | null>(null);
+	const [tabStopKey, setTabStopKey] = useState<string | null>(null);
 	const [dismissed, setDismissed] = useState(false);
-	const [itemCount, setItemCount] = useState(count);
 
-	// A removed item does not send `pointerleave`, so a new data set clears
-	// the hover. Until that render, the indexes stay in the range of the items.
-	if (itemCount !== count) {
-		setItemCount(count);
-		setHoveredIndex(null);
-	}
-	const hovered = inRange(hoveredIndex, count);
-	const focused = inRange(focusedIndex, count);
+	const count = keys.length;
+	const hovered = indexOf(keys, hoveredKey);
+	const focused = indexOf(keys, focusedKey);
+
+	// A removed item does not send `pointerleave`, and some browsers send no
+	// `blur`. So the state of a removed item goes, and does not come back
+	// with the item.
+	if (hoveredKey !== null && hovered === null) setHoveredKey(null);
+	if (focusedKey !== null && focused === null) setFocusedKey(null);
 
 	const activeIndex = dismissed ? null : (hovered ?? focused);
-	const currentStop = Math.min(tabStop, Math.max(0, count - 1));
+	// If the tab stop item goes, the first item gets the tab stop.
+	const currentStop = indexOf(keys, tabStopKey) ?? 0;
 
 	const onKeyDown = (event: KeyboardEvent<Element>) => {
 		if (count === 0) return;
@@ -91,8 +103,8 @@ export const useChartNavigation = (count: number): ChartNavigation => {
 
 		if (next === undefined) return;
 		event.preventDefault();
-		setHoveredIndex(null);
-		setTabStop(next);
+		setHoveredKey(null);
+		setTabStopKey(keys[next]);
 		event.currentTarget
 			.querySelectorAll<HTMLElement | SVGElement>(ITEM_SELECTOR)
 			[next]?.focus();
@@ -102,17 +114,19 @@ export const useChartNavigation = (count: number): ChartNavigation => {
 		'data-chart-item': '',
 		tabIndex: index === currentStop ? 0 : -1,
 		onFocus: () => {
-			setFocusedIndex(index);
-			setTabStop(index);
+			setFocusedKey(keys[index]);
+			setTabStopKey(keys[index]);
+			// Tab into the chart while the pointer is on another item.
+			setHoveredKey(null);
 			setDismissed(false);
 		},
-		onBlur: () => setFocusedIndex(null),
+		onBlur: () => setFocusedKey(null),
 		onPointerEnter: (event) => {
 			if (event.pointerType === 'touch') return;
-			setHoveredIndex(index);
+			setHoveredKey(keys[index]);
 			setDismissed(false);
 		},
-		onPointerLeave: () => setHoveredIndex(null),
+		onPointerLeave: () => setHoveredKey(null),
 	});
 
 	return {

@@ -141,17 +141,17 @@ export const StackedBarChart = <Key extends string = string>({
 	}, [data, series, formatValue, totalLabel, tickCount]);
 
 	const { activeIndex, containerProps, getItemProps } = useChartNavigation(
-		columns.length,
+		columns.map((column) => column.datum.id),
 	);
 
 	const bodyRef = useRef<HTMLDivElement>(null);
-	const railRef = useRef<HTMLSpanElement>(null);
+	const tooltipRef = useRef<HTMLDivElement>(null);
 	// Keeps the tooltip inside the chart body, for example with one column or
 	// on a narrow screen.
 	isomorphicLayoutEffect(() => {
-		if (railRef.current && bodyRef.current) {
+		if (tooltipRef.current && bodyRef.current) {
 			keepInside(
-				railRef.current,
+				tooltipRef.current,
 				bodyRef.current.getBoundingClientRect(),
 			);
 		}
@@ -269,7 +269,6 @@ export const StackedBarChart = <Key extends string = string>({
 									</span>
 									{isActive ? (
 										<span
-											ref={railRef}
 											className={styles.tooltipRail({
 												side:
 													index < columns.length / 2
@@ -278,6 +277,7 @@ export const StackedBarChart = <Key extends string = string>({
 											})}
 										>
 											<ChartTooltip
+												ref={tooltipRef}
 												className={styles.tooltip}
 												title={column.datum.label}
 												// The top segment first, as in the column.

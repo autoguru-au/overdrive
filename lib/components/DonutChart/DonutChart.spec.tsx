@@ -62,6 +62,10 @@ describe('<DonutChart />', () => {
 
 		expect(screen.getByText('No spend data')).toBeInTheDocument();
 		expect(screen.queryByRole('graphics-symbol')).not.toBeInTheDocument();
+		// Without a title, the name tells this chart apart from other empty charts.
+		expect(
+			screen.getByRole('img', { name: 'Spend by category, Total $0' }),
+		).toBeInTheDocument();
 	});
 
 	it('dims the other legend items for the active slice', () => {
@@ -115,6 +119,50 @@ describe('<DonutChart />', () => {
 		for (const item of screen.getAllByRole('listitem')) {
 			expect(item).not.toHaveAttribute('data-dimmed');
 		}
+	});
+
+	it('keeps the focused slice active when the data changes the slice order', () => {
+		const { rerender } = render(<DonutChart {...props} />);
+		const fuel = screen.getByRole('graphics-symbol', { name: /^Fuel/ });
+
+		act(() => fuel.focus());
+		rerender(
+			<DonutChart
+				{...props}
+				data={[
+					expensesByCategory[1],
+					expensesByCategory[0],
+					expensesByCategory[2],
+				]}
+			/>,
+		);
+
+		expect(fuel).toHaveFocus();
+		expect(fuel).toHaveAttribute('data-active');
+		expect(fuel.tabIndex).toBe(0);
+		expect(
+			screen.getAllByRole('listitem').map((item) => ({
+				text: item.textContent,
+				dimmed: 'dimmed' in item.dataset,
+			})),
+		).toEqual([
+			{ text: 'Fuel $10.3K (39%)', dimmed: false },
+			{ text: 'Maintenance $12K (45%)', dimmed: true },
+			{ text: 'Tolls $4.2K (16%)', dimmed: true },
+		]);
+	});
+
+	it('places the tooltip when the legend goes while a slice is active', () => {
+		const { container, rerender } = render(<DonutChart {...props} />);
+		const [first] = screen.getAllByRole('graphics-symbol');
+
+		act(() => first.focus());
+		rerender(<DonutChart {...props} hideLegend />);
+
+		const tooltip = tooltipIn(container) as HTMLElement | null;
+		expect(tooltip).not.toBeNull();
+		// `keepInside` ran for the new tooltip.
+		expect(tooltip?.style.maxWidth).not.toBe('');
 	});
 
 	it('shows no tooltip while the legend shows', () => {
