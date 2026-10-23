@@ -4,10 +4,11 @@ on:
     push:
         branches:
             - main
+    workflow_dispatch:
 
 jobs:
     sonarqube:
-        uses: autoguru-au/devsecops/.github/workflows/sonarqube-typescript.yml@develop
+        uses: ./.github/workflows/sonarqube-typescript.yml
         with:
             enable_tests: true
         secrets: inherit
