@@ -1,8 +1,15 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 
+import { focusOutline } from '../../styles/focusOutline.css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
-export const sorterButton = style({ userSelect: 'text' });
+export const sorterButton = style({
+	userSelect: 'text',
+
+	selectors: {
+		'&:focus-visible': focusOutline,
+	},
+});
 
 export const text = style({
 	selectors: {
