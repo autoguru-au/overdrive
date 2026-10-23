@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import React from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 
 import {
@@ -8,7 +7,6 @@ import {
 	formatCurrency,
 	weeklyExpenses,
 } from '../../stories/shared/chartData';
-import { Box } from '../Box/Box';
 
 import { StackedBarChart } from './StackedBarChart';
 
@@ -17,8 +15,8 @@ const GUIDE = `
 each period, for example the spend by category for each week.
 
 The component has **no fixed text, locale or currency**. Give the translated
-text in props (\`aria-label\`, \`totalLabel\`, \`categoryLabel\`, the series and
-column labels), and give the formatters (\`formatValue\`, \`formatTick\`). Use
+text in props (\`aria-label\`, \`totalLabel\`, the series and column
+labels), and give the formatters (\`formatValue\`, \`formatTick\`). Use
 \`Intl.NumberFormat\` for the values and \`Intl.DateTimeFormat#formatRange\` for
 date ranges.
 
@@ -28,9 +26,14 @@ Give the series colours as tokens, for example
 The width follows the container. The height follows the container when the
 container has a height, with a minimum.
 
-Set \`view="table"\` to show the same data as a table, for example from a
-toggle in the MFE. In the chart view, a visually hidden table stays
-available to screen readers.
+The chart has three parts, as a modal does: a header with \`title\` and
+\`description\`, the body with the columns, and a footer with the legend.
+Without \`title\` there is no header, and with \`hideLegend\` there is no
+footer. The chart has no border or card. To show it in a card, put it in a
+container with a border, for example a \`Box\`.
+
+Screen readers read the name of the chart, and the name of each column with
+its total and the value of each series.
 `;
 
 const meta = {
@@ -44,18 +47,6 @@ const meta = {
 			description: { component: GUIDE },
 		},
 	},
-	decorators: [
-		(Story) => (
-			<Box
-				borderColor="default"
-				borderRadius="medium"
-				borderWidth="1"
-				padding="5"
-			>
-				<Story />
-			</Box>
-		),
-	],
 	args: {
 		data: weeklyExpenses,
 		series: expenseSeries,
@@ -63,10 +54,8 @@ const meta = {
 		formatValue: formatCurrency,
 		formatTick: formatCompactCurrency,
 		totalLabel: 'Total',
-		categoryLabel: 'Week',
 	},
 	argTypes: {
-		view: { control: 'inline-radio', options: ['chart', 'table'] },
 		tickCount: { control: { type: 'number', min: 1, max: 10 } },
 		formatValue: { table: { disable: true } },
 		formatTick: { table: { disable: true } },
@@ -88,9 +77,14 @@ const tooltipIn = (element: HTMLElement) =>
  */
 export const Standard: Story = {};
 
-/** The same data as a visible table. */
-export const TableView: Story = {
-	args: { view: 'table' },
+/** A header with a title and a description. */
+export const WithHeader: Story = {
+	args: { title: 'Expenses', description: 'Weekly' },
+};
+
+/** No legend. The column tooltip still gives the name of each series. */
+export const WithoutLegend: Story = {
+	args: { hideLegend: true },
 };
 
 /**
@@ -130,7 +124,6 @@ export const OtherLocale: Story = {
 			maximumFractionDigits: 1,
 		}).format,
 		totalLabel: 'Razem',
-		categoryLabel: 'Tydzień',
 		'aria-label': 'Wydatki tygodniowe według kategorii',
 	},
 };

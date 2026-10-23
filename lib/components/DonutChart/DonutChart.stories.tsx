@@ -23,7 +23,21 @@ centre has room for a short value, so use a compact format, for example
 Give the slice colours as tokens, for example
 \`tokens.color.gamut.green['900']\`, so that they follow the theme.
 
+The chart has three parts, as a modal does: a header with \`title\` and
+\`description\`, the body with the ring, and a footer with the legend. Without
+\`title\` there is no header. Set \`titleAs\` to the heading level that fits
+the page.
+
+Set \`hideLegend\` to show only the ring. Hover or focus on a slice then
+shows a tooltip with the name, the value and the share of the slice.
+
+The chart has no border or card. To show it in a card, put it in a container
+with a border, for example a \`Box\`.
+
 When all values are 0, the chart shows \`emptyLabel\` in place of the ring.
+
+Screen readers read the name of the chart, and the name, the value and the
+share of each slice.
 `;
 
 const meta = {
@@ -38,31 +52,26 @@ const meta = {
 		},
 	},
 	decorators: [
+		// No border: the story only keeps the chart as wide as its content.
 		(Story) => (
-			<Box
-				borderColor="default"
-				borderRadius="medium"
-				borderWidth="1"
-				padding="3"
-				maxWidth="fit-content"
-			>
+			<Box maxWidth="fit-content">
 				<Story />
 			</Box>
 		),
 	],
 	args: {
 		data: expensesByCategory,
+		title: 'Spend by category',
+		description: 'Monthly',
 		'aria-label': 'Spend by category',
 		formatValue: formatCompactCurrency,
 		formatPercent,
 		totalLabel: 'Total',
 		emptyLabel: 'No spend data',
-		categoryLabel: 'Category',
 		valueLabel: 'Spend',
 		shareLabel: 'Share',
 	},
 	argTypes: {
-		view: { control: 'inline-radio', options: ['chart', 'table'] },
 		formatValue: { table: { disable: true } },
 		formatPercent: { table: { disable: true } },
 		className: { table: { disable: true } },
@@ -74,8 +83,16 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-/** Three categories from the design data. */
+const tooltipIn = (element: HTMLElement) =>
+	element.querySelector('[data-od-component="chart-tooltip"]');
+
+/** Three categories from the design data, with the header from the design. */
 export const Standard: Story = {};
+
+/** Without `title`, the chart has no header. */
+export const WithoutHeader: Story = {
+	args: { title: undefined, description: undefined },
+};
 
 /** Two categories. */
 export const TwoSlices: Story = {
@@ -96,9 +113,49 @@ export const Empty: Story = {
 	},
 };
 
-/** The same data as a visible table. */
-export const TableView: Story = {
-	args: { view: 'table' },
+/**
+ * Only the ring. Hover or focus on a slice shows a tooltip with its name,
+ * value and share. The tooltip goes away from the centre of the ring.
+ */
+export const WithoutLegend: Story = {
+	args: { hideLegend: true },
+	play: async ({ canvasElement, step }) => {
+		const canvas = within(canvasElement);
+		const slices = canvas.getAllByRole('graphics-symbol');
+
+		await step('the legend does not show', async () => {
+			await expect(canvas.queryAllByRole('listitem')).toHaveLength(0);
+			await expect(tooltipIn(canvasElement)).toBeNull();
+		});
+
+		await step('hover on a slice shows its tooltip', async () => {
+			await userEvent.hover(slices[1]);
+			const tooltip = tooltipIn(canvasElement);
+			await expect(tooltip).toHaveTextContent('Fuel');
+			await expect(tooltip).toHaveTextContent('$10.3K');
+			await expect(tooltip).toHaveTextContent('39%');
+			await userEvent.unhover(slices[1]);
+			await expect(tooltipIn(canvasElement)).toBeNull();
+		});
+
+		await step(
+			'keyboard focus shows the tooltip of the slice',
+			async () => {
+				await userEvent.tab();
+				await expect(slices[0]).toHaveFocus();
+				await expect(tooltipIn(canvasElement)).toHaveTextContent(
+					'Maintenance',
+				);
+				await userEvent.keyboard('{Escape}');
+				await expect(tooltipIn(canvasElement)).toBeNull();
+			},
+		);
+
+		await step('the chart returns to its default state', async () => {
+			await userEvent.tab();
+			await expect(slices[0]).not.toHaveFocus();
+		});
+	},
 };
 
 /**

@@ -1,4 +1,4 @@
-import { act, fireEvent, render, screen, within } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 
 import {
@@ -17,7 +17,6 @@ const props: StackedBarChartProps = {
 	formatValue: formatCurrency,
 	formatTick: formatCompactCurrency,
 	totalLabel: 'Total',
-	categoryLabel: 'Week',
 };
 
 const tooltipIn = (element: HTMLElement) =>
@@ -34,7 +33,7 @@ describe('<StackedBarChart />', () => {
 		);
 	});
 
-	it('names the chart and the hidden table with the aria-label', () => {
+	it('names the chart with the aria-label, and has no table', () => {
 		render(<StackedBarChart {...props} />);
 
 		expect(
@@ -42,9 +41,7 @@ describe('<StackedBarChart />', () => {
 				name: 'Weekly expenses by category',
 			}),
 		).toBeInTheDocument();
-		expect(
-			screen.getByRole('table', { name: 'Weekly expenses by category' }),
-		).toBeInTheDocument();
+		expect(screen.queryByRole('table')).not.toBeInTheDocument();
 	});
 
 	it('shows nice Y axis ticks with the tick formatter', () => {
@@ -53,25 +50,6 @@ describe('<StackedBarChart />', () => {
 		for (const tick of ['$0', '$2.5K', '$5K', '$7.5K']) {
 			expect(screen.getByText(tick)).toBeInTheDocument();
 		}
-	});
-
-	it('shows only the table in the table view', () => {
-		render(<StackedBarChart {...props} view="table" />);
-
-		expect(screen.queryByRole('graphics-document')).not.toBeInTheDocument();
-		const table = screen.getByRole('table');
-		const rows = within(table).getAllByRole('row');
-		expect(rows).toHaveLength(9);
-		expect(
-			within(rows[0])
-				.getAllByRole('columnheader')
-				.map((cell) => cell.textContent),
-		).toEqual(['Week', 'Maintenance', 'Fuel', 'Tolls', 'Total']);
-		expect(
-			within(rows[5])
-				.getAllByRole('cell')
-				.map((cell) => cell.textContent),
-		).toEqual(['$3,560', '$1,900', '$760', '$6,220']);
 	});
 
 	it('counts missing, negative and NaN values as 0', () => {
@@ -199,6 +177,48 @@ describe('<StackedBarChart />', () => {
 
 		expect(screen.queryAllByRole('graphics-symbol')).toHaveLength(0);
 		expect(screen.getByText('$0')).toBeInTheDocument();
+	});
+
+	it('has no header without a title, and the legend in the footer', () => {
+		render(<StackedBarChart {...props} />);
+
+		expect(screen.queryByRole('heading')).not.toBeInTheDocument();
+		const plot = screen.getByRole('graphics-document');
+		const legend = screen.getByRole('list');
+		// The legend comes after the plot: it is the footer.
+		expect(
+			plot.compareDocumentPosition(legend) &
+				Node.DOCUMENT_POSITION_FOLLOWING,
+		).toBeTruthy();
+	});
+
+	it('shows the title and the description in the header', () => {
+		render(
+			<StackedBarChart
+				{...props}
+				description="Weekly"
+				title="Expenses"
+				titleAs="h3"
+			/>,
+		);
+
+		const heading = screen.getByRole('heading', { level: 3 });
+		expect(heading).toHaveTextContent('Expenses');
+		expect(screen.getByText('Weekly')).toBeInTheDocument();
+		expect(
+			heading.compareDocumentPosition(
+				screen.getByRole('graphics-document'),
+			) & Node.DOCUMENT_POSITION_FOLLOWING,
+		).toBeTruthy();
+	});
+
+	it('hides the legend in the footer, and keeps the header', () => {
+		render(<StackedBarChart {...props} hideLegend title="Expenses" />);
+
+		expect(screen.queryByRole('list')).not.toBeInTheDocument();
+		expect(
+			screen.getByRole('heading', { level: 2, name: 'Expenses' }),
+		).toBeInTheDocument();
 	});
 
 	it('passes testId and className to the root', () => {

@@ -253,8 +253,8 @@ export const valueLabel = style({
 			textAlign: 'center',
 			whiteSpace: 'nowrap',
 			// There is no mobile design. Below this band width the total labels of
-			// neighbour columns touch, so they go. The tooltip and the table still
-			// give the totals. A container query cannot read a token, so the value
+			// neighbour columns touch, so they go. The tooltip and the screen
+			// reader text still give the totals. A container query cannot read a token, so the value
 			// repeats the 64px of `space['10']`.
 			'@container': {
 				'(max-width: 64px)': { display: 'none' },

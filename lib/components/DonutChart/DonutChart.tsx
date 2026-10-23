@@ -1,22 +1,26 @@
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import clsx from 'clsx';
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef } from 'react';
 
 import type { TestIdProp } from '../../types';
+import { isomorphicLayoutEffect } from '../../utils';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { useBox } from '../Box/useBox/useBox';
 import { Text } from '../Text/Text';
 import {
+	ChartHeader,
 	ChartLegend,
-	ChartTable,
+	ChartTooltip,
 	arcPath,
+	keepInside,
 	pie,
 	sum,
 	toDrawable,
+	toPercent,
 	useChartNavigation,
 	type ChartFormatter,
+	type ChartHeaderOptions,
 	type ChartSeries,
-	type ChartView,
 } from '../private/Chart';
 
 import * as styles from './DonutChart.css';
@@ -29,51 +33,78 @@ const OUTER_RADIUS = 1;
 const INNER_RADIUS = 0.75;
 const VIEW_BOX = `${-OUTER_RADIUS} ${-OUTER_RADIUS} ${OUTER_RADIUS * 2} ${OUTER_RADIUS * 2}`;
 
+/**
+ * Gives the tooltip placement for an angle, clockwise from 12 o'clock. The
+ * tooltip goes away from the centre of the ring.
+ */
+const placementAt = (angle: number): styles.TooltipPlacement => {
+	const top = Math.cos(angle) > 0;
+	const start = Math.sin(angle) < 0;
+	if (top) return start ? 'top-start' : 'top-end';
+	return start ? 'bottom-start' : 'bottom-end';
+};
+
 export interface DonutChartDatum<Key extends string = string>
 	extends ChartSeries<Key> {
-	/** The slice value. A negative value counts as 0. */
+	/** The slice value. A negative, `NaN` or infinite value counts as 0. */
 	value: number;
 }
 
 export interface DonutChartProps<Key extends string = string>
-	extends TestIdProp {
+	extends TestIdProp,
+		ChartHeaderOptions {
 	/** The slices, clockwise from the 12 o'clock position. */
 	data: DonutChartDatum<Key>[];
-	/** The accessible name of the chart and its table. */
+	/**
+	 * The accessible name of the chart. The chart adds the total, so a screen
+	 * reader hears, for example, "Spend by category, Total $26.4K".
+	 */
 	'aria-label': string;
 	/**
-	 * Formats the values in the centre, the legend, the table and the screen
+	 * Formats the values in the centre, the legend, the tooltip and the screen
 	 * reader text, for example with a compact currency format.
 	 */
 	formatValue: ChartFormatter;
 	/** Formats the share of a slice. The value is from 0 to 1, for example with `Intl.NumberFormat` and `style: 'percent'`. */
 	formatPercent: ChartFormatter;
-	/** The caption under the total in the centre, and the label of the total row in the table. */
+	/** The caption under the total in the centre. */
 	totalLabel: string;
 	/** The text that shows in place of the chart when all values are 0. */
 	emptyLabel: string;
-	/** The header of the first table column, which holds the slice names. */
-	categoryLabel: string;
-	/** The header of the table column that holds the values. */
-	valueLabel: string;
-	/** The header of the table column that holds the shares. */
-	shareLabel: string;
 	/**
-	 * Shows the graphic, or the same data as a table. In the `chart` view, a
-	 * visually hidden table stays available to screen readers.
-	 * @default 'chart'
+	 * The label of the value row in the tooltip, for example "Spend". The
+	 * tooltip shows only with `hideLegend`. Without a label, the row shows the
+	 * value only.
 	 */
-	view?: ChartView;
+	valueLabel?: string;
+	/**
+	 * The label of the share row in the tooltip, for example "Share". Without
+	 * a label, the row shows the share only.
+	 */
+	shareLabel?: string;
+	/**
+	 * Hides the legend in the footer, so that only the ring shows. Hover or
+	 * focus on a slice then shows a tooltip with the name, the value and the
+	 * share of the slice.
+	 * @default false
+	 */
+	hideLegend?: boolean;
 	/** Additional class names for the root element. */
 	className?: string;
 }
 
 /**
  * A ring chart that shows the share of each category, with the total in the
- * centre and a legend with the value and the share of each slice.
+ * centre and a legend with the value and the share of each slice. With
+ * `hideLegend`, only the ring shows, and a tooltip gives the details of a slice.
+ *
+ * The chart has three parts: a header with the `title`, the body with the
+ * ring, and a footer with the legend or `emptyLabel`. Without `title` there is
+ * no header. The chart has no border or card.
  *
  * Hover or focus on a slice dims the other slices and legend items. The chart
- * is one tab stop: the arrow keys move between the slices.
+ * is one tab stop: the arrow keys move between the slices and Escape closes
+ * the tooltip.
  *
  * The component has no fixed text, locale or currency. Give all text and the
  * formatters in props.
@@ -85,10 +116,12 @@ export const DonutChart = <Key extends string = string>({
 	formatPercent,
 	totalLabel,
 	emptyLabel,
-	categoryLabel,
 	valueLabel,
 	shareLabel,
-	view = 'chart',
+	title,
+	description,
+	titleAs = 'h2',
+	hideLegend = false,
 	className,
 	testId,
 }: DonutChartProps<Key>) => {
@@ -102,57 +135,48 @@ export const DonutChart = <Key extends string = string>({
 			const share = formatPercent(
 				grandTotal > 0 ? values[index] / grandTotal : 0,
 			);
+			const angle = (arcs[index].startAngle + arcs[index].endAngle) / 2;
 			return {
 				datum,
 				value,
 				share,
 				path: arcPath(arcs[index], INNER_RADIUS, OUTER_RADIUS),
-				description: `${datum.label}, ${value}, ${share}`,
+				accessibleName: `${datum.label}, ${value}, ${share}`,
+				// The outer edge of the ring at the middle of the slice, as a
+				// percentage of the ring box.
+				tooltipX: toPercent(1 + Math.sin(angle), 2),
+				tooltipY: toPercent(1 - Math.cos(angle), 2),
+				placement: placementAt(angle),
 			};
 		});
 		return {
 			slices: items,
 			// A slice of 0 has no area, so it gets no mark and no tab stop. The
-			// legend and the table still show it.
+			// legend still shows it.
 			marks: items.filter((_, index) => values[index] > 0),
 			total: grandTotal,
 			formattedTotal: formatValue(grandTotal),
 		};
 	}, [data, formatValue, formatPercent]);
 
-	const table = useMemo(
-		() => (
-			<ChartTable
-				aria-label={ariaLabel}
-				columns={[categoryLabel, valueLabel, shareLabel]}
-				rows={slices.map((slice) => ({
-					id: slice.datum.key,
-					cells: [slice.datum.label, slice.value, slice.share],
-				}))}
-				footer={[
-					totalLabel,
-					formattedTotal,
-					formatPercent(total > 0 ? 1 : 0),
-				]}
-				hidden={view === 'chart'}
-			/>
-		),
-		[
-			ariaLabel,
-			categoryLabel,
-			formatPercent,
-			formattedTotal,
-			shareLabel,
-			slices,
-			total,
-			totalLabel,
-			valueLabel,
-			view,
-		],
-	);
-
 	const { activeIndex, focusedIndex, containerProps, getItemProps } =
 		useChartNavigation(marks.length);
+	const activeMark = activeIndex === null ? null : marks[activeIndex];
+
+	// Keeps the tooltip in the viewport, for example on a narrow screen or when
+	// the chart is at the top of the page.
+	const tooltipRef = useRef<HTMLDivElement>(null);
+	isomorphicLayoutEffect(() => {
+		if (tooltipRef.current) {
+			const { clientWidth, clientHeight } = document.documentElement;
+			keepInside(tooltipRef.current, {
+				left: 0,
+				right: clientWidth,
+				top: 0,
+				bottom: clientHeight,
+			});
+		}
+	}, [activeMark]);
 
 	const { Component: Root, componentProps: rootProps } = useBox({
 		className: clsx(styles.root, className),
@@ -160,15 +184,21 @@ export const DonutChart = <Key extends string = string>({
 		testId,
 	});
 
-	if (view === 'table') {
-		return <Root {...rootProps}>{table}</Root>;
-	}
+	const header = title ? (
+		<ChartHeader
+			description={description}
+			title={title}
+			titleAs={titleAs}
+		/>
+	) : null;
 
 	if (total === 0) {
+		// The skeleton disc is the body, and the empty text is the footer.
 		return (
 			<Root {...rootProps}>
+				{header}
 				<div aria-hidden className={styles.emptyDisc} />
-				<Text as="p" size="3" color="secondary">
+				<Text align="center" as="p" color="secondary" size="3">
 					{emptyLabel}
 				</Text>
 			</Root>
@@ -180,9 +210,12 @@ export const DonutChart = <Key extends string = string>({
 
 	return (
 		<Root {...rootProps}>
+			{header}
 			<div className={styles.ring}>
 				<svg
-					aria-label={ariaLabel}
+					// The centre is hidden from screen readers, so the name
+					// gives the total.
+					aria-label={`${ariaLabel}, ${totalLabel} ${formattedTotal}`}
 					className={styles.svg}
 					role="graphics-document"
 					viewBox={VIEW_BOX}
@@ -192,7 +225,7 @@ export const DonutChart = <Key extends string = string>({
 					{marks.map((mark, index) => (
 						<path
 							key={mark.datum.key}
-							aria-label={mark.description}
+							aria-label={mark.accessibleName}
 							className={styles.slice}
 							d={mark.path}
 							fillRule="evenodd"
@@ -221,22 +254,45 @@ export const DonutChart = <Key extends string = string>({
 						{totalLabel}
 					</Text>
 				</div>
+				{hideLegend && activeMark ? (
+					<ChartTooltip
+						ref={tooltipRef}
+						className={styles.tooltip({
+							placement: activeMark.placement,
+						})}
+						color={activeMark.datum.color}
+						rows={[
+							{
+								key: 'value',
+								label: valueLabel,
+								value: activeMark.value,
+							},
+							{
+								key: 'share',
+								label: shareLabel,
+								value: activeMark.share,
+							},
+						]}
+						style={assignInlineVars({
+							[styles.tooltipX]: activeMark.tooltipX,
+							[styles.tooltipY]: activeMark.tooltipY,
+						})}
+						title={activeMark.datum.label}
+					/>
+				) : null}
 			</div>
-			<ChartLegend
-				activeKey={
-					activeIndex === null
-						? undefined
-						: marks[activeIndex].datum.key
-				}
-				items={slices.map((slice) => ({
-					key: slice.datum.key,
-					label: slice.datum.label,
-					color: slice.datum.color,
-					detail: `${slice.value} (${slice.share})`,
-				}))}
-				layout="vertical"
-			/>
-			{table}
+			{hideLegend ? null : (
+				<ChartLegend
+					activeKey={activeMark?.datum.key}
+					items={slices.map((slice) => ({
+						key: slice.datum.key,
+						label: slice.datum.label,
+						color: slice.datum.color,
+						detail: `${slice.value} (${slice.share})`,
+					}))}
+					layout="vertical"
+				/>
+			)}
 		</Root>
 	);
 };

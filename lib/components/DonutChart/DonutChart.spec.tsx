@@ -1,4 +1,4 @@
-import { act, fireEvent, render, screen, within } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 
 import {
@@ -16,10 +16,12 @@ const props: DonutChartProps = {
 	formatPercent,
 	totalLabel: 'Total',
 	emptyLabel: 'No spend data',
-	categoryLabel: 'Category',
 	valueLabel: 'Spend',
 	shareLabel: 'Share',
 };
+
+const tooltipIn = (element: HTMLElement) =>
+	element.querySelector('[data-od-component="chart-tooltip"]');
 
 describe('<DonutChart />', () => {
 	it('renders one slice for each datum, with a summary', () => {
@@ -39,30 +41,14 @@ describe('<DonutChart />', () => {
 	it('shows the total in the centre and the shares in the legend', () => {
 		render(<DonutChart {...props} />);
 
-		// The centre and the total row of the hidden table.
-		expect(screen.getAllByText('$26.4K')).toHaveLength(2);
+		expect(screen.getByText('$26.4K')).toBeInTheDocument();
+		expect(screen.queryByRole('table')).not.toBeInTheDocument();
 		expect(
 			screen.getAllByRole('listitem').map((item) => item.textContent),
 		).toEqual([
 			'Maintenance $12K (45%)',
 			'Fuel $10.3K (39%)',
 			'Tolls $4.2K (16%)',
-		]);
-	});
-
-	it('shows only the table, with a total row, in the table view', () => {
-		render(<DonutChart {...props} view="table" />);
-
-		expect(screen.queryByRole('graphics-document')).not.toBeInTheDocument();
-		const rows = within(
-			screen.getByRole('table', { name: 'Spend by category' }),
-		).getAllByRole('row');
-		expect(rows.map((row) => row.textContent)).toEqual([
-			'CategorySpendShare',
-			'Maintenance$12K45%',
-			'Fuel$10.3K39%',
-			'Tolls$4.2K16%',
-			'Total$26.4K100%',
 		]);
 	});
 
@@ -129,6 +115,76 @@ describe('<DonutChart />', () => {
 		for (const item of screen.getAllByRole('listitem')) {
 			expect(item).not.toHaveAttribute('data-dimmed');
 		}
+	});
+
+	it('shows no tooltip while the legend shows', () => {
+		const { container } = render(<DonutChart {...props} />);
+		const [first] = screen.getAllByRole('graphics-symbol');
+
+		act(() => first.focus());
+		expect(tooltipIn(container)).toBeNull();
+	});
+
+	it('hides the legend and shows a tooltip for the active slice', () => {
+		const { container } = render(<DonutChart {...props} hideLegend />);
+		const slices = screen.getAllByRole('graphics-symbol');
+
+		expect(screen.queryAllByRole('listitem')).toHaveLength(0);
+		expect(tooltipIn(container)).toBeNull();
+
+		fireEvent.pointerEnter(slices[1], { pointerType: 'mouse' });
+		expect(tooltipIn(container)?.textContent).toBe(
+			'FuelSpend$10.3KShare39%',
+		);
+
+		fireEvent.pointerLeave(slices[1]);
+		act(() => slices[2].focus());
+		expect(tooltipIn(container)).toHaveTextContent('Tolls');
+
+		fireEvent.keyDown(slices[2], { key: 'Escape' });
+		expect(tooltipIn(container)).toBeNull();
+	});
+
+	it('shows the header above the ring and the legend below it', () => {
+		render(
+			<DonutChart
+				{...props}
+				description="Monthly"
+				title="Spend by category"
+			/>,
+		);
+
+		const heading = screen.getByRole('heading', {
+			level: 2,
+			name: 'Spend by category',
+		});
+		const ring = screen.getByRole('graphics-document');
+		const legend = screen.getByRole('list');
+		expect(screen.getByText('Monthly')).toBeInTheDocument();
+		expect(
+			heading.compareDocumentPosition(ring) &
+				Node.DOCUMENT_POSITION_FOLLOWING,
+		).toBeTruthy();
+		expect(
+			ring.compareDocumentPosition(legend) &
+				Node.DOCUMENT_POSITION_FOLLOWING,
+		).toBeTruthy();
+	});
+
+	it('keeps the header in the empty state', () => {
+		render(
+			<DonutChart
+				{...props}
+				data={expensesByCategory.map((item) => ({ ...item, value: 0 }))}
+				title="Spend by category"
+				titleAs="h4"
+			/>,
+		);
+
+		expect(screen.getByRole('heading', { level: 4 })).toHaveTextContent(
+			'Spend by category',
+		);
+		expect(screen.getByText('No spend data')).toBeInTheDocument();
 	});
 
 	it('passes testId and className to the root', () => {

@@ -144,16 +144,46 @@ export const tooltipRule = style({
 	},
 });
 
-export const tooltipRow = style({
+/** The title of the tooltip, with the swatch of the item when it has one. */
+export const tooltipTitle = style({
 	'@layer': {
 		[cssLayerComponent]: {
 			alignItems: 'center',
-			columnGap: vars.space['2'],
-			display: 'grid',
-			// Swatch, label, value. The value column keeps the numbers aligned.
-			gridTemplateColumns: `${vars.space['2']} 1fr auto`,
+			display: 'flex',
+			gap: vars.space['2'],
 		},
 	},
+});
+
+export const tooltipRow = recipe({
+	base: {
+		'@layer': {
+			[cssLayerComponent]: {
+				alignItems: 'center',
+				columnGap: vars.space['2'],
+				display: 'grid',
+			},
+		},
+	},
+	variants: {
+		swatch: {
+			// Swatch, label, value. The value column keeps the numbers aligned.
+			true: {
+				'@layer': {
+					[cssLayerComponent]: {
+						gridTemplateColumns: `${vars.space['2']} 1fr auto`,
+					},
+				},
+			},
+			// Label, value.
+			false: {
+				'@layer': {
+					[cssLayerComponent]: { gridTemplateColumns: '1fr auto' },
+				},
+			},
+		},
+	},
+	defaultVariants: { swatch: true },
 });
 
 export const tooltipTotalRow = style({
@@ -175,42 +205,3 @@ export const tooltipValue = style({
 		},
 	},
 });
-
-export const table = style({
-	'@layer': {
-		[cssLayerComponent]: {
-			borderCollapse: 'collapse',
-			width: '100%',
-		},
-	},
-});
-
-export const tableCell = style({
-	'@layer': {
-		[cssLayerComponent]: {
-			borderBottom: `${vars.border.width['1']} solid ${subtleRuleColor}`,
-			fontVariantNumeric: 'tabular-nums',
-			paddingBlock: vars.space['2'],
-			paddingInline: vars.space['3'],
-			textAlign: 'right',
-			selectors: {
-				'&:first-child': {
-					paddingLeft: vars.space.none,
-					textAlign: 'left',
-				},
-				'&:last-child': { paddingRight: vars.space.none },
-			},
-		},
-	},
-});
-
-export const tableHeadCell = style([
-	tableCell,
-	{
-		'@layer': {
-			[cssLayerComponent]: {
-				borderBottomColor: vars.color.border.default,
-			},
-		},
-	},
-]);

@@ -8,17 +8,18 @@ import { isomorphicLayoutEffect } from '../../utils';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { useBox } from '../Box/useBox/useBox';
 import {
+	ChartHeader,
 	ChartLegend,
-	ChartTable,
 	ChartTooltip,
+	keepInside,
 	niceTicks,
 	sum,
 	toDrawable,
 	toPercent,
 	useChartNavigation,
 	type ChartFormatter,
+	type ChartHeaderOptions,
 	type ChartSeries,
-	type ChartView,
 } from '../private/Chart';
 
 import * as styles from './StackedBarChart.css';
@@ -28,27 +29,28 @@ export interface StackedBarChartDatum<Key extends string = string> {
 	id: string;
 	/**
 	 * The column name, for example a formatted date range. The chart shows it
-	 * on the X axis, in the tooltip, in the table and in the screen reader text.
+	 * on the X axis, in the tooltip and in the screen reader text.
 	 */
 	label: string;
 	/**
-	 * One value for each series key. A missing value counts as 0. The chart
-	 * stacks positive values only, so a negative value counts as 0.
+	 * One value for each series key. The chart stacks positive values only,
+	 * so a missing, negative, `NaN` or infinite value counts as 0.
 	 */
 	values: Partial<Record<Key, number>>;
 }
 
 export interface StackedBarChartProps<Key extends string = string>
-	extends TestIdProp {
+	extends TestIdProp,
+		ChartHeaderOptions {
 	/** The columns, in display order. */
 	data: StackedBarChartDatum<Key>[];
 	/** The stacked series. The first series is at the bottom of each column. */
 	series: ChartSeries<Key>[];
-	/** The accessible name of the chart and its table. */
+	/** The accessible name of the chart. */
 	'aria-label': string;
 	/**
-	 * Formats the values in the total labels, the tooltip, the table and the
-	 * screen reader text, for example with `Intl.NumberFormat`.
+	 * Formats the values in the total labels, the tooltip and the screen
+	 * reader text, for example with `Intl.NumberFormat`.
 	 */
 	formatValue: ChartFormatter;
 	/**
@@ -56,10 +58,8 @@ export interface StackedBarChartProps<Key extends string = string>
 	 * @default formatValue
 	 */
 	formatTick?: ChartFormatter;
-	/** The label of the total, in the tooltip, the table and the screen reader text. */
+	/** The label of the total, in the tooltip and the screen reader text. */
 	totalLabel: string;
-	/** The header of the first table column, which holds the column names. */
-	categoryLabel: string;
 	/**
 	 * The approximate number of steps on the Y axis. The axis uses steps of 1,
 	 * 2, 2.5 or 5 times a power of 10, so the exact number can change.
@@ -67,34 +67,23 @@ export interface StackedBarChartProps<Key extends string = string>
 	 */
 	tickCount?: number;
 	/**
-	 * Shows the graphic, or the same data as a table. In the `chart` view, a
-	 * visually hidden table stays available to screen readers.
-	 * @default 'chart'
+	 * Hides the legend in the footer. The column tooltip still gives the name
+	 * of each series.
+	 * @default false
 	 */
-	view?: ChartView;
+	hideLegend?: boolean;
 	/** Additional class names for the root element. */
 	className?: string;
 }
 
 /**
- * Keeps the tooltip rail inside the chart body, for example with one column
- * or on a narrow screen. The rail moves only on the horizontal axis.
- */
-const keepInside = (rail: HTMLElement, bounds: HTMLElement) => {
-	rail.style.removeProperty('translate');
-	const area = bounds.getBoundingClientRect();
-	const card = rail.getBoundingClientRect();
-	const shift = Math.max(
-		Math.min(0, area.right - card.right),
-		area.left - card.left,
-	);
-	if (shift !== 0) rail.style.setProperty('translate', `${shift}px 0`);
-};
-
-/**
  * A column chart that stacks the values of each series, for example spend by
  * category for each week. Each column shows its total above it, and the Y axis
  * uses nice steps from 0.
+ *
+ * The chart has three parts: a header with the `title`, the body with the
+ * columns, and a footer with the legend. Without `title` there is no header,
+ * and with `hideLegend` there is no footer. The chart has no border or card.
  *
  * Hover or focus on a column shows a tooltip with each series value and the
  * total, and dims the other columns. The chart is one tab stop: the arrow keys
@@ -111,9 +100,11 @@ export const StackedBarChart = <Key extends string = string>({
 	formatValue,
 	formatTick = formatValue,
 	totalLabel,
-	categoryLabel,
 	tickCount = 3,
-	view = 'chart',
+	title,
+	description,
+	titleAs = 'h2',
+	hideLegend = false,
 	className,
 	testId,
 }: StackedBarChartProps<Key>) => {
@@ -132,7 +123,7 @@ export const StackedBarChart = <Key extends string = string>({
 				total,
 				formattedValues,
 				formattedTotal,
-				description: [
+				accessibleName: [
 					datum.label,
 					`${totalLabel} ${formattedTotal}`,
 					...series.map(
@@ -149,38 +140,20 @@ export const StackedBarChart = <Key extends string = string>({
 		return { columns: items, max: axis.max, ticks: axis.ticks };
 	}, [data, series, formatValue, totalLabel, tickCount]);
 
-	const table = useMemo(
-		() => (
-			<ChartTable
-				aria-label={ariaLabel}
-				columns={[
-					categoryLabel,
-					...series.map((item) => item.label),
-					totalLabel,
-				]}
-				rows={columns.map((column) => ({
-					id: column.datum.id,
-					cells: [
-						column.datum.label,
-						...column.formattedValues,
-						column.formattedTotal,
-					],
-				}))}
-				hidden={view === 'chart'}
-			/>
-		),
-		[ariaLabel, categoryLabel, columns, series, totalLabel, view],
-	);
-
 	const { activeIndex, containerProps, getItemProps } = useChartNavigation(
 		columns.length,
 	);
 
 	const bodyRef = useRef<HTMLDivElement>(null);
 	const railRef = useRef<HTMLSpanElement>(null);
+	// Keeps the tooltip inside the chart body, for example with one column or
+	// on a narrow screen.
 	isomorphicLayoutEffect(() => {
 		if (railRef.current && bodyRef.current) {
-			keepInside(railRef.current, bodyRef.current);
+			keepInside(
+				railRef.current,
+				bodyRef.current.getBoundingClientRect(),
+			);
 		}
 	}, [activeIndex, columns]);
 
@@ -190,16 +163,20 @@ export const StackedBarChart = <Key extends string = string>({
 		testId,
 	});
 
-	if (view === 'table') {
-		return <Root {...rootProps}>{table}</Root>;
-	}
+	const header = title ? (
+		<ChartHeader
+			description={description}
+			title={title}
+			titleAs={titleAs}
+		/>
+	) : null;
 
 	return (
 		<Root
 			{...rootProps}
 			{...dataAttrs({ hasActive: activeIndex !== null })}
 		>
-			<ChartLegend items={series} layout="horizontal" />
+			{header}
 			<div ref={bodyRef} className={styles.body}>
 				<div aria-hidden className={styles.gridLines}>
 					{ticks.map((tick) => (
@@ -245,7 +222,7 @@ export const StackedBarChart = <Key extends string = string>({
 						return (
 							<div
 								key={column.datum.id}
-								aria-label={column.description}
+								aria-label={column.accessibleName}
 								className={styles.column}
 								role="graphics-symbol"
 								style={assignInlineVars({
@@ -348,7 +325,9 @@ export const StackedBarChart = <Key extends string = string>({
 					})}
 				</div>
 			</div>
-			{table}
+			{hideLegend ? null : (
+				<ChartLegend items={series} layout="horizontal" />
+			)}
 		</Root>
 	);
 };
