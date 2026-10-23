@@ -1,0 +1,3 @@
+# Reviewed gitleaks false positives (COM-116, 2026-10-23). One fingerprint per line.
+6150fce86186afc3a8e683e7e79f1b4c26fefe5c:assets/entry-preview-docs-BdUKHdqg.js:generic-api-key:44
+900abe71fd04ecfb7674b41e7884ec62b9d65520:assets/entry-preview-docs-F-aIn26O.js:generic-api-key:44
