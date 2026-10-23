@@ -18,8 +18,6 @@ import { overdriveTokens as vars } from '../../themes/theme.css';
  * every cell computes to `matrix(1, 0, 0, 1, 0, 0)` and becomes a stacking
  * context for the life of the page. The `to` frame matches the base style, so
  * nothing moves when the fill drops.
- *
- * @see AG-22173, AG-22531
  */
 
 export const staggerIndex = createVar();
@@ -40,4 +38,10 @@ export const rowEntering = style({});
 globalStyle(`${rowEntering} > [role="gridcell"]`, {
 	animation: `${slideUp} 300ms ${vars.animation.easing.decelerate} backwards`,
 	animationDelay: `calc(${staggerIndex} * 50ms)`,
+
+	'@media': {
+		'(prefers-reduced-motion: reduce)': {
+			animation: 'none',
+		},
+	},
 });

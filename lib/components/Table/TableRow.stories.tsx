@@ -6,6 +6,7 @@ import { DataTable } from '../DataTable/DataTable';
 
 import { Table } from './Table';
 import { TableCell } from './TableCell';
+import { root as tableCellRoot } from './TableCell.css';
 import { TableHeadCell } from './TableHeadCell';
 import { TableRow } from './TableRow';
 import { rowEntering } from './TableRow.css';
@@ -149,6 +150,10 @@ export const WithoutHover: Story = {
  * a different delay. Change the value and re-render the story from the
  * toolbar to replay the animation.
  */
+const animatedRows = [100_001, 100_002, 100_003, 100_004, 100_005].map(
+	(id) => ({ id }),
+);
+
 export const Animated: Story = {
 	args: {
 		staggerIndex: 0,
@@ -163,16 +168,16 @@ export const Animated: Story = {
 				</TableRow>
 			</TableRowGroup>
 			<TableRowGroup>
-				{Array.from({ length: 5 }).map((_, i) => (
+				{animatedRows.map(({ id }, i) => (
 					<TableRow
-						key={i}
+						key={id}
 						staggerIndex={
 							typeof args.staggerIndex === 'number'
 								? args.staggerIndex + i
 								: undefined
 						}
 					>
-						<TableCell>{100_001 + i}</TableCell>
+						<TableCell>{id}</TableCell>
 						<TableCell>Row {i + 1}</TableCell>
 						<TableCell align="right">
 							${(99 + i * 10).toFixed(2)}
@@ -222,7 +227,7 @@ const cellAtCentreOf = (cell: HTMLElement) => {
 };
 
 /**
- * Regression guard for AG-22531: no cell may cover its neighbours.
+ * Regression guard: no cell may cover its neighbours.
  *
  * The wash used to be a `z-index: -1` pseudo-element stretched to
  * `left/right: -1000%`, painted unconditionally on every cell of a hover row.
@@ -300,7 +305,7 @@ export const StaggeredWithHover: Story = {
 };
 
 /**
- * Regression guard for AG-22531: the wash must stay inside the table.
+ * Regression guard: the wash must stay inside the table.
  *
  * It used to be a pseudo-element stretched to `left/right: -1000%`, which
  * inflated the scroll container's `scrollWidth` by thousands of pixels and
@@ -340,3 +345,101 @@ export const HoverStaysWithinTable: Story = {
 	},
 };
 
+const SELECTED_BACKGROUND = 'rgb(255, 235, 200)';
+
+/*
+A stand-in for an MFE's own stylesheet: an ordinary unlayered rule, written the
+	way a consuming app writes one. `.selected > td` is (0,1,1), far below the
+	(0,6,1) of the row-wide wash selector, so this only wins because the wash
+	sits in the `component` layer.
+ */
+const consumerStylesheet = `
+	.selected > td {
+		background-color: ${SELECTED_BACKGROUND};
+	}
+`;
+
+/**
+ * Regression guard: a consumer's own cell background outranks the wash.
+ *
+ * The wash sets `background-color` on the cell itself, replacing whatever the
+ * cell already had — the old `::before` painted behind it and never did. A
+ * selected or status row styled from an MFE stylesheet would therefore turn
+ * gray on hover, because the row-wide selector is (0,6,1) and an ordinary
+ * `.selected > td` is (0,1,1).
+ *
+ * The fix is layer order, not specificity: the wash lives in `component`, and
+ * unlayered consumer CSS beats every layer regardless of how specific either
+ * side is.
+ *
+ * The assertion checks the cascade rather than the painted hover state —
+ * `userEvent.hover` dispatches pointer events but never triggers CSS `:hover`,
+ * so hover paint cannot be read back in a play function. Hover the selected
+ * row by hand to see it hold its colour.
+ */
+export const ConsumerBackgroundBeatsWash: Story = {
+	tags: ['test', '!autodocs', 'skip-themes'],
+	parameters: { chromatic: { disable: true } },
+	render: () => (
+		<>
+			<style>{consumerStylesheet}</style>
+			<Table columnTemplate="1fr auto auto">
+				<TableRowGroup>
+					<TableRow>
+						<TableHeadCell>Supplier</TableHeadCell>
+						<TableHeadCell>Rego</TableHeadCell>
+						<TableHeadCell align="right">Price</TableHeadCell>
+					</TableRow>
+				</TableRowGroup>
+				<TableRowGroup>
+					{hoverRows.map((row, i) => (
+						<TableRow
+							key={row.id}
+							className={i === 1 ? 'selected' : undefined}
+						>
+							<TableCell>{row.supplier}</TableCell>
+							<TableCell>{row.rego}</TableCell>
+							<TableCell align="right">${row.price}</TableCell>
+						</TableRow>
+					))}
+				</TableRowGroup>
+			</Table>
+		</>
+	),
+	play: async ({ canvasElement, step }) => {
+		const selectedCells = gridcells(
+			canvasElement.querySelector<HTMLElement>('tr.selected')!,
+		);
+
+		await step('the consumer background applies', async () => {
+			for (const cell of selectedCells) {
+				await expect(getComputedStyle(cell).backgroundColor).toBe(
+					SELECTED_BACKGROUND,
+				);
+			}
+		});
+
+		await step('the wash is confined to the component layer', async () => {
+			const layersHoldingTheWash = Array.from(document.styleSheets)
+				.flatMap((sheet) => Array.from(sheet.cssRules))
+				.filter(
+					(rule): rule is CSSLayerBlockRule =>
+						rule instanceof CSSLayerBlockRule,
+				)
+				.filter((layer) =>
+					Array.from(layer.cssRules).some(
+						(rule) =>
+							rule instanceof CSSStyleRule &&
+							rule.selectorText.includes(tableCellRoot) &&
+							rule.selectorText.includes(':hover'),
+					),
+				)
+				.map((layer) => layer.name);
+
+			await expect(layersHoldingTheWash.length).toBeGreaterThan(0);
+			await expect(Array.from(new Set(layersHoldingTheWash))).toEqual([
+				'component',
+			]);
+		});
+	},
+};
