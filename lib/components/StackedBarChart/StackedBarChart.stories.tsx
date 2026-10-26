@@ -139,7 +139,7 @@ export const FewPeriods: Story = {
  * the tooltip. Hover shows the tooltip and dims the other columns.
  */
 export const Interaction: Story = {
-	tags: ['test', '!autodocs'],
+	tags: ['test', '!autodocs', 'skip-themes'],
 	play: async ({ canvasElement, step }) => {
 		const canvas = within(canvasElement);
 		const columns = canvas.getAllByRole('graphics-symbol');

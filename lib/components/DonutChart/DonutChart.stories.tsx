@@ -164,7 +164,7 @@ export const WithoutLegend: Story = {
  * stay at full opacity; the others dim.
  */
 export const Interaction: Story = {
-	tags: ['test', '!autodocs'],
+	tags: ['test', '!autodocs', 'skip-themes'],
 	play: async ({ canvasElement, step }) => {
 		const canvas = within(canvasElement);
 		const slices = canvas.getAllByRole('graphics-symbol');
