@@ -101,6 +101,12 @@ export {
 	RadioGroup,
 	type RadioGroupProps,
 } from './Radio';
+export {
+	RangeMeter,
+	type RangeMeterIntent,
+	type RangeMeterProps,
+	type RangeMeterZone,
+} from './RangeMeter';
 export { ScrollPane } from './ScrollPane';
 export { SearchBar, type SearchBarProps } from './SearchBar';
 export { Section } from './Section';

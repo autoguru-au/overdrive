@@ -1,0 +1,65 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<RangeMeter /> > should match the snapshot 1`] = `
+<div
+  class="theme_OD_Base__j49br80"
+  data-od-component="provider"
+>
+  <div
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 RangeMeter_root__3l67tc2"
+    data-od-component="range-meter"
+  >
+    <h2
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_h2__18vhvlih elementReset_trimmedElement__18vhvli0 elementReset_heading__18vhvli6 typography_common__yhjp33f sprinkles_fontSize_p3_mobile__onxwjula sprinkles_lineHeight_p3_mobile__onxwjuje sprinkles_color_secondary__onxwju8k sprinkles_fontWeight_bold__onxwjueb sprinkles_textAlign_center_mobile__onxwjulm"
+      id="_r_0_"
+    >
+      Historical range
+    </h2>
+    <div
+      aria-describedby="_r_1_"
+      aria-labelledby="_r_0_"
+      aria-valuemax="362.5"
+      aria-valuemin="152.5"
+      aria-valuenow="171"
+      aria-valuetext="$171.00, 12% below the historical range"
+      class="RangeMeter_track__3l67tc3"
+      role="meter"
+    >
+      <div
+        class="RangeMeter_zones__3l67tc4"
+      >
+        <div
+          class="RangeMeter_zone__3l67tc5 RangeMeter_zone_intent_danger__3l67tc9"
+          style="--zoneSize__3l67tc1: 8.333333333333332%;"
+        />
+        <div
+          class="RangeMeter_zone__3l67tc5 RangeMeter_zone_intent_warning__3l67tc8"
+          style="--zoneSize__3l67tc1: 11.580952380952379%;"
+        />
+        <div
+          class="RangeMeter_zone__3l67tc5 RangeMeter_zone_intent_success__3l67tc7"
+          style="--zoneSize__3l67tc1: 50.761904761904766%;"
+        />
+        <div
+          class="RangeMeter_zone__3l67tc5 RangeMeter_zone_intent_warning__3l67tc8"
+          style="--zoneSize__3l67tc1: 20.99047619047618%;"
+        />
+        <div
+          class="RangeMeter_zone__3l67tc5 RangeMeter_zone_intent_danger__3l67tc9"
+          style="--zoneSize__3l67tc1: 8.333333333333337%;"
+        />
+      </div>
+      <div
+        class="RangeMeter_marker__3l67tca"
+        style="--markerPosition__3l67tc0: 8.80952380952381%;"
+      />
+    </div>
+    <div
+      class="typography_common__yhjp33f sprinkles_fontSize_p3_mobile__onxwjula sprinkles_lineHeight_p3_mobile__onxwjuje sprinkles_color_secondary__onxwju8k sprinkles_fontWeight_normal__onxwjue8 sprinkles_textAlign_center_mobile__onxwjulm"
+      id="_r_1_"
+    >
+      $194.32 – $300.92
+    </div>
+  </div>
+</div>
+`;
