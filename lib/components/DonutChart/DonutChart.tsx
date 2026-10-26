@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import React, { useMemo, useRef } from 'react';
 
 import type { TestIdProp } from '../../types';
-import { isomorphicLayoutEffect } from '../../utils';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { useBox } from '../Box/useBox/useBox';
 import { Text } from '../Text/Text';
@@ -12,12 +11,12 @@ import {
 	ChartLegend,
 	ChartTooltip,
 	arcPath,
-	keepInside,
 	pie,
 	sum,
 	toDrawable,
 	toPercent,
 	useChartNavigation,
+	useKeepInside,
 	type ChartFormatter,
 	type ChartHeaderOptions,
 	type ChartSeries,
@@ -160,24 +159,17 @@ export const DonutChart = <Key extends string = string>({
 	}, [data, formatValue, formatPercent]);
 
 	const { activeIndex, focusedIndex, containerProps, getItemProps } =
-		useChartNavigation(marks.map((mark) => mark.datum.key));
+		useChartNavigation(
+			marks.map((mark) => mark.datum.key),
+			{ hasTooltip: hideLegend },
+		);
 	const activeMark = activeIndex === null ? null : marks[activeIndex];
 
 	// Keeps the tooltip in the viewport, for example on a narrow screen or when
 	// the chart is at the top of the page. The tooltip shows only with
 	// `hideLegend`, and its size changes with the labels.
 	const tooltipRef = useRef<HTMLDivElement>(null);
-	isomorphicLayoutEffect(() => {
-		if (tooltipRef.current) {
-			const { clientWidth, clientHeight } = document.documentElement;
-			keepInside(tooltipRef.current, {
-				left: 0,
-				right: clientWidth,
-				top: 0,
-				bottom: clientHeight,
-			});
-		}
-	}, [activeMark, hideLegend, valueLabel, shareLabel]);
+	useKeepInside(tooltipRef, [activeMark, hideLegend, valueLabel, shareLabel]);
 
 	const { Component: Root, componentProps: rootProps } = useBox({
 		className: clsx(styles.root, className),

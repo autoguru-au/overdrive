@@ -1,5 +1,6 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
+import type { Mock } from 'vitest';
 
 import {
 	expensesByCategory,
@@ -191,6 +192,78 @@ describe('<DonutChart />', () => {
 
 		fireEvent.keyDown(slices[2], { key: 'Escape' });
 		expect(tooltipIn(container)).toBeNull();
+	});
+
+	it('stops Escape only when it closes a tooltip', () => {
+		// A modal listens on the document, so the chart must stop the key there.
+		const onKeyDown = vi.fn();
+		document.addEventListener('keydown', onKeyDown);
+		try {
+			const { container, rerender } = render(<DonutChart {...props} />);
+			let [first] = screen.getAllByRole('graphics-symbol');
+
+			// With the legend, Escape clears the highlight and goes on.
+			act(() => first.focus());
+			fireEvent.keyDown(first, { key: 'Escape' });
+			expect(first).not.toHaveAttribute('data-active');
+			expect(onKeyDown).toHaveBeenCalledTimes(1);
+
+			rerender(<DonutChart {...props} hideLegend />);
+			[first] = screen.getAllByRole('graphics-symbol');
+			act(() => first.blur());
+			act(() => first.focus());
+			expect(tooltipIn(container)).not.toBeNull();
+			fireEvent.keyDown(first, { key: 'Escape' });
+			expect(tooltipIn(container)).toBeNull();
+			expect(onKeyDown).toHaveBeenCalledTimes(1);
+		} finally {
+			document.removeEventListener('keydown', onKeyDown);
+		}
+	});
+
+	it('places the tooltip again when the viewport changes size', () => {
+		// jsdom has no layout and no `ResizeObserver`, so both are stubs.
+		let width = 300;
+		const observers: {
+			resize: () => void;
+			observe: Mock;
+			disconnect: Mock;
+		}[] = [];
+		vi.stubGlobal(
+			'ResizeObserver',
+			class {
+				observe = vi.fn();
+				disconnect = vi.fn();
+				constructor(resize: () => void) {
+					observers.push({ resize, ...this });
+				}
+			},
+		);
+		vi.spyOn(Element.prototype, 'clientWidth', 'get').mockImplementation(
+			() => width,
+		);
+		try {
+			const { container } = render(<DonutChart {...props} hideLegend />);
+			const [first] = screen.getAllByRole('graphics-symbol');
+
+			act(() => first.focus());
+			const tooltip = tooltipIn(container) as HTMLElement;
+			const observer = observers.at(-1)!;
+			expect(tooltip.style.maxWidth).toBe('300px');
+			expect(observer.observe).toHaveBeenCalledWith(
+				document.documentElement,
+			);
+
+			width = 200;
+			act(() => observer.resize());
+			expect(tooltip.style.maxWidth).toBe('200px');
+
+			fireEvent.keyDown(first, { key: 'Escape' });
+			expect(observer.disconnect).toHaveBeenCalled();
+		} finally {
+			vi.unstubAllGlobals();
+			vi.restoreAllMocks();
+		}
 	});
 
 	it('shows the header above the ring and the legend below it', () => {

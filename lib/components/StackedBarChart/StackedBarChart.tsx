@@ -4,19 +4,18 @@ import React, { useMemo, useRef } from 'react';
 
 import { typography } from '../../styles/typography';
 import type { TestIdProp } from '../../types';
-import { isomorphicLayoutEffect } from '../../utils';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { useBox } from '../Box/useBox/useBox';
 import {
 	ChartHeader,
 	ChartLegend,
 	ChartTooltip,
-	keepInside,
 	niceTicks,
 	sum,
 	toDrawable,
 	toPercent,
 	useChartNavigation,
+	useKeepInside,
 	type ChartFormatter,
 	type ChartHeaderOptions,
 	type ChartSeries,
@@ -142,20 +141,14 @@ export const StackedBarChart = <Key extends string = string>({
 
 	const { activeIndex, containerProps, getItemProps } = useChartNavigation(
 		columns.map((column) => column.datum.id),
+		{ hasTooltip: true },
 	);
 
 	const bodyRef = useRef<HTMLDivElement>(null);
 	const tooltipRef = useRef<HTMLDivElement>(null);
 	// Keeps the tooltip inside the chart body, for example with one column or
 	// on a narrow screen.
-	isomorphicLayoutEffect(() => {
-		if (tooltipRef.current && bodyRef.current) {
-			keepInside(
-				tooltipRef.current,
-				bodyRef.current.getBoundingClientRect(),
-			);
-		}
-	}, [activeIndex, columns]);
+	useKeepInside(tooltipRef, [activeIndex, columns], bodyRef);
 
 	const { Component: Root, componentProps: rootProps } = useBox({
 		className: clsx(styles.root, className),

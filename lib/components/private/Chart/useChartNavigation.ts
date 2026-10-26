@@ -50,7 +50,7 @@ const indexOf = (
  *   active. A touch does not hover, so a tap activates the item through focus.
  *   Focus clears the hover, so the last input wins.
  * - Escape closes the details of the active item until the next hover or
- *   focus change.
+ *   focus change. The chart stops the key only when a tooltip is open.
  *
  * The state keeps the item keys, not the indexes, because the charts keep the
  * DOM items by key. If the data adds, removes or moves items, the state stays
@@ -58,6 +58,12 @@ const indexOf = (
  */
 export const useChartNavigation = (
 	keys: readonly string[],
+	{
+		hasTooltip,
+	}: {
+		/** The active item shows a tooltip. If not, Escape goes on to the parent elements. */
+		hasTooltip: boolean;
+	},
 ): ChartNavigation => {
 	const [hoveredKey, setHoveredKey] = useState<string | null>(null);
 	const [focusedKey, setFocusedKey] = useState<string | null>(null);
@@ -83,8 +89,9 @@ export const useChartNavigation = (
 
 		if (event.key === 'Escape') {
 			if (activeIndex === null) return;
-			// Only this chart consumes the key, so an enclosing modal stays open.
-			event.stopPropagation();
+			// An open tooltip consumes the key, so an enclosing modal stays
+			// open. Without a tooltip, the key goes on and can close the modal.
+			if (hasTooltip) event.stopPropagation();
 			setDismissed(true);
 			return;
 		}

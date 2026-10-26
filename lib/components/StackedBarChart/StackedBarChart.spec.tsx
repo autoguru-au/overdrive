@@ -1,5 +1,6 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
+import type { Mock } from 'vitest';
 
 import {
 	expenseSeries,
@@ -112,6 +113,51 @@ describe('<StackedBarChart />', () => {
 			expect(onKeyDown).toHaveBeenCalledTimes(1);
 		} finally {
 			document.removeEventListener('keydown', onKeyDown);
+		}
+	});
+
+	it('places the tooltip again when the chart body changes size', () => {
+		// jsdom has no layout and no `ResizeObserver`, so both are stubs.
+		let width = 300;
+		const observers: {
+			resize: () => void;
+			observe: Mock;
+			disconnect: Mock;
+		}[] = [];
+		vi.stubGlobal(
+			'ResizeObserver',
+			class {
+				observe = vi.fn();
+				disconnect = vi.fn();
+				constructor(resize: () => void) {
+					observers.push({ resize, ...this });
+				}
+			},
+		);
+		vi.spyOn(Element.prototype, 'getBoundingClientRect').mockImplementation(
+			() => ({ left: 0, right: width, top: 0, bottom: 200 }) as DOMRect,
+		);
+		try {
+			render(<StackedBarChart {...props} />);
+			const [first] = screen.getAllByRole('graphics-symbol');
+
+			act(() => first.focus());
+			const tooltip = tooltipIn(first) as HTMLElement;
+			const observer = observers.at(-1)!;
+			expect(tooltip.style.maxWidth).toBe('300px');
+			expect(observer.observe).toHaveBeenCalledWith(
+				screen.getByRole('graphics-document').parentElement,
+			);
+
+			width = 200;
+			act(() => observer.resize());
+			expect(tooltip.style.maxWidth).toBe('200px');
+
+			fireEvent.keyDown(first, { key: 'Escape' });
+			expect(observer.disconnect).toHaveBeenCalled();
+		} finally {
+			vi.unstubAllGlobals();
+			vi.restoreAllMocks();
 		}
 	});
 
