@@ -9,6 +9,56 @@ export interface Bounds {
 	bottom?: number;
 }
 
+/** Tells if the style makes the element the containing block of its fixed descendants. */
+const holdsFixed = (style: CSSStyleDeclaration) =>
+	[
+		style.transform,
+		style.translate,
+		style.rotate,
+		style.scale,
+		style.perspective,
+		style.filter,
+	].some((value) => (value || 'none') !== 'none') ||
+	/paint|layout|strict|content/.test(style.contain) ||
+	/transform|translate|perspective|filter/.test(style.willChange);
+
+/**
+ * Gives the visible area for a fixed element: the viewport, cut by each
+ * ancestor that clips its overflow. Only the ancestors from the containing
+ * block of the element up cut it, for example from an ancestor with a
+ * transform. Without such an ancestor, the area is the viewport.
+ */
+export const visibleBounds = (element: HTMLElement): Required<Bounds> => {
+	const root = element.ownerDocument.documentElement;
+	const bounds = {
+		left: 0,
+		top: 0,
+		right: root.clientWidth,
+		bottom: root.clientHeight,
+	};
+	let contained = false;
+	for (
+		let node = element.parentElement;
+		node && node !== root;
+		node = node.parentElement
+	) {
+		const style = getComputedStyle(node);
+		if (!contained) contained = holdsFixed(style);
+		if (
+			!contained ||
+			(style.overflowX === 'visible' && style.overflowY === 'visible')
+		) {
+			continue;
+		}
+		const box = node.getBoundingClientRect();
+		bounds.left = Math.max(bounds.left, box.left);
+		bounds.top = Math.max(bounds.top, box.top);
+		bounds.right = Math.min(bounds.right, box.right);
+		bounds.bottom = Math.min(bounds.bottom, box.bottom);
+	}
+	return bounds;
+};
+
 /** Gives the move that keeps a span between two limits. If the span is longer, it aligns to the start limit. */
 const shiftInto = (start: number, end: number, min: number, max: number) =>
 	Math.max(Math.min(0, max - end), min - start);

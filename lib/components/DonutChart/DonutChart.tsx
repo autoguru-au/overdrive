@@ -1,8 +1,9 @@
-import { assignInlineVars } from '@vanilla-extract/dynamic';
+import { assignInlineVars, setElementVars } from '@vanilla-extract/dynamic';
 import clsx from 'clsx';
-import React, { useMemo, useRef } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 
 import type { TestIdProp } from '../../types';
+import { isomorphicLayoutEffect } from '../../utils';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { useBox } from '../Box/useBox/useBox';
 import { Text } from '../Text/Text';
@@ -14,7 +15,6 @@ import {
 	pie,
 	sum,
 	toDrawable,
-	toPercent,
 	useChartNavigation,
 	useKeepInside,
 	type ChartFormatter,
@@ -31,6 +31,16 @@ import * as styles from './DonutChart.css';
 const OUTER_RADIUS = 1;
 const INNER_RADIUS = 0.75;
 const VIEW_BOX = `${-OUTER_RADIUS} ${-OUTER_RADIUS} ${OUTER_RADIUS * 2} ${OUTER_RADIUS * 2}`;
+
+/**
+ * The type sizes of the total in the centre, from the largest. The total gets
+ * the largest size that fits the hole, because a compact number is longer in
+ * some locales, for example "26,4 tys. zł".
+ */
+const TOTAL_SIZES = ['8', '7', '6', '5'] as const;
+
+/** The part of the hole width that the total can use, so that a gap stays between the total and the ring. */
+const TOTAL_MAX_SHARE = 0.9;
 
 /**
  * Gives the tooltip placement for an angle, clockwise from 12 o'clock. The
@@ -71,9 +81,8 @@ export interface DonutChartProps<Key extends string = string>
 	/** The text that shows in place of the chart when all values are 0. */
 	emptyLabel: string;
 	/**
-	 * The label of the value row in the tooltip, for example "Spend". The
-	 * tooltip shows only with `hideLegend`. Without a label, the row shows the
-	 * value only.
+	 * The label of the value row in the tooltip, for example "Spend". Without
+	 * a label, the row shows the value only.
 	 */
 	valueLabel?: string;
 	/**
@@ -82,28 +91,35 @@ export interface DonutChartProps<Key extends string = string>
 	 */
 	shareLabel?: string;
 	/**
-	 * Hides the legend in the footer, so that only the ring shows. Hover or
-	 * focus on a slice then shows a tooltip with the name, the value and the
-	 * share of the slice.
+	 * Hides the legend in the footer, so that only the ring shows.
 	 * @default false
 	 */
 	hideLegend?: boolean;
+	/**
+	 * Hides the tooltip. If `false`, hover or focus on a slice shows a tooltip
+	 * with the name, the value and the share of the slice. With `hideLegend`,
+	 * the tooltip always shows, because it is then the only text for the
+	 * slices.
+	 * @default false
+	 */
+	hideTooltip?: boolean;
 	/** Additional class names for the root element. */
 	className?: string;
 }
 
 /**
  * A ring chart that shows the share of each category, with the total in the
- * centre and a legend with the value and the share of each slice. With
- * `hideLegend`, only the ring shows, and a tooltip gives the details of a slice.
+ * centre and a legend with the value and the share of each slice. A tooltip
+ * gives the details of the active slice. With `hideLegend`, only the ring
+ * shows. `hideTooltip` removes the tooltip, but only when the legend shows.
  *
  * The chart has three parts: a header with the `title`, the body with the
  * ring, and a footer with the legend or `emptyLabel`. Without `title` there is
  * no header. The chart has no border or card.
  *
- * Hover or focus on a slice dims the other slices and legend items. The chart
- * is one tab stop: the arrow keys move between the slices and Escape closes
- * the tooltip.
+ * Hover or focus on a slice dims the other slices and their legend swatches.
+ * The text does not dim. The chart is one tab stop: the arrow keys move between
+ * the slices and Escape closes the tooltip.
  *
  * The component has no fixed text, locale or currency. Give all text and the
  * formatters in props.
@@ -121,6 +137,7 @@ export const DonutChart = <Key extends string = string>({
 	description,
 	titleAs = 'h2',
 	hideLegend = false,
+	hideTooltip = false,
 	className,
 	testId,
 }: DonutChartProps<Key>) => {
@@ -142,9 +159,9 @@ export const DonutChart = <Key extends string = string>({
 				path: arcPath(arcs[index], INNER_RADIUS, OUTER_RADIUS),
 				accessibleName: `${datum.label}, ${value}, ${share}`,
 				// The outer edge of the ring at the middle of the slice, as a
-				// percentage of the ring box.
-				tooltipX: toPercent(1 + Math.sin(angle), 2),
-				tooltipY: toPercent(1 - Math.cos(angle), 2),
+				// part of the ring box.
+				anchorX: (1 + Math.sin(angle)) / 2,
+				anchorY: (1 - Math.cos(angle)) / 2,
 				placement: placementAt(angle),
 			};
 		});
@@ -158,18 +175,75 @@ export const DonutChart = <Key extends string = string>({
 		};
 	}, [data, formatValue, formatPercent]);
 
+	// Without the legend and the tooltip, the slices have no visible text and
+	// only the colours tell them apart (WCAG 1.4.1).
+	const showTooltip = hideLegend || !hideTooltip;
+
 	const { activeIndex, focusedIndex, containerProps, getItemProps } =
 		useChartNavigation(
 			marks.map((mark) => mark.datum.key),
-			{ hasTooltip: hideLegend },
+			{ hasTooltip: showTooltip },
 		);
 	const activeMark = activeIndex === null ? null : marks[activeIndex];
 
+	// The tooltip is fixed, so that a parent with `overflow: hidden` does not
+	// cut it, for example a card with rounded corners.
+	const ringRef = useRef<HTMLDivElement>(null);
+	const placeTooltip = (tooltip: HTMLElement) => {
+		const ring = ringRef.current?.getBoundingClientRect();
+		if (!ring || !activeMark) return;
+		// A fixed box is relative to the viewport, or to an ancestor with a
+		// transform, for example in a drawer. At 0, the box shows where that
+		// area starts, and it gives the size of the tooltip.
+		tooltip.style.removeProperty('transform');
+		setElementVars(tooltip, {
+			[styles.tooltipX]: '0px',
+			[styles.tooltipY]: '0px',
+		});
+		const box = tooltip.getBoundingClientRect();
+		const { marginLeft, marginTop } = getComputedStyle(tooltip);
+		const [side, align] = activeMark.placement.split('-');
+		const x =
+			ring.left +
+			ring.width * activeMark.anchorX -
+			(box.left - Number.parseFloat(marginLeft)) -
+			(align === 'start' ? box.width : 0);
+		const y =
+			ring.top +
+			ring.height * activeMark.anchorY -
+			(box.top - Number.parseFloat(marginTop)) -
+			(side === 'top' ? box.height : 0);
+		setElementVars(tooltip, {
+			[styles.tooltipX]: `${x}px`,
+			[styles.tooltipY]: `${y}px`,
+		});
+	};
+
 	// Keeps the tooltip in the viewport, for example on a narrow screen or when
-	// the chart is at the top of the page. The tooltip shows only with
-	// `hideLegend`, and its size changes with the labels.
+	// the chart is at the top of the page. `showTooltip` adds or removes the
+	// tooltip, the legend can move the ring, and the labels change its size.
 	const tooltipRef = useRef<HTMLDivElement>(null);
-	useKeepInside(tooltipRef, [activeMark, hideLegend, valueLabel, shareLabel]);
+	useKeepInside(
+		tooltipRef,
+		[activeMark, showTooltip, hideLegend, valueLabel, shareLabel],
+		{ place: placeTooltip },
+	);
+
+	// Steps down the type size of the total until it fits the hole. When the
+	// text changes, the step starts again at the largest size.
+	const centreRef = useRef<HTMLDivElement>(null);
+	const [totalFit, setTotalFit] = useState({ text: formattedTotal, step: 0 });
+	const totalStep = totalFit.text === formattedTotal ? totalFit.step : 0;
+	isomorphicLayoutEffect(() => {
+		const centre = centreRef.current;
+		const text = centre?.firstElementChild;
+		if (!centre || !text || totalStep === TOTAL_SIZES.length - 1) return;
+		// The centre covers the ring box, so the hole is part of its width.
+		const hole = centre.clientWidth * (INNER_RADIUS / OUTER_RADIUS);
+		if (text.getBoundingClientRect().width > hole * TOTAL_MAX_SHARE) {
+			setTotalFit({ text: formattedTotal, step: totalStep + 1 });
+		}
+	}, [formattedTotal, totalStep]);
 
 	const { Component: Root, componentProps: rootProps } = useBox({
 		className: clsx(styles.root, className),
@@ -213,7 +287,7 @@ export const DonutChart = <Key extends string = string>({
 	return (
 		<Root {...rootProps}>
 			{header}
-			<div className={styles.ring}>
+			<div ref={ringRef} className={styles.ring}>
 				<svg
 					aria-label={chartLabel}
 					className={styles.svg}
@@ -246,15 +320,19 @@ export const DonutChart = <Key extends string = string>({
 						/>
 					) : null}
 				</svg>
-				<div aria-hidden className={styles.centre}>
-					<Text size="8" weight="bold" color="primary">
+				<div ref={centreRef} aria-hidden className={styles.centre}>
+					<Text
+						size={TOTAL_SIZES[totalStep]}
+						weight="bold"
+						color="primary"
+					>
 						{formattedTotal}
 					</Text>
 					<Text size="3" weight="bold" color="secondary">
 						{totalLabel}
 					</Text>
 				</div>
-				{hideLegend && activeMark ? (
+				{showTooltip && activeMark ? (
 					<ChartTooltip
 						ref={tooltipRef}
 						className={styles.tooltip({
@@ -273,10 +351,6 @@ export const DonutChart = <Key extends string = string>({
 								value: activeMark.share,
 							},
 						]}
-						style={assignInlineVars({
-							[styles.tooltipX]: activeMark.tooltipX,
-							[styles.tooltipY]: activeMark.tooltipY,
-						})}
 						title={activeMark.datum.label}
 					/>
 				) : null}

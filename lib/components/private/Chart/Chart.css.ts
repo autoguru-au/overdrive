@@ -7,10 +7,20 @@ import { overdriveTokens as vars } from '../../../themes/theme.css';
 globalLayer(LAYER_ORDER);
 
 /**
- * Opacity of the marks and labels that are not active while one item is
+ * Opacity of the marks and swatches that are not active while one item is
  * hovered or focused. Taken from the Figma hover frame (Reporting, 5526:10506).
+ * Text does not dim, because at this opacity it does not have the WCAG AA
+ * contrast.
  */
 export const DIMMED_OPACITY = '0.2';
+
+/**
+ * The gap between two touching marks (slices or segments). Two series colours
+ * can have almost the same lightness, for example green and red for
+ * protanopia, and the gap keeps the edge between them visible.
+ */
+export const markGapWidth = vars.border.width['2'];
+export const markGapColor = vars.color.background.default;
 
 /** The fade between the normal and the dimmed state. */
 export const dimTransition = `opacity 0.2s ${vars.animation.easing.standard}`;
@@ -22,6 +32,20 @@ export const dimTransition = `opacity 0.2s ${vars.animation.easing.standard}`;
  */
 export const subtleRuleColor = vars.color.gamut.gray['200'];
 
+/**
+ * A legend item. While one chart item is active, only the swatches of the
+ * other items dim. The text keeps its contrast.
+ */
+export const legendItem = style({
+	'@layer': {
+		[cssLayerComponent]: {
+			alignItems: 'center',
+			display: 'inline-flex',
+			gap: vars.space['2'],
+		},
+	},
+});
+
 /** The colour of a series swatch, set inline from the series `color`. */
 export const swatchColor = createVar();
 
@@ -32,6 +56,18 @@ export const swatch = recipe({
 				backgroundColor: swatchColor,
 				borderRadius: vars.border.radius.full,
 				flexShrink: 0,
+				// Forced colours (Windows high contrast) replace the background
+				// colour, and the swatch then has no colour.
+				forcedColorAdjust: 'none',
+				transition: dimTransition,
+				selectors: {
+					[`${legendItem}[data-dimmed] &`]: {
+						opacity: DIMMED_OPACITY,
+					},
+				},
+				'@media': {
+					'(prefers-reduced-motion: reduce)': { transition: 'none' },
+				},
 			},
 		},
 	},
@@ -101,23 +137,6 @@ export const legend = recipe({
 });
 
 export type LegendVariants = NonNullable<RecipeVariants<typeof legend>>;
-
-export const legendItem = style({
-	'@layer': {
-		[cssLayerComponent]: {
-			alignItems: 'center',
-			display: 'inline-flex',
-			gap: vars.space['2'],
-			transition: dimTransition,
-			selectors: {
-				'&[data-dimmed]': { opacity: DIMMED_OPACITY },
-			},
-			'@media': {
-				'(prefers-reduced-motion: reduce)': { transition: 'none' },
-			},
-		},
-	},
-});
 
 export const tooltip = style({
 	'@layer': {

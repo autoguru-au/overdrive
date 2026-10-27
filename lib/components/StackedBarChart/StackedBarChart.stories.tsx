@@ -69,7 +69,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const tooltipIn = (element: HTMLElement) =>
-	element.querySelector('[data-od-component="chart-tooltip"]');
+	element.querySelector('[data-chart-tooltip]');
 
 /**
  * Eight weeks of expenses from the design. The Y axis uses nice steps: the
@@ -136,7 +136,7 @@ export const FewPeriods: Story = {
 /**
  * Keyboard and pointer behaviour. Tab moves focus to the first column, the
  * arrow keys move between the columns and wrap at the ends, and Escape closes
- * the tooltip. Hover shows the tooltip and dims the other columns.
+ * the tooltip. Hover shows the tooltip and dims the bars of the other columns.
  */
 export const Interaction: Story = {
 	tags: ['test', '!autodocs', 'skip-themes'],

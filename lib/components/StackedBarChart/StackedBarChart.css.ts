@@ -6,6 +6,8 @@ import { overdriveTokens as vars } from '../../themes/theme.css';
 import {
 	DIMMED_OPACITY,
 	dimTransition,
+	markGapColor,
+	markGapWidth,
 	subtleRuleColor,
 } from '../private/Chart/Chart.css';
 
@@ -176,18 +178,11 @@ export const column = style({
 			gridRow: '1 / span 2',
 			gridTemplateRows: 'subgrid',
 			outline: 'none',
-			transition: dimTransition,
 			selectors: {
-				[`${root}[data-has-active] &:not([data-active])`]: {
-					opacity: DIMMED_OPACITY,
-				},
 				// Each bar area is a query container, and so a stacking context.
 				// The active column goes on top, so its tooltip covers the next
 				// columns.
 				'&[data-active]': { zIndex: 1 },
-			},
-			'@media': {
-				'(prefers-reduced-motion: reduce)': { transition: 'none' },
 			},
 		},
 	},
@@ -207,8 +202,8 @@ export const barArea = style({
 export const stack = style({
 	'@layer': {
 		[cssLayerComponent]: {
-			borderTopLeftRadius: vars.border.radius.sm,
-			borderTopRightRadius: vars.border.radius.sm,
+			borderTopLeftRadius: vars.border.radius.xsmall,
+			borderTopRightRadius: vars.border.radius.xsmall,
 			bottom: 0,
 			display: 'flex',
 			// The first series sits on the baseline.
@@ -220,12 +215,21 @@ export const stack = style({
 			overflow: 'hidden',
 			position: 'absolute',
 			right: 0,
+			transition: dimTransition,
 			width: COLUMN_BAND_SHARE,
 			selectors: {
 				[`${column}:focus-visible &`]: {
 					outline: `${vars.border.width['2']} solid ${vars.color.focus.ring}`,
 					outlineOffset: vars.border.width['2'],
 				},
+				// Only the bars of the other columns dim. The total and the X axis
+				// label keep their contrast.
+				[`${plot}[data-has-active] ${column}:not([data-active]) &`]: {
+					opacity: DIMMED_OPACITY,
+				},
+			},
+			'@media': {
+				'(prefers-reduced-motion: reduce)': { transition: 'none' },
 			},
 		},
 	},
@@ -238,6 +242,16 @@ export const segment = style({
 			flexBasis: segmentSize,
 			flexGrow: 0,
 			flexShrink: 0,
+			// Forced colours (Windows high contrast) replace the background
+			// colour, and the column then has no colour.
+			forcedColorAdjust: 'none',
+			selectors: {
+				// A gap at the top of each segment under another segment. The
+				// shadow does not change the segment height.
+				'&:not(:last-child)': {
+					boxShadow: `inset 0 ${markGapWidth} 0 ${markGapColor}`,
+				},
+			},
 		},
 	},
 });

@@ -22,7 +22,7 @@ const props: DonutChartProps = {
 };
 
 const tooltipIn = (element: HTMLElement) =>
-	element.querySelector('[data-od-component="chart-tooltip"]');
+	element.querySelector('[data-chart-tooltip]');
 
 describe('<DonutChart />', () => {
 	it('renders one slice for each datum, with a summary', () => {
@@ -153,12 +153,15 @@ describe('<DonutChart />', () => {
 		]);
 	});
 
-	it('places the tooltip when the legend goes while a slice is active', () => {
-		const { container, rerender } = render(<DonutChart {...props} />);
+	it('places the tooltip when hideTooltip goes while a slice is active', () => {
+		const { container, rerender } = render(
+			<DonutChart {...props} hideTooltip />,
+		);
 		const [first] = screen.getAllByRole('graphics-symbol');
 
 		act(() => first.focus());
-		rerender(<DonutChart {...props} hideLegend />);
+		expect(tooltipIn(container)).toBeNull();
+		rerender(<DonutChart {...props} />);
 
 		const tooltip = tooltipIn(container) as HTMLElement | null;
 		expect(tooltip).not.toBeNull();
@@ -166,12 +169,47 @@ describe('<DonutChart />', () => {
 		expect(tooltip?.style.maxWidth).not.toBe('');
 	});
 
-	it('shows no tooltip while the legend shows', () => {
+	it('shows the legend and a tooltip for the active slice', () => {
 		const { container } = render(<DonutChart {...props} />);
+		const slices = screen.getAllByRole('graphics-symbol');
+
+		expect(screen.getAllByRole('listitem')).toHaveLength(3);
+		expect(tooltipIn(container)).toBeNull();
+
+		fireEvent.pointerEnter(slices[1], { pointerType: 'mouse' });
+		expect(tooltipIn(container)?.textContent).toBe(
+			'FuelSpend$10.3KShare39%',
+		);
+
+		fireEvent.pointerLeave(slices[1]);
+		expect(tooltipIn(container)).toBeNull();
+	});
+
+	it('shows no tooltip with hideTooltip', () => {
+		const { container } = render(<DonutChart {...props} hideTooltip />);
+		const slices = screen.getAllByRole('graphics-symbol');
+		const items = screen.getAllByRole('listitem');
+
+		fireEvent.pointerEnter(slices[1], { pointerType: 'mouse' });
+		expect(slices[1]).toHaveAttribute('data-active');
+		expect(items[0]).toHaveAttribute('data-dimmed');
+		expect(tooltipIn(container)).toBeNull();
+
+		fireEvent.pointerLeave(slices[1]);
+		act(() => slices[0].focus());
+		expect(slices[0]).toHaveAttribute('data-active');
+		expect(tooltipIn(container)).toBeNull();
+	});
+
+	it('keeps the tooltip with hideTooltip when the legend is hidden', () => {
+		// Without both, the slices have no visible text.
+		const { container } = render(
+			<DonutChart {...props} hideLegend hideTooltip />,
+		);
 		const [first] = screen.getAllByRole('graphics-symbol');
 
 		act(() => first.focus());
-		expect(tooltipIn(container)).toBeNull();
+		expect(tooltipIn(container)).toHaveTextContent('Maintenance');
 	});
 
 	it('hides the legend and shows a tooltip for the active slice', () => {
@@ -199,16 +237,18 @@ describe('<DonutChart />', () => {
 		const onKeyDown = vi.fn();
 		document.addEventListener('keydown', onKeyDown);
 		try {
-			const { container, rerender } = render(<DonutChart {...props} />);
+			const { container, rerender } = render(
+				<DonutChart {...props} hideTooltip />,
+			);
 			let [first] = screen.getAllByRole('graphics-symbol');
 
-			// With the legend, Escape clears the highlight and goes on.
+			// Without a tooltip, Escape clears the highlight and goes on.
 			act(() => first.focus());
 			fireEvent.keyDown(first, { key: 'Escape' });
 			expect(first).not.toHaveAttribute('data-active');
 			expect(onKeyDown).toHaveBeenCalledTimes(1);
 
-			rerender(<DonutChart {...props} hideLegend />);
+			rerender(<DonutChart {...props} />);
 			[first] = screen.getAllByRole('graphics-symbol');
 			act(() => first.blur());
 			act(() => first.focus());

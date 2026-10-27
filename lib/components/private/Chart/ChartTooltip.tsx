@@ -43,7 +43,9 @@ export const ChartTooltip = forwardRef<HTMLDivElement, ChartTooltipProps>(
 			ref={ref}
 			aria-hidden
 			className={clsx(styles.tooltip, className)}
-			data-od-component="chart-tooltip"
+			// An internal hook for the stories and the tests. The card is not a
+			// public component, so it has no `data-od-component`.
+			data-chart-tooltip=""
 			style={style}
 		>
 			<Text

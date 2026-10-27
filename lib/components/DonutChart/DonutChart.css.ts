@@ -3,7 +3,12 @@ import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
 import { LAYER_ORDER, cssLayerComponent } from '../../styles/layers.css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
-import { DIMMED_OPACITY, dimTransition } from '../private/Chart/Chart.css';
+import {
+	DIMMED_OPACITY,
+	dimTransition,
+	markGapColor,
+	markGapWidth,
+} from '../private/Chart/Chart.css';
 
 globalLayer(LAYER_ORDER);
 
@@ -56,8 +61,15 @@ export const slice = style({
 		[cssLayerComponent]: {
 			cursor: 'default',
 			fill: sliceColor,
+			// Keeps the series colours in forced colours (Windows high contrast).
+			forcedColorAdjust: 'none',
 			outline: 'none',
+			// The stroke in the background colour makes the gap between two
+			// slices. It stays the same width in screen pixels at any ring size.
+			stroke: markGapColor,
+			strokeWidth: markGapWidth,
 			transition: dimTransition,
+			vectorEffect: 'non-scaling-stroke',
 			selectors: {
 				[`${svg}[data-has-active] &:not([data-active])`]: {
 					opacity: DIMMED_OPACITY,
@@ -106,7 +118,10 @@ export const centre = style({
 	},
 });
 
-/** The point where the tooltip starts: the outer edge of the active slice, at its middle angle. */
+/**
+ * The position of the tooltip box. `DonutChart` calculates it from the outer
+ * edge of the active slice, at its middle angle.
+ */
 export const tooltipX = createVar();
 export const tooltipY = createVar();
 
@@ -115,17 +130,22 @@ const TOOLTIP_GAP = vars.space['2'];
 const TOOLTIP_GAP_BACK = `calc(${TOOLTIP_GAP} * -1)`;
 
 /**
- * The tooltip of a slice, when the legend is hidden. It goes away from the
- * centre of the ring, so it does not cover the total.
+ * The tooltip of a slice. It goes away from the centre of the ring, so it does
+ * not cover the total. The placement gives the gap. `DonutChart` moves a
+ * `start` tooltip back by its width and a `top` tooltip up by its height.
  */
 export const tooltip = recipe({
 	base: {
 		'@layer': {
 			[cssLayerComponent]: {
 				left: tooltipX,
-				position: 'absolute',
+				// Fixed, so that a parent with `overflow: hidden` does not cut it.
+				// `useKeepInside` moves it with a scroll.
+				position: 'fixed',
 				top: tooltipY,
-				zIndex: 1,
+				// As the `Positioner` of the Overdrive `Tooltip`. There is no
+				// z-index token.
+				zIndex: 1050,
 			},
 		},
 	},
@@ -144,7 +164,6 @@ export const tooltip = recipe({
 					[cssLayerComponent]: {
 						marginLeft: TOOLTIP_GAP_BACK,
 						marginTop: TOOLTIP_GAP,
-						translate: '-100% 0',
 					},
 				},
 			},
@@ -153,7 +172,6 @@ export const tooltip = recipe({
 					[cssLayerComponent]: {
 						marginLeft: TOOLTIP_GAP,
 						marginTop: TOOLTIP_GAP_BACK,
-						translate: '0 -100%',
 					},
 				},
 			},
@@ -162,7 +180,6 @@ export const tooltip = recipe({
 					[cssLayerComponent]: {
 						marginLeft: TOOLTIP_GAP_BACK,
 						marginTop: TOOLTIP_GAP_BACK,
-						translate: '-100% -100%',
 					},
 				},
 			},

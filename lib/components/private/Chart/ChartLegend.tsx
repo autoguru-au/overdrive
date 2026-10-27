@@ -42,7 +42,7 @@ export interface ChartLegendProps {
 	items: ChartLegendItem[];
 	/** `horizontal` for the column chart, `vertical` for the donut chart. */
 	layout: NonNullable<styles.LegendVariants['layout']>;
-	/** The key of the active item. The other items dim. */
+	/** The key of the active item. The swatches of the other items dim. */
 	activeKey?: string;
 }
 

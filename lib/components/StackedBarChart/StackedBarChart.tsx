@@ -85,8 +85,9 @@ export interface StackedBarChartProps<Key extends string = string>
  * and with `hideLegend` there is no footer. The chart has no border or card.
  *
  * Hover or focus on a column shows a tooltip with each series value and the
- * total, and dims the other columns. The chart is one tab stop: the arrow keys
- * move between the columns and Escape closes the tooltip.
+ * total, and dims the bars of the other columns. The text does not dim. The
+ * chart is one tab stop: the arrow keys move between the columns and Escape
+ * closes the tooltip.
  *
  * The component has no fixed text, locale or currency. Give all text and the
  * formatters in props. The width follows the container; the height follows
@@ -148,7 +149,7 @@ export const StackedBarChart = <Key extends string = string>({
 	const tooltipRef = useRef<HTMLDivElement>(null);
 	// Keeps the tooltip inside the chart body, for example with one column or
 	// on a narrow screen.
-	useKeepInside(tooltipRef, [activeIndex, columns], bodyRef);
+	useKeepInside(tooltipRef, [activeIndex, columns], { areaRef: bodyRef });
 
 	const { Component: Root, componentProps: rootProps } = useBox({
 		className: clsx(styles.root, className),
@@ -165,10 +166,7 @@ export const StackedBarChart = <Key extends string = string>({
 	) : null;
 
 	return (
-		<Root
-			{...rootProps}
-			{...dataAttrs({ hasActive: activeIndex !== null })}
-		>
+		<Root {...rootProps}>
 			{header}
 			<div ref={bodyRef} className={styles.body}>
 				<div aria-hidden className={styles.gridLines}>
@@ -207,6 +205,7 @@ export const StackedBarChart = <Key extends string = string>({
 					aria-label={ariaLabel}
 					className={styles.plot}
 					role="graphics-document"
+					{...dataAttrs({ hasActive: activeIndex !== null })}
 					{...containerProps}
 				>
 					{columns.map((column, index) => {

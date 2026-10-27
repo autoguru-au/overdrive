@@ -28,8 +28,10 @@ The chart has three parts, as a modal does: a header with \`title\` and
 \`title\` there is no header. Set \`titleAs\` to the heading level that fits
 the page.
 
-Set \`hideLegend\` to show only the ring. Hover or focus on a slice then
-shows a tooltip with the name, the value and the share of the slice.
+Hover or focus on a slice shows a tooltip with the name, the value and the
+share of the slice. Set \`hideLegend\` to show only the ring. Set
+\`hideTooltip\` to remove the tooltip. With \`hideLegend\`, the tooltip always
+shows, because it is then the only text for the slices.
 
 The chart has no border or card. To show it in a card, put it in a container
 with a border, for example a \`Box\`.
@@ -84,7 +86,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const tooltipIn = (element: HTMLElement) =>
-	element.querySelector('[data-od-component="chart-tooltip"]');
+	element.querySelector('[data-chart-tooltip]');
 
 /** Three categories from the design data, with the header from the design. */
 export const Standard: Story = {};
@@ -159,9 +161,43 @@ export const WithoutLegend: Story = {
 };
 
 /**
+ * Without the tooltip. Hover or focus on a slice dims the other slices and
+ * their legend swatches, and the legend gives the details. With `hideLegend`,
+ * the tooltip always shows.
+ */
+export const WithoutTooltip: Story = {
+	tags: ['skip-themes'],
+	args: { hideTooltip: true },
+	play: async ({ canvasElement, step }) => {
+		const canvas = within(canvasElement);
+		const [first] = canvas.getAllByRole('graphics-symbol');
+
+		await step('hover on a slice shows no tooltip', async () => {
+			await userEvent.hover(first);
+			await expect(first).toHaveAttribute('data-active');
+			await expect(tooltipIn(canvasElement)).toBeNull();
+			await userEvent.unhover(first);
+		});
+
+		await step('keyboard focus shows no tooltip', async () => {
+			await userEvent.tab();
+			await expect(first).toHaveFocus();
+			await expect(first).toHaveAttribute('data-active');
+			await expect(tooltipIn(canvasElement)).toBeNull();
+		});
+
+		await step('the chart returns to its default state', async () => {
+			await userEvent.tab();
+			await expect(first).not.toHaveFocus();
+		});
+	},
+};
+
+/**
  * Keyboard and pointer behaviour. Tab moves focus to the first slice and the
- * arrow keys move between the slices. The active slice and its legend item
- * stay at full opacity; the others dim.
+ * arrow keys move between the slices. The other slices and their legend
+ * swatches dim; the text does not dim. The tooltip shows the details of the
+ * active slice.
  */
 export const Interaction: Story = {
 	tags: ['test', '!autodocs', 'skip-themes'],
@@ -178,11 +214,14 @@ export const Interaction: Story = {
 		});
 
 		await step(
-			'Tab focuses the first slice and dims the others',
+			'Tab focuses the first slice, shows its tooltip and dims the others',
 			async () => {
 				await userEvent.tab();
 				await expect(slices[0]).toHaveFocus();
 				await expect(slices[0]).toHaveAttribute('data-active');
+				await expect(tooltipIn(canvasElement)).toHaveTextContent(
+					'Maintenance',
+				);
 				await expect(legendItems[0]).not.toHaveAttribute('data-dimmed');
 				await expect(legendItems[1]).toHaveAttribute('data-dimmed');
 			},
@@ -191,16 +230,21 @@ export const Interaction: Story = {
 		await step('the arrow keys move between the slices', async () => {
 			await userEvent.keyboard('{ArrowRight}');
 			await expect(slices[1]).toHaveFocus();
+			await expect(tooltipIn(canvasElement)).toHaveTextContent('Fuel');
 			await expect(legendItems[1]).not.toHaveAttribute('data-dimmed');
 			await userEvent.keyboard('{ArrowLeft}{ArrowLeft}');
 			await expect(slices.at(-1)).toHaveFocus();
 		});
 
-		await step('Escape removes the highlight', async () => {
-			await userEvent.keyboard('{Escape}');
-			await expect(legendItems[0]).not.toHaveAttribute('data-dimmed');
-			await expect(slices.at(-1)).toHaveFocus();
-		});
+		await step(
+			'Escape closes the tooltip and removes the highlight',
+			async () => {
+				await userEvent.keyboard('{Escape}');
+				await expect(tooltipIn(canvasElement)).toBeNull();
+				await expect(legendItems[0]).not.toHaveAttribute('data-dimmed');
+				await expect(slices.at(-1)).toHaveFocus();
+			},
+		);
 
 		await step('the chart returns to its default state', async () => {
 			await userEvent.tab();

@@ -21,7 +21,7 @@ const props: StackedBarChartProps = {
 };
 
 const tooltipIn = (element: HTMLElement) =>
-	element.querySelector('[data-od-component="chart-tooltip"]');
+	element.querySelector('[data-chart-tooltip]');
 
 describe('<StackedBarChart />', () => {
 	it('renders one column for each datum, with a summary', () => {
@@ -218,7 +218,7 @@ describe('<StackedBarChart />', () => {
 	});
 
 	it('does not fail when the data gets shorter while a column is active', () => {
-		const { container, rerender } = render(<StackedBarChart {...props} />);
+		const { rerender } = render(<StackedBarChart {...props} />);
 		const columns = screen.getAllByRole('graphics-symbol');
 
 		fireEvent.pointerEnter(columns[7], { pointerType: 'mouse' });
@@ -227,9 +227,9 @@ describe('<StackedBarChart />', () => {
 		);
 
 		expect(screen.getAllByRole('graphics-symbol')).toHaveLength(3);
-		expect(
-			container.querySelector('[data-od-component="stacked-bar-chart"]'),
-		).not.toHaveAttribute('data-has-active');
+		expect(screen.getByRole('graphics-document')).not.toHaveAttribute(
+			'data-has-active',
+		);
 	});
 
 	it('shows the tooltip of the hovered column, but not for a touch', () => {
