@@ -1,5 +1,103 @@
 # @autoguru/overdrive
 
+## 6.2.0
+
+### Minor Changes
+
+- c5961f0: Add `StackedBarChart` and `DonutChart` (AG-22543).
+  
+  Overdrive draws the charts with its own code. The package has no new
+  dependencies, and the charts do not use `react-aria`.
+  
+  - `StackedBarChart` stacks the values of each series in one column for each
+    period. Each column shows its total. The Y axis starts at 0 and uses steps of
+    1, 2, 2.5 or 5 times a power of 10.
+  - `DonutChart` shows the share of each category in a ring, with the total in the
+    centre and a legend with the value and the share of each slice. A slice of 0
+    has no mark and no tab stop, but the legend shows it. When all values are 0,
+    it shows `emptyLabel`.
+  - Each chart has three parts, as a modal does: a header with `title` and
+    `description`, the body, and a footer with the legend. Without `title` there
+    is no header. `titleAs` sets the heading level of the title (default `h2`).
+  - `hideLegend` removes the footer legend.
+  - On `DonutChart`, hover or focus on a slice shows a tooltip with the name, the
+    value and the share of the slice. `hideTooltip` (default `false`) removes the
+    tooltip. With `hideLegend`, the tooltip always shows, because it is then the
+    only text for the slices.
+  - The charts have no border or card. To show a chart in a card, put it in a
+    container with a border.
+  - A negative, `NaN` or infinite value counts as 0.
+  - Hover or keyboard focus shows the details of a column or a slice and dims the
+    other bars, slices and legend swatches. The text does not dim, so it keeps the
+    WCAG AA contrast. The chart is one tab stop. The arrow keys, Home and End move
+    between the items. Escape closes the tooltip and does not close an enclosing
+    modal. The column tooltip stays inside the chart, and the donut tooltip stays
+    inside the viewport.
+  - The charts have no fixed words, locale or currency. All words, the value
+    formatters and the series colours come from props. The charts join the parts
+    of the screen reader names with commas, and the donut legend shows the share
+    in parentheses.
+  - Screen readers read the name of the chart and the name of each column or
+    slice, with its values. The charts have no table view.
+  - A 2px gap in the background colour separates the touching slices and segments,
+    so that two colours with almost the same lightness stay apart.
+  - In forced colours mode (Windows high contrast), the bars, the slices and the
+    swatches keep the series colours.
+  - The width follows the container.
+  
+  An MFE that imports both charts grows by approximately 5.9 KB gzip JS and 1.3 KB
+  gzip CSS. One chart alone adds approximately 4.3 KB gzip JS. An MFE that does
+  not import the charts does not change.
+- 4abc9d3: fix(Table): paint the row hover wash on the cells
+  
+  The wash was a `z-index: -1` pseudo-element on the hovered cell, stretched to
+  `left/right: -1000%` so it escaped its own cell and resolved against the
+  `<table>`. That only held while no cell formed a stacking context. Any cell with
+  a `transform`, `position: sticky` plus a `z-index`, an `opacity` below 1 or
+  `isolation: isolate` trapped it, and the trapped pseudo-element then painted its
+  full row width _over_ the columns beside it — blanking their text and
+  intercepting their pointer events.
+  
+  `TableRow`'s entrance animation triggered exactly that. It ran with
+  `animation-fill-mode: both`, so every cell retained the final keyframe for the
+  life of the page; a retained frame is an animated value, and the interpolation
+  stack normalises even `transform: none` to `matrix(1, 0, 0, 1, 0, 0)`. Any row
+  with `staggerIndex` set was therefore unreadable on hover.
+  
+  The wash is now a `background-color` on the cells themselves, selected with
+  `tr[data-hover]:has(> [data-hover]:hover)`. A cell's own background cannot be
+  trapped by a stacking context, so the whole class of bug goes — including a
+  consumer-applied sticky column, which previously hid its own row.
+  
+  Two consequences worth noting:
+  
+  - The `DataTable` override that pinned the pseudo-element to `left/right: 0` is
+    removed. It had lower specificity than the rule it meant to beat and had never
+    applied, so the overflow it documented was still live: hovering inflated the
+    scroll container's `scrollWidth` to roughly 11,800px against a 1,888px client
+    width. `DataTable` now gets a correct full-row wash and no phantom scroll.
+  - `TableRow`'s entrance animation uses `backwards` rather than `both`. Rows
+    still stay hidden through their stagger delay and the entrance is visually
+    unchanged, but cells no longer retain a transform once they have arrived.
+  
+  The wash is emitted into the `component` cascade layer. Unlayered CSS beats
+  every layer whatever its specificity, so a consuming app's own cell background —
+  a selected row, a status colour — still wins. That ordering matters here because
+  the row-wide selector resolves to a specificity of (0,6,1): `:has()` contributes
+  its most specific argument, and an ordinary `.selected > td` at (0,1,1) would
+  otherwise lose to it. An inline `style` background wins as it always has.
+  
+  Alongside the fix, the Table components pick up the house component contract:
+  `testId` on all five, `data-od-component` on `TableRowGroup` and
+  `TableHeadCell`, JSDoc on every prop, and a `:focus-visible` ring on the
+  sortable column header, which previously had none — `Box as="button"` resets
+  `outline` to `none` and nothing added one back. The entrance animation now
+  respects `prefers-reduced-motion`.
+  
+  `TableProps`, `TableCellProps`, `TableHeadCellProps`, `TableRowProps` and
+  `TableRowGroupProps` are now exported, so consumers can type their own wrappers.
+  That additive export surface is what makes this a minor rather than a patch.
+
 ## 6.1.0
 
 ### Minor Changes
