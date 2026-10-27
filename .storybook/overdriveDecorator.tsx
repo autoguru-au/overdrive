@@ -103,7 +103,14 @@ export const useChromaticDecorator = (Story, context) => {
 					<OverdriveProvider noBodyLevelTheming theme={theme}>
 						<Box width="full" padding="5">
 							<Stack width="full" space="3">
-								<Heading as="h5" colour="light">
+								{/*
+								 * The label is only for the reviewers of the
+								 * snapshot. It is not part of the story, so
+								 * hide it from assistive technology. Else each
+								 * h5 after a story heading (for example an h2)
+								 * skips levels and fails `heading-order`.
+								 */}
+								<Heading as="h5" colour="light" aria-hidden>
 									Theme :: {theme.name}
 								</Heading>
 								<Story {...context} />

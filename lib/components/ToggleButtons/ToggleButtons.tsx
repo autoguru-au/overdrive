@@ -1,6 +1,4 @@
 import { invariant } from '@autoguru/utilities';
-import type { AriaToggleButtonGroupItemProps } from '@react-types/button';
-import type { Key } from '@react-types/shared';
 import React, {
 	Children,
 	forwardRef,
@@ -11,7 +9,9 @@ import React, {
 import {
 	useToggleButtonGroup,
 	useToggleButtonGroupItem,
+	type AriaToggleButtonGroupItemProps,
 	type AriaToggleButtonGroupProps,
+	type Key,
 } from 'react-aria';
 import { useToggleGroupState, type ToggleGroupState } from 'react-stately';
 

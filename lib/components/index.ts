@@ -28,6 +28,11 @@ export {
 } from './DateTimeField';
 export { DataTable, type DataTableProps } from './DataTable';
 export { DividerLine } from './DividerLine';
+export {
+	DonutChart,
+	type DonutChartDatum,
+	type DonutChartProps,
+} from './DonutChart';
 export { DropDown, DropDownOption } from './DropDown';
 export { EditableText } from './EditableText';
 export { FillHeightBox } from './FillHeightBox';
@@ -110,6 +115,11 @@ export { Slider, type SliderProps } from './Slider';
 export { SliderProgress } from './SliderProgress';
 export { SplitButton, type SplitButtonProps } from './SplitButton';
 export { Stack } from './Stack';
+export {
+	StackedBarChart,
+	type StackedBarChartDatum,
+	type StackedBarChartProps,
+} from './StackedBarChart';
 export { StandardModal, EStandardModalSize } from './StandardModal';
 export { StarRating, EStarRatingSize } from './StarRating';
 export {
@@ -127,10 +137,15 @@ export { StickyBox } from './StickyBox';
 export { Switch, type SwitchProps } from './Switch';
 export {
 	Table,
+	type TableProps,
 	TableCell,
+	type TableCellProps,
 	TableHeadCell,
+	type TableHeadCellProps,
 	TableRow,
+	type TableRowProps,
 	TableRowGroup,
+	type TableRowGroupProps,
 } from './Table';
 export {
 	Tabs,
