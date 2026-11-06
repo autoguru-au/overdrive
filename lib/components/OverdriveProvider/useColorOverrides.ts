@@ -238,6 +238,32 @@ const linkStateStep = {
 	),
 } as const;
 
+/**
+ * How far base's solid button travels from its border colour to its fill and to
+ * its hover, as a lightness distance.
+ *
+ * Measured off base's own `color.button.primary.solid` ramp for the same reason
+ * `linkStateStep` is: a tenant brand should cover exactly the distance base
+ * does, and follow the ramp if it is retuned.
+ *
+ * The shape being preserved is a saturated border around a pale fill. The brand
+ * itself lands on `border` and `pressed`; `default` and `hover` are tints of it.
+ */
+const solidStep = {
+	default: Math.abs(
+		lightnessDelta(
+			baseTokens.color.button.primary.solid.border,
+			baseTokens.color.button.primary.solid.default,
+		),
+	),
+	hover: Math.abs(
+		lightnessDelta(
+			baseTokens.color.button.primary.solid.border,
+			baseTokens.color.button.primary.solid.hover,
+		),
+	),
+} as const;
+
 const shade = (
 	colour: string,
 	towards: 'darker' | 'lighter',
@@ -373,6 +399,9 @@ export const useColorOverrides = (
 		let buttonForeground: string | null = null;
 		let outlinedHover: string | null = null;
 		let outlinedPressed: string | null = null;
+		let solidDefault: string | null = null;
+		let solidHover: string | null = null;
+		let solidText: string | null = null;
 
 		if (primaryBackground) {
 			// Opposite directions: in a light theme mild is the paler wash and
@@ -426,6 +455,28 @@ export const useColorOverrides = (
 				direction: 'forward',
 				intensity: 0.5,
 			});
+
+			// The solid button keeps base's shape: the brand lands on the
+			// border and the pressed fill, and the resting and hover fills are
+			// tints of it, stepped by the distance base's own ramp covers.
+			solidDefault = shadedColour({
+				colour: primaryBackground,
+				isDarkTheme,
+				direction: 'forward',
+				intensity: solidStep.default,
+			});
+			solidHover = shadedColour({
+				colour: primaryBackground,
+				isDarkTheme,
+				direction: 'forward',
+				intensity: solidStep.hover,
+			});
+
+			// Against the tint the label actually sits on, not against the
+			// brand. `buttonForeground` answers for the legacy intent fill,
+			// which IS the brand — reusing it here would put white on a pale
+			// tint for any dark brand.
+			solidText = onBrandColour(solidDefault, theme);
 		}
 
 		// One inline var serves every surface, so a single link colour cannot be
@@ -547,6 +598,20 @@ export const useColorOverrides = (
 				},
 				button: {
 					primary: {
+						// The brand itself on the border and the pressed fill,
+						// tints of it at rest and on hover — base's own shape.
+						solid: {
+							//@ts-expect-error no undefined
+							default: solidDefault ?? undefined,
+							//@ts-expect-error no undefined
+							hover: solidHover ?? undefined,
+							//@ts-expect-error no undefined
+							border: primaryBackground ?? undefined,
+							//@ts-expect-error no undefined
+							pressed: primaryBackground ?? undefined,
+							//@ts-expect-error no undefined
+							text: solidText ?? undefined,
+						},
 						outlined: {
 							// Verbatim — tenants expect their own brand.
 							//@ts-expect-error no undefined

@@ -14,6 +14,88 @@ const smallHeight = '36px';
 const selectorFocusHoverActive =
 	'&:focus-visible, &:not(:disabled):hover, &:not(:disabled):active';
 
+const selectorHover = '&:focus-visible, &:not(:disabled):hover';
+const selectorPressed = '&:active:not(:disabled, [data-loading])';
+
+interface AppearanceColours {
+	resting: string;
+	hover: string;
+	pressed: string;
+	text: string;
+	border?: string;
+	shadow?: string;
+}
+
+/**
+ * The `intent` variant sets `backgroundColor` and `color` at equal specificity,
+ * so every state here restates them rather than relying on source order.
+ */
+const appearanceStyle = ({
+	resting,
+	hover,
+	pressed,
+	text,
+	border,
+	shadow,
+}: AppearanceColours) => {
+	const edge = border ? { borderColor: border } : {};
+	return {
+		'@layer': {
+			[cssLayerComponent]: {
+				backgroundColor: resting,
+				border: border ? `1px solid ${border}` : 'none',
+				color: text,
+				...(shadow ? { boxShadow: shadow } : {}),
+				selectors: {
+					[selectorHover]: {
+						backgroundColor: hover,
+						color: text,
+						...edge,
+					},
+					[selectorPressed]: {
+						backgroundColor: pressed,
+						color: text,
+						...edge,
+					},
+				},
+			},
+		},
+	};
+};
+
+const sizedAppearance = (
+	height: string,
+	size: { fontSize: string; lineHeight: string },
+	rest?: Record<string, string>,
+) => ({
+	'@layer': {
+		[cssLayerComponent]: {
+			fontSize: size.fontSize,
+			height,
+			lineHeight: size.lineHeight,
+			...rest,
+		},
+	},
+});
+
+/** The default `size: 'medium'`; the other two sizes compound over this. */
+const ds2026Sizing = sizedAppearance('46px', vars.typography.size.p1, {
+	borderRadius: vars.border.radius.small,
+	fontWeight: vars.typography.fontWeight.semiBold,
+});
+
+const ds2026Xsmall = sizedAppearance('28px', vars.typography.size.p2, {
+	borderRadius: vars.border.radius.xsmall,
+});
+const ds2026Small = sizedAppearance('36px', vars.typography.size.p2);
+
+/** Compounded after the sized rules, so `rounded` still wins. */
+const ds2026Pill = {
+	'@layer': {
+		[cssLayerComponent]: { borderRadius: vars.border.radius.pill },
+	},
+};
+
 export const hiddenContent = style({ visibility: 'hidden' });
 export const spinnerWrapper = sprinkles({
 	display: 'grid',
@@ -28,6 +110,11 @@ export const button = recipe({
 	base: [
 		sprinkles({
 			alignItems: 'center',
+			// NOT `small`, despite the identical 8px. Both are atomic sprinkles
+			// classes of equal specificity in the same layer, and `small` is
+			// emitted after `pill` — so renaming this makes the base radius
+			// beat `rounded`, and every pill button squares off. Stays on `md`
+			// until the legacy aliases go at the major.
 			borderRadius: 'md',
 			borderStyle: 'none',
 			fontWeight: 'medium',
@@ -233,6 +320,16 @@ export const button = recipe({
 		outlined: {
 			true: {},
 		},
+		/**
+		 * Opting a call site into the 2026 design. Colour lives in the
+		 * `intent × appearance` compounds; the shared sizing is here, keyed on
+		 * the default `size: 'medium'`, with the other two sizes compounded.
+		 */
+		appearance: {
+			solid: ds2026Sizing,
+			outlined: ds2026Sizing,
+			ghost: ds2026Sizing,
+		},
 	},
 	compoundVariants: [
 		// Size and shape compound variants
@@ -336,6 +433,11 @@ export const button = recipe({
 					[cssLayerComponent]: {
 						selectors: {
 							[selectorFocusHoverActive]: {
+								// NOT color.button.secondary.text — that is
+								// gray900 and this is gray700, so the swap
+								// would darken every minimal secondary label.
+								// Stays on the legacy contract until the major.
+								// eslint-disable-next-line no-restricted-syntax -- RETAINED: see above.
 								color: vars.typography.colour.secondary,
 								backgroundColor:
 									intentColors.secondary.background.strong,
@@ -442,6 +544,105 @@ export const button = recipe({
 				},
 			},
 		},
+		// --- DS-2026 `appearance`, appended. Order within this block matters:
+		// colour, then the sized overrides, then `rounded` last.
+		{
+			variants: { intent: 'primary', appearance: 'solid' },
+			style: appearanceStyle({
+				resting: vars.color.button.primary.solid.default,
+				hover: vars.color.button.primary.solid.hover,
+				pressed: vars.color.button.primary.solid.pressed,
+				border: vars.color.button.primary.solid.border,
+				text: vars.color.button.primary.solid.text,
+				shadow: vars.elevation.z1,
+			}),
+		},
+		{
+			variants: { intent: 'primary', appearance: 'outlined' },
+			style: appearanceStyle({
+				resting: 'transparent',
+				hover: vars.color.button.primary.outlined.hover,
+				pressed: vars.color.button.primary.outlined.pressed,
+				border: vars.color.button.primary.outlined.border,
+				text: vars.color.button.primary.outlined.text,
+			}),
+		},
+		{
+			variants: { intent: 'danger', appearance: 'solid' },
+			style: appearanceStyle({
+				resting: vars.color.button.critical.solid.default,
+				hover: vars.color.button.critical.solid.hover,
+				pressed: vars.color.button.critical.solid.pressed,
+				border: vars.color.button.critical.solid.border,
+				text: vars.color.button.critical.solid.text,
+				shadow: vars.elevation.z1,
+			}),
+		},
+		{
+			variants: { intent: 'danger', appearance: 'outlined' },
+			style: appearanceStyle({
+				resting: 'transparent',
+				hover: vars.color.button.critical.outlined.hover,
+				pressed: vars.color.button.critical.outlined.pressed,
+				border: vars.color.button.critical.outlined.border,
+				text: vars.color.button.critical.outlined.text,
+			}),
+		},
+		{
+			variants: { intent: 'secondary', appearance: 'outlined' },
+			style: appearanceStyle({
+				resting: 'transparent',
+				hover: vars.color.button.secondary.hover,
+				pressed: vars.color.button.secondary.pressed,
+				border: vars.color.button.secondary.border,
+				text: vars.color.button.secondary.text,
+			}),
+		},
+		{
+			variants: { intent: 'secondary', appearance: 'ghost' },
+			style: appearanceStyle({
+				resting: 'transparent',
+				hover: vars.color.button.secondary.hover,
+				pressed: vars.color.button.secondary.pressed,
+				text: vars.color.button.secondary.text,
+			}),
+		},
+		{
+			variants: { size: 'xsmall', appearance: 'solid' },
+			style: ds2026Xsmall,
+		},
+		{
+			variants: { size: 'xsmall', appearance: 'outlined' },
+			style: ds2026Xsmall,
+		},
+		{
+			variants: { size: 'xsmall', appearance: 'ghost' },
+			style: ds2026Xsmall,
+		},
+		{
+			variants: { size: 'small', appearance: 'solid' },
+			style: ds2026Small,
+		},
+		{
+			variants: { size: 'small', appearance: 'outlined' },
+			style: ds2026Small,
+		},
+		{
+			variants: { size: 'small', appearance: 'ghost' },
+			style: ds2026Small,
+		},
+		{
+			variants: { rounded: true, appearance: 'solid' },
+			style: ds2026Pill,
+		},
+		{
+			variants: { rounded: true, appearance: 'outlined' },
+			style: ds2026Pill,
+		},
+		{
+			variants: { rounded: true, appearance: 'ghost' },
+			style: ds2026Pill,
+		},
 	],
 	defaultVariants: {
 		size: 'medium',
@@ -461,6 +662,7 @@ export type ButtonIsLoading = ButtonRecipeProps['isLoading'];
 export type ButtonMinimal = ButtonRecipeProps['minimal'];
 export type ButtonOutlined = ButtonRecipeProps['outlined'];
 export type ButtonRounded = ButtonRecipeProps['rounded'];
+export type ButtonAppearance = ButtonRecipeProps['appearance'];
 
 export interface StyledButtonProps {
 	/**
@@ -486,6 +688,20 @@ export interface StyledButtonProps {
 	 * is set — the two are opposites.
 	 */
 	outlined?: ButtonOutlined;
+	/**
+	 * Opts into the 2026 design: a pill-or-square button drawn from the
+	 * `color.button.*` tokens, at the 2026 sizes and weight.
+	 *
+	 * This is a different axis from `rounded`, `minimal` and `outlined`, which
+	 * together describe the established appearance. Leave it unset and the
+	 * button renders exactly as it always has.
+	 *
+	 * Applies to `variant` `primary`, `secondary` and `danger` — the three
+	 * classes the 2026 design covers. `solid` and `outlined` suit `primary`
+	 * and `danger`; `outlined` and `ghost` suit `secondary`. Any other
+	 * combination is ignored.
+	 */
+	appearance?: ButtonAppearance;
 	isFullWidth?: ButtonIsFullWidth;
 	isLoading?: ButtonIsLoading;
 }
