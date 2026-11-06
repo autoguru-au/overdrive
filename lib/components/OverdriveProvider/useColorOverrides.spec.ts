@@ -2,6 +2,7 @@ import { renderHook } from '@testing-library/react';
 import { colord } from 'colord';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
+import { themes } from '../../themes';
 import { colourMap } from '../../themes/base/colours';
 import { tokens as baseTokens } from '../../themes/base/tokens';
 import {
@@ -206,6 +207,97 @@ describe('useColorOverrides', () => {
 
 			expect(luminance(hover)).toBeGreaterThan(luminance(pressed));
 			expect(luminance(pressed)).toBeGreaterThan(luminance(BRAND));
+		});
+	});
+
+	describe('solid button', () => {
+		it('takes the brand verbatim for border and pressed fill', () => {
+			const result = vars({ primaryBackground: BRAND });
+			expect(result['--od-color-button-primary-solid-border']).toBe(
+				BRAND,
+			);
+			expect(result['--od-color-button-primary-solid-pressed']).toBe(
+				BRAND,
+			);
+		});
+
+		it('tints the resting fill paler than the hover fill', () => {
+			const result = vars({ primaryBackground: BRAND });
+			const resting = result['--od-color-button-primary-solid-default'];
+			const hover = result['--od-color-button-primary-solid-hover'];
+
+			expect(luminance(resting)).toBeGreaterThan(luminance(hover));
+			expect(luminance(hover)).toBeGreaterThan(luminance(BRAND));
+		});
+
+		it('keeps the tenant hue in both tints', () => {
+			const result = vars({ primaryBackground: BRAND });
+
+			expect(
+				hue(result['--od-color-button-primary-solid-default']),
+			).toBeCloseTo(hue(BRAND), 0);
+			expect(
+				hue(result['--od-color-button-primary-solid-hover']),
+			).toBeCloseTo(hue(BRAND), 0);
+		});
+
+		// The label sits on the tint, not on the brand. Picking it against the
+		// brand — as the legacy intent fill does — puts white on a pale tint
+		// for any dark brand.
+		it.each([
+			['a dark brand', BRAND],
+			['a bright brand', BRIGHT],
+		])('keeps the label legible on the tint for %s', (_label, brand) => {
+			const result = vars({ primaryBackground: brand });
+
+			expect(
+				legibleOn(
+					result['--od-color-button-primary-solid-text'],
+					result['--od-color-button-primary-solid-default'],
+				),
+			).toBe(true);
+		});
+
+		it('writes nothing without a brand background', () => {
+			const result = vars({ linkColor: BRAND });
+
+			expect(
+				result['--od-color-button-primary-solid-default'],
+			).toBeUndefined();
+			expect(
+				result['--od-color-button-primary-solid-hover'],
+			).toBeUndefined();
+			expect(
+				result['--od-color-button-primary-solid-border'],
+			).toBeUndefined();
+			expect(
+				result['--od-color-button-primary-solid-pressed'],
+			).toBeUndefined();
+			expect(
+				result['--od-color-button-primary-solid-text'],
+			).toBeUndefined();
+		});
+
+		// `color.button` is defined in base only; the other themes reach it
+		// through deepmerge and have no escape hatch. Nothing else checks that
+		// a tenant override behaves the same in all three.
+		describe.each(themes)('$name', ({ tokens }) => {
+			it('brands the solid button the same way', () => {
+				const result = vars({ primaryBackground: BRAND }, tokens);
+				const resting =
+					result['--od-color-button-primary-solid-default'];
+
+				expect(result['--od-color-button-primary-solid-border']).toBe(
+					BRAND,
+				);
+				expect(luminance(resting)).toBeGreaterThan(luminance(BRAND));
+				expect(
+					legibleOn(
+						result['--od-color-button-primary-solid-text'],
+						resting,
+					),
+				).toBe(true);
+			});
 		});
 	});
 

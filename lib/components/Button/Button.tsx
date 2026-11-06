@@ -91,6 +91,22 @@ const Spinner = ({
 	</>
 );
 
+/**
+ * The 2026 design draws three classes, and not every fill suits each of them:
+ * primary and critical are solid or outlined, secondary is outlined or ghost.
+ * Anything else keeps the established appearance.
+ */
+const appearanceFits = (
+	variant: ButtonProps['variant'],
+	appearance: ButtonProps['appearance'],
+): boolean => {
+	if (!appearance) return false;
+	if (variant === 'primary' || variant === 'danger')
+		return appearance !== 'ghost';
+	if (variant === 'secondary') return appearance !== 'solid';
+	return false;
+};
+
 export const calcIconSize = (size: ButtonProps['size']) =>
 	size === 'small' ? size : 'medium';
 
@@ -124,6 +140,7 @@ export const calcIconSize = (size: ButtonProps['size']) =>
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 	(
 		{
+			appearance,
 			as = 'button',
 			children,
 			className,
@@ -163,7 +180,20 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 		const language = { ...LOCALE_TEXT_DEFAULT, ...localeText };
 		// `minimal` wins; primary-only because only it has outlined tokens.
 		const isOutlined = outlined && !minimal && variant === 'primary';
-		const isInverse = minimal || isOutlined || variant === 'secondary';
+		// `minimal` wins here too — it and `appearance` are opposite answers to
+		// the same question.
+		const appliedAppearance =
+			!minimal && appearanceFits(variant, appearance)
+				? appearance
+				: undefined;
+		// A solid 2026 fill is dark enough to need the light spinner, the way
+		// an unqualified intent fill does.
+		const isInverse =
+			minimal ||
+			isOutlined ||
+			(appliedAppearance
+				? appliedAppearance !== 'solid'
+				: variant === 'secondary');
 		const isSingleIconChild = useMemo(
 			() =>
 				isValidElement(children) &&
@@ -194,6 +224,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
 			className: [
 				styles.button({
+					appearance: appliedAppearance,
 					intent: variant,
 					isFullWidth,
 					isLoading,
