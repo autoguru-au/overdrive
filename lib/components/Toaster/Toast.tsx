@@ -24,8 +24,17 @@ import * as styles from './Toast.css';
 
 type MessageType = ReactNode;
 type AlertIntent = Required<ComponentProps<typeof Alert>>['intent'];
+type AlertAppearance = ComponentProps<typeof Alert>['appearance'];
 
-interface MessageConfig {
+export interface ToastOptions {
+	/**
+	 * Opts the toast into the DS-2026 design. Omitting it keeps the
+	 * established appearance.
+	 */
+	appearance?: AlertAppearance;
+}
+
+interface MessageConfig extends ToastOptions {
 	id: number;
 	message: MessageType;
 	intent: AlertIntent;
@@ -36,9 +45,16 @@ type AddToastFn = (config: Omit<MessageConfig, 'id'>) => void;
 
 interface ToastFn
 	extends Required<
-		Record<AlertIntent, (message: MessageType, duration?: number) => void>
+		Record<
+			AlertIntent,
+			(
+				message: MessageType,
+				duration?: number,
+				options?: ToastOptions,
+			) => void
+		>
 	> {
-	(message: MessageType, duration?: number): void;
+	(message: MessageType, duration?: number, options?: ToastOptions): void;
 }
 
 enum ActionTypes {
@@ -132,33 +148,38 @@ export const useToast = (): ToastFn => {
 	invariant(addToast !== null, 'No `ToastProvider` setup');
 
 	return useMemo(() => {
-		const fn: ToastFn = (message, duration = DEFAULT_DURATION) =>
+		const fn: ToastFn = (message, duration = DEFAULT_DURATION, options) =>
 			addToast({
+				...options,
 				message,
 				duration,
 				intent: 'information',
 			});
 
-		fn.success = (message, duration = DEFAULT_DURATION) =>
+		fn.success = (message, duration = DEFAULT_DURATION, options) =>
 			addToast({
+				...options,
 				message,
 				duration,
 				intent: 'success',
 			});
-		fn.danger = (message, duration = DEFAULT_DURATION) =>
+		fn.danger = (message, duration = DEFAULT_DURATION, options) =>
 			addToast({
+				...options,
 				message,
 				duration,
 				intent: 'danger',
 			});
-		fn.information = (message, duration = DEFAULT_DURATION) =>
+		fn.information = (message, duration = DEFAULT_DURATION, options) =>
 			addToast({
+				...options,
 				message,
 				duration,
 				intent: 'information',
 			});
-		fn.warning = (message, duration = DEFAULT_DURATION) =>
+		fn.warning = (message, duration = DEFAULT_DURATION, options) =>
 			addToast({
+				...options,
 				message,
 				duration,
 				intent: 'warning',
@@ -172,7 +193,7 @@ const Toast: FunctionComponent<
 	MessageConfig & {
 		remove: (id: number) => void;
 	}
-> = ({ remove, duration, message, id, intent }) => {
+> = ({ remove, duration, message, id, intent, appearance }) => {
 	const dismiss = useCallback(() => {
 		remove(id);
 	}, [id, remove]);
@@ -191,6 +212,7 @@ const Toast: FunctionComponent<
 	return (
 		<Alert
 			dismissible
+			appearance={appearance}
 			intent={intent}
 			className={styles.alert}
 			onRequestClose={dismiss}

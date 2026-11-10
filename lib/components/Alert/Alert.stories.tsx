@@ -1,13 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { type ComponentProps } from 'react';
 import { action } from 'storybook/actions';
+import { expect, userEvent, within } from 'storybook/test';
 
+import { Button } from '../Button/Button';
 import { Text } from '../Text/Text';
 
 import { Alert } from './Alert';
 
 const onRequestClose = action('onRequestClose');
 type Intent = ComponentProps<typeof Alert>['intent'];
+
+const intents = ['information', 'success', 'warning', 'danger'] as Intent[];
+
+const INVOICE_SENT = 'Your invoice was sent to abc@supplier.co';
+const INVOICE_SENT_TITLE = 'Invoice sent';
 
 const meta = {
 	title: 'Components/Alert',
@@ -18,13 +25,14 @@ const meta = {
 	argTypes: {
 		children: { control: false },
 		intent: {
-			options: [
-				'information',
-				'success',
-				'warning',
-				'danger',
-			] as Intent[],
+			options: intents,
 			defaultValue: 'primary',
+			control: {
+				type: 'select',
+			},
+		},
+		appearance: {
+			options: [undefined, 'detail', 'message'],
 			control: {
 				type: 'select',
 			},
@@ -34,6 +42,18 @@ const meta = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
+
+const Grid = ({ children }: { children: React.ReactNode }) => (
+	<div
+		style={{
+			display: 'grid',
+			gridAutoFlow: 'row dense',
+			gridGap: '24px',
+		}}
+	>
+		{children}
+	</div>
+);
 
 export const Standard: Story = {
 	args: {
@@ -45,29 +65,17 @@ export const Standard: Story = {
 		),
 	},
 	render: (args) => (
-		<div
-			style={{
-				display: 'grid',
-				gridAutoFlow: 'row dense',
-				gridGap: '24px',
-			}}
-		>
+		<Grid>
 			<div>
 				<Alert {...args} />
 			</div>
-		</div>
+		</Grid>
 	),
 };
 
 export const StandardAllIntents: Story = {
 	render: (args) => (
-		<div
-			style={{
-				display: 'grid',
-				gridAutoFlow: 'row dense',
-				gridGap: '24px',
-			}}
-		>
+		<Grid>
 			<div>
 				<Alert
 					{...args}
@@ -127,7 +135,7 @@ export const StandardAllIntents: Story = {
 					Aliquam lorem ante, dapibus in, viverra quis, feugiat a,
 				</Alert>
 			</div>
-		</div>
+		</Grid>
 	),
 };
 
@@ -143,4 +151,112 @@ export const NoneDismissibleAllIntents: Story = {
 		dismissible: false,
 	},
 	render: StandardAllIntents.render,
+};
+
+export const DetailAllIntents: Story = {
+	args: {
+		appearance: 'detail',
+	},
+	render: (args) => (
+		<Grid>
+			{intents.map((intent) => (
+				<Alert {...args} key={intent} intent={intent}>
+					{INVOICE_SENT}
+				</Alert>
+			))}
+		</Grid>
+	),
+};
+
+export const DetailWithTitleAndAction: Story = {
+	args: {
+		appearance: 'detail',
+		title: INVOICE_SENT_TITLE,
+		onRequestClose,
+		action: (
+			<div>
+				<Button
+					variant="primary"
+					size="small"
+					onClick={action('action')}
+				>
+					View invoice
+				</Button>
+			</div>
+		),
+	},
+	render: (args) => (
+		<Grid>
+			{intents.map((intent) => (
+				<Alert {...args} key={intent} intent={intent}>
+					{INVOICE_SENT}
+				</Alert>
+			))}
+		</Grid>
+	),
+};
+
+export const MessageAllIntents: Story = {
+	args: {
+		appearance: 'message',
+	},
+	render: (args) => (
+		<Grid>
+			{intents.map((intent) => (
+				<Alert {...args} key={intent} intent={intent}>
+					You have 1 new notification
+				</Alert>
+			))}
+		</Grid>
+	),
+};
+
+export const InteractionTest: Story = {
+	args: {
+		appearance: 'detail',
+		title: INVOICE_SENT_TITLE,
+		onRequestClose,
+		children: INVOICE_SENT,
+	},
+	render: (args) => (
+		<Grid>
+			<Alert {...args} />
+			<Alert {...args} appearance="message" title={undefined}>
+				You have 1 new notification
+			</Alert>
+		</Grid>
+	),
+	play: async ({ canvasElement, step }) => {
+		const canvas = within(canvasElement);
+
+		await step('the detail layout is announced as an alert', async () => {
+			const [alert] = canvas.getAllByRole('alert');
+
+			await expect(alert).toBeInTheDocument();
+			await expect(alert).toHaveTextContent(INVOICE_SENT_TITLE);
+		});
+
+		await step('the message layout is a passive status', async () => {
+			const [status] = canvas.getAllByRole('status');
+
+			await expect(status).toHaveTextContent(
+				'You have 1 new notification',
+			);
+		});
+
+		await step('the message layout offers no close control', async () => {
+			const closeButtons = canvas.getAllByLabelText('close');
+
+			await expect(closeButtons).toHaveLength(1);
+		});
+
+		await step('the close control is reachable and clickable', async () => {
+			const [close] = canvas.getAllByLabelText('close');
+
+			await close.focus();
+			await expect(close).toHaveFocus();
+
+			await userEvent.click(close);
+		});
+	},
 };
