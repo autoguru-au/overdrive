@@ -10,6 +10,7 @@ import clsx from 'clsx';
 import React, { type ComponentProps, type ReactNode } from 'react';
 
 import { sprinkles } from '../../styles';
+import type { TestIdProp } from '../../types';
 import { Box } from '../Box/Box';
 import { Button } from '../Button/Button';
 import { Icon } from '../Icon/Icon';
@@ -21,13 +22,36 @@ import * as styles from './Alert.css';
 type IntentStripeProps = ComponentProps<typeof IntentStripe>;
 type Intent = IntentStripeProps['intent'];
 
-export interface AlertProps extends IntentStripeProps {
+/**
+ * The two DS-2026 layouts. Omitting `appearance` keeps the established render.
+ */
+export type AlertAppearance = 'detail' | 'message';
+
+export interface AlertProps extends IntentStripeProps, TestIdProp {
 	children?: ReactNode;
 	className?: string;
 	inline?: boolean;
 	dismissible?: boolean;
 
 	onRequestClose?: ComponentProps<typeof Button>['onClick'];
+
+	/**
+	 * Opts into the DS-2026 design. `detail` is the bordered card with a tab,
+	 * heading and action; `message` is the tinted single-line layout. Leave it
+	 * unset to keep the established appearance.
+	 */
+	appearance?: AlertAppearance;
+
+	/**
+	 * Heading above the body copy. Only rendered under `appearance="detail"`.
+	 */
+	title?: ReactNode;
+
+	/**
+	 * Action slot below the body copy, intended for a `Button`. Only rendered
+	 * under `appearance="detail"`.
+	 */
+	action?: ReactNode;
 }
 
 const iconMapForIntent: Record<Intent, IconType> = {
@@ -52,9 +76,79 @@ export const Alert = ({
 	className = '',
 	intent = 'success',
 	inline = false,
+	appearance,
+	title,
+	action,
 	onRequestClose,
 	dismissible = typeof onRequestClose === 'function',
+	testId,
 }: AlertProps) => {
+	const body =
+		typeof children === 'string' ? <Text>{children}</Text> : children;
+
+	if (appearance) {
+		const icon = (
+			<Icon
+				className={sprinkles({
+					color: textColorForIntent[intent],
+				})}
+				icon={iconMapForIntent[intent]}
+				size="medium"
+			/>
+		);
+
+		return (
+			<Box
+				className={clsx(
+					className,
+					styles.styledAlert({ appearance, intent }),
+				)}
+				role={appearance === 'message' ? 'status' : 'alert'}
+				odComponent="alert"
+				testId={testId}
+			>
+				{appearance === 'message' ? (
+					<>
+						{icon}
+						<Box className={styles.messageText}>{body}</Box>
+					</>
+				) : (
+					<>
+						<Box
+							className={styles.tab({ intent })}
+							aria-hidden
+							odComponent="alert-tab"
+						/>
+						<Box className={styles.detailBody}>
+							{icon}
+							<Box className={styles.content}>
+								{title ? (
+									<Box className={styles.heading}>
+										{title}
+									</Box>
+								) : null}
+								{body}
+								{action}
+							</Box>
+							{dismissible && (
+								<Box
+									as="button"
+									type="button"
+									className={styles.closeButton}
+									aria-label="close"
+									onClick={onRequestClose}
+									odComponent="alert-close"
+								>
+									<Icon icon={XIcon} size="small" />
+								</Box>
+							)}
+						</Box>
+					</>
+				)}
+			</Box>
+		);
+	}
+
 	return (
 		<Box
 			className={clsx(
@@ -74,6 +168,7 @@ export const Alert = ({
 			boxShadow={inline ? 'none' : 'z4'}
 			padding="2"
 			odComponent="alert"
+			testId={testId}
 		>
 			<IntentStripe intent={intent} />
 			<Box display="flex" gap="2">
@@ -92,11 +187,7 @@ export const Alert = ({
 					width="auto"
 					className={sprinkles({ color: 'primary' })}
 				>
-					{typeof children === 'string' ? (
-						<Text>{children}</Text>
-					) : (
-						children
-					)}
+					{body}
 				</Box>
 				<Box ml="auto">
 					{dismissible && (
