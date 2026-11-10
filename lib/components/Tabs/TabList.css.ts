@@ -3,6 +3,19 @@ import { recipe } from '@vanilla-extract/recipes';
 
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
+export const listWrapperScroll = style({
+	overflowX: 'auto',
+	overflowY: 'hidden',
+	overscrollBehavior: 'contain',
+	scrollbarWidth: 'none',
+	scrollBehavior: 'smooth',
+	selectors: {
+		'&::-webkit-scrollbar': {
+			display: 'none',
+		},
+	},
+});
+
 export const styledTabList = recipe({
 	base: {},
 	variants: {
@@ -12,10 +25,17 @@ export const styledTabList = recipe({
 			},
 			pill: {},
 			minimal: {},
-			segmented: {
-				maxWidth: '100%',
-				width: 'fit-content',
-			},
+			/**
+			 * Segments cannot shrink past their own label, so a container narrower
+			 * than the bar scrolls rather than hiding the trailing tabs.
+			 */
+			segmented: [
+				listWrapperScroll,
+				{
+					maxWidth: '100%',
+					width: 'fit-content',
+				},
+			],
 		},
 		scroll: {
 			true: {
@@ -33,17 +53,4 @@ export const stretchedSegments = style({
 
 globalStyle(`${stretchedSegments} [role="tab"]`, {
 	flex: '1 1 auto',
-});
-
-export const listWrapperScroll = style({
-	overflowX: 'auto',
-	overflowY: 'hidden',
-	overscrollBehavior: 'contain',
-	scrollbarWidth: 'none',
-	scrollBehavior: 'smooth',
-	selectors: {
-		'&::-webkit-scrollbar': {
-			display: 'none',
-		},
-	},
 });

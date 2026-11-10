@@ -78,6 +78,15 @@ const StatefulTabs = (props: React.ComponentProps<typeof Tabs>) => {
  * is the same whatever the layout, so only this reveals whether the slack is being shared
  * out by `justify-content` instead of sizing the segment.
  */
+/** The `TabList` root — the element that carries the bar's width and scrolling. */
+const tabListRoot = (tablist: HTMLElement) => {
+	const root = tablist.closest('[data-od-component="tab-list"]');
+	if (!(root instanceof HTMLElement))
+		throw new Error('tab list root not found');
+
+	return root;
+};
+
 const labelInset = (tab: HTMLElement) => {
 	const label = tab.querySelector('span');
 	if (!label) throw new Error('tab is missing its label span');
@@ -371,6 +380,19 @@ export const SegmentedLayoutTest: Story = {
 			await expect(
 				Math.round(tablist.getBoundingClientRect().height),
 			).toBe(40);
+		});
+
+		await step('every tab stays reachable when too narrow', async () => {
+			const bar = tabListRoot(tablist);
+			const outer = bar.parentElement!;
+			const restore = outer.style.width;
+			outer.style.width = '320px';
+
+			// the bar scrolls rather than hiding its trailing tabs
+			await expect(getComputedStyle(bar).overflowX).toBe('auto');
+			await expect(bar.scrollWidth).toBeGreaterThan(bar.clientWidth);
+
+			outer.style.width = restore;
 		});
 	},
 };

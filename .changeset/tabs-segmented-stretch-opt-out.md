@@ -17,9 +17,16 @@ every tab keeps the same horizontal padding whatever its label. `max-content`
 was not enough: it cannot shrink, so the bar overflowed and clipped the last tab
 instead.
 
+Because a segment can no longer shrink past its own label, a container narrower
+than the bar now scrolls horizontally instead of hiding its trailing tabs, so
+every tab stays reachable at any width.
+
 Bar height is unchanged at 40px, `stretch` and `scrollable` behave exactly as
 before on every other appearance, and `scrollable` with `segmented` still throws
 the invariant it always did.
+
+`TabPaneProps` and `TabPanesProps` are now exported from the package root
+alongside the other Tabs prop types.
 
 `TabList`'s existing `stretch` prop now works on `segmented` too: pass it to have
 the bar fill its container. Segments still start at their own label's width
