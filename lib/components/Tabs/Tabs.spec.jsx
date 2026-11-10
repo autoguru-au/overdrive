@@ -238,7 +238,7 @@ describe('<Tabs appearance="segmented" />', () => {
 		expect(tab2).toHaveClass(activeClass);
 	});
 
-	it('should imply stretch by laying the tablist out as flex', () => {
+	it('should lay the tablist out as flex', () => {
 		const { getByRole } = renderSegmented();
 
 		expect(getByRole('tablist').className).toEqual(
