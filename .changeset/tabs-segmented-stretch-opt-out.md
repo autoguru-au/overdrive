@@ -21,10 +21,16 @@ Bar height is unchanged at 40px, `stretch` and `scrollable` behave exactly as
 before on every other appearance, and `scrollable` with `segmented` still throws
 the invariant it always did.
 
+`TabList`'s existing `stretch` prop now works on `segmented` too: pass it to have
+the bar fill its container. Segments still start at their own label's width
+(`flex: 1 1 auto`) and share the leftover space evenly, so every segment carries
+the same padding however wide the container is — the old `flex: 1 0 0` behaviour,
+which split the container evenly and clipped whatever did not fit, is gone from
+both modes.
+
 **This changes how existing `segmented` tab bars render.** A bar that filled its
-container now hugs its tabs. No prop was added, removed or renamed — the old
-behaviour is not reachable, because it could not show a long label without
-truncating it.
+container now hugs its tabs unless it passes `stretch`. No prop was added,
+removed or renamed.
 
 `Tab`, `TabList`, `TabPane` and `TabPanes` also pick up the house component
 conventions: each accepts an optional `testId`, each root carries a

@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { globalStyle, style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 import { overdriveTokens as vars } from '../../themes/theme.css';
@@ -25,6 +25,14 @@ export const styledTabList = recipe({
 			},
 		},
 	},
+});
+
+export const stretchedSegments = style({
+	width: '100%',
+});
+
+globalStyle(`${stretchedSegments} [role="tab"]`, {
+	flex: '1 1 auto',
 });
 
 export const listWrapperScroll = style({

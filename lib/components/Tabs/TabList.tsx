@@ -26,8 +26,12 @@ import { TabsContext } from './Tabs';
 
 export interface TabListProps extends TestIdProp {
 	/**
-	 * Whether tabs stretch to share the available width equally. Has no effect on
-	 * `appearance="segmented"`, whose segments always size to their own label.
+	 * Whether tabs stretch to share the available width equally.
+	 *
+	 * `appearance="segmented"` sizes each segment to its own label by default, so the
+	 * bar hugs its tabs. Pass `stretch` to have it fill the container instead: each
+	 * segment keeps its label's width and the leftover space is shared out evenly, so
+	 * every segment still carries the same padding.
 	 *
 	 * Cannot be combined with `scrollable`.
 	 */
@@ -190,10 +194,10 @@ export const TabList: FunctionComponent<TabListProps> = ({
 			alignItems="center"
 			odComponent="tab-list"
 			testId={testId}
-			className={styles.styledTabList({
-				appearance,
-				scroll: scrollable,
-			})}
+			className={[
+				styles.styledTabList({ appearance, scroll: scrollable }),
+				stretch && isSegmented && styles.stretchedSegments,
+			]}
 		>
 			{shouldShowScrollButtons ? (
 				<Button

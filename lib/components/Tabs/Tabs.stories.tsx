@@ -305,6 +305,36 @@ export const SegmentedUnevenLabels: Story = {
 	render: (args) => <StatefulTabs {...args} />,
 };
 
+/**
+ * The same bar with `stretch`, for when it should fill a wide container rather than hug.
+ * Each segment still starts at its own label's width and the leftover space is shared out
+ * evenly, so every segment carries the same padding however wide the container is — no
+ * segment is squeezed to fit an equal share.
+ */
+export const SegmentedStretched: Story = {
+	...SegmentedUnevenLabels,
+	args: {
+		appearance: 'segmented',
+		children: (
+			<>
+				<TabList stretch>
+					{unevenTabs.map(({ label, indication }) => (
+						<Tab key={label} indication={indication}>
+							{label}
+						</Tab>
+					))}
+				</TabList>
+
+				<TabPanes>
+					{unevenTabs.map(({ label }) => (
+						<TabPane key={label}>{label}</TabPane>
+					))}
+				</TabPanes>
+			</>
+		),
+	},
+};
+
 export const SegmentedLayoutTest: Story = {
 	...SegmentedUnevenLabels,
 	tags: ['test', '!autodocs', 'skip-themes'],
@@ -341,6 +371,40 @@ export const SegmentedLayoutTest: Story = {
 			await expect(
 				Math.round(tablist.getBoundingClientRect().height),
 			).toBe(40);
+		});
+	},
+};
+
+export const SegmentedStretchedLayoutTest: Story = {
+	...SegmentedStretched,
+	tags: ['test', '!autodocs', 'skip-themes'],
+	parameters: { wide: true, chromatic: { disableSnapshot: true } },
+	play: async ({ canvasElement, step }) => {
+		const canvas = within(canvasElement);
+		const tabs = canvas.getAllByRole('tab');
+		const tablist = canvas.getByRole('tablist');
+
+		await step('the bar fills its container', async () => {
+			await expect(
+				Math.round(tablist.getBoundingClientRect().width),
+			).toBe(Math.round(canvasElement.getBoundingClientRect().width));
+		});
+
+		await step('every segment still insets its label equally', async () => {
+			const insets = tabs.map((tab) => labelInset(tab));
+
+			for (const inset of insets) {
+				await expect(inset).toBe(insets[0]);
+			}
+		});
+
+		await step('segments keep their own label width', async () => {
+			const widths = tabs.map((tab) =>
+				Math.round(tab.getBoundingClientRect().width),
+			);
+
+			await expect(Math.max(...widths)).toBe(widths[0]);
+			await expect(Math.min(...widths)).toBeLessThan(Math.max(...widths));
 		});
 	},
 };
