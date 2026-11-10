@@ -174,15 +174,9 @@ export const DetailWithTitleAndAction: Story = {
 		title: INVOICE_SENT_TITLE,
 		onRequestClose,
 		action: (
-			<div>
-				<Button
-					variant="primary"
-					size="small"
-					onClick={action('action')}
-				>
-					View invoice
-				</Button>
-			</div>
+			<Button variant="secondary" size="small" onClick={action('action')}>
+				View invoice
+			</Button>
 		),
 	},
 	render: (args) => (

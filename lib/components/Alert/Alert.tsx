@@ -88,13 +88,21 @@ export const Alert = ({
 
 	if (appearance) {
 		const icon = (
-			<Icon
-				className={sprinkles({
-					color: textColorForIntent[intent],
-				})}
-				icon={iconMapForIntent[intent]}
-				size="medium"
-			/>
+			<Box
+				className={
+					appearance === 'message'
+						? styles.messageIconSlot
+						: styles.iconSlot
+				}
+			>
+				<Icon
+					className={sprinkles({
+						color: textColorForIntent[intent],
+					})}
+					icon={iconMapForIntent[intent]}
+					size="medium"
+				/>
+			</Box>
 		);
 
 		return (
@@ -128,8 +136,12 @@ export const Alert = ({
 									</Box>
 								) : null}
 								{body}
-								{action}
 							</Box>
+							{action ? (
+								<Box className={styles.actionSlot}>
+									{action}
+								</Box>
+							) : null}
 							{dismissible && (
 								<Box
 									as="button"
