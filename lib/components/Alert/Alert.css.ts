@@ -113,8 +113,39 @@ export const content = style({
 			display: 'flex',
 			flex: '1',
 			flexDirection: 'column',
-			gap: vars.space['3'],
+			gap: vars.space['1'],
 			minWidth: 0,
+		},
+	},
+});
+
+export const iconSlot = style({
+	'@layer': {
+		[cssLayerComponent]: {
+			alignItems: 'center',
+			display: 'flex',
+			flex: 'none',
+			height: vars.typography.size.p1.lineHeight,
+		},
+	},
+});
+
+export const messageIconSlot = style({
+	'@layer': {
+		[cssLayerComponent]: {
+			alignItems: 'center',
+			display: 'flex',
+			flex: 'none',
+			height: vars.typography.size.p2.lineHeight,
+		},
+	},
+});
+
+export const actionSlot = style({
+	'@layer': {
+		[cssLayerComponent]: {
+			alignSelf: 'center',
+			flex: 'none',
 		},
 	},
 });
