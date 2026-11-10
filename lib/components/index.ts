@@ -156,6 +156,8 @@ export {
 	type TabsProps,
 	type TabProps,
 	type TabListProps,
+	type TabPaneProps,
+	type TabPanesProps,
 	type TabAppearance,
 } from './Tabs';
 export { Text } from './Text';

@@ -39,8 +39,15 @@ const meta: Meta<typeof Tabs> = {
 	component: Tabs,
 	tags: [],
 	decorators: [
-		(story) => (
-			<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
+		(story, context) => (
+			<div
+				style={{
+					maxWidth: context.parameters.wide ? '100%' : '500px',
+					width: '100%',
+				}}
+			>
+				{story()}
+			</div>
 		),
 	],
 	args: {
@@ -65,6 +72,37 @@ const StatefulTabs = (props: React.ComponentProps<typeof Tabs>) => {
 	const [active, setActive] = useState(props.active ?? 0);
 	return <Tabs {...props} active={active} onChange={setActive} />;
 };
+
+/**
+ * Distance from a segment's outer edge to the start of its label. The declared `padding`
+ * is the same whatever the layout, so only this reveals whether the slack is being shared
+ * out by `justify-content` instead of sizing the segment.
+ */
+/** The `TabList` root — the element that carries the bar's width and scrolling. */
+const tabListRoot = (tablist: HTMLElement) => {
+	const root = tablist.closest('[data-od-component="tab-list"]');
+	if (!(root instanceof HTMLElement))
+		throw new Error('tab list root not found');
+
+	return root;
+};
+
+const labelInset = (tab: HTMLElement) => {
+	const label = tab.querySelector('span');
+	if (!label) throw new Error('tab is missing its label span');
+
+	return Math.round(
+		label.getBoundingClientRect().left - tab.getBoundingClientRect().left,
+	);
+};
+
+const unevenTabs = [
+	{ label: 'A deliberately long label', indication: 1 },
+	{ label: 'Medium label', indication: 41 },
+	{ label: 'Short', indication: 0 },
+	{ label: 'Tiny', indication: 17 },
+	{ label: 'Ok', indication: 178 },
+];
 
 export const Standard: Story = {
 	args: {
@@ -244,6 +282,153 @@ export const SegmentedWithIndication: Story = {
 		),
 	},
 	render: (args) => <StatefulTabs {...args} />,
+};
+
+/**
+ * Segments size to their own label, each keeping the same horizontal padding, so the bar
+ * hugs its tabs rather than filling the container. Labels of deliberately uneven length
+ * show it: no segment is squeezed to fit a share of the container, and none is clipped.
+ */
+export const SegmentedUnevenLabels: Story = {
+	args: {
+		appearance: 'segmented',
+		children: (
+			<>
+				<TabList>
+					{unevenTabs.map(({ label, indication }) => (
+						<Tab key={label} indication={indication}>
+							{label}
+						</Tab>
+					))}
+				</TabList>
+
+				<TabPanes>
+					{unevenTabs.map(({ label }) => (
+						<TabPane key={label}>{label}</TabPane>
+					))}
+				</TabPanes>
+			</>
+		),
+	},
+	parameters: { wide: true },
+	render: (args) => <StatefulTabs {...args} />,
+};
+
+/**
+ * The same bar with `stretch`, for when it should fill a wide container rather than hug.
+ * Each segment still starts at its own label's width and the leftover space is shared out
+ * evenly, so every segment carries the same padding however wide the container is — no
+ * segment is squeezed to fit an equal share.
+ */
+export const SegmentedStretched: Story = {
+	...SegmentedUnevenLabels,
+	args: {
+		appearance: 'segmented',
+		children: (
+			<>
+				<TabList stretch>
+					{unevenTabs.map(({ label, indication }) => (
+						<Tab key={label} indication={indication}>
+							{label}
+						</Tab>
+					))}
+				</TabList>
+
+				<TabPanes>
+					{unevenTabs.map(({ label }) => (
+						<TabPane key={label}>{label}</TabPane>
+					))}
+				</TabPanes>
+			</>
+		),
+	},
+};
+
+export const SegmentedLayoutTest: Story = {
+	...SegmentedUnevenLabels,
+	tags: ['test', '!autodocs', 'skip-themes'],
+	parameters: { wide: true, chromatic: { disableSnapshot: true } },
+	play: async ({ canvasElement, step }) => {
+		const canvas = within(canvasElement);
+		const tabs = canvas.getAllByRole('tab');
+		const tablist = canvas.getByRole('tablist');
+
+		await step('every segment insets its label equally', async () => {
+			const insets = tabs.map((tab) => labelInset(tab));
+
+			for (const inset of insets) {
+				await expect(inset).toBe(insets[0]);
+			}
+		});
+
+		await step('segments size to their own label', async () => {
+			const widths = tabs.map((tab) =>
+				Math.round(tab.getBoundingClientRect().width),
+			);
+
+			await expect(Math.max(...widths)).toBe(widths[0]);
+			await expect(Math.min(...widths)).toBeLessThan(Math.max(...widths));
+		});
+
+		await step('the bar hugs its tabs', async () => {
+			await expect(tablist.getBoundingClientRect().width).toBeLessThan(
+				canvasElement.getBoundingClientRect().width,
+			);
+		});
+
+		await step('the bar is 40px tall', async () => {
+			await expect(
+				Math.round(tablist.getBoundingClientRect().height),
+			).toBe(40);
+		});
+
+		await step('every tab stays reachable when too narrow', async () => {
+			const bar = tabListRoot(tablist);
+			const outer = bar.parentElement!;
+			const restore = outer.style.width;
+			outer.style.width = '320px';
+
+			// the bar scrolls rather than hiding its trailing tabs
+			await expect(getComputedStyle(bar).overflowX).toBe('auto');
+			await expect(bar.scrollWidth).toBeGreaterThan(bar.clientWidth);
+
+			outer.style.width = restore;
+		});
+	},
+};
+
+export const SegmentedStretchedLayoutTest: Story = {
+	...SegmentedStretched,
+	tags: ['test', '!autodocs', 'skip-themes'],
+	parameters: { wide: true, chromatic: { disableSnapshot: true } },
+	play: async ({ canvasElement, step }) => {
+		const canvas = within(canvasElement);
+		const tabs = canvas.getAllByRole('tab');
+		const tablist = canvas.getByRole('tablist');
+
+		await step('the bar fills its container', async () => {
+			await expect(
+				Math.round(tablist.getBoundingClientRect().width),
+			).toBe(Math.round(canvasElement.getBoundingClientRect().width));
+		});
+
+		await step('every segment still insets its label equally', async () => {
+			const insets = tabs.map((tab) => labelInset(tab));
+
+			for (const inset of insets) {
+				await expect(inset).toBe(insets[0]);
+			}
+		});
+
+		await step('segments keep their own label width', async () => {
+			const widths = tabs.map((tab) =>
+				Math.round(tab.getBoundingClientRect().width),
+			);
+
+			await expect(Math.max(...widths)).toBe(widths[0]);
+			await expect(Math.min(...widths)).toBeLessThan(Math.max(...widths));
+		});
+	},
 };
 
 export const SegmentedInteractionTest: Story = {

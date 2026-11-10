@@ -14,6 +14,7 @@ import React, {
 
 import { elementStyles } from '../../styles';
 import { textStyles } from '../../styles/typography';
+import type { TestIdProp } from '../../types';
 import { inline } from '../Flex/flex';
 import { Text } from '../Text/Text';
 
@@ -21,10 +22,14 @@ import * as styles from './Tab.css';
 import { TabListContext } from './TabList';
 import { TabsContext } from './Tabs';
 
-export interface TabProps {
+export interface TabProps extends TestIdProp {
+	/** The tab's label, and any decoration rendered alongside it. */
 	children?: ReactNode;
+	/** Custom ID for the tab element. Auto-generated if not provided. */
 	id?: string;
+	/** Custom component or element to render the tab as. Defaults to a `button`. */
 	as?: ElementType | ReactElement;
+	/** Optional numeric badge displayed after the label. */
 	indication?: number;
 }
 
@@ -35,6 +40,7 @@ export const Tab = forwardRef<HTMLDivElement, TabProps>(
 			id: incomingId = null,
 			indication = null,
 			as: Component = 'button',
+			testId,
 		},
 		ref,
 	) => {
@@ -47,22 +53,18 @@ export const Tab = forwardRef<HTMLDivElement, TabProps>(
 		);
 
 		const { appearance } = tabsContext;
-		const isActive = tabsContext.activeIndex === tabListContext;
+		const index = tabListContext;
+		const isActive = tabsContext.activeIndex === index;
 
 		const controlsId =
 			typeof incomingId === 'string'
 				? incomingId
-				: `${tabsContext!.id}-${tabListContext}-tab`;
+				: `${tabsContext!.id}-${index}-tab`;
 
 		const setRef = useCallback(
 			(el: HTMLDivElement | null) => {
-				if (tabListContext != null) {
-					// Register or unregister this tab element in the TabsContext registry
-					tabsContext.registerTab(
-						tabListContext,
-						(el as HTMLElement) ?? null,
-					);
-				}
+				// Register or unregister this tab element in the TabsContext registry
+				tabsContext.registerTab(index, (el as HTMLElement) ?? null);
 				// Forward the ref to consumers
 				if (typeof ref === 'function') {
 					ref(el);
@@ -70,7 +72,7 @@ export const Tab = forwardRef<HTMLDivElement, TabProps>(
 					ref.current = el;
 				}
 			},
-			[tabsContext, tabListContext, ref],
+			[tabsContext, index, ref],
 		);
 
 		const props = {
@@ -95,8 +97,10 @@ export const Tab = forwardRef<HTMLDivElement, TabProps>(
 			role: 'tab',
 			'aria-selected': isActive ? 'true' : 'false',
 			'data-controls': controlsId,
+			'data-od-component': 'tab',
+			'data-testid': testId,
 			tabIndex: isActive ? undefined : -1,
-			onClick: () => tabsContext.onChange?.(tabListContext),
+			onClick: () => tabsContext.onChange?.(index),
 			ref: setRef,
 		};
 

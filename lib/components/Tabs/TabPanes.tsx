@@ -7,6 +7,7 @@ import React, {
 } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 
+import type { TestIdProp } from '../../types';
 import { Box } from '../Box/Box';
 
 import * as styles from './TabPanes.css';
@@ -18,10 +19,12 @@ interface TabPanesContextValue {
 
 export const TabPanesContext = createContext<TabPanesContextValue | null>(null);
 
-interface TabPanesProps
-	extends Pick<ComponentProps<typeof Box>, 'paddingTop' | 'paddingBottom'> {
+export interface TabPanesProps
+	extends Pick<ComponentProps<typeof Box>, 'paddingTop' | 'paddingBottom'>,
+		TestIdProp {
 	/** Render tab panels even when visually hidden. */
 	renderInactivePanes?: boolean;
+	/** The `TabPane` elements, one per tab. */
 	children?: ReactNode;
 }
 
@@ -30,11 +33,14 @@ export const TabPanes: FunctionComponent<TabPanesProps> = ({
 	children,
 	paddingTop = '6',
 	paddingBottom = '6',
+	testId,
 }) => (
 	<Box
 		paddingTop={paddingTop}
 		paddingBottom={paddingBottom}
 		className={styles.root}
+		odComponent="tab-panes"
+		testId={testId}
 		width="full"
 	>
 		{Children.map(flattenChildren(children), (child, index) => (

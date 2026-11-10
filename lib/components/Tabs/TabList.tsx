@@ -15,6 +15,7 @@ import React, {
 import flattenChildren from 'react-keyed-flatten-children';
 
 import { textStyles } from '../../styles/typography';
+import type { TestIdProp } from '../../types';
 import { animate, ownerWindow, useEventCallback } from '../../utils';
 import { Box } from '../Box/Box';
 import { Button } from '../Button/Button';
@@ -23,9 +24,21 @@ import { Icon } from '../Icon/Icon';
 import * as styles from './TabList.css';
 import { TabsContext } from './Tabs';
 
-export interface TabListProps {
+export interface TabListProps extends TestIdProp {
+	/**
+	 * Whether tabs stretch to share the available width equally.
+	 *
+	 * `appearance="segmented"` sizes each segment to its own label by default, so the
+	 * bar hugs its tabs. Pass `stretch` to have it fill the container instead: each
+	 * segment keeps its label's width and the leftover space is shared out evenly, so
+	 * every segment still carries the same padding.
+	 *
+	 * Cannot be combined with `scrollable`.
+	 */
 	stretch?: boolean;
+	/** Enable horizontal scrolling with navigation buttons. Cannot be combined with `stretch`, nor with `appearance="segmented"`. */
 	scrollable?: boolean;
+	/** The list's `Tab` elements. */
 	children?: ReactNode;
 }
 
@@ -42,6 +55,7 @@ export const TabList: FunctionComponent<TabListProps> = ({
 	children,
 	stretch = false,
 	scrollable = false,
+	testId,
 }) => {
 	invariant(
 		!(stretch && scrollable),
@@ -50,16 +64,6 @@ export const TabList: FunctionComponent<TabListProps> = ({
 
 	const wrapperRef = useRef<HTMLDivElement>(null);
 	const innerRef = useRef<HTMLDivElement>(null);
-
-	const tabs = Children.map(flattenChildren(children), (child, index) => {
-		if (!isValidElement(child)) return null;
-
-		return (
-			<TabListContext.Provider value={index}>
-				{child}
-			</TabListContext.Provider>
-		);
-	});
 
 	const tabsContext = useContext(TabsContext);
 	invariant(
@@ -74,6 +78,16 @@ export const TabList: FunctionComponent<TabListProps> = ({
 		!(scrollable && isSegmented),
 		'Tabs: `scrollable={true}` cannot be used with `appearance="segmented"`.',
 	);
+
+	const tabs = Children.map(flattenChildren(children), (child, index) => {
+		if (!isValidElement(child)) return null;
+
+		return (
+			<TabListContext.Provider value={index}>
+				{child}
+			</TabListContext.Provider>
+		);
+	});
 
 	const [displayScroll, setDisplayScroll] = useState({
 		start: false,
@@ -178,10 +192,12 @@ export const TabList: FunctionComponent<TabListProps> = ({
 	return (
 		<Box
 			alignItems="center"
-			className={styles.styledTabList({
-				appearance,
-				scroll: scrollable,
-			})}
+			odComponent="tab-list"
+			testId={testId}
+			className={[
+				styles.styledTabList({ appearance, scroll: scrollable }),
+				stretch && isSegmented && styles.stretchedSegments,
+			]}
 		>
 			{shouldShowScrollButtons ? (
 				<Button

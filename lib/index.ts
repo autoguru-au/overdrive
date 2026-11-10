@@ -148,6 +148,8 @@ export {
 	type TabsProps,
 	type TabProps,
 	type TabListProps,
+	type TabPaneProps,
+	type TabPanesProps,
 	type TabAppearance,
 	Text,
 	TextAreaInput,
