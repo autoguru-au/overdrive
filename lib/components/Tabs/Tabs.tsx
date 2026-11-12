@@ -39,7 +39,8 @@ export const TabsContext = createContext<TabsContextValue | null>(null);
  * ### Component Props Overview
  *
  * #### TabList Props
- * - `stretch?: boolean` - Whether tabs stretch to share the available width equally
+ * - `stretch?: boolean` - Whether tabs stretch to fill the container at equal width.
+ *   Defaults to `true` on `appearance="segmented"`, `false` elsewhere
  * - `scrollable?: boolean` - Enable horizontal scrolling with navigation buttons (cannot be used with stretch)
  *
  * #### Tab Props
@@ -61,9 +62,11 @@ export const TabsContext = createContext<TabsContextValue | null>(null);
  * - `"underlined"` (default) - Tabs with bottom border indication
  * - `"pill"`
  * - `"minimal"`
- * - `"segmented"` - Bordered segments with a filled selected segment. Each segment sizes to
- *   its own label with uniform padding, so the bar hugs its tabs rather than filling the
- *   container. Cannot be combined with `TabList`'s `scrollable`.
+ * - `"segmented"` - Bordered segments with a filled selected segment. The bar fills its
+ *   container and every segment takes the same width, but no segment shrinks past its own
+ *   label, so a bar too narrow for its labels scrolls rather than clipping one. Pass
+ *   `TabList`'s `stretch={false}` to size each segment to its own label instead, so the
+ *   bar hugs its tabs with uniform padding. Cannot be combined with `scrollable`.
  */
 export interface TabsProps {
 	/** Custom ID for the tabs container. Auto-generated if not provided. */

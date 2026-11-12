@@ -285,16 +285,17 @@ export const SegmentedWithIndication: Story = {
 };
 
 /**
- * Segments size to their own label, each keeping the same horizontal padding, so the bar
- * hugs its tabs rather than filling the container. Labels of deliberately uneven length
- * show it: no segment is squeezed to fit a share of the container, and none is clipped.
+ * `stretch={false}` sizes each segment to its own label, so every segment keeps the same
+ * horizontal padding and the bar hugs its tabs rather than filling the container. Labels
+ * of deliberately uneven length show it: no segment is squeezed to fit an equal share,
+ * and none is clipped.
  */
 export const SegmentedUnevenLabels: Story = {
 	args: {
 		appearance: 'segmented',
 		children: (
 			<>
-				<TabList>
+				<TabList stretch={false}>
 					{unevenTabs.map(({ label, indication }) => (
 						<Tab key={label} indication={indication}>
 							{label}
@@ -315,10 +316,9 @@ export const SegmentedUnevenLabels: Story = {
 };
 
 /**
- * The same bar with `stretch`, for when it should fill a wide container rather than hug.
- * Each segment still starts at its own label's width and the leftover space is shared out
- * evenly, so every segment carries the same padding however wide the container is — no
- * segment is squeezed to fit an equal share.
+ * The default: the bar fills its container and every segment takes the same width, so the
+ * group reads as one control whatever the labels say. No segment shrinks past its own
+ * label, so nothing is clipped — a bar too narrow for its labels scrolls instead.
  */
 export const SegmentedStretched: Story = {
 	...SegmentedUnevenLabels,
@@ -326,7 +326,7 @@ export const SegmentedStretched: Story = {
 		appearance: 'segmented',
 		children: (
 			<>
-				<TabList stretch>
+				<TabList>
 					{unevenTabs.map(({ label, indication }) => (
 						<Tab key={label} indication={indication}>
 							{label}
@@ -412,23 +412,48 @@ export const SegmentedStretchedLayoutTest: Story = {
 			).toBe(Math.round(canvasElement.getBoundingClientRect().width));
 		});
 
-		await step('every segment still insets its label equally', async () => {
-			const insets = tabs.map((tab) => labelInset(tab));
-
-			for (const inset of insets) {
-				await expect(inset).toBe(insets[0]);
-			}
-		});
-
-		await step('segments keep their own label width', async () => {
+		await step('every segment takes the same width', async () => {
 			const widths = tabs.map((tab) =>
 				Math.round(tab.getBoundingClientRect().width),
 			);
 
-			await expect(Math.max(...widths)).toBe(widths[0]);
-			await expect(Math.min(...widths)).toBeLessThan(Math.max(...widths));
+			await expect(
+				Math.max(...widths) - Math.min(...widths),
+			).toBeLessThanOrEqual(1);
+		});
+
+		await step('no segment clips its label', async () => {
+			for (const tab of tabs) {
+				await expect(tab.scrollWidth).toBeLessThanOrEqual(
+					tab.clientWidth + 1,
+				);
+			}
 		});
 	},
+};
+
+/**
+ * Two short labels, stretched as segmented bars are by default: both segments fill the
+ * container at the same width rather than shrinking to their text.
+ */
+export const SegmentedTwoLabels: Story = {
+	args: {
+		appearance: 'segmented',
+		children: (
+			<>
+				<TabList>
+					<Tab>Open</Tab>
+					<Tab>Closed</Tab>
+				</TabList>
+
+				<TabPanes>
+					<TabPane>Open bookings</TabPane>
+					<TabPane>Closed bookings</TabPane>
+				</TabPanes>
+			</>
+		),
+	},
+	render: (args) => <StatefulTabs {...args} />,
 };
 
 export const SegmentedInteractionTest: Story = {

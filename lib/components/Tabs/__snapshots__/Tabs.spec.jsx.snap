@@ -351,7 +351,7 @@ exports[`<Tabs appearance="segmented" /> > should match snapshot 1`] = `
   data-od-component="provider"
 >
   <div
-    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_alignItems_center_mobile__onxwju106 TabList_styledTabList__1cu98lp1 TabList_styledTabList_appearance_segmented__1cu98lp5 TabList_listWrapperScroll__1cu98lp0"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_alignItems_center_mobile__onxwju106 TabList_styledTabList__1cu98lp1 TabList_styledTabList_appearance_segmented__1cu98lp5 TabList_listWrapperScroll__1cu98lp0 TabList_stretchedSegments__1cu98lp7"
     data-od-component="tab-list"
   >
     <div
