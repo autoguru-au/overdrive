@@ -26,12 +26,13 @@ import { TabsContext } from './Tabs';
 
 export interface TabListProps extends TestIdProp {
 	/**
-	 * Whether tabs stretch to share the available width equally.
+	 * Whether tabs stretch to fill the container, every tab the same width.
 	 *
-	 * `appearance="segmented"` sizes each segment to its own label by default, so the
-	 * bar hugs its tabs. Pass `stretch` to have it fill the container instead: each
-	 * segment keeps its label's width and the leftover space is shared out evenly, so
-	 * every segment still carries the same padding.
+	 * Defaults to `false`, except on `appearance="segmented"`, where it defaults to
+	 * `true`: segments share the bar evenly and no segment shrinks past its own label,
+	 * so a bar too narrow for its labels scrolls rather than clipping one. Pass
+	 * `stretch={false}` on `segmented` to size each segment to its own label instead,
+	 * so the bar hugs its tabs.
 	 *
 	 * Cannot be combined with `scrollable`.
 	 */
@@ -53,7 +54,7 @@ export const TabListContext = createContext<number | null>(null);
 
 export const TabList: FunctionComponent<TabListProps> = ({
 	children,
-	stretch = false,
+	stretch,
 	scrollable = false,
 	testId,
 }) => {
@@ -73,6 +74,7 @@ export const TabList: FunctionComponent<TabListProps> = ({
 	const { appearance, activeIndex, onChange } = tabsContext;
 
 	const isSegmented = appearance === 'segmented';
+	const isStretched = stretch ?? isSegmented;
 
 	invariant(
 		!(scrollable && isSegmented),
@@ -196,7 +198,7 @@ export const TabList: FunctionComponent<TabListProps> = ({
 			testId={testId}
 			className={[
 				styles.styledTabList({ appearance, scroll: scrollable }),
-				stretch && isSegmented && styles.stretchedSegments,
+				isStretched && isSegmented && styles.stretchedSegments,
 			]}
 		>
 			{shouldShowScrollButtons ? (
@@ -219,7 +221,7 @@ export const TabList: FunctionComponent<TabListProps> = ({
 			>
 				<Box
 					ref={innerRef}
-					display={stretch || isSegmented ? 'flex' : 'block'}
+					display={isStretched || isSegmented ? 'flex' : 'block'}
 					flexWrap="nowrap"
 					width="full"
 					role="tablist"

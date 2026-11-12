@@ -52,5 +52,5 @@ export const stretchedSegments = style({
 });
 
 globalStyle(`${stretchedSegments} [role="tab"]`, {
-	flex: '1 1 auto',
+	flex: '1 0 0',
 });
