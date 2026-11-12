@@ -78,8 +78,38 @@ jobs:
                   done
                   echo "Packed $(grep -c '"location":"dist/' /tmp/pack.json) files under dist/"
 
+            # Yarn 4.18.x hard-codes `fetchOnConflict: false` in its bundled
+            # Sigstore client, so a retried transparency-log POST that Rekor
+            # already stored comes back 409 and aborts before the tarball is
+            # uploaded. A fresh attempt signs with a new ephemeral key, and
+            # `changeset publish` skips versions already on the registry.
             - name: Publish to npm
-              run: yarn changeset publish
+              run: |
+                  ATTEMPTS=3
+                  for attempt in $(seq 1 $ATTEMPTS); do
+                    set +e
+                    yarn changeset publish 2>&1 | tee /tmp/publish.log
+                    status=${PIPESTATUS[0]}
+                    set -e
+
+                    if [ "$status" -eq 0 ]; then
+                      exit 0
+                    fi
+
+                    if ! grep -q "already exists in the transparency log" /tmp/publish.log; then
+                      echo "::error::changeset publish failed (exit $status) for a reason other than a transparency-log conflict"
+                      exit "$status"
+                    fi
+
+                    if [ "$attempt" -lt "$ATTEMPTS" ]; then
+                      backoff=$((attempt * 15))
+                      echo "::warning::Transparency-log conflict on attempt $attempt of $ATTEMPTS - retrying in ${backoff}s"
+                      sleep "$backoff"
+                    fi
+                  done
+
+                  echo "::error::changeset publish still hitting transparency-log conflicts after $ATTEMPTS attempts"
+                  exit 1
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
