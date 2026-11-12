@@ -379,6 +379,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 	});
 
 	const shouldOpenFlyout = suggestions.length > 0 && state.isFlyoutOpen;
+	const hasRenderedList = inlineOptions || shouldOpenFlyout;
 
 	useLayoutSuggestionVisible(
 		state.highlightIndex,
@@ -391,8 +392,8 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 			role="combobox"
 			aria-label={textInputProps.placeholder}
 			aria-expanded={shouldOpenFlyout}
-			aria-owns={suggestionListId!}
-			aria-controls={suggestionListId!}
+			aria-owns={hasRenderedList ? suggestionListId! : undefined}
+			aria-controls={hasRenderedList ? suggestionListId! : undefined}
 			aria-haspopup="listbox"
 			width="full"
 		>
@@ -412,7 +413,9 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 					{...textInputProps}
 					ref={ref}
 					aria-autocomplete="list"
-					aria-controls={suggestionListId!}
+					aria-controls={
+						hasRenderedList ? suggestionListId! : undefined
+					}
 					aria-activedescendant={
 						state.highlightIndex > -1
 							? getSuggestionId(
@@ -740,14 +743,7 @@ const getSuggestionId = (id: string, index: number) => `${id}-option-${index}`;
 
 const SuggestionListFlyout: FunctionComponent<
 	ComponentPropsWithoutRef<typeof Positioner> & { autoWidth: boolean }
-> = ({
-	alignment,
-	isOpen,
-	triggerOffset,
-	triggerRef,
-	autoWidth,
-	children,
-}) => (
+> = ({ alignment, isOpen, triggerOffset, triggerRef, autoWidth, children }) => (
 	<Positioner
 		triggerRef={triggerRef}
 		alignment={alignment}

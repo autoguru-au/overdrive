@@ -141,6 +141,17 @@ export const Loading: Story = {
 };
 
 /**
+ * Axe cover for the collapsed combobox, where the listbox is not in the DOM.
+ */
+export const A11yClosedList: Story = {
+	tags: ['test', '!autodocs', 'skip-themes'],
+	parameters: {
+		a11y: { test: 'error' },
+		chromatic: { disableSnapshot: true },
+	},
+};
+
+/**
  * Axe cover for the open suggestion list. The flyout renders through a `Portal`
  * and only above the `desktop` breakpoint, so queries go through
  * `document.body` and the browser project runs at a desktop viewport.

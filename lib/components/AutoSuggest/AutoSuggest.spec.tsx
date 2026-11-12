@@ -136,33 +136,41 @@ describe('<AutoSuggest />', () => {
 	});
 
 	describe('accessibility', () => {
-		it('points the combobox at the listbox with aria-controls', () => {
+		it('holds no list reference while the suggestions are closed', () => {
 			render(<AutoSuggest {...defaultProps} />);
 
 			const combobox = screen.getByRole('combobox');
 
-			expect(combobox).toHaveAttribute(
+			expect(combobox).toHaveAttribute('aria-expanded', 'false');
+			expect(combobox).not.toHaveAttribute('aria-owns');
+			expect(combobox).not.toHaveAttribute('aria-controls');
+			expect(screen.getByRole('searchbox')).not.toHaveAttribute(
 				'aria-controls',
-				combobox.getAttribute('aria-owns'),
 			);
 		});
 
-		it('renders the suggestion list id exactly once, on the ul', async () => {
+		it('points the combobox at the open listbox, and nothing else', async () => {
 			mockMatchMedia(true);
 
 			const user = userEvent.setup();
 
 			render(<AutoSuggest {...defaultProps} />);
 
-			const listId = screen
-				.getByRole('combobox')
-				.getAttribute('aria-controls')!;
-
 			await user.click(screen.getByDisplayValue(''));
 
 			await waitFor(() => {
 				expect(screen.getByText('Apple')).toBeInTheDocument();
 			});
+
+			const combobox = screen.getByRole('combobox');
+			const listId = combobox.getAttribute('aria-controls')!;
+
+			expect(listId).toBeTruthy();
+			expect(combobox).toHaveAttribute('aria-owns', listId);
+			expect(screen.getByRole('searchbox')).toHaveAttribute(
+				'aria-controls',
+				listId,
+			);
 
 			const owners = document.querySelectorAll(`[id="${listId}"]`);
 
