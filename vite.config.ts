@@ -49,7 +49,14 @@ export default defineConfig({
 						enabled: true,
 						headless: true,
 						provider: 'playwright',
-						instances: [{ browser: 'chromium' }],
+						// Vitest defaults to 414px, below the 1024px `desktop`
+						// breakpoint, which puts every story on its mobile branch.
+						instances: [
+							{
+								browser: 'chromium',
+								viewport: { width: 1280, height: 900 },
+							},
+						],
 					},
 					setupFiles: ['.storybook/vitest.setup.ts'],
 				},

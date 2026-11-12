@@ -323,6 +323,7 @@ const AutoSuggestFullscreenInput = forwardRef(
 						rounded
 						className={styles.fullScreenCloseBtn}
 						size="medium"
+						aria-label="close"
 						onClick={closeModal}
 					>
 						<Icon icon={XIcon} />
@@ -378,6 +379,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 	});
 
 	const shouldOpenFlyout = suggestions.length > 0 && state.isFlyoutOpen;
+	const hasRenderedList = inlineOptions || shouldOpenFlyout;
 
 	useLayoutSuggestionVisible(
 		state.highlightIndex,
@@ -390,7 +392,8 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 			role="combobox"
 			aria-label={textInputProps.placeholder}
 			aria-expanded={shouldOpenFlyout}
-			aria-owns={suggestionListId!}
+			aria-owns={hasRenderedList ? suggestionListId! : undefined}
+			aria-controls={hasRenderedList ? suggestionListId! : undefined}
 			aria-haspopup="listbox"
 			width="full"
 		>
@@ -410,7 +413,9 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 					{...textInputProps}
 					ref={ref}
 					aria-autocomplete="list"
-					aria-controls={suggestionListId!}
+					aria-controls={
+						hasRenderedList ? suggestionListId! : undefined
+					}
 					aria-activedescendant={
 						state.highlightIndex > -1
 							? getSuggestionId(
@@ -508,7 +513,6 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 				/>
 			) : (
 				<SuggestionListFlyout
-					id={suggestionListId!}
 					autoWidth={autoWidth!}
 					triggerRef={triggerRef}
 					alignment={EAlignment.BOTTOM_LEFT}
@@ -669,6 +673,8 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 				isLoading ? null : field.value && isFocused ? (
 					<Box
 						as="button"
+						type="button"
+						aria-label="clear"
 						paddingY={size === 'small' ? '1' : '3'}
 						paddingRight={size === 'small' ? '2' : '3'}
 						flexShrink={0}
@@ -737,22 +743,12 @@ const getSuggestionId = (id: string, index: number) => `${id}-option-${index}`;
 
 const SuggestionListFlyout: FunctionComponent<
 	ComponentPropsWithoutRef<typeof Positioner> & { autoWidth: boolean }
-> = ({
-	id,
-	alignment,
-	isOpen,
-	triggerOffset,
-	triggerRef,
-	autoWidth,
-	children,
-}) => (
+> = ({ alignment, isOpen, triggerOffset, triggerRef, autoWidth, children }) => (
 	<Positioner
-		id={id}
 		triggerRef={triggerRef}
 		alignment={alignment}
 		isOpen={isOpen}
 		triggerOffset={triggerOffset}
-		role="listbox"
 	>
 		<Box
 			borderWidth="1"

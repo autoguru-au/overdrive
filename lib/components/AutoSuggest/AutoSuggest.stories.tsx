@@ -2,6 +2,7 @@ import { CarIcon } from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { type ComponentProps } from 'react';
 import { action } from 'storybook/actions';
+import { expect, waitFor, within } from 'storybook/test';
 
 import { argTypesExampleIcons } from '../../stories/shared/argTypes';
 import { DateInput } from '../DateInput/DateInput';
@@ -136,5 +137,42 @@ export const SmallSize: Story = {
 export const Loading: Story = {
 	args: {
 		isLoading: true,
+	},
+};
+
+/**
+ * Axe cover for the collapsed combobox, where the listbox is not in the DOM.
+ */
+export const A11yClosedList: Story = {
+	tags: ['test', '!autodocs', 'skip-themes'],
+	parameters: {
+		a11y: { test: 'error' },
+		chromatic: { disableSnapshot: true },
+	},
+};
+
+/**
+ * Axe cover for the open suggestion list. The flyout renders through a `Portal`
+ * and only above the `desktop` breakpoint, so queries go through
+ * `document.body` and the browser project runs at a desktop viewport.
+ */
+export const A11yOpenList: Story = {
+	tags: ['test', '!autodocs', 'skip-themes'],
+	parameters: {
+		a11y: { test: 'error' },
+		chromatic: { disableSnapshot: true },
+	},
+	play: async ({ canvasElement, userEvent }) => {
+		const input = within(canvasElement).getByRole('searchbox');
+
+		await userEvent.click(input);
+
+		const portal = within(document.body);
+
+		await waitFor(async () => {
+			await expect(portal.getByRole('listbox')).toBeVisible();
+		});
+
+		await expect(portal.getAllByRole('option').length).toBeGreaterThan(0);
 	},
 };

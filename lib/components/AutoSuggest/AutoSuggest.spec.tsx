@@ -28,22 +28,24 @@ const defaultProps = {
 	name: 'test-autosuggest',
 };
 
+const mockMatchMedia = (matches: boolean) =>
+	Object.defineProperty(window, 'matchMedia', {
+		writable: true,
+		value: vi.fn().mockImplementation((query) => ({
+			matches,
+			media: query,
+			onchange: null,
+			addListener: vi.fn(),
+			removeListener: vi.fn(),
+			addEventListener: vi.fn(),
+			removeEventListener: vi.fn(),
+			dispatchEvent: vi.fn(),
+		})),
+	});
+
 describe('<AutoSuggest />', () => {
 	beforeEach(() => {
-		// Mock window.matchMedia
-		Object.defineProperty(window, 'matchMedia', {
-			writable: true,
-			value: vi.fn().mockImplementation((query) => ({
-				matches: false,
-				media: query,
-				onchange: null,
-				addListener: vi.fn(), // deprecated
-				removeListener: vi.fn(), // deprecated
-				addEventListener: vi.fn(),
-				removeEventListener: vi.fn(),
-				dispatchEvent: vi.fn(),
-			})),
-		});
+		mockMatchMedia(false);
 	});
 
 	it('renders input field with label and placeholder', () => {
@@ -131,6 +133,69 @@ describe('<AutoSuggest />', () => {
 				payload: { id: '1', category: 'fruit' },
 			}),
 		);
+	});
+
+	describe('accessibility', () => {
+		it('holds no list reference while the suggestions are closed', () => {
+			render(<AutoSuggest {...defaultProps} />);
+
+			const combobox = screen.getByRole('combobox');
+
+			expect(combobox).toHaveAttribute('aria-expanded', 'false');
+			expect(combobox).not.toHaveAttribute('aria-owns');
+			expect(combobox).not.toHaveAttribute('aria-controls');
+			expect(screen.getByRole('searchbox')).not.toHaveAttribute(
+				'aria-controls',
+			);
+		});
+
+		it('points the combobox at the open listbox, and nothing else', async () => {
+			mockMatchMedia(true);
+
+			const user = userEvent.setup();
+
+			render(<AutoSuggest {...defaultProps} />);
+
+			await user.click(screen.getByDisplayValue(''));
+
+			await waitFor(() => {
+				expect(screen.getByText('Apple')).toBeInTheDocument();
+			});
+
+			const combobox = screen.getByRole('combobox');
+			const listId = combobox.getAttribute('aria-controls')!;
+
+			expect(listId).toBeTruthy();
+			expect(combobox).toHaveAttribute('aria-owns', listId);
+			expect(screen.getByRole('searchbox')).toHaveAttribute(
+				'aria-controls',
+				listId,
+			);
+
+			const owners = document.querySelectorAll(`[id="${listId}"]`);
+
+			expect(owners).toHaveLength(1);
+			expect(owners[0].tagName).toBe('UL');
+			expect(owners[0]).toHaveAttribute('role', 'listbox');
+		});
+
+		it('gives the clear button an accessible name', async () => {
+			const user = userEvent.setup();
+
+			render(
+				<AutoSuggest
+					{...defaultProps}
+					value={mockSuggestions[0]}
+					inlineOptions
+				/>,
+			);
+
+			await user.click(screen.getByDisplayValue('Apple'));
+
+			const clear = await screen.findByRole('button', { name: 'clear' });
+
+			expect(clear).toHaveAttribute('type', 'button');
+		});
 	});
 
 	it('supports keyboard navigation through suggestions', async () => {
