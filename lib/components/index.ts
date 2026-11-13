@@ -1,5 +1,5 @@
 export { Actions } from './Actions';
-export { Alert } from './Alert';
+export { Alert, type AlertAppearance, type AlertProps } from './Alert';
 export { Anchor } from './Anchor';
 export {
 	AutoSuggest,
@@ -166,7 +166,7 @@ export { TextBubble } from './TextBubble';
 export { TextContainer } from './TextContainer';
 export { TextInput } from './TextInput';
 export { TextLink } from './TextLink';
-export { useToast, ToastProvider } from './Toaster';
+export { useToast, ToastProvider, type ToastOptions } from './Toaster';
 export {
 	ToggleButtons,
 	ToggleButton,

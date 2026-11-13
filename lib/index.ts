@@ -2,6 +2,8 @@
 export {
 	Actions,
 	Alert,
+	type AlertAppearance,
+	type AlertProps,
 	Anchor,
 	AutoSuggest,
 	type AutoSuggestValue,
@@ -159,6 +161,7 @@ export {
 	TextLink,
 	useToast,
 	ToastProvider,
+	type ToastOptions,
 	ToggleButtons,
 	ToggleButton,
 	type ToggleButtonProps,
