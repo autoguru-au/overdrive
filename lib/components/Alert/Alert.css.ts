@@ -177,6 +177,7 @@ export const closeButton = style([
 	{
 		'@layer': {
 			[cssLayerComponent]: {
+				alignItems: 'center',
 				alignSelf: 'start',
 				background: 'none',
 				border: 'none',
@@ -184,7 +185,16 @@ export const closeButton = style([
 				color: vars.color.foreground.tertiary,
 				cursor: 'pointer',
 				display: 'flex',
+				flex: 'none',
+				justifyContent: 'center',
+				minHeight: vars.space['6'],
+				minWidth: vars.space['6'],
 				padding: 0,
+				selectors: {
+					'&:hover': {
+						color: vars.color.foreground.primary,
+					},
+				},
 			},
 		},
 	},
