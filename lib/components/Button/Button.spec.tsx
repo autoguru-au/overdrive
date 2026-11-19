@@ -10,12 +10,15 @@ import { Icon } from '../Icon';
 import { Button } from './Button';
 import * as stories from './Button.stories';
 
-const { Standard, ExtraSmall, PrimarySet, PrimaryOutlinedSet } =
+const { Standard, ExtraSmall, PrimarySet, PrimaryOutlinedSet, PrimarySolid } =
 	composeStories(stories);
 
 /** The recipe emits `…outlined_true…` in the class name for the variant. */
 const isOutlined = (button: HTMLElement) =>
 	button.className.includes('outlined_true');
+
+const hasAppearance = (button: HTMLElement, value: string) =>
+	button.className.includes(`appearance_${value}`);
 
 describe('<Button />', () => {
 	afterEach(() => {
@@ -52,6 +55,13 @@ describe('<Button />', () => {
 		const buttons = screen.getAllByRole('button');
 		expect(buttons.length).toBeGreaterThan(0);
 		expect(buttons).toMatchSnapshot('primary-outlined-button-set');
+	});
+
+	it('renders the solid primary appearance story', async () => {
+		render(<PrimarySolid />);
+		const buttons = screen.getAllByRole('button');
+		expect(buttons.length).toBeGreaterThan(0);
+		expect(buttons).toMatchSnapshot('primary-solid-appearance-set');
 	});
 
 	describe('outlined variant', () => {
@@ -106,6 +116,88 @@ describe('<Button />', () => {
 				</Button>,
 			);
 			// a transparent fill needs the inverse (dark) spinner treatment
+			expect(container.innerHTML).not.toContain('light');
+		});
+	});
+
+	describe('appearance', () => {
+		it.each([
+			['primary', 'solid'],
+			['primary', 'outlined'],
+			['danger', 'solid'],
+			['danger', 'outlined'],
+			['secondary', 'outlined'],
+			['secondary', 'ghost'],
+		] as const)('applies %s × %s', (variant, appearance) => {
+			render(
+				<Button variant={variant} appearance={appearance}>
+					Click me
+				</Button>,
+			);
+			expect(hasAppearance(screen.getByRole('button'), appearance)).toBe(
+				true,
+			);
+		});
+
+		it('is absent unless asked for', () => {
+			render(<Button variant="primary">Click me</Button>);
+			expect(
+				screen.getByRole('button').className.includes('appearance_'),
+			).toBe(false);
+		});
+
+		it.each([
+			['warning', 'solid'],
+			['information', 'outlined'],
+			['success', 'solid'],
+			['brand', 'ghost'],
+			// the class covers it, but not with this fill
+			['primary', 'ghost'],
+			['secondary', 'solid'],
+		] as const)(
+			'is a complete no-op on %s × %s',
+			(variant, appearance) => {
+				const plain = render(
+					<Button variant={variant}>Click me</Button>,
+				).container.innerHTML;
+				cleanup();
+				const withAppearance = render(
+					<Button variant={variant} appearance={appearance}>
+						Click me
+					</Button>,
+				).container.innerHTML;
+
+				expect(withAppearance).toBe(plain);
+			},
+		);
+
+		it('lets minimal win, since they are opposites', () => {
+			render(
+				<Button variant="primary" appearance="solid" minimal>
+					Click me
+				</Button>,
+			);
+			const button = screen.getByRole('button');
+			expect(button.className.includes('appearance_')).toBe(false);
+			expect(button.className).toContain('minimal_true');
+		});
+
+		it('gives a solid critical button the light spinner, not the dark one', () => {
+			const { container } = render(
+				<Button variant="danger" appearance="solid" isLoading>
+					Click me
+				</Button>,
+			);
+			// a solid red fill needs the light spinner
+			expect(container.innerHTML).toContain('light');
+		});
+
+		it('gives a ghost button the dark spinner, not the light one', () => {
+			const { container } = render(
+				<Button variant="secondary" appearance="ghost" isLoading>
+					Click me
+				</Button>,
+			);
 			expect(container.innerHTML).not.toContain('light');
 		});
 	});

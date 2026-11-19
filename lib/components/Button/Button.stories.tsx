@@ -15,6 +15,7 @@ const meta: Meta<typeof Button> = {
 	component: Button,
 	args: {
 		as: 'button',
+		appearance: undefined,
 		variant: 'secondary',
 		size: 'medium',
 		minimal: false,
@@ -32,6 +33,12 @@ const meta: Meta<typeof Button> = {
 	argTypes: {
 		as: {
 			options: ['button', 'a'],
+		},
+		appearance: {
+			options: [undefined, 'solid', 'outlined', 'ghost'],
+			control: { type: 'select' },
+			description:
+				'Opts into the 2026 design and picks its fill treatment. Omit for the established appearance.',
 		},
 	},
 };
@@ -62,6 +69,7 @@ export const ExtraSmall: Story = {
 };
 
 const TemplateMulti = ({
+	appearance,
 	children,
 	onClick,
 	outlined,
@@ -70,6 +78,7 @@ const TemplateMulti = ({
 	<>
 		{['medium', 'small'].map((size) => {
 			const args = {
+				appearance,
 				children,
 				onClick,
 				outlined,
@@ -216,6 +225,69 @@ export const PrimaryOutlinedSet: Story = {
 	args: {
 		variant: 'primary',
 		outlined: true,
+	},
+	render: TemplateMulti,
+};
+
+/**
+ * The 2026 design, opted into with `appearance`.
+ *
+ * These draw from the `color.button.*` tokens at the 2026 sizes and weight.
+ * Every story above leaves `appearance` unset and is unaffected — that is the
+ * point of the prop. A tenant re-brands the primary rows at runtime through
+ * `OverdriveProvider`'s `colorOverrides`; critical and secondary are
+ * deliberately fixed.
+ */
+export const PrimarySolid: Story = {
+	decorators: PrimarySet.decorators,
+	args: {
+		variant: 'primary',
+		appearance: 'solid',
+	},
+	render: TemplateMulti,
+};
+
+export const PrimaryOutlined: Story = {
+	decorators: PrimarySet.decorators,
+	args: {
+		variant: 'primary',
+		appearance: 'outlined',
+	},
+	render: TemplateMulti,
+};
+
+export const CriticalSolid: Story = {
+	decorators: PrimarySet.decorators,
+	args: {
+		variant: 'danger',
+		appearance: 'solid',
+	},
+	render: TemplateMulti,
+};
+
+export const CriticalOutlined: Story = {
+	decorators: PrimarySet.decorators,
+	args: {
+		variant: 'danger',
+		appearance: 'outlined',
+	},
+	render: TemplateMulti,
+};
+
+export const SecondaryOutlined: Story = {
+	decorators: PrimarySet.decorators,
+	args: {
+		variant: 'secondary',
+		appearance: 'outlined',
+	},
+	render: TemplateMulti,
+};
+
+export const SecondaryGhost: Story = {
+	decorators: PrimarySet.decorators,
+	args: {
+		variant: 'secondary',
+		appearance: 'ghost',
 	},
 	render: TemplateMulti,
 };
