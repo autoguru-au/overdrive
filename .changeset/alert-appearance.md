@@ -34,8 +34,8 @@ path now matches the 2026 spacing:
 - the close control is a bare 24px button rather than the 36px
   `Button minimal rounded secondary small`, with a hover colour change in place
   of the minimal-secondary hover fill
-- `danger` and `information` use outline glyphs instead of filled ones, so the
-  status icon set is outline on every intent
+- `success` and `warning` use filled status glyphs instead of outline ones, so
+  the status icon set is filled on every intent, as the 2026 frame specifies
 
 `Toast` renders `Alert` with no `appearance`, so every toast inherits all of the
 above whether or not a call site opts in. That is the widest surface here.
@@ -51,16 +51,17 @@ Note `appearance="message"` renders no close control at all, so a toast opted
 into it can only disappear on its duration timer — `dismissible` and
 `onRequestClose` are ignored there.
 
-## Status icons
+## Filled status icons
 
-All four intents now draw outline glyphs: `CheckCircleIcon`, `WarningIcon`,
-`WarningCircleIcon` (`danger`) and `InfoIcon` (`information`), all from
-`@autoguru/icons`.
-
-`danger` and `information` previously used `AlertCircleIcon` and
-`InformationIcon`, which are filled discs on a 32 viewBox while the rest of the
-set is outline on 256 — so they were heavier and optically larger than the icons
-beside them. Nothing is vendored; the package covers every intent.
+The 2026 frame binds `AG-CheckCircleFilled` and `AG-WarningTriangleFilled`;
+`@autoguru/icons@2.2.0` is the latest published and ships no filled status
+icons. `success` and `warning` are vendored locally in
+`lib/components/Alert/intentIcons.tsx` from Phosphor Icons (MIT, fill weight) —
+the same family the package's own regular-weight icons come from, so they match
+the optical size of the icons they replace. Delete that file and point
+`iconMapForIntent` back at the package once it ships them. `danger` and
+`information` already use the package's filled `AlertCircleIcon` and
+`InformationIcon` and are untouched.
 
 ## Localisation
 

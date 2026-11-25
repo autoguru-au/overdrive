@@ -148,7 +148,12 @@ export const DetailWithTitleAndAction: Story = {
 		appearance: 'detail',
 		title: INVOICE_SENT_TITLE,
 		action: (
-			<Button variant="secondary" size="small" onClick={action('action')}>
+			<Button
+				variant="primary"
+				outlined
+				size="small"
+				onClick={action('action')}
+			>
 				View invoice
 			</Button>
 		),
