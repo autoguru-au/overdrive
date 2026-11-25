@@ -247,11 +247,11 @@ export const InteractionTest: Story = {
 		});
 
 		await step('the message layout offers no close control', async () => {
-			const closeButtons = canvas.getAllByRole('button', {
-				name: 'close',
-			});
+			const [status] = canvas.getAllByRole('status');
 
-			await expect(closeButtons).toHaveLength(1);
+			await expect(
+				within(status).queryByRole('button', { name: 'close' }),
+			).toBeNull();
 		});
 
 		await step('the close control is reachable and clickable', async () => {
