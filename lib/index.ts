@@ -2,7 +2,10 @@
 export {
 	Actions,
 	Alert,
+	type AlertActionProps,
 	type AlertAppearance,
+	type AlertBaseProps,
+	type AlertDismissProps,
 	type AlertProps,
 	Anchor,
 	AutoSuggest,

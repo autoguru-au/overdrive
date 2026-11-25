@@ -1,9 +1,3 @@
-import {
-	AlertCircleIcon,
-	IconType,
-	InformationIcon,
-	XIcon,
-} from '@autoguru/icons';
 import clsx from 'clsx';
 import React, { type ComponentProps, type ReactNode } from 'react';
 
@@ -16,15 +10,17 @@ import { IntentStripe } from '../IntentStripe/IntentStripe';
 import { Text } from '../Text/Text';
 
 import * as styles from './Alert.css';
-import { CheckCircleFilledIcon, WarningFilledIcon } from './intentIcons';
+import { AlertCloseButton } from './AlertCloseButton';
+import { DetailAlert } from './DetailAlert';
+import { MessageAlert } from './MessageAlert';
+import {
+	type AlertAppearance,
+	type IntentStripeProps,
+	iconMapForIntent,
+	textColorForIntent,
+} from './intents';
 
-type IntentStripeProps = ComponentProps<typeof IntentStripe>;
-type Intent = IntentStripeProps['intent'];
-
-/**
- * The two DS-2026 layouts. Omitting `appearance` keeps the established render.
- */
-export type AlertAppearance = 'detail' | 'message';
+export type { AlertAppearance } from './intents';
 
 export interface AlertBaseProps extends IntentStripeProps, TestIdProp {
 	/**
@@ -37,6 +33,12 @@ export interface AlertBaseProps extends IntentStripeProps, TestIdProp {
 	 * Appended to the root element's class list.
 	 */
 	className?: string;
+
+	/**
+	 * Accessible name for the close control. Defaults to `close`; pass a
+	 * translated string to localise it alongside `title` and the body copy.
+	 */
+	closeLabel?: string;
 
 	/**
 	 * Drops the shadow and the contained max-width, for an alert that sits
@@ -90,26 +92,10 @@ export interface AlertDismissProps {
 export type AlertProps = AlertBaseProps &
 	(AlertActionProps | AlertDismissProps);
 
-const iconMapForIntent: Record<Intent, IconType> = {
-	danger: AlertCircleIcon,
-	information: InformationIcon,
-	success: CheckCircleFilledIcon,
-	warning: WarningFilledIcon,
-};
-
-const textColorForIntent: Record<
-	Intent,
-	Parameters<typeof sprinkles>[0]['color']
-> = {
-	danger: 'alertForeground',
-	information: 'infoForeground',
-	success: 'successForeground',
-	warning: 'warningForeground',
-};
-
 export const Alert = ({
 	children,
 	className = '',
+	closeLabel = 'close',
 	intent = 'success',
 	inline = false,
 	appearance,
@@ -120,80 +106,41 @@ export const Alert = ({
 	testId,
 }: AlertProps) => {
 	const body =
-		typeof children === 'string' ? <Text>{children}</Text> : children;
-
-	if (appearance) {
-		const icon = (
-			<Box
-				className={
-					appearance === 'message'
-						? styles.messageIconSlot
-						: styles.iconSlot
-				}
+		typeof children === 'string' ? (
+			<Text
+				color={appearance ? 'primary' : undefined}
+				size={appearance === 'message' ? 'p2' : undefined}
 			>
-				<Icon
-					className={sprinkles({
-						color: textColorForIntent[intent],
-					})}
-					icon={iconMapForIntent[intent]}
-					size="medium"
-				/>
-			</Box>
+				{children}
+			</Text>
+		) : (
+			children
 		);
 
+	if (appearance === 'message') {
 		return (
-			<Box
-				className={clsx(
-					className,
-					styles.styledAlert({ appearance, intent }),
-				)}
-				role={appearance === 'message' ? 'status' : 'alert'}
-				odComponent="alert"
+			<MessageAlert
+				body={body}
+				className={className}
+				intent={intent}
 				testId={testId}
-			>
-				{appearance === 'message' ? (
-					<>
-						{icon}
-						<Box className={styles.messageText}>{body}</Box>
-					</>
-				) : (
-					<>
-						<Box
-							className={styles.tab({ intent })}
-							aria-hidden
-							odComponent="alert-tab"
-						/>
-						<Box className={styles.detailBody}>
-							{icon}
-							<Box className={styles.content}>
-								{title ? (
-									<Box className={styles.heading}>
-										{title}
-									</Box>
-								) : null}
-								{body}
-							</Box>
-							{action ? (
-								<Box className={styles.actionSlot}>
-									{action}
-								</Box>
-							) : null}
-							{dismissible && (
-								<Box
-									as="button"
-									type="button"
-									className={styles.closeButton}
-									aria-label="close"
-									onClick={onRequestClose}
-									odComponent="alert-close"
-								>
-									<Icon icon={XIcon} size="small" />
-								</Box>
-							)}
-						</Box>
-					</>
-				)}
-			</Box>
+			/>
+		);
+	}
+
+	if (appearance === 'detail') {
+		return (
+			<DetailAlert
+				action={action}
+				body={body}
+				className={className}
+				closeLabel={closeLabel}
+				dismissible={dismissible}
+				intent={intent}
+				onRequestClose={onRequestClose}
+				testId={testId}
+				title={title}
+			/>
 		);
 	}
 
@@ -231,17 +178,12 @@ export const Alert = ({
 					{body}
 				</Box>
 				{dismissible && (
-					<Box
-						as="button"
-						type="button"
+					<AlertCloseButton
+						label={closeLabel}
 						ml="auto"
-						className={styles.closeButton}
-						aria-label="close"
 						onClick={onRequestClose}
-						odComponent="alert-close"
-					>
-						<Icon icon={XIcon} size="medium" />
-					</Box>
+						size="medium"
+					/>
 				)}
 			</Box>
 		</Box>

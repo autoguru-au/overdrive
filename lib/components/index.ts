@@ -1,5 +1,12 @@
 export { Actions } from './Actions';
-export { Alert, type AlertAppearance, type AlertProps } from './Alert';
+export {
+	Alert,
+	type AlertActionProps,
+	type AlertAppearance,
+	type AlertBaseProps,
+	type AlertDismissProps,
+	type AlertProps,
+} from './Alert';
 export { Anchor } from './Anchor';
 export {
 	AutoSuggest,
