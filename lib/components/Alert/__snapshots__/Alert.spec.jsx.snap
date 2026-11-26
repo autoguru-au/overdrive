@@ -18,7 +18,7 @@ exports[`<Alert /> > should match the snapshot 1`] = `
       class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwjufe sprinkles_gap_2_mobile__onxwjuue"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Alert_iconSlot__19auxx4j"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Alert_iconSlot__19auxx4k"
       >
         <span
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwjuf6 Icon_makeResponsiveStyle_key_bp__1gy3ire4"
@@ -43,7 +43,7 @@ exports[`<Alert /> > should match the snapshot 1`] = `
       />
       <button
         aria-label="close"
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 sprinkles_marginLeft_auto_mobile__onxwju1fy Alert_closeButton__19auxx4o focusOutline_focusOutlineStyle__tq83zq0"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 sprinkles_marginLeft_auto_mobile__onxwju1fy Alert_closeButton__19auxx4p focusOutline_focusOutlineStyle__tq83zq0"
         data-od-component="alert-close"
         type="button"
       >

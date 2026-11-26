@@ -85,11 +85,17 @@ export const DetailAlert = ({
 		/>
 		<Box className={styles.detailBody}>
 			<AlertIcon appearance="detail" intent={intent} />
-			<Box className={styles.content}>
-				{title ? <Box className={styles.heading}>{title}</Box> : null}
-				{body}
+			<Box className={styles.detailMain}>
+				<Box className={styles.content}>
+					{title ? (
+						<Box className={styles.heading}>{title}</Box>
+					) : null}
+					{body}
+				</Box>
+				{action ? (
+					<Box className={styles.actionSlot}>{action}</Box>
+				) : null}
 			</Box>
-			{action ? <Box className={styles.actionSlot}>{action}</Box> : null}
 			{dismissible && (
 				<AlertCloseButton label={closeLabel} onClick={onRequestClose} />
 			)}

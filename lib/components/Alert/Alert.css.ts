@@ -11,6 +11,7 @@ export const contained = style({
 });
 
 const TAB_WIDTH = '6px';
+const BODY_MIN_SHARE = '60%';
 
 const tinted = (backgroundColor: string) => ({
 	'@layer': {
@@ -107,11 +108,24 @@ export const detailBody = style({
 	},
 });
 
+export const detailMain = style({
+	'@layer': {
+		[cssLayerComponent]: {
+			alignItems: 'center',
+			display: 'flex',
+			flex: '1',
+			flexWrap: 'wrap',
+			gap: vars.space['3'],
+			minWidth: 0,
+		},
+	},
+});
+
 export const content = style({
 	'@layer': {
 		[cssLayerComponent]: {
 			display: 'flex',
-			flex: '1',
+			flex: `1 1 ${BODY_MIN_SHARE}`,
 			flexDirection: 'column',
 			gap: vars.space['1'],
 			minWidth: 0,
@@ -146,6 +160,7 @@ export const actionSlot = style({
 		[cssLayerComponent]: {
 			alignSelf: 'center',
 			flex: 'none',
+			maxWidth: '100%',
 		},
 	},
 });
